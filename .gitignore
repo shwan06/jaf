@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Local app data (SQLite progress / SRS state, re-created on first run)
+progress.db

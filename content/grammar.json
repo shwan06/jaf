@@ -1,0 +1,1076 @@
+{
+  "id": "grammar",
+  "title": "Грамматика — Grammar A to Z",
+  "description": "A comprehensive A-to-Z reference of Russian grammar for advanced English-speaking learners, with full paradigm tables for nouns, adjectives, pronouns, numerals, and verbs, plus transliterated examples and concise usage notes.",
+  "units": [
+    {
+      "id": "nouns-gender-declension-classes",
+      "title": "1. Nouns: Gender & Declension Classes",
+      "summary": "How to determine grammatical gender from the dictionary (nominative) ending and how nouns sort into three declension classes.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Every Russian noun has one of three <strong>genders</strong> — masculine, feminine, or neuter — which you can usually predict from its <em>nominative singular</em> ending. Gender controls the agreement of adjectives, pronouns, and (in the past tense) verbs. Gender is a grammatical property of the word, not necessarily of its referent, though for animate beings the two usually coincide."
+        },
+        {
+          "type": "table",
+          "caption": "Predicting gender from the nominative-singular ending",
+          "headers": ["Ending", "Usual gender", "Examples", "Notes / exceptions"],
+          "rows": [
+            ["consonant (hard)", "masculine", "стол (table), дом (house), студент (student)", "Reliable for the vast majority."],
+            ["-й", "masculine", "музей (museum), чай (tea), герой (hero)", ""],
+            ["-а / -я", "feminine", "книга (book), неделя (week), земля (earth)", "But natural-male nouns are masc.: папа, дядя, мужчина."],
+            ["-ь (soft sign)", "masc. OR fem.", "день (m., day), словарь (m., dictionary); ночь (f.), дверь (f.)", "Must be memorized; abstract/-ость nouns are feminine."],
+            ["-о / -е", "neuter", "окно (window), море (sea), здание (building)", "But кофе is traditionally masculine."],
+            ["-мя", "neuter", "имя (name), время (time)", "A small closed class of ~10 nouns with special declension."]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>The soft-sign trap.</strong> A final <code>-ь</code> tells you nothing about gender by itself: <em>день</em> (day) is masculine but <em>ночь</em> (night) is feminine. Two useful heuristics: nouns in <code>-тель</code> and the months are masculine; abstract nouns in <code>-ость / -есть</code> (e.g. <em>радость</em> joy, <em>новость</em> news) and nouns ending in a hushing consonant + ь (ночь, дочь, мышь) are feminine."
+        },
+        {
+          "type": "prose",
+          "html": "The three <strong>declension classes</strong> group nouns by how they take case endings. They cut across gender as shown below."
+        },
+        {
+          "type": "table",
+          "caption": "The three declension classes",
+          "headers": ["Class", "Members", "Nom. sg. ending", "Examples"],
+          "rows": [
+            ["1st declension", "feminine (and some masc.) in -а/-я", "-а, -я", "книга, неделя, папа"],
+            ["2nd declension", "masculine in consonant/-й and all neuter", "Ø, -й, -о, -е", "стол, музей, окно, море"],
+            ["3rd declension", "feminine in -ь", "-ь", "ночь, дверь, мышь"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Numbering conventions differ between textbooks (some call the masculine/neuter group \"1st\"). The membership is what matters; the labels above follow the common Russian school tradition (школьная грамматика)."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Это новый студент.", "tr": "Eto novyy student.", "en": "This is a new student. (masc., consonant ending)"},
+            {"ru": "Здесь интересная книга.", "tr": "Zdes' interesnaya kniga.", "en": "Here is an interesting book. (fem., -а ending)"},
+            {"ru": "Открой большое окно.", "tr": "Otkroy bol'shoye okno.", "en": "Open the big window. (neut., -о ending)"},
+            {"ru": "Какая длинная ночь!", "tr": "Kakaya dlinnaya noch'!", "en": "What a long night! (fem., 3rd declension)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-system-overview",
+      "title": "2. The Case System Overview",
+      "summary": "What each of the six cases does, in one line, before the detailed paradigms.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian marks a noun's role in the sentence with <strong>case</strong> — a change in ending — rather than relying mainly on word order. There are six cases. Mastering their <em>functions</em> first makes the ending tables that follow far easier to absorb."
+        },
+        {
+          "type": "table",
+          "caption": "The six cases at a glance",
+          "headers": ["Case", "Russian", "Core question", "One-line job"],
+          "rows": [
+            ["Nominative", "именительный", "кто? что?", "The subject; the dictionary form."],
+            ["Accusative", "винительный", "кого? что?", "The direct object of a transitive verb."],
+            ["Genitive", "родительный", "кого? чего?", "Possession, 'of', absence, quantities."],
+            ["Dative", "дательный", "кому? чему?", "The indirect object / recipient; experiencer."],
+            ["Instrumental", "творительный", "кем? чем?", "The means, instrument, or accompaniment."],
+            ["Prepositional", "предложный", "о ком? о чём?", "Location and topic; only used after prepositions."]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "The prepositional is the only case that <em>never</em> appears without a preposition (в, на, о, при, по). Vestiges of older cases survive: a <strong>locative-2</strong> in stressed <code>-у́</code> (в лесу́ 'in the forest', на берегу́ 'on the shore') and a <strong>partitive genitive</strong> in <code>-у</code> (чашка ча́ю 'a cup of tea')."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Студент читает книгу в библиотеке.", "tr": "Student chitayet knigu v biblioteke.", "en": "The student (nom.) reads a book (acc.) in the library (prep.)."},
+            {"ru": "Я дал книгу другу.", "tr": "Ya dal knigu drugu.", "en": "I gave the book (acc.) to a friend (dat.)."},
+            {"ru": "Он пишет ручкой.", "tr": "On pishet ruchkoy.", "en": "He writes with a pen (instr.)."},
+            {"ru": "Это дом моего брата.", "tr": "Eto dom moyego brata.", "en": "This is my brother's (gen.) house."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nominative-accusative",
+      "title": "3. Nominative & Accusative (with Animacy)",
+      "summary": "The subject case and the direct-object case, and the crucial animacy rule that makes animate accusatives look like genitives.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>nominative</strong> is the citation form and marks the grammatical subject — the doer of the action. The <strong>accusative</strong> marks the direct object: the thing directly affected by a transitive verb (<em>читать книгу</em>, to read a book)."
+        },
+        {
+          "type": "table",
+          "caption": "Accusative singular endings (basic)",
+          "headers": ["Type", "Nom. sg.", "Acc. sg.", "Note"],
+          "rows": [
+            ["masc. inanimate", "стол", "стол", "= nominative (no change)"],
+            ["masc. animate", "студент", "студента", "= genitive (animacy rule)"],
+            ["neuter", "окно / море", "окно / море", "= nominative (always)"],
+            ["fem. -а/-я", "книга / неделя", "книгу / неделю", "-а → -у, -я → -ю"],
+            ["fem. -ь (3rd decl.)", "ночь", "ночь", "= nominative (no change)"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "The <strong>animacy rule</strong> is one of the central facts of Russian morphology. For <em>masculine singular</em> nouns and for <em>all plural</em> nouns, the accusative depends on whether the referent is alive: animate accusative = genitive; inanimate accusative = nominative."
+        },
+        {
+          "type": "table",
+          "caption": "Animacy and the accusative",
+          "headers": ["", "Inanimate → like Nom.", "Animate → like Gen."],
+          "rows": [
+            ["masc. sg.", "Я вижу стол. (a table)", "Я вижу студента. (a student)"],
+            ["plural (all genders)", "Я вижу столы / книги. (tables / books)", "Я вижу студентов / женщин. (students / women)"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Feminine singular nouns in -а/-я have their <em>own</em> distinct accusative (-у/-ю) and so are unaffected by animacy: <em>Я вижу студентку</em> (animate) and <em>Я вижу книгу</em> (inanimate) take the same -у ending. Animacy only ever matters where acc. would otherwise be ambiguous with nom."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Брат любит сестру.", "tr": "Brat lyubit sestru.", "en": "The brother (nom.) loves his sister (acc. fem.)."},
+            {"ru": "Я знаю этого профессора.", "tr": "Ya znayu etogo professora.", "en": "I know this professor. (animate masc. acc. = gen.)"},
+            {"ru": "Я купил новый компьютер.", "tr": "Ya kupil novyy komp'yuter.", "en": "I bought a new computer. (inanimate masc. acc. = nom.)"},
+            {"ru": "Мы пригласили друзей.", "tr": "My priglasili druzey.", "en": "We invited friends. (animate plural acc. = gen.)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "genitive",
+      "title": "4. Genitive Case",
+      "summary": "The 'of' case — possession, absence, quantities, and the count rules after numbers.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>genitive</strong> (родительный падеж) is the workhorse of Russian. Its core meaning is the English <em>of</em>: it expresses possession and relationship between two nouns, but it also signals absence, partitive quantity, and is governed by many prepositions and numbers."
+        },
+        {
+          "type": "table",
+          "caption": "Genitive endings: singular",
+          "headers": ["Gender / type", "Nom. sg.", "Gen. sg. ending", "Gen. sg. form"],
+          "rows": [
+            ["masc. (hard)", "стол", "-а", "стола"],
+            ["masc. (-й / -ь soft)", "музей / словарь", "-я", "музея / словаря"],
+            ["neuter -о", "окно", "-а", "окна"],
+            ["neuter -е", "море", "-я", "моря"],
+            ["fem. -а", "книга", "-ы (spelling: -и after г к х ж ч ш щ)", "книги"],
+            ["fem. -я", "неделя", "-и", "недели"],
+            ["fem. -ь (3rd decl.)", "ночь", "-и", "ночи"]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Genitive endings: plural (the hardest paradigm in Russian)",
+          "headers": ["Gender / type", "Nom. sg.", "Gen. pl. ending", "Gen. pl. form"],
+          "rows": [
+            ["masc. (hard consonant)", "стол", "-ов", "столов"],
+            ["masc. (-й)", "музей", "-ев / -ёв", "музеев"],
+            ["masc. (-ь)", "словарь", "-ей", "словарей"],
+            ["masc. after ж ч ш щ", "нож", "-ей", "ножей"],
+            ["neuter -о", "окно", "-Ø (zero, often + fill vowel)", "окон"],
+            ["neuter -е", "море", "-ей", "морей"],
+            ["fem. -а", "книга", "-Ø (zero, often + fill vowel)", "книг"],
+            ["fem. -я", "неделя", "-ь / -й", "недель"],
+            ["fem. -ь (3rd decl.)", "ночь", "-ей", "ночей"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "The <strong>zero ending</strong> of feminine/neuter plurals often forces a <em>fill (fleeting) vowel</em> to break up a final consonant cluster: <em>окно → окон</em>, <em>сестра → сестёр</em>, <em>девушка → девушек</em>, <em>письмо → писем</em>. Learn these case by case."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Possession / relation ('of'):</strong> книга <em>студента</em> — the student's book; центр <em>города</em> — the centre of the city.",
+            "<strong>Absence with нет / не было / не будет:</strong> <em>нет времени</em> — there is no time; у меня <em>нет машины</em> — I have no car.",
+            "<strong>After most quantity words:</strong> много <em>денег</em> (much money), мало <em>людей</em> (few people), стакан <em>воды</em> (a glass of water).",
+            "<strong>Partitive:</strong> купить <em>хлеба</em> — to buy some bread (vs. весь хлеб, the whole bread).",
+            "<strong>Governed by prepositions:</strong> из, от, до, без, для, у, около, после, против, вокруг, кроме."
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "The <strong>number rules</strong> are essential and exam-favourite. The case of the counted noun depends on the final digit of the number:"
+        },
+        {
+          "type": "table",
+          "caption": "Case of the noun after cardinal numbers",
+          "headers": ["Number ends in...", "Noun case", "Example"],
+          "rows": [
+            ["1 (одна́, оди́н) — except 11", "nominative singular", "оди́н студе́нт, одна́ кни́га"],
+            ["2, 3, 4 — except 12, 13, 14", "genitive SINGULAR", "два студе́нта, три кни́ги, четы́ре окна́"],
+            ["5–20, and all teens, and 0", "genitive PLURAL", "пять студе́нтов, де́сять книг, оди́ннадцать окон"],
+            ["21, 31, ... (ends in 1)", "nominative singular", "два́дцать оди́н студе́нт"],
+            ["22–24, 32–34, ... (ends in 2-4)", "genitive singular", "два́дцать два студе́нта"]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "У меня нет брата.", "tr": "U menya net brata.", "en": "I don't have a brother. (gen. of absence)"},
+            {"ru": "Это дом моих родителей.", "tr": "Eto dom moikh roditeley.", "en": "This is my parents' house. (gen. pl. possession)"},
+            {"ru": "Он купил пять билетов.", "tr": "On kupil pyat' biletov.", "en": "He bought five tickets. (5+ → gen. pl.)"},
+            {"ru": "Я выпил чашку чая.", "tr": "Ya vypil chashku chaya.", "en": "I drank a cup of tea. (partitive gen.)"},
+            {"ru": "В классе три студента.", "tr": "V klasse tri studenta.", "en": "There are three students in the class. (2-4 → gen. sg.)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dative",
+      "title": "5. Dative Case",
+      "summary": "The recipient case — indirect objects, age, liking (нравиться), and the prepositions к and по.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>dative</strong> (дательный падеж) answers <em>кому? / чему?</em> (to whom? / to what?). Its core role is the indirect object — the recipient or beneficiary — but it is also the case of the <em>experiencer</em> in many impersonal constructions, including age and liking."
+        },
+        {
+          "type": "table",
+          "caption": "Dative endings",
+          "headers": ["Gender / type", "Dat. sg.", "Dat. pl."],
+          "rows": [
+            ["masc. (hard)", "столу (-у)", "столам (-ам)"],
+            ["masc. (-й/-ь)", "музею / словарю (-ю)", "музеям / словарям (-ям)"],
+            ["neuter", "окну / морю (-у/-ю)", "окнам / морям (-ам/-ям)"],
+            ["fem. -а/-я", "книге / неделе (-е)", "книгам / неделям (-ам/-ям)"],
+            ["fem. -ь (3rd decl.)", "ночи (-и)", "ночам (-ам)"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Feminine -а/-я and -ь nouns take dative <code>-е</code> and <code>-и</code> respectively, which are identical to their prepositional singular forms — a helpful overlap. (Exception: nouns in -ия/-ие take dative -ии: <em>лекция → лекции</em>.)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Indirect object:</strong> Я дал <em>другу</em> книгу — I gave my friend a book.",
+            "<strong>Age (with dative + год/года/лет):</strong> <em>Мне</em> двадцать лет — I am 20 (lit. 'to me [there are] 20 years').",
+            "<strong>нравиться (to please / to like):</strong> <em>Мне</em> нравится Москва — I like Moscow (lit. 'Moscow is pleasing to me'). The liker is dative; the liked thing is the subject.",
+            "<strong>Impersonal predicates:</strong> <em>Мне</em> холодно (I am cold), <em>ему</em> трудно (it's hard for him), <em>нам</em> нужно (we need to), <em>можно/нельзя</em> + dative.",
+            "<strong>Preposition к (toward / to a person):</strong> Я иду <em>к врачу</em> — I'm going to the doctor.",
+            "<strong>Preposition по (along / according to / via):</strong> идти <em>по улице</em> (along the street), <em>по телефону</em> (by phone), специалист <em>по физике</em> (a specialist in physics)."
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Мне нравится эта музыка.", "tr": "Mne nravitsya eta muzyka.", "en": "I like this music."},
+            {"ru": "Сколько тебе лет?", "tr": "Skol'ko tebe let?", "en": "How old are you? (lit. how many years to you?)"},
+            {"ru": "Профессор объяснил студентам правило.", "tr": "Professor ob'yasnil studentam pravilo.", "en": "The professor explained the rule to the students."},
+            {"ru": "Мы идём к бабушке.", "tr": "My idyom k babushke.", "en": "We are going to grandmother's. (к + dat.)"},
+            {"ru": "Ему было скучно.", "tr": "Yemu bylo skuchno.", "en": "He was bored. (dative experiencer)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "instrumental",
+      "title": "6. Instrumental Case",
+      "summary": "The 'by means of' case — instruments, accompaniment with с, predicate nouns with быть, and a set of spatial prepositions.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>instrumental</strong> (творительный падеж) answers <em>кем? / чем?</em>. Its core meaning is the means or instrument of an action (writing <em>with a pen</em>), but it has a wide range of further uses, including accompaniment, predicate nouns, and spatial relations."
+        },
+        {
+          "type": "table",
+          "caption": "Instrumental endings",
+          "headers": ["Gender / type", "Instr. sg.", "Instr. pl."],
+          "rows": [
+            ["masc. (hard)", "столом (-ом)", "столами (-ами)"],
+            ["masc. (-й/-ь)", "музеем / словарём (-ем/-ём)", "музеями / словарями (-ями)"],
+            ["neuter", "окном / морем (-ом/-ем)", "окнами / морями (-ами/-ями)"],
+            ["fem. -а/-я", "книгой / неделей (-ой/-ей)", "книгами / неделями (-ами/-ями)"],
+            ["fem. -ь (3rd decl.)", "ночью (-ью)", "ночами (-ами)"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Feminine -ой/-ей has a stylistic variant -ою/-ею common in poetry and set phrases. After hushing consonants (ж ч ш щ ц) the unstressed ending is -ем and stressed is -ом/-ой: <em>товарищем</em>, <em>отцом</em>, <em>душой</em>."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Means / instrument (no preposition):</strong> писать <em>ручкой</em> (with a pen), есть <em>ложкой</em> (with a spoon).",
+            "<strong>с = 'together with':</strong> чай <em>с лимоном</em> (tea with lemon), я говорил <em>с другом</em> (I spoke with a friend). Distinguish from instrumental <em>without</em> с (= means).",
+            "<strong>Predicate noun after быть / стать / работать / являться:</strong> Он <em>был врачом</em> (he was a doctor), она <em>стала учителем</em> (she became a teacher), я <em>работаю инженером</em> (I work as an engineer).",
+            "<strong>Spatial prepositions с/со, над, под, перед, за, между:</strong> <em>над столом</em> (above the table), <em>под кроватью</em> (under the bed), <em>перед домом</em> (in front of the house), <em>между нами</em> (between us), <em>за углом</em> (around the corner).",
+            "<strong>Time of day / season:</strong> <em>утром</em> (in the morning), <em>зимой</em> (in winter), <em>вечером</em> (in the evening) — frozen instrumentals."
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Be careful: <em>заниматься</em>, <em>интересоваться</em>, <em>гордиться</em>, <em>пользоваться</em> and other verbs govern the bare instrumental: <em>Я интересуюсь историей</em> — I am interested in history."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Я пишу карандашом.", "tr": "Ya pishu karandashom.", "en": "I write with a pencil. (means)"},
+            {"ru": "Мы пьём кофе с молоком.", "tr": "My p'yom kofe s molokom.", "en": "We drink coffee with milk. (accompaniment)"},
+            {"ru": "Он хочет стать врачом.", "tr": "On khochet stat' vrachom.", "en": "He wants to become a doctor. (predicate)"},
+            {"ru": "Кошка спит под столом.", "tr": "Koshka spit pod stolom.", "en": "The cat is sleeping under the table. (под + instr.)"},
+            {"ru": "Я занимаюсь спортом.", "tr": "Ya zanimayus' sportom.", "en": "I do sports. (verb-governed instr.)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prepositional",
+      "title": "7. Prepositional / Locative Case",
+      "summary": "The case that only follows prepositions — location (в/на) and topic (о about).",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>prepositional</strong> (предложный падеж) is unique: it never occurs without a governing preposition. Its two main jobs are <em>location</em> (after в and на) and <em>topic</em> (after о/об, 'about')."
+        },
+        {
+          "type": "table",
+          "caption": "Prepositional endings",
+          "headers": ["Gender / type", "Prep. sg.", "Prep. pl."],
+          "rows": [
+            ["masc. (hard)", "столе (-е)", "столах (-ах)"],
+            ["masc. (-й/-ь)", "музее / словаре (-е)", "музеях / словарях (-ях)"],
+            ["neuter -о/-е", "окне / море (-е)", "окнах / морях (-ах/-ях)"],
+            ["fem. -а/-я", "книге / неделе (-е)", "книгах / неделях (-ах/-ях)"],
+            ["nouns in -ия/-ие/-ий", "лекции / здании / гении (-ии)", "лекциях / зданиях (-иях)"],
+            ["fem. -ь (3rd decl.)", "ночи (-и)", "ночах (-ах)"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Locative-2 (second prepositional).</strong> A small group of masculine nouns take stressed <code>-у́</code> after в/на to mean physical location: в лесу́ (in the forest), на берегу́ (on the shore), в саду́ (in the garden), в углу́ (in the corner), на полу́ (on the floor), в году́ (in the year). The regular -е survives in non-locative meanings (о ле́се — about the forest)."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>в + prep. = inside / in (enclosed):</strong> в <em>городе</em> (in the city), в <em>университете</em> (at the university), в <em>России</em> (in Russia).",
+            "<strong>на + prep. = on / at (surfaces, events, certain places):</strong> на <em>столе</em> (on the table), на <em>работе</em> (at work), на <em>концерте</em> (at the concert), на <em>Кавказе</em>, на <em>Украине/в Украине</em>.",
+            "<strong>о / об / обо + prep. = about (topic):</strong> думать о <em>будущем</em> (to think about the future), книга об <em>истории</em> (a book about history). Use <em>об</em> before a vowel, <em>обо</em> before мне/всём.",
+            "<strong>при + prep.:</strong> при <em>университете</em> (attached to the university), при <em>Петре</em> (under [the reign of] Peter)."
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Книга лежит на столе.", "tr": "Kniga lezhit na stole.", "en": "The book is lying on the table."},
+            {"ru": "Мы живём в большом городе.", "tr": "My zhivyom v bol'shom gorode.", "en": "We live in a big city."},
+            {"ru": "Они говорят о политике.", "tr": "Oni govoryat o politike.", "en": "They are talking about politics."},
+            {"ru": "Дети играют в саду.", "tr": "Deti igrayut v sadu.", "en": "The children are playing in the garden. (locative-2)"},
+            {"ru": "Я мечтаю о море.", "tr": "Ya mechtayu o more.", "en": "I dream about the sea."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "full-noun-declension-tables",
+      "title": "8. Full Noun Declension Tables",
+      "summary": "Consolidated singular and plural paradigms for all three declensions, all six cases.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Here are the complete reference paradigms. Use these to cross-check anything in the case chapters above. Representative nouns: <em>стол</em> (m. inanim.), <em>студент</em> (m. anim.), <em>музей</em> (m. soft), <em>окно/море</em> (n.), <em>книга/неделя</em> (f. 1st), <em>ночь</em> (f. 3rd)."
+        },
+        {
+          "type": "table",
+          "caption": "2nd declension — masculine singular & plural",
+          "headers": ["Case", "стол (hard, inan.)", "студент (hard, anim.)", "музей (soft -й)", "столы / студенты / музеи (pl.)"],
+          "rows": [
+            ["Nominative", "стол", "студент", "музей", "столы / студенты / музеи"],
+            ["Accusative", "стол", "студента", "музей", "столы / студентов / музеи"],
+            ["Genitive", "стола", "студента", "музея", "столов / студентов / музеев"],
+            ["Dative", "столу", "студенту", "музею", "столам / студентам / музеям"],
+            ["Instrumental", "столом", "студентом", "музеем", "столами / студентами / музеями"],
+            ["Prepositional", "столе", "студенте", "музее", "столах / студентах / музеях"]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "2nd declension — neuter singular & plural",
+          "headers": ["Case", "окно (hard)", "море (soft)", "окна (pl.)", "моря (pl.)"],
+          "rows": [
+            ["Nominative", "окно", "море", "окна", "моря"],
+            ["Accusative", "окно", "море", "окна", "моря"],
+            ["Genitive", "окна", "моря", "окон", "морей"],
+            ["Dative", "окну", "морю", "окнам", "морям"],
+            ["Instrumental", "окном", "морем", "окнами", "морями"],
+            ["Prepositional", "окне", "море", "окнах", "морях"]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "1st declension — feminine singular & plural",
+          "headers": ["Case", "книга (hard)", "неделя (soft)", "книги (pl.)", "недели (pl.)"],
+          "rows": [
+            ["Nominative", "книга", "неделя", "книги", "недели"],
+            ["Accusative", "книгу", "неделю", "книги", "недели"],
+            ["Genitive", "книги", "недели", "книг", "недель"],
+            ["Dative", "книге", "неделе", "книгам", "неделям"],
+            ["Instrumental", "книгой", "неделей", "книгами", "неделями"],
+            ["Prepositional", "книге", "неделе", "книгах", "неделях"]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "3rd declension — feminine -ь singular & plural",
+          "headers": ["Case", "ночь (sg.)", "ночи (pl.)"],
+          "rows": [
+            ["Nominative", "ночь", "ночи"],
+            ["Accusative", "ночь", "ночи"],
+            ["Genitive", "ночи", "ночей"],
+            ["Dative", "ночи", "ночам"],
+            ["Instrumental", "ночью", "ночами"],
+            ["Prepositional", "ночи", "ночах"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Spelling rules that override the tables.</strong> (1) After г к х ж ч ш щ write <em>и</em> not <em>ы</em>. (2) After ж ч ш щ ц write unstressed <em>е</em> not <em>о</em> (товари́щем, but отцо́м when stressed). (3) Never write я ю after ж ч ш щ. These cause many of the surface variations above."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Irregular plurals to memorize:</strong> <em>друг → друзья</em> (gen. друзей), <em>брат → братья</em>, <em>сын → сыновья</em>, <em>дерево → деревья</em>; <em>город → города́</em>, <em>дом → дома́</em>, <em>учитель → учителя́</em> (stressed -а́ plurals); <em>человек → люди</em>, <em>ребёнок → дети</em>; <em>мать → матери</em>, <em>дочь → дочери</em> (insert -ер-)."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "У наших друзей новая машина.", "tr": "U nashikh druzey novaya mashina.", "en": "Our friends have a new car. (irregular gen. pl.)"},
+            {"ru": "В городах много домов.", "tr": "V gorodakh mnogo domov.", "en": "There are many houses in the cities."},
+            {"ru": "Я разговаривал с матерью.", "tr": "Ya razgovarival s mater'yu.", "en": "I was talking with my mother. (instr. sg., insert -er-)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjectives",
+      "title": "9. Adjectives: Agreement & Declension",
+      "summary": "Long-form adjectives agree in gender, number, and case; hard vs soft stems; plus short-form adjectives.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian <strong>adjectives</strong> agree with their noun in <em>gender, number, and case</em>. The long (attributive) form is the dictionary form (e.g. <em>новый</em>, new). Stems are either <strong>hard</strong> (новый) or <strong>soft</strong> (синий, blue); a few are 'mixed' due to spelling rules (русский, большой, хороший)."
+        },
+        {
+          "type": "table",
+          "caption": "Hard-stem adjective новый ('new') — full declension",
+          "headers": ["Case", "Masc.", "Neut.", "Fem.", "Plural"],
+          "rows": [
+            ["Nominative", "новый", "новое", "новая", "новые"],
+            ["Accusative", "новый / нового*", "новое", "новую", "новые / новых*"],
+            ["Genitive", "нового", "нового", "новой", "новых"],
+            ["Dative", "новому", "новому", "новой", "новым"],
+            ["Instrumental", "новым", "новым", "новой", "новыми"],
+            ["Prepositional", "новом", "новом", "новой", "новых"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "* The masculine and plural accusative follow the <strong>animacy rule</strong> just like nouns: with animate nouns the adjective uses the genitive form (<em>нового студента</em>, <em>новых студентов</em>); with inanimate nouns it uses the nominative form (<em>новый стол</em>, <em>новые столы</em>)."
+        },
+        {
+          "type": "table",
+          "caption": "Soft-stem adjective синий ('blue') — full declension",
+          "headers": ["Case", "Masc.", "Neut.", "Fem.", "Plural"],
+          "rows": [
+            ["Nominative", "синий", "синее", "синяя", "синие"],
+            ["Accusative", "синий / синего*", "синее", "синюю", "синие / синих*"],
+            ["Genitive", "синего", "синего", "синей", "синих"],
+            ["Dative", "синему", "синему", "синей", "синим"],
+            ["Instrumental", "синим", "синим", "синей", "синими"],
+            ["Prepositional", "синем", "синем", "синей", "синих"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "The soft paradigm simply substitutes the soft-series vowels (я/ю/и/е) for the hard ones (а/у/ы/о). <strong>Mixed-stem</strong> adjectives like <em>русский</em>, <em>большой</em>, <em>хороший</em> follow hard endings but obey the spelling rules (и after к/г/х/ш; unstressed е after hushers): русское but большо́е, хоро́шее."
+        },
+        {
+          "type": "prose",
+          "html": "The <strong>short form</strong> of an adjective exists only in the nominative, agrees in gender/number, and functions as a <em>predicate</em> (after a copula), never as an attribute. It is formed from the stem with the endings -Ø (m.), -а (f.), -о (n.), -ы/-и (pl.)."
+        },
+        {
+          "type": "table",
+          "caption": "Short-form adjectives",
+          "headers": ["Long form", "Masc.", "Fem.", "Neut.", "Plural"],
+          "rows": [
+            ["красивый (beautiful)", "красив", "красива", "красиво", "красивы"],
+            ["умный (clever)", "умён*", "умна", "умно", "умны"],
+            ["рад (glad — short only)", "рад", "рада", "радо", "рады"],
+            ["должен (must / obliged)", "должен", "должна", "должно", "должны"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "* A fleeting vowel often appears in the masculine short form to break a cluster: <em>умный → умён</em>, <em>интересный → интересен</em>, <em>больной → болен</em>. Short forms tend to express a <em>temporary or relative</em> state, while long forms express a permanent/inherent quality: <em>Она больна</em> (she is ill right now) vs. <em>Она больная</em> (she is a sick/sickly person)."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Я читаю интересную книгу.", "tr": "Ya chitayu interesnuyu knigu.", "en": "I am reading an interesting book. (fem. acc.)"},
+            {"ru": "Мы говорили о новых студентах.", "tr": "My govorili o novykh studentakh.", "en": "We talked about the new students. (prep. pl.)"},
+            {"ru": "Этот город очень красив.", "tr": "Etot gorod ochen' krasiv.", "en": "This city is very beautiful. (short form, predicate)"},
+            {"ru": "Я должен идти.", "tr": "Ya dolzhen idti.", "en": "I must go. (short form должен)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparatives-superlatives",
+      "title": "10. Comparatives & Superlatives",
+      "summary": "Forming and using the comparative and superlative degrees of adjectives and adverbs.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>comparative</strong> has two types. The <em>simple/synthetic</em> comparative is a single indeclinable word ending in <code>-ее</code> (or <code>-ей</code>) used predicatively: <em>новее</em> (newer), <em>интереснее</em> (more interesting). The <em>compound/analytic</em> comparative uses <strong>более</strong> + the plain adjective and can be attributive: <em>более интересная книга</em> (a more interesting book)."
+        },
+        {
+          "type": "table",
+          "caption": "Common irregular simple comparatives",
+          "headers": ["Adjective", "Meaning", "Comparative"],
+          "rows": [
+            ["хороший", "good", "лучше (better)"],
+            ["плохой", "bad", "хуже (worse)"],
+            ["большой", "big", "больше (bigger / more)"],
+            ["маленький", "small", "меньше (smaller / less)"],
+            ["высокий", "tall/high", "выше"],
+            ["низкий", "low", "ниже"],
+            ["старый", "old", "старше (of people) / старее (of things)"],
+            ["молодой", "young", "моложе / младше"],
+            ["дорогой", "dear/expensive", "дороже"],
+            ["дешёвый", "cheap", "дешевле"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "To say 'than', use either <strong>чем</strong> + nominative, or simply put the standard of comparison in the <strong>genitive</strong> (only possible with the simple comparative): <em>Москва больше, чем Петербург</em> = <em>Москва больше Петербурга</em>."
+        },
+        {
+          "type": "prose",
+          "html": "The <strong>superlative</strong> is most often formed with <strong>самый</strong> + adjective (declined, agreeing fully): <em>самый интересный фильм</em> (the most interesting film). A bookish synthetic superlative in <code>-ейший / -айший</code> exists (новейший — newest/latest, величайший — greatest), often with an elative ('extremely') rather than comparative sense. The phrase <strong>comparative + всех / всего</strong> means 'most of all': <em>Он бегает быстрее всех</em> — he runs fastest of all."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Эта задача труднее предыдущей.", "tr": "Eta zadacha trudneye predydushchey.", "en": "This problem is harder than the previous one. (gen. comparison)"},
+            {"ru": "Он говорит по-русски лучше, чем я.", "tr": "On govorit po-russki luchshe, chem ya.", "en": "He speaks Russian better than I do. (чем + nom.)"},
+            {"ru": "Это самый красивый город в мире.", "tr": "Eto samyy krasivyy gorod v mire.", "en": "This is the most beautiful city in the world."},
+            {"ru": "Больше всего я люблю читать.", "tr": "Bol'she vsego ya lyublyu chitat'.", "en": "Most of all I love to read."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pronouns",
+      "title": "11. Pronouns",
+      "summary": "Personal, possessive, demonstrative, and interrogative pronouns with full case tables.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Pronouns decline like nouns/adjectives but with many idiosyncrasies. The <strong>personal pronouns</strong> are the most irregular and the most frequent — learn this table cold."
+        },
+        {
+          "type": "table",
+          "caption": "Personal pronouns — full declension",
+          "headers": ["Case", "я", "ты", "он/оно", "она", "мы", "вы", "они"],
+          "rows": [
+            ["Nominative", "я", "ты", "он/оно", "она", "мы", "вы", "они"],
+            ["Accusative", "меня", "тебя", "его (него)", "её (неё)", "нас", "вас", "их (них)"],
+            ["Genitive", "меня", "тебя", "его (него)", "её (неё)", "нас", "вас", "их (них)"],
+            ["Dative", "мне", "тебе", "ему (нему)", "ей (ней)", "нам", "вам", "им (ним)"],
+            ["Instrumental", "мной", "тобой", "им (ним)", "ей/ею (ней)", "нами", "вами", "ими (ними)"],
+            ["Prepositional", "(обо) мне", "(о) тебе", "(о) нём", "(о) ней", "(о) нас", "(о) вас", "(о) них"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>The н- rule:</strong> the 3rd-person forms (он/она/они) add an initial <code>н-</code> after a preposition: <em>у него</em> (he has), <em>с ней</em> (with her), <em>к ним</em> (toward them). Without a preposition they stay bare: <em>его книга</em> (his book), <em>я вижу его</em> (I see him)."
+        },
+        {
+          "type": "table",
+          "caption": "Possessive pronoun мой ('my') — full declension (твой, свой decline identically)",
+          "headers": ["Case", "Masc.", "Neut.", "Fem.", "Plural"],
+          "rows": [
+            ["Nominative", "мой", "моё", "моя", "мои"],
+            ["Accusative", "мой/моего*", "моё", "мою", "мои/моих*"],
+            ["Genitive", "моего", "моего", "моей", "моих"],
+            ["Dative", "моему", "моему", "моей", "моим"],
+            ["Instrumental", "моим", "моим", "моей", "моими"],
+            ["Prepositional", "моём", "моём", "моей", "моих"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>наш / ваш</strong> decline like мой but with stem наш-/ваш- (наш, наша, наше, наши; нашего, нашему…). <strong>его / её / их</strong> ('his / her / their') are <em>indeclinable</em> — they never change form. <strong>свой</strong> is the reflexive possessive ('one's own'), referring back to the subject: <em>Он любит свою работу</em> (he loves his [own] work) vs. <em>Он любит его работу</em> (someone else's)."
+        },
+        {
+          "type": "table",
+          "caption": "Demonstratives этот ('this') and тот ('that')",
+          "headers": ["Case", "этот (m.)", "это (n.)", "эта (f.)", "эти (pl.)", "тот (m.)", "та (f.)", "те (pl.)"],
+          "rows": [
+            ["Nominative", "этот", "это", "эта", "эти", "тот", "та", "те"],
+            ["Accusative", "этот/этого", "это", "эту", "эти/этих", "тот/того", "ту", "те/тех"],
+            ["Genitive", "этого", "этого", "этой", "этих", "того", "той", "тех"],
+            ["Dative", "этому", "этому", "этой", "этим", "тому", "той", "тем"],
+            ["Instrumental", "этим", "этим", "этой", "этими", "тем", "той", "теми"],
+            ["Prepositional", "этом", "этом", "этой", "этих", "том", "той", "тех"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Distinguish the <em>neuter pronoun</em> <strong>это</strong> meaning 'this is / it is' (invariable: <em>Это книга</em>, <em>Это мой брат</em>) from the <em>agreeing demonstrative</em> <strong>этот/эта/это/эти</strong> ('this [noun]')."
+        },
+        {
+          "type": "table",
+          "caption": "Interrogatives кто / что / какой / чей",
+          "headers": ["Case", "кто (who)", "что (what)", "чей (m., whose)", "какой (m., which)"],
+          "rows": [
+            ["Nominative", "кто", "что", "чей", "какой"],
+            ["Accusative", "кого", "что", "чей/чьего", "какой/какого"],
+            ["Genitive", "кого", "чего", "чьего", "какого"],
+            ["Dative", "кому", "чему", "чьему", "какому"],
+            ["Instrumental", "кем", "чем", "чьим", "каким"],
+            ["Prepositional", "(о) ком", "(о) чём", "(о) чьём", "(о) каком"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>чей</strong> agrees with the possessed noun: чей (m.), чья (f.), чьё (n.), чьи (pl.). <strong>какой</strong> declines exactly like a hard adjective (какой, какая, какое, какие)."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "У меня есть вопрос.", "tr": "U menya yest' vopros.", "en": "I have a question. (lit. by me there is)"},
+            {"ru": "Я думаю о тебе.", "tr": "Ya dumayu o tebe.", "en": "I am thinking about you."},
+            {"ru": "Она взяла свою книгу.", "tr": "Ona vzyala svoyu knigu.", "en": "She took her (own) book."},
+            {"ru": "Чья это машина?", "tr": "Ch'ya eto mashina?", "en": "Whose car is this?"},
+            {"ru": "С кем ты говорил?", "tr": "S kem ty govoril?", "en": "With whom were you talking?"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numerals",
+      "title": "12. Numerals",
+      "summary": "Cardinal and ordinal numbers, their tricky case government, and agreement.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian numerals are notorious because the number <em>governs the case</em> of the counted noun, and the numerals themselves decline. First, the case government — the single most tested point."
+        },
+        {
+          "type": "table",
+          "caption": "Case the counted noun takes (nominative context)",
+          "headers": ["Number", "Noun case", "Example", "Gloss"],
+          "rows": [
+            ["1 (один, одна, одно)", "nominative singular (agrees!)", "один стол, одна книга", "one table / one book"],
+            ["2, 3, 4 (два/две, три, четыре)", "genitive SINGULAR", "два стола, три книги", "two tables / three books"],
+            ["5–20, 30, 40…(5 and up)", "genitive PLURAL", "пять столов, десять книг", "five tables / ten books"],
+            ["compound ending in 1", "nom. sg.", "двадцать один стол", "twenty-one tables"],
+            ["compound ending in 2-4", "gen. sg.", "тридцать два студента", "thirty-two students"],
+            ["compound ending in 5-9, 0", "gen. pl.", "сорок пять студентов", "forty-five students"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>2 has gender:</strong> <em>два</em> with masc./neut. (два стола, два окна) but <em>две</em> with fem. (две книги). <em>Один</em> agrees fully (один, одна, одно, одни). The teens 11–14 take the genitive PLURAL despite ending in 1–4 (одиннадцать книг). When the whole quantified phrase is itself in an oblique case, the number and noun simply agree in that case: <em>с двумя друзьями</em> (with two friends, instr.)."
+        },
+        {
+          "type": "table",
+          "caption": "Cardinal numbers 1–20, plus tens and large",
+          "headers": ["Numeral", "Russian", "Numeral", "Russian"],
+          "rows": [
+            ["1", "один / одна / одно", "11", "одиннадцать"],
+            ["2", "два / две", "12", "двенадцать"],
+            ["3", "три", "13", "тринадцать"],
+            ["4", "четыре", "14", "четырнадцать"],
+            ["5", "пять", "15", "пятнадцать"],
+            ["6", "шесть", "20", "двадцать"],
+            ["7", "семь", "30 / 40 / 50", "тридцать / сорок / пятьдесят"],
+            ["8", "восемь", "100 / 200", "сто / двести"],
+            ["9", "девять", "1000", "тысяча"],
+            ["10", "десять", "1 000 000", "миллион"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Ordinal numbers</strong> ('first, second…') are adjectives: they decline and agree fully in gender, number, and case. In a compound ordinal, only the <em>last</em> word is ordinal: <em>двадцать первый</em> (twenty-first), <em>в тысяча девятьсот сорок пятом году</em> (in 1945)."
+        },
+        {
+          "type": "table",
+          "caption": "Ordinal numbers (masculine nom. form)",
+          "headers": ["#", "Ordinal", "#", "Ordinal"],
+          "rows": [
+            ["1st", "первый", "7th", "седьмой"],
+            ["2nd", "второй", "8th", "восьмой"],
+            ["3rd", "третий*", "9th", "девятый"],
+            ["4th", "четвёртый", "10th", "десятый"],
+            ["5th", "пятый", "20th", "двадцатый"],
+            ["6th", "шестой", "100th", "сотый"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "* <em>третий</em> is a soft adjective with -ь- in its endings: третий, третья, третье, третьи; третьего, третьему… "
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "У меня две сестры и один брат.", "tr": "U menya dve sestry i odin brat.", "en": "I have two sisters and one brother."},
+            {"ru": "В группе двадцать пять студентов.", "tr": "V gruppe dvadtsat' pyat' studentov.", "en": "There are twenty-five students in the group. (gen. pl.)"},
+            {"ru": "Сегодня третье мая.", "tr": "Segodnya tret'ye maya.", "en": "Today is the third of May. (ordinal + gen. of month)"},
+            {"ru": "Он пришёл с двумя друзьями.", "tr": "On prishyol s dvumya druz'yami.", "en": "He came with two friends. (number declined, instr.)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verb-basics-aspect-conjugation",
+      "title": "13. Verb Basics: Aspect & Conjugation",
+      "summary": "The aspect system (imperfective vs perfective), the two conjugation classes with present-tense tables, and the verb быть.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<strong>Aspect</strong> is the organizing principle of the Russian verb. Almost every verb belongs to an <em>aspectual pair</em>: an <strong>imperfective</strong> (несовершенный вид) and a <strong>perfective</strong> (совершенный вид) partner with the same lexical meaning but different views of the action."
+        },
+        {
+          "type": "table",
+          "caption": "Imperfective vs perfective: the core contrast",
+          "headers": ["Imperfective (НСВ)", "Perfective (СВ)"],
+          "rows": [
+            ["process, ongoing action", "completed, whole action with a result"],
+            ["repetition, habit", "single one-time event"],
+            ["no result implied", "result / boundary reached"],
+            ["has present, past, future tenses", "has ONLY past and future (no present!)"],
+            ["читать (to read)", "прочитать (to read [through])"],
+            ["писать (to write)", "написать (to write [completely])"]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>How pairs form:</strong> by <em>prefix</em> (делать → сделать, писать → написать), by <em>suffix/stem change</em> (решать → решить, давать → дать, покупать → купить), or suppletively (говорить → сказать, брать → взять).",
+            "<strong>When to use imperfective:</strong> describing a process ('I was reading'), habits ('I read every day'), general statements, and after phase verbs (начать, продолжать).",
+            "<strong>When to use perfective:</strong> a single completed action with a result ('I read the whole book'), a sequence of finished events, the future as a definite accomplished fact."
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "In the <strong>present tense</strong> (imperfective only), verbs belong to one of two <strong>conjugation classes</strong>, distinguished by the vowel in the endings: the <em>1st conjugation</em> (-е-/-ё-, with -ут/-ют in the 3pl) and the <em>2nd conjugation</em> (-и-, with -ат/-ят in the 3pl)."
+        },
+        {
+          "type": "table",
+          "caption": "1st conjugation: читать ('to read') · present tense",
+          "headers": ["Person", "Form", "Ending"],
+          "rows": [
+            ["я", "читаю", "-ю"],
+            ["ты", "читаешь", "-ешь"],
+            ["он/она/оно", "читает", "-ет"],
+            ["мы", "читаем", "-ем"],
+            ["вы", "читаете", "-ете"],
+            ["они", "читают", "-ют"]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "2nd conjugation: говорить ('to speak') · present tense",
+          "headers": ["Person", "Form", "Ending"],
+          "rows": [
+            ["я", "говорю", "-ю"],
+            ["ты", "говоришь", "-ишь"],
+            ["он/она/оно", "говорит", "-ит"],
+            ["мы", "говорим", "-им"],
+            ["вы", "говорите", "-ите"],
+            ["они", "говорят", "-ят"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Stress can shift and consonants can mutate. In the 2nd conjugation a stem-final consonant often mutates only in the 1sg: <em>любить → люблю</em> (б→бл), <em>видеть → вижу</em> (д→ж), <em>просить → прошу</em> (с→ш). Some verbs are 'mixed' or irregular (хотеть, бежать)."
+        },
+        {
+          "type": "prose",
+          "html": "The verb <strong>быть</strong> ('to be') has essentially <em>no present-tense form</em> — Russian uses zero copula: <em>Я студент</em> = 'I am a student'. The form <strong>есть</strong> survives mainly in existential 'there is' and possession (<em>У меня есть…</em>). Its past is <em>был/была/было/были</em> and its future is the irregular <em>буду, будешь, будет, будем, будете, будут</em>."
+        },
+        {
+          "type": "table",
+          "caption": "быть — past and future",
+          "headers": ["", "Past", "Future"],
+          "rows": [
+            ["я", "был / была", "буду"],
+            ["ты", "был / была", "будешь"],
+            ["он/она/оно", "был / была / было", "будет"],
+            ["мы / вы / они", "были", "будем / будете / будут"]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Я читаю эту книгу уже неделю.", "tr": "Ya chitayu etu knigu uzhe nedelyu.", "en": "I've been reading this book for a week. (imperf., process)"},
+            {"ru": "Я прочитал эту книгу за один день.", "tr": "Ya prochital etu knigu za odin den'.", "en": "I read this book in one day. (perf., result)"},
+            {"ru": "Он говорит по-русски и по-английски.", "tr": "On govorit po-russki i po-angliyski.", "en": "He speaks Russian and English."},
+            {"ru": "Раньше здесь был парк.", "tr": "Ran'she zdes' byl park.", "en": "There used to be a park here. (past of быть)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "past-future-tenses",
+      "title": "14. Past & Future Tenses",
+      "summary": "Past tense agreement by gender/number, and the two ways of forming the future from each aspect.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>past tense</strong> is formed from the infinitive stem + the suffix <code>-л</code>, and — remarkably — it agrees with the subject in <em>gender and number</em>, not person. This is because it descends from an old participle."
+        },
+        {
+          "type": "table",
+          "caption": "Past tense agreement: читать / говорить",
+          "headers": ["Subject", "Ending", "читать", "говорить"],
+          "rows": [
+            ["masc. sg.", "-л", "читал", "говорил"],
+            ["fem. sg.", "-ла", "читала", "говорила"],
+            ["neut. sg.", "-ло", "читало", "говорило"],
+            ["plural (all)", "-ли", "читали", "говорили"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "With <em>вы</em> as a polite singular, use the plural -ли (Вы читали). A few verbs lose the -л in the masculine: <em>нести → нёс</em> (but несла, несло, несли), <em>мочь → мог</em> (могла), <em>идти → шёл</em> (шла, шло, шли — suppletive)."
+        },
+        {
+          "type": "prose",
+          "html": "The <strong>future</strong> is built differently for each aspect — this is a direct payoff of the aspect system."
+        },
+        {
+          "type": "table",
+          "caption": "The two futures",
+          "headers": ["Aspect", "Future type", "Formation", "Example"],
+          "rows": [
+            ["Imperfective", "COMPOUND future", "буду/будешь… + imperfective INFINITIVE", "Я буду читать (I will read / be reading)"],
+            ["Perfective", "SIMPLE future", "the present-tense endings on the perfective stem", "Я прочитаю (I will read [it through])"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Crucial consequence: the perfective verb has <em>no present tense</em>. Its 'present-looking' conjugation (прочитаю, напишу, скажу) is in fact its <strong>future</strong>. So <em>я пишу</em> = 'I am writing' (imperf. present) but <em>я напишу</em> = 'I will write' (perf. future)."
+        },
+        {
+          "type": "table",
+          "caption": "Compound (imperf.) future of читать",
+          "headers": ["Person", "Form"],
+          "rows": [
+            ["я", "буду читать"],
+            ["ты", "будешь читать"],
+            ["он/она/оно", "будет читать"],
+            ["мы", "будем читать"],
+            ["вы", "будете читать"],
+            ["они", "будут читать"]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Simple (perf.) future of прочитать",
+          "headers": ["Person", "Form"],
+          "rows": [
+            ["я", "прочитаю"],
+            ["ты", "прочитаешь"],
+            ["он/она/оно", "прочитает"],
+            ["мы", "прочитаем"],
+            ["вы", "прочитаете"],
+            ["они", "прочитают"]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Вчера она читала весь вечер.", "tr": "Vchera ona chitala ves' vecher.", "en": "Yesterday she read all evening. (imperf. past, fem.)"},
+            {"ru": "Завтра я буду работать.", "tr": "Zavtra ya budu rabotat'.", "en": "Tomorrow I will be working. (compound future)"},
+            {"ru": "Я напишу письмо и отправлю его.", "tr": "Ya napishu pis'mo i otpravlyu yego.", "en": "I will write the letter and send it. (perf. future, sequence)"},
+            {"ru": "Они уже ушли.", "tr": "Oni uzhe ushli.", "en": "They have already left. (perf. past, suppletive шли)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "imperative-conditional-reflexive-motion",
+      "title": "15. Imperative, Conditional, Reflexive & Verbs of Motion",
+      "summary": "Commands, the бы conditional/subjunctive, -ся reflexive verbs, and the paired verbs of motion with prefixes.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The <strong>imperative</strong> (command) is formed from the present/future stem. Drop the 3pl ending; if the stem ends in a vowel add <code>-й(те)</code>, otherwise add <code>-и(те)</code> (stressed) or <code>-ь(те)</code> (unstressed). Add <strong>-те</strong> for polite/plural."
+        },
+        {
+          "type": "table",
+          "caption": "Imperative formation",
+          "headers": ["Infinitive", "Stem (они-form)", "Informal sg.", "Polite/plural"],
+          "rows": [
+            ["читать", "читаj-ут", "читай", "читайте"],
+            ["говорить", "говор-ят", "говори", "говорите"],
+            ["писать", "пиш-ут", "пиши", "пишите"],
+            ["встать", "встан-ут", "встань", "встаньте"],
+            ["(irregular) дать", "—", "дай", "дайте"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Aspect matters in commands too: perfective for a specific one-off request (<em>Закройте окно!</em> — Close the window!), imperfective for general instructions, invitations, or (with не) prohibitions (<em>Не закрывайте окно!</em> — Don't close the window). The 1pl 'let's' uses <em>Давай(те)</em> + infinitive/future: <em>Давайте пойдём</em>."
+        },
+        {
+          "type": "prose",
+          "html": "The <strong>conditional / subjunctive</strong> uses the particle <strong>бы</strong> (often after a comma in clauses) together with the <em>past-tense</em> form of the verb, for any time reference. It expresses hypothetical, wished-for, or politely softened actions."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Если бы у меня было время, я бы поехал в Москву.", "tr": "Yesli by u menya bylo vremya, ya by poyekhal v Moskvu.", "en": "If I had time, I would go to Moscow. (бы + past)"},
+            {"ru": "Я хотел бы спросить.", "tr": "Ya khotel by sprosit'.", "en": "I would like to ask. (polite softening)"}
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Reflexive verbs</strong> carry the postfix <code>-ся</code> (after a consonant) / <code>-сь</code> (after a vowel). Beyond literal reflexive meaning ('oneself'), -ся marks the reciprocal, the passive, the intransitive/middle, and many lexicalized verbs."
+        },
+        {
+          "type": "table",
+          "caption": "Functions of -ся, with умываться ('to wash oneself')",
+          "headers": ["Function", "Example", "Gloss"],
+          "rows": [
+            ["true reflexive", "Я умываюсь.", "I wash (myself)."],
+            ["reciprocal", "Они встречаются.", "They meet (each other)."],
+            ["intransitive/middle", "Дверь открывается.", "The door opens / is opening."],
+            ["passive", "Дом строится рабочими.", "The house is being built by workers."],
+            ["lexicalized (no non-ся form)", "Я улыбаюсь / надеюсь / боюсь", "I smile / hope / fear."]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Conjugation of -ся verbs: add -ся after a consonant ending and -сь after a vowel ending — <em>учусь, учишься, учится, учимся, учитесь, учатся</em>. Note 2sg учишь<strong>ся</strong> (after -ь, treated as consonant)."
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Verbs of motion</strong> form a special system. Unprefixed, each comes in a pair: a <em>unidirectional/determinate</em> verb (one specific trip, in progress) and a <em>multidirectional/indeterminate</em> verb (habitual, round-trip, or general ability)."
+        },
+        {
+          "type": "table",
+          "caption": "Core paired verbs of motion",
+          "headers": ["Meaning", "Unidirectional (one way, now)", "Multidirectional (habitual / round-trip)"],
+          "rows": [
+            ["go (on foot)", "идти", "ходить"],
+            ["go (by vehicle)", "ехать", "ездить"],
+            ["run", "бежать", "бегать"],
+            ["fly", "лететь", "летать"],
+            ["swim/sail", "плыть", "плавать"],
+            ["carry (by hand)", "нести", "носить"],
+            ["lead/take (a person)", "вести", "водить"],
+            ["convey (by vehicle)", "везти", "возить"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "Adding a <strong>prefix</strong> both adds directional meaning and collapses the pair into an ordinary aspectual pair: the unidirectional stem becomes <em>perfective</em>, the multidirectional stem becomes <em>imperfective</em>. E.g. <em>при-</em> (arrival): прийти (perf.) / приходить (imperf.) — to arrive on foot."
+        },
+        {
+          "type": "table",
+          "caption": "Common motion prefixes",
+          "headers": ["Prefix", "Meaning", "Example (идти/ходить)", "Gloss"],
+          "rows": [
+            ["при-", "arrival", "прийти / приходить", "to arrive, come"],
+            ["у-", "departure (away)", "уйти / уходить", "to leave, go away"],
+            ["в(о)-", "entering", "войти / входить", "to enter"],
+            ["вы-", "exiting", "выйти / выходить", "to exit, go out"],
+            ["под(о)-", "approaching", "подойти / подходить", "to approach"],
+            ["от(о)-", "moving off", "отойти / отходить", "to step away"],
+            ["пере-", "crossing", "перейти / переходить", "to cross"],
+            ["до-", "reaching", "дойти / доходить", "to reach (as far as)"]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Сейчас я иду в университет.", "tr": "Seychas ya idu v universitet.", "en": "I'm walking to the university right now. (unidirectional)"},
+            {"ru": "Я хожу в университет каждый день.", "tr": "Ya khozhu v universitet kazhdyy den'.", "en": "I go to the university every day. (multidirectional, habit)"},
+            {"ru": "Поезд приходит в восемь часов.", "tr": "Poyezd prikhodit v vosem' chasov.", "en": "The train arrives at eight o'clock. (prefixed imperf.)"},
+            {"ru": "Закройте, пожалуйста, дверь.", "tr": "Zakroyte, pozhaluysta, dver'.", "en": "Please close the door. (perf. imperative)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "participles-gerunds-syntax",
+      "title": "16. Participles, Verbal Adverbs & Syntax Notes",
+      "summary": "Active/passive and present/past participles, the деепричастие (verbal adverb), plus word order, negation, and questions.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<strong>Participles</strong> (причастия) are verbal adjectives: they are formed from verbs but decline like adjectives and agree with a noun. Russian has four, crossing voice (active/passive) with tense (present/past). They are largely bookish/written register; speech prefers a <em>который</em> clause."
+        },
+        {
+          "type": "table",
+          "caption": "The four participles (from читать / прочитать)",
+          "headers": ["Participle", "Suffix", "Example", "Meaning"],
+          "rows": [
+            ["present active", "-ущ-/-ющ-/-ащ-/-ящ-", "читающий", "(the one) who is reading"],
+            ["past active", "-вш-/-ш-", "читавший / прочитавший", "(the one) who was/has read"],
+            ["present passive", "-ем-/-им-", "читаемый", "(that which) is being read"],
+            ["past passive", "-нн-/-енн-/-т-", "прочитанный", "(that which) has been read"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Present participles form only from <strong>imperfective</strong> verbs (there is no perfective present). Passive participles form only from <strong>transitive</strong> verbs. The <em>past passive participle</em> is the most used; its short form builds the periphrastic passive: <em>Книга прочитана</em> (the book has been read), <em>Дом построен</em> (the house has been built)."
+        },
+        {
+          "type": "prose",
+          "html": "The <strong>verbal adverb / gerund</strong> (деепричастие) is an indeclinable form expressing a secondary, simultaneous or prior action by the <em>same subject</em> as the main verb — English '-ing' / 'having ...ed'."
+        },
+        {
+          "type": "table",
+          "caption": "Verbal adverbs (деепричастия)",
+          "headers": ["Type", "From aspect", "Suffix", "Example", "Meaning"],
+          "rows": [
+            ["imperfective (simultaneous)", "imperfective", "-я / -а", "читая", "while reading"],
+            ["perfective (prior)", "perfective", "-в / -вши / -ши", "прочитав", "having read"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "A deeprichastie clause shares the subject of the main clause; a mismatch is a classic error (the Russian equivalent of the 'dangling participle'). <em>Читая книгу, я заснул</em> — 'Reading the book, I fell asleep' (I both read and slept). Reflexive forms keep -сь: <em>улыбаясь</em> (smiling)."
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Word order</strong> is grammatically free but pragmatically governed: Russian tends to place <em>given/topic</em> information first and <em>new/focus</em> information last. The neutral order is Subject–Verb–Object, but reordering shifts emphasis rather than meaning: <em>Книгу читает студент</em> foregrounds 'the book'."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Negation:</strong> the particle <strong>не</strong> precedes the negated word: <em>Я не знаю</em> (I don't know). Negating the verb often pulls the object into the <em>genitive</em>: <em>Я не вижу ошибки</em> (I don't see the/an error).",
+            "<strong>Double (multiple) negation is obligatory:</strong> negative pronouns/adverbs co-occur with <strong>не</strong>: <em>Я ничего не знаю</em> (lit. 'I nothing don't know' = I know nothing); <em>Никто никогда ничего не говорит</em> is perfectly grammatical.",
+            "<strong>нет</strong> ('there is no') governs the genitive: <em>Здесь нет воды</em> (there's no water here); past <em>не было</em> + gen., future <em>не будет</em> + gen.",
+            "<strong>Yes/no questions</strong> are formed by intonation alone (rising pitch on the focus word) — no word order change needed: <em>Ты дома?</em> = 'Are you home?'. The particle <strong>ли</strong> gives a more formal/indirect yes-no question: <em>Не знаете ли вы…?</em>",
+            "<strong>Wh-questions</strong> use the interrogatives кто, что, где, когда, почему, как, какой, etc., normally clause-initial."
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Студент, читающий книгу, мой брат.", "tr": "Student, chitayushchiy knigu, moy brat.", "en": "The student reading the book is my brother. (present active participle)"},
+            {"ru": "Прочитав письмо, она заплакала.", "tr": "Prochitav pis'mo, ona zaplakala.", "en": "Having read the letter, she burst into tears. (perfective verbal adverb)"},
+            {"ru": "Я никогда там не был.", "tr": "Ya nikogda tam ne byl.", "en": "I have never been there. (obligatory double negation)"},
+            {"ru": "У нас нет времени.", "tr": "U nas net vremeni.", "en": "We don't have time. (нет + genitive)"},
+            {"ru": "Вы говорите по-русски?", "tr": "Vy govorite po-russki?", "en": "Do you speak Russian? (yes/no question by intonation)"}
+          ]
+        }
+      ]
+    }
+  ]
+}

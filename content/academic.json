@@ -1,0 +1,429 @@
+{
+  "id": "academic",
+  "title": "Академический русский — Academic Russian",
+  "description": "A structured course in научный стиль (the Russian scholarly register) for advanced, PhD-level English speakers who must read and write scholarly Russian. Eight units cover register and style, the grammar of impersonal and passive constructions, discourse connectors, the architecture of a paper or dissertation, citation conventions, the language of aims and definitions, data presentation and hedging, and reading strategies for dense authentic prose.",
+  "units": [
+    {
+      "id": "register-and-style",
+      "title": "1. Регистр и стиль: научный стиль",
+      "summary": "What makes the scholarly register distinct from everyday Russian: nominalisation, impersonality, objectivity, and the avoidance of «я».",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The Russian scholarly register, <strong>научный стиль</strong>, is one of the functional styles (<em>функциональные стили</em>) of the literary language. Its governing values are <strong>точность</strong> (precision), <strong>логичность</strong> (logical coherence), <strong>отвлечённость и обобщённость</strong> (abstraction and generalisation), and above all <strong>объективность</strong> (objectivity). The author effaces themselves: claims are presented as properties of the subject matter rather than as personal opinions."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Номинализация (nominalisation).</strong> Actions are recast as abstract nouns: instead of <em>«мы изучили, как меняется температура»</em> one writes <em>«изучение изменения температуры»</em>. Verbal nouns on <code>-ние</code>, <code>-ость</code>, <code>-ция</code> dominate.",
+            "<strong>Безличность и пассив (impersonality and passive).</strong> The agent is suppressed: <em>рассматривается</em>, <em>было показано</em>, <em>следует отметить</em>. This foregrounds the result, not the researcher.",
+            "<strong>Отказ от «я» (no first-person singular).</strong> The authorial <em>«я»</em> is essentially absent. Russian uses the <em>«мы» скромности</em> (authorial \"we\") or, more often, impersonal and passive forms.",
+            "<strong>Абстрактная лексика (abstract vocabulary).</strong> Terms, abstractions and book words replace concrete, conversational ones: <em>осуществлять</em> not <em>делать</em>, <em>обусловливать</em> not <em>из-за этого</em>.",
+            "<strong>Развёрнутый синтаксис (elaborated syntax).</strong> Long sentences with subordinate clauses, participles and verbal adverbs; explicit logical connectors between sentences."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Разговорный vs академический регистр — colloquial reformulated as academic",
+          "headers": ["Разговорный (colloquial)", "Академический (academic)", "English gloss"],
+          "rows": [
+            ["Мы взяли и посмотрели, что получится.", "Был проведён анализ полученных результатов.", "An analysis of the obtained results was carried out."],
+            ["Из-за этого всё поменялось.", "Это обусловило существенные изменения.", "This brought about substantial changes."],
+            ["Тут видно, что цифры растут.", "Наблюдается устойчивый рост показателей.", "A steady growth of the indicators is observed."],
+            ["Я думаю, что это правда.", "Представляется обоснованным считать данное утверждение справедливым.", "It appears justified to regard this claim as valid."],
+            ["Мы это сделали по-другому.", "Был применён иной методологический подход.", "A different methodological approach was applied."],
+            ["Короче, вот к чему мы пришли.", "Таким образом, можно сделать следующий вывод.", "Thus, the following conclusion can be drawn."],
+            ["Это очень важная штука.", "Данный фактор имеет принципиальное значение.", "This factor is of fundamental importance."]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "The colloquial <em>«я думаю»</em>, <em>«по-моему»</em>, <em>«мне кажется»</em> signal subjectivity and are avoided in formal scholarly writing. Replace them with impersonal modal frames: <strong>представляется, что…</strong>; <strong>можно полагать, что…</strong>; <strong>есть основания считать, что…</strong>."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "В настоящей работе рассматривается проблема классификации текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma klassifikácii tékstov.", "en": "The present work examines the problem of text classification."},
+            {"ru": "Нами было установлено, что данная зависимость носит нелинейный характер.", "tr": "Námi býlo ustanóvleno, čto dánnaja zavísimostʹ nósit nelinéjnyj charákter.", "en": "We established that the dependence in question is nonlinear in nature."},
+            {"ru": "Полученные данные свидетельствуют о наличии корреляции между переменными.", "tr": "Polúčennye dánnye svidételʹstvujut o nalíčii korreljácii méždu pereménnymi.", "en": "The data obtained attest to the presence of a correlation between the variables."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-impersonal-passive",
+      "title": "2. Грамматика академического русского",
+      "summary": "Impersonal and passive constructions, participles and verbal adverbs, and genitive chains — the structural backbone of dense scholarly prose.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Academic Russian leans on a small set of grammatical machines. Three are essential: <strong>impersonal / passive constructions</strong> that remove the agent, <strong>participles and verbal adverbs</strong> that compress clauses, and <strong>genitive chains</strong> that stack abstractions into a single noun phrase."
+        },
+        {
+          "type": "table",
+          "caption": "Безличные и пассивные конструкции — agentless constructions",
+          "headers": ["Конструкция", "Translit", "Function / English"],
+          "rows": [
+            ["рассматривается / исследуется", "rassmátrivaetsja / isslédujetsja", "is examined / is investigated (reflexive passive, present)"],
+            ["было показано, что…", "býlo pokázano, čto", "it was shown that… (short passive participle)"],
+            ["было установлено / получено", "býlo ustanóvleno / polúčeno", "it was established / obtained"],
+            ["можно считать / можно полагать", "móžno sčitátʹ / móžno polagátʹ", "one may regard / one may assume (impersonal modal)"],
+            ["следует отметить, что…", "slédujet otmétitʹ, čto", "it should be noted that…"],
+            ["необходимо подчеркнуть", "neobchodímo podčerknútʹ", "it is necessary to emphasise"],
+            ["представляется целесообразным", "predstavljáetsja celesoobráznym", "it appears expedient / advisable"],
+            ["принято считать", "prínjato sčitátʹ", "it is commonly held / customary to consider"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Причастия (participles)</strong> condense relative clauses into adjective-like forms. The most frequent in научный стиль are the <em>passive past participle</em> (<code>полученные результаты</code> — \"the results obtained\") and the <em>active present participle</em> (<code>факторы, определяющие исход</code> — \"the factors determining the outcome\"). <strong>Деепричастия (verbal adverbs)</strong> express a backgrounded simultaneous or prior action sharing the main subject: <code>учитывая эти данные, можно заключить…</code> (\"taking these data into account, one may conclude…\")."
+        },
+        {
+          "type": "table",
+          "caption": "Причастия и деепричастия — participles and verbal adverbs",
+          "headers": ["Форма", "Пример", "English"],
+          "rows": [
+            ["действ. наст. (active present participle)", "явления, влияющие на результат", "phenomena influencing the result"],
+            ["действ. прош. (active past participle)", "учёные, предложившие модель", "the scholars who proposed the model"],
+            ["страд. наст. (passive present participle)", "рассматриваемые параметры", "the parameters under consideration"],
+            ["страд. прош. (passive past participle)", "полученные данные", "the data obtained"],
+            ["дееприч. несов. (imperfective verbal adverb)", "анализируя результаты, авторы отмечают…", "analysing the results, the authors note…"],
+            ["дееприч. сов. (perfective verbal adverb)", "проведя эксперимент, мы установили…", "having conducted the experiment, we established…"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "A frequent error: a verbal adverb (<em>деепричастие</em>) must share its subject with the main clause. <em>«Проведя анализ, результаты оказались точными»</em> is wrong, because the results did not conduct the analysis. Correct: <strong>«Проведя анализ, мы получили точные результаты»</strong>, or recast impersonally: <strong>«После проведения анализа результаты оказались точными»</strong>."
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Генитивные цепочки (genitive chains)</strong> are the signature of dense academic Russian: a head noun governs a string of nouns each in the genitive case. They are economical but can become opaque — read them right-to-left to find the core: <code>анализ результатов исследования</code> = analysis ← of-results ← of-the-study = \"analysis of the study's results\"."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "оценка эффективности методов обработки данных", "tr": "océnka effektívnosti métodov obrabótki dánnych", "en": "assessment of the effectiveness of data-processing methods"},
+            {"ru": "проблема определения границ применимости теории", "tr": "probléma opredelénija graníc primenímosti teórii", "en": "the problem of determining the limits of applicability of the theory"},
+            {"ru": "в результате анализа динамики показателей роста", "tr": "v rezulʹtáte análiza dinámiki pokazátelej rósta", "en": "as a result of analysing the dynamics of the growth indicators"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "discourse-connectors",
+      "title": "3. Связки и аргументация",
+      "summary": "A rich, function-grouped inventory of the discourse connectors that drive scholarly argumentation.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Logical explicitness is mandatory in научный стиль: the relations between sentences are spelled out with <strong>средства связи</strong> (connectives). Below is a function-organised bank. Most are sentence-initial and set off by a comma."
+        },
+        {
+          "type": "table",
+          "caption": "Связки по функциям — discourse connectors grouped by function",
+          "headers": ["Функция", "Связки (translit)", "English"],
+          "rows": [
+            ["Добавление (addition)", "кроме того (króme togó); более того (bóleje togó); также (tákže); наряду с этим (narjadú s étim); вместе с тем (vméste s tem)", "moreover; furthermore; also; along with this; at the same time"],
+            ["Противопоставление (contrast)", "однако (odnáko); тем не менее (tem ne ménee); напротив (naprótiv); в отличие от (v otlíčie ot); с другой стороны (s drugój storoný)", "however; nevertheless; on the contrary; unlike; on the other hand"],
+            ["Причина (cause)", "поскольку (poskólʹku); так как (tak kak); в силу того что (v sílu togó čto); ввиду (vvidú); по причине (po pričíne)", "since; because; by virtue of the fact that; in view of; owing to"],
+            ["Следствие (effect / consequence)", "следовательно (slédovatelʹno); поэтому (poétomu); вследствие этого (vslédstvie étogo); в результате (v rezulʹtáte); тем самым (tem sámym)", "consequently; therefore; as a result of this; as a result; thereby"],
+            ["Условие (condition)", "при условии, что (pri uslóvii, čto); в случае если (v slúčae ésli); если… то (ésli… to)", "provided that; in the event that; if… then"],
+            ["Цель (purpose)", "с целью (s célʹju); для того чтобы (dlja togó čtóby); во избежание (vo izbežánie)", "with the aim of; in order to; in order to avoid"],
+            ["Пояснение / уточнение (clarification)", "то есть (to estʹ); иными словами (inými slovámi); а именно (a ímenno); другими словами (drugími slovámi)", "that is; in other words; namely; to put it differently"],
+            ["Иллюстрация (exemplification)", "например (naprimér); в частности (v částnosti); так (tak); к примеру (k priméru)", "for example; in particular; thus (e.g.); for instance"],
+            ["Связь / переход (linking, reference)", "в связи с этим (v svjazí s étim); что касается (čto kasáetsja); как известно (kak izvéstno); как отмечалось выше (kak otmečálosʹ výše)", "in this connection; as regards; as is well known; as was noted above"],
+            ["Порядок (sequencing)", "во-первых… во-вторых (vo-pérvych… vo-vtorých); прежде всего (préžde vsegó); затем (zatém); наконец (nakonéc)", "firstly… secondly; first of all; then; finally"],
+            ["Обобщение / вывод (generalisation, conclusion)", "таким образом (takím óbrazom); итак (iták); в заключение (v zaključénie); подводя итог (podvodjá itóg); следует заключить (slédujet zaključítʹ)", "thus; so / hence; in conclusion; summing up; one should conclude"],
+            ["Степень уверенности (epistemic stance)", "очевидно (očevídno); по-видимому (po-vídimomu); вероятно (verojátno); несомненно (nesomnénno)", "evidently; apparently; probably; undoubtedly"]
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Beware <strong>«поэтому» vs «потому что»</strong>: <em>поэтому</em> introduces a consequence (therefore), while <em>потому что</em> introduces a cause (because). Likewise <em>таким образом</em> (\"thus, in summary\") differs from <em>тем самым</em> (\"thereby\", marking a means), though both render English \"thus\"."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Эксперимент не дал ожидаемого результата; тем не менее полученные данные представляют интерес.", "tr": "Eksperimént ne dal ožidáemogo rezulʹtáta; tem ne ménee polúčennye dánnye predstavljájut interés.", "en": "The experiment did not yield the expected result; nevertheless, the data obtained are of interest."},
+            {"ru": "Таким образом, можно сделать вывод о том, что гипотеза подтверждается.", "tr": "Takím óbrazom, móžno sdélatʹ vývod o tom, čto gipóteza podtverždáetsja.", "en": "Thus, one may conclude that the hypothesis is confirmed."},
+            {"ru": "В связи с этим возникает вопрос о применимости модели в иных условиях.", "tr": "V svjazí s étim voznikáet voprós o primenímosti modéli v iných uslóvijach.", "en": "In this connection, the question arises of the model's applicability under other conditions."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "structuring-a-paper",
+      "title": "4. Структура статьи и диссертации",
+      "summary": "The canonical sections of a Russian paper or thesis and the set phrases that open each.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "A Russian research article (<strong>статья</strong>) or dissertation (<strong>диссертация</strong>) follows a conventional architecture closely related to the international IMRaD model. Each section has a repertoire of opening formulae."
+        },
+        {
+          "type": "table",
+          "caption": "Канонические разделы — canonical sections",
+          "headers": ["Раздел (translit)", "English", "Содержание"],
+          "rows": [
+            ["Аннотация (annotácija)", "abstract", "concise summary of aim, method and findings; keywords (ключевые слова) follow"],
+            ["Введение (vvedénie)", "introduction", "background, актуальность (relevance), gap, research question"],
+            ["Цель и задачи (celʹ i zadáči)", "aim and objectives", "the goal of the study and the steps to reach it"],
+            ["Материалы и методы (materiály i métody)", "materials and methods", "data, sample, instruments, procedure"],
+            ["Результаты (rezulʹtáty)", "results", "findings reported neutrally, with tables and figures"],
+            ["Обсуждение (obsuždénie)", "discussion", "interpretation, comparison with prior work, limitations"],
+            ["Заключение / Выводы (zaključénie / vývody)", "conclusion / conclusions", "summary of contribution and outlook"],
+            ["Список литературы (spísok literatúry)", "references / bibliography", "cited sources, typically in ГОСТ format"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Phrase bank — фразы-клише по разделам.</strong> The following openers are highly conventional and recognised by every Russian reviewer."
+        },
+        {
+          "type": "table",
+          "caption": "Банк клише — opening phrases by section",
+          "headers": ["Раздел", "Клише (translit)", "English"],
+          "rows": [
+            ["Введение", "Актуальность темы обусловлена… (Aktuálʹnostʹ témy obuslóvlena…)", "The relevance of the topic is determined by…"],
+            ["Введение", "В последние годы возрос интерес к… (V poslédnie gódy vozrós interés k…)", "In recent years interest in… has grown"],
+            ["Цель", "Цель настоящей работы заключается в… (Celʹ nastojáščej rabóty zaključáetsja v…)", "The aim of the present work consists in…"],
+            ["Задачи", "Для достижения поставленной цели были решены следующие задачи… (Dlja dostiženija postávlennoj céli…)", "To attain the stated aim, the following objectives were addressed…"],
+            ["Методы", "В качестве материала исследования использовались… (V káčestve materiála isslédovanija ispólʹzovalisʹ…)", "The following served as the material of the study…"],
+            ["Методы", "Анализ проводился с помощью метода… (Análiz provodílsja s pómoščʹju métoda…)", "The analysis was conducted by means of the method of…"],
+            ["Результаты", "Полученные результаты представлены в таблице… (Polúčennye rezulʹtáty predstávleny v tablíce…)", "The results obtained are presented in Table…"],
+            ["Обсуждение", "Полученные данные согласуются с результатами… (…soglasújutsja s rezulʹtátami…)", "The data obtained are consistent with the findings of…"],
+            ["Обсуждение", "Следует, однако, отметить ряд ограничений… (Slédujet, odnáko, otmétitʹ rjad ograničénij…)", "It should, however, be noted that there are a number of limitations…"],
+            ["Заключение", "На основании проведённого исследования можно сделать вывод о том, что… (Na osnovánii provedjónnogo isslédovanija…)", "On the basis of the conducted study one may conclude that…"]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Настоящая статья посвящена изучению влияния температуры на скорость реакции.", "tr": "Nastojáščaja statʹjá posvjaščená izučéniju vlijánija temperatúry na skórostʹ reákcii.", "en": "The present article is devoted to studying the effect of temperature on the reaction rate."},
+            {"ru": "Цель работы — выявить закономерности распределения данных в выборке.", "tr": "Celʹ rabóty — výjavitʹ zakonomérnosti raspredelénija dánnych v výborke.", "en": "The aim of the work is to reveal regularities in the distribution of the data in the sample."},
+            {"ru": "В заключение подведём основные итоги проведённого исследования.", "tr": "V zaključénie podvedjóm osnovnýe itógi provedjónnogo isslédovanija.", "en": "In conclusion, let us sum up the principal results of the conducted study."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "citing-and-referencing",
+      "title": "5. Цитирование и ссылки",
+      "summary": "How to attribute claims, refer to sources and previous research, and quote — including ГОСТ conventions.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Attribution in Russian uses a stable set of frames built around <strong>по мнению</strong> (+ genitive), <strong>согласно</strong> (+ dative), and reporting verbs such as <strong>отмечать</strong>, <strong>подчёркивать</strong>, <strong>утверждать</strong>. The verb <strong>ссылаться на</strong> (+ accusative) means \"to cite / refer to\"; <strong>цитировать</strong> means \"to quote verbatim\"."
+        },
+        {
+          "type": "table",
+          "caption": "Конструкции атрибуции — attribution frames",
+          "headers": ["Конструкция", "Падеж / form", "English"],
+          "rows": [
+            ["по мнению автора / Иванова", "+ genitive", "in the opinion of the author / of Ivanov"],
+            ["согласно данным / теории", "+ dative", "according to the data / the theory"],
+            ["как отмечает автор", "+ nominative subject", "as the author notes"],
+            ["как подчёркивает исследователь", "+ nominative subject", "as the researcher emphasises"],
+            ["по словам автора", "+ genitive", "in the author's words / according to the author"],
+            ["в соответствии с (концепцией)", "+ instrumental", "in accordance with (the conception)"],
+            ["вслед за (Лотманом)", "+ instrumental", "following (Lotman)"],
+            ["ссылаться на работу", "ссылаться на + accusative", "to refer to / cite a work"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Talking about previous research.</strong> Russian distinguishes the body of prior work with phrases such as <em>в ряде работ</em> (\"in a number of works\"), <em>в отечественной и зарубежной литературе</em> (\"in domestic and foreign literature\"), and <em>данный вопрос остаётся недостаточно изученным</em> (\"this question remains insufficiently studied\")."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Ранее было показано, что…</strong> — It has previously been shown that…",
+            "<strong>Этот вопрос рассматривался в работах [Иванов 2019; Петров 2021].</strong> — This question was examined in the works of…",
+            "<strong>В литературе отсутствует единая точка зрения на…</strong> — There is no single point of view in the literature on…",
+            "<strong>Наша работа развивает подход, предложенный в…</strong> — Our work develops the approach proposed in…",
+            "<strong>В отличие от предшествующих исследований, мы…</strong> — Unlike previous studies, we…"
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Russian bibliographies typically follow <strong>ГОСТ</strong> (the state standard, e.g. ГОСТ Р 7.0.100–2018). In-text references use either numbered brackets keyed to the <em>список литературы</em>, e.g. <code>[3, с. 45]</code> (\"[source 3, p. 45]\"), or author-date. Note <em>с.</em> = <em>страница</em> (page) and <em>сс.</em> or <em>с.</em> for ranges; <em>Указ. соч.</em> = <em>указанное сочинение</em> (op. cit.); <em>Там же</em> = ibid."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "По мнению ряда авторов, данная гипотеза нуждается в дополнительной проверке.", "tr": "Po mnéniju rjáda ávtorov, dánnaja gipóteza nuždáetsja v dopolnítelʹnoj provérke.", "en": "In the opinion of a number of authors, this hypothesis requires additional verification."},
+            {"ru": "Согласно классификации, предложенной автором, выделяются три типа.", "tr": "Soglásno klassifikácii, predložénnoj ávtorom, vydeljájutsja tri típa.", "en": "According to the classification proposed by the author, three types are distinguished."},
+            {"ru": "Как отмечает исследователь, данный эффект ранее не описывался [5, с. 12].", "tr": "Kak otmečáet isslédovatelʹ, dánnyj effékt ránee ne opísyvalsja.", "en": "As the researcher notes, this effect had not previously been described [5, p. 12]."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aims-hypotheses-definitions",
+      "title": "6. Цели, гипотезы и определения",
+      "summary": "Stating the aim and objectives, formulating hypotheses and assumptions, and defining terms.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "The opening of any Russian study formalises its <strong>цель</strong> (aim), its <strong>задачи</strong> (objectives), its <strong>гипотеза</strong> (hypothesis), and its key <strong>определения</strong> (definitions). Each has fixed phrasing that signals scientific rigour."
+        },
+        {
+          "type": "table",
+          "caption": "Формулировки целей и задач — formulating aims and objectives",
+          "headers": ["Клише", "Translit", "English"],
+          "rows": [
+            ["Цель работы — выявить / определить / разработать…", "Celʹ rabóty — výjavitʹ / opredelítʹ / razrabótatʹ", "The aim of the work is to reveal / determine / develop…"],
+            ["В задачи исследования входит…", "V zadáči isslédovanija vchódit", "The objectives of the study include…"],
+            ["Объектом исследования является…", "Obʹéktom isslédovanija javljáetsja", "The object of the study is…"],
+            ["Предметом исследования выступает…", "Predmétom isslédovanija vystupáet", "The subject of the study is…"],
+            ["Материалом послужили…", "Materiálom poslužíli", "The material was provided by…"],
+            ["Научная новизна состоит в том, что…", "Naúčnaja novizná sostoít v tom, čto", "The scholarly novelty consists in the fact that…"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Hypotheses and assumptions.</strong> A <em>гипотеза</em> is a testable claim; a <em>допущение</em> or <em>предположение</em> is a working assumption; a <em>тезис</em> is a thesis to be defended. Hypotheses are typically introduced with <strong>«Мы исходим из предположения о том, что…»</strong> or <strong>«Выдвигается гипотеза, согласно которой…»</strong>."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Выдвигается гипотеза о том, что…</strong> — The hypothesis is advanced that…",
+            "<strong>Мы исходим из допущения, что…</strong> — We proceed from the assumption that…",
+            "<strong>Предполагается, что…</strong> — It is assumed that…",
+            "<strong>Гипотеза была подтверждена / опровергнута / частично подтверждена.</strong> — The hypothesis was confirmed / refuted / partially confirmed."
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Defining terms.</strong> The canonical definitional frame is <strong>«Под X понимается Y»</strong> (\"By X we understand Y\"). Other patterns: <em>«X — это Y»</em>; <em>«X называется Y»</em>; <em>«X определяется как Y»</em>; <em>«В настоящей работе термин X используется в значении Y»</em>."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Под устойчивостью системы в данной работе понимается её способность сохранять равновесие.", "tr": "Pod ustójčivostʹju sistémy v dánnoj rabóte ponimáetsja eё sposóbnostʹ sochranjátʹ ravnovésie.", "en": "By the stability of the system, in this work, we understand its capacity to maintain equilibrium."},
+            {"ru": "Выдвигается гипотеза, согласно которой переменные связаны нелинейно.", "tr": "Vydvigáetsja gipóteza, soglásno kotóroj pereménnye svjázany nelinéjno.", "en": "A hypothesis is advanced according to which the variables are related nonlinearly."},
+            {"ru": "Термин «дискурс» определяется как речь, погружённая в социальный контекст.", "tr": "Términ «diskúrs» opredeljáetsja kak rečʹ, pogružёnnaja v sociálʹnyj kontékst.", "en": "The term \"discourse\" is defined as speech immersed in a social context."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "presenting-data",
+      "title": "7. Представление и обсуждение данных",
+      "summary": "Describing tables, figures and trends, with hedging and expressions of certainty.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Reporting results requires neutral, formulaic language for pointing to <strong>таблицы</strong> (tables) and <strong>рисунки</strong> (figures), for describing <strong>динамику</strong> (trends), and for calibrating one's <strong>certainty</strong> through hedging (<em>смягчение</em>)."
+        },
+        {
+          "type": "table",
+          "caption": "Ссылки на таблицы и рисунки — pointing to tables and figures",
+          "headers": ["Клише", "Translit", "English"],
+          "rows": [
+            ["как видно из таблицы 1", "kak vídno iz tablícy odín", "as can be seen from Table 1"],
+            ["на рисунке 2 представлено / изображено…", "na risúnke dva predstávleno / izobražéno", "Figure 2 presents / depicts…"],
+            ["данные приведены в таблице", "dánnye privedený v tablíce", "the data are given in the table"],
+            ["результаты отражены на графике", "rezulʹtáty otražený na gráfike", "the results are reflected in the chart"],
+            ["в таблице сведены показатели", "v tablíce svedený pokazáteli", "the indicators are collated in the table"]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Описание динамики — describing trends",
+          "headers": ["Выражение", "Translit", "English"],
+          "rows": [
+            ["наблюдается рост / снижение", "nabljudáetsja rost / sniženie", "growth / decline is observed"],
+            ["показатель возрос в N раз", "pokazátelʹ vozrós v N raz", "the indicator increased N-fold"],
+            ["значение уменьшилось на N процентов", "značénie umenʹšílosʹ na N procéntov", "the value decreased by N percent"],
+            ["в N раз больше / меньше, чем…", "v N raz bólʹše / ménʹše, čem", "N times greater / smaller than…"],
+            ["прослеживается тенденция к…", "prosléživaetsja tendéncija k", "a tendency towards… is discernible"],
+            ["показатели остаются стабильными", "pokazáteli ostajútsja stabílʹnymi", "the indicators remain stable"],
+            ["достигает максимума / минимума", "dostigáet maksímuma / mínimuma", "reaches a maximum / minimum"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Hedging vs certainty (модальность).</strong> Russian scholars carefully grade the strength of claims. Hedges soften (<em>по-видимому</em>, <em>вероятно</em>, <em>представляется</em>); boosters affirm (<em>очевидно</em>, <em>несомненно</em>, <em>безусловно</em>). Over-claiming reads as naïve; over-hedging reads as evasive."
+        },
+        {
+          "type": "table",
+          "caption": "Шкала уверенности — the certainty cline",
+          "headers": ["Сила (strength)", "Маркер (translit)", "English"],
+          "rows": [
+            ["высокая (high)", "несомненно; безусловно; очевидно (nesomnénno; bezuslóvno; očevídno)", "undoubtedly; certainly; evidently"],
+            ["средняя (mid)", "по всей видимости; вероятно; скорее всего (po vsej vídimosti; verojátno; skoréje vsegó)", "in all likelihood; probably; most likely"],
+            ["осторожная (cautious)", "по-видимому; представляется, что…; можно предположить (po-vídimomu; predstavljáetsja, čto; móžno predpoložítʹ)", "apparently; it appears that…; one may suppose"],
+            ["ограничивающая (limiting)", "в ряде случаев; при определённых условиях; как правило (v rjáde slúčaev; pri opredelёnnych uslóvijach; kak právilo)", "in a number of cases; under certain conditions; as a rule"]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "Как видно из таблицы 3, значение показателя возросло почти в два раза.", "tr": "Kak vídno iz tablícy tri, značénie pokazátelja vozrosló počtí v dva ráza.", "en": "As can be seen from Table 3, the value of the indicator nearly doubled."},
+            {"ru": "По-видимому, наблюдаемый эффект обусловлен изменением температуры.", "tr": "Po-vídimomu, nabljudáemyj effékt obuslóvlen izmenénием temperatúry.", "en": "Apparently, the observed effect is caused by the change in temperature."},
+            {"ru": "Представляется обоснованным предположить наличие обратной зависимости.", "tr": "Predstavljáetsja obosnóvannym predpoložítʹ nalíčie obrátnoj zavísimosti.", "en": "It appears justified to suppose the presence of an inverse relationship."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-strategies",
+      "title": "8. Стратегии чтения и разбор текста",
+      "summary": "Parsing long scholarly sentences, common abbreviations, and a glossed authentic-style passage.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Dense Russian sentences can run to forty words with stacked participles and genitive chains. The key is to <strong>find the grammatical core first</strong> — the main subject (nominative) and its predicate — then attach the modifiers."
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Locate the predicate.</strong> Find the finite verb or the predicative (e.g. <em>является</em>, <em>представляет собой</em>, a short participle like <em>показано</em>). Everything else hangs off it.",
+            "<strong>Bracket the participial clauses.</strong> A comma + participle (<em>полученные…</em>, <em>рассматриваемый…</em>) or verbal adverb (<em>учитывая…</em>) marks a subordinate chunk you can read separately.",
+            "<strong>Unwind genitive chains right-to-left.</strong> <em>методы анализа данных</em> → data → of-analysis → methods = \"methods of data analysis\".",
+            "<strong>Track the connectors.</strong> Sentence-initial <em>однако</em>, <em>следовательно</em>, <em>таким образом</em> tell you the logical move before you parse the content.",
+            "<strong>Don't be derailed by nominalisations.</strong> Convert abstract nouns back into verbs to grasp the action: <em>изучение влияния</em> → \"studying the influence\"."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Частые сокращения — common academic abbreviations",
+          "headers": ["Сокращение", "Расшифровка", "English"],
+          "rows": [
+            ["и т.д.", "и так далее", "and so on / etc."],
+            ["и т.п.", "и тому подобное", "and the like"],
+            ["и др.", "и другие", "et al. / and others"],
+            ["т.е.", "то есть", "i.e. / that is"],
+            ["т.н.", "так называемый", "so-called"],
+            ["см.", "смотри / смотрите", "see"],
+            ["ср.", "сравни", "cf. / compare"],
+            ["рис.", "рисунок", "fig. / figure"],
+            ["табл.", "таблица", "tab. / table"],
+            ["с. / стр.", "страница", "p. / page"],
+            ["ср.-в.", "средневековый (context-dependent)", "medieval (varies by field)"],
+            ["напр.", "например", "e.g. / for example"]
+          ]
+        },
+        {
+          "type": "prose",
+          "html": "<strong>Annotated passage.</strong> Below is a short scholarly-style paragraph followed by a sentence-by-sentence gloss. Read the Russian first, then check your parse against the glosses."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Текст:</strong> «В настоящей работе рассматривается проблема автоматической классификации научных текстов. Несмотря на значительное число существующих подходов, данный вопрос остаётся недостаточно изученным. Нами был предложен метод, основанный на анализе частотных характеристик лексики. Полученные результаты, представленные в таблице 1, свидетельствуют о его эффективности. Таким образом, можно заключить, что предложенный подход обладает определённой практической значимостью.»"
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "В настоящей работе рассматривается проблема автоматической классификации научных текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma avtomatíčeskoj klassifikácii naúčnych tékstov.", "en": "The present work addresses the problem of the automatic classification of scholarly texts. [Core: проблема (subject) + рассматривается (reflexive passive). Genitive chain: classification ← of texts.]"},
+            {"ru": "Несмотря на значительное число существующих подходов, данный вопрос остаётся недостаточно изученным.", "tr": "Nesmotrjá na značítelʹnoe čisló suščestvújuščich podchódov, dánnyj voprós ostaёtsja nedostátočno izúčennym.", "en": "Despite the considerable number of existing approaches, this question remains insufficiently studied. [Concessive opener несмотря на + accusative; predicate остаётся + instrumental.]"},
+            {"ru": "Нами был предложен метод, основанный на анализе частотных характеристик лексики.", "tr": "Námi byl predložén métod, osnóvannyj na análize častótnych characterístik léksiki.", "en": "We proposed a method based on the analysis of the frequency characteristics of the vocabulary. [Passive with agent in instrumental (нами); participle clause основанный на… modifies метод.]"},
+            {"ru": "Полученные результаты, представленные в таблице 1, свидетельствуют о его эффективности.", "tr": "Polúčennye rezulʹtáty, predstávlennye v tablíce odín, svidételʹstvujut o egó effektívnosti.", "en": "The results obtained, presented in Table 1, attest to its effectiveness. [Two stacked participles modify результаты; predicate свидетельствуют о + prepositional.]"},
+            {"ru": "Таким образом, можно заключить, что предложенный подход обладает определённой практической значимостью.", "tr": "Takím óbrazom, móžno zaključítʹ, čto predložénnyj podchód obladáet opredelёnnoj praktíčeskoj značímostʹju.", "en": "Thus, one may conclude that the proposed approach possesses a certain practical significance. [Conclusion connector таким образом; impersonal modal можно + infinitive; обладать governs the instrumental.]"}
+          ]
+        }
+      ]
+    }
+  ]
+}

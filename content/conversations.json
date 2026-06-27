@@ -1,0 +1,444 @@
+{
+  "id": "conversations",
+  "title": "Разговор — Conversation",
+  "description": "Practical spoken Russian for an English-speaking PhD student living and studying in Russia. Ten escalating scenarios — from greetings to defending an academic point — each with a realistic dialogue, a reusable phrase bank, and register notes on вы vs ты.",
+  "units": [
+    {
+      "id": "greetings-introductions",
+      "title": "1. Greetings & Introductions",
+      "summary": "Use this when you first meet someone — formally (a colleague, an official) or informally (a fellow student).",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian draws a sharp line between formal and informal address. With strangers, older people, officials and academic staff you use <b>вы</b> (and <i>здравствуйте</i>); with peers, students your own age, and friends you switch to <b>ты</b> (and <i>привет</i>). When in doubt, start with вы — it is never rude to be too polite."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> <i>здравствуйте</i> = formal/plural greeting; <i>здравствуй</i> = informal singular; <i>привет</i> = casual \"hi\". Russians also greet by time of day: <i>доброе утро</i>, <i>добрый день</i>, <i>добрый вечер</i> — all neutral-to-formal and always safe."
+        },
+        {
+          "type": "dialogue",
+          "title": "Meeting a colleague (formal вы) and then a fellow student (informal ты)",
+          "lines": [
+            { "speaker": "—", "ru": "Здравствуйте! Меня зовут Джеймс. Я аспирант из Великобритании.", "tr": "Zdrávstvuyte! Menyá zovút Dzheyms. Ya aspiránt iz Velikobritánii.", "en": "Hello! My name is James. I'm a PhD student from Britain." },
+            { "speaker": "—", "ru": "Очень приятно. Анна Сергеевна, я работаю на кафедре истории.", "tr": "Óchen' priyátno. Ánna Sergéyevna, ya rabótayu na káfedre istórii.", "en": "Very nice to meet you. Anna Sergeyevna, I work in the history department." },
+            { "speaker": "—", "ru": "Взаимно. Как мне лучше к вам обращаться?", "tr": "Vzaímno. Kak mne lúchshe k vam obrashchát'sya?", "en": "Likewise. How should I best address you?" },
+            { "speaker": "—", "ru": "Можно просто по имени-отчеству — Анна Сергеевна.", "tr": "Mózhno prósto po ímeni-ótchestvu — Ánna Sergéyevna.", "en": "Just by my first name and patronymic — Anna Sergeyevna." },
+            { "speaker": "—", "ru": "Хорошо. Рад знакомству!", "tr": "Khoroshó. Rad znakómstvu!", "en": "Good. Glad to meet you!" },
+            { "speaker": "—", "ru": "Привет! Ты тоже на семинар? Я Костя, первый курс.", "tr": "Privét! Ty tózhe na seminár? Ya Kóstya, pérvyy kurs.", "en": "Hi! Are you also here for the seminar? I'm Kostya, first year." },
+            { "speaker": "—", "ru": "Привет, да! Меня зовут Джеймс. Очень приятно.", "tr": "Privét, da! Menyá zovút Dzheyms. Óchen' priyátno.", "en": "Hi, yes! My name is James. Nice to meet you." },
+            { "speaker": "—", "ru": "Давай на «ты», мы же ровесники. Как дела?", "tr": "Daváy na «ty», my zhe rovésniki. Kak delá?", "en": "Let's use \"ty\", we're the same age after all. How's it going?" },
+            { "speaker": "—", "ru": "Нормально, спасибо. Немного волнуюсь перед семинаром.", "tr": "Normál'no, spasíbo. Nemnógo volnúyus' péred seminárom.", "en": "Fine, thanks. A bit nervous before the seminar." },
+            { "speaker": "—", "ru": "Не переживай, всё будет хорошо!", "tr": "Ne perezhiváy, vsyo búdet khoroshó!", "en": "Don't worry, everything will be fine!" }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Разрешите представиться.", "tr": "Razreshíte predstávit'sya.", "en": "Allow me to introduce myself. (very formal)" },
+            { "ru": "Меня зовут… / Моя фамилия…", "tr": "Menyá zovút… / Moyá famíliya…", "en": "My name is… / My surname is…" },
+            { "ru": "Очень приятно (познакомиться).", "tr": "Óchen' priyátno (poznakómit'sya).", "en": "Very nice (to meet you)." },
+            { "ru": "Как вас зовут? / Как тебя зовут?", "tr": "Kak vas zovút? / Kak tebyá zovút?", "en": "What is your name? (formal / informal)" },
+            { "ru": "Можно к вам обращаться по имени?", "tr": "Mózhno k vam obrashchát'sya po ímeni?", "en": "May I address you by first name?" },
+            { "ru": "Давайте перейдём на «ты».", "tr": "Daváyte pereydyóm na «ty».", "en": "Let's switch to \"ty\" (informal)." },
+            { "ru": "Как дела? / Как ваши дела?", "tr": "Kak delá? / Kak váshi delá?", "en": "How are you? (informal / formal)" },
+            { "ru": "Спасибо, хорошо. А у вас?", "tr": "Spasíbo, khoroshó. A u vas?", "en": "Fine, thanks. And you? (formal)" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "small-talk",
+      "title": "2. Small Talk & Getting Acquainted",
+      "summary": "Use this for the first few minutes of conversation — where you're from, what you study, how you find Russia.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Once introduced, Russians appreciate genuine curiosity. Expect questions about your country, why you came to Russia, and what you study. Talking warmly about your research and your impressions of the city is the easiest way to build rapport."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> the dialogue below uses <b>ты</b> between students of similar age. With an older acquaintance keep <b>вы</b>: <i>Откуда вы? Что вы изучаете?</i>"
+        },
+        {
+          "type": "dialogue",
+          "title": "Two students get acquainted (informal ты)",
+          "lines": [
+            { "speaker": "—", "ru": "Откуда ты приехал? По акценту слышу, что не местный.", "tr": "Otkúda ty priyékhal? Po aktséntu slýshu, chto ne méstnyy.", "en": "Where did you come from? I can tell from your accent you're not local." },
+            { "speaker": "—", "ru": "Из Эдинбурга, это в Шотландии. Я здесь по обмену, пишу диссертацию.", "tr": "Iz Edínburga, éto v Shotlándii. Ya zdes' po obménu, pishú dissertátsiyu.", "en": "From Edinburgh, that's in Scotland. I'm here on exchange, writing my dissertation." },
+            { "speaker": "—", "ru": "Здорово! А что ты изучаешь?", "tr": "Zdórovo! A chto ty izucháyesh'?", "en": "Cool! And what do you study?" },
+            { "speaker": "—", "ru": "Историю советской науки. Меня давно интересует эта тема.", "tr": "Istóriyu sovétskoy naúki. Menyá davnó interesúyet éta téma.", "en": "The history of Soviet science. I've long been interested in this topic." },
+            { "speaker": "—", "ru": "Серьёзная тема. И как тебе Россия? Не скучаешь по дому?", "tr": "Ser'yóznaya téma. I kak tebé Rossíya? Ne skucháyesh' po dómu?", "en": "Serious topic. And how do you find Russia? Don't you miss home?" },
+            { "speaker": "—", "ru": "Иногда скучаю, но мне здесь очень нравится. Особенно люди и архитектура.", "tr": "Inogdá skucháyu, no mne zdes' óchen' nrávitsya. Osóbenno lyúdi i arkhitektúra.", "en": "Sometimes I miss it, but I really like it here. Especially the people and the architecture." },
+            { "speaker": "—", "ru": "А по-русски ты неплохо говоришь! Давно учишь?", "tr": "A po-rússki ty neplókho govorísh'! Davnó úchish'?", "en": "And you speak Russian quite well! Have you been studying long?" },
+            { "speaker": "—", "ru": "Спасибо. Уже четыре года, но разговорной практики не хватает.", "tr": "Spasíbo. Uzhé chetýre góda, no razgovórnoy práktiki ne khvatáyet.", "en": "Thanks. Four years already, but I lack speaking practice." },
+            { "speaker": "—", "ru": "Тогда будем общаться почаще. Дай мне свой номер!", "tr": "Togdá búdem obshchát'sya pocháshche. Day mne svoy nómer!", "en": "Then let's chat more often. Give me your number!" }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Откуда вы / ты?", "tr": "Otkúda vy / ty?", "en": "Where are you from? (formal / informal)" },
+            { "ru": "Я из… / Я приехал(а) из…", "tr": "Ya iz… / Ya priyékhal(a) iz…", "en": "I'm from… / I came from…" },
+            { "ru": "Чем вы занимаетесь?", "tr": "Chem vy zanimáyetes'?", "en": "What do you do? / What's your field?" },
+            { "ru": "Я изучаю… / Я пишу диссертацию о…", "tr": "Ya izucháyu… / Ya pishú dissertátsiyu o…", "en": "I study… / I'm writing a dissertation on…" },
+            { "ru": "Как вам / тебе Россия?", "tr": "Kak vam / tebé Rossíya?", "en": "How do you find Russia?" },
+            { "ru": "Я здесь по обмену / по программе.", "tr": "Ya zdes' po obménu / po prográmme.", "en": "I'm here on exchange / on a programme." },
+            { "ru": "Вы давно здесь живёте?", "tr": "Vy davnó zdes' zhivyóte?", "en": "Have you lived here long?" },
+            { "ru": "У нас много общего!", "tr": "U nas mnógo óbshchego!", "en": "We have a lot in common!" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "at-the-university",
+      "title": "3. At the University — Finding a Room & Administration",
+      "summary": "Use this when you're lost in a university building or need to sort out paperwork with the dean's office.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian universities are bureaucratic, and the <b>деканат</b> (dean's office) handles most student paperwork. Buildings are divided into <i>корпуса</i> (campus blocks); rooms are <i>аудитории</i>. Being polite and patient with administrative staff goes a long way."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> always use <b>вы</b> with administrative staff and anyone you don't know. <i>Подскажите, пожалуйста…</i> (\"could you tell me…\") is the standard polite opener for asking directions."
+        },
+        {
+          "type": "dialogue",
+          "title": "Asking directions, then sorting out paperwork (formal вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Извините, подскажите, пожалуйста, где находится аудитория 312?", "tr": "Izviníte, podskazhíte, pozháluysta, gde nakhóditsya auditóriya trísta dvenádtsat'?", "en": "Excuse me, could you tell me where room 312 is?" },
+            { "speaker": "—", "ru": "Это во втором корпусе, на третьем этаже. Поднимитесь по лестнице и направо.", "tr": "Éto vo vtoróm kórpuse, na trét'yem etazhé. Podnimítes' po léstnitse i naprávo.", "en": "That's in the second block, on the third floor. Go up the stairs and to the right." },
+            { "speaker": "—", "ru": "Спасибо большое! А не подскажете, где деканат?", "tr": "Spasíbo bol'shóye! A ne podskázhete, gde dekanát?", "en": "Thank you very much! And could you tell me where the dean's office is?" },
+            { "speaker": "—", "ru": "Деканат на первом этаже, кабинет 105, рядом с гардеробом.", "tr": "Dekanát na pérvom etazhé, kabinét sto pyat', ryádom s garderóbom.", "en": "The dean's office is on the ground floor, room 105, next to the cloakroom." },
+            { "speaker": "—", "ru": "Здравствуйте. Я иностранный аспирант, мне нужно оформить справку об обучении.", "tr": "Zdrávstvuyte. Ya inostránnyy aspiránt, mne núzhno ofórmit' správku ob obuchénii.", "en": "Hello. I'm an international PhD student, I need to get a certificate of enrolment issued." },
+            { "speaker": "—", "ru": "Хорошо. Покажите, пожалуйста, студенческий билет и паспорт.", "tr": "Khoroshó. Pokazhíte, pozháluysta, studéncheskiy bilét i pásport.", "en": "All right. Please show me your student ID and passport." },
+            { "speaker": "—", "ru": "Вот, пожалуйста. Когда справка будет готова?", "tr": "Vot, pozháluysta. Kogdá správka búdet gotóva?", "en": "Here you are. When will the certificate be ready?" },
+            { "speaker": "—", "ru": "Завтра после обеда. Зайдите, пожалуйста, после трёх.", "tr": "Závtra pósle obéda. Zaydíte, pozháluysta, pósle tryokh.", "en": "Tomorrow afternoon. Please come by after three." },
+            { "speaker": "—", "ru": "Понял, спасибо. Всего доброго!", "tr": "Pónyal, spasíbo. Vsegó dóbrogo!", "en": "Got it, thank you. All the best!" }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Подскажите, пожалуйста, где…?", "tr": "Podskazhíte, pozháluysta, gde…?", "en": "Could you tell me where… is?" },
+            { "ru": "Как пройти в…?", "tr": "Kak proytí v…?", "en": "How do I get to…?" },
+            { "ru": "Это на каком этаже?", "tr": "Éto na kakóm etazhé?", "en": "What floor is that on?" },
+            { "ru": "Мне нужно оформить справку / документы.", "tr": "Mne núzhno ofórmit' správku / dokuménty.", "en": "I need to get a certificate / documents issued." },
+            { "ru": "К кому мне обратиться по этому вопросу?", "tr": "K komú mne obratít'sya po étomu voprósu?", "en": "Whom should I turn to about this matter?" },
+            { "ru": "Какие документы нужны?", "tr": "Kakíye dokuménty nuzhný?", "en": "What documents are needed?" },
+            { "ru": "Когда это будет готово?", "tr": "Kogdá éto búdet gotóvo?", "en": "When will this be ready?" },
+            { "ru": "В какие часы работает деканат?", "tr": "V kakíye chasý rabótayet dekanát?", "en": "What hours is the dean's office open?" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meeting-supervisor",
+      "title": "4. Meeting Your Научный Руководитель (Supervisor)",
+      "summary": "Use this for a meeting with your academic supervisor — scheduling, reporting on progress, getting feedback.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Your <b>научный руководитель</b> (academic supervisor) is one of the most important relationships of your PhD. The register is firmly formal and respectful. Address your supervisor by <b>имя-отчество</b> (first name + patronymic) and always use <b>вы</b>, even after years of working together."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> strictly <b>вы</b>. Soften requests with the conditional: <i>Не могли бы вы…</i> (\"could you possibly…\"), <i>Я хотел бы…</i> (\"I would like…\"). Avoid the bare imperative."
+        },
+        {
+          "type": "dialogue",
+          "title": "Progress meeting with your supervisor (formal вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Здравствуйте, Виктор Павлович! Спасибо, что нашли время меня принять.", "tr": "Zdrávstvuyte, Víktor Pávlovich! Spasíbo, chto nashlí vrémya menyá prinyát'.", "en": "Hello, Viktor Pavlovich! Thank you for finding time to see me." },
+            { "speaker": "—", "ru": "Здравствуйте, проходите, садитесь. Как продвигается ваша работа?", "tr": "Zdrávstvuyte, prokhodíte, sadítes'. Kak prodvigáyetsya vásha rabóta?", "en": "Hello, come in, sit down. How is your work coming along?" },
+            { "speaker": "—", "ru": "В целом неплохо. Я закончил первую главу и собрал материал для второй.", "tr": "V tsélom neplókho. Ya zakónchil pérvuyu glavú i sobrál materiál dlya vtoróy.", "en": "On the whole, not bad. I've finished the first chapter and gathered material for the second." },
+            { "speaker": "—", "ru": "Отлично. А с источниками в архиве не возникло трудностей?", "tr": "Otlíchno. A s istóchnikami v arkhíve ne vozníklo trúdnostey?", "en": "Excellent. And did you run into any difficulties with the archival sources?" },
+            { "speaker": "—", "ru": "Возникли, к сожалению. Часть документов оказалась недоступна. Не могли бы вы посоветовать, к кому обратиться?", "tr": "Vozníkli, k sozhaléniyu. Chast' dokuméntov okazálas' nedostúpna. Ne moglí by vy posovétovat', k komú obratít'sya?", "en": "Unfortunately, yes. Some documents turned out to be inaccessible. Could you possibly advise me whom to approach?" },
+            { "speaker": "—", "ru": "Я напишу рекомендательное письмо заведующему архивом. Это должно помочь.", "tr": "Ya napishú rekomendátel'noye pis'mó zavéduyushchemu arkhívom. Éto dolzhnó pomóch'.", "en": "I'll write a letter of recommendation to the head of the archive. That should help." },
+            { "speaker": "—", "ru": "Огромное спасибо. Когда вам удобно обсудить готовую главу?", "tr": "Ogrómnoye spasíbo. Kogdá vam udóbno obsudít' gotóvuyu glavú?", "en": "Thank you so much. When would be convenient for you to discuss the finished chapter?" },
+            { "speaker": "—", "ru": "Пришлите текст до пятницы, и встретимся на следующей неделе.", "tr": "Prishlíte tekst do pyátnitsy, i vstrétimsya na sléduyushchey nedéle.", "en": "Send me the text by Friday, and we'll meet next week." },
+            { "speaker": "—", "ru": "Договорились. Ещё раз спасибо за помощь.", "tr": "Dogovorílis'. Yeshchó raz spasíbo za pómoshch'.", "en": "Agreed. Thank you again for your help." },
+            { "speaker": "—", "ru": "Не за что. Успехов в работе!", "tr": "Ne za chto. Uspékhov v rabóte!", "en": "You're welcome. Good luck with the work!" }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Спасибо, что нашли время меня принять.", "tr": "Spasíbo, chto nashlí vrémya menyá prinyát'.", "en": "Thank you for finding time to see me." },
+            { "ru": "Когда вам было бы удобно встретиться?", "tr": "Kogdá vam býlo by udóbno vstrétit'sya?", "en": "When would it be convenient for you to meet?" },
+            { "ru": "Работа продвигается, но есть некоторые трудности.", "tr": "Rabóta prodvigáyetsya, no yest' nékotoryye trúdnosti.", "en": "The work is progressing, but there are some difficulties." },
+            { "ru": "Не могли бы вы посмотреть мою главу?", "tr": "Ne moglí by vy posmotrét' moyú glavú?", "en": "Could you possibly look over my chapter?" },
+            { "ru": "Я хотел бы посоветоваться с вами по поводу…", "tr": "Ya khotél by posovétovat'sya s vámi po póvodu…", "en": "I would like to consult you regarding…" },
+            { "ru": "Я учту все ваши замечания.", "tr": "Ya uchtú vse váshi zamechániya.", "en": "I will take all your comments into account." },
+            { "ru": "К какому сроку нужно сдать текст?", "tr": "K kakómu sróku núzhno sdat' tekst?", "en": "By what deadline do I need to submit the text?" },
+            { "ru": "Спасибо за ценные советы.", "tr": "Spasíbo za tsénnyye sovéty.", "en": "Thank you for the valuable advice." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "in-a-seminar",
+      "title": "5. In a Seminar — Agreeing, Disagreeing & Clarifying",
+      "summary": "Use this in seminars and group discussions to react to others' points politely and precisely.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian academic seminars value engaged but courteous debate. You can disagree sharply with an idea while remaining respectful to the person. The key is softening: frame disagreement as a different perspective, and ask for clarification before objecting."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> the seminar mixes <b>вы</b> (to the lecturer / older colleagues) and a collegial tone with peers. Even informally, academic phrasing stays measured: <i>Не совсем согласен…</i> (\"I don't quite agree…\") is far better than a blunt <i>Нет, вы не правы</i>."
+        },
+        {
+          "type": "dialogue",
+          "title": "Reacting to a presentation (formal/collegial вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Спасибо за доклад. Не могли бы вы уточнить, что вы понимаете под «модернизацией»?", "tr": "Spasíbo za doklád. Ne moglí by vy utochnít', chto vy ponimáyete pod «modernizátsiyey»?", "en": "Thank you for the talk. Could you clarify what you mean by \"modernisation\"?" },
+            { "speaker": "—", "ru": "Под модернизацией я имею в виду прежде всего технологические изменения.", "tr": "Pod modernizátsiyey ya iméyu v vidú prézhde vsegó tekhnologícheskiye izmenéniya.", "en": "By modernisation I mean primarily technological change." },
+            { "speaker": "—", "ru": "Понятно. Тогда я не совсем согласен с вашим выводом — мне кажется, нельзя сводить всё к технологиям.", "tr": "Ponyátno. Togdá ya ne sovsém soglásen s váshim vývodom — mne kázhetsya, nel'zyá svodít' vsyo k tekhnológiyam.", "en": "I see. Then I don't quite agree with your conclusion — I think one can't reduce everything to technology." },
+            { "speaker": "—", "ru": "Возможно, вы правы. А что бы вы предложили учесть?", "tr": "Vozmózhno, vy právy. A chto by vy predlozhíli uchést'?", "en": "Perhaps you're right. And what would you suggest taking into account?" },
+            { "speaker": "—", "ru": "Я бы добавил социальный фактор. С этой точки зрения картина выглядит сложнее.", "tr": "Ya by dobávil sotsiál'nyy fáktor. S étoy tóchki zréniya kartína vyglyádit slozhnéye.", "en": "I'd add the social factor. From that perspective the picture looks more complex." },
+            { "speaker": "—", "ru": "Согласен, это справедливое замечание. Я учту его в статье.", "tr": "Soglásen, éto spravedlívoye zamechániye. Ya uchtú yegó v stat'yé.", "en": "Agreed, that's a fair point. I'll take it into account in the article." },
+            { "speaker": "—", "ru": "Простите, я не расслышал последний тезис. Не могли бы вы повторить?", "tr": "Prostíte, ya ne rasslýshal poslédniy tézis. Ne moglí by vy povtorít'?", "en": "Sorry, I didn't catch the last point. Could you repeat it?" },
+            { "speaker": "—", "ru": "Конечно. Я говорил, что причины были не только экономическими.", "tr": "Konéchno. Ya govoríl, chto prichíny býli ne tól'ko ekonomícheskimi.", "en": "Of course. I was saying that the causes were not only economic." },
+            { "speaker": "—", "ru": "Теперь понятно, спасибо. Очень интересная дискуссия.", "tr": "Tepér' ponyátno, spasíbo. Óchen' interésnaya diskússiya.", "en": "Now it's clear, thanks. A very interesting discussion." }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Не могли бы вы уточнить, что вы имеете в виду?", "tr": "Ne moglí by vy utochnít', chto vy iméyete v vidú?", "en": "Could you clarify what you mean?" },
+            { "ru": "Простите, я не расслышал. Повторите, пожалуйста.", "tr": "Prostíte, ya ne rasslýshal. Povtoríte, pozháluysta.", "en": "Sorry, I didn't catch that. Please repeat." },
+            { "ru": "Я полностью с вами согласен.", "tr": "Ya pólnost'yu s vámi soglásen.", "en": "I completely agree with you." },
+            { "ru": "Я не совсем согласен с этим тезисом.", "tr": "Ya ne sovsém soglásen s étim tézisom.", "en": "I don't quite agree with that point." },
+            { "ru": "Позвольте с вами не согласиться.", "tr": "Pozvól'te s vámi ne soglasít'sya.", "en": "Allow me to disagree with you. (polite)" },
+            { "ru": "Можно уточняющий вопрос?", "tr": "Mózhno utochnyáyushchiy voprós?", "en": "May I ask a clarifying question?" },
+            { "ru": "С одной стороны… с другой стороны…", "tr": "S odnóy storoný… s drugóy storoný…", "en": "On the one hand… on the other hand…" },
+            { "ru": "Это справедливое замечание.", "tr": "Éto spravedlívoye zamechániye.", "en": "That's a fair point." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "at-a-conference",
+      "title": "6. At a Conference — Networking & Exchanging Contacts",
+      "summary": "Use this during coffee breaks and poster sessions — introducing your topic and swapping contacts with colleagues.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Conference coffee breaks (<i>кофе-брейк</i>) are where the real networking happens. You'll introduce your research in a sentence or two, ask about others' work, and exchange contacts. A clear, confident one-line summary of your topic is worth practising in advance."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> start with <b>вы</b> with anyone you've just met. Colleagues may quickly suggest switching to <b>ты</b> — let them initiate it. Offering your card: <i>Вот моя визитка</i>."
+        },
+        {
+          "type": "dialogue",
+          "title": "Striking up a conversation at the coffee break (formal вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Здравствуйте! Кажется, мы оба на секции по истории науки. Меня зовут Джеймс.", "tr": "Zdrávstvuyte! Kázhetsya, my óba na séktsii po istórii naúki. Menyá zovút Dzheyms.", "en": "Hello! It seems we're both in the history of science panel. My name is James." },
+            { "speaker": "—", "ru": "Очень приятно, Елена. А над чем вы работаете?", "tr": "Óchen' priyátno, Yeléna. A nad chem vy rabótayete?", "en": "Pleased to meet you, Elena. And what are you working on?" },
+            { "speaker": "—", "ru": "Я исследую историю советских научных институтов в тридцатые годы. А вы?", "tr": "Ya isléduyu istóriyu sovétskikh naúchnykh institútov v tridtsátyye gódy. A vy?", "en": "I research the history of Soviet research institutes in the 1930s. And you?" },
+            { "speaker": "—", "ru": "Я занимаюсь историей образования. Похоже, у нас смежные темы!", "tr": "Ya zanimáyus' istóriyey obrazovániya. Pokhózhe, u nas smézhnyye témy!", "en": "I work on the history of education. It seems our topics are adjacent!" },
+            { "speaker": "—", "ru": "Действительно. Я как раз слушал ваш доклад — было очень интересно.", "tr": "Deystvítel'no. Ya kak raz slúshal vash doklád — býlo óchen' interésno.", "en": "Indeed. I just listened to your talk — it was very interesting." },
+            { "speaker": "—", "ru": "Спасибо! Давайте обменяемся контактами, может быть, получится посотрудничать.", "tr": "Spasíbo! Daváyte obmenyáyemsya kontáktami, mózhet byt', polúchitsya posotrúdnichat'.", "en": "Thank you! Let's exchange contacts, maybe we could collaborate." },
+            { "speaker": "—", "ru": "С удовольствием. Вот моя визитка. Напишите мне на почту.", "tr": "S udovól'stviyem. Vot moyá vizítka. Napishíte mne na póchtu.", "en": "Gladly. Here's my card. Write to me by email." },
+            { "speaker": "—", "ru": "Обязательно. Кстати, вы будете на завтрашнем круглом столе?", "tr": "Obyzátel'no. Kstáti, vy búdete na závtrashnem krúglom stolé?", "en": "Definitely. By the way, will you be at tomorrow's round table?" },
+            { "speaker": "—", "ru": "Да, конечно. Там и продолжим разговор.", "tr": "Da, konéchno. Tam i prodólzhim razgovór.", "en": "Yes, of course. We'll continue the conversation there." },
+            { "speaker": "—", "ru": "Отлично, до завтра!", "tr": "Otlíchno, do závtra!", "en": "Great, see you tomorrow!" }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Над чем вы сейчас работаете?", "tr": "Nad chem vy seychás rabótayete?", "en": "What are you working on right now?" },
+            { "ru": "Я занимаюсь… / Моя тема — …", "tr": "Ya zanimáyus'… / Moyá téma — …", "en": "I work on… / My topic is…" },
+            { "ru": "У нас, кажется, смежные темы.", "tr": "U nas, kázhetsya, smézhnyye témy.", "en": "Our topics seem to be related." },
+            { "ru": "Давайте обменяемся контактами.", "tr": "Daváyte obmenyáyemsya kontáktami.", "en": "Let's exchange contacts." },
+            { "ru": "Вот моя визитка. / Дайте, пожалуйста, ваш e-mail.", "tr": "Vot moyá vizítka. / Dáyte, pozháluysta, vash imél.", "en": "Here's my card. / Please give me your email." },
+            { "ru": "Может быть, получится посотрудничать.", "tr": "Mózhet byt', polúchitsya posotrúdnichat'.", "en": "Maybe we could collaborate." },
+            { "ru": "Мне очень понравился ваш доклад.", "tr": "Mne óchen' ponrávilsya vash doklád.", "en": "I really liked your talk." },
+            { "ru": "Будем на связи!", "tr": "Búdem na svyazí!", "en": "Let's keep in touch!" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cafe-ordering",
+      "title": "7. Everyday: Café & Ordering Food",
+      "summary": "Use this in a café or restaurant — ordering, asking for recommendations, and paying.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Ordering in a Russian café is straightforward and friendly. Waiters use <b>вы</b> with customers; you do the same back. The phrase <i>Можно мне…</i> (\"may I have…\") is the most natural way to order, and <i>Счёт, пожалуйста</i> asks for the bill."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> <b>вы</b> throughout with staff. Tipping (<i>чаевые</i>) of around 10% is common but not obligatory; you can leave it in cash or add it to the card payment."
+        },
+        {
+          "type": "dialogue",
+          "title": "Ordering lunch (formal вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Здравствуйте! Будете что-нибудь заказывать?", "tr": "Zdrávstvuyte! Búdete chto-nibúd' zakázyvat'?", "en": "Hello! Will you be ordering anything?" },
+            { "speaker": "—", "ru": "Да, дайте, пожалуйста, минутку. А что вы посоветуете из горячего?", "tr": "Da, dáyte, pozháluysta, minútku. A chto vy posovétuyete iz goryáchego?", "en": "Yes, give me a minute, please. And what would you recommend from the mains?" },
+            { "speaker": "—", "ru": "Очень советую борщ и пельмени — у нас они домашние.", "tr": "Óchen' sovétuyu borshch i pel'méni — u nas oní domáshniye.", "en": "I really recommend the borsch and pelmeni — ours are homemade." },
+            { "speaker": "—", "ru": "Тогда мне борщ и пельмени. И ещё чай без сахара, пожалуйста.", "tr": "Togdá mne borshch i pel'méni. I yeshchó chay bez sákhara, pozháluysta.", "en": "Then I'll have the borsch and pelmeni. And also tea without sugar, please." },
+            { "speaker": "—", "ru": "Хорошо. Хлеб приносить?", "tr": "Khoroshó. Khleb prinosít'?", "en": "All right. Shall I bring bread?" },
+            { "speaker": "—", "ru": "Да, будьте добры. А в пельменях есть мясо? Я не ем свинину.", "tr": "Da, bud'te dobrý. A v pel'ményakh yest' myáso? Ya ne yem svinínu.", "en": "Yes, please. And is there meat in the pelmeni? I don't eat pork." },
+            { "speaker": "—", "ru": "Есть с говядиной, не переживайте. Принесу именно их.", "tr": "Yest' s govyádinoy, ne perezhiváyte. Prinesú ímenno ikh.", "en": "There are beef ones, don't worry. I'll bring exactly those." },
+            { "speaker": "—", "ru": "Спасибо большое. И можно сразу счёт принести, я тороплюсь.", "tr": "Spasíbo bol'shóye. I mózhno srázu schyot prinestí, ya toroplyús'.", "en": "Thank you very much. And could you bring the bill straight away, I'm in a hurry." },
+            { "speaker": "—", "ru": "Конечно. Картой или наличными?", "tr": "Konéchno. Kártoy íli nalíchnymi?", "en": "Of course. Card or cash?" },
+            { "speaker": "—", "ru": "Картой, спасибо.", "tr": "Kártoy, spasíbo.", "en": "By card, thanks." }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Можно меню, пожалуйста?", "tr": "Mózhno menyú, pozháluysta?", "en": "Could I have the menu, please?" },
+            { "ru": "Что вы посоветуете?", "tr": "Chto vy posovétuyete?", "en": "What would you recommend?" },
+            { "ru": "Мне, пожалуйста, … / Можно мне…", "tr": "Mne, pozháluysta, … / Mózhno mne…", "en": "I'll have… / May I have…" },
+            { "ru": "У вас есть вегетарианские блюда?", "tr": "U vas yest' vegetariánskiye blyúda?", "en": "Do you have vegetarian dishes?" },
+            { "ru": "Я не ем свинину / у меня аллергия на орехи.", "tr": "Ya ne yem svinínu / u menyá allergíya na orékhi.", "en": "I don't eat pork / I'm allergic to nuts." },
+            { "ru": "Счёт, пожалуйста.", "tr": "Schyot, pozháluysta.", "en": "The bill, please." },
+            { "ru": "Можно оплатить картой?", "tr": "Mózhno oplatít' kártoy?", "en": "Can I pay by card?" },
+            { "ru": "Всё было очень вкусно, спасибо!", "tr": "Vsyo býlo óchen' vkúsno, spasíbo!", "en": "Everything was very tasty, thank you!" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shopping-transport",
+      "title": "8. Everyday: Shopping & Transport",
+      "summary": "Use this in shops and at the market, and when taking the metro or a taxi.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian cities have excellent public transport. The <b>метро</b> runs on a flat fare; you tap a card. Taxis are almost always booked through an app (<i>Яндекс Такси</i>), but you may still negotiate with a driver. In shops and markets, asking the price is <i>Сколько стоит?</i>"
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> <b>вы</b> with shop assistants and drivers. At a market a little friendly haggling (<i>А скидку сделаете?</i> — \"will you give a discount?\") is acceptable; in supermarkets prices are fixed."
+        },
+        {
+          "type": "dialogue",
+          "title": "At the market, then ordering a taxi (formal вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Здравствуйте! Скажите, пожалуйста, сколько стоят эти яблоки?", "tr": "Zdrávstvuyte! Skazhíte, pozháluysta, skól'ko stóyat éti yábloki?", "en": "Hello! Could you tell me how much these apples cost?" },
+            { "speaker": "—", "ru": "Сто пятьдесят рублей за килограмм. Очень сладкие, попробуйте.", "tr": "Sto pyat'desyát rubléy za kilográmm. Óchen' sládkiye, popróbuyte.", "en": "A hundred and fifty roubles a kilo. Very sweet, try one." },
+            { "speaker": "—", "ru": "Действительно вкусные. Дайте, пожалуйста, два килограмма. А скидку сделаете?", "tr": "Deystvítel'no vkúsnyye. Dáyte, pozháluysta, dva kilográmma. A skídku sdélayete?", "en": "Really tasty. Give me two kilos, please. And will you give a discount?" },
+            { "speaker": "—", "ru": "Ладно, для вас двести восемьдесят за два кило.", "tr": "Ládno, dlya vas dvésti vósem'desyat za dva kiló.", "en": "All right, for you two hundred eighty for two kilos." },
+            { "speaker": "—", "ru": "Спасибо! Можно картой?", "tr": "Spasíbo! Mózhno kártoy?", "en": "Thanks! Can I pay by card?" },
+            { "speaker": "—", "ru": "Конечно, прикладывайте.", "tr": "Konéchno, prikládyvayte.", "en": "Of course, tap it here." },
+            { "speaker": "—", "ru": "Здравствуйте, я вызывал такси до центра. Сколько примерно ехать?", "tr": "Zdrávstvuyte, ya vyzyvál taksí do tséntra. Skól'ko primérno yékhat'?", "en": "Hello, I ordered a taxi to the centre. About how long is the ride?" },
+            { "speaker": "—", "ru": "Минут двадцать, если без пробок. Пристегнитесь, пожалуйста.", "tr": "Minút dvádtsat', yésli bez próbok. Pristegnítes', pozháluysta.", "en": "About twenty minutes if there's no traffic. Please buckle up." },
+            { "speaker": "—", "ru": "Хорошо. А вы не подскажете, как доехать до метро отсюда обратно?", "tr": "Khoroshó. A vy ne podskázhete, kak doyékhat' do metró otsyúda obrátno?", "en": "All right. And could you tell me how to get back to the metro from here?" },
+            { "speaker": "—", "ru": "Станция в двух минутах пешком, за углом налево.", "tr": "Stántsiya v dvukh minútakh peshkóm, za uglóm nalévo.", "en": "The station is two minutes' walk, around the corner to the left." }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Сколько это стоит?", "tr": "Skól'ko éto stóit?", "en": "How much does this cost?" },
+            { "ru": "Можно подешевле? / А скидку сделаете?", "tr": "Mózhno podeshévle? / A skídku sdélayete?", "en": "Can it be cheaper? / Will you give a discount?" },
+            { "ru": "Дайте, пожалуйста, два килограмма / штуки.", "tr": "Dáyte, pozháluysta, dva kilográmma / shtúki.", "en": "Give me two kilos / pieces, please." },
+            { "ru": "Где ближайшая станция метро?", "tr": "Gde blizháyshaya stántsiya metró?", "en": "Where is the nearest metro station?" },
+            { "ru": "Как доехать до…?", "tr": "Kak doyékhat' do…?", "en": "How do I get to…?" },
+            { "ru": "Сколько примерно ехать?", "tr": "Skól'ko primérno yékhat'?", "en": "About how long is the ride?" },
+            { "ru": "Остановите здесь, пожалуйста.", "tr": "Ostanovíte zdes', pozháluysta.", "en": "Stop here, please." },
+            { "ru": "Сдача не нужна. / Сдачу оставьте себе.", "tr": "Sdácha ne nuzhná. / Sdáchu ostáv'te sebé.", "en": "Keep the change." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dormitory-housing",
+      "title": "9. At the Dormitory — Housing Problems",
+      "summary": "Use this to report a problem in your dorm room or rented flat to the коменда́нт or landlord.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "In a Russian dormitory (<b>общежитие</b>), the <b>комендант</b> manages the building — keys, repairs, complaints. If you rent privately, you'll deal with a <b>хозяин/хозяйка</b> (landlord/landlady). Reporting a problem clearly and politely speeds up the repair."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> use <b>вы</b> with the комендант and a landlord. Describe the problem with <i>у меня не работает…</i> (\"my … isn't working\") or <i>сломался/потёк…</i> (\"… broke / is leaking\")."
+        },
+        {
+          "type": "dialogue",
+          "title": "Reporting a broken heater to the комендант (formal вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Здравствуйте! Я живу в комнате 214. У меня не работает отопление.", "tr": "Zdrávstvuyte! Ya zhivú v kómnate dvésti chetýrnadtsat'. U menyá ne rabótayet otopléniye.", "en": "Hello! I live in room 214. My heating isn't working." },
+            { "speaker": "—", "ru": "Совсем холодная батарея?", "tr": "Sovsém kholódnaya bataréya?", "en": "Is the radiator completely cold?" },
+            { "speaker": "—", "ru": "Да, уже два дня. В комнате очень холодно, невозможно работать.", "tr": "Da, uzhé dva dnya. V kómnate óchen' khólodno, nevozmózhno rabótat'.", "en": "Yes, for two days now. The room is very cold, it's impossible to work." },
+            { "speaker": "—", "ru": "Понятно. Я вызову сантехника. А ещё что-нибудь не в порядке?", "tr": "Ponyátno. Ya výzovu santékhnika. A yeshchó chto-nibúd' ne v poryádke?", "en": "I see. I'll call a plumber. Is anything else not in order?" },
+            { "speaker": "—", "ru": "Да, в ванной течёт кран, и розетка у стола искрит.", "tr": "Da, v vánnoy techyót kran, i rozétka u stolá iskrít.", "en": "Yes, the tap in the bathroom is leaking, and the socket by the desk is sparking." },
+            { "speaker": "—", "ru": "Розетка — это серьёзно, лучше пока ей не пользуйтесь.", "tr": "Rozétka — éto ser'yózno, lúchshe poká yey ne pól'zuytes'.", "en": "The socket is serious, better not use it for now." },
+            { "speaker": "—", "ru": "Хорошо, не буду. А когда придёт мастер?", "tr": "Khoroshó, ne búdu. A kogdá pridyót máster?", "en": "All right, I won't. And when will the repairman come?" },
+            { "speaker": "—", "ru": "Постараюсь прислать сегодня до вечера. Вы будете дома?", "tr": "Postaráyus' prislát' segódnya do véchera. Vy búdete dóma?", "en": "I'll try to send someone today before evening. Will you be home?" },
+            { "speaker": "—", "ru": "Да, я буду весь день. Спасибо большое за помощь!", "tr": "Da, ya búdu ves' den'. Spasíbo bol'shóye za pómoshch'!", "en": "Yes, I'll be in all day. Thank you very much for the help!" },
+            { "speaker": "—", "ru": "Не за что. Если что — обращайтесь.", "tr": "Ne za chto. Yésli chto — obrashcháytes'.", "en": "You're welcome. If anything comes up, just ask." }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "У меня не работает отопление / интернет / горячая вода.", "tr": "U menyá ne rabótayet otopléniye / internét / goryáchaya vodá.", "en": "My heating / internet / hot water isn't working." },
+            { "ru": "Сломался замок. / Течёт кран.", "tr": "Slomálsya zamók. / Techyót kran.", "en": "The lock is broken. / The tap is leaking." },
+            { "ru": "Не могли бы вы прислать мастера?", "tr": "Ne moglí by vy prislát' mástera?", "en": "Could you send a repairman?" },
+            { "ru": "Когда это починят?", "tr": "Kogdá éto pochínyat?", "en": "When will this be fixed?" },
+            { "ru": "В комнате очень холодно / шумно.", "tr": "V kómnate óchen' khólodno / shúmno.", "en": "It's very cold / noisy in the room." },
+            { "ru": "Можно поменять комнату?", "tr": "Mózhno pomenyát' kómnatu?", "en": "Is it possible to change rooms?" },
+            { "ru": "Куда платить за общежитие?", "tr": "Kudá platít' za obshchezhítiye?", "en": "Where do I pay for the dormitory?" },
+            { "ru": "Во сколько закрывается общежитие?", "tr": "Vo skól'ko zakryváyetsya obshchezhítiye?", "en": "What time does the dormitory close?" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "academic-argument",
+      "title": "10. Defending a Point — Academic Argument",
+      "summary": "Use this in a defence, debate, or serious discussion to argue a position, concede gracefully, and conclude.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "At the highest level — a dissertation defence (<b>защита</b>) or a heated scholarly debate — you need to build an argument, defend it against objections, concede where the evidence demands it, and draw a measured conclusion. Russian academic rhetoric rewards structure: signpost each move so your interlocutor can follow."
+        },
+        {
+          "type": "note",
+          "html": "<b>Register:</b> firmly <b>вы</b>, formal and composed. Even when you disagree strongly, conceding a point (<i>Должен признать…</i> — \"I must admit…\") strengthens, not weakens, your standing. Conclude with <i>Таким образом…</i> (\"thus…\")."
+        },
+        {
+          "type": "dialogue",
+          "title": "Defending a thesis against an examiner's objection (formal вы)",
+          "lines": [
+            { "speaker": "—", "ru": "Ваш главный тезис мне кажется спорным. На чём именно он основан?", "tr": "Vash glávnyy tézis mne kázhetsya spórnym. Na chyom ímenno on osnóvan?", "en": "Your main thesis seems debatable to me. What exactly is it based on?" },
+            { "speaker": "—", "ru": "Я исхожу из того, что архивные данные прямо подтверждают мою гипотезу. Позвольте привести пример.", "tr": "Ya iskhozhú iz togó, chto arkhívnyye dánnyye pryámo podtverzhdáyut moyú gipótezu. Pozvól'te privestí primér.", "en": "I proceed from the fact that the archival data directly confirm my hypothesis. Allow me to give an example." },
+            { "speaker": "—", "ru": "Допустим. Но ваши данные охватывают лишь один регион. Можно ли обобщать?", "tr": "Dopústim. No váshi dánnyye okhvátyvayut lish' odín region. Mózhno li obobshchát'?", "en": "Granted. But your data cover only one region. Can one generalise?" },
+            { "speaker": "—", "ru": "Справедливое замечание. Должен признать, что выборка ограничена. Однако тенденция прослеживается чётко.", "tr": "Spravedlívoye zamechániye. Dólzhen priznát', chto výborka ograníchena. Odnáko tendéntsiya proslézhivayetsya chyótko.", "en": "A fair point. I must admit the sample is limited. However, the trend is clearly traceable." },
+            { "speaker": "—", "ru": "А как вы ответите на критику со стороны Иванова, который придерживается противоположной точки зрения?", "tr": "A kak vy otvétite na krítiku so storoný Ivanóva, kotóryy priderzhivayetsya protivopolózhnoy tóchki zréniya?", "en": "And how do you respond to Ivanov's criticism, who holds the opposite view?" },
+            { "speaker": "—", "ru": "При всём уважении к Иванову, его выводы опираются на устаревшие источники. Мои данные новее.", "tr": "Pri vsyom uvazhénii k Ivanóvu, yegó vývody opiráyutsya na ustarévshiye istóchniki. Moí dánnyye novéye.", "en": "With all due respect to Ivanov, his conclusions rest on outdated sources. My data are newer." },
+            { "speaker": "—", "ru": "Хорошо. Но не кажется ли вам, что вы недооцениваете роль случайных факторов?", "tr": "Khoroshó. No ne kázhetsya li vam, chto vy nedootsénivayete rol' slucháynykh fáktorov?", "en": "All right. But don't you think you underestimate the role of random factors?" },
+            { "speaker": "—", "ru": "Отчасти соглашусь. Этот аспект действительно заслуживает отдельного исследования.", "tr": "Otchásti soglashús'. Étot aspékt deystvítel'no zaslúzhivayet otdél'nogo isslédovaniya.", "en": "I partly agree. This aspect indeed deserves a separate study." },
+            { "speaker": "—", "ru": "Таким образом, вы признаёте ограничения, но настаиваете на основном выводе?", "tr": "Takím óbrazom, vy priznayóte ograníchéniya, no nastáivayete na osnovnóm vývode?", "en": "Thus, you acknowledge the limitations but insist on the main conclusion?" },
+            { "speaker": "—", "ru": "Именно так. В заключение подчеркну: основной тезис остаётся в силе, несмотря на отдельные оговорки.", "tr": "Ímenno tak. V zaklyuchéniye podcherknú: osnovnóy tézis ostayótsya v síle, nesmotryá na otdél'nyye ogovórki.", "en": "Exactly. In conclusion let me emphasise: the main thesis stands, despite individual caveats." }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "ru": "Я исхожу из того, что…", "tr": "Ya iskhozhú iz togó, chto…", "en": "I proceed from the fact that…" },
+            { "ru": "Позвольте привести пример / аргумент.", "tr": "Pozvól'te privestí primér / argumént.", "en": "Allow me to give an example / argument." },
+            { "ru": "Это подтверждается данными / источниками.", "tr": "Éto podtverzhdáyetsya dánnymi / istóchnikami.", "en": "This is confirmed by the data / sources." },
+            { "ru": "Должен признать, что… / Отчасти соглашусь.", "tr": "Dólzhen priznát', chto… / Otchásti soglashús'.", "en": "I must admit that… / I partly agree." },
+            { "ru": "При всём уважении, я не могу согласиться.", "tr": "Pri vsyom uvazhénii, ya ne mogú soglasít'sya.", "en": "With all due respect, I cannot agree." },
+            { "ru": "Тем не менее / Однако…", "tr": "Tem ne méneye / Odnáko…", "en": "Nevertheless / However…" },
+            { "ru": "Таким образом, можно сделать вывод, что…", "tr": "Takím óbrazom, mózhno sdélat' vývod, chto…", "en": "Thus, one can conclude that…" },
+            { "ru": "В заключение хочу подчеркнуть…", "tr": "V zaklyuchéniye khochú podcherknút'…", "en": "In conclusion, I want to emphasise…" }
+          ]
+        }
+      ]
+    }
+  ]
+}
