@@ -127,3 +127,27 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# ──────────────── Android / Gradle (Maze Rush Runner) ────────────────
+.gradle/
+build/
+app/build/
+captures/
+local.properties
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+.cxx/
+
+# Signing material — NEVER commit keystores or their passwords
+*.jks
+*.keystore
+keystore.properties
+release/
+
+# Build outputs
+*.apk
+*.aab
+*.ap_
+*.dex
