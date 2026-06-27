@@ -27,8 +27,10 @@ from pathlib import Path
 from flask import Flask, g, jsonify, request, send_from_directory
 
 BASE_DIR = Path(__file__).resolve().parent
-CONTENT_DIR = BASE_DIR / "content"
 STATIC_DIR = BASE_DIR / "static"
+# Content lives under static/ so it can be served as a plain asset and the
+# frontend works as a standalone static site (no backend required).
+CONTENT_DIR = STATIC_DIR / "content"
 DB_PATH = BASE_DIR / "progress.db"
 
 # The content sections the app knows how to serve. Each maps to a JSON file.

@@ -1,11 +1,15 @@
 /* ======================================================================
-   Русский от А до Я — frontend SPA
-   Hash router + generic content renderer + SRS flashcards + quizzes.
+   Русский от А до Я — frontend SPA (fully client-side)
+   Content is loaded from static JSON; progress + spaced-repetition state
+   live in the browser (localStorage), so the app needs no backend and can
+   be hosted as a static site. A Flask backend (app.py) is optional, for
+   running locally.
    ====================================================================== */
+
+const SECTION_IDS = ["alphabet", "grammar", "vocabulary", "conversations", "academic"];
 
 const App = {
   sections: [],
-  progress: { completed: [], cards: {}, reviews_total: 0 },
   contentCache: {},
   voice: null,
 };
@@ -26,11 +30,131 @@ const el = (tag, attrs = {}, ...kids) => {
   }
   return e;
 };
-const api = async (path, opts) => {
-  const r = await fetch(path, opts);
+const fetchJSON = async (path) => {
+  const r = await fetch(path, { cache: "no-cache" });
   if (!r.ok) throw new Error(`${path} → ${r.status}`);
   return r.json();
 };
+async function loadContent(section) {
+  if (!App.contentCache[section]) {
+    App.contentCache[section] = await fetchJSON(`content/${section}.json`);
+  }
+  return App.contentCache[section];
+}
+
+/* ---------------- local persistence ---------------- */
+const todayStr = () => {
+  const d = new Date();
+  return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+};
+const addDaysStr = (n) => {
+  const d = new Date();
+  d.setDate(d.getDate() + n);
+  return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+};
+
+const Store = {
+  SRS: "ru_srs_v1",
+  PROG: "ru_progress_v1",
+  loadSrs() { try { return JSON.parse(localStorage.getItem(this.SRS)) || {}; } catch { return {}; } },
+  saveSrs(s) { localStorage.setItem(this.SRS, JSON.stringify(s)); },
+  loadProg() {
+    try { return JSON.parse(localStorage.getItem(this.PROG)) || { completed: {}, reviews: 0 }; }
+    catch { return { completed: {}, reviews: 0 }; }
+  },
+  saveProg(p) { localStorage.setItem(this.PROG, JSON.stringify(p)); },
+};
+
+// SM-2 spaced repetition (mirrors the original backend implementation)
+function sm2(state, quality) {
+  let { ease = 2.5, interval = 0, reps = 0 } = state || {};
+  if (quality < 3) {
+    reps = 0;
+    interval = 1;
+  } else {
+    if (reps === 0) interval = 1;
+    else if (reps === 1) interval = 6;
+    else interval = Math.round(interval * ease);
+    reps += 1;
+  }
+  ease = Math.max(1.3, ease + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+  return { ease, interval, reps };
+}
+
+// Master card list, derived from the vocabulary content.
+async function masterCards() {
+  const vocab = await loadContent("vocabulary");
+  const cards = [];
+  (vocab.decks || []).forEach((deck) => {
+    (deck.cards || []).forEach((c) => {
+      cards.push({
+        id: `${deck.id}:${c.ru}`,
+        deck: deck.id,
+        front: c.ru,
+        back: c.en,
+        tr: c.tr || "",
+        pos: c.pos || "",
+        example: c.example || "",
+      });
+    });
+  });
+  return cards;
+}
+
+// Card state (defaults make a never-seen card "new" and due today).
+function cardState(srs, id) {
+  return srs[id] || { ease: 2.5, interval: 0, reps: 0, due: todayStr() };
+}
+
+async function srsStats() {
+  const cards = await masterCards();
+  const srs = Store.loadSrs();
+  const today = todayStr();
+  let due = 0, learning = 0;
+  cards.forEach((c) => {
+    const st = cardState(srs, c.id);
+    if (st.due <= today) due++;
+    if ((st.reps || 0) > 0) learning++;
+  });
+  return { total: cards.length, due, learning };
+}
+
+async function srsDecks() {
+  const cards = await masterCards();
+  const srs = Store.loadSrs();
+  const today = todayStr();
+  const map = {};
+  cards.forEach((c) => {
+    const m = (map[c.deck] = map[c.deck] || { deck: c.deck, total: 0, due: 0, started: 0 });
+    const st = cardState(srs, c.id);
+    m.total++;
+    if (st.due <= today) m.due++;
+    if ((st.reps || 0) > 0) m.started++;
+  });
+  return Object.values(map);
+}
+
+async function srsDue(deck, limit = 30) {
+  const cards = await masterCards();
+  const srs = Store.loadSrs();
+  const today = todayStr();
+  return cards
+    .filter((c) => (deck === "all" || c.deck === deck) && cardState(srs, c.id).due <= today)
+    .sort((a, b) => cardState(srs, a.id).due.localeCompare(cardState(srs, b.id).due))
+    .slice(0, limit);
+}
+
+function srsReview(cardId, quality) {
+  const srs = Store.loadSrs();
+  const updated = sm2(srs[cardId], quality);
+  updated.due = addDaysStr(updated.interval);
+  updated.last = new Date().toISOString();
+  srs[cardId] = updated;
+  Store.saveSrs(srs);
+  const prog = Store.loadProg();
+  prog.reviews = (prog.reviews || 0) + 1;
+  Store.saveProg(prog);
+}
 
 /* ---------------- speech ---------------- */
 function pickVoice() {
@@ -43,7 +167,6 @@ if (window.speechSynthesis) {
 }
 function speak(text) {
   if (!window.speechSynthesis) return;
-  // strip stress/transliteration noise; speak the Russian as-is
   const clean = String(text).replace(/[—–-].*$/u, "").trim() || String(text);
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(clean);
@@ -52,7 +175,6 @@ function speak(text) {
   if (App.voice) u.voice = App.voice;
   speechSynthesis.speak(u);
 }
-// Delegated click for any .ru element
 document.addEventListener("click", (e) => {
   const ru = e.target.closest(".ru");
   if (ru) speak(ru.dataset.say || ru.textContent);
@@ -144,26 +266,22 @@ function renderUnit(unit, sectionId) {
   head.append(titleWrap);
 
   const itemKey = `${sectionId}:${unit.id}`;
-  const done = App.progress.completed.some((c) => c.item === itemKey);
+  const prog = Store.loadProg();
+  const done = !!(prog.completed && prog.completed[itemKey]);
   const toggle = el(
     "button",
     { class: "done-toggle" + (done ? " done" : "") },
     done ? "✓ Completed" : "Mark complete"
   );
-  toggle.addEventListener("click", async () => {
+  toggle.addEventListener("click", () => {
+    const p = Store.loadProg();
+    p.completed = p.completed || {};
     const nowDone = !toggle.classList.contains("done");
-    await api("/api/progress", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        item: itemKey,
-        section: sectionId,
-        status: nowDone ? "completed" : "open",
-      }),
-    });
+    if (nowDone) p.completed[itemKey] = sectionId;
+    else delete p.completed[itemKey];
+    Store.saveProg(p);
     toggle.classList.toggle("done", nowDone);
     toggle.textContent = nowDone ? "✓ Completed" : "Mark complete";
-    await loadProgress();
     renderNav();
   });
   head.append(toggle);
@@ -174,24 +292,14 @@ function renderUnit(unit, sectionId) {
 }
 
 /* ---------------- views ---------------- */
-async function loadContent(section) {
-  if (!App.contentCache[section]) {
-    App.contentCache[section] = await api("/api/content/" + section);
-  }
-  return App.contentCache[section];
-}
-
 async function viewSection(section) {
   const data = await loadContent(section);
   const view = $("#view");
   view.innerHTML = "";
   view.append(
-    el(
-      "div",
-      { class: "page-head" },
+    el("div", { class: "page-head" },
       el("h1", {}, data.title || section),
-      el("p", {}, data.description || "")
-    )
+      el("p", {}, data.description || ""))
   );
   const units = data.units || [];
   if (!units.length) {
@@ -205,69 +313,50 @@ async function viewDashboard() {
   const view = $("#view");
   view.innerHTML = "";
   view.append(
-    el(
-      "div",
-      { class: "page-head" },
+    el("div", { class: "page-head" },
       el("h1", {}, "Добро пожаловать! 👋"),
-      el(
-        "p",
-        {},
-        "Your path to academic-level Russian — from the alphabet to scholarly writing. Pick up where you left off, or review your flashcards below."
-      )
-    )
+      el("p", {}, "Your path to academic-level Russian — from the alphabet to scholarly writing. Pick up where you left off, or review your flashcards below."))
   );
 
-  const c = App.progress.cards || {};
+  const c = await srsStats();
+  const prog = Store.loadProg();
   const totalUnits = await countAllUnits();
-  const doneUnits = App.progress.completed.length;
-  const stats = el(
-    "div",
-    { class: "stat-grid" },
-    statBox(doneUnits + "/" + totalUnits, "Lessons completed", "accent"),
-    statBox(c.due || 0, "Cards due today", "red"),
-    statBox(c.learning || 0, "Cards in progress", "green"),
-    statBox(App.progress.reviews_total || 0, "Total reviews", "")
+  const doneUnits = Object.keys(prog.completed || {}).length;
+  view.append(
+    el("div", { class: "stat-grid" },
+      statBox(doneUnits + "/" + totalUnits, "Lessons completed", "accent"),
+      statBox(c.due || 0, "Cards due today", "red"),
+      statBox(c.learning || 0, "Cards in progress", "green"),
+      statBox(prog.reviews || 0, "Total reviews", ""))
   );
-  view.append(stats);
 
-  // section cards
   const grid = el("div", { class: "section-cards" });
   const icons = { alphabet: "🔤", grammar: "📐", vocabulary: "📇", conversations: "💬", academic: "🎓" };
   for (const s of App.sections) {
     const data = await loadContent(s.id).catch(() => ({ units: [] }));
     const total = (data.units || []).length || (data.decks || []).length;
-    const done = App.progress.completed.filter((x) => x.section === s.id).length;
+    const done = Object.entries(prog.completed || {}).filter(([, sec]) => sec === s.id).length;
     const pct = total ? Math.round((done / total) * 100) : 0;
     grid.append(
-      el(
-        "a",
-        { class: "section-card", href: "#/section/" + s.id },
+      el("a", { class: "section-card", href: "#/section/" + s.id },
         el("div", { class: "sc-ico" }, icons[s.id] || "📘"),
         el("h3", {}, s.title),
         el("p", {}, s.description || ""),
         el("div", { class: "progress-bar" }, el("i", { style: `width:${pct}%` })),
-        el("div", { class: "sc-meta" }, total ? `${done}/${total} done` : "Open")
-      )
+        el("div", { class: "sc-meta" }, total ? `${done}/${total} done` : "Open"))
     );
   }
-  // study tools
   grid.append(
-    el(
-      "a",
-      { class: "section-card", href: "#/flashcards" },
+    el("a", { class: "section-card", href: "#/flashcards" },
       el("div", { class: "sc-ico" }, "🃏"),
       el("h3", {}, "Flashcards"),
       el("p", {}, "Spaced-repetition review of all vocabulary (SM-2)."),
-      el("div", { class: "sc-meta" }, (c.due || 0) + " due now")
-    ),
-    el(
-      "a",
-      { class: "section-card", href: "#/practice" },
+      el("div", { class: "sc-meta" }, (c.due || 0) + " due now")),
+    el("a", { class: "section-card", href: "#/practice" },
       el("div", { class: "sc-ico" }, "🎯"),
       el("h3", {}, "Practice quiz"),
       el("p", {}, "Test recall with multiple-choice vocabulary drills."),
-      el("div", { class: "sc-meta" }, "Start a round")
-    )
+      el("div", { class: "sc-meta" }, "Start a round"))
   );
   view.append(grid);
 }
@@ -288,18 +377,23 @@ async function countAllUnits() {
 async function viewFlashcards() {
   const view = $("#view");
   view.innerHTML = "";
-  view.append(el("div", { class: "page-head" }, el("h1", {}, "🃏 Flashcards"), el("p", {}, "Spaced repetition with the SM-2 algorithm. Rate honestly — the schedule adapts to you.")));
-  const decks = await api("/api/srs/decks");
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🃏 Flashcards"), el("p", {}, "Spaced repetition with the SM-2 algorithm. Rate honestly — the schedule adapts to you. Progress is saved on this device.")));
+  const decks = await srsDecks();
   const stage = el("div", { class: "fc-stage" });
   view.append(stage);
 
-  const state = { deck: "all", queue: [], idx: 0, revealed: false };
+  const state = { deck: "all", queue: [], idx: 0 };
 
   const pills = el("div", { class: "deck-pills" });
   const totalDue = decks.reduce((a, d) => a + (d.due || 0), 0);
   const mkPill = (id, label, due) => {
     const p = el("button", { class: "deck-pill" + (state.deck === id ? " active" : "") }, label, el("span", { class: "cnt" }, String(due)));
-    p.addEventListener("click", () => { state.deck = id; startSession(); });
+    p.addEventListener("click", () => {
+      state.deck = id;
+      [...pills.children].forEach((x) => x.classList.remove("active"));
+      p.classList.add("active");
+      startSession();
+    });
     return p;
   };
   pills.append(mkPill("all", "All decks", totalDue));
@@ -310,8 +404,7 @@ async function viewFlashcards() {
   stage.append(cardHost);
 
   async function startSession() {
-    [...pills.children].forEach((p, i) => p.classList.toggle("active", (i === 0 && state.deck === "all") || p.textContent.startsWith(prettyDeck(state.deck))));
-    state.queue = await api(`/api/srs/due?deck=${encodeURIComponent(state.deck)}&limit=30`);
+    state.queue = await srsDue(state.deck, 30);
     state.idx = 0;
     renderCard();
   }
@@ -323,14 +416,12 @@ async function viewFlashcards() {
         el("div", { class: "fc-empty" },
           el("div", { class: "big-emoji" }, "🎉"),
           el("h2", {}, state.queue.length ? "Session complete!" : "Nothing due right now"),
-          el("p", {}, state.queue.length ? "You reviewed " + state.queue.length + " card(s). Come back tomorrow for more." : "All caught up in this deck. Try another, or learn new words in the Vocabulary section."),
-        )
+          el("p", {}, state.queue.length ? "You reviewed " + state.queue.length + " card(s). Come back tomorrow for more." : "All caught up in this deck. Try another, or come back later."))
       );
-      loadProgress().then(renderNav);
+      renderNav();
       return;
     }
     const card = state.queue[state.idx];
-    state.revealed = false;
     const host = el("div", {});
     host.append(el("div", { class: "fc-meta" }, `${state.idx + 1} / ${state.queue.length} · ${prettyDeck(card.deck)}`));
 
@@ -366,12 +457,8 @@ async function viewFlashcards() {
 
   function rateBtn(label, quality, cls, card) {
     const b = el("button", { class: "btn " + cls }, label);
-    b.addEventListener("click", async () => {
-      await api("/api/srs/review", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id: card.id, quality }),
-      });
+    b.addEventListener("click", () => {
+      srsReview(card.id, quality);
       state.idx++;
       renderCard();
     });
@@ -395,7 +482,7 @@ async function viewPractice() {
   const stage = el("div", { class: "quiz-stage" });
   view.append(stage);
 
-  const state = { mode: "ru2en", deck: "all", score: 0, asked: 0, total: 10, current: null };
+  const state = { mode: "ru2en", deck: "all", score: 0, asked: 0, total: 10 };
 
   const modePills = el("div", { class: "quiz-mode-pills" });
   const mkMode = (id, label) => {
@@ -414,23 +501,15 @@ async function viewPractice() {
   const host = el("div", {});
   stage.append(host);
 
-  function pool() {
-    return state.deck === "all" ? allCards : allCards.filter((c) => c.deck === state.deck);
-  }
+  const pool = () => (state.deck === "all" ? allCards : allCards.filter((c) => c.deck === state.deck));
   function sample(arr, n, exclude) {
     const out = [];
     const copy = arr.filter((x) => x !== exclude);
-    while (out.length < n && copy.length) {
-      out.push(copy.splice(Math.floor(Math.random() * copy.length), 1)[0]);
-    }
+    while (out.length < n && copy.length) out.push(copy.splice(Math.floor(Math.random() * copy.length), 1)[0]);
     return out;
   }
 
-  function newRound() {
-    state.score = 0;
-    state.asked = 0;
-    nextQuestion();
-  }
+  function newRound() { state.score = 0; state.asked = 0; nextQuestion(); }
 
   function nextQuestion() {
     const p = pool();
@@ -440,24 +519,21 @@ async function viewPractice() {
         el("div", { class: "quiz-card" },
           el("h2", { style: "font-family:'PT Serif',serif" }, "Round complete"),
           el("p", { style: "font-size:34px;margin:14px 0" }, `${state.score} / ${state.asked}`),
-          el("button", { class: "btn primary big" , onclick: newRound }, "Play again")
-        )
+          el("button", { class: "btn primary big", onclick: newRound }, "Play again"))
       );
       return;
     }
-    const answer = pool()[Math.floor(Math.random() * pool().length)];
-    state.current = answer;
-    const distractors = sample(pool(), 3, answer);
+    const answer = p[Math.floor(Math.random() * p.length)];
+    const distractors = sample(p, 3, answer);
     const options = [answer, ...distractors].sort(() => Math.random() - 0.5);
-    const prompt = state.mode === "ru2en" ? answer.ru : answer.en;
     const promptIsRu = state.mode === "ru2en";
+    const prompt = promptIsRu ? answer.ru : answer.en;
 
     host.innerHTML = "";
     const card = el("div", { class: "quiz-card" });
     card.append(el("div", { class: "quiz-bar" },
       el("span", {}, `Question ${state.asked + 1} of ${state.total}`),
-      el("span", {}, `Score: ${state.score}`)
-    ));
+      el("span", {}, `Score: ${state.score}`)));
     card.append(el("div", { class: "quiz-q" }, promptIsRu ? "What does this mean?" : "How do you say this?"));
     const promptEl = el("div", { class: "quiz-prompt" + (promptIsRu ? " ru" : "") }, prompt);
     if (promptIsRu) { promptEl.dataset.say = answer.ru; speak(answer.ru); }
@@ -465,7 +541,7 @@ async function viewPractice() {
 
     const opts = el("div", { class: "quiz-options" });
     options.forEach((o) => {
-      const label = state.mode === "ru2en" ? o.en : o.ru;
+      const label = promptIsRu ? o.en : o.ru;
       const btn = el("button", { class: "quiz-opt" + (state.mode === "en2ru" ? " ru" : "") }, label);
       if (state.mode === "en2ru") btn.dataset.say = o.ru;
       btn.addEventListener("click", () => {
@@ -473,11 +549,8 @@ async function viewPractice() {
         [...opts.children].forEach((c) => (c.dataset.answered = "1"));
         const correct = o === answer;
         btn.classList.add(correct ? "correct" : "wrong");
-        if (!correct) {
-          [...opts.children][options.indexOf(answer)].classList.add("correct");
-        } else {
-          state.score++;
-        }
+        if (!correct) [...opts.children][options.indexOf(answer)].classList.add("correct");
+        else state.score++;
         state.asked++;
         if (state.mode === "en2ru") speak(answer.ru);
         setTimeout(nextQuestion, correct ? 750 : 1500);
@@ -509,7 +582,7 @@ function renderNav() {
   nav.append(el("div", { class: "nav-sep" }, "Learn"));
   App.sections.forEach((s) => add("#/section/" + s.id, icons[s.id] || "📘", s.title.split("—")[1]?.trim() || s.title));
   nav.append(el("div", { class: "nav-sep" }, "Practice"));
-  add("#/flashcards", "🃏", "Flashcards", App.progress.cards?.due || null);
+  add("#/flashcards", "🃏", "Flashcards", App.dueBadge || null);
   add("#/practice", "🎯", "Quiz");
 }
 
@@ -523,6 +596,7 @@ async function router() {
     else if (hash === "#/flashcards") await viewFlashcards();
     else if (hash === "#/practice") await viewPractice();
     else await viewDashboard();
+    App.dueBadge = (await srsStats()).due || null;
   } catch (e) {
     view.innerHTML = `<div class="fc-empty"><div class="big-emoji">⚠️</div><p>Could not load this page.<br><code>${e.message}</code></p></div>`;
   }
@@ -530,15 +604,20 @@ async function router() {
   window.scrollTo(0, 0);
 }
 
-async function loadProgress() {
-  try { App.progress = await api("/api/progress"); } catch { /* ignore */ }
-}
-
 /* ---------------- boot ---------------- */
 async function boot() {
   $("#audio-test").addEventListener("click", () => speak("Здравствуйте! Добро пожаловать."));
-  App.sections = await api("/api/sections");
-  await loadProgress();
+  // Build the section list (id + title + description) from the content files.
+  App.sections = [];
+  for (const id of SECTION_IDS) {
+    try {
+      const d = await loadContent(id);
+      App.sections.push({ id, title: d.title || id, description: d.description || "" });
+    } catch {
+      App.sections.push({ id, title: id, description: "" });
+    }
+  }
+  App.dueBadge = (await srsStats().catch(() => ({ due: 0 }))).due || null;
   renderNav();
   window.addEventListener("hashchange", router);
   await router();
