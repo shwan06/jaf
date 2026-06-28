@@ -736,6 +736,309 @@ async function viewDictation() {
   next();
 }
 
+/* ---------------- pronunciation (speech recognition) ---------------- */
+function getRecognizer() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return null;
+  const r = new SR();
+  r.lang = "ru-RU";
+  r.interimResults = false;
+  r.maxAlternatives = 5;
+  return r;
+}
+
+async function viewPronounce() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🎤 Pronunciation"),
+    el("p", {}, "See a word, tap the mic and say it aloud — the app checks what it heard. Works best in Chrome / Android Chrome.")));
+  const stage = el("div", { class: "quiz-stage" });
+  view.append(stage);
+
+  if (!getRecognizer()) {
+    stage.append(el("div", { class: "fc-empty" },
+      el("div", { class: "big-emoji" }, "🙉"),
+      el("p", {}, "Your browser doesn't support speech recognition. Try Google Chrome (desktop or Android) for this feature. You can still use the 🔊 audio everywhere else.")));
+    return;
+  }
+
+  const cards = await masterCards();
+  const state = { score: 0, asked: 0, total: 10, cur: null };
+  const host = el("div", {});
+  stage.append(host);
+
+  function next() {
+    host.innerHTML = "";
+    if (state.asked >= state.total) {
+      host.append(el("div", { class: "quiz-card" },
+        el("h2", { style: "font-family:'PT Serif',serif" }, "Session complete"),
+        el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${state.asked}`),
+        el("button", { class: "btn primary big", onclick: () => { state.score = 0; state.asked = 0; next(); } }, "Again")));
+      return;
+    }
+    state.cur = cards[Math.floor(Math.random() * cards.length)];
+    const card = el("div", { class: "quiz-card", style: "text-align:center" });
+    card.append(el("div", { class: "quiz-bar" }, el("span", {}, `${state.asked + 1} / ${state.total}`), el("span", {}, `Score: ${state.score}`)));
+    card.append(el("div", { class: "fc-front ru", style: "font-size:40px", "data-say": state.cur.front }, state.cur.front));
+    if (state.cur.tr) card.append(el("div", { class: "fc-tr", style: "margin-bottom:6px" }, state.cur.tr));
+    card.append(el("div", { class: "gloss-en", style: "color:var(--muted)" }, state.cur.back));
+    const mic = el("button", { class: "btn primary big", style: "margin-top:18px" }, "🎤 Tap & speak");
+    const fb = el("div", { class: "drill-feedback" });
+    card.append(mic, fb);
+    host.append(card);
+
+    mic.addEventListener("click", () => {
+      const rec = getRecognizer();
+      if (!rec) return;
+      mic.textContent = "🎙️ Listening…";
+      mic.disabled = true;
+      fb.innerHTML = "";
+      rec.onresult = (e) => {
+        const heard = Array.from(e.results[0]).map((r) => r.transcript);
+        const ok = heard.some((h) => normRu(h) === normRu(state.cur.front));
+        if (ok) state.score++;
+        fb.innerHTML = ok
+          ? `<span class="ok">✓ Heard “${heard[0]}”</span>`
+          : `<span class="bad">✗ Heard “${heard[0] || "—"}” — target: ${state.cur.front}</span>`;
+        speak(state.cur.front);
+        state.asked++;
+        mic.textContent = "Next →";
+        mic.disabled = false;
+        mic.onclick = next;
+      };
+      rec.onerror = (ev) => {
+        fb.innerHTML = `<span class="bad">Mic error (${ev.error}). Check microphone permission and try again.</span>`;
+        mic.textContent = "🎤 Tap & speak";
+        mic.disabled = false;
+      };
+      rec.onend = () => { if (mic.textContent === "🎙️ Listening…") { mic.textContent = "🎤 Tap & speak"; mic.disabled = false; } };
+      try { rec.start(); } catch { mic.textContent = "🎤 Tap & speak"; mic.disabled = false; }
+    });
+  }
+  next();
+}
+
+/* ---------------- A1–C2 exams ---------------- */
+function shuffle(a) { return a.slice().sort(() => Math.random() - 0.5); }
+
+async function viewExam() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🎓 Exams (A1–C2)"),
+    el("p", {}, "Pick a level for a mixed test — translation, conjugation and grammar. Your best score per level is saved.")));
+  const [exam, vocab, verbsData] = [await loadContent("exam"), await loadContent("vocabulary"), await loadContent("verbs")];
+  const best = (() => { try { return JSON.parse(localStorage.getItem("ru_exam")) || {}; } catch { return {}; } })();
+  const stage = el("div", { class: "quiz-stage" });
+  view.append(stage);
+  const host = el("div", {});
+
+  const pills = el("div", { class: "deck-pills" });
+  exam.levels.forEach((lv) => {
+    const b = best[lv.id] ? ` · best ${best[lv.id]}%` : "";
+    const p = el("button", { class: "deck-pill" }, lv.title.split("—")[0].trim(), el("span", { class: "cnt" }, b || "—"));
+    p.addEventListener("click", () => startExam(lv));
+    pills.append(p);
+  });
+  stage.append(pills, host);
+
+  function buildQuestions(lv) {
+    const qs = [];
+    // curated grammar MCQ
+    (lv.mcq || []).forEach((m) => qs.push({ prompt: m.q, options: m.options, answer: m.options[m.answer], explain: m.explain }));
+    // vocab translation MCQ from the level's decks
+    const pool = (vocab.decks || []).filter((d) => (lv.decks || []).includes(d.id)).flatMap((d) => d.cards);
+    const vcount = Math.max(0, 14 - qs.length - (lv.verbs ? 3 : 0));
+    shuffle(pool).slice(0, vcount).forEach((card) => {
+      const distractors = shuffle(pool.filter((c) => c !== card)).slice(0, 3).map((c) => c.en);
+      qs.push({ prompt: `What does “${card.ru}” mean?`, ru: card.ru, options: shuffle([card.en, ...distractors]), answer: card.en, explain: card.example || "" });
+    });
+    // verb conjugation MCQ
+    if (lv.verbs) {
+      shuffle(verbsData.verbs).slice(0, 3).forEach((v) => {
+        const forms = v.present || v.future || {};
+        const keys = Object.keys(forms);
+        const key = keys[Math.floor(Math.random() * keys.length)];
+        const others = shuffle(verbsData.verbs.flatMap((x) => Object.values(x.present || x.future || {})).filter((f) => f !== forms[key])).slice(0, 3);
+        qs.push({ prompt: `Conjugate ${v.inf} (${v.en}) — ${key}:`, options: shuffle([forms[key], ...others]), answer: forms[key], explain: "" });
+      });
+    }
+    return shuffle(qs).slice(0, 14);
+  }
+
+  function startExam(lv) {
+    const qs = buildQuestions(lv);
+    const state = { i: 0, score: 0 };
+    function render() {
+      host.innerHTML = "";
+      if (state.i >= qs.length) {
+        const pct = Math.round((state.score / qs.length) * 100);
+        best[lv.id] = Math.max(best[lv.id] || 0, pct);
+        localStorage.setItem("ru_exam", JSON.stringify(best));
+        const verdict = pct >= 80 ? "Excellent — you've got this level. 🎉" : pct >= 60 ? "Good — a bit more practice will solidify it." : "Keep practising this level's vocabulary and grammar.";
+        host.append(el("div", { class: "quiz-card" },
+          el("h2", { style: "font-family:'PT Serif',serif" }, `${lv.title}`),
+          el("p", { style: "font-size:34px;margin:12px 0" }, `${state.score} / ${qs.length}  (${pct}%)`),
+          el("p", { style: "color:var(--muted)" }, verdict),
+          el("button", { class: "btn primary big", style: "margin-top:10px", onclick: () => startExam(lv) }, "Retake")));
+        renderNav();
+        return;
+      }
+      const q = qs[state.i];
+      const card = el("div", { class: "quiz-card" });
+      card.append(el("div", { class: "quiz-bar" }, el("span", {}, `${lv.title.split("—")[0].trim()} · Q${state.i + 1}/${qs.length}`), el("span", {}, `Score: ${state.score}`)));
+      card.append(el("div", { class: "quiz-prompt" + (q.ru ? " ru" : ""), "data-say": q.ru || "" }, q.prompt));
+      const opts = el("div", { class: "quiz-options" });
+      q.options.forEach((o) => {
+        const btn = el("button", { class: "quiz-opt" }, o);
+        btn.addEventListener("click", () => {
+          if (opts.dataset.done) return;
+          opts.dataset.done = "1";
+          const correct = o === q.answer;
+          if (correct) state.score++;
+          btn.classList.add(correct ? "correct" : "wrong");
+          [...opts.children].forEach((c) => { if (c.textContent === q.answer) c.classList.add("correct"); });
+          if (q.explain) card.append(el("div", { class: "note", style: "margin-top:14px" }, q.explain));
+          card.append(el("button", { class: "btn primary", style: "margin-top:14px", onclick: () => { state.i++; render(); } }, state.i + 1 >= qs.length ? "See results" : "Next →"));
+        });
+        opts.append(btn);
+      });
+      card.append(opts);
+      host.append(card);
+    }
+    render();
+  }
+}
+
+/* ---------------- AI conversation tutor ---------------- */
+const TUTOR_MODELS = [
+  { id: "claude-haiku-4-5", label: "Haiku — cheapest, fast" },
+  { id: "claude-sonnet-4-6", label: "Sonnet — balanced" },
+  { id: "claude-opus-4-8", label: "Opus — most capable" },
+];
+function tutorKey() { return localStorage.getItem("ru_anthropic_key") || ""; }
+
+async function viewTutor() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🤖 AI Tutor"),
+    el("p", {}, "Chat with an AI Russian tutor that replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own Anthropic API key — messages go to Anthropic and the key stays only on this device.")));
+  const stage = el("div", { class: "quiz-stage", style: "max-width:680px" });
+  view.append(stage);
+
+  if (!tutorKey()) { renderKeyForm(); return; }
+  renderChat();
+
+  function renderKeyForm() {
+    stage.innerHTML = "";
+    const card = el("div", { class: "quiz-card" });
+    card.append(el("h2", { style: "font-family:'PT Serif',serif;margin-top:0" }, "Connect your Anthropic key"));
+    card.append(el("p", { class: "prose" }, "Get a key at console.anthropic.com (you pay Anthropic per use — typically a fraction of a cent per message on Haiku). It is stored only in this browser and sent directly to Anthropic."));
+    const input = el("input", { class: "text-input", type: "password", placeholder: "sk-ant-…", style: "font-family:monospace;font-size:15px" });
+    const save = el("button", { class: "btn primary", style: "margin-top:12px" }, "Save key & start");
+    save.addEventListener("click", () => {
+      const v = input.value.trim();
+      if (!v) return;
+      localStorage.setItem("ru_anthropic_key", v);
+      renderChat();
+    });
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") save.click(); });
+    card.append(input, save);
+    stage.append(card);
+  }
+
+  function renderChat() {
+    stage.innerHTML = "";
+    const history = []; // {role, content}
+    const toolbar = el("div", { class: "toolbar" });
+    const modelSel = el("select", { class: "dropdown" });
+    TUTOR_MODELS.forEach((m) => modelSel.append(el("option", { value: m.id }, m.label)));
+    modelSel.value = localStorage.getItem("ru_tutor_model") || "claude-haiku-4-5";
+    modelSel.addEventListener("change", () => localStorage.setItem("ru_tutor_model", modelSel.value));
+    const forget = el("button", { class: "ghost-btn", style: "width:auto;padding:9px 12px" }, "Change key");
+    forget.addEventListener("click", () => { localStorage.removeItem("ru_anthropic_key"); renderKeyForm(); });
+    toolbar.append(modelSel, forget);
+    stage.append(toolbar);
+
+    const log = el("div", { class: "chat-log" });
+    stage.append(log);
+    const composer = el("div", { class: "composer" });
+    const input = el("input", { class: "text-input", placeholder: "Type in Russian or English…", dir: "auto" });
+    const send = el("button", { class: "btn primary" }, "Send");
+    composer.append(input, send);
+    stage.append(composer);
+
+    function bubble(role, node) {
+      const b = el("div", { class: "bubble " + role });
+      b.append(node);
+      log.append(b);
+      log.scrollTop = log.scrollHeight;
+      return b;
+    }
+    bubble("bot", el("div", {}, ru("Здравствуйте! Давайте поговорим по-русски. О чём хотите поговорить?", "Здравствуйте! Давайте поговорим по-русски. О чём хотите поговорить?")));
+
+    async function submit() {
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = "";
+      bubble("user", el("div", {}, text));
+      history.push({ role: "user", content: text });
+      const thinking = bubble("bot", el("div", { class: "muted" }, "…"));
+      send.disabled = true;
+      try {
+        const reply = await callTutor(modelSel.value, history);
+        history.push({ role: "assistant", content: reply });
+        thinking.innerHTML = "";
+        thinking.append(renderTutorReply(reply));
+      } catch (e) {
+        thinking.innerHTML = "";
+        thinking.append(el("div", { class: "bad" }, "Error: " + e.message + (String(e.message).includes("401") ? " — check your API key." : "")));
+      } finally {
+        send.disabled = false;
+        log.scrollTop = log.scrollHeight;
+      }
+    }
+    send.addEventListener("click", submit);
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") submit(); });
+    input.focus();
+  }
+
+  function renderTutorReply(text) {
+    // Make Russian (Cyrillic) lines clickable for audio.
+    const wrap = el("div", {});
+    text.split("\n").forEach((line) => {
+      if (!line.trim()) return;
+      const isRu = /[Ѐ-ӿ]/.test(line);
+      wrap.append(el("div", isRu ? { class: "ru", "data-say": line } : {}, line));
+    });
+    return wrap;
+  }
+
+  async function callTutor(model, messages) {
+    const system =
+      "You are a warm, encouraging Russian language tutor for a learner whose native language is Arabic and who also knows English. " +
+      "Keep the conversation going in SIMPLE Russian suited to the learner's level. Reply in this format every time:\n" +
+      "1) Your reply in Russian (short, natural).\n2) A line starting 'EN:' with an English translation.\n3) A line starting 'AR:' with an Arabic translation.\n" +
+      "If the learner made a mistake, gently correct it on a line starting 'Поправка:' (with the fix in Russian + a short English note). Always end with a simple question to keep the chat going.";
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": tutorKey(),
+        "anthropic-version": "2023-06-01",
+        "anthropic-dangerous-direct-browser-access": "true",
+      },
+      body: JSON.stringify({ model, max_tokens: 1024, system, messages }),
+    });
+    if (!res.ok) {
+      let msg = res.status + " " + res.statusText;
+      try { const j = await res.json(); if (j.error?.message) msg = res.status + " " + j.error.message; } catch {}
+      throw new Error(msg);
+    }
+    const data = await res.json();
+    return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n").trim() || "(no reply)";
+  }
+}
+
 /* ---------------- nav + router ---------------- */
 function renderNav() {
   const nav = $("#nav");
@@ -758,6 +1061,9 @@ function renderNav() {
   add("#/practice", "🎯", "Quiz");
   add("#/verbs", "🔁", "Verb trainer");
   add("#/dictation", "✍️", "Dictation");
+  add("#/pronounce", "🎤", "Pronunciation");
+  add("#/exam", "🎓", "Exams A1–C2");
+  add("#/tutor", "🤖", "AI Tutor");
 }
 
 async function router() {
@@ -771,6 +1077,9 @@ async function router() {
     else if (hash === "#/practice") await viewPractice();
     else if (hash === "#/verbs") await viewVerbs();
     else if (hash === "#/dictation") await viewDictation();
+    else if (hash === "#/pronounce") await viewPronounce();
+    else if (hash === "#/exam") await viewExam();
+    else if (hash === "#/tutor") await viewTutor();
     else await viewDashboard();
     App.dueBadge = (await srsStats()).due || null;
   } catch (e) {

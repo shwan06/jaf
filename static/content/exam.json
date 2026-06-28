@@ -1,0 +1,61 @@
+{
+  "id": "exam",
+  "title": "Экзамены — A1 to C2 Exams",
+  "description": "CEFR-style level tests (A1 beginner → C2 mastery) built from the app's vocabulary, verbs and grammar, with multiple-choice questions and a scored result.",
+  "levels": [
+    {
+      "id": "A1", "title": "A1 — Beginner", "decks": ["core-survival", "time-numbers"], "verbs": true,
+      "mcq": [
+        {"q": "What gender is the noun окно?", "options": ["masculine", "feminine", "neuter", "plural"], "answer": 2, "explain": "Nouns ending in -о are neuter."},
+        {"q": "Choose the correct possessive: Это ___ книга (my book).", "options": ["мой", "моя", "моё", "мои"], "answer": 1, "explain": "книга is feminine, so моя."},
+        {"q": "What is the plural of стол (table)?", "options": ["стола", "столы", "столов", "столе"], "answer": 1, "explain": "Hard masculine nouns take -ы in the plural."},
+        {"q": "Который час? — Сейчас ___ (1:00).", "options": ["один час", "одна час", "первый час", "час один"], "answer": 0, "explain": "‘один час’ = one o'clock."}
+      ]
+    },
+    {
+      "id": "A2", "title": "A2 — Elementary", "decks": ["travel-transport", "food-dining", "describing-things"], "verbs": true,
+      "mcq": [
+        {"q": "Past tense (she): Она ___ книгу (to read).", "options": ["читал", "читала", "читало", "читали"], "answer": 1, "explain": "Feminine past tense adds -ла."},
+        {"q": "Я иду ___ магазин (to the shop).", "options": ["в", "на", "о", "с"], "answer": 0, "explain": "Direction into an enclosed place uses в + accusative."},
+        {"q": "Comparative of большой (big):", "options": ["больше", "большее", "самый большой", "много"], "answer": 0, "explain": "‘больше’ = bigger."},
+        {"q": "У меня нет ___ (no time, время).", "options": ["время", "времени", "временем", "времена"], "answer": 1, "explain": "‘нет’ requires the genitive: времени."}
+      ]
+    },
+    {
+      "id": "B1", "title": "B1 — Intermediate", "decks": ["people-society", "university-life", "everyday-verbs"], "verbs": true,
+      "mcq": [
+        {"q": "Я ___ книгу вчера (I read it through — completed).", "options": ["читал", "прочитал", "читаю", "буду читать"], "answer": 1, "explain": "A completed action uses the perfective прочитал."},
+        {"q": "Dative: Я дал книгу ___ (to my brother, брат).", "options": ["брата", "брату", "братом", "брате"], "answer": 1, "explain": "The indirect object takes the dative: брату."},
+        {"q": "Instrumental: Я пишу ___ (with a pen, ручка).", "options": ["ручка", "ручку", "ручкой", "ручке"], "answer": 2, "explain": "‘by means of’ uses the instrumental: ручкой."},
+        {"q": "Choose: Она говорит по-___ (in Russian).", "options": ["русский", "русски", "русская", "россия"], "answer": 1, "explain": "по-русски = ‘in Russian’ (adverb)."}
+      ]
+    },
+    {
+      "id": "B2", "title": "B2 — Upper-Intermediate", "decks": ["abstract-concepts", "university-research"], "verbs": true,
+      "mcq": [
+        {"q": "Prepositional: Мы говорили ___ (about the project, проект).", "options": ["о проекте", "о проект", "о проекта", "о проектом"], "answer": 0, "explain": "‘about’ = о + prepositional: о проекте."},
+        {"q": "Genitive plural: У нас много ___ (students, студент).", "options": ["студенты", "студента", "студентов", "студентам"], "answer": 2, "explain": "After много, genitive plural: студентов."},
+        {"q": "Conditional: Если бы я ___ время, я бы помог.", "options": ["есть", "было", "буду", "был бы"], "answer": 1, "explain": "Past-tense form with бы: ‘если бы было время’."},
+        {"q": "Active participle: ‘the student who is reading’ = ___ студент.", "options": ["читавший", "читающий", "прочитанный", "читая"], "answer": 1, "explain": "Present active participle: читающий."}
+      ]
+    },
+    {
+      "id": "C1", "title": "C1 — Advanced", "decks": ["academic-connectors", "academic-fields"], "verbs": false,
+      "mcq": [
+        {"q": "Academic connector for ‘therefore / consequently’:", "options": ["однако", "следовательно", "например", "потому что"], "answer": 1, "explain": "следовательно = ‘consequently, therefore’."},
+        {"q": "Past passive participle: ‘the written article’ = ___ статья.", "options": ["написанная", "писавшая", "пишущая", "написав"], "answer": 0, "explain": "Past passive participle (fem.): написанная."},
+        {"q": "Verbal adverb (деепричастие) of ‘having read’:", "options": ["читая", "прочитав", "прочитанный", "читавший"], "answer": 1, "explain": "Perfective verbal adverb: прочитав = ‘having read’."},
+        {"q": "Choose the academic register for ‘it is necessary to note’:", "options": ["надо сказать", "следует отметить", "я думаю", "короче говоря"], "answer": 1, "explain": "‘следует отметить’ is the impersonal scholarly form."}
+      ]
+    },
+    {
+      "id": "C2", "title": "C2 — Mastery", "decks": ["academic-connectors", "abstract-concepts"], "verbs": false,
+      "mcq": [
+        {"q": "Choose the most academic phrasing for ‘this is caused by…’:", "options": ["это из-за", "это обусловлено", "это потому что", "причина в том"], "answer": 1, "explain": "‘обусловлено’ (caused/determined by) is high academic register."},
+        {"q": "Genitive chain: ‘the analysis of the results of the study’ =", "options": ["анализ результаты исследование", "анализ результатов исследования", "анализом результатов исследования", "анализ результатам исследованию"], "answer": 1, "explain": "Nested genitives: анализ результатов исследования."},
+        {"q": "‘Несмотря на’ governs which case?", "options": ["accusative", "genitive", "dative", "prepositional"], "answer": 0, "explain": "‘несмотря на’ (despite) takes the accusative."},
+        {"q": "Choose the hedging marker meaning ‘apparently / evidently’:", "options": ["очевидно", "по-видимому", "конечно", "безусловно"], "answer": 1, "explain": "‘по-видимому’ expresses tentative inference."}
+      ]
+    }
+  ]
+}
