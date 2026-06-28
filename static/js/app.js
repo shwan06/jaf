@@ -93,6 +93,7 @@ async function masterCards() {
         front: c.ru,
         back: c.en,
         tr: c.tr || "",
+        ar: c.ar || "",
         pos: c.pos || "",
         example: c.example || "",
       });
@@ -219,7 +220,8 @@ function renderBlock(b) {
         const row = el("div", { class: "example" });
         row.append(el("div", { class: "ex-ru" }, ru(it.ru)));
         if (it.tr) row.append(el("div", { class: "ex-tr" }, it.tr));
-        if (it.en) row.append(el("div", { class: "ex-en" }, it.en));
+        if (it.en) row.append(el("div", { class: "ex-en gloss-en" }, it.en));
+        if (it.ar) row.append(el("div", { class: "ex-ar gloss-ar", dir: "rtl" }, it.ar));
         wrap.append(row);
       });
       return wrap;
@@ -232,7 +234,8 @@ function renderBlock(b) {
         const speaker = l.speaker ? l.speaker + " " : "";
         line.append(el("div", { class: "d-ru" }, ru((speaker + l.ru).trim(), l.ru)));
         if (l.tr) line.append(el("div", { class: "d-tr" }, l.tr));
-        if (l.en) line.append(el("div", { class: "d-en" }, l.en));
+        if (l.en) line.append(el("div", { class: "d-en gloss-en" }, l.en));
+        if (l.ar) line.append(el("div", { class: "d-ar gloss-ar", dir: "rtl" }, l.ar));
         wrap.append(line);
       });
       return wrap;
@@ -262,7 +265,8 @@ function renderUnit(unit, sectionId) {
   const card = el("section", { class: "unit", id: "u-" + unit.id });
   const head = el("div", { class: "unit-head" });
   const titleWrap = el("div", {}, el("h2", {}, unit.title || ""));
-  if (unit.summary) titleWrap.append(el("p", { class: "summary" }, unit.summary));
+  if (unit.summary) titleWrap.append(el("p", { class: "summary gloss-en" }, unit.summary));
+  if (unit.summary_ar) titleWrap.append(el("p", { class: "summary summary-ar gloss-ar", dir: "rtl" }, unit.summary_ar));
   head.append(titleWrap);
 
   const itemKey = `${sectionId}:${unit.id}`;
@@ -431,7 +435,8 @@ async function viewFlashcards() {
 
     const back = el("div", { style: "display:none" });
     back.append(el("div", { class: "fc-divider" }));
-    back.append(el("div", { class: "fc-back" }, card.back));
+    back.append(el("div", { class: "fc-back gloss-en" }, card.back));
+    if (card.ar) back.append(el("div", { class: "fc-ar gloss-ar", dir: "rtl" }, card.ar));
     if (card.tr) back.append(el("div", { class: "fc-tr" }, card.tr));
     if (card.example) back.append(el("div", { class: "fc-ex" }, card.example));
     fc.append(back);
@@ -604,8 +609,49 @@ async function router() {
   window.scrollTo(0, 0);
 }
 
+/* ---------------- preferences: theme + gloss language ---------------- */
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  const btn = $("#theme-toggle");
+  if (btn) btn.textContent = theme === "light" ? "☀️" : "🌙";
+}
+function applyGloss(gloss) {
+  document.body.setAttribute("data-gloss", gloss);
+  document.querySelectorAll("#gloss-seg button").forEach((b) =>
+    b.classList.toggle("active", b.dataset.gloss === gloss)
+  );
+}
+function initPrefs() {
+  const theme = localStorage.getItem("ru_theme") || "dark";
+  applyTheme(theme);
+  const gloss = localStorage.getItem("ru_gloss") || "both";
+  applyGloss(gloss);
+
+  const tBtn = $("#theme-toggle");
+  if (tBtn) tBtn.addEventListener("click", () => {
+    const next = (localStorage.getItem("ru_theme") || "dark") === "dark" ? "light" : "dark";
+    localStorage.setItem("ru_theme", next);
+    applyTheme(next);
+  });
+  document.querySelectorAll("#gloss-seg button").forEach((b) =>
+    b.addEventListener("click", () => {
+      localStorage.setItem("ru_gloss", b.dataset.gloss);
+      applyGloss(b.dataset.gloss);
+    })
+  );
+}
+function registerSW() {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () =>
+      navigator.serviceWorker.register("service-worker.js").catch(() => {})
+    );
+  }
+}
+
 /* ---------------- boot ---------------- */
 async function boot() {
+  initPrefs();
+  registerSW();
   $("#audio-test").addEventListener("click", () => speak("Здравствуйте! Добро пожаловать."));
   // Build the section list (id + title + description) from the content files.
   App.sections = [];

@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Русский от А до Я — Learn Russian A to Z</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f8cff'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle' fill='white' font-family='serif'%3EА%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0f1320" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Русский" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
@@ -21,6 +28,14 @@
       </div>
       <nav id="nav" class="nav"></nav>
       <div class="sidebar-foot">
+        <div class="toggle-row">
+          <button id="theme-toggle" class="ghost-btn icon-btn" title="Toggle light / dark">🌙</button>
+          <div class="seg" id="gloss-seg" role="group" aria-label="Translation language">
+            <button data-gloss="en" title="English only">EN</button>
+            <button data-gloss="both" title="English + Arabic">Both</button>
+            <button data-gloss="ar" title="Arabic only">ع</button>
+          </div>
+        </div>
         <button id="audio-test" class="ghost-btn" title="Test Russian speech">🔊 Test audio</button>
         <p class="hint">Click any <span class="ru-chip">слово</span> to hear it.</p>
       </div>
