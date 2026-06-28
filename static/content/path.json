@@ -9,6 +9,7 @@
         { "id": "n2", "kind": "lesson", "section": "alphabet", "unit": "vowel-pairs", "label": "Vowel pairs" },
         { "id": "n3", "kind": "flashcards", "deck": "core-survival", "label": "Survival words" },
         { "id": "n4", "kind": "lesson", "section": "alphabet", "unit": "stress-reduction", "label": "Stress & reduction" },
+        { "id": "nl1", "kind": "listening", "lesson": "a1-greetings", "label": "Listen: greetings" },
         { "id": "n5", "kind": "checkpoint", "label": "Checkpoint" }
       ]
     },
@@ -20,6 +21,7 @@
         { "id": "n8", "kind": "flashcards", "deck": "everyday-verbs", "label": "Everyday verbs" },
         { "id": "n9", "kind": "lesson", "section": "grammar", "unit": "nouns-gender-declension-classes", "label": "Noun gender" },
         { "id": "n10", "kind": "cases", "case": "nominative", "label": "Nominative drill" },
+        { "id": "nl2", "kind": "listening", "lesson": "a1-essentials", "label": "Listen: survival" },
         { "id": "n11", "kind": "checkpoint", "label": "Checkpoint" }
       ]
     },
@@ -33,6 +35,7 @@
         { "id": "n16", "kind": "cases", "case": "genitive", "label": "Genitive drill" },
         { "id": "n17", "kind": "flashcards", "deck": "people-society", "label": "People & society" },
         { "id": "n18", "kind": "exam", "level": "A1", "label": "A1 exam" },
+        { "id": "nl3", "kind": "listening", "lesson": "a2-shopping", "label": "Listen: shopping" },
         { "id": "n19", "kind": "checkpoint", "label": "Checkpoint" }
       ]
     },
@@ -48,6 +51,7 @@
         { "id": "n26", "kind": "flashcards", "deck": "time-numbers", "label": "Time & numbers" },
         { "id": "n27", "kind": "lesson", "section": "conversations", "unit": "small-talk", "label": "Small talk" },
         { "id": "n28", "kind": "exam", "level": "A2", "label": "A2 exam" },
+        { "id": "nl4", "kind": "listening", "lesson": "a2-daily", "label": "Listen: daily life" },
         { "id": "n29", "kind": "checkpoint", "label": "Checkpoint" }
       ]
     },
@@ -60,6 +64,7 @@
         { "id": "n33", "kind": "lesson", "section": "grammar", "unit": "adjectives", "label": "Adjectives" },
         { "id": "n34", "kind": "lesson", "section": "conversations", "unit": "at-the-university", "label": "At the university" },
         { "id": "n35", "kind": "exam", "level": "B1", "label": "B1 exam" },
+        { "id": "nl5", "kind": "listening", "lesson": "a2-cafe", "label": "Listen: café" },
         { "id": "n36", "kind": "checkpoint", "label": "Checkpoint" }
       ]
     },
@@ -71,6 +76,7 @@
         { "id": "n39", "kind": "flashcards", "deck": "university-research", "label": "Research words" },
         { "id": "n40", "kind": "lesson", "section": "academic", "unit": "structuring-a-paper", "label": "Structuring a paper" },
         { "id": "n41", "kind": "lesson", "section": "conversations", "unit": "meeting-supervisor", "label": "Meeting a supervisor" },
+        { "id": "nl6", "kind": "listening", "lesson": "b1-university", "label": "Listen: university" },
         { "id": "n42", "kind": "exam", "level": "B2", "label": "B2 exam" },
         { "id": "n43", "kind": "exam", "level": "C1", "label": "C1 exam" },
         { "id": "n44", "kind": "checkpoint", "label": "Master!" }

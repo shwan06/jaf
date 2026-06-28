@@ -127,6 +127,7 @@ async function masterCards() {
         ar: c.ar || "",
         pos: c.pos || "",
         example: c.example || "",
+        audio: c.audio || "",
       });
     });
   });
@@ -297,10 +298,18 @@ function playClip(item, slow) {
 }
 document.addEventListener("click", (e) => {
   const ru = e.target.closest(".ru");
-  if (ru) speak(ru.dataset.say || ru.textContent);
+  if (!ru) return;
+  const say = ru.dataset.say || ru.textContent;
+  if (ru.dataset.audio) playClip({ ru: say, audioUrl: ru.dataset.audio });
+  else speak(say);
 });
-const ru = (text, sayOverride) =>
-  el("span", { class: "ru", "data-say": sayOverride || text }, text);
+// `audioUrl` (optional) attaches a real recording to a clickable Russian span;
+// the click handler plays it (with TTS fallback) instead of synthesising speech.
+const ru = (text, sayOverride, audioUrl) => {
+  const attrs = { class: "ru", "data-say": sayOverride || text };
+  if (audioUrl) attrs["data-audio"] = audioUrl;
+  return el("span", attrs, text);
+};
 
 /* ---------------- block renderer ---------------- */
 function renderBlock(b) {
@@ -337,7 +346,7 @@ function renderBlock(b) {
       const wrap = el("div", { class: "examples" });
       (b.items || []).forEach((it) => {
         const row = el("div", { class: "example" });
-        row.append(el("div", { class: "ex-ru" }, ru(it.ru)));
+        row.append(el("div", { class: "ex-ru" }, ru(it.ru, null, it.audio)));
         if (it.tr) row.append(el("div", { class: "ex-tr" }, it.tr));
         if (it.en) row.append(el("div", { class: "ex-en gloss-en" }, it.en));
         if (it.ar) row.append(el("div", { class: "ex-ar gloss-ar", dir: "rtl" }, it.ar));
@@ -351,7 +360,7 @@ function renderBlock(b) {
       (b.lines || []).forEach((l) => {
         const line = el("div", { class: "d-line" });
         const speaker = l.speaker ? l.speaker + " " : "";
-        line.append(el("div", { class: "d-ru" }, ru((speaker + l.ru).trim(), l.ru)));
+        line.append(el("div", { class: "d-ru" }, ru((speaker + l.ru).trim(), l.ru, l.audio)));
         if (l.tr) line.append(el("div", { class: "d-tr" }, l.tr));
         if (l.en) line.append(el("div", { class: "d-en gloss-en" }, l.en));
         if (l.ar) line.append(el("div", { class: "d-ar gloss-ar", dir: "rtl" }, l.ar));
@@ -439,7 +448,7 @@ function renderDeckBrowser(view, decks) {
       row.append(starBtn({ id: "v:" + d.id + ":" + c.ru, ru: c.ru, en: c.en || "", ar: c.ar || "", tr: c.tr || "", type: "word", src: prettyDeck(d.id) }));
       const body = el("div", { class: "vr-body" },
         el("div", { class: "vr-head" },
-          el("span", { class: "vr-ru ru", "data-say": c.ru }, c.ru),
+          el("span", { class: "vr-ru ru", "data-say": c.ru, ...(c.audio ? { "data-audio": c.audio } : {}) }, c.ru),
           c.pos ? el("span", { class: "vr-pos" }, c.pos) : null),
         c.tr ? el("span", { class: "vr-tr" }, c.tr) : null,
         c.en ? el("div", { class: "vr-en gloss-en" }, c.en) : null,
@@ -626,7 +635,14 @@ async function countAllUnits() {
 }
 
 /* ---------------- listening comprehension ---------------- */
-async function viewListening() {
+const Listen = {
+  KEY: "ru_listening_v1",
+  load() { try { return JSON.parse(localStorage.getItem(this.KEY)) || {}; } catch { return {}; } },
+  best(id) { return this.load()[id] || 0; },
+  record(id, pct) { const s = this.load(); s[id] = Math.max(s[id] || 0, pct); localStorage.setItem(this.KEY, JSON.stringify(s)); },
+};
+
+async function viewListening(startId) {
   const view = $("#view");
   view.innerHTML = "";
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🎧 Listening"),
@@ -642,7 +658,8 @@ async function viewListening() {
   function renderPicker() {
     pills.innerHTML = ""; host.innerHTML = "";
     lessons.forEach((l) => {
-      const p = el("button", { class: "deck-pill" }, l.title, el("span", { class: "cnt" }, String((l.items || []).length)));
+      const best = Listen.best(l.id);
+      const p = el("button", { class: "deck-pill" }, l.title, el("span", { class: "cnt" }, best ? best + "%" : String((l.items || []).length)));
       p.addEventListener("click", () => startLesson(l));
       pills.append(p);
     });
@@ -661,11 +678,14 @@ async function viewListening() {
       pills.append(back);
 
       if (state.i >= items.length) {
+        const pct = Math.round((state.score / items.length) * 100);
+        Listen.record(lesson.id, pct);
         host.append(el("div", { class: "quiz-card", style: "text-align:center" },
           el("h2", { style: "font-family:'PT Serif',serif" }, lesson.title + " — done"),
-          el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${items.length}`),
+          el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${items.length}  (${pct}%)`),
           el("button", { class: "btn primary big", style: "margin-top:8px", onclick: () => startLesson(lesson) }, "Listen again"),
           el("button", { class: "deck-pill", style: "margin-top:12px", onclick: renderPicker }, "Other lessons")));
+        renderNav();
         return;
       }
       const it = items[state.i];
@@ -694,7 +714,7 @@ async function viewListening() {
           if (correct) { state.score++; Gamify.award(4, "Listening"); }
           // reveal transcript
           const tr = el("div", { class: "listen-transcript" },
-            el("div", { class: "lt-ru ru", "data-say": it.ru }, it.ru),
+            el("div", { class: "lt-ru ru", "data-say": it.ru, ...(it.audioUrl ? { "data-audio": it.audioUrl } : {}) }, it.ru),
             it.tr ? el("div", { class: "lt-tr" }, it.tr) : null,
             el("div", { class: "lt-en gloss-en" }, it.en),
             it.ar ? el("div", { class: "lt-ar gloss-ar", dir: "rtl" }, it.ar) : null,
@@ -713,6 +733,7 @@ async function viewListening() {
     render();
   }
 
+  if (startId) { const l = lessons.find((x) => x.id === startId); if (l) { startLesson(l); return; } }
   renderPicker();
 }
 
@@ -944,7 +965,7 @@ async function viewFlashcards() {
     host.append(el("div", { class: "fc-meta" }, `${state.idx + 1} / ${state.queue.length} · ${prettyDeck(card.deck)}`));
 
     const fc = el("div", { class: "flashcard" });
-    fc.append(el("div", { class: "fc-front ru", "data-say": card.front }, card.front));
+    fc.append(el("div", { class: "fc-front ru", "data-say": card.front, ...(card.audio ? { "data-audio": card.audio } : {}) }, card.front));
     if (card.pos) fc.append(el("div", { class: "fc-pos" }, card.pos));
 
     const back = el("div", { style: "display:none" });
@@ -961,7 +982,7 @@ async function viewFlashcards() {
     const showBtn = el("button", { class: "btn primary big" }, "Show answer");
     showBtn.addEventListener("click", () => {
       back.style.display = "block";
-      speak(card.front);
+      playClip({ ru: card.front, audioUrl: card.audio });
       controls.innerHTML = "";
       controls.append(
         rateBtn("Again", 1, "btn-again", card),
@@ -1057,7 +1078,7 @@ async function viewPractice() {
       el("span", {}, `Score: ${state.score}`)));
     card.append(el("div", { class: "quiz-q" }, promptIsRu ? "What does this mean?" : "How do you say this?"));
     const promptEl = el("div", { class: "quiz-prompt" + (promptIsRu ? " ru" : "") }, prompt);
-    if (promptIsRu) { promptEl.dataset.say = answer.ru; speak(answer.ru); }
+    if (promptIsRu) { promptEl.dataset.say = answer.ru; if (answer.audio) promptEl.dataset.audio = answer.audio; playClip({ ru: answer.ru, audioUrl: answer.audio }); }
     card.append(promptEl);
 
     const opts = el("div", { class: "quiz-options" });
@@ -1073,7 +1094,7 @@ async function viewPractice() {
         if (!correct) [...opts.children][options.indexOf(answer)].classList.add("correct");
         else { state.score++; Gamify.award(2, "Quiz answer"); }
         state.asked++;
-        if (state.mode === "en2ru") speak(answer.ru);
+        if (state.mode === "en2ru") playClip({ ru: answer.ru, audioUrl: answer.audio });
         setTimeout(nextQuestion, correct ? 750 : 1500);
       });
       opts.append(btn);
@@ -1260,13 +1281,13 @@ async function viewDictation() {
       return;
     }
     state.cur = cards[Math.floor(Math.random() * cards.length)];
-    speak(state.cur.front);
+    playClip({ ru: state.cur.front, audioUrl: state.cur.audio });
 
     const card = el("div", { class: "quiz-card" });
     card.append(el("div", { class: "quiz-bar" },
       el("span", {}, `${state.asked + 1} / ${state.total}`), el("span", {}, `Score: ${state.score}`)));
     const playBtn = el("button", { class: "btn", style: "background:var(--panel-2);color:var(--text);margin-bottom:14px" }, "🔊 Play again");
-    playBtn.addEventListener("click", () => speak(state.cur.front));
+    playBtn.addEventListener("click", () => playClip({ ru: state.cur.front, audioUrl: state.cur.audio }));
     card.append(playBtn);
     const input = el("input", { class: "text-input", type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: "false", placeholder: "type what you hear…", dir: "ltr" });
     const feedback = el("div", { class: "drill-feedback" });
@@ -1358,7 +1379,7 @@ async function viewPronounce() {
         fb.innerHTML = ok
           ? `<span class="ok">✓ Heard “${heard[0]}”</span>`
           : `<span class="bad">✗ Heard “${heard[0] || "—"}” — target: ${state.cur.front}</span>`;
-        speak(state.cur.front);
+        playClip({ ru: state.cur.front, audioUrl: state.cur.audio });
         state.asked++;
         mic.textContent = "Next →";
         mic.disabled = false;
@@ -1469,12 +1490,13 @@ async function viewExam() {
 }
 
 /* ---------------- learning path (Duolingo-style) ---------------- */
-const NODE_ICON = { lesson: "📖", flashcards: "🃏", cases: "🧩", exam: "🎓", checkpoint: "🏆" };
+const NODE_ICON = { lesson: "📖", flashcards: "🃏", cases: "🧩", exam: "🎓", listening: "🎧", checkpoint: "🏆" };
 const NODE_ROUTE = {
   lesson: (n) => `#/section/${n.section}/${n.unit}`,
   flashcards: () => "#/flashcards",
   cases: () => "#/cases",
   exam: () => "#/exam",
+  listening: (n) => `#/listening/${n.lesson}`,
   checkpoint: () => null,
 };
 
@@ -1491,6 +1513,7 @@ async function pathState() {
       case "flashcards": { const d = deckStats[n.deck]; return d && d.total ? d.started / d.total >= 0.6 : false; }
       case "cases": return (Cases.mastery(n.case) || 0) >= 60;
       case "exam": return (exam[n.level] || 0) >= 60;
+      case "listening": return (Listen.best(n.lesson) || 0) >= 60;
       default: return false;
     }
   };
@@ -1508,12 +1531,13 @@ async function pathState() {
       case "cases": return Math.min(5, Math.floor((Cases.mastery(n.case) || 0) / 20));
       case "exam": return Math.min(5, Math.floor((exam[n.level] || 0) / 20));
       case "flashcards": { const d = deckStats[n.deck]; return d && d.total ? Math.min(5, Math.floor((d.started / d.total) * 5)) : 0; }
+      case "listening": return Math.min(5, Math.floor((Listen.best(n.lesson) || 0) / 20));
       case "lesson": return row_done_lesson(n) ? 1 : 0;
       default: return 0;
     }
   };
   function row_done_lesson(n) { return !!completed[`${n.section}:${n.unit}`]; }
-  const crownCap = (k) => (k === "cases" || k === "exam" || k === "flashcards") ? 5 : 1;
+  const crownCap = (k) => (k === "cases" || k === "exam" || k === "flashcards" || k === "listening") ? 5 : 1;
   flat.forEach((row) => { row.crown = row.n.kind === "checkpoint" ? (row.done ? 1 : 0) : crownOf(row.n); });
   const currentIdx = flat.findIndex((r) => r.unlocked && !r.done);
   const doneCount = flat.filter((r) => r.n.kind !== "checkpoint" && r.done).length;
@@ -1552,7 +1576,7 @@ async function viewPath() {
       const row = flat[gi];
       const isCurrent = gi === currentIdx;
       const state = row.done ? "done" : row.unlocked ? (isCurrent ? "current" : "open") : "locked";
-      const gradable = n.kind === "cases" || n.kind === "exam" || n.kind === "flashcards";
+      const gradable = n.kind === "cases" || n.kind === "exam" || n.kind === "flashcards" || n.kind === "listening";
       const gilded = gradable && row.crown >= 5;
       // zigzag offset for the winding-path look
       const off = [0, 1, 2, 1, -1, -2, -1][idxInUnit % 7];
@@ -1695,7 +1719,7 @@ async function viewCases() {
           [...opts.children].forEach((c) => { if (c.textContent === d.answer) c.classList.add("correct"); });
           if (correct) { state.score++; Gamify.award(3, "Cases drill"); if (isReview) Cases.clearMiss(d.id); }
           else { Cases.addMiss(d.id); }
-          speak(d.prompt.replace("___", d.answer));
+          playClip({ ru: d.prompt.replace("___", d.answer), audioUrl: d.audio });
           card.append(el("div", { class: "note", style: "margin-top:14px" },
             el("div", {}, (correct ? "✓ " : "✗ ") + d.answer + " — " + (d.context || "")),
             el("div", { class: "muted", style: "margin-top:4px" }, d.explain)));
@@ -2161,6 +2185,7 @@ function renderNav() {
 
 // Human-readable label for a route hash (used by the dashboard "Continue" button).
 function routeLabel(hash) {
+  if (hash.startsWith("#/listening")) return "Listening";
   const map = { "#/path": "Learning Path", "#/stats": "Progress", "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/listening": "Listening", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
   if (map[hash]) return map[hash];
   if (hash.startsWith("#/section/")) {
@@ -2184,7 +2209,7 @@ async function router() {
     else if (hash === "#/practice") await viewPractice();
     else if (hash === "#/cases") await viewCases();
     else if (hash === "#/verbs") await viewVerbs();
-    else if (hash === "#/listening") await viewListening();
+    else if (hash === "#/listening" || hash.startsWith("#/listening/")) await viewListening(hash.split("/")[2]);
     else if (hash === "#/dictation") await viewDictation();
     else if (hash === "#/pronounce") await viewPronounce();
     else if (hash === "#/exam") await viewExam();

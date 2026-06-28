@@ -7,12 +7,48 @@
       "title": "A1 — Greetings",
       "level": "A1",
       "items": [
-        { "id": "g1", "ru": "Здравствуйте!", "tr": "Zdravstvuyte!", "en": "Hello! (formal)", "ar": "مرحباً! (رسمي)" },
-        { "id": "g2", "ru": "Как вас зовут?", "tr": "Kak vas zovut?", "en": "What is your name?", "ar": "ما اسمك؟" },
-        { "id": "g3", "ru": "Меня зовут Анна.", "tr": "Menya zovut Anna.", "en": "My name is Anna.", "ar": "اسمي آنّا." },
-        { "id": "g4", "ru": "Очень приятно!", "tr": "Ochen' priyatno!", "en": "Nice to meet you!", "ar": "تشرّفت بلقائك!" },
-        { "id": "g5", "ru": "Откуда вы?", "tr": "Otkuda vy?", "en": "Where are you from?", "ar": "من أين أنت؟" },
-        { "id": "g6", "ru": "До свидания!", "tr": "Do svidaniya!", "en": "Goodbye!", "ar": "إلى اللقاء!" }
+        {
+          "id": "g1",
+          "ru": "Здравствуйте!",
+          "tr": "Zdravstvuyte!",
+          "en": "Hello! (formal)",
+          "ar": "مرحباً! (رسمي)"
+        },
+        {
+          "id": "g2",
+          "ru": "Как вас зовут?",
+          "tr": "Kak vas zovut?",
+          "en": "What is your name?",
+          "ar": "ما اسمك؟"
+        },
+        {
+          "id": "g3",
+          "ru": "Меня зовут Анна.",
+          "tr": "Menya zovut Anna.",
+          "en": "My name is Anna.",
+          "ar": "اسمي آنّا."
+        },
+        {
+          "id": "g4",
+          "ru": "Очень приятно!",
+          "tr": "Ochen' priyatno!",
+          "en": "Nice to meet you!",
+          "ar": "تشرّفت بلقائك!"
+        },
+        {
+          "id": "g5",
+          "ru": "Откуда вы?",
+          "tr": "Otkuda vy?",
+          "en": "Where are you from?",
+          "ar": "من أين أنت؟"
+        },
+        {
+          "id": "g6",
+          "ru": "До свидания!",
+          "tr": "Do svidaniya!",
+          "en": "Goodbye!",
+          "ar": "إلى اللقاء!"
+        }
       ]
     },
     {
@@ -20,12 +56,48 @@
       "title": "A1 — Survival phrases",
       "level": "A1",
       "items": [
-        { "id": "e1", "ru": "Я не понимаю.", "tr": "Ya ne ponimayu.", "en": "I don't understand.", "ar": "لا أفهم." },
-        { "id": "e2", "ru": "Говорите медленнее, пожалуйста.", "tr": "Govorite medlenneye, pozhaluysta.", "en": "Please speak more slowly.", "ar": "تكلّم ببطء من فضلك." },
-        { "id": "e3", "ru": "Сколько это стоит?", "tr": "Skol'ko eto stoit?", "en": "How much does this cost?", "ar": "كم يكلّف هذا؟" },
-        { "id": "e4", "ru": "Где находится туалет?", "tr": "Gde nakhoditsya tualet?", "en": "Where is the toilet?", "ar": "أين يقع الحمّام؟" },
-        { "id": "e5", "ru": "Спасибо большое!", "tr": "Spasibo bol'shoye!", "en": "Thank you very much!", "ar": "شكراً جزيلاً!" },
-        { "id": "e6", "ru": "Помогите, пожалуйста.", "tr": "Pomogite, pozhaluysta.", "en": "Help, please.", "ar": "ساعدني من فضلك." }
+        {
+          "id": "e1",
+          "ru": "Я не понимаю.",
+          "tr": "Ya ne ponimayu.",
+          "en": "I don't understand.",
+          "ar": "لا أفهم."
+        },
+        {
+          "id": "e2",
+          "ru": "Говорите медленнее, пожалуйста.",
+          "tr": "Govorite medlenneye, pozhaluysta.",
+          "en": "Please speak more slowly.",
+          "ar": "تكلّم ببطء من فضلك."
+        },
+        {
+          "id": "e3",
+          "ru": "Сколько это стоит?",
+          "tr": "Skol'ko eto stoit?",
+          "en": "How much does this cost?",
+          "ar": "كم يكلّف هذا؟"
+        },
+        {
+          "id": "e4",
+          "ru": "Где находится туалет?",
+          "tr": "Gde nakhoditsya tualet?",
+          "en": "Where is the toilet?",
+          "ar": "أين يقع الحمّام؟"
+        },
+        {
+          "id": "e5",
+          "ru": "Спасибо большое!",
+          "tr": "Spasibo bol'shoye!",
+          "en": "Thank you very much!",
+          "ar": "شكراً جزيلاً!"
+        },
+        {
+          "id": "e6",
+          "ru": "Помогите, пожалуйста.",
+          "tr": "Pomogite, pozhaluysta.",
+          "en": "Help, please.",
+          "ar": "ساعدني من فضلك."
+        }
       ]
     },
     {
@@ -33,12 +105,48 @@
       "title": "A2 — Daily life",
       "level": "A2",
       "items": [
-        { "id": "d1", "ru": "Я живу и учусь в Москве.", "tr": "Ya zhivu i uchus' v Moskve.", "en": "I live and study in Moscow.", "ar": "أعيش وأدرس في موسكو." },
-        { "id": "d2", "ru": "Утром я пью кофе.", "tr": "Utrom ya p'yu kofe.", "en": "In the morning I drink coffee.", "ar": "في الصباح أشرب القهوة." },
-        { "id": "d3", "ru": "Сегодня прекрасная погода.", "tr": "Segodnya prekrasnaya pogoda.", "en": "Today the weather is wonderful.", "ar": "الطقس رائع اليوم." },
-        { "id": "d4", "ru": "Я люблю читать русские книги.", "tr": "Ya lyublyu chitat' russkiye knigi.", "en": "I love reading Russian books.", "ar": "أحبّ قراءة الكتب الروسية." },
-        { "id": "d5", "ru": "Вечером я смотрю фильмы.", "tr": "Vecherom ya smotryu fil'my.", "en": "In the evening I watch films.", "ar": "في المساء أشاهد الأفلام." },
-        { "id": "d6", "ru": "Завтра у меня экзамен.", "tr": "Zavtra u menya ekzamen.", "en": "Tomorrow I have an exam.", "ar": "غداً عندي امتحان." }
+        {
+          "id": "d1",
+          "ru": "Я живу и учусь в Москве.",
+          "tr": "Ya zhivu i uchus' v Moskve.",
+          "en": "I live and study in Moscow.",
+          "ar": "أعيش وأدرس في موسكو."
+        },
+        {
+          "id": "d2",
+          "ru": "Утром я пью кофе.",
+          "tr": "Utrom ya p'yu kofe.",
+          "en": "In the morning I drink coffee.",
+          "ar": "في الصباح أشرب القهوة."
+        },
+        {
+          "id": "d3",
+          "ru": "Сегодня прекрасная погода.",
+          "tr": "Segodnya prekrasnaya pogoda.",
+          "en": "Today the weather is wonderful.",
+          "ar": "الطقس رائع اليوم."
+        },
+        {
+          "id": "d4",
+          "ru": "Я люблю читать русские книги.",
+          "tr": "Ya lyublyu chitat' russkiye knigi.",
+          "en": "I love reading Russian books.",
+          "ar": "أحبّ قراءة الكتب الروسية."
+        },
+        {
+          "id": "d5",
+          "ru": "Вечером я смотрю фильмы.",
+          "tr": "Vecherom ya smotryu fil'my.",
+          "en": "In the evening I watch films.",
+          "ar": "في المساء أشاهد الأفلام."
+        },
+        {
+          "id": "d6",
+          "ru": "Завтра у меня экзамен.",
+          "tr": "Zavtra u menya ekzamen.",
+          "en": "Tomorrow I have an exam.",
+          "ar": "غداً عندي امتحان."
+        }
       ]
     },
     {
@@ -46,12 +154,342 @@
       "title": "A2 — At the café",
       "level": "A2",
       "items": [
-        { "id": "c1", "ru": "Дайте, пожалуйста, меню.", "tr": "Dayte, pozhaluysta, menyu.", "en": "Please give me the menu.", "ar": "أعطني القائمة من فضلك." },
-        { "id": "c2", "ru": "Я хочу чашку чая.", "tr": "Ya khochu chashku chaya.", "en": "I want a cup of tea.", "ar": "أريد فنجان شاي." },
-        { "id": "c3", "ru": "У вас есть хлеб?", "tr": "U vas yest' khleb?", "en": "Do you have bread?", "ar": "هل لديكم خبز؟" },
-        { "id": "c4", "ru": "Это очень вкусно.", "tr": "Eto ochen' vkusno.", "en": "This is very tasty.", "ar": "هذا لذيذ جداً." },
-        { "id": "c5", "ru": "Счёт, пожалуйста.", "tr": "Schyot, pozhaluysta.", "en": "The bill, please.", "ar": "الحساب من فضلك." },
-        { "id": "c6", "ru": "Можно расплатиться картой?", "tr": "Mozhno rasplatit'sya kartoy?", "en": "Can I pay by card?", "ar": "هل يمكن الدفع بالبطاقة؟" }
+        {
+          "id": "c1",
+          "ru": "Дайте, пожалуйста, меню.",
+          "tr": "Dayte, pozhaluysta, menyu.",
+          "en": "Please give me the menu.",
+          "ar": "أعطني القائمة من فضلك."
+        },
+        {
+          "id": "c2",
+          "ru": "Я хочу чашку чая.",
+          "tr": "Ya khochu chashku chaya.",
+          "en": "I want a cup of tea.",
+          "ar": "أريد فنجان شاي."
+        },
+        {
+          "id": "c3",
+          "ru": "У вас есть хлеб?",
+          "tr": "U vas yest' khleb?",
+          "en": "Do you have bread?",
+          "ar": "هل لديكم خبز؟"
+        },
+        {
+          "id": "c4",
+          "ru": "Это очень вкусно.",
+          "tr": "Eto ochen' vkusno.",
+          "en": "This is very tasty.",
+          "ar": "هذا لذيذ جداً."
+        },
+        {
+          "id": "c5",
+          "ru": "Счёт, пожалуйста.",
+          "tr": "Schyot, pozhaluysta.",
+          "en": "The bill, please.",
+          "ar": "الحساب من فضلك."
+        },
+        {
+          "id": "c6",
+          "ru": "Можно расплатиться картой?",
+          "tr": "Mozhno rasplatit'sya kartoy?",
+          "en": "Can I pay by card?",
+          "ar": "هل يمكن الدفع بالبطاقة؟"
+        }
+      ]
+    },
+    {
+      "id": "a2-directions",
+      "title": "A2 — Getting around",
+      "level": "A2",
+      "items": [
+        {
+          "id": "directions1",
+          "ru": "Извините, как мне дойти до метро?",
+          "tr": "Izvinite, kak mne doyti do metro?",
+          "en": "Excuse me, how do I get to the metro?",
+          "ar": "عذرًا، كيف أصل إلى محطة المترو؟"
+        },
+        {
+          "id": "directions2",
+          "ru": "Идите прямо, потом поверните налево.",
+          "tr": "Idite pryamo, potom povernite nalevo.",
+          "en": "Go straight, then turn left.",
+          "ar": "سِر إلى الأمام مباشرة، ثم انعطف يسارًا."
+        },
+        {
+          "id": "directions3",
+          "ru": "На какой остановке мне выходить, чтобы попасть в центр?",
+          "tr": "Na kakoy ostanovke mne vykhodit, chtoby popast v tsentr?",
+          "en": "Which stop should I get off at to reach the city centre?",
+          "ar": "في أيِّ محطة يجب أن أنزل لكي أصل إلى وسط المدينة؟"
+        },
+        {
+          "id": "directions4",
+          "ru": "Этот автобус идёт до вокзала?",
+          "tr": "Etot avtobus idyot do vokzala?",
+          "en": "Does this bus go to the train station?",
+          "ar": "هل تذهب هذه الحافلة إلى محطة القطار؟"
+        },
+        {
+          "id": "directions5",
+          "ru": "Поверните направо у светофора, и аптека будет справа.",
+          "tr": "Povernite napravo u svetofora, i apteka budet sprava.",
+          "en": "Turn right at the traffic light, and the pharmacy will be on the right.",
+          "ar": "انعطف يمينًا عند إشارة المرور، وستكون الصيدلية على يمينك."
+        },
+        {
+          "id": "directions6",
+          "ru": "Можно вызвать такси до аэропорта? Сколько это будет стоить?",
+          "tr": "Mozhno vyzvat taksi do aeroporta? Skolko eto budet stoit?",
+          "en": "Can I order a taxi to the airport? How much will it cost?",
+          "ar": "هل يمكنني طلب سيارة أجرة إلى المطار؟ كم سيكلّف ذلك؟"
+        }
+      ]
+    },
+    {
+      "id": "a2-shopping",
+      "title": "A2 — Shopping",
+      "level": "A2",
+      "items": [
+        {
+          "id": "shopping1",
+          "ru": "Извините, можно примерить эту рубашку?",
+          "tr": "Izvinite, mozhno primerit' etu rubashku?",
+          "en": "Excuse me, can I try on this shirt?",
+          "ar": "عفواً، هل يمكنني تجربة هذا القميص؟"
+        },
+        {
+          "id": "shopping2",
+          "ru": "У вас есть размер побольше?",
+          "tr": "U vas yest' razmer pobol'she?",
+          "en": "Do you have a bigger size?",
+          "ar": "هل لديكم مقاس أكبر؟"
+        },
+        {
+          "id": "shopping3",
+          "ru": "Сколько стоят эти чёрные джинсы?",
+          "tr": "Skol'ko stoyat eti chyornye dzhinsy?",
+          "en": "How much do these black jeans cost?",
+          "ar": "كم يبلغ ثمن هذا الجينز الأسود؟"
+        },
+        {
+          "id": "shopping4",
+          "ru": "Этот свитер мне мал, а красный цвет мне очень нравится.",
+          "tr": "Etot sviter mne mal, a krasnyy tsvet mne ochen' nravitsya.",
+          "en": "This sweater is too small for me, but I really like the red colour.",
+          "ar": "هذه الكنزة صغيرة عليّ، لكن اللون الأحمر يعجبني كثيراً."
+        },
+        {
+          "id": "shopping5",
+          "ru": "Дайте, пожалуйста, килограмм яблок и два литра молока.",
+          "tr": "Dayte, pozhaluysta, kilogramm yablok i dva litra moloka.",
+          "en": "Please give me a kilogram of apples and two litres of milk.",
+          "ar": "من فضلك، أعطني كيلوغراماً من التفاح ولترين من الحليب."
+        },
+        {
+          "id": "shopping6",
+          "ru": "Можно заплатить картой или только наличными?",
+          "tr": "Mozhno zaplatit' kartoy ili tol'ko nalichnymi?",
+          "en": "Can I pay by card, or only with cash?",
+          "ar": "هل يمكنني الدفع بالبطاقة أم بالنقد فقط؟"
+        }
+      ]
+    },
+    {
+      "id": "a2-health",
+      "title": "A2 — Health",
+      "level": "A2",
+      "items": [
+        {
+          "id": "health1",
+          "ru": "Я плохо себя чувствую сегодня.",
+          "tr": "Ya plokho sebya chuvstvuyu segodnya.",
+          "en": "I feel unwell today.",
+          "ar": "أشعر بتوعّك اليوم."
+        },
+        {
+          "id": "health2",
+          "ru": "У меня болит голова и высокая температура.",
+          "tr": "U menya bolit golova i vysokaya temperatura.",
+          "en": "I have a headache and a high fever.",
+          "ar": "أعاني من صداع وارتفاع في درجة الحرارة."
+        },
+        {
+          "id": "health3",
+          "ru": "Мне нужно лекарство от кашля.",
+          "tr": "Mne nuzhno lekarstvo ot kashlya.",
+          "en": "I need medicine for a cough.",
+          "ar": "أحتاج إلى دواء للسعال."
+        },
+        {
+          "id": "health4",
+          "ru": "Доктор, у меня уже три дня болит горло.",
+          "tr": "Doktor, u menya uzhe tri dnya bolit gorlo.",
+          "en": "Doctor, I have had a sore throat for three days already.",
+          "ar": "يا دكتور، أعاني من ألم في الحلق منذ ثلاثة أيام."
+        },
+        {
+          "id": "health5",
+          "ru": "Эти таблетки нужно принимать два раза в день.",
+          "tr": "Eti tabletki nuzhno prinimat dva raza v den.",
+          "en": "You need to take these tablets twice a day.",
+          "ar": "يجب تناول هذه الأقراص مرّتين في اليوم."
+        },
+        {
+          "id": "health6",
+          "ru": "Где здесь ближайшая аптека?",
+          "tr": "Gde zdes blizhayshaya apteka?",
+          "en": "Where is the nearest pharmacy around here?",
+          "ar": "أين أقرب صيدلية من هنا؟"
+        }
+      ]
+    },
+    {
+      "id": "b1-university",
+      "title": "B1 — At the university",
+      "level": "B1",
+      "items": [
+        {
+          "id": "university1",
+          "ru": "Завтра у нас лекция по истории, но я ещё не записался на экзамен.",
+          "tr": "Zavtra u nas lektsiya po istorii, no ya yeshchyo ne zapisalsya na ekzamen.",
+          "en": "Tomorrow we have a history lecture, but I still haven't signed up for the exam.",
+          "ar": "غدًا لدينا محاضرة في التاريخ، لكنني لم أسجّل بعد للامتحان."
+        },
+        {
+          "id": "university2",
+          "ru": "В библиотеке можно взять учебники на дом, если у тебя есть студенческий билет.",
+          "tr": "V biblioteke mozhno vzyat uchebniki na dom, yesli u tebya yest studencheskiy bilet.",
+          "en": "In the library you can borrow textbooks to take home if you have a student ID.",
+          "ar": "في المكتبة يمكنك استعارة الكتب الدراسية إلى البيت إذا كان لديك بطاقة طالب."
+        },
+        {
+          "id": "university3",
+          "ru": "Скажите, пожалуйста, где находится деканат? Мне нужно подать заявление.",
+          "tr": "Skazhite, pozhaluysta, gde nakhoditsya dekanat? Mne nuzhno podat zayavlenie.",
+          "en": "Could you tell me where the dean's office is? I need to submit an application.",
+          "ar": "من فضلك، أين يقع مكتب العمادة؟ أحتاج إلى تقديم طلب."
+        },
+        {
+          "id": "university4",
+          "ru": "Я пропустил пару семинаров, поэтому хочу попросить у преподавателя конспект.",
+          "tr": "Ya propustil paru seminarov, poetomu khochu poprosit u prepodavatelya konspekt.",
+          "en": "I missed a couple of seminars, so I want to ask the lecturer for the notes.",
+          "ar": "لقد فاتتني بضع حلقات دراسية، لذلك أريد أن أطلب من الأستاذ ملخّص الدروس."
+        },
+        {
+          "id": "university5",
+          "ru": "Экзамен по математике перенесли на следующую неделю, ты не знал?",
+          "tr": "Ekzamen po matematike perenesli na sleduyushchuyu nedelyu, ty ne znal?",
+          "en": "The math exam has been moved to next week, didn't you know?",
+          "ar": "تم تأجيل امتحان الرياضيات إلى الأسبوع القادم، ألم تكن تعلم؟"
+        },
+        {
+          "id": "university6",
+          "ru": "Давай встретимся после занятий в столовой и вместе подготовимся к зачёту.",
+          "tr": "Davay vstretimsya posle zanyatiy v stolovoy i vmeste podgotovimsya k zachyotu.",
+          "en": "Let's meet after classes in the cafeteria and prepare for the test together.",
+          "ar": "لنلتقِ بعد الحصص في المقصف ونستعد معًا للاختبار."
+        }
+      ]
+    },
+    {
+      "id": "b1-opinions",
+      "title": "B1 — Opinions & plans",
+      "level": "B1",
+      "items": [
+        {
+          "id": "opinions1",
+          "ru": "По-моему, это не самая удачная идея, но я могу ошибаться.",
+          "tr": "Po-moyemu, eto ne samaya udachnaya ideya, no ya mogu oshibatsya.",
+          "en": "In my opinion, this isn't the best idea, but I could be wrong.",
+          "ar": "في رأيي، هذه ليست أفضل فكرة، لكن قد أكون مخطئاً."
+        },
+        {
+          "id": "opinions2",
+          "ru": "Я полностью с тобой согласен, давай так и сделаем.",
+          "tr": "Ya polnostyu s toboy soglasen, davay tak i sdelayem.",
+          "en": "I completely agree with you, let's do it that way.",
+          "ar": "أنا أتفق معك تماماً، دعنا نفعل ذلك بهذه الطريقة."
+        },
+        {
+          "id": "opinions3",
+          "ru": "Извини, но я не совсем согласна, мне кажется, есть вариант получше.",
+          "tr": "Izvini, no ya ne sovsem soglasna, mne kazhetsya, est variant poluchshe.",
+          "en": "Sorry, but I don't quite agree; I think there's a better option.",
+          "ar": "آسفة، لكنني لا أوافق تماماً، أعتقد أن هناك خياراً أفضل."
+        },
+        {
+          "id": "opinions4",
+          "ru": "Этим летом я планирую наконец-то выучить программирование.",
+          "tr": "Etim letom ya planiruyu nakonets-to vyuchit programmirovaniye.",
+          "en": "This summer I'm planning to finally learn programming.",
+          "ar": "هذا الصيف أخطط أن أتعلم البرمجة أخيراً."
+        },
+        {
+          "id": "opinions5",
+          "ru": "Если всё получится, мы собираемся переехать в другой город.",
+          "tr": "Yesli vsyo poluchitsya, my sobirayemsya pereyekhat v drugoy gorod.",
+          "en": "If everything works out, we're going to move to another city.",
+          "ar": "إذا سار كل شيء على ما يرام، فإننا ننوي الانتقال إلى مدينة أخرى."
+        },
+        {
+          "id": "opinions6",
+          "ru": "Честно говоря, я ещё не решил, чем хочу заниматься в будущем.",
+          "tr": "Chestno govorya, ya yeshchyo ne reshil, chem khochu zanimatsya v budushchem.",
+          "en": "Honestly, I haven't decided yet what I want to do in the future.",
+          "ar": "بصراحة، لم أقرر بعد ماذا أريد أن أفعل في المستقبل."
+        }
+      ]
+    },
+    {
+      "id": "b1-research",
+      "title": "B1 — Research & study",
+      "level": "B1",
+      "items": [
+        {
+          "id": "research1",
+          "ru": "На следующей неделе я встречаюсь с научным руководителем, чтобы обсудить план диссертации.",
+          "tr": "Na sleduyushchey nedele ya vstrechayus' s nauchnym rukovoditelem, chtoby obsudit' plan dissertatsii.",
+          "en": "Next week I'm meeting with my supervisor to discuss my dissertation plan.",
+          "ar": "الأسبوع القادم سألتقي بالمشرف العلمي لمناقشة خطة الأطروحة."
+        },
+        {
+          "id": "research2",
+          "ru": "Мне нужно закончить статью до конца месяца, потому что приближается крайний срок.",
+          "tr": "Mne nuzhno zakonchit' stat'yu do kontsa mesyatsa, potomu chto priblizhayetsya krayniy srok.",
+          "en": "I need to finish the article by the end of the month because the deadline is approaching.",
+          "ar": "عليّ أن أنهي المقال قبل نهاية الشهر لأن الموعد النهائي يقترب."
+        },
+        {
+          "id": "research3",
+          "ru": "В прошлом году я выступал на международной конференции и познакомился с интересными учёными.",
+          "tr": "V proshlom godu ya vystupal na mezhdunarodnoy konferentsii i poznakomilsya s interesnymi uchyonymi.",
+          "en": "Last year I gave a talk at an international conference and met some interesting scholars.",
+          "ar": "في العام الماضي ألقيت محاضرة في مؤتمر دولي وتعرّفت على باحثين مثيرين للاهتمام."
+        },
+        {
+          "id": "research4",
+          "ru": "Сейчас я собираю данные для эксперимента и каждый день читаю много научных работ.",
+          "tr": "Seychas ya sobirayu dannye dlya eksperimenta i kazhdyy den' chitayu mnogo nauchnykh rabot.",
+          "en": "Right now I'm collecting data for an experiment and reading a lot of research papers every day.",
+          "ar": "أنا الآن أجمع البيانات للتجربة وأقرأ يوميًا الكثير من الأبحاث العلمية."
+        },
+        {
+          "id": "research5",
+          "ru": "Научный руководитель посоветовал мне переписать введение и добавить больше источников.",
+          "tr": "Nauchnyy rukovoditel' posovetoval mne perepisat' vvedeniye i dobavit' bol'she istochnikov.",
+          "en": "My supervisor advised me to rewrite the introduction and add more sources.",
+          "ar": "نصحني المشرف العلمي بإعادة كتابة المقدمة وإضافة المزيد من المصادر."
+        },
+        {
+          "id": "research6",
+          "ru": "После защиты диссертации я хочу немного отдохнуть, а потом подать заявку на грант.",
+          "tr": "Posle zashchity dissertatsii ya khochu nemnogo otdokhnut', a potom podat' zayavku na grant.",
+          "en": "After defending my dissertation I want to rest a little and then apply for a grant.",
+          "ar": "بعد مناقشة الأطروحة أريد أن أرتاح قليلًا ثم أتقدّم بطلب للحصول على منحة."
+        }
       ]
     }
   ]
