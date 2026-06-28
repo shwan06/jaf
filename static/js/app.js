@@ -12,6 +12,7 @@ const App = {
   sections: [],
   contentCache: {},
   voice: null,
+  audioIndex: null, // map of audioHash(ru) -> file path, loaded from audio/index.json
 };
 
 /* ---------------- helpers ---------------- */
@@ -282,17 +283,42 @@ function speak(text, rate) {
   speechSynthesis.speak(u);
 }
 
-// Play a clip: a real recording if the item provides audioUrl, otherwise the
-// device's Russian text-to-speech. `slow` halves the pace for careful listening.
+// Deterministic key for a Russian string → must match tools/build_audio.py exactly
+// (double FNV-1a, 64-bit hex). Used to look up a pre-generated recording.
+function audioHash(s) {
+  s = String(s).normalize("NFC").trim();
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+  let g = (0x811c9dc5 ^ (s.length >>> 0)) >>> 0;
+  for (let i = s.length - 1; i >= 0; i--) { g ^= s.charCodeAt(i); g = Math.imul(g, 0x01000193) >>> 0; }
+  return (h >>> 0).toString(16).padStart(8, "0") + (g >>> 0).toString(16).padStart(8, "0");
+}
+// Resolve a real recording for a Russian string, or "" if none is available.
+function audioUrlFor(rusText) {
+  if (!App.audioIndex || !rusText) return "";
+  return App.audioIndex[audioHash(rusText)] || "";
+}
+async function loadAudioIndex() {
+  try {
+    const r = await fetch("audio/index.json", { cache: "no-cache" });
+    App.audioIndex = r.ok ? (await r.json()) || {} : {};
+  } catch { App.audioIndex = {}; }
+}
+
+// Play a clip: a real recording if one exists (explicit audioUrl, or one found in
+// the audio index for this Russian text), otherwise the device's Russian TTS.
+// `slow` lowers the pace for careful listening.
 let _audioEl = null;
 function playClip(item, slow) {
-  if (item && item.audioUrl) {
+  if (!item) return;
+  const url = item.audioUrl || audioUrlFor(item.ru);
+  if (url) {
     try { speechSynthesis.cancel(); } catch {}
     if (!_audioEl) _audioEl = new Audio();
-    _audioEl.src = item.audioUrl;
+    _audioEl.src = url;
     _audioEl.playbackRate = slow ? 0.7 : 1;
     _audioEl.play().catch(() => speak(item.ru, slow ? 0.6 : 0.92));
-  } else if (item) {
+  } else {
     speak(item.ru, slow ? 0.6 : 0.92);
   }
 }
@@ -300,8 +326,8 @@ document.addEventListener("click", (e) => {
   const ru = e.target.closest(".ru");
   if (!ru) return;
   const say = ru.dataset.say || ru.textContent;
-  if (ru.dataset.audio) playClip({ ru: say, audioUrl: ru.dataset.audio });
-  else speak(say);
+  // playClip resolves an explicit data-audio, then the audio index, then TTS.
+  playClip({ ru: say, audioUrl: ru.dataset.audio });
 });
 // `audioUrl` (optional) attaches a real recording to a clickable Russian span;
 // the click handler plays it (with TTS fallback) instead of synthesising speech.
@@ -2284,6 +2310,7 @@ async function boot() {
   initPrefs();
   setupNavDrawer();
   registerSW();
+  loadAudioIndex();
   $("#audio-test").addEventListener("click", () => speak("Здравствуйте! Добро пожаловать."));
   // Build the section list (id + title + description) from the content files.
   App.sections = [];
