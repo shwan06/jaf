@@ -1536,6 +1536,38 @@ const PROVIDERS = {
     fallbackModels: ["deepseek/deepseek-r1:free", "deepseek/deepseek-chat", "qwen/qwen-2.5-72b-instruct"],
     authHeaders: (key) => ({ authorization: "Bearer " + key, "HTTP-Referer": location.origin, "X-Title": "Russian A to Z" }),
   },
+  gemini: {
+    kind: "gemini",
+    label: "Google Gemini — works in the browser ✅",
+    keyName: "ru_gemini_key",
+    keyPlaceholder: "AIza… (Google AI Studio key)",
+    signup: "aistudio.google.com/apikey",
+    note: "Free tier, fast, and callable directly from the browser with no proxy — the most reliable option here. Get a key with any Google account at aistudio.google.com/apikey.",
+    endpoint: "https://generativelanguage.googleapis.com",
+    fallbackModels: ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash"],
+  },
+  deepseek: {
+    kind: "openai",
+    label: "DeepSeek (direct)",
+    keyName: "ru_deepseek_key",
+    keyPlaceholder: "sk-… (platform.deepseek.com)",
+    signup: "platform.deepseek.com → API keys",
+    note: "Direct DeepSeek API. Many networks BLOCK direct browser calls (CORS) — if you get 'Failed to fetch', switch to Google Gemini or OpenRouter, which work in the browser.",
+    endpoint: "https://api.deepseek.com/chat/completions",
+    fallbackModels: ["deepseek-chat", "deepseek-reasoner"],
+    authHeaders: (key) => ({ authorization: "Bearer " + key }),
+  },
+  qwen: {
+    kind: "openai",
+    label: "Qwen — Alibaba DashScope (direct)",
+    keyName: "ru_qwen_key",
+    keyPlaceholder: "sk-… (DashScope key)",
+    signup: "dashscope.console.aliyun.com",
+    note: "Direct Qwen/DashScope API (OpenAI-compatible). Often BLOCKED by the browser (CORS) — if you get 'Failed to fetch', use Google Gemini or OpenRouter instead.",
+    endpoint: "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions",
+    fallbackModels: ["qwen-plus", "qwen-turbo", "qwen-max"],
+    authHeaders: (key) => ({ authorization: "Bearer " + key }),
+  },
   yandex: {
     kind: "openai",
     label: "YandexGPT (Yandex Cloud)",
@@ -1567,7 +1599,7 @@ async function viewTutor() {
   const view = $("#view");
   view.innerHTML = "";
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🤖 AI Tutor"),
-    el("p", {}, "Chat with an AI Russian tutor — choose DeepSeek, Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
+    el("p", {}, "Chat with an AI Russian tutor — choose Google Gemini (works in the browser), OpenRouter (DeepSeek/Qwen), direct DeepSeek/Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
   const stage = el("div", { class: "quiz-stage", style: "max-width:680px" });
   view.append(stage);
 
@@ -1666,7 +1698,16 @@ async function viewTutor() {
       } catch (e) {
         botContent.className = "";
         botContent.innerHTML = "";
-        botContent.append(el("div", { class: "bad" }, "Error: " + e.message + (String(e.message).includes("401") ? " — check your API key." : "")));
+        const msg = String((e && e.message) || e);
+        let hint = "";
+        if (/failed to fetch|networkerror|load failed|cors/i.test(msg)) {
+          let host = "the provider";
+          try { host = new URL(PROVIDERS[provider].endpoint).host; } catch {}
+          hint = ` — couldn't reach ${host}. This is a network/CORS block, not your key: this provider's API doesn't allow direct browser calls on your network. Switch the Provider dropdown to “Google Gemini” (works in the browser) or OpenRouter, or try another network.`;
+        } else if (/\b401\b|\b403\b|invalid.*key|unauthor/i.test(msg)) hint = " — check that your API key is correct and active.";
+        else if (/\b402\b|quota|credit|billing/i.test(msg)) hint = " — your account is out of free quota/credits.";
+        else if (/\b429\b|rate/i.test(msg)) hint = " — rate limited; wait a moment and try again.";
+        botContent.append(el("div", { class: "bad" }, "Error: " + msg + hint));
       } finally {
         send.disabled = false;
         log.scrollTop = log.scrollHeight;
@@ -1713,7 +1754,10 @@ async function viewTutor() {
   }
 
   function callTutor(prov, model, messages, onToken) {
-    return PROVIDERS[prov].kind === "anthropic" ? callAnthropic(model, messages, onToken) : callOpenAI(prov, model, messages, onToken);
+    const kind = PROVIDERS[prov].kind;
+    if (kind === "anthropic") return callAnthropic(model, messages, onToken);
+    if (kind === "gemini") return callGemini(model, messages, onToken);
+    return callOpenAI(prov, model, messages, onToken);
   }
 
   // Shared SSE reader: `pick(ev)` returns the text delta for this provider, or null.
@@ -1774,6 +1818,25 @@ async function viewTutor() {
       }),
     }).then((res) => streamChat(res,
       (ev) => (ev.choices && ev.choices[0] && ev.choices[0].delta) ? ev.choices[0].delta.content : null, onToken));
+  }
+
+  // Google Gemini — CORS-enabled, callable directly from the browser. Key goes in
+  // the query string (avoids a custom auth header); streams Server-Sent Events.
+  function callGemini(model, messages, onToken) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:streamGenerateContent?alt=sse&key=${encodeURIComponent(provKey("gemini"))}`;
+    const contents = messages.map((m) => ({ role: m.role === "assistant" ? "model" : "user", parts: [{ text: m.content }] }));
+    return fetch(url, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: TUTOR_SYSTEM }] },
+        contents,
+        generationConfig: { maxOutputTokens: 1024 },
+      }),
+    }).then((res) => streamChat(res, (ev) => {
+      try { return ev.candidates && ev.candidates[0] && ev.candidates[0].content && ev.candidates[0].content.parts && ev.candidates[0].content.parts[0] && ev.candidates[0].content.parts[0].text || null; }
+      catch { return null; }
+    }, onToken));
   }
 }
 
