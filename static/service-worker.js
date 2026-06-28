@@ -1,7 +1,7 @@
 /* Service worker — offline cache for Русский от А до Я.
    Strategy: stale-while-revalidate for same-origin GETs.
    Bump CACHE when shipping new assets to force a refresh. */
-const CACHE = "ru-az-v8";
+const CACHE = "ru-az-v9";
 const ASSETS = [
   "./",
   "index.html",
@@ -17,6 +17,7 @@ const ASSETS = [
   "content/academic.json",
   "content/verbs.json",
   "content/exam.json",
+  "content/cases.json",
 ];
 
 self.addEventListener("install", (e) => {

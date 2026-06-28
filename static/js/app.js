@@ -195,12 +195,19 @@ const daysBetween = (a, b) =>
 const BADGES = [
   { id: "first_lesson", icon: "🌱", title: "First steps", desc: "Complete your first lesson", test: (g, p) => Object.keys(p.completed || {}).length >= 1 },
   { id: "ten_lessons", icon: "📚", title: "Bookworm", desc: "Complete 10 lessons", test: (g, p) => Object.keys(p.completed || {}).length >= 10 },
+  { id: "thirty_lessons", icon: "🎓", title: "Devoted scholar", desc: "Complete 30 lessons", test: (g, p) => Object.keys(p.completed || {}).length >= 30 },
   { id: "reviews_50", icon: "🧠", title: "Memory athlete", desc: "Review 50 flashcards", test: (g, p) => (p.reviews || 0) >= 50 },
-  { id: "streak_3", icon: "🔥", title: "On a roll", desc: "3-day streak", test: (g) => g.streak >= 3 },
-  { id: "streak_7", icon: "⚡", title: "Unstoppable", desc: "7-day streak", test: (g) => g.streak >= 7 },
+  { id: "reviews_200", icon: "🧬", title: "Memory master", desc: "Review 200 flashcards", test: (g, p) => (p.reviews || 0) >= 200 },
+  { id: "streak_3", icon: "🔥", title: "On a roll", desc: "3-day streak", test: (g) => (g.longest || g.streak) >= 3 },
+  { id: "streak_7", icon: "⚡", title: "Unstoppable", desc: "7-day streak", test: (g) => (g.longest || g.streak) >= 7 },
+  { id: "streak_30", icon: "🌋", title: "Monthly master", desc: "30-day streak", test: (g) => (g.longest || g.streak) >= 30 },
   { id: "xp_500", icon: "💎", title: "Dedicated", desc: "Earn 500 XP", test: (g) => g.xp >= 500 },
+  { id: "xp_2000", icon: "💠", title: "XP titan", desc: "Earn 2000 XP", test: (g) => g.xp >= 2000 },
   { id: "level_5", icon: "🚀", title: "Rising star", desc: "Reach level 5", test: (g) => Gamify.level(g.xp).level >= 5 },
   { id: "exam_ace", icon: "🏆", title: "Exam ace", desc: "Score 80%+ on any exam", test: () => { try { return Object.values(JSON.parse(localStorage.getItem("ru_exam")) || {}).some((v) => v >= 80); } catch { return false; } } },
+  { id: "cases_25", icon: "🧩", title: "Case cadet", desc: "Get 25 case drills right", test: () => Cases.totalCorrect() >= 25 },
+  { id: "cases_100", icon: "🏅", title: "Case expert", desc: "Get 100 case drills right", test: () => Cases.totalCorrect() >= 100 },
+  { id: "cases_master", icon: "👑", title: "Grammar crown", desc: "Reach 60%+ mastery in all 6 cases", test: () => { const ids = ["nominative","genitive","dative","accusative","instrumental","prepositional"]; return ids.every((id) => (Cases.mastery(id) || 0) >= 60); } },
 ];
 
 const Gamify = {
@@ -495,9 +502,12 @@ function renderGamePanel() {
       el("div", { class: "game-bar" }, el("i", { style: `width:${pct}%` })),
       el("div", { class: "game-sub" }, `${g.into} / ${g.need} XP to level ${g.level + 1}`))
   );
+  const best = Math.max(g.longest || 0, g.streak || 0);
   panel.append(
     el("div", { class: "game-side" },
-      el("div", { class: "game-streak" }, el("span", { class: "fire" }, "🔥"), el("strong", {}, String(g.streak)), el("span", { class: "muted" }, g.streak === 1 ? "day streak" : "day streak")),
+      el("div", { class: "game-streak" }, el("span", { class: "fire" }, "🔥"), el("strong", {}, String(g.streak)),
+        el("span", { class: "muted" }, "day streak"),
+        el("span", { class: "muted best" }, "🏆 best " + best)),
       el("div", { class: "game-goal" + (goalPct >= 100 ? " done" : "") },
         el("div", { class: "goal-ring", style: `--p:${goalPct}` }, el("span", {}, goalPct >= 100 ? "✓" : g.todayXp)),
         el("span", { class: "muted" }, goalPct >= 100 ? "Daily goal done!" : `${g.todayXp}/${g.goal} today`)))
@@ -1100,6 +1110,140 @@ async function viewExam() {
   }
 }
 
+/* ---------------- cases trainer ---------------- */
+const Cases = {
+  KEY: "ru_cases_v1",
+  MISS: "ru_cases_mistakes",
+  load() { try { return JSON.parse(localStorage.getItem(this.KEY)) || {}; } catch { return {}; } },
+  save(s) { localStorage.setItem(this.KEY, JSON.stringify(s)); },
+  record(caseId, ok) {
+    const s = this.load();
+    const m = (s[caseId] = s[caseId] || { correct: 0, total: 0 });
+    m.total++; if (ok) m.correct++;
+    this.save(s);
+  },
+  mastery(caseId) { const m = this.load()[caseId]; return m && m.total ? Math.round((m.correct / m.total) * 100) : null; },
+  totalCorrect() { return Object.values(this.load()).reduce((a, m) => a + (m.correct || 0), 0); },
+  loadMiss() { try { return JSON.parse(localStorage.getItem(this.MISS)) || []; } catch { return []; } },
+  saveMiss(a) { localStorage.setItem(this.MISS, JSON.stringify([...new Set(a)])); },
+  addMiss(id) { const a = this.loadMiss(); a.push(id); this.saveMiss(a); },
+  clearMiss(id) { this.saveMiss(this.loadMiss().filter((x) => x !== id)); },
+};
+
+async function viewCases() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🧩 Cases Trainer"),
+    el("p", {}, "The six Russian cases are the heart of the grammar. Drill them in real sentences — choose a case or go Mixed, then pick the correct form.")));
+  const data = await loadContent("cases");
+  const metas = data.cases || [];
+  const drills = data.drills || [];
+  const stage = el("div", { class: "quiz-stage", style: "max-width:640px" });
+  view.append(stage);
+
+  const metaById = Object.fromEntries(metas.map((m) => [m.id, m]));
+  const pills = el("div", { class: "deck-pills" });
+  const host = el("div", {});
+  stage.append(pills, host);
+
+  function renderPicker() {
+    pills.innerHTML = "";
+    host.innerHTML = "";
+    const mkPill = (label, sub, onClick, cls) => {
+      const p = el("button", { class: "deck-pill" + (cls ? " " + cls : "") }, label, sub != null ? el("span", { class: "cnt" }, sub) : null);
+      p.addEventListener("click", onClick);
+      return p;
+    };
+    pills.append(mkPill("🎲 Mixed", "all", () => startSession(drills, "Mixed")));
+    metas.forEach((m) => {
+      const mas = Cases.mastery(m.id);
+      pills.append(mkPill(m.name, mas == null ? "—" : mas + "%", () => startSession(drills.filter((d) => d.case === m.id), m.name)));
+    });
+    const miss = Cases.loadMiss();
+    if (miss.length) {
+      pills.append(mkPill("⚠️ Review mistakes", String(miss.length), () => {
+        const set = new Set(miss);
+        startSession(drills.filter((d) => set.has(d.id)), "Review mistakes", true);
+      }, "review"));
+    }
+
+    // mastery overview
+    const grid = el("div", { class: "cases-overview" });
+    metas.forEach((m) => {
+      const mas = Cases.mastery(m.id);
+      grid.append(el("div", { class: "case-stat" },
+        el("div", { class: "cs-name" }, m.name),
+        el("div", { class: "cs-q" }, m.q),
+        el("div", { class: "cs-bar" }, el("i", { style: `width:${mas || 0}%` })),
+        el("div", { class: "cs-pct" }, mas == null ? "not started" : mas + "% mastery")));
+    });
+    host.append(grid);
+    host.append(el("p", { class: "search-hint" }, "Tip: 'Review mistakes' replays only the forms you got wrong, until you fix them."));
+  }
+
+  function startSession(pool, label, isReview) {
+    if (!pool.length) { renderPicker(); return; }
+    const queue = shuffle(pool).slice(0, Math.min(12, pool.length));
+    const state = { i: 0, score: 0 };
+
+    function render() {
+      host.innerHTML = "";
+      pills.innerHTML = "";
+      const back = el("button", { class: "deck-pill" }, "← Cases");
+      back.addEventListener("click", renderPicker);
+      pills.append(back);
+
+      if (state.i >= queue.length) {
+        host.append(el("div", { class: "quiz-card", style: "text-align:center" },
+          el("h2", { style: "font-family:'PT Serif',serif" }, label + " complete"),
+          el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${queue.length}`),
+          el("button", { class: "btn primary big", style: "margin-top:8px", onclick: renderPicker }, "Choose another case")));
+        renderNav();
+        return;
+      }
+      const d = queue[state.i];
+      const meta = metaById[d.case] || {};
+      const card = el("div", { class: "quiz-card" });
+      card.append(el("div", { class: "quiz-bar" },
+        el("span", {}, `${label} · ${state.i + 1}/${queue.length}`), el("span", {}, `Score: ${state.score}`)));
+      card.append(el("div", { class: "case-target" }, "Target: ", el("strong", {}, `${meta.name || d.case}`), meta.q ? el("span", { class: "muted" }, "  (" + meta.q + ")") : null));
+      card.append(el("div", { class: "case-en gloss-en" }, d.en));
+      // sentence with the blank, plus the base lemma to decline
+      const sent = el("div", { class: "case-sentence ru", "data-say": d.prompt.replace("___", d.answer) });
+      sent.append(document.createTextNode(d.prompt.replace("___", "  _____  ")));
+      card.append(sent);
+      card.append(el("div", { class: "case-base" }, "from: ", el("strong", {}, d.base)));
+
+      const opts = el("div", { class: "quiz-options" });
+      shuffle(d.options).forEach((o) => {
+        const btn = el("button", { class: "quiz-opt ru", "data-say": o }, o);
+        btn.addEventListener("click", () => {
+          if (opts.dataset.done) return;
+          opts.dataset.done = "1";
+          const correct = o === d.answer;
+          Cases.record(d.case, correct);
+          btn.classList.add(correct ? "correct" : "wrong");
+          [...opts.children].forEach((c) => { if (c.textContent === d.answer) c.classList.add("correct"); });
+          if (correct) { state.score++; Gamify.award(3, "Cases drill"); if (isReview) Cases.clearMiss(d.id); }
+          else { Cases.addMiss(d.id); }
+          speak(d.prompt.replace("___", d.answer));
+          card.append(el("div", { class: "note", style: "margin-top:14px" },
+            el("div", {}, (correct ? "✓ " : "✗ ") + d.answer + " — " + (d.context || "")),
+            el("div", { class: "muted", style: "margin-top:4px" }, d.explain)));
+          card.append(el("button", { class: "btn primary", style: "margin-top:14px", onclick: () => { state.i++; render(); } },
+            state.i + 1 >= queue.length ? "See results" : "Next →"));
+        });
+        opts.append(btn);
+      });
+      card.append(opts);
+      host.append(card);
+    }
+    render();
+  }
+
+  renderPicker();
+}
+
 /* ---------------- search / dictionary ---------------- */
 async function buildSearchIndex() {
   const out = [];
@@ -1472,6 +1616,7 @@ function renderNav() {
   nav.append(el("div", { class: "nav-sep" }, "Practice"));
   add("#/flashcards", "🃏", "Flashcards", App.dueBadge || null);
   add("#/practice", "🎯", "Quiz");
+  add("#/cases", "🧩", "Cases trainer");
   add("#/verbs", "🔁", "Verb trainer");
   add("#/dictation", "✍️", "Dictation");
   add("#/pronounce", "🎤", "Pronunciation");
@@ -1481,7 +1626,7 @@ function renderNav() {
 
 // Human-readable label for a route hash (used by the dashboard "Continue" button).
 function routeLabel(hash) {
-  const map = { "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
+  const map = { "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
   if (map[hash]) return map[hash];
   if (hash.startsWith("#/section/")) {
     const id = hash.split("/")[2];
@@ -1500,6 +1645,7 @@ async function router() {
     else if (hash.startsWith("#/section/")) await viewSection(hash.split("/")[2]);
     else if (hash === "#/flashcards") await viewFlashcards();
     else if (hash === "#/practice") await viewPractice();
+    else if (hash === "#/cases") await viewCases();
     else if (hash === "#/verbs") await viewVerbs();
     else if (hash === "#/dictation") await viewDictation();
     else if (hash === "#/pronounce") await viewPronounce();
