@@ -1918,6 +1918,18 @@ const PROVIDERS = {
     fallbackModels: ["mistral-small-latest", "mistral-large-latest", "open-mistral-nemo"],
     authHeaders: (key) => ({ authorization: "Bearer " + key }),
   },
+  nvidia: {
+    kind: "openai",
+    label: "NVIDIA NIM (build.nvidia.com) — free credits",
+    keyName: "ru_nvidia_key",
+    keyPlaceholder: "nvapi-… (build.nvidia.com)",
+    signup: "build.nvidia.com → Get API Key",
+    note: "Free credits, OpenAI-compatible, hosts many strong models (Llama, Qwen, DeepSeek, Nemotron) that handle Russian well. Get a key at build.nvidia.com. If you see a network/CORS error, use Google Gemini or OpenRouter.",
+    endpoint: "https://integrate.api.nvidia.com/v1/chat/completions",
+    modelsEndpoint: "https://integrate.api.nvidia.com/v1/models",
+    fallbackModels: ["meta/llama-3.3-70b-instruct", "qwen/qwen2.5-72b-instruct", "deepseek-ai/deepseek-r1", "nvidia/llama-3.1-nemotron-70b-instruct", "mistralai/mistral-large-2-instruct"],
+    authHeaders: (key) => ({ authorization: "Bearer " + key }),
+  },
   deepseek: {
     kind: "openai",
     label: "DeepSeek (direct)",
@@ -1971,7 +1983,7 @@ async function viewTutor() {
   const view = $("#view");
   view.innerHTML = "";
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🤖 AI Tutor"),
-    el("p", {}, "Chat with an AI Russian tutor — choose Google Gemini (works in the browser), Groq / Cerebras (fast & free), OpenRouter, Mistral, DeepSeek/Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
+    el("p", {}, "Chat with an AI Russian tutor — choose Google Gemini (works in the browser), Groq / Cerebras / NVIDIA (fast & free), OpenRouter, Mistral, DeepSeek/Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
   const stage = el("div", { class: "quiz-stage", style: "max-width:680px" });
   view.append(stage);
 
@@ -2128,7 +2140,7 @@ async function viewTutor() {
         const r = await fetch(P.modelsEndpoint, { headers: P.authHeaders(provKey(provider)) });
         if (r.ok) {
           const data = await r.json();
-          const ids = (data.data || []).map((m) => m.id).filter((id) => !/whisper|tts|guard|embed|prompt|moderation|ocr/i.test(id)).sort();
+          const ids = (data.data || []).map((m) => m.id).filter((id) => !/whisper|tts|guard|embed|prompt|moderation|ocr|rerank/i.test(id)).sort();
           if (ids.length) setOptions(ids);
         }
       } catch { /* keep fallback list */ }
