@@ -15,14 +15,49 @@
         {
           "type": "table",
           "caption": "Predicting gender from the nominative-singular ending",
-          "headers": ["Ending", "Usual gender", "Examples", "Notes / exceptions"],
+          "headers": [
+            "Ending",
+            "Usual gender",
+            "Examples",
+            "Notes / exceptions"
+          ],
           "rows": [
-            ["consonant (hard)", "masculine", "стол (table), дом (house), студент (student)", "Reliable for the vast majority."],
-            ["-й", "masculine", "музей (museum), чай (tea), герой (hero)", ""],
-            ["-а / -я", "feminine", "книга (book), неделя (week), земля (earth)", "But natural-male nouns are masc.: папа, дядя, мужчина."],
-            ["-ь (soft sign)", "masc. OR fem.", "день (m., day), словарь (m., dictionary); ночь (f.), дверь (f.)", "Must be memorized; abstract/-ость nouns are feminine."],
-            ["-о / -е", "neuter", "окно (window), море (sea), здание (building)", "But кофе is traditionally masculine."],
-            ["-мя", "neuter", "имя (name), время (time)", "A small closed class of ~10 nouns with special declension."]
+            [
+              "consonant (hard)",
+              "masculine",
+              "стол (table), дом (house), студент (student)",
+              "Reliable for the vast majority."
+            ],
+            [
+              "-й",
+              "masculine",
+              "музей (museum), чай (tea), герой (hero)",
+              ""
+            ],
+            [
+              "-а / -я",
+              "feminine",
+              "книга (book), неделя (week), земля (earth)",
+              "But natural-male nouns are masc.: папа, дядя, мужчина."
+            ],
+            [
+              "-ь (soft sign)",
+              "masc. OR fem.",
+              "день (m., day), словарь (m., dictionary); ночь (f.), дверь (f.)",
+              "Must be memorized; abstract/-ость nouns are feminine."
+            ],
+            [
+              "-о / -е",
+              "neuter",
+              "окно (window), море (sea), здание (building)",
+              "But кофе is traditionally masculine."
+            ],
+            [
+              "-мя",
+              "neuter",
+              "имя (name), время (time)",
+              "A small closed class of ~10 nouns with special declension."
+            ]
           ]
         },
         {
@@ -36,11 +71,31 @@
         {
           "type": "table",
           "caption": "The three declension classes",
-          "headers": ["Class", "Members", "Nom. sg. ending", "Examples"],
+          "headers": [
+            "Class",
+            "Members",
+            "Nom. sg. ending",
+            "Examples"
+          ],
           "rows": [
-            ["1st declension", "feminine (and some masc.) in -а/-я", "-а, -я", "книга, неделя, папа"],
-            ["2nd declension", "masculine in consonant/-й and all neuter", "Ø, -й, -о, -е", "стол, музей, окно, море"],
-            ["3rd declension", "feminine in -ь", "-ь", "ночь, дверь, мышь"]
+            [
+              "1st declension",
+              "feminine (and some masc.) in -а/-я",
+              "-а, -я",
+              "книга, неделя, папа"
+            ],
+            [
+              "2nd declension",
+              "masculine in consonant/-й and all neuter",
+              "Ø, -й, -о, -е",
+              "стол, музей, окно, море"
+            ],
+            [
+              "3rd declension",
+              "feminine in -ь",
+              "-ь",
+              "ночь, дверь, мышь"
+            ]
           ]
         },
         {
@@ -50,13 +105,34 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Это новый студент.", "tr": "Eto novyy student.", "en": "This is a new student. (masc., consonant ending)"},
-            {"ru": "Здесь интересная книга.", "tr": "Zdes' interesnaya kniga.", "en": "Here is an interesting book. (fem., -а ending)"},
-            {"ru": "Открой большое окно.", "tr": "Otkroy bol'shoye okno.", "en": "Open the big window. (neut., -о ending)"},
-            {"ru": "Какая длинная ночь!", "tr": "Kakaya dlinnaya noch'!", "en": "What a long night! (fem., 3rd declension)"}
+            {
+              "ru": "Это новый студент.",
+              "tr": "Eto novyy student.",
+              "en": "This is a new student. (masc., consonant ending)",
+              "ar": "هذا طالب جديد."
+            },
+            {
+              "ru": "Здесь интересная книга.",
+              "tr": "Zdes' interesnaya kniga.",
+              "en": "Here is an interesting book. (fem., -а ending)",
+              "ar": "هنا كتاب مُشوّق."
+            },
+            {
+              "ru": "Открой большое окно.",
+              "tr": "Otkroy bol'shoye okno.",
+              "en": "Open the big window. (neut., -о ending)",
+              "ar": "افتح النافذة الكبيرة."
+            },
+            {
+              "ru": "Какая длинная ночь!",
+              "tr": "Kakaya dlinnaya noch'!",
+              "en": "What a long night! (fem., 3rd declension)",
+              "ar": "يا لها من ليلة طويلة!"
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "كيفية تحديد الجنس النحوي من نهاية الكلمة في المعجم (حالة الرفع)، وكيف تنقسم الأسماء إلى ثلاث فئات إعرابية."
     },
     {
       "id": "case-system-overview",
@@ -70,14 +146,49 @@
         {
           "type": "table",
           "caption": "The six cases at a glance",
-          "headers": ["Case", "Russian", "Core question", "One-line job"],
+          "headers": [
+            "Case",
+            "Russian",
+            "Core question",
+            "One-line job"
+          ],
           "rows": [
-            ["Nominative", "именительный", "кто? что?", "The subject; the dictionary form."],
-            ["Accusative", "винительный", "кого? что?", "The direct object of a transitive verb."],
-            ["Genitive", "родительный", "кого? чего?", "Possession, 'of', absence, quantities."],
-            ["Dative", "дательный", "кому? чему?", "The indirect object / recipient; experiencer."],
-            ["Instrumental", "творительный", "кем? чем?", "The means, instrument, or accompaniment."],
-            ["Prepositional", "предложный", "о ком? о чём?", "Location and topic; only used after prepositions."]
+            [
+              "Nominative",
+              "именительный",
+              "кто? что?",
+              "The subject; the dictionary form."
+            ],
+            [
+              "Accusative",
+              "винительный",
+              "кого? что?",
+              "The direct object of a transitive verb."
+            ],
+            [
+              "Genitive",
+              "родительный",
+              "кого? чего?",
+              "Possession, 'of', absence, quantities."
+            ],
+            [
+              "Dative",
+              "дательный",
+              "кому? чему?",
+              "The indirect object / recipient; experiencer."
+            ],
+            [
+              "Instrumental",
+              "творительный",
+              "кем? чем?",
+              "The means, instrument, or accompaniment."
+            ],
+            [
+              "Prepositional",
+              "предложный",
+              "о ком? о чём?",
+              "Location and topic; only used after prepositions."
+            ]
           ]
         },
         {
@@ -87,13 +198,34 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Студент читает книгу в библиотеке.", "tr": "Student chitayet knigu v biblioteke.", "en": "The student (nom.) reads a book (acc.) in the library (prep.)."},
-            {"ru": "Я дал книгу другу.", "tr": "Ya dal knigu drugu.", "en": "I gave the book (acc.) to a friend (dat.)."},
-            {"ru": "Он пишет ручкой.", "tr": "On pishet ruchkoy.", "en": "He writes with a pen (instr.)."},
-            {"ru": "Это дом моего брата.", "tr": "Eto dom moyego brata.", "en": "This is my brother's (gen.) house."}
+            {
+              "ru": "Студент читает книгу в библиотеке.",
+              "tr": "Student chitayet knigu v biblioteke.",
+              "en": "The student (nom.) reads a book (acc.) in the library (prep.).",
+              "ar": "الطالب يقرأ كتابًا في المكتبة."
+            },
+            {
+              "ru": "Я дал книгу другу.",
+              "tr": "Ya dal knigu drugu.",
+              "en": "I gave the book (acc.) to a friend (dat.).",
+              "ar": "أعطيتُ الكتاب لصديق."
+            },
+            {
+              "ru": "Он пишет ручкой.",
+              "tr": "On pishet ruchkoy.",
+              "en": "He writes with a pen (instr.).",
+              "ar": "هو يكتب بقلم."
+            },
+            {
+              "ru": "Это дом моего брата.",
+              "tr": "Eto dom moyego brata.",
+              "en": "This is my brother's (gen.) house.",
+              "ar": "هذا بيت أخي."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "ما الذي تؤديه كل حالة من الحالات الإعرابية الست في سطر واحد، قبل عرض الجداول التفصيلية للصيغ."
     },
     {
       "id": "nominative-accusative",
@@ -107,13 +239,43 @@
         {
           "type": "table",
           "caption": "Accusative singular endings (basic)",
-          "headers": ["Type", "Nom. sg.", "Acc. sg.", "Note"],
+          "headers": [
+            "Type",
+            "Nom. sg.",
+            "Acc. sg.",
+            "Note"
+          ],
           "rows": [
-            ["masc. inanimate", "стол", "стол", "= nominative (no change)"],
-            ["masc. animate", "студент", "студента", "= genitive (animacy rule)"],
-            ["neuter", "окно / море", "окно / море", "= nominative (always)"],
-            ["fem. -а/-я", "книга / неделя", "книгу / неделю", "-а → -у, -я → -ю"],
-            ["fem. -ь (3rd decl.)", "ночь", "ночь", "= nominative (no change)"]
+            [
+              "masc. inanimate",
+              "стол",
+              "стол",
+              "= nominative (no change)"
+            ],
+            [
+              "masc. animate",
+              "студент",
+              "студента",
+              "= genitive (animacy rule)"
+            ],
+            [
+              "neuter",
+              "окно / море",
+              "окно / море",
+              "= nominative (always)"
+            ],
+            [
+              "fem. -а/-я",
+              "книга / неделя",
+              "книгу / неделю",
+              "-а → -у, -я → -ю"
+            ],
+            [
+              "fem. -ь (3rd decl.)",
+              "ночь",
+              "ночь",
+              "= nominative (no change)"
+            ]
           ]
         },
         {
@@ -123,10 +285,22 @@
         {
           "type": "table",
           "caption": "Animacy and the accusative",
-          "headers": ["", "Inanimate → like Nom.", "Animate → like Gen."],
+          "headers": [
+            "",
+            "Inanimate → like Nom.",
+            "Animate → like Gen."
+          ],
           "rows": [
-            ["masc. sg.", "Я вижу стол. (a table)", "Я вижу студента. (a student)"],
-            ["plural (all genders)", "Я вижу столы / книги. (tables / books)", "Я вижу студентов / женщин. (students / women)"]
+            [
+              "masc. sg.",
+              "Я вижу стол. (a table)",
+              "Я вижу студента. (a student)"
+            ],
+            [
+              "plural (all genders)",
+              "Я вижу столы / книги. (tables / books)",
+              "Я вижу студентов / женщин. (students / women)"
+            ]
           ]
         },
         {
@@ -136,13 +310,34 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Брат любит сестру.", "tr": "Brat lyubit sestru.", "en": "The brother (nom.) loves his sister (acc. fem.)."},
-            {"ru": "Я знаю этого профессора.", "tr": "Ya znayu etogo professora.", "en": "I know this professor. (animate masc. acc. = gen.)"},
-            {"ru": "Я купил новый компьютер.", "tr": "Ya kupil novyy komp'yuter.", "en": "I bought a new computer. (inanimate masc. acc. = nom.)"},
-            {"ru": "Мы пригласили друзей.", "tr": "My priglasili druzey.", "en": "We invited friends. (animate plural acc. = gen.)"}
+            {
+              "ru": "Брат любит сестру.",
+              "tr": "Brat lyubit sestru.",
+              "en": "The brother (nom.) loves his sister (acc. fem.).",
+              "ar": "الأخ يحبّ أخته."
+            },
+            {
+              "ru": "Я знаю этого профессора.",
+              "tr": "Ya znayu etogo professora.",
+              "en": "I know this professor. (animate masc. acc. = gen.)",
+              "ar": "أعرف هذا الأستاذ."
+            },
+            {
+              "ru": "Я купил новый компьютер.",
+              "tr": "Ya kupil novyy komp'yuter.",
+              "en": "I bought a new computer. (inanimate masc. acc. = nom.)",
+              "ar": "اشتريتُ حاسوبًا جديدًا."
+            },
+            {
+              "ru": "Мы пригласили друзей.",
+              "tr": "My priglasili druzey.",
+              "en": "We invited friends. (animate plural acc. = gen.)",
+              "ar": "دعونا الأصدقاء."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "حالة الفاعل وحالة المفعول به المباشر، وقاعدة الحياة المهمة التي تجعل المفعول به الحيّ يشبه حالة الإضافة (المضاف إليه)."
     },
     {
       "id": "genitive",
@@ -156,31 +351,121 @@
         {
           "type": "table",
           "caption": "Genitive endings: singular",
-          "headers": ["Gender / type", "Nom. sg.", "Gen. sg. ending", "Gen. sg. form"],
+          "headers": [
+            "Gender / type",
+            "Nom. sg.",
+            "Gen. sg. ending",
+            "Gen. sg. form"
+          ],
           "rows": [
-            ["masc. (hard)", "стол", "-а", "стола"],
-            ["masc. (-й / -ь soft)", "музей / словарь", "-я", "музея / словаря"],
-            ["neuter -о", "окно", "-а", "окна"],
-            ["neuter -е", "море", "-я", "моря"],
-            ["fem. -а", "книга", "-ы (spelling: -и after г к х ж ч ш щ)", "книги"],
-            ["fem. -я", "неделя", "-и", "недели"],
-            ["fem. -ь (3rd decl.)", "ночь", "-и", "ночи"]
+            [
+              "masc. (hard)",
+              "стол",
+              "-а",
+              "стола"
+            ],
+            [
+              "masc. (-й / -ь soft)",
+              "музей / словарь",
+              "-я",
+              "музея / словаря"
+            ],
+            [
+              "neuter -о",
+              "окно",
+              "-а",
+              "окна"
+            ],
+            [
+              "neuter -е",
+              "море",
+              "-я",
+              "моря"
+            ],
+            [
+              "fem. -а",
+              "книга",
+              "-ы (spelling: -и after г к х ж ч ш щ)",
+              "книги"
+            ],
+            [
+              "fem. -я",
+              "неделя",
+              "-и",
+              "недели"
+            ],
+            [
+              "fem. -ь (3rd decl.)",
+              "ночь",
+              "-и",
+              "ночи"
+            ]
           ]
         },
         {
           "type": "table",
           "caption": "Genitive endings: plural (the hardest paradigm in Russian)",
-          "headers": ["Gender / type", "Nom. sg.", "Gen. pl. ending", "Gen. pl. form"],
+          "headers": [
+            "Gender / type",
+            "Nom. sg.",
+            "Gen. pl. ending",
+            "Gen. pl. form"
+          ],
           "rows": [
-            ["masc. (hard consonant)", "стол", "-ов", "столов"],
-            ["masc. (-й)", "музей", "-ев / -ёв", "музеев"],
-            ["masc. (-ь)", "словарь", "-ей", "словарей"],
-            ["masc. after ж ч ш щ", "нож", "-ей", "ножей"],
-            ["neuter -о", "окно", "-Ø (zero, often + fill vowel)", "окон"],
-            ["neuter -е", "море", "-ей", "морей"],
-            ["fem. -а", "книга", "-Ø (zero, often + fill vowel)", "книг"],
-            ["fem. -я", "неделя", "-ь / -й", "недель"],
-            ["fem. -ь (3rd decl.)", "ночь", "-ей", "ночей"]
+            [
+              "masc. (hard consonant)",
+              "стол",
+              "-ов",
+              "столов"
+            ],
+            [
+              "masc. (-й)",
+              "музей",
+              "-ев / -ёв",
+              "музеев"
+            ],
+            [
+              "masc. (-ь)",
+              "словарь",
+              "-ей",
+              "словарей"
+            ],
+            [
+              "masc. after ж ч ш щ",
+              "нож",
+              "-ей",
+              "ножей"
+            ],
+            [
+              "neuter -о",
+              "окно",
+              "-Ø (zero, often + fill vowel)",
+              "окон"
+            ],
+            [
+              "neuter -е",
+              "море",
+              "-ей",
+              "морей"
+            ],
+            [
+              "fem. -а",
+              "книга",
+              "-Ø (zero, often + fill vowel)",
+              "книг"
+            ],
+            [
+              "fem. -я",
+              "неделя",
+              "-ь / -й",
+              "недель"
+            ],
+            [
+              "fem. -ь (3rd decl.)",
+              "ночь",
+              "-ей",
+              "ночей"
+            ]
           ]
         },
         {
@@ -204,26 +489,76 @@
         {
           "type": "table",
           "caption": "Case of the noun after cardinal numbers",
-          "headers": ["Number ends in...", "Noun case", "Example"],
+          "headers": [
+            "Number ends in...",
+            "Noun case",
+            "Example"
+          ],
           "rows": [
-            ["1 (одна́, оди́н) — except 11", "nominative singular", "оди́н студе́нт, одна́ кни́га"],
-            ["2, 3, 4 — except 12, 13, 14", "genitive SINGULAR", "два студе́нта, три кни́ги, четы́ре окна́"],
-            ["5–20, and all teens, and 0", "genitive PLURAL", "пять студе́нтов, де́сять книг, оди́ннадцать окон"],
-            ["21, 31, ... (ends in 1)", "nominative singular", "два́дцать оди́н студе́нт"],
-            ["22–24, 32–34, ... (ends in 2-4)", "genitive singular", "два́дцать два студе́нта"]
+            [
+              "1 (одна́, оди́н) — except 11",
+              "nominative singular",
+              "оди́н студе́нт, одна́ кни́га"
+            ],
+            [
+              "2, 3, 4 — except 12, 13, 14",
+              "genitive SINGULAR",
+              "два студе́нта, три кни́ги, четы́ре окна́"
+            ],
+            [
+              "5–20, and all teens, and 0",
+              "genitive PLURAL",
+              "пять студе́нтов, де́сять книг, оди́ннадцать окон"
+            ],
+            [
+              "21, 31, ... (ends in 1)",
+              "nominative singular",
+              "два́дцать оди́н студе́нт"
+            ],
+            [
+              "22–24, 32–34, ... (ends in 2-4)",
+              "genitive singular",
+              "два́дцать два студе́нта"
+            ]
           ]
         },
         {
           "type": "examples",
           "items": [
-            {"ru": "У меня нет брата.", "tr": "U menya net brata.", "en": "I don't have a brother. (gen. of absence)"},
-            {"ru": "Это дом моих родителей.", "tr": "Eto dom moikh roditeley.", "en": "This is my parents' house. (gen. pl. possession)"},
-            {"ru": "Он купил пять билетов.", "tr": "On kupil pyat' biletov.", "en": "He bought five tickets. (5+ → gen. pl.)"},
-            {"ru": "Я выпил чашку чая.", "tr": "Ya vypil chashku chaya.", "en": "I drank a cup of tea. (partitive gen.)"},
-            {"ru": "В классе три студента.", "tr": "V klasse tri studenta.", "en": "There are three students in the class. (2-4 → gen. sg.)"}
+            {
+              "ru": "У меня нет брата.",
+              "tr": "U menya net brata.",
+              "en": "I don't have a brother. (gen. of absence)",
+              "ar": "ليس لديّ أخ."
+            },
+            {
+              "ru": "Это дом моих родителей.",
+              "tr": "Eto dom moikh roditeley.",
+              "en": "This is my parents' house. (gen. pl. possession)",
+              "ar": "هذا بيت والديّ."
+            },
+            {
+              "ru": "Он купил пять билетов.",
+              "tr": "On kupil pyat' biletov.",
+              "en": "He bought five tickets. (5+ → gen. pl.)",
+              "ar": "اشترى خمس تذاكر."
+            },
+            {
+              "ru": "Я выпил чашку чая.",
+              "tr": "Ya vypil chashku chaya.",
+              "en": "I drank a cup of tea. (partitive gen.)",
+              "ar": "شربتُ فنجان شاي."
+            },
+            {
+              "ru": "В классе три студента.",
+              "tr": "V klasse tri studenta.",
+              "en": "There are three students in the class. (2-4 → gen. sg.)",
+              "ar": "في الصف ثلاثة طلاب."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "حالة الإضافة (المضاف إليه) — الملكية، والغياب، والكميات، وقواعد العدّ بعد الأعداد."
     },
     {
       "id": "dative",
@@ -237,13 +572,37 @@
         {
           "type": "table",
           "caption": "Dative endings",
-          "headers": ["Gender / type", "Dat. sg.", "Dat. pl."],
+          "headers": [
+            "Gender / type",
+            "Dat. sg.",
+            "Dat. pl."
+          ],
           "rows": [
-            ["masc. (hard)", "столу (-у)", "столам (-ам)"],
-            ["masc. (-й/-ь)", "музею / словарю (-ю)", "музеям / словарям (-ям)"],
-            ["neuter", "окну / морю (-у/-ю)", "окнам / морям (-ам/-ям)"],
-            ["fem. -а/-я", "книге / неделе (-е)", "книгам / неделям (-ам/-ям)"],
-            ["fem. -ь (3rd decl.)", "ночи (-и)", "ночам (-ам)"]
+            [
+              "masc. (hard)",
+              "столу (-у)",
+              "столам (-ам)"
+            ],
+            [
+              "masc. (-й/-ь)",
+              "музею / словарю (-ю)",
+              "музеям / словарям (-ям)"
+            ],
+            [
+              "neuter",
+              "окну / морю (-у/-ю)",
+              "окнам / морям (-ам/-ям)"
+            ],
+            [
+              "fem. -а/-я",
+              "книге / неделе (-е)",
+              "книгам / неделям (-ам/-ям)"
+            ],
+            [
+              "fem. -ь (3rd decl.)",
+              "ночи (-и)",
+              "ночам (-ам)"
+            ]
           ]
         },
         {
@@ -264,14 +623,40 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Мне нравится эта музыка.", "tr": "Mne nravitsya eta muzyka.", "en": "I like this music."},
-            {"ru": "Сколько тебе лет?", "tr": "Skol'ko tebe let?", "en": "How old are you? (lit. how many years to you?)"},
-            {"ru": "Профессор объяснил студентам правило.", "tr": "Professor ob'yasnil studentam pravilo.", "en": "The professor explained the rule to the students."},
-            {"ru": "Мы идём к бабушке.", "tr": "My idyom k babushke.", "en": "We are going to grandmother's. (к + dat.)"},
-            {"ru": "Ему было скучно.", "tr": "Yemu bylo skuchno.", "en": "He was bored. (dative experiencer)"}
+            {
+              "ru": "Мне нравится эта музыка.",
+              "tr": "Mne nravitsya eta muzyka.",
+              "en": "I like this music.",
+              "ar": "تعجبني هذه الموسيقى."
+            },
+            {
+              "ru": "Сколько тебе лет?",
+              "tr": "Skol'ko tebe let?",
+              "en": "How old are you? (lit. how many years to you?)",
+              "ar": "كم عمرك؟"
+            },
+            {
+              "ru": "Профессор объяснил студентам правило.",
+              "tr": "Professor ob'yasnil studentam pravilo.",
+              "en": "The professor explained the rule to the students.",
+              "ar": "شرح الأستاذ القاعدة للطلاب."
+            },
+            {
+              "ru": "Мы идём к бабушке.",
+              "tr": "My idyom k babushke.",
+              "en": "We are going to grandmother's. (к + dat.)",
+              "ar": "نحن ذاهبون إلى الجدّة."
+            },
+            {
+              "ru": "Ему было скучно.",
+              "tr": "Yemu bylo skuchno.",
+              "en": "He was bored. (dative experiencer)",
+              "ar": "كان يشعر بالملل."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "حالة المفعول غير المباشر (المتلقّي) — المفعول غير المباشر، والعمر، والإعجاب (نَرافِتسا)، وحرفا الجر «ك» و«پو»."
     },
     {
       "id": "instrumental",
@@ -285,13 +670,37 @@
         {
           "type": "table",
           "caption": "Instrumental endings",
-          "headers": ["Gender / type", "Instr. sg.", "Instr. pl."],
+          "headers": [
+            "Gender / type",
+            "Instr. sg.",
+            "Instr. pl."
+          ],
           "rows": [
-            ["masc. (hard)", "столом (-ом)", "столами (-ами)"],
-            ["masc. (-й/-ь)", "музеем / словарём (-ем/-ём)", "музеями / словарями (-ями)"],
-            ["neuter", "окном / морем (-ом/-ем)", "окнами / морями (-ами/-ями)"],
-            ["fem. -а/-я", "книгой / неделей (-ой/-ей)", "книгами / неделями (-ами/-ями)"],
-            ["fem. -ь (3rd decl.)", "ночью (-ью)", "ночами (-ами)"]
+            [
+              "masc. (hard)",
+              "столом (-ом)",
+              "столами (-ами)"
+            ],
+            [
+              "masc. (-й/-ь)",
+              "музеем / словарём (-ем/-ём)",
+              "музеями / словарями (-ями)"
+            ],
+            [
+              "neuter",
+              "окном / морем (-ом/-ем)",
+              "окнами / морями (-ами/-ями)"
+            ],
+            [
+              "fem. -а/-я",
+              "книгой / неделей (-ой/-ей)",
+              "книгами / неделями (-ами/-ями)"
+            ],
+            [
+              "fem. -ь (3rd decl.)",
+              "ночью (-ью)",
+              "ночами (-ами)"
+            ]
           ]
         },
         {
@@ -315,14 +724,40 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Я пишу карандашом.", "tr": "Ya pishu karandashom.", "en": "I write with a pencil. (means)"},
-            {"ru": "Мы пьём кофе с молоком.", "tr": "My p'yom kofe s molokom.", "en": "We drink coffee with milk. (accompaniment)"},
-            {"ru": "Он хочет стать врачом.", "tr": "On khochet stat' vrachom.", "en": "He wants to become a doctor. (predicate)"},
-            {"ru": "Кошка спит под столом.", "tr": "Koshka spit pod stolom.", "en": "The cat is sleeping under the table. (под + instr.)"},
-            {"ru": "Я занимаюсь спортом.", "tr": "Ya zanimayus' sportom.", "en": "I do sports. (verb-governed instr.)"}
+            {
+              "ru": "Я пишу карандашом.",
+              "tr": "Ya pishu karandashom.",
+              "en": "I write with a pencil. (means)",
+              "ar": "أكتب بقلم رصاص."
+            },
+            {
+              "ru": "Мы пьём кофе с молоком.",
+              "tr": "My p'yom kofe s molokom.",
+              "en": "We drink coffee with milk. (accompaniment)",
+              "ar": "نشرب القهوة بالحليب."
+            },
+            {
+              "ru": "Он хочет стать врачом.",
+              "tr": "On khochet stat' vrachom.",
+              "en": "He wants to become a doctor. (predicate)",
+              "ar": "يريد أن يصبح طبيبًا."
+            },
+            {
+              "ru": "Кошка спит под столом.",
+              "tr": "Koshka spit pod stolom.",
+              "en": "The cat is sleeping under the table. (под + instr.)",
+              "ar": "القطة نائمة تحت الطاولة."
+            },
+            {
+              "ru": "Я занимаюсь спортом.",
+              "tr": "Ya zanimayus' sportom.",
+              "en": "I do sports. (verb-governed instr.)",
+              "ar": "أمارس الرياضة."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "حالة الأداة («بواسطة») — الأدوات، والمصاحبة مع «س»، والأسماء الخبرية مع الفعل «بيت»، ومجموعة من حروف الجر المكانية."
     },
     {
       "id": "prepositional",
@@ -336,14 +771,42 @@
         {
           "type": "table",
           "caption": "Prepositional endings",
-          "headers": ["Gender / type", "Prep. sg.", "Prep. pl."],
+          "headers": [
+            "Gender / type",
+            "Prep. sg.",
+            "Prep. pl."
+          ],
           "rows": [
-            ["masc. (hard)", "столе (-е)", "столах (-ах)"],
-            ["masc. (-й/-ь)", "музее / словаре (-е)", "музеях / словарях (-ях)"],
-            ["neuter -о/-е", "окне / море (-е)", "окнах / морях (-ах/-ях)"],
-            ["fem. -а/-я", "книге / неделе (-е)", "книгах / неделях (-ах/-ях)"],
-            ["nouns in -ия/-ие/-ий", "лекции / здании / гении (-ии)", "лекциях / зданиях (-иях)"],
-            ["fem. -ь (3rd decl.)", "ночи (-и)", "ночах (-ах)"]
+            [
+              "masc. (hard)",
+              "столе (-е)",
+              "столах (-ах)"
+            ],
+            [
+              "masc. (-й/-ь)",
+              "музее / словаре (-е)",
+              "музеях / словарях (-ях)"
+            ],
+            [
+              "neuter -о/-е",
+              "окне / море (-е)",
+              "окнах / морях (-ах/-ях)"
+            ],
+            [
+              "fem. -а/-я",
+              "книге / неделе (-е)",
+              "книгах / неделях (-ах/-ях)"
+            ],
+            [
+              "nouns in -ия/-ие/-ий",
+              "лекции / здании / гении (-ии)",
+              "лекциях / зданиях (-иях)"
+            ],
+            [
+              "fem. -ь (3rd decl.)",
+              "ночи (-и)",
+              "ночах (-ах)"
+            ]
           ]
         },
         {
@@ -362,14 +825,40 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Книга лежит на столе.", "tr": "Kniga lezhit na stole.", "en": "The book is lying on the table."},
-            {"ru": "Мы живём в большом городе.", "tr": "My zhivyom v bol'shom gorode.", "en": "We live in a big city."},
-            {"ru": "Они говорят о политике.", "tr": "Oni govoryat o politike.", "en": "They are talking about politics."},
-            {"ru": "Дети играют в саду.", "tr": "Deti igrayut v sadu.", "en": "The children are playing in the garden. (locative-2)"},
-            {"ru": "Я мечтаю о море.", "tr": "Ya mechtayu o more.", "en": "I dream about the sea."}
+            {
+              "ru": "Книга лежит на столе.",
+              "tr": "Kniga lezhit na stole.",
+              "en": "The book is lying on the table.",
+              "ar": "الكتاب موضوع على الطاولة."
+            },
+            {
+              "ru": "Мы живём в большом городе.",
+              "tr": "My zhivyom v bol'shom gorode.",
+              "en": "We live in a big city.",
+              "ar": "نحن نعيش في مدينة كبيرة."
+            },
+            {
+              "ru": "Они говорят о политике.",
+              "tr": "Oni govoryat o politike.",
+              "en": "They are talking about politics.",
+              "ar": "هم يتحدثون عن السياسة."
+            },
+            {
+              "ru": "Дети играют в саду.",
+              "tr": "Deti igrayut v sadu.",
+              "en": "The children are playing in the garden. (locative-2)",
+              "ar": "الأطفال يلعبون في الحديقة."
+            },
+            {
+              "ru": "Я мечтаю о море.",
+              "tr": "Ya mechtayu o more.",
+              "en": "I dream about the sea.",
+              "ar": "أحلم بالبحر."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "الحالة التي لا تأتي إلا بعد حرف جر — المكان (في/على) والموضوع (عن «о»)."
     },
     {
       "id": "full-noun-declension-tables",
@@ -383,53 +872,207 @@
         {
           "type": "table",
           "caption": "2nd declension — masculine singular & plural",
-          "headers": ["Case", "стол (hard, inan.)", "студент (hard, anim.)", "музей (soft -й)", "столы / студенты / музеи (pl.)"],
+          "headers": [
+            "Case",
+            "стол (hard, inan.)",
+            "студент (hard, anim.)",
+            "музей (soft -й)",
+            "столы / студенты / музеи (pl.)"
+          ],
           "rows": [
-            ["Nominative", "стол", "студент", "музей", "столы / студенты / музеи"],
-            ["Accusative", "стол", "студента", "музей", "столы / студентов / музеи"],
-            ["Genitive", "стола", "студента", "музея", "столов / студентов / музеев"],
-            ["Dative", "столу", "студенту", "музею", "столам / студентам / музеям"],
-            ["Instrumental", "столом", "студентом", "музеем", "столами / студентами / музеями"],
-            ["Prepositional", "столе", "студенте", "музее", "столах / студентах / музеях"]
+            [
+              "Nominative",
+              "стол",
+              "студент",
+              "музей",
+              "столы / студенты / музеи"
+            ],
+            [
+              "Accusative",
+              "стол",
+              "студента",
+              "музей",
+              "столы / студентов / музеи"
+            ],
+            [
+              "Genitive",
+              "стола",
+              "студента",
+              "музея",
+              "столов / студентов / музеев"
+            ],
+            [
+              "Dative",
+              "столу",
+              "студенту",
+              "музею",
+              "столам / студентам / музеям"
+            ],
+            [
+              "Instrumental",
+              "столом",
+              "студентом",
+              "музеем",
+              "столами / студентами / музеями"
+            ],
+            [
+              "Prepositional",
+              "столе",
+              "студенте",
+              "музее",
+              "столах / студентах / музеях"
+            ]
           ]
         },
         {
           "type": "table",
           "caption": "2nd declension — neuter singular & plural",
-          "headers": ["Case", "окно (hard)", "море (soft)", "окна (pl.)", "моря (pl.)"],
+          "headers": [
+            "Case",
+            "окно (hard)",
+            "море (soft)",
+            "окна (pl.)",
+            "моря (pl.)"
+          ],
           "rows": [
-            ["Nominative", "окно", "море", "окна", "моря"],
-            ["Accusative", "окно", "море", "окна", "моря"],
-            ["Genitive", "окна", "моря", "окон", "морей"],
-            ["Dative", "окну", "морю", "окнам", "морям"],
-            ["Instrumental", "окном", "морем", "окнами", "морями"],
-            ["Prepositional", "окне", "море", "окнах", "морях"]
+            [
+              "Nominative",
+              "окно",
+              "море",
+              "окна",
+              "моря"
+            ],
+            [
+              "Accusative",
+              "окно",
+              "море",
+              "окна",
+              "моря"
+            ],
+            [
+              "Genitive",
+              "окна",
+              "моря",
+              "окон",
+              "морей"
+            ],
+            [
+              "Dative",
+              "окну",
+              "морю",
+              "окнам",
+              "морям"
+            ],
+            [
+              "Instrumental",
+              "окном",
+              "морем",
+              "окнами",
+              "морями"
+            ],
+            [
+              "Prepositional",
+              "окне",
+              "море",
+              "окнах",
+              "морях"
+            ]
           ]
         },
         {
           "type": "table",
           "caption": "1st declension — feminine singular & plural",
-          "headers": ["Case", "книга (hard)", "неделя (soft)", "книги (pl.)", "недели (pl.)"],
+          "headers": [
+            "Case",
+            "книга (hard)",
+            "неделя (soft)",
+            "книги (pl.)",
+            "недели (pl.)"
+          ],
           "rows": [
-            ["Nominative", "книга", "неделя", "книги", "недели"],
-            ["Accusative", "книгу", "неделю", "книги", "недели"],
-            ["Genitive", "книги", "недели", "книг", "недель"],
-            ["Dative", "книге", "неделе", "книгам", "неделям"],
-            ["Instrumental", "книгой", "неделей", "книгами", "неделями"],
-            ["Prepositional", "книге", "неделе", "книгах", "неделях"]
+            [
+              "Nominative",
+              "книга",
+              "неделя",
+              "книги",
+              "недели"
+            ],
+            [
+              "Accusative",
+              "книгу",
+              "неделю",
+              "книги",
+              "недели"
+            ],
+            [
+              "Genitive",
+              "книги",
+              "недели",
+              "книг",
+              "недель"
+            ],
+            [
+              "Dative",
+              "книге",
+              "неделе",
+              "книгам",
+              "неделям"
+            ],
+            [
+              "Instrumental",
+              "книгой",
+              "неделей",
+              "книгами",
+              "неделями"
+            ],
+            [
+              "Prepositional",
+              "книге",
+              "неделе",
+              "книгах",
+              "неделях"
+            ]
           ]
         },
         {
           "type": "table",
           "caption": "3rd declension — feminine -ь singular & plural",
-          "headers": ["Case", "ночь (sg.)", "ночи (pl.)"],
+          "headers": [
+            "Case",
+            "ночь (sg.)",
+            "ночи (pl.)"
+          ],
           "rows": [
-            ["Nominative", "ночь", "ночи"],
-            ["Accusative", "ночь", "ночи"],
-            ["Genitive", "ночи", "ночей"],
-            ["Dative", "ночи", "ночам"],
-            ["Instrumental", "ночью", "ночами"],
-            ["Prepositional", "ночи", "ночах"]
+            [
+              "Nominative",
+              "ночь",
+              "ночи"
+            ],
+            [
+              "Accusative",
+              "ночь",
+              "ночи"
+            ],
+            [
+              "Genitive",
+              "ночи",
+              "ночей"
+            ],
+            [
+              "Dative",
+              "ночи",
+              "ночам"
+            ],
+            [
+              "Instrumental",
+              "ночью",
+              "ночами"
+            ],
+            [
+              "Prepositional",
+              "ночи",
+              "ночах"
+            ]
           ]
         },
         {
@@ -443,12 +1086,28 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "У наших друзей новая машина.", "tr": "U nashikh druzey novaya mashina.", "en": "Our friends have a new car. (irregular gen. pl.)"},
-            {"ru": "В городах много домов.", "tr": "V gorodakh mnogo domov.", "en": "There are many houses in the cities."},
-            {"ru": "Я разговаривал с матерью.", "tr": "Ya razgovarival s mater'yu.", "en": "I was talking with my mother. (instr. sg., insert -er-)"}
+            {
+              "ru": "У наших друзей новая машина.",
+              "tr": "U nashikh druzey novaya mashina.",
+              "en": "Our friends have a new car. (irregular gen. pl.)",
+              "ar": "أصدقاؤنا لديهم سيارة جديدة."
+            },
+            {
+              "ru": "В городах много домов.",
+              "tr": "V gorodakh mnogo domov.",
+              "en": "There are many houses in the cities.",
+              "ar": "في المدن بيوت كثيرة."
+            },
+            {
+              "ru": "Я разговаривал с матерью.",
+              "tr": "Ya razgovarival s mater'yu.",
+              "en": "I was talking with my mother. (instr. sg., insert -er-)",
+              "ar": "كنتُ أتحدث مع أمي."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "صِيَغ إعرابية مجمّعة للمفرد والجمع لجميع الفئات الإعرابية الثلاث وجميع الحالات الست."
     },
     {
       "id": "adjectives",
@@ -462,14 +1121,56 @@
         {
           "type": "table",
           "caption": "Hard-stem adjective новый ('new') — full declension",
-          "headers": ["Case", "Masc.", "Neut.", "Fem.", "Plural"],
+          "headers": [
+            "Case",
+            "Masc.",
+            "Neut.",
+            "Fem.",
+            "Plural"
+          ],
           "rows": [
-            ["Nominative", "новый", "новое", "новая", "новые"],
-            ["Accusative", "новый / нового*", "новое", "новую", "новые / новых*"],
-            ["Genitive", "нового", "нового", "новой", "новых"],
-            ["Dative", "новому", "новому", "новой", "новым"],
-            ["Instrumental", "новым", "новым", "новой", "новыми"],
-            ["Prepositional", "новом", "новом", "новой", "новых"]
+            [
+              "Nominative",
+              "новый",
+              "новое",
+              "новая",
+              "новые"
+            ],
+            [
+              "Accusative",
+              "новый / нового*",
+              "новое",
+              "новую",
+              "новые / новых*"
+            ],
+            [
+              "Genitive",
+              "нового",
+              "нового",
+              "новой",
+              "новых"
+            ],
+            [
+              "Dative",
+              "новому",
+              "новому",
+              "новой",
+              "новым"
+            ],
+            [
+              "Instrumental",
+              "новым",
+              "новым",
+              "новой",
+              "новыми"
+            ],
+            [
+              "Prepositional",
+              "новом",
+              "новом",
+              "новой",
+              "новых"
+            ]
           ]
         },
         {
@@ -479,14 +1180,56 @@
         {
           "type": "table",
           "caption": "Soft-stem adjective синий ('blue') — full declension",
-          "headers": ["Case", "Masc.", "Neut.", "Fem.", "Plural"],
+          "headers": [
+            "Case",
+            "Masc.",
+            "Neut.",
+            "Fem.",
+            "Plural"
+          ],
           "rows": [
-            ["Nominative", "синий", "синее", "синяя", "синие"],
-            ["Accusative", "синий / синего*", "синее", "синюю", "синие / синих*"],
-            ["Genitive", "синего", "синего", "синей", "синих"],
-            ["Dative", "синему", "синему", "синей", "синим"],
-            ["Instrumental", "синим", "синим", "синей", "синими"],
-            ["Prepositional", "синем", "синем", "синей", "синих"]
+            [
+              "Nominative",
+              "синий",
+              "синее",
+              "синяя",
+              "синие"
+            ],
+            [
+              "Accusative",
+              "синий / синего*",
+              "синее",
+              "синюю",
+              "синие / синих*"
+            ],
+            [
+              "Genitive",
+              "синего",
+              "синего",
+              "синей",
+              "синих"
+            ],
+            [
+              "Dative",
+              "синему",
+              "синему",
+              "синей",
+              "синим"
+            ],
+            [
+              "Instrumental",
+              "синим",
+              "синим",
+              "синей",
+              "синими"
+            ],
+            [
+              "Prepositional",
+              "синем",
+              "синем",
+              "синей",
+              "синих"
+            ]
           ]
         },
         {
@@ -500,12 +1243,42 @@
         {
           "type": "table",
           "caption": "Short-form adjectives",
-          "headers": ["Long form", "Masc.", "Fem.", "Neut.", "Plural"],
+          "headers": [
+            "Long form",
+            "Masc.",
+            "Fem.",
+            "Neut.",
+            "Plural"
+          ],
           "rows": [
-            ["красивый (beautiful)", "красив", "красива", "красиво", "красивы"],
-            ["умный (clever)", "умён*", "умна", "умно", "умны"],
-            ["рад (glad — short only)", "рад", "рада", "радо", "рады"],
-            ["должен (must / obliged)", "должен", "должна", "должно", "должны"]
+            [
+              "красивый (beautiful)",
+              "красив",
+              "красива",
+              "красиво",
+              "красивы"
+            ],
+            [
+              "умный (clever)",
+              "умён*",
+              "умна",
+              "умно",
+              "умны"
+            ],
+            [
+              "рад (glad — short only)",
+              "рад",
+              "рада",
+              "радо",
+              "рады"
+            ],
+            [
+              "должен (must / obliged)",
+              "должен",
+              "должна",
+              "должно",
+              "должны"
+            ]
           ]
         },
         {
@@ -515,13 +1288,34 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Я читаю интересную книгу.", "tr": "Ya chitayu interesnuyu knigu.", "en": "I am reading an interesting book. (fem. acc.)"},
-            {"ru": "Мы говорили о новых студентах.", "tr": "My govorili o novykh studentakh.", "en": "We talked about the new students. (prep. pl.)"},
-            {"ru": "Этот город очень красив.", "tr": "Etot gorod ochen' krasiv.", "en": "This city is very beautiful. (short form, predicate)"},
-            {"ru": "Я должен идти.", "tr": "Ya dolzhen idti.", "en": "I must go. (short form должен)"}
+            {
+              "ru": "Я читаю интересную книгу.",
+              "tr": "Ya chitayu interesnuyu knigu.",
+              "en": "I am reading an interesting book. (fem. acc.)",
+              "ar": "أقرأ كتابًا مُشوّقًا."
+            },
+            {
+              "ru": "Мы говорили о новых студентах.",
+              "tr": "My govorili o novykh studentakh.",
+              "en": "We talked about the new students. (prep. pl.)",
+              "ar": "تحدثنا عن الطلاب الجدد."
+            },
+            {
+              "ru": "Этот город очень красив.",
+              "tr": "Etot gorod ochen' krasiv.",
+              "en": "This city is very beautiful. (short form, predicate)",
+              "ar": "هذه المدينة جميلة جدًا."
+            },
+            {
+              "ru": "Я должен идти.",
+              "tr": "Ya dolzhen idti.",
+              "en": "I must go. (short form должен)",
+              "ar": "عليّ أن أذهب."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "الصفات في صيغتها الطويلة تطابق الاسم في الجنس والعدد والحالة؛ الجذوع الصلبة مقابل اللينة؛ بالإضافة إلى الصفات في صيغتها القصيرة."
     },
     {
       "id": "comparatives-superlatives",
@@ -535,18 +1329,62 @@
         {
           "type": "table",
           "caption": "Common irregular simple comparatives",
-          "headers": ["Adjective", "Meaning", "Comparative"],
+          "headers": [
+            "Adjective",
+            "Meaning",
+            "Comparative"
+          ],
           "rows": [
-            ["хороший", "good", "лучше (better)"],
-            ["плохой", "bad", "хуже (worse)"],
-            ["большой", "big", "больше (bigger / more)"],
-            ["маленький", "small", "меньше (smaller / less)"],
-            ["высокий", "tall/high", "выше"],
-            ["низкий", "low", "ниже"],
-            ["старый", "old", "старше (of people) / старее (of things)"],
-            ["молодой", "young", "моложе / младше"],
-            ["дорогой", "dear/expensive", "дороже"],
-            ["дешёвый", "cheap", "дешевле"]
+            [
+              "хороший",
+              "good",
+              "лучше (better)"
+            ],
+            [
+              "плохой",
+              "bad",
+              "хуже (worse)"
+            ],
+            [
+              "большой",
+              "big",
+              "больше (bigger / more)"
+            ],
+            [
+              "маленький",
+              "small",
+              "меньше (smaller / less)"
+            ],
+            [
+              "высокий",
+              "tall/high",
+              "выше"
+            ],
+            [
+              "низкий",
+              "low",
+              "ниже"
+            ],
+            [
+              "старый",
+              "old",
+              "старше (of people) / старее (of things)"
+            ],
+            [
+              "молодой",
+              "young",
+              "моложе / младше"
+            ],
+            [
+              "дорогой",
+              "dear/expensive",
+              "дороже"
+            ],
+            [
+              "дешёвый",
+              "cheap",
+              "дешевле"
+            ]
           ]
         },
         {
@@ -560,13 +1398,34 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Эта задача труднее предыдущей.", "tr": "Eta zadacha trudneye predydushchey.", "en": "This problem is harder than the previous one. (gen. comparison)"},
-            {"ru": "Он говорит по-русски лучше, чем я.", "tr": "On govorit po-russki luchshe, chem ya.", "en": "He speaks Russian better than I do. (чем + nom.)"},
-            {"ru": "Это самый красивый город в мире.", "tr": "Eto samyy krasivyy gorod v mire.", "en": "This is the most beautiful city in the world."},
-            {"ru": "Больше всего я люблю читать.", "tr": "Bol'she vsego ya lyublyu chitat'.", "en": "Most of all I love to read."}
+            {
+              "ru": "Эта задача труднее предыдущей.",
+              "tr": "Eta zadacha trudneye predydushchey.",
+              "en": "This problem is harder than the previous one. (gen. comparison)",
+              "ar": "هذه المسألة أصعب من السابقة."
+            },
+            {
+              "ru": "Он говорит по-русски лучше, чем я.",
+              "tr": "On govorit po-russki luchshe, chem ya.",
+              "en": "He speaks Russian better than I do. (чем + nom.)",
+              "ar": "هو يتحدث الروسية أفضل مني."
+            },
+            {
+              "ru": "Это самый красивый город в мире.",
+              "tr": "Eto samyy krasivyy gorod v mire.",
+              "en": "This is the most beautiful city in the world.",
+              "ar": "هذه أجمل مدينة في العالم."
+            },
+            {
+              "ru": "Больше всего я люблю читать.",
+              "tr": "Bol'she vsego ya lyublyu chitat'.",
+              "en": "Most of all I love to read.",
+              "ar": "أكثر ما أحبّه هو القراءة."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "تكوين واستعمال صيغتي التفضيل النسبي والمطلق للصفات والأحوال."
     },
     {
       "id": "pronouns",
@@ -580,14 +1439,77 @@
         {
           "type": "table",
           "caption": "Personal pronouns — full declension",
-          "headers": ["Case", "я", "ты", "он/оно", "она", "мы", "вы", "они"],
+          "headers": [
+            "Case",
+            "я",
+            "ты",
+            "он/оно",
+            "она",
+            "мы",
+            "вы",
+            "они"
+          ],
           "rows": [
-            ["Nominative", "я", "ты", "он/оно", "она", "мы", "вы", "они"],
-            ["Accusative", "меня", "тебя", "его (него)", "её (неё)", "нас", "вас", "их (них)"],
-            ["Genitive", "меня", "тебя", "его (него)", "её (неё)", "нас", "вас", "их (них)"],
-            ["Dative", "мне", "тебе", "ему (нему)", "ей (ней)", "нам", "вам", "им (ним)"],
-            ["Instrumental", "мной", "тобой", "им (ним)", "ей/ею (ней)", "нами", "вами", "ими (ними)"],
-            ["Prepositional", "(обо) мне", "(о) тебе", "(о) нём", "(о) ней", "(о) нас", "(о) вас", "(о) них"]
+            [
+              "Nominative",
+              "я",
+              "ты",
+              "он/оно",
+              "она",
+              "мы",
+              "вы",
+              "они"
+            ],
+            [
+              "Accusative",
+              "меня",
+              "тебя",
+              "его (него)",
+              "её (неё)",
+              "нас",
+              "вас",
+              "их (них)"
+            ],
+            [
+              "Genitive",
+              "меня",
+              "тебя",
+              "его (него)",
+              "её (неё)",
+              "нас",
+              "вас",
+              "их (них)"
+            ],
+            [
+              "Dative",
+              "мне",
+              "тебе",
+              "ему (нему)",
+              "ей (ней)",
+              "нам",
+              "вам",
+              "им (ним)"
+            ],
+            [
+              "Instrumental",
+              "мной",
+              "тобой",
+              "им (ним)",
+              "ей/ею (ней)",
+              "нами",
+              "вами",
+              "ими (ними)"
+            ],
+            [
+              "Prepositional",
+              "(обо) мне",
+              "(о) тебе",
+              "(о) нём",
+              "(о) ней",
+              "(о) нас",
+              "(о) вас",
+              "(о) них"
+            ]
           ]
         },
         {
@@ -597,14 +1519,56 @@
         {
           "type": "table",
           "caption": "Possessive pronoun мой ('my') — full declension (твой, свой decline identically)",
-          "headers": ["Case", "Masc.", "Neut.", "Fem.", "Plural"],
+          "headers": [
+            "Case",
+            "Masc.",
+            "Neut.",
+            "Fem.",
+            "Plural"
+          ],
           "rows": [
-            ["Nominative", "мой", "моё", "моя", "мои"],
-            ["Accusative", "мой/моего*", "моё", "мою", "мои/моих*"],
-            ["Genitive", "моего", "моего", "моей", "моих"],
-            ["Dative", "моему", "моему", "моей", "моим"],
-            ["Instrumental", "моим", "моим", "моей", "моими"],
-            ["Prepositional", "моём", "моём", "моей", "моих"]
+            [
+              "Nominative",
+              "мой",
+              "моё",
+              "моя",
+              "мои"
+            ],
+            [
+              "Accusative",
+              "мой/моего*",
+              "моё",
+              "мою",
+              "мои/моих*"
+            ],
+            [
+              "Genitive",
+              "моего",
+              "моего",
+              "моей",
+              "моих"
+            ],
+            [
+              "Dative",
+              "моему",
+              "моему",
+              "моей",
+              "моим"
+            ],
+            [
+              "Instrumental",
+              "моим",
+              "моим",
+              "моей",
+              "моими"
+            ],
+            [
+              "Prepositional",
+              "моём",
+              "моём",
+              "моей",
+              "моих"
+            ]
           ]
         },
         {
@@ -614,14 +1578,77 @@
         {
           "type": "table",
           "caption": "Demonstratives этот ('this') and тот ('that')",
-          "headers": ["Case", "этот (m.)", "это (n.)", "эта (f.)", "эти (pl.)", "тот (m.)", "та (f.)", "те (pl.)"],
+          "headers": [
+            "Case",
+            "этот (m.)",
+            "это (n.)",
+            "эта (f.)",
+            "эти (pl.)",
+            "тот (m.)",
+            "та (f.)",
+            "те (pl.)"
+          ],
           "rows": [
-            ["Nominative", "этот", "это", "эта", "эти", "тот", "та", "те"],
-            ["Accusative", "этот/этого", "это", "эту", "эти/этих", "тот/того", "ту", "те/тех"],
-            ["Genitive", "этого", "этого", "этой", "этих", "того", "той", "тех"],
-            ["Dative", "этому", "этому", "этой", "этим", "тому", "той", "тем"],
-            ["Instrumental", "этим", "этим", "этой", "этими", "тем", "той", "теми"],
-            ["Prepositional", "этом", "этом", "этой", "этих", "том", "той", "тех"]
+            [
+              "Nominative",
+              "этот",
+              "это",
+              "эта",
+              "эти",
+              "тот",
+              "та",
+              "те"
+            ],
+            [
+              "Accusative",
+              "этот/этого",
+              "это",
+              "эту",
+              "эти/этих",
+              "тот/того",
+              "ту",
+              "те/тех"
+            ],
+            [
+              "Genitive",
+              "этого",
+              "этого",
+              "этой",
+              "этих",
+              "того",
+              "той",
+              "тех"
+            ],
+            [
+              "Dative",
+              "этому",
+              "этому",
+              "этой",
+              "этим",
+              "тому",
+              "той",
+              "тем"
+            ],
+            [
+              "Instrumental",
+              "этим",
+              "этим",
+              "этой",
+              "этими",
+              "тем",
+              "той",
+              "теми"
+            ],
+            [
+              "Prepositional",
+              "этом",
+              "этом",
+              "этой",
+              "этих",
+              "том",
+              "той",
+              "тех"
+            ]
           ]
         },
         {
@@ -631,14 +1658,56 @@
         {
           "type": "table",
           "caption": "Interrogatives кто / что / какой / чей",
-          "headers": ["Case", "кто (who)", "что (what)", "чей (m., whose)", "какой (m., which)"],
+          "headers": [
+            "Case",
+            "кто (who)",
+            "что (what)",
+            "чей (m., whose)",
+            "какой (m., which)"
+          ],
           "rows": [
-            ["Nominative", "кто", "что", "чей", "какой"],
-            ["Accusative", "кого", "что", "чей/чьего", "какой/какого"],
-            ["Genitive", "кого", "чего", "чьего", "какого"],
-            ["Dative", "кому", "чему", "чьему", "какому"],
-            ["Instrumental", "кем", "чем", "чьим", "каким"],
-            ["Prepositional", "(о) ком", "(о) чём", "(о) чьём", "(о) каком"]
+            [
+              "Nominative",
+              "кто",
+              "что",
+              "чей",
+              "какой"
+            ],
+            [
+              "Accusative",
+              "кого",
+              "что",
+              "чей/чьего",
+              "какой/какого"
+            ],
+            [
+              "Genitive",
+              "кого",
+              "чего",
+              "чьего",
+              "какого"
+            ],
+            [
+              "Dative",
+              "кому",
+              "чему",
+              "чьему",
+              "какому"
+            ],
+            [
+              "Instrumental",
+              "кем",
+              "чем",
+              "чьим",
+              "каким"
+            ],
+            [
+              "Prepositional",
+              "(о) ком",
+              "(о) чём",
+              "(о) чьём",
+              "(о) каком"
+            ]
           ]
         },
         {
@@ -648,14 +1717,40 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "У меня есть вопрос.", "tr": "U menya yest' vopros.", "en": "I have a question. (lit. by me there is)"},
-            {"ru": "Я думаю о тебе.", "tr": "Ya dumayu o tebe.", "en": "I am thinking about you."},
-            {"ru": "Она взяла свою книгу.", "tr": "Ona vzyala svoyu knigu.", "en": "She took her (own) book."},
-            {"ru": "Чья это машина?", "tr": "Ch'ya eto mashina?", "en": "Whose car is this?"},
-            {"ru": "С кем ты говорил?", "tr": "S kem ty govoril?", "en": "With whom were you talking?"}
+            {
+              "ru": "У меня есть вопрос.",
+              "tr": "U menya yest' vopros.",
+              "en": "I have a question. (lit. by me there is)",
+              "ar": "لديّ سؤال."
+            },
+            {
+              "ru": "Я думаю о тебе.",
+              "tr": "Ya dumayu o tebe.",
+              "en": "I am thinking about you.",
+              "ar": "أفكّر فيك."
+            },
+            {
+              "ru": "Она взяла свою книгу.",
+              "tr": "Ona vzyala svoyu knigu.",
+              "en": "She took her (own) book.",
+              "ar": "أخذت كتابها (الخاص بها)."
+            },
+            {
+              "ru": "Чья это машина?",
+              "tr": "Ch'ya eto mashina?",
+              "en": "Whose car is this?",
+              "ar": "لمن هذه السيارة؟"
+            },
+            {
+              "ru": "С кем ты говорил?",
+              "tr": "S kem ty govoril?",
+              "en": "With whom were you talking?",
+              "ar": "مع مَن كنتَ تتحدث؟"
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "الضمائر الشخصية والملكية والإشارية والاستفهامية مع جداول كاملة للحالات الإعرابية."
     },
     {
       "id": "numerals",
@@ -669,14 +1764,49 @@
         {
           "type": "table",
           "caption": "Case the counted noun takes (nominative context)",
-          "headers": ["Number", "Noun case", "Example", "Gloss"],
+          "headers": [
+            "Number",
+            "Noun case",
+            "Example",
+            "Gloss"
+          ],
           "rows": [
-            ["1 (один, одна, одно)", "nominative singular (agrees!)", "один стол, одна книга", "one table / one book"],
-            ["2, 3, 4 (два/две, три, четыре)", "genitive SINGULAR", "два стола, три книги", "two tables / three books"],
-            ["5–20, 30, 40…(5 and up)", "genitive PLURAL", "пять столов, десять книг", "five tables / ten books"],
-            ["compound ending in 1", "nom. sg.", "двадцать один стол", "twenty-one tables"],
-            ["compound ending in 2-4", "gen. sg.", "тридцать два студента", "thirty-two students"],
-            ["compound ending in 5-9, 0", "gen. pl.", "сорок пять студентов", "forty-five students"]
+            [
+              "1 (один, одна, одно)",
+              "nominative singular (agrees!)",
+              "один стол, одна книга",
+              "one table / one book"
+            ],
+            [
+              "2, 3, 4 (два/две, три, четыре)",
+              "genitive SINGULAR",
+              "два стола, три книги",
+              "two tables / three books"
+            ],
+            [
+              "5–20, 30, 40…(5 and up)",
+              "genitive PLURAL",
+              "пять столов, десять книг",
+              "five tables / ten books"
+            ],
+            [
+              "compound ending in 1",
+              "nom. sg.",
+              "двадцать один стол",
+              "twenty-one tables"
+            ],
+            [
+              "compound ending in 2-4",
+              "gen. sg.",
+              "тридцать два студента",
+              "thirty-two students"
+            ],
+            [
+              "compound ending in 5-9, 0",
+              "gen. pl.",
+              "сорок пять студентов",
+              "forty-five students"
+            ]
           ]
         },
         {
@@ -686,18 +1816,73 @@
         {
           "type": "table",
           "caption": "Cardinal numbers 1–20, plus tens and large",
-          "headers": ["Numeral", "Russian", "Numeral", "Russian"],
+          "headers": [
+            "Numeral",
+            "Russian",
+            "Numeral",
+            "Russian"
+          ],
           "rows": [
-            ["1", "один / одна / одно", "11", "одиннадцать"],
-            ["2", "два / две", "12", "двенадцать"],
-            ["3", "три", "13", "тринадцать"],
-            ["4", "четыре", "14", "четырнадцать"],
-            ["5", "пять", "15", "пятнадцать"],
-            ["6", "шесть", "20", "двадцать"],
-            ["7", "семь", "30 / 40 / 50", "тридцать / сорок / пятьдесят"],
-            ["8", "восемь", "100 / 200", "сто / двести"],
-            ["9", "девять", "1000", "тысяча"],
-            ["10", "десять", "1 000 000", "миллион"]
+            [
+              "1",
+              "один / одна / одно",
+              "11",
+              "одиннадцать"
+            ],
+            [
+              "2",
+              "два / две",
+              "12",
+              "двенадцать"
+            ],
+            [
+              "3",
+              "три",
+              "13",
+              "тринадцать"
+            ],
+            [
+              "4",
+              "четыре",
+              "14",
+              "четырнадцать"
+            ],
+            [
+              "5",
+              "пять",
+              "15",
+              "пятнадцать"
+            ],
+            [
+              "6",
+              "шесть",
+              "20",
+              "двадцать"
+            ],
+            [
+              "7",
+              "семь",
+              "30 / 40 / 50",
+              "тридцать / сорок / пятьдесят"
+            ],
+            [
+              "8",
+              "восемь",
+              "100 / 200",
+              "сто / двести"
+            ],
+            [
+              "9",
+              "девять",
+              "1000",
+              "тысяча"
+            ],
+            [
+              "10",
+              "десять",
+              "1 000 000",
+              "миллион"
+            ]
           ]
         },
         {
@@ -707,14 +1892,49 @@
         {
           "type": "table",
           "caption": "Ordinal numbers (masculine nom. form)",
-          "headers": ["#", "Ordinal", "#", "Ordinal"],
+          "headers": [
+            "#",
+            "Ordinal",
+            "#",
+            "Ordinal"
+          ],
           "rows": [
-            ["1st", "первый", "7th", "седьмой"],
-            ["2nd", "второй", "8th", "восьмой"],
-            ["3rd", "третий*", "9th", "девятый"],
-            ["4th", "четвёртый", "10th", "десятый"],
-            ["5th", "пятый", "20th", "двадцатый"],
-            ["6th", "шестой", "100th", "сотый"]
+            [
+              "1st",
+              "первый",
+              "7th",
+              "седьмой"
+            ],
+            [
+              "2nd",
+              "второй",
+              "8th",
+              "восьмой"
+            ],
+            [
+              "3rd",
+              "третий*",
+              "9th",
+              "девятый"
+            ],
+            [
+              "4th",
+              "четвёртый",
+              "10th",
+              "десятый"
+            ],
+            [
+              "5th",
+              "пятый",
+              "20th",
+              "двадцатый"
+            ],
+            [
+              "6th",
+              "шестой",
+              "100th",
+              "сотый"
+            ]
           ]
         },
         {
@@ -724,13 +1944,34 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "У меня две сестры и один брат.", "tr": "U menya dve sestry i odin brat.", "en": "I have two sisters and one brother."},
-            {"ru": "В группе двадцать пять студентов.", "tr": "V gruppe dvadtsat' pyat' studentov.", "en": "There are twenty-five students in the group. (gen. pl.)"},
-            {"ru": "Сегодня третье мая.", "tr": "Segodnya tret'ye maya.", "en": "Today is the third of May. (ordinal + gen. of month)"},
-            {"ru": "Он пришёл с двумя друзьями.", "tr": "On prishyol s dvumya druz'yami.", "en": "He came with two friends. (number declined, instr.)"}
+            {
+              "ru": "У меня две сестры и один брат.",
+              "tr": "U menya dve sestry i odin brat.",
+              "en": "I have two sisters and one brother.",
+              "ar": "لديّ أختان وأخ واحد."
+            },
+            {
+              "ru": "В группе двадцать пять студентов.",
+              "tr": "V gruppe dvadtsat' pyat' studentov.",
+              "en": "There are twenty-five students in the group. (gen. pl.)",
+              "ar": "في المجموعة خمسة وعشرون طالبًا."
+            },
+            {
+              "ru": "Сегодня третье мая.",
+              "tr": "Segodnya tret'ye maya.",
+              "en": "Today is the third of May. (ordinal + gen. of month)",
+              "ar": "اليوم هو الثالث من مايو."
+            },
+            {
+              "ru": "Он пришёл с двумя друзьями.",
+              "tr": "On prishyol s dvumya druz'yami.",
+              "en": "He came with two friends. (number declined, instr.)",
+              "ar": "جاء مع صديقَين."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "الأعداد الأصلية والترتيبية، وحُكمها الإعرابي المعقّد للأسماء، والمطابقة."
     },
     {
       "id": "verb-basics-aspect-conjugation",
@@ -744,14 +1985,35 @@
         {
           "type": "table",
           "caption": "Imperfective vs perfective: the core contrast",
-          "headers": ["Imperfective (НСВ)", "Perfective (СВ)"],
+          "headers": [
+            "Imperfective (НСВ)",
+            "Perfective (СВ)"
+          ],
           "rows": [
-            ["process, ongoing action", "completed, whole action with a result"],
-            ["repetition, habit", "single one-time event"],
-            ["no result implied", "result / boundary reached"],
-            ["has present, past, future tenses", "has ONLY past and future (no present!)"],
-            ["читать (to read)", "прочитать (to read [through])"],
-            ["писать (to write)", "написать (to write [completely])"]
+            [
+              "process, ongoing action",
+              "completed, whole action with a result"
+            ],
+            [
+              "repetition, habit",
+              "single one-time event"
+            ],
+            [
+              "no result implied",
+              "result / boundary reached"
+            ],
+            [
+              "has present, past, future tenses",
+              "has ONLY past and future (no present!)"
+            ],
+            [
+              "читать (to read)",
+              "прочитать (to read [through])"
+            ],
+            [
+              "писать (to write)",
+              "написать (to write [completely])"
+            ]
           ]
         },
         {
@@ -769,27 +2031,83 @@
         {
           "type": "table",
           "caption": "1st conjugation: читать ('to read') · present tense",
-          "headers": ["Person", "Form", "Ending"],
+          "headers": [
+            "Person",
+            "Form",
+            "Ending"
+          ],
           "rows": [
-            ["я", "читаю", "-ю"],
-            ["ты", "читаешь", "-ешь"],
-            ["он/она/оно", "читает", "-ет"],
-            ["мы", "читаем", "-ем"],
-            ["вы", "читаете", "-ете"],
-            ["они", "читают", "-ют"]
+            [
+              "я",
+              "читаю",
+              "-ю"
+            ],
+            [
+              "ты",
+              "читаешь",
+              "-ешь"
+            ],
+            [
+              "он/она/оно",
+              "читает",
+              "-ет"
+            ],
+            [
+              "мы",
+              "читаем",
+              "-ем"
+            ],
+            [
+              "вы",
+              "читаете",
+              "-ете"
+            ],
+            [
+              "они",
+              "читают",
+              "-ют"
+            ]
           ]
         },
         {
           "type": "table",
           "caption": "2nd conjugation: говорить ('to speak') · present tense",
-          "headers": ["Person", "Form", "Ending"],
+          "headers": [
+            "Person",
+            "Form",
+            "Ending"
+          ],
           "rows": [
-            ["я", "говорю", "-ю"],
-            ["ты", "говоришь", "-ишь"],
-            ["он/она/оно", "говорит", "-ит"],
-            ["мы", "говорим", "-им"],
-            ["вы", "говорите", "-ите"],
-            ["они", "говорят", "-ят"]
+            [
+              "я",
+              "говорю",
+              "-ю"
+            ],
+            [
+              "ты",
+              "говоришь",
+              "-ишь"
+            ],
+            [
+              "он/она/оно",
+              "говорит",
+              "-ит"
+            ],
+            [
+              "мы",
+              "говорим",
+              "-им"
+            ],
+            [
+              "вы",
+              "говорите",
+              "-ите"
+            ],
+            [
+              "они",
+              "говорят",
+              "-ят"
+            ]
           ]
         },
         {
@@ -803,24 +2121,65 @@
         {
           "type": "table",
           "caption": "быть — past and future",
-          "headers": ["", "Past", "Future"],
+          "headers": [
+            "",
+            "Past",
+            "Future"
+          ],
           "rows": [
-            ["я", "был / была", "буду"],
-            ["ты", "был / была", "будешь"],
-            ["он/она/оно", "был / была / было", "будет"],
-            ["мы / вы / они", "были", "будем / будете / будут"]
+            [
+              "я",
+              "был / была",
+              "буду"
+            ],
+            [
+              "ты",
+              "был / была",
+              "будешь"
+            ],
+            [
+              "он/она/оно",
+              "был / была / было",
+              "будет"
+            ],
+            [
+              "мы / вы / они",
+              "были",
+              "будем / будете / будут"
+            ]
           ]
         },
         {
           "type": "examples",
           "items": [
-            {"ru": "Я читаю эту книгу уже неделю.", "tr": "Ya chitayu etu knigu uzhe nedelyu.", "en": "I've been reading this book for a week. (imperf., process)"},
-            {"ru": "Я прочитал эту книгу за один день.", "tr": "Ya prochital etu knigu za odin den'.", "en": "I read this book in one day. (perf., result)"},
-            {"ru": "Он говорит по-русски и по-английски.", "tr": "On govorit po-russki i po-angliyski.", "en": "He speaks Russian and English."},
-            {"ru": "Раньше здесь был парк.", "tr": "Ran'she zdes' byl park.", "en": "There used to be a park here. (past of быть)"}
+            {
+              "ru": "Я читаю эту книгу уже неделю.",
+              "tr": "Ya chitayu etu knigu uzhe nedelyu.",
+              "en": "I've been reading this book for a week. (imperf., process)",
+              "ar": "أقرأ هذا الكتاب منذ أسبوع."
+            },
+            {
+              "ru": "Я прочитал эту книгу за один день.",
+              "tr": "Ya prochital etu knigu za odin den'.",
+              "en": "I read this book in one day. (perf., result)",
+              "ar": "قرأتُ هذا الكتاب في يوم واحد."
+            },
+            {
+              "ru": "Он говорит по-русски и по-английски.",
+              "tr": "On govorit po-russki i po-angliyski.",
+              "en": "He speaks Russian and English.",
+              "ar": "هو يتحدث الروسية والإنجليزية."
+            },
+            {
+              "ru": "Раньше здесь был парк.",
+              "tr": "Ran'she zdes' byl park.",
+              "en": "There used to be a park here. (past of быть)",
+              "ar": "كان هنا حديقة فيما مضى."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "نظام الجهة (الفعل غير التام مقابل التام)، وفئتا التصريف مع جداول زمن المضارع، والفعل «بيت» (يكون)."
     },
     {
       "id": "past-future-tenses",
@@ -834,12 +2193,37 @@
         {
           "type": "table",
           "caption": "Past tense agreement: читать / говорить",
-          "headers": ["Subject", "Ending", "читать", "говорить"],
+          "headers": [
+            "Subject",
+            "Ending",
+            "читать",
+            "говорить"
+          ],
           "rows": [
-            ["masc. sg.", "-л", "читал", "говорил"],
-            ["fem. sg.", "-ла", "читала", "говорила"],
-            ["neut. sg.", "-ло", "читало", "говорило"],
-            ["plural (all)", "-ли", "читали", "говорили"]
+            [
+              "masc. sg.",
+              "-л",
+              "читал",
+              "говорил"
+            ],
+            [
+              "fem. sg.",
+              "-ла",
+              "читала",
+              "говорила"
+            ],
+            [
+              "neut. sg.",
+              "-ло",
+              "читало",
+              "говорило"
+            ],
+            [
+              "plural (all)",
+              "-ли",
+              "читали",
+              "говорили"
+            ]
           ]
         },
         {
@@ -853,10 +2237,25 @@
         {
           "type": "table",
           "caption": "The two futures",
-          "headers": ["Aspect", "Future type", "Formation", "Example"],
+          "headers": [
+            "Aspect",
+            "Future type",
+            "Formation",
+            "Example"
+          ],
           "rows": [
-            ["Imperfective", "COMPOUND future", "буду/будешь… + imperfective INFINITIVE", "Я буду читать (I will read / be reading)"],
-            ["Perfective", "SIMPLE future", "the present-tense endings on the perfective stem", "Я прочитаю (I will read [it through])"]
+            [
+              "Imperfective",
+              "COMPOUND future",
+              "буду/будешь… + imperfective INFINITIVE",
+              "Я буду читать (I will read / be reading)"
+            ],
+            [
+              "Perfective",
+              "SIMPLE future",
+              "the present-tense endings on the perfective stem",
+              "Я прочитаю (I will read [it through])"
+            ]
           ]
         },
         {
@@ -866,39 +2265,102 @@
         {
           "type": "table",
           "caption": "Compound (imperf.) future of читать",
-          "headers": ["Person", "Form"],
+          "headers": [
+            "Person",
+            "Form"
+          ],
           "rows": [
-            ["я", "буду читать"],
-            ["ты", "будешь читать"],
-            ["он/она/оно", "будет читать"],
-            ["мы", "будем читать"],
-            ["вы", "будете читать"],
-            ["они", "будут читать"]
+            [
+              "я",
+              "буду читать"
+            ],
+            [
+              "ты",
+              "будешь читать"
+            ],
+            [
+              "он/она/оно",
+              "будет читать"
+            ],
+            [
+              "мы",
+              "будем читать"
+            ],
+            [
+              "вы",
+              "будете читать"
+            ],
+            [
+              "они",
+              "будут читать"
+            ]
           ]
         },
         {
           "type": "table",
           "caption": "Simple (perf.) future of прочитать",
-          "headers": ["Person", "Form"],
+          "headers": [
+            "Person",
+            "Form"
+          ],
           "rows": [
-            ["я", "прочитаю"],
-            ["ты", "прочитаешь"],
-            ["он/она/оно", "прочитает"],
-            ["мы", "прочитаем"],
-            ["вы", "прочитаете"],
-            ["они", "прочитают"]
+            [
+              "я",
+              "прочитаю"
+            ],
+            [
+              "ты",
+              "прочитаешь"
+            ],
+            [
+              "он/она/оно",
+              "прочитает"
+            ],
+            [
+              "мы",
+              "прочитаем"
+            ],
+            [
+              "вы",
+              "прочитаете"
+            ],
+            [
+              "они",
+              "прочитают"
+            ]
           ]
         },
         {
           "type": "examples",
           "items": [
-            {"ru": "Вчера она читала весь вечер.", "tr": "Vchera ona chitala ves' vecher.", "en": "Yesterday she read all evening. (imperf. past, fem.)"},
-            {"ru": "Завтра я буду работать.", "tr": "Zavtra ya budu rabotat'.", "en": "Tomorrow I will be working. (compound future)"},
-            {"ru": "Я напишу письмо и отправлю его.", "tr": "Ya napishu pis'mo i otpravlyu yego.", "en": "I will write the letter and send it. (perf. future, sequence)"},
-            {"ru": "Они уже ушли.", "tr": "Oni uzhe ushli.", "en": "They have already left. (perf. past, suppletive шли)"}
+            {
+              "ru": "Вчера она читала весь вечер.",
+              "tr": "Vchera ona chitala ves' vecher.",
+              "en": "Yesterday she read all evening. (imperf. past, fem.)",
+              "ar": "بالأمس قرأت طوال المساء."
+            },
+            {
+              "ru": "Завтра я буду работать.",
+              "tr": "Zavtra ya budu rabotat'.",
+              "en": "Tomorrow I will be working. (compound future)",
+              "ar": "غدًا سأعمل."
+            },
+            {
+              "ru": "Я напишу письмо и отправлю его.",
+              "tr": "Ya napishu pis'mo i otpravlyu yego.",
+              "en": "I will write the letter and send it. (perf. future, sequence)",
+              "ar": "سأكتب الرسالة وأرسلها."
+            },
+            {
+              "ru": "Они уже ушли.",
+              "tr": "Oni uzhe ushli.",
+              "en": "They have already left. (perf. past, suppletive шли)",
+              "ar": "لقد غادروا بالفعل."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "مطابقة زمن الماضي بحسب الجنس والعدد، والطريقتان لتكوين المستقبل من كل جهة فعلية."
     },
     {
       "id": "imperative-conditional-reflexive-motion",
@@ -912,13 +2374,43 @@
         {
           "type": "table",
           "caption": "Imperative formation",
-          "headers": ["Infinitive", "Stem (они-form)", "Informal sg.", "Polite/plural"],
+          "headers": [
+            "Infinitive",
+            "Stem (они-form)",
+            "Informal sg.",
+            "Polite/plural"
+          ],
           "rows": [
-            ["читать", "читаj-ут", "читай", "читайте"],
-            ["говорить", "говор-ят", "говори", "говорите"],
-            ["писать", "пиш-ут", "пиши", "пишите"],
-            ["встать", "встан-ут", "встань", "встаньте"],
-            ["(irregular) дать", "—", "дай", "дайте"]
+            [
+              "читать",
+              "читаj-ут",
+              "читай",
+              "читайте"
+            ],
+            [
+              "говорить",
+              "говор-ят",
+              "говори",
+              "говорите"
+            ],
+            [
+              "писать",
+              "пиш-ут",
+              "пиши",
+              "пишите"
+            ],
+            [
+              "встать",
+              "встан-ут",
+              "встань",
+              "встаньте"
+            ],
+            [
+              "(irregular) дать",
+              "—",
+              "дай",
+              "дайте"
+            ]
           ]
         },
         {
@@ -932,8 +2424,18 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Если бы у меня было время, я бы поехал в Москву.", "tr": "Yesli by u menya bylo vremya, ya by poyekhal v Moskvu.", "en": "If I had time, I would go to Moscow. (бы + past)"},
-            {"ru": "Я хотел бы спросить.", "tr": "Ya khotel by sprosit'.", "en": "I would like to ask. (polite softening)"}
+            {
+              "ru": "Если бы у меня было время, я бы поехал в Москву.",
+              "tr": "Yesli by u menya bylo vremya, ya by poyekhal v Moskvu.",
+              "en": "If I had time, I would go to Moscow. (бы + past)",
+              "ar": "لو كان لديّ وقت، لذهبتُ إلى موسكو."
+            },
+            {
+              "ru": "Я хотел бы спросить.",
+              "tr": "Ya khotel by sprosit'.",
+              "en": "I would like to ask. (polite softening)",
+              "ar": "أودّ أن أسأل."
+            }
           ]
         },
         {
@@ -943,13 +2445,37 @@
         {
           "type": "table",
           "caption": "Functions of -ся, with умываться ('to wash oneself')",
-          "headers": ["Function", "Example", "Gloss"],
+          "headers": [
+            "Function",
+            "Example",
+            "Gloss"
+          ],
           "rows": [
-            ["true reflexive", "Я умываюсь.", "I wash (myself)."],
-            ["reciprocal", "Они встречаются.", "They meet (each other)."],
-            ["intransitive/middle", "Дверь открывается.", "The door opens / is opening."],
-            ["passive", "Дом строится рабочими.", "The house is being built by workers."],
-            ["lexicalized (no non-ся form)", "Я улыбаюсь / надеюсь / боюсь", "I smile / hope / fear."]
+            [
+              "true reflexive",
+              "Я умываюсь.",
+              "I wash (myself)."
+            ],
+            [
+              "reciprocal",
+              "Они встречаются.",
+              "They meet (each other)."
+            ],
+            [
+              "intransitive/middle",
+              "Дверь открывается.",
+              "The door opens / is opening."
+            ],
+            [
+              "passive",
+              "Дом строится рабочими.",
+              "The house is being built by workers."
+            ],
+            [
+              "lexicalized (no non-ся form)",
+              "Я улыбаюсь / надеюсь / боюсь",
+              "I smile / hope / fear."
+            ]
           ]
         },
         {
@@ -963,16 +2489,52 @@
         {
           "type": "table",
           "caption": "Core paired verbs of motion",
-          "headers": ["Meaning", "Unidirectional (one way, now)", "Multidirectional (habitual / round-trip)"],
+          "headers": [
+            "Meaning",
+            "Unidirectional (one way, now)",
+            "Multidirectional (habitual / round-trip)"
+          ],
           "rows": [
-            ["go (on foot)", "идти", "ходить"],
-            ["go (by vehicle)", "ехать", "ездить"],
-            ["run", "бежать", "бегать"],
-            ["fly", "лететь", "летать"],
-            ["swim/sail", "плыть", "плавать"],
-            ["carry (by hand)", "нести", "носить"],
-            ["lead/take (a person)", "вести", "водить"],
-            ["convey (by vehicle)", "везти", "возить"]
+            [
+              "go (on foot)",
+              "идти",
+              "ходить"
+            ],
+            [
+              "go (by vehicle)",
+              "ехать",
+              "ездить"
+            ],
+            [
+              "run",
+              "бежать",
+              "бегать"
+            ],
+            [
+              "fly",
+              "лететь",
+              "летать"
+            ],
+            [
+              "swim/sail",
+              "плыть",
+              "плавать"
+            ],
+            [
+              "carry (by hand)",
+              "нести",
+              "носить"
+            ],
+            [
+              "lead/take (a person)",
+              "вести",
+              "водить"
+            ],
+            [
+              "convey (by vehicle)",
+              "везти",
+              "возить"
+            ]
           ]
         },
         {
@@ -982,28 +2544,94 @@
         {
           "type": "table",
           "caption": "Common motion prefixes",
-          "headers": ["Prefix", "Meaning", "Example (идти/ходить)", "Gloss"],
+          "headers": [
+            "Prefix",
+            "Meaning",
+            "Example (идти/ходить)",
+            "Gloss"
+          ],
           "rows": [
-            ["при-", "arrival", "прийти / приходить", "to arrive, come"],
-            ["у-", "departure (away)", "уйти / уходить", "to leave, go away"],
-            ["в(о)-", "entering", "войти / входить", "to enter"],
-            ["вы-", "exiting", "выйти / выходить", "to exit, go out"],
-            ["под(о)-", "approaching", "подойти / подходить", "to approach"],
-            ["от(о)-", "moving off", "отойти / отходить", "to step away"],
-            ["пере-", "crossing", "перейти / переходить", "to cross"],
-            ["до-", "reaching", "дойти / доходить", "to reach (as far as)"]
+            [
+              "при-",
+              "arrival",
+              "прийти / приходить",
+              "to arrive, come"
+            ],
+            [
+              "у-",
+              "departure (away)",
+              "уйти / уходить",
+              "to leave, go away"
+            ],
+            [
+              "в(о)-",
+              "entering",
+              "войти / входить",
+              "to enter"
+            ],
+            [
+              "вы-",
+              "exiting",
+              "выйти / выходить",
+              "to exit, go out"
+            ],
+            [
+              "под(о)-",
+              "approaching",
+              "подойти / подходить",
+              "to approach"
+            ],
+            [
+              "от(о)-",
+              "moving off",
+              "отойти / отходить",
+              "to step away"
+            ],
+            [
+              "пере-",
+              "crossing",
+              "перейти / переходить",
+              "to cross"
+            ],
+            [
+              "до-",
+              "reaching",
+              "дойти / доходить",
+              "to reach (as far as)"
+            ]
           ]
         },
         {
           "type": "examples",
           "items": [
-            {"ru": "Сейчас я иду в университет.", "tr": "Seychas ya idu v universitet.", "en": "I'm walking to the university right now. (unidirectional)"},
-            {"ru": "Я хожу в университет каждый день.", "tr": "Ya khozhu v universitet kazhdyy den'.", "en": "I go to the university every day. (multidirectional, habit)"},
-            {"ru": "Поезд приходит в восемь часов.", "tr": "Poyezd prikhodit v vosem' chasov.", "en": "The train arrives at eight o'clock. (prefixed imperf.)"},
-            {"ru": "Закройте, пожалуйста, дверь.", "tr": "Zakroyte, pozhaluysta, dver'.", "en": "Please close the door. (perf. imperative)"}
+            {
+              "ru": "Сейчас я иду в университет.",
+              "tr": "Seychas ya idu v universitet.",
+              "en": "I'm walking to the university right now. (unidirectional)",
+              "ar": "أنا الآن ذاهب إلى الجامعة."
+            },
+            {
+              "ru": "Я хожу в университет каждый день.",
+              "tr": "Ya khozhu v universitet kazhdyy den'.",
+              "en": "I go to the university every day. (multidirectional, habit)",
+              "ar": "أذهب إلى الجامعة كل يوم."
+            },
+            {
+              "ru": "Поезд приходит в восемь часов.",
+              "tr": "Poyezd prikhodit v vosem' chasov.",
+              "en": "The train arrives at eight o'clock. (prefixed imperf.)",
+              "ar": "القطار يصل في الساعة الثامنة."
+            },
+            {
+              "ru": "Закройте, пожалуйста, дверь.",
+              "tr": "Zakroyte, pozhaluysta, dver'.",
+              "en": "Please close the door. (perf. imperative)",
+              "ar": "أغلقوا الباب من فضلكم."
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "صيغ الأمر، والصيغة الشرطية مع «بِي»، والأفعال الانعكاسية بـ«-سيا»، وأفعال الحركة المزدوجة مع البادئات."
     },
     {
       "id": "participles-gerunds-syntax",
@@ -1017,12 +2645,37 @@
         {
           "type": "table",
           "caption": "The four participles (from читать / прочитать)",
-          "headers": ["Participle", "Suffix", "Example", "Meaning"],
+          "headers": [
+            "Participle",
+            "Suffix",
+            "Example",
+            "Meaning"
+          ],
           "rows": [
-            ["present active", "-ущ-/-ющ-/-ащ-/-ящ-", "читающий", "(the one) who is reading"],
-            ["past active", "-вш-/-ш-", "читавший / прочитавший", "(the one) who was/has read"],
-            ["present passive", "-ем-/-им-", "читаемый", "(that which) is being read"],
-            ["past passive", "-нн-/-енн-/-т-", "прочитанный", "(that which) has been read"]
+            [
+              "present active",
+              "-ущ-/-ющ-/-ащ-/-ящ-",
+              "читающий",
+              "(the one) who is reading"
+            ],
+            [
+              "past active",
+              "-вш-/-ш-",
+              "читавший / прочитавший",
+              "(the one) who was/has read"
+            ],
+            [
+              "present passive",
+              "-ем-/-им-",
+              "читаемый",
+              "(that which) is being read"
+            ],
+            [
+              "past passive",
+              "-нн-/-енн-/-т-",
+              "прочитанный",
+              "(that which) has been read"
+            ]
           ]
         },
         {
@@ -1036,10 +2689,28 @@
         {
           "type": "table",
           "caption": "Verbal adverbs (деепричастия)",
-          "headers": ["Type", "From aspect", "Suffix", "Example", "Meaning"],
+          "headers": [
+            "Type",
+            "From aspect",
+            "Suffix",
+            "Example",
+            "Meaning"
+          ],
           "rows": [
-            ["imperfective (simultaneous)", "imperfective", "-я / -а", "читая", "while reading"],
-            ["perfective (prior)", "perfective", "-в / -вши / -ши", "прочитав", "having read"]
+            [
+              "imperfective (simultaneous)",
+              "imperfective",
+              "-я / -а",
+              "читая",
+              "while reading"
+            ],
+            [
+              "perfective (prior)",
+              "perfective",
+              "-в / -вши / -ши",
+              "прочитав",
+              "having read"
+            ]
           ]
         },
         {
@@ -1063,14 +2734,40 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Студент, читающий книгу, мой брат.", "tr": "Student, chitayushchiy knigu, moy brat.", "en": "The student reading the book is my brother. (present active participle)"},
-            {"ru": "Прочитав письмо, она заплакала.", "tr": "Prochitav pis'mo, ona zaplakala.", "en": "Having read the letter, she burst into tears. (perfective verbal adverb)"},
-            {"ru": "Я никогда там не был.", "tr": "Ya nikogda tam ne byl.", "en": "I have never been there. (obligatory double negation)"},
-            {"ru": "У нас нет времени.", "tr": "U nas net vremeni.", "en": "We don't have time. (нет + genitive)"},
-            {"ru": "Вы говорите по-русски?", "tr": "Vy govorite po-russki?", "en": "Do you speak Russian? (yes/no question by intonation)"}
+            {
+              "ru": "Студент, читающий книгу, мой брат.",
+              "tr": "Student, chitayushchiy knigu, moy brat.",
+              "en": "The student reading the book is my brother. (present active participle)",
+              "ar": "الطالب الذي يقرأ الكتاب هو أخي."
+            },
+            {
+              "ru": "Прочитав письмо, она заплакала.",
+              "tr": "Prochitav pis'mo, ona zaplakala.",
+              "en": "Having read the letter, she burst into tears. (perfective verbal adverb)",
+              "ar": "بعد أن قرأت الرسالة، بكت."
+            },
+            {
+              "ru": "Я никогда там не был.",
+              "tr": "Ya nikogda tam ne byl.",
+              "en": "I have never been there. (obligatory double negation)",
+              "ar": "لم أكن هناك قط."
+            },
+            {
+              "ru": "У нас нет времени.",
+              "tr": "U nas net vremeni.",
+              "en": "We don't have time. (нет + genitive)",
+              "ar": "ليس لدينا وقت."
+            },
+            {
+              "ru": "Вы говорите по-русски?",
+              "tr": "Vy govorite po-russki?",
+              "en": "Do you speak Russian? (yes/no question by intonation)",
+              "ar": "هل تتحدثون الروسية؟"
+            }
           ]
         }
-      ]
+      ],
+      "summary_ar": "اسما الفاعل والمفعول في صيغتيهما المضارعة والماضية، والظرف الفعلي (دييپريتشاستيه)، بالإضافة إلى ترتيب الكلمات والنفي والأسئلة."
     }
   ]
 }

@@ -7,6 +7,7 @@
       "id": "register-and-style",
       "title": "1. Регистр и стиль: научный стиль",
       "summary": "What makes the scholarly register distinct from everyday Russian: nominalisation, impersonality, objectivity, and the avoidance of «я».",
+      "summary_ar": "ما الذي يميّز السجلّ العلمي عن الروسية اليومية: التحويل إلى الأسماء، والتجرّد من الفاعل، والموضوعية، وتجنّب ضمير المتكلّم «أنا».",
       "blocks": [
         {
           "type": "prose",
@@ -43,9 +44,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "В настоящей работе рассматривается проблема классификации текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma klassifikácii tékstov.", "en": "The present work examines the problem of text classification."},
-            {"ru": "Нами было установлено, что данная зависимость носит нелинейный характер.", "tr": "Námi býlo ustanóvleno, čto dánnaja zavísimostʹ nósit nelinéjnyj charákter.", "en": "We established that the dependence in question is nonlinear in nature."},
-            {"ru": "Полученные данные свидетельствуют о наличии корреляции между переменными.", "tr": "Polúčennye dánnye svidételʹstvujut o nalíčii korreljácii méždu pereménnymi.", "en": "The data obtained attest to the presence of a correlation between the variables."}
+            {"ru": "В настоящей работе рассматривается проблема классификации текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma klassifikácii tékstov.", "en": "The present work examines the problem of text classification.", "ar": "تتناول هذه الدراسة مشكلة تصنيف النصوص."},
+            {"ru": "Нами было установлено, что данная зависимость носит нелинейный характер.", "tr": "Námi býlo ustanóvleno, čto dánnaja zavísimostʹ nósit nelinéjnyj charákter.", "en": "We established that the dependence in question is nonlinear in nature.", "ar": "لقد تبيّن لنا أنّ هذه العلاقة ذات طابع غير خطّي."},
+            {"ru": "Полученные данные свидетельствуют о наличии корреляции между переменными.", "tr": "Polúčennye dánnye svidételʹstvujut o nalíčii korreljácii méždu pereménnymi.", "en": "The data obtained attest to the presence of a correlation between the variables.", "ar": "تشهد البيانات المُحصَّل عليها بوجود ارتباط بين المتغيّرات."}
           ]
         }
       ]
@@ -54,6 +55,7 @@
       "id": "grammar-impersonal-passive",
       "title": "2. Грамматика академического русского",
       "summary": "Impersonal and passive constructions, participles and verbal adverbs, and genitive chains — the structural backbone of dense scholarly prose.",
+      "summary_ar": "التراكيب غير الشخصية والمبنية للمجهول، واسما الفاعل والمفعول والحال (الأفعال الظرفية)، وسلاسل المضاف إليه في حالة الجرّ — وهي العمود الفقري البنيوي للنثر العلمي الكثيف.",
       "blocks": [
         {
           "type": "prose",
@@ -102,9 +104,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "оценка эффективности методов обработки данных", "tr": "océnka effektívnosti métodov obrabótki dánnych", "en": "assessment of the effectiveness of data-processing methods"},
-            {"ru": "проблема определения границ применимости теории", "tr": "probléma opredelénija graníc primenímosti teórii", "en": "the problem of determining the limits of applicability of the theory"},
-            {"ru": "в результате анализа динамики показателей роста", "tr": "v rezulʹtáte análiza dinámiki pokazátelej rósta", "en": "as a result of analysing the dynamics of the growth indicators"}
+            {"ru": "оценка эффективности методов обработки данных", "tr": "océnka effektívnosti métodov obrabótki dánnych", "en": "assessment of the effectiveness of data-processing methods", "ar": "تقييم فعّالية طرائق معالجة البيانات"},
+            {"ru": "проблема определения границ применимости теории", "tr": "probléma opredelénija graníc primenímosti teórii", "en": "the problem of determining the limits of applicability of the theory", "ar": "مشكلة تحديد حدود قابلية تطبيق النظرية"},
+            {"ru": "в результате анализа динамики показателей роста", "tr": "v rezulʹtáte análiza dinámiki pokazátelej rósta", "en": "as a result of analysing the dynamics of the growth indicators", "ar": "نتيجةً لتحليل ديناميكية مؤشّرات النموّ"}
           ]
         }
       ]
@@ -113,6 +115,7 @@
       "id": "discourse-connectors",
       "title": "3. Связки и аргументация",
       "summary": "A rich, function-grouped inventory of the discourse connectors that drive scholarly argumentation.",
+      "summary_ar": "حصرٌ غنيّ، مُصنَّف بحسب الوظيفة، لأدوات الربط الخطابي التي تُحرّك الحِجاج العلمي.",
       "blocks": [
         {
           "type": "prose",
@@ -144,9 +147,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Эксперимент не дал ожидаемого результата; тем не менее полученные данные представляют интерес.", "tr": "Eksperimént ne dal ožidáemogo rezulʹtáta; tem ne ménee polúčennye dánnye predstavljájut interés.", "en": "The experiment did not yield the expected result; nevertheless, the data obtained are of interest."},
-            {"ru": "Таким образом, можно сделать вывод о том, что гипотеза подтверждается.", "tr": "Takím óbrazom, móžno sdélatʹ vývod o tom, čto gipóteza podtverždáetsja.", "en": "Thus, one may conclude that the hypothesis is confirmed."},
-            {"ru": "В связи с этим возникает вопрос о применимости модели в иных условиях.", "tr": "V svjazí s étim voznikáet voprós o primenímosti modéli v iných uslóvijach.", "en": "In this connection, the question arises of the model's applicability under other conditions."}
+            {"ru": "Эксперимент не дал ожидаемого результата; тем не менее полученные данные представляют интерес.", "tr": "Eksperimént ne dal ožidáemogo rezulʹtáta; tem ne ménee polúčennye dánnye predstavljájut interés.", "en": "The experiment did not yield the expected result; nevertheless, the data obtained are of interest.", "ar": "لم تُسفر التجربة عن النتيجة المتوقَّعة؛ ومع ذلك فإنّ البيانات المُحصَّل عليها ذات أهمّية."},
+            {"ru": "Таким образом, можно сделать вывод о том, что гипотеза подтверждается.", "tr": "Takím óbrazom, móžno sdélatʹ vývod o tom, čto gipóteza podtverždáetsja.", "en": "Thus, one may conclude that the hypothesis is confirmed.", "ar": "وهكذا، يمكن الخلوص إلى أنّ الفرضية تتأكّد."},
+            {"ru": "В связи с этим возникает вопрос о применимости модели в иных условиях.", "tr": "V svjazí s étim voznikáet voprós o primenímosti modéli v iných uslóvijach.", "en": "In this connection, the question arises of the model's applicability under other conditions.", "ar": "وفي هذا الصدد يُطرح السؤال عن قابلية تطبيق النموذج في ظروف أخرى."}
           ]
         }
       ]
@@ -155,6 +158,7 @@
       "id": "structuring-a-paper",
       "title": "4. Структура статьи и диссертации",
       "summary": "The canonical sections of a Russian paper or thesis and the set phrases that open each.",
+      "summary_ar": "الأقسام المعيارية للمقالة أو الأطروحة الروسية، والعبارات المسكوكة التي يُستهلّ بها كلٌّ منها.",
       "blocks": [
         {
           "type": "prose",
@@ -199,9 +203,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Настоящая статья посвящена изучению влияния температуры на скорость реакции.", "tr": "Nastojáščaja statʹjá posvjaščená izučéniju vlijánija temperatúry na skórostʹ reákcii.", "en": "The present article is devoted to studying the effect of temperature on the reaction rate."},
-            {"ru": "Цель работы — выявить закономерности распределения данных в выборке.", "tr": "Celʹ rabóty — výjavitʹ zakonomérnosti raspredelénija dánnych v výborke.", "en": "The aim of the work is to reveal regularities in the distribution of the data in the sample."},
-            {"ru": "В заключение подведём основные итоги проведённого исследования.", "tr": "V zaključénie podvedjóm osnovnýe itógi provedjónnogo isslédovanija.", "en": "In conclusion, let us sum up the principal results of the conducted study."}
+            {"ru": "Настоящая статья посвящена изучению влияния температуры на скорость реакции.", "tr": "Nastojáščaja statʹjá posvjaščená izučéniju vlijánija temperatúry na skórostʹ reákcii.", "en": "The present article is devoted to studying the effect of temperature on the reaction rate.", "ar": "تُكرَّس هذه المقالة لدراسة تأثير درجة الحرارة في سرعة التفاعل."},
+            {"ru": "Цель работы — выявить закономерности распределения данных в выборке.", "tr": "Celʹ rabóty — výjavitʹ zakonomérnosti raspredelénija dánnych v výborke.", "en": "The aim of the work is to reveal regularities in the distribution of the data in the sample.", "ar": "يتمثّل هدف هذا البحث في الكشف عن انتظامات توزيع البيانات في العيّنة."},
+            {"ru": "В заключение подведём основные итоги проведённого исследования.", "tr": "V zaključénie podvedjóm osnovnýe itógi provedjónnogo isslédovanija.", "en": "In conclusion, let us sum up the principal results of the conducted study.", "ar": "وفي الختام، نُجمل النتائج الرئيسية للدراسة المُنجَزة."}
           ]
         }
       ]
@@ -210,6 +214,7 @@
       "id": "citing-and-referencing",
       "title": "5. Цитирование и ссылки",
       "summary": "How to attribute claims, refer to sources and previous research, and quote — including ГОСТ conventions.",
+      "summary_ar": "كيفية عزو الأقوال إلى أصحابها، والإحالة إلى المصادر والأبحاث السابقة، والاقتباس — بما في ذلك أعراف المعيار الحكومي «غوست».",
       "blocks": [
         {
           "type": "prose",
@@ -251,9 +256,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "По мнению ряда авторов, данная гипотеза нуждается в дополнительной проверке.", "tr": "Po mnéniju rjáda ávtorov, dánnaja gipóteza nuždáetsja v dopolnítelʹnoj provérke.", "en": "In the opinion of a number of authors, this hypothesis requires additional verification."},
-            {"ru": "Согласно классификации, предложенной автором, выделяются три типа.", "tr": "Soglásno klassifikácii, predložénnoj ávtorom, vydeljájutsja tri típa.", "en": "According to the classification proposed by the author, three types are distinguished."},
-            {"ru": "Как отмечает исследователь, данный эффект ранее не описывался [5, с. 12].", "tr": "Kak otmečáet isslédovatelʹ, dánnyj effékt ránee ne opísyvalsja.", "en": "As the researcher notes, this effect had not previously been described [5, p. 12]."}
+            {"ru": "По мнению ряда авторов, данная гипотеза нуждается в дополнительной проверке.", "tr": "Po mnéniju rjáda ávtorov, dánnaja gipóteza nuždáetsja v dopolnítelʹnoj provérke.", "en": "In the opinion of a number of authors, this hypothesis requires additional verification.", "ar": "في رأي عددٍ من الباحثين، تحتاج هذه الفرضية إلى تحقّق إضافي."},
+            {"ru": "Согласно классификации, предложенной автором, выделяются три типа.", "tr": "Soglásno klassifikácii, predložénnoj ávtorom, vydeljájutsja tri típa.", "en": "According to the classification proposed by the author, three types are distinguished.", "ar": "وفقًا للتصنيف الذي اقترحه المؤلِّف، يُميَّز بين ثلاثة أنماط."},
+            {"ru": "Как отмечает исследователь, данный эффект ранее не описывался [5, с. 12].", "tr": "Kak otmečáet isslédovatelʹ, dánnyj effékt ránee ne opísyvalsja.", "en": "As the researcher notes, this effect had not previously been described [5, p. 12].", "ar": "كما يشير الباحث، فإنّ هذا الأثر لم يُوصَف من قبلُ [5، ص 12]."}
           ]
         }
       ]
@@ -262,6 +267,7 @@
       "id": "aims-hypotheses-definitions",
       "title": "6. Цели, гипотезы и определения",
       "summary": "Stating the aim and objectives, formulating hypotheses and assumptions, and defining terms.",
+      "summary_ar": "صياغة الهدف والمهامّ، وصوغ الفرضيات والافتراضات، وتعريف المصطلحات.",
       "blocks": [
         {
           "type": "prose",
@@ -300,9 +306,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Под устойчивостью системы в данной работе понимается её способность сохранять равновесие.", "tr": "Pod ustójčivostʹju sistémy v dánnoj rabóte ponimáetsja eё sposóbnostʹ sochranjátʹ ravnovésie.", "en": "By the stability of the system, in this work, we understand its capacity to maintain equilibrium."},
-            {"ru": "Выдвигается гипотеза, согласно которой переменные связаны нелинейно.", "tr": "Vydvigáetsja gipóteza, soglásno kotóroj pereménnye svjázany nelinéjno.", "en": "A hypothesis is advanced according to which the variables are related nonlinearly."},
-            {"ru": "Термин «дискурс» определяется как речь, погружённая в социальный контекст.", "tr": "Términ «diskúrs» opredeljáetsja kak rečʹ, pogružёnnaja v sociálʹnyj kontékst.", "en": "The term \"discourse\" is defined as speech immersed in a social context."}
+            {"ru": "Под устойчивостью системы в данной работе понимается её способность сохранять равновесие.", "tr": "Pod ustójčivostʹju sistémy v dánnoj rabóte ponimáetsja eё sposóbnostʹ sochranjátʹ ravnovésie.", "en": "By the stability of the system, in this work, we understand its capacity to maintain equilibrium.", "ar": "يُقصد باستقرار النظام في هذا البحث قدرتُه على الحفاظ على التوازن."},
+            {"ru": "Выдвигается гипотеза, согласно которой переменные связаны нелинейно.", "tr": "Vydvigáetsja gipóteza, soglásno kotóroj pereménnye svjázany nelinéjno.", "en": "A hypothesis is advanced according to which the variables are related nonlinearly.", "ar": "تُطرح فرضيةٌ مفادها أنّ المتغيّرات مترابطة ترابطًا غير خطّي."},
+            {"ru": "Термин «дискурс» определяется как речь, погружённая в социальный контекст.", "tr": "Términ «diskúrs» opredeljáetsja kak rečʹ, pogružёnnaja v sociálʹnyj kontékst.", "en": "The term \"discourse\" is defined as speech immersed in a social context.", "ar": "يُعرَّف مصطلح «الخطاب» بأنّه كلامٌ منغمسٌ في سياق اجتماعي."}
           ]
         }
       ]
@@ -311,6 +317,7 @@
       "id": "presenting-data",
       "title": "7. Представление и обсуждение данных",
       "summary": "Describing tables, figures and trends, with hedging and expressions of certainty.",
+      "summary_ar": "وصف الجداول والأشكال والاتّجاهات، مع التحفّظ في القول وعبارات اليقين.",
       "blocks": [
         {
           "type": "prose",
@@ -360,9 +367,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Как видно из таблицы 3, значение показателя возросло почти в два раза.", "tr": "Kak vídno iz tablícy tri, značénie pokazátelja vozrosló počtí v dva ráza.", "en": "As can be seen from Table 3, the value of the indicator nearly doubled."},
-            {"ru": "По-видимому, наблюдаемый эффект обусловлен изменением температуры.", "tr": "Po-vídimomu, nabljudáemyj effékt obuslóvlen izmenénием temperatúry.", "en": "Apparently, the observed effect is caused by the change in temperature."},
-            {"ru": "Представляется обоснованным предположить наличие обратной зависимости.", "tr": "Predstavljáetsja obosnóvannym predpoložítʹ nalíčie obrátnoj zavísimosti.", "en": "It appears justified to suppose the presence of an inverse relationship."}
+            {"ru": "Как видно из таблицы 3, значение показателя возросло почти в два раза.", "tr": "Kak vídno iz tablícy tri, značénie pokazátelja vozrosló počtí v dva ráza.", "en": "As can be seen from Table 3, the value of the indicator nearly doubled.", "ar": "كما يتّضح من الجدول 3، تضاعفت قيمة المؤشّر تقريبًا."},
+            {"ru": "По-видимому, наблюдаемый эффект обусловлен изменением температуры.", "tr": "Po-vídimomu, nabljudáemyj effékt obuslóvlen izmenénием temperatúry.", "en": "Apparently, the observed effect is caused by the change in temperature.", "ar": "يبدو أنّ الأثر المُلاحَظ ناجمٌ عن تغيّر درجة الحرارة."},
+            {"ru": "Представляется обоснованным предположить наличие обратной зависимости.", "tr": "Predstavljáetsja obosnóvannym predpoložítʹ nalíčie obrátnoj zavísimosti.", "en": "It appears justified to suppose the presence of an inverse relationship.", "ar": "يبدو من المُبرَّر افتراض وجود علاقة عكسية."}
           ]
         }
       ]
@@ -371,6 +378,7 @@
       "id": "reading-strategies",
       "title": "8. Стратегии чтения и разбор текста",
       "summary": "Parsing long scholarly sentences, common abbreviations, and a glossed authentic-style passage.",
+      "summary_ar": "إعراب الجُمل العلمية الطويلة، والاختصارات الشائعة، ونصٌّ ذو طابع أصيل مشروح جملةً جملة.",
       "blocks": [
         {
           "type": "prose",
@@ -416,11 +424,11 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "В настоящей работе рассматривается проблема автоматической классификации научных текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma avtomatíčeskoj klassifikácii naúčnych tékstov.", "en": "The present work addresses the problem of the automatic classification of scholarly texts. [Core: проблема (subject) + рассматривается (reflexive passive). Genitive chain: classification ← of texts.]"},
-            {"ru": "Несмотря на значительное число существующих подходов, данный вопрос остаётся недостаточно изученным.", "tr": "Nesmotrjá na značítelʹnoe čisló suščestvújuščich podchódov, dánnyj voprós ostaёtsja nedostátočno izúčennym.", "en": "Despite the considerable number of existing approaches, this question remains insufficiently studied. [Concessive opener несмотря на + accusative; predicate остаётся + instrumental.]"},
-            {"ru": "Нами был предложен метод, основанный на анализе частотных характеристик лексики.", "tr": "Námi byl predložén métod, osnóvannyj na análize častótnych characterístik léksiki.", "en": "We proposed a method based on the analysis of the frequency characteristics of the vocabulary. [Passive with agent in instrumental (нами); participle clause основанный на… modifies метод.]"},
-            {"ru": "Полученные результаты, представленные в таблице 1, свидетельствуют о его эффективности.", "tr": "Polúčennye rezulʹtáty, predstávlennye v tablíce odín, svidételʹstvujut o egó effektívnosti.", "en": "The results obtained, presented in Table 1, attest to its effectiveness. [Two stacked participles modify результаты; predicate свидетельствуют о + prepositional.]"},
-            {"ru": "Таким образом, можно заключить, что предложенный подход обладает определённой практической значимостью.", "tr": "Takím óbrazom, móžno zaključítʹ, čto predložénnyj podchód obladáet opredelёnnoj praktíčeskoj značímostʹju.", "en": "Thus, one may conclude that the proposed approach possesses a certain practical significance. [Conclusion connector таким образом; impersonal modal можно + infinitive; обладать governs the instrumental.]"}
+            {"ru": "В настоящей работе рассматривается проблема автоматической классификации научных текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma avtomatíčeskoj klassifikácii naúčnych tékstov.", "en": "The present work addresses the problem of the automatic classification of scholarly texts. [Core: проблема (subject) + рассматривается (reflexive passive). Genitive chain: classification ← of texts.]", "ar": "تتناول هذه الدراسة مشكلة التصنيف الآلي للنصوص العلمية."},
+            {"ru": "Несмотря на значительное число существующих подходов, данный вопрос остаётся недостаточно изученным.", "tr": "Nesmotrjá na značítelʹnoe čisló suščestvújuščich podchódov, dánnyj voprós ostaёtsja nedostátočno izúčennym.", "en": "Despite the considerable number of existing approaches, this question remains insufficiently studied. [Concessive opener несмотря на + accusative; predicate остаётся + instrumental.]", "ar": "على الرغم من العدد الكبير من المقاربات القائمة، يظلّ هذا السؤال غير مدروسٍ بالقدر الكافي."},
+            {"ru": "Нами был предложен метод, основанный на анализе частотных характеристик лексики.", "tr": "Námi byl predložén métod, osnóvannyj na análize častótnych characterístik léksiki.", "en": "We proposed a method based on the analysis of the frequency characteristics of the vocabulary. [Passive with agent in instrumental (нами); participle clause основанный на… modifies метод.]", "ar": "لقد اقترحنا طريقةً تقوم على تحليل الخصائص التواترية للمفردات."},
+            {"ru": "Полученные результаты, представленные в таблице 1, свидетельствуют о его эффективности.", "tr": "Polúčennye rezulʹtáty, predstávlennye v tablíce odín, svidételʹstvujut o egó effektívnosti.", "en": "The results obtained, presented in Table 1, attest to its effectiveness. [Two stacked participles modify результаты; predicate свидетельствуют о + prepositional.]", "ar": "تشهد النتائج المُحصَّل عليها، المعروضة في الجدول 1، بفعّاليتها."},
+            {"ru": "Таким образом, можно заключить, что предложенный подход обладает определённой практической значимостью.", "tr": "Takím óbrazom, móžno zaključítʹ, čto predložénnyj podchód obladáet opredelёnnoj praktíčeskoj značímostʹju.", "en": "Thus, one may conclude that the proposed approach possesses a certain practical significance. [Conclusion connector таким образом; impersonal modal можно + infinitive; обладать governs the instrumental.]", "ar": "وهكذا، يمكن الخلوص إلى أنّ المقاربة المقترحة تتمتّع بأهمّية عملية معيّنة."}
           ]
         }
       ]

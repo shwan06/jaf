@@ -7,6 +7,7 @@
       "id": "cyrillic-overview",
       "title": "1. The Cyrillic alphabet",
       "summary": "Russian uses 33 Cyrillic letters: 10 vowels, 21 consonants, and 2 signs that carry no sound of their own.",
+      "summary_ar": "تستخدم اللغة الروسية 33 حرفًا سيريليًّا: 10 حروف علة، و21 حرفًا ساكنًا، وعلامتان لا تحملان صوتًا خاصًّا بهما.",
       "blocks": [
         {
           "type": "prose",
@@ -15,39 +16,39 @@
         {
           "type": "letters",
           "items": [
-            {"letter": "А а", "name": "а", "ipa": "/a/", "sound": "a in 'father'", "example": "мама — mum"},
-            {"letter": "Б б", "name": "бэ", "ipa": "/b/", "sound": "b in 'bat'", "example": "брат — brother"},
-            {"letter": "В в", "name": "вэ", "ipa": "/v/", "sound": "v in 'van'", "example": "вода — water"},
-            {"letter": "Г г", "name": "гэ", "ipa": "/ɡ/", "sound": "g in 'go'", "example": "город — city"},
-            {"letter": "Д д", "name": "дэ", "ipa": "/d/", "sound": "d in 'dog'", "example": "дом — house"},
-            {"letter": "Е е", "name": "е", "ipa": "/je/", "sound": "ye in 'yes'", "example": "ехать — to go"},
-            {"letter": "Ё ё", "name": "ё", "ipa": "/jo/", "sound": "yo in 'yonder' (always stressed)", "example": "ёж — hedgehog"},
-            {"letter": "Ж ж", "name": "жэ", "ipa": "/ʐ/", "sound": "s in 'measure' (hard)", "example": "жизнь — life"},
-            {"letter": "З з", "name": "зэ", "ipa": "/z/", "sound": "z in 'zoo'", "example": "зима — winter"},
-            {"letter": "И и", "name": "и", "ipa": "/i/", "sound": "ee in 'see'", "example": "мир — world/peace"},
-            {"letter": "Й й", "name": "и краткое", "ipa": "/j/", "sound": "y in 'boy'", "example": "май — May"},
-            {"letter": "К к", "name": "ка", "ipa": "/k/", "sound": "k in 'kit'", "example": "книга — book"},
-            {"letter": "Л л", "name": "эль", "ipa": "/l/", "sound": "l in 'lamp'", "example": "лес — forest"},
-            {"letter": "М м", "name": "эм", "ipa": "/m/", "sound": "m in 'man'", "example": "море — sea"},
-            {"letter": "Н н", "name": "эн", "ipa": "/n/", "sound": "n in 'net'", "example": "нос — nose"},
-            {"letter": "О о", "name": "о", "ipa": "/o/", "sound": "o in 'more' (when stressed)", "example": "окно — window"},
-            {"letter": "П п", "name": "пэ", "ipa": "/p/", "sound": "p in 'pen'", "example": "парк — park"},
-            {"letter": "Р р", "name": "эр", "ipa": "/r/", "sound": "rolled/trilled r", "example": "рука — hand/arm"},
-            {"letter": "С с", "name": "эс", "ipa": "/s/", "sound": "s in 'sun'", "example": "стол — table"},
-            {"letter": "Т т", "name": "тэ", "ipa": "/t/", "sound": "t in 'top'", "example": "там — there"},
-            {"letter": "У у", "name": "у", "ipa": "/u/", "sound": "oo in 'boot'", "example": "утро — morning"},
-            {"letter": "Ф ф", "name": "эф", "ipa": "/f/", "sound": "f in 'fan'", "example": "фильм — film"},
-            {"letter": "Х х", "name": "ха", "ipa": "/x/", "sound": "ch in Scottish 'loch'", "example": "хлеб — bread"},
-            {"letter": "Ц ц", "name": "цэ", "ipa": "/ts/", "sound": "ts in 'cats'", "example": "цена — price"},
-            {"letter": "Ч ч", "name": "че", "ipa": "/tɕ/", "sound": "ch in 'cheese' (soft)", "example": "час — hour"},
-            {"letter": "Ш ш", "name": "ша", "ipa": "/ʂ/", "sound": "sh in 'shop' (hard)", "example": "шапка — hat"},
-            {"letter": "Щ щ", "name": "ща", "ipa": "/ɕː/", "sound": "soft, long 'shch'", "example": "щи — cabbage soup"},
-            {"letter": "Ъ ъ", "name": "твёрдый знак", "ipa": "—", "sound": "hard sign (no sound; separates)", "example": "объект — object"},
-            {"letter": "Ы ы", "name": "ы", "ipa": "/ɨ/", "sound": "between 'i' and 'u', tongue back", "example": "сын — son"},
-            {"letter": "Ь ь", "name": "мягкий знак", "ipa": "—", "sound": "soft sign (softens previous consonant)", "example": "день — day"},
-            {"letter": "Э э", "name": "э", "ipa": "/e/", "sound": "e in 'met'", "example": "это — this"},
-            {"letter": "Ю ю", "name": "ю", "ipa": "/ju/", "sound": "u in 'use'", "example": "юг — south"},
-            {"letter": "Я я", "name": "я", "ipa": "/ja/", "sound": "ya in 'yard'", "example": "яблоко — apple"}
+            {"letter": "А а", "name": "а", "ipa": "/a/", "sound": "a in 'father'", "example": "мама — mum", "ar": "أُمّ"},
+            {"letter": "Б б", "name": "бэ", "ipa": "/b/", "sound": "b in 'bat'", "example": "брат — brother", "ar": "أَخ"},
+            {"letter": "В в", "name": "вэ", "ipa": "/v/", "sound": "v in 'van'", "example": "вода — water", "ar": "ماء"},
+            {"letter": "Г г", "name": "гэ", "ipa": "/ɡ/", "sound": "g in 'go'", "example": "город — city", "ar": "مدينة"},
+            {"letter": "Д д", "name": "дэ", "ipa": "/d/", "sound": "d in 'dog'", "example": "дом — house", "ar": "بيت"},
+            {"letter": "Е е", "name": "е", "ipa": "/je/", "sound": "ye in 'yes'", "example": "ехать — to go", "ar": "يذهب (راكبًا)"},
+            {"letter": "Ё ё", "name": "ё", "ipa": "/jo/", "sound": "yo in 'yonder' (always stressed)", "example": "ёж — hedgehog", "ar": "قُنفُذ"},
+            {"letter": "Ж ж", "name": "жэ", "ipa": "/ʐ/", "sound": "s in 'measure' (hard)", "example": "жизнь — life", "ar": "حياة"},
+            {"letter": "З з", "name": "зэ", "ipa": "/z/", "sound": "z in 'zoo'", "example": "зима — winter", "ar": "شتاء"},
+            {"letter": "И и", "name": "и", "ipa": "/i/", "sound": "ee in 'see'", "example": "мир — world/peace", "ar": "عالَم/سلام"},
+            {"letter": "Й й", "name": "и краткое", "ipa": "/j/", "sound": "y in 'boy'", "example": "май — May", "ar": "مايو"},
+            {"letter": "К к", "name": "ка", "ipa": "/k/", "sound": "k in 'kit'", "example": "книга — book", "ar": "كتاب"},
+            {"letter": "Л л", "name": "эль", "ipa": "/l/", "sound": "l in 'lamp'", "example": "лес — forest", "ar": "غابة"},
+            {"letter": "М м", "name": "эм", "ipa": "/m/", "sound": "m in 'man'", "example": "море — sea", "ar": "بحر"},
+            {"letter": "Н н", "name": "эн", "ipa": "/n/", "sound": "n in 'net'", "example": "нос — nose", "ar": "أنف"},
+            {"letter": "О о", "name": "о", "ipa": "/o/", "sound": "o in 'more' (when stressed)", "example": "окно — window", "ar": "نافذة"},
+            {"letter": "П п", "name": "пэ", "ipa": "/p/", "sound": "p in 'pen'", "example": "парк — park", "ar": "حديقة"},
+            {"letter": "Р р", "name": "эр", "ipa": "/r/", "sound": "rolled/trilled r", "example": "рука — hand/arm", "ar": "يَد/ذراع"},
+            {"letter": "С с", "name": "эс", "ipa": "/s/", "sound": "s in 'sun'", "example": "стол — table", "ar": "طاولة"},
+            {"letter": "Т т", "name": "тэ", "ipa": "/t/", "sound": "t in 'top'", "example": "там — there", "ar": "هناك"},
+            {"letter": "У у", "name": "у", "ipa": "/u/", "sound": "oo in 'boot'", "example": "утро — morning", "ar": "صباح"},
+            {"letter": "Ф ф", "name": "эф", "ipa": "/f/", "sound": "f in 'fan'", "example": "фильм — film", "ar": "فِلم"},
+            {"letter": "Х х", "name": "ха", "ipa": "/x/", "sound": "ch in Scottish 'loch'", "example": "хлеб — bread", "ar": "خُبز"},
+            {"letter": "Ц ц", "name": "цэ", "ipa": "/ts/", "sound": "ts in 'cats'", "example": "цена — price", "ar": "سِعر"},
+            {"letter": "Ч ч", "name": "че", "ipa": "/tɕ/", "sound": "ch in 'cheese' (soft)", "example": "час — hour", "ar": "ساعة"},
+            {"letter": "Ш ш", "name": "ша", "ipa": "/ʂ/", "sound": "sh in 'shop' (hard)", "example": "шапка — hat", "ar": "قُبّعة"},
+            {"letter": "Щ щ", "name": "ща", "ipa": "/ɕː/", "sound": "soft, long 'shch'", "example": "щи — cabbage soup", "ar": "حساء الملفوف"},
+            {"letter": "Ъ ъ", "name": "твёрдый знак", "ipa": "—", "sound": "hard sign (no sound; separates)", "example": "объект — object", "ar": "كائن/شيء"},
+            {"letter": "Ы ы", "name": "ы", "ipa": "/ɨ/", "sound": "between 'i' and 'u', tongue back", "example": "сын — son", "ar": "ابن"},
+            {"letter": "Ь ь", "name": "мягкий знак", "ipa": "—", "sound": "soft sign (softens previous consonant)", "example": "день — day", "ar": "يوم"},
+            {"letter": "Э э", "name": "э", "ipa": "/e/", "sound": "e in 'met'", "example": "это — this", "ar": "هذا"},
+            {"letter": "Ю ю", "name": "ю", "ipa": "/ju/", "sound": "u in 'use'", "example": "юг — south", "ar": "جنوب"},
+            {"letter": "Я я", "name": "я", "ipa": "/ja/", "sound": "ya in 'yard'", "example": "яблоко — apple", "ar": "تُفّاحة"}
           ]
         },
         {
@@ -60,6 +61,7 @@
       "id": "vowel-pairs",
       "title": "2. Hard vs. soft vowels",
       "summary": "Russian vowels come in pairs that signal whether the preceding consonant is hard or soft — the backbone of Russian pronunciation and spelling.",
+      "summary_ar": "تأتي حروف العلة الروسية في أزواج تدلّ على ما إذا كان الحرف الساكن السابق مُفخَّمًا (صلبًا) أو مُرقَّقًا (ليّنًا) — وهي العمود الفقري للنطق والإملاء في الروسية.",
       "blocks": [
         {
           "type": "prose",
@@ -80,10 +82,10 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "мать", "tr": "mat'", "en": "mother — hard М"},
-            {"ru": "мять", "tr": "myat'", "en": "to crumple — soft М (note Я)"},
-            {"ru": "лук", "tr": "luk", "en": "onion — hard Л"},
-            {"ru": "люк", "tr": "lyuk", "en": "hatch — soft Л (note Ю)"}
+            {"ru": "мать", "tr": "mat'", "en": "mother — hard М", "ar": "أُمّ — حرف М مُفخَّم"},
+            {"ru": "мять", "tr": "myat'", "en": "to crumple — soft М (note Я)", "ar": "يُجَعِّد — حرف М مُرقَّق (لاحظ Я)"},
+            {"ru": "лук", "tr": "luk", "en": "onion — hard Л", "ar": "بَصَل — حرف Л مُفخَّم"},
+            {"ru": "люк", "tr": "lyuk", "en": "hatch — soft Л (note Ю)", "ar": "فُتحة/كُوّة — حرف Л مُرقَّق (لاحظ Ю)"}
           ]
         }
       ]
@@ -92,6 +94,7 @@
       "id": "stress-reduction",
       "title": "3. Stress & vowel reduction",
       "summary": "Russian stress is free and mobile, and unstressed vowels reduce. This single rule explains most of the gap between spelling and speech.",
+      "summary_ar": "النبر في الروسية حُرّ ومتنقّل، وحروف العلة غير المنبورة تُختزَل. وهذه القاعدة الواحدة تفسّر معظم الفجوة بين الكتابة والنطق.",
       "blocks": [
         {
           "type": "prose",
@@ -108,9 +111,9 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "молоко́", "tr": "məlakó", "en": "milk — first two О's reduce"},
-            {"ru": "хорошо́", "tr": "xərašó", "en": "good/well — only the last О is full"},
-            {"ru": "за́мок / замо́к", "tr": "zámak / zamók", "en": "castle vs. lock — stress changes meaning"}
+            {"ru": "молоко́", "tr": "məlakó", "en": "milk — first two О's reduce", "ar": "حليب — حرفا О الأوّلان يُختزَلان"},
+            {"ru": "хорошо́", "tr": "xərašó", "en": "good/well — only the last О is full", "ar": "جيّد/حَسَنًا — حرف О الأخير وحده كامل النطق"},
+            {"ru": "за́мок / замо́к", "tr": "zámak / zamók", "en": "castle vs. lock — stress changes meaning", "ar": "قَلعة مقابل قُفل — موضع النبر يُغيّر المعنى"}
           ]
         }
       ]
@@ -119,6 +122,7 @@
       "id": "consonant-rules",
       "title": "4. Consonant assimilation & devoicing",
       "summary": "Voiced consonants devoice at the end of words and assimilate to their neighbours.",
+      "summary_ar": "الحروف الساكنة المجهورة تُصبح مهموسة في نهاية الكلمات وتتماثل مع الحروف المجاورة لها.",
       "blocks": [
         {
           "type": "list",

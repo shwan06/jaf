@@ -8,33 +8,222 @@
       "title": "Core Survival 100",
       "description": "The most frequent pronouns, function words, and essential nouns and verbs.",
       "cards": [
-        { "ru": "я", "en": "I", "tr": "ya", "pos": "pron.", "example": "Я зна́ю э́то. — I know this." },
-        { "ru": "ты", "en": "you (sing., informal)", "tr": "ty", "pos": "pron.", "example": "Ты гото́в? — Are you ready?" },
-        { "ru": "вы", "en": "you (formal/plural)", "tr": "vy", "pos": "pron.", "example": "Вы говори́те по-ру́сски? — Do you speak Russian?" },
-        { "ru": "он", "en": "he, it", "tr": "on", "pos": "pron.", "example": "Он здесь. — He is here." },
-        { "ru": "она́", "en": "she, it", "tr": "oná", "pos": "pron.", "example": "Она́ рабо́тает. — She is working." },
-        { "ru": "мы", "en": "we", "tr": "my", "pos": "pron.", "example": "Мы друзья́. — We are friends." },
-        { "ru": "они́", "en": "they", "tr": "oní", "pos": "pron.", "example": "Они́ ушли́. — They have left." },
-        { "ru": "да", "en": "yes", "tr": "da", "pos": "particle", "example": "Да, коне́чно. — Yes, of course." },
-        { "ru": "нет", "en": "no, there is not", "tr": "net", "pos": "particle", "example": "Нет, спаси́бо. — No, thank you." },
-        { "ru": "не", "en": "not", "tr": "ne", "pos": "particle", "example": "Я не зна́ю. — I don't know." },
-        { "ru": "здра́вствуйте", "en": "hello (formal)", "tr": "zdrávstvuyte", "pos": "interj.", "example": "Здра́вствуйте, как дела́? — Hello, how are you?" },
-        { "ru": "приве́т", "en": "hi (informal)", "tr": "privét", "pos": "interj.", "example": "Приве́т, как ты? — Hi, how are you?" },
-        { "ru": "спаси́бо", "en": "thank you", "tr": "spasíbo", "pos": "interj.", "example": "Спаси́бо большо́е. — Thank you very much." },
-        { "ru": "пожа́луйста", "en": "please; you're welcome", "tr": "pozhálusta", "pos": "interj.", "example": "Да́йте, пожа́луйста, воды́. — Some water, please." },
-        { "ru": "извини́те", "en": "excuse me, sorry (formal)", "tr": "izviníte", "pos": "interj.", "example": "Извини́те за опозда́ние. — Sorry for being late." },
-        { "ru": "и", "en": "and", "tr": "i", "pos": "conj.", "example": "Я и ты. — You and I." },
-        { "ru": "но", "en": "but", "tr": "no", "pos": "conj.", "example": "Хочу́, но не могу́. — I want to, but I can't." },
-        { "ru": "что", "en": "what; that", "tr": "chto", "pos": "pron./conj.", "example": "Что э́то? — What is this?" },
-        { "ru": "кто", "en": "who", "tr": "kto", "pos": "pron.", "example": "Кто там? — Who is there?" },
-        { "ru": "где", "en": "where", "tr": "gde", "pos": "adv.", "example": "Где вы живёте? — Where do you live?" },
-        { "ru": "когда́", "en": "when", "tr": "kogdá", "pos": "adv.", "example": "Когда́ начнём? — When shall we start?" },
-        { "ru": "э́тот", "en": "this", "tr": "état", "pos": "pron. (m.)", "example": "Э́тот дом мой. — This house is mine." },
-        { "ru": "челове́к", "en": "person, human", "tr": "chelovék", "pos": "noun (m.)", "example": "Он хоро́ший челове́к. — He is a good person." },
-        { "ru": "вода́", "en": "water", "tr": "vodá", "pos": "noun (f.)", "example": "Я пью во́ду. — I am drinking water." },
-        { "ru": "дом", "en": "house, home", "tr": "dom", "pos": "noun (m.)", "example": "Я иду́ домо́й. — I am going home." },
-        { "ru": "быть", "en": "to be", "tr": "byt'", "pos": "verb (impf.)", "example": "Я хочу́ быть здесь. — I want to be here." },
-        { "ru": "знать", "en": "to know", "tr": "znat'", "pos": "verb (impf.)", "example": "Я не зна́ю его́. — I don't know him." }
+        {
+          "ru": "я",
+          "en": "I",
+          "tr": "ya",
+          "pos": "pron.",
+          "example": "Я зна́ю э́то. — I know this.",
+          "ar": "أَنَا"
+        },
+        {
+          "ru": "ты",
+          "en": "you (sing., informal)",
+          "tr": "ty",
+          "pos": "pron.",
+          "example": "Ты гото́в? — Are you ready?",
+          "ar": "أَنْتَ"
+        },
+        {
+          "ru": "вы",
+          "en": "you (formal/plural)",
+          "tr": "vy",
+          "pos": "pron.",
+          "example": "Вы говори́те по-ру́сски? — Do you speak Russian?",
+          "ar": "أَنْتُمْ"
+        },
+        {
+          "ru": "он",
+          "en": "he, it",
+          "tr": "on",
+          "pos": "pron.",
+          "example": "Он здесь. — He is here.",
+          "ar": "هُوَ"
+        },
+        {
+          "ru": "она́",
+          "en": "she, it",
+          "tr": "oná",
+          "pos": "pron.",
+          "example": "Она́ рабо́тает. — She is working.",
+          "ar": "هِيَ"
+        },
+        {
+          "ru": "мы",
+          "en": "we",
+          "tr": "my",
+          "pos": "pron.",
+          "example": "Мы друзья́. — We are friends.",
+          "ar": "نَحْنُ"
+        },
+        {
+          "ru": "они́",
+          "en": "they",
+          "tr": "oní",
+          "pos": "pron.",
+          "example": "Они́ ушли́. — They have left.",
+          "ar": "هُمْ"
+        },
+        {
+          "ru": "да",
+          "en": "yes",
+          "tr": "da",
+          "pos": "particle",
+          "example": "Да, коне́чно. — Yes, of course.",
+          "ar": "نَعَمْ"
+        },
+        {
+          "ru": "нет",
+          "en": "no, there is not",
+          "tr": "net",
+          "pos": "particle",
+          "example": "Нет, спаси́бо. — No, thank you.",
+          "ar": "لَا"
+        },
+        {
+          "ru": "не",
+          "en": "not",
+          "tr": "ne",
+          "pos": "particle",
+          "example": "Я не зна́ю. — I don't know.",
+          "ar": "لَيْسَ"
+        },
+        {
+          "ru": "здра́вствуйте",
+          "en": "hello (formal)",
+          "tr": "zdrávstvuyte",
+          "pos": "interj.",
+          "example": "Здра́вствуйте, как дела́? — Hello, how are you?",
+          "ar": "مَرْحَبًا"
+        },
+        {
+          "ru": "приве́т",
+          "en": "hi (informal)",
+          "tr": "privét",
+          "pos": "interj.",
+          "example": "Приве́т, как ты? — Hi, how are you?",
+          "ar": "أَهْلًا"
+        },
+        {
+          "ru": "спаси́бо",
+          "en": "thank you",
+          "tr": "spasíbo",
+          "pos": "interj.",
+          "example": "Спаси́бо большо́е. — Thank you very much.",
+          "ar": "شُكْرًا"
+        },
+        {
+          "ru": "пожа́луйста",
+          "en": "please; you're welcome",
+          "tr": "pozhálusta",
+          "pos": "interj.",
+          "example": "Да́йте, пожа́луйста, воды́. — Some water, please.",
+          "ar": "مِنْ فَضْلِكَ"
+        },
+        {
+          "ru": "извини́те",
+          "en": "excuse me, sorry (formal)",
+          "tr": "izviníte",
+          "pos": "interj.",
+          "example": "Извини́те за опозда́ние. — Sorry for being late.",
+          "ar": "عَفْوًا"
+        },
+        {
+          "ru": "и",
+          "en": "and",
+          "tr": "i",
+          "pos": "conj.",
+          "example": "Я и ты. — You and I.",
+          "ar": "وَ"
+        },
+        {
+          "ru": "но",
+          "en": "but",
+          "tr": "no",
+          "pos": "conj.",
+          "example": "Хочу́, но не могу́. — I want to, but I can't.",
+          "ar": "لَكِنْ"
+        },
+        {
+          "ru": "что",
+          "en": "what; that",
+          "tr": "chto",
+          "pos": "pron./conj.",
+          "example": "Что э́то? — What is this?",
+          "ar": "مَاذَا"
+        },
+        {
+          "ru": "кто",
+          "en": "who",
+          "tr": "kto",
+          "pos": "pron.",
+          "example": "Кто там? — Who is there?",
+          "ar": "مَنْ"
+        },
+        {
+          "ru": "где",
+          "en": "where",
+          "tr": "gde",
+          "pos": "adv.",
+          "example": "Где вы живёте? — Where do you live?",
+          "ar": "أَيْنَ"
+        },
+        {
+          "ru": "когда́",
+          "en": "when",
+          "tr": "kogdá",
+          "pos": "adv.",
+          "example": "Когда́ начнём? — When shall we start?",
+          "ar": "مَتَى"
+        },
+        {
+          "ru": "э́тот",
+          "en": "this",
+          "tr": "état",
+          "pos": "pron. (m.)",
+          "example": "Э́тот дом мой. — This house is mine.",
+          "ar": "هَذَا"
+        },
+        {
+          "ru": "челове́к",
+          "en": "person, human",
+          "tr": "chelovék",
+          "pos": "noun (m.)",
+          "example": "Он хоро́ший челове́к. — He is a good person.",
+          "ar": "إِنْسَان"
+        },
+        {
+          "ru": "вода́",
+          "en": "water",
+          "tr": "vodá",
+          "pos": "noun (f.)",
+          "example": "Я пью во́ду. — I am drinking water.",
+          "ar": "مَاء"
+        },
+        {
+          "ru": "дом",
+          "en": "house, home",
+          "tr": "dom",
+          "pos": "noun (m.)",
+          "example": "Я иду́ домо́й. — I am going home.",
+          "ar": "بَيْت"
+        },
+        {
+          "ru": "быть",
+          "en": "to be",
+          "tr": "byt'",
+          "pos": "verb (impf.)",
+          "example": "Я хочу́ быть здесь. — I want to be here.",
+          "ar": "يَكُونُ"
+        },
+        {
+          "ru": "знать",
+          "en": "to know",
+          "tr": "znat'",
+          "pos": "verb (impf.)",
+          "example": "Я не зна́ю его́. — I don't know him.",
+          "ar": "يَعْرِفُ"
+        }
       ]
     },
     {
@@ -42,29 +231,190 @@
       "title": "Everyday Verbs (Aspect Pairs)",
       "description": "High-frequency verbs given as imperfective / perfective aspect pairs.",
       "cards": [
-        { "ru": "де́лать / сде́лать", "en": "to do, to make", "tr": "délat' / sdélat'", "pos": "verb (impf./pf.)", "example": "Что ты де́лаешь? — What are you doing?" },
-        { "ru": "говори́ть / сказа́ть", "en": "to speak / to say", "tr": "govorít' / skazát'", "pos": "verb (impf./pf.)", "example": "Скажи́те, пожа́луйста. — Please tell me." },
-        { "ru": "ви́деть / уви́деть", "en": "to see", "tr": "vídet' / uvídet'", "pos": "verb (impf./pf.)", "example": "Я ви́жу свет. — I see a light." },
-        { "ru": "знать / узна́ть", "en": "to know / to find out", "tr": "znat' / uznát'", "pos": "verb (impf./pf.)", "example": "Я узна́л но́вость. — I found out the news." },
-        { "ru": "ду́мать / поду́мать", "en": "to think", "tr": "dúmat' / podúmat'", "pos": "verb (impf./pf.)", "example": "Я ду́маю о тебе́. — I am thinking about you." },
-        { "ru": "хоте́ть / захоте́ть", "en": "to want", "tr": "khotét' / zakhotét'", "pos": "verb (impf./pf.)", "example": "Я хочу́ есть. — I want to eat." },
-        { "ru": "мочь / смочь", "en": "to be able to, can", "tr": "moch' / smoch'", "pos": "verb (impf./pf.)", "example": "Я не могу́ прийти́. — I can't come." },
-        { "ru": "идти́ / пойти́", "en": "to go (on foot)", "tr": "idtí / poytí", "pos": "verb (impf./pf.)", "example": "Пойдём в кино́. — Let's go to the cinema." },
-        { "ru": "дава́ть / дать", "en": "to give", "tr": "davát' / dat'", "pos": "verb (impf./pf.)", "example": "Дай мне ру́ку. — Give me your hand." },
-        { "ru": "брать / взять", "en": "to take", "tr": "brat' / vzyat'", "pos": "verb (impf./pf.)", "example": "Возьми́ кни́гу. — Take the book." },
-        { "ru": "де́латься / стать", "en": "to become", "tr": "délat'sya / stat'", "pos": "verb (impf./pf.)", "example": "Ста́ло хо́лодно. — It became cold." },
-        { "ru": "рабо́тать / порабо́тать", "en": "to work", "tr": "rabótat' / porabótat'", "pos": "verb (impf./pf.)", "example": "Я рабо́таю до́ма. — I work from home." },
-        { "ru": "писа́ть / написа́ть", "en": "to write", "tr": "pisát' / napisát'", "pos": "verb (impf./pf.)", "example": "Я написа́л письмо́. — I wrote a letter." },
-        { "ru": "чита́ть / прочита́ть", "en": "to read", "tr": "chitát' / prochitát'", "pos": "verb (impf./pf.)", "example": "Я чита́ю кни́гу. — I am reading a book." },
-        { "ru": "понима́ть / поня́ть", "en": "to understand", "tr": "ponimát' / ponyát'", "pos": "verb (impf./pf.)", "example": "Я не понима́ю. — I don't understand." },
-        { "ru": "спра́шивать / спроси́ть", "en": "to ask (a question)", "tr": "spráshivat' / sprosít'", "pos": "verb (impf./pf.)", "example": "Мо́жно спроси́ть? — May I ask?" },
-        { "ru": "отвеча́ть / отве́тить", "en": "to answer", "tr": "otvechát' / otvétit'", "pos": "verb (impf./pf.)", "example": "Отве́ть на вопро́с. — Answer the question." },
-        { "ru": "получа́ть / получи́ть", "en": "to receive, to get", "tr": "poluchát' / poluchít'", "pos": "verb (impf./pf.)", "example": "Я получи́л письмо́. — I got the letter." },
-        { "ru": "находи́ть / найти́", "en": "to find", "tr": "nakhodít' / naytí", "pos": "verb (impf./pf.)", "example": "Я нашёл ключи́. — I found the keys." },
-        { "ru": "начина́ть / нача́ть", "en": "to begin, to start", "tr": "nachinát' / nachát'", "pos": "verb (impf./pf.)", "example": "Начнём рабо́ту. — Let's start work." },
-        { "ru": "конча́ть / ко́нчить", "en": "to finish", "tr": "konchát' / kónchit'", "pos": "verb (impf./pf.)", "example": "Я ко́нчил рабо́ту. — I finished the work." },
-        { "ru": "понима́ться / разобра́ться", "en": "to figure out, sort out", "tr": "ponimát'sya / razobrát'sya", "pos": "verb (impf./pf.)", "example": "Дава́й разберёмся. — Let's figure it out." },
-        { "ru": "пока́зывать / показа́ть", "en": "to show", "tr": "pokázyvat' / pokazát'", "pos": "verb (impf./pf.)", "example": "Покажи́ мне. — Show me." }
+        {
+          "ru": "де́лать / сде́лать",
+          "en": "to do, to make",
+          "tr": "délat' / sdélat'",
+          "pos": "verb (impf./pf.)",
+          "example": "Что ты де́лаешь? — What are you doing?",
+          "ar": "يَفْعَلُ"
+        },
+        {
+          "ru": "говори́ть / сказа́ть",
+          "en": "to speak / to say",
+          "tr": "govorít' / skazát'",
+          "pos": "verb (impf./pf.)",
+          "example": "Скажи́те, пожа́луйста. — Please tell me.",
+          "ar": "يَتَكَلَّمُ / يَقُولُ"
+        },
+        {
+          "ru": "ви́деть / уви́деть",
+          "en": "to see",
+          "tr": "vídet' / uvídet'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я ви́жу свет. — I see a light.",
+          "ar": "يَرَى"
+        },
+        {
+          "ru": "знать / узна́ть",
+          "en": "to know / to find out",
+          "tr": "znat' / uznát'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я узна́л но́вость. — I found out the news.",
+          "ar": "يَعْرِفُ / يَكْتَشِفُ"
+        },
+        {
+          "ru": "ду́мать / поду́мать",
+          "en": "to think",
+          "tr": "dúmat' / podúmat'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я ду́маю о тебе́. — I am thinking about you.",
+          "ar": "يُفَكِّرُ"
+        },
+        {
+          "ru": "хоте́ть / захоте́ть",
+          "en": "to want",
+          "tr": "khotét' / zakhotét'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я хочу́ есть. — I want to eat.",
+          "ar": "يُرِيدُ"
+        },
+        {
+          "ru": "мочь / смочь",
+          "en": "to be able to, can",
+          "tr": "moch' / smoch'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я не могу́ прийти́. — I can't come.",
+          "ar": "يَسْتَطِيعُ"
+        },
+        {
+          "ru": "идти́ / пойти́",
+          "en": "to go (on foot)",
+          "tr": "idtí / poytí",
+          "pos": "verb (impf./pf.)",
+          "example": "Пойдём в кино́. — Let's go to the cinema.",
+          "ar": "يَذْهَبُ"
+        },
+        {
+          "ru": "дава́ть / дать",
+          "en": "to give",
+          "tr": "davát' / dat'",
+          "pos": "verb (impf./pf.)",
+          "example": "Дай мне ру́ку. — Give me your hand.",
+          "ar": "يُعْطِي"
+        },
+        {
+          "ru": "брать / взять",
+          "en": "to take",
+          "tr": "brat' / vzyat'",
+          "pos": "verb (impf./pf.)",
+          "example": "Возьми́ кни́гу. — Take the book.",
+          "ar": "يَأْخُذُ"
+        },
+        {
+          "ru": "де́латься / стать",
+          "en": "to become",
+          "tr": "délat'sya / stat'",
+          "pos": "verb (impf./pf.)",
+          "example": "Ста́ло хо́лодно. — It became cold.",
+          "ar": "يُصْبِحُ"
+        },
+        {
+          "ru": "рабо́тать / порабо́тать",
+          "en": "to work",
+          "tr": "rabótat' / porabótat'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я рабо́таю до́ма. — I work from home.",
+          "ar": "يَعْمَلُ"
+        },
+        {
+          "ru": "писа́ть / написа́ть",
+          "en": "to write",
+          "tr": "pisát' / napisát'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я написа́л письмо́. — I wrote a letter.",
+          "ar": "يَكْتُبُ"
+        },
+        {
+          "ru": "чита́ть / прочита́ть",
+          "en": "to read",
+          "tr": "chitát' / prochitát'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я чита́ю кни́гу. — I am reading a book.",
+          "ar": "يَقْرَأُ"
+        },
+        {
+          "ru": "понима́ть / поня́ть",
+          "en": "to understand",
+          "tr": "ponimát' / ponyát'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я не понима́ю. — I don't understand.",
+          "ar": "يَفْهَمُ"
+        },
+        {
+          "ru": "спра́шивать / спроси́ть",
+          "en": "to ask (a question)",
+          "tr": "spráshivat' / sprosít'",
+          "pos": "verb (impf./pf.)",
+          "example": "Мо́жно спроси́ть? — May I ask?",
+          "ar": "يَسْأَلُ"
+        },
+        {
+          "ru": "отвеча́ть / отве́тить",
+          "en": "to answer",
+          "tr": "otvechát' / otvétit'",
+          "pos": "verb (impf./pf.)",
+          "example": "Отве́ть на вопро́с. — Answer the question.",
+          "ar": "يُجِيبُ"
+        },
+        {
+          "ru": "получа́ть / получи́ть",
+          "en": "to receive, to get",
+          "tr": "poluchát' / poluchít'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я получи́л письмо́. — I got the letter.",
+          "ar": "يَتَلَقَّى"
+        },
+        {
+          "ru": "находи́ть / найти́",
+          "en": "to find",
+          "tr": "nakhodít' / naytí",
+          "pos": "verb (impf./pf.)",
+          "example": "Я нашёл ключи́. — I found the keys.",
+          "ar": "يَجِدُ"
+        },
+        {
+          "ru": "начина́ть / нача́ть",
+          "en": "to begin, to start",
+          "tr": "nachinát' / nachát'",
+          "pos": "verb (impf./pf.)",
+          "example": "Начнём рабо́ту. — Let's start work.",
+          "ar": "يَبْدَأُ"
+        },
+        {
+          "ru": "конча́ть / ко́нчить",
+          "en": "to finish",
+          "tr": "konchát' / kónchit'",
+          "pos": "verb (impf./pf.)",
+          "example": "Я ко́нчил рабо́ту. — I finished the work.",
+          "ar": "يُنْهِي"
+        },
+        {
+          "ru": "понима́ться / разобра́ться",
+          "en": "to figure out, sort out",
+          "tr": "ponimát'sya / razobrát'sya",
+          "pos": "verb (impf./pf.)",
+          "example": "Дава́й разберёмся. — Let's figure it out.",
+          "ar": "يَسْتَوْضِحُ"
+        },
+        {
+          "ru": "пока́зывать / показа́ть",
+          "en": "to show",
+          "tr": "pokázyvat' / pokazát'",
+          "pos": "verb (impf./pf.)",
+          "example": "Покажи́ мне. — Show me.",
+          "ar": "يُظْهِرُ"
+        }
       ]
     },
     {
@@ -72,30 +422,198 @@
       "title": "People & Society",
       "description": "Family, professions, people, and social roles.",
       "cards": [
-        { "ru": "семья́", "en": "family", "tr": "sem'yá", "pos": "noun (f.)", "example": "У меня́ больша́я семья́. — I have a big family." },
-        { "ru": "мать", "en": "mother", "tr": "mat'", "pos": "noun (f.)", "example": "Моя́ мать — врач. — My mother is a doctor." },
-        { "ru": "оте́ц", "en": "father", "tr": "otéts", "pos": "noun (m.)", "example": "Оте́ц до́ма. — Father is at home." },
-        { "ru": "сын", "en": "son", "tr": "syn", "pos": "noun (m.)", "example": "Их сын у́чится. — Their son is studying." },
-        { "ru": "дочь", "en": "daughter", "tr": "doch'", "pos": "noun (f.)", "example": "Дочь игра́ет. — The daughter is playing." },
-        { "ru": "брат", "en": "brother", "tr": "brat", "pos": "noun (m.)", "example": "Мой брат ста́рше. — My brother is older." },
-        { "ru": "сестра́", "en": "sister", "tr": "sestrá", "pos": "noun (f.)", "example": "У меня́ есть сестра́. — I have a sister." },
-        { "ru": "жена́", "en": "wife", "tr": "zhená", "pos": "noun (f.)", "example": "Его́ жена́ — учёный. — His wife is a scientist." },
-        { "ru": "муж", "en": "husband", "tr": "muzh", "pos": "noun (m.)", "example": "Её муж рабо́тает. — Her husband works." },
-        { "ru": "ребёнок", "en": "child", "tr": "rebyónok", "pos": "noun (m.)", "example": "Ребёнок спит. — The child is sleeping." },
-        { "ru": "друг", "en": "friend", "tr": "drug", "pos": "noun (m.)", "example": "Он мой ста́рый друг. — He is my old friend." },
-        { "ru": "сосе́д", "en": "neighbour", "tr": "soséd", "pos": "noun (m.)", "example": "Сосе́д о́чень шу́мный. — The neighbour is very noisy." },
-        { "ru": "врач", "en": "doctor, physician", "tr": "vrach", "pos": "noun (m.)", "example": "Врач осмотре́л больно́го. — The doctor examined the patient." },
-        { "ru": "учи́тель", "en": "teacher", "tr": "uchítel'", "pos": "noun (m.)", "example": "Учи́тель объясня́ет уро́к. — The teacher explains the lesson." },
-        { "ru": "инжене́р", "en": "engineer", "tr": "inzhenér", "pos": "noun (m.)", "example": "Она́ рабо́тает инжене́ром. — She works as an engineer." },
-        { "ru": "юри́ст", "en": "lawyer, jurist", "tr": "yuríst", "pos": "noun (m.)", "example": "Юри́ст соста́вил догово́р. — The lawyer drew up the contract." },
-        { "ru": "учёный", "en": "scientist, scholar", "tr": "uchyónyy", "pos": "noun (m.)", "example": "Учёный сде́лал откры́тие. — The scientist made a discovery." },
-        { "ru": "о́бщество", "en": "society", "tr": "óbshchestvo", "pos": "noun (n.)", "example": "Совреме́нное о́бщество меня́ется. — Modern society is changing." },
-        { "ru": "наро́д", "en": "people, nation", "tr": "naród", "pos": "noun (m.)", "example": "Наро́д тре́бует переме́н. — The people demand change." },
-        { "ru": "власть", "en": "power, authority", "tr": "vlast'", "pos": "noun (f.)", "example": "Власть принадлежи́т наро́ду. — Power belongs to the people." },
-        { "ru": "прави́тельство", "en": "government", "tr": "pravítel'stvo", "pos": "noun (n.)", "example": "Прави́тельство при́няло зако́н. — The government passed the law." },
-        { "ru": "гражданин", "en": "citizen", "tr": "grazhdanín", "pos": "noun (m.)", "example": "Ка́ждый граждани́н име́ет права́. — Every citizen has rights." },
-        { "ru": "колле́га", "en": "colleague", "tr": "kolléga", "pos": "noun (m./f.)", "example": "Мой колле́га уе́хал. — My colleague has left." },
-        { "ru": "о́пыт", "en": "experience", "tr": "ópyt", "pos": "noun (m.)", "example": "У неё большо́й о́пыт. — She has a lot of experience." }
+        {
+          "ru": "семья́",
+          "en": "family",
+          "tr": "sem'yá",
+          "pos": "noun (f.)",
+          "example": "У меня́ больша́я семья́. — I have a big family.",
+          "ar": "عَائِلَة"
+        },
+        {
+          "ru": "мать",
+          "en": "mother",
+          "tr": "mat'",
+          "pos": "noun (f.)",
+          "example": "Моя́ мать — врач. — My mother is a doctor.",
+          "ar": "أُمّ"
+        },
+        {
+          "ru": "оте́ц",
+          "en": "father",
+          "tr": "otéts",
+          "pos": "noun (m.)",
+          "example": "Оте́ц до́ма. — Father is at home.",
+          "ar": "أَب"
+        },
+        {
+          "ru": "сын",
+          "en": "son",
+          "tr": "syn",
+          "pos": "noun (m.)",
+          "example": "Их сын у́чится. — Their son is studying.",
+          "ar": "اِبْن"
+        },
+        {
+          "ru": "дочь",
+          "en": "daughter",
+          "tr": "doch'",
+          "pos": "noun (f.)",
+          "example": "Дочь игра́ет. — The daughter is playing.",
+          "ar": "اِبْنَة"
+        },
+        {
+          "ru": "брат",
+          "en": "brother",
+          "tr": "brat",
+          "pos": "noun (m.)",
+          "example": "Мой брат ста́рше. — My brother is older.",
+          "ar": "أَخ"
+        },
+        {
+          "ru": "сестра́",
+          "en": "sister",
+          "tr": "sestrá",
+          "pos": "noun (f.)",
+          "example": "У меня́ есть сестра́. — I have a sister.",
+          "ar": "أُخْت"
+        },
+        {
+          "ru": "жена́",
+          "en": "wife",
+          "tr": "zhená",
+          "pos": "noun (f.)",
+          "example": "Его́ жена́ — учёный. — His wife is a scientist.",
+          "ar": "زَوْجَة"
+        },
+        {
+          "ru": "муж",
+          "en": "husband",
+          "tr": "muzh",
+          "pos": "noun (m.)",
+          "example": "Её муж рабо́тает. — Her husband works.",
+          "ar": "زَوْج"
+        },
+        {
+          "ru": "ребёнок",
+          "en": "child",
+          "tr": "rebyónok",
+          "pos": "noun (m.)",
+          "example": "Ребёнок спит. — The child is sleeping.",
+          "ar": "طِفْل"
+        },
+        {
+          "ru": "друг",
+          "en": "friend",
+          "tr": "drug",
+          "pos": "noun (m.)",
+          "example": "Он мой ста́рый друг. — He is my old friend.",
+          "ar": "صَدِيق"
+        },
+        {
+          "ru": "сосе́д",
+          "en": "neighbour",
+          "tr": "soséd",
+          "pos": "noun (m.)",
+          "example": "Сосе́д о́чень шу́мный. — The neighbour is very noisy.",
+          "ar": "جَار"
+        },
+        {
+          "ru": "врач",
+          "en": "doctor, physician",
+          "tr": "vrach",
+          "pos": "noun (m.)",
+          "example": "Врач осмотре́л больно́го. — The doctor examined the patient.",
+          "ar": "طَبِيب"
+        },
+        {
+          "ru": "учи́тель",
+          "en": "teacher",
+          "tr": "uchítel'",
+          "pos": "noun (m.)",
+          "example": "Учи́тель объясня́ет уро́к. — The teacher explains the lesson.",
+          "ar": "مُعَلِّم"
+        },
+        {
+          "ru": "инжене́р",
+          "en": "engineer",
+          "tr": "inzhenér",
+          "pos": "noun (m.)",
+          "example": "Она́ рабо́тает инжене́ром. — She works as an engineer.",
+          "ar": "مُهَنْدِس"
+        },
+        {
+          "ru": "юри́ст",
+          "en": "lawyer, jurist",
+          "tr": "yuríst",
+          "pos": "noun (m.)",
+          "example": "Юри́ст соста́вил догово́р. — The lawyer drew up the contract.",
+          "ar": "مُحَامٍ"
+        },
+        {
+          "ru": "учёный",
+          "en": "scientist, scholar",
+          "tr": "uchyónyy",
+          "pos": "noun (m.)",
+          "example": "Учёный сде́лал откры́тие. — The scientist made a discovery.",
+          "ar": "عَالِم"
+        },
+        {
+          "ru": "о́бщество",
+          "en": "society",
+          "tr": "óbshchestvo",
+          "pos": "noun (n.)",
+          "example": "Совреме́нное о́бщество меня́ется. — Modern society is changing.",
+          "ar": "مُجْتَمَع"
+        },
+        {
+          "ru": "наро́д",
+          "en": "people, nation",
+          "tr": "naród",
+          "pos": "noun (m.)",
+          "example": "Наро́д тре́бует переме́н. — The people demand change.",
+          "ar": "شَعْب"
+        },
+        {
+          "ru": "власть",
+          "en": "power, authority",
+          "tr": "vlast'",
+          "pos": "noun (f.)",
+          "example": "Власть принадлежи́т наро́ду. — Power belongs to the people.",
+          "ar": "سُلْطَة"
+        },
+        {
+          "ru": "прави́тельство",
+          "en": "government",
+          "tr": "pravítel'stvo",
+          "pos": "noun (n.)",
+          "example": "Прави́тельство при́няло зако́н. — The government passed the law.",
+          "ar": "حُكُومَة"
+        },
+        {
+          "ru": "гражданин",
+          "en": "citizen",
+          "tr": "grazhdanín",
+          "pos": "noun (m.)",
+          "example": "Ка́ждый граждани́н име́ет права́. — Every citizen has rights.",
+          "ar": "مُوَاطِن"
+        },
+        {
+          "ru": "колле́га",
+          "en": "colleague",
+          "tr": "kolléga",
+          "pos": "noun (m./f.)",
+          "example": "Мой колле́га уе́хал. — My colleague has left.",
+          "ar": "زَمِيل"
+        },
+        {
+          "ru": "о́пыт",
+          "en": "experience",
+          "tr": "ópyt",
+          "pos": "noun (m.)",
+          "example": "У неё большо́й о́пыт. — She has a lot of experience.",
+          "ar": "خِبْرَة"
+        }
       ]
     },
     {
@@ -103,30 +621,198 @@
       "title": "University & Research",
       "description": "University life and the vocabulary of academic research.",
       "cards": [
-        { "ru": "университе́т", "en": "university", "tr": "universitét", "pos": "noun (m.)", "example": "Он у́чится в университе́те. — He studies at the university." },
-        { "ru": "ка́федра", "en": "department, chair", "tr": "káfedra", "pos": "noun (f.)", "example": "Я рабо́таю на ка́федре фи́зики. — I work in the physics department." },
-        { "ru": "факульте́т", "en": "faculty, school", "tr": "fakul'tét", "pos": "noun (m.)", "example": "Истори́ческий факульте́т. — The faculty of history." },
-        { "ru": "диссерта́ция", "en": "dissertation, thesis", "tr": "dissertátsiya", "pos": "noun (f.)", "example": "Он защити́л диссерта́цию. — He defended his dissertation." },
-        { "ru": "нау́чный руководи́тель", "en": "academic advisor, supervisor", "tr": "naúchnyy rukovodítel'", "pos": "noun phrase (m.)", "example": "Мой нау́чный руководи́тель помога́ет мне. — My supervisor helps me." },
-        { "ru": "статья́", "en": "article, paper", "tr": "stat'yá", "pos": "noun (f.)", "example": "Статья́ вы́шла в журна́ле. — The article appeared in the journal." },
-        { "ru": "иссле́дование", "en": "research, study", "tr": "isslédovanie", "pos": "noun (n.)", "example": "Иссле́дование заняло́ два го́да. — The study took two years." },
-        { "ru": "нау́ка", "en": "science, scholarship", "tr": "naúka", "pos": "noun (f.)", "example": "Он посвяти́л жизнь нау́ке. — He devoted his life to science." },
-        { "ru": "ле́кция", "en": "lecture", "tr": "léktsiya", "pos": "noun (f.)", "example": "Ле́кция начина́ется в де́сять. — The lecture begins at ten." },
-        { "ru": "семина́р", "en": "seminar", "tr": "seminár", "pos": "noun (m.)", "example": "На семина́ре была́ диску́ссия. — There was a discussion at the seminar." },
-        { "ru": "экза́мен", "en": "exam", "tr": "ekzámen", "pos": "noun (m.)", "example": "Я сдал экза́мен. — I passed the exam." },
-        { "ru": "студе́нт", "en": "student", "tr": "studént", "pos": "noun (m.)", "example": "Студе́нт за́дал вопро́с. — The student asked a question." },
-        { "ru": "профе́ссор", "en": "professor", "tr": "professór", "pos": "noun (m.)", "example": "Профе́ссор чита́ет курс. — The professor teaches a course." },
-        { "ru": "аспира́нт", "en": "PhD student, postgraduate", "tr": "aspiránt", "pos": "noun (m.)", "example": "Она́ — аспира́нт второ́го го́да. — She is a second-year PhD student." },
-        { "ru": "сте́пень", "en": "degree (academic)", "tr": "stépen'", "pos": "noun (f.)", "example": "Он получи́л сте́пень кандида́та нау́к. — He earned a candidate of sciences degree." },
-        { "ru": "журна́л", "en": "journal", "tr": "zhurnál", "pos": "noun (m.)", "example": "Рецензи́руемый журна́л. — A peer-reviewed journal." },
-        { "ru": "конфере́нция", "en": "conference", "tr": "konferéntsiya", "pos": "noun (f.)", "example": "Докла́д на конфере́нции. — A talk at the conference." },
-        { "ru": "докла́д", "en": "report, talk, presentation", "tr": "doklád", "pos": "noun (m.)", "example": "Он прочита́л докла́д. — He delivered a talk." },
-        { "ru": "ме́тод", "en": "method", "tr": "métod", "pos": "noun (m.)", "example": "Но́вый ме́тод ана́лиза. — A new method of analysis." },
-        { "ru": "да́нные", "en": "data", "tr": "dánnye", "pos": "noun (pl.)", "example": "Мы собра́ли да́нные. — We collected the data." },
-        { "ru": "результа́т", "en": "result", "tr": "rezul'tát", "pos": "noun (m.)", "example": "Результа́ты неоднозна́чны. — The results are ambiguous." },
-        { "ru": "вы́вод", "en": "conclusion", "tr": "vývod", "pos": "noun (m.)", "example": "Гла́вный вы́вод рабо́ты. — The main conclusion of the work." },
-        { "ru": "защи́та", "en": "defence (of a thesis)", "tr": "zashchíta", "pos": "noun (f.)", "example": "Защи́та состои́тся в ма́е. — The defence will take place in May." },
-        { "ru": "грант", "en": "grant", "tr": "grant", "pos": "noun (m.)", "example": "Они́ вы́играли грант. — They won a grant." }
+        {
+          "ru": "университе́т",
+          "en": "university",
+          "tr": "universitét",
+          "pos": "noun (m.)",
+          "example": "Он у́чится в университе́те. — He studies at the university.",
+          "ar": "جَامِعَة"
+        },
+        {
+          "ru": "ка́федра",
+          "en": "department, chair",
+          "tr": "káfedra",
+          "pos": "noun (f.)",
+          "example": "Я рабо́таю на ка́федре фи́зики. — I work in the physics department.",
+          "ar": "قِسْم"
+        },
+        {
+          "ru": "факульте́т",
+          "en": "faculty, school",
+          "tr": "fakul'tét",
+          "pos": "noun (m.)",
+          "example": "Истори́ческий факульте́т. — The faculty of history.",
+          "ar": "كُلِّيَّة"
+        },
+        {
+          "ru": "диссерта́ция",
+          "en": "dissertation, thesis",
+          "tr": "dissertátsiya",
+          "pos": "noun (f.)",
+          "example": "Он защити́л диссерта́цию. — He defended his dissertation.",
+          "ar": "أُطْرُوحَة"
+        },
+        {
+          "ru": "нау́чный руководи́тель",
+          "en": "academic advisor, supervisor",
+          "tr": "naúchnyy rukovodítel'",
+          "pos": "noun phrase (m.)",
+          "example": "Мой нау́чный руководи́тель помога́ет мне. — My supervisor helps me.",
+          "ar": "مُشْرِف عِلْمِيّ"
+        },
+        {
+          "ru": "статья́",
+          "en": "article, paper",
+          "tr": "stat'yá",
+          "pos": "noun (f.)",
+          "example": "Статья́ вы́шла в журна́ле. — The article appeared in the journal.",
+          "ar": "مَقَالَة"
+        },
+        {
+          "ru": "иссле́дование",
+          "en": "research, study",
+          "tr": "isslédovanie",
+          "pos": "noun (n.)",
+          "example": "Иссле́дование заняло́ два го́да. — The study took two years.",
+          "ar": "بَحْث"
+        },
+        {
+          "ru": "нау́ка",
+          "en": "science, scholarship",
+          "tr": "naúka",
+          "pos": "noun (f.)",
+          "example": "Он посвяти́л жизнь нау́ке. — He devoted his life to science.",
+          "ar": "عِلْم"
+        },
+        {
+          "ru": "ле́кция",
+          "en": "lecture",
+          "tr": "léktsiya",
+          "pos": "noun (f.)",
+          "example": "Ле́кция начина́ется в де́сять. — The lecture begins at ten.",
+          "ar": "مُحَاضَرَة"
+        },
+        {
+          "ru": "семина́р",
+          "en": "seminar",
+          "tr": "seminár",
+          "pos": "noun (m.)",
+          "example": "На семина́ре была́ диску́ссия. — There was a discussion at the seminar.",
+          "ar": "نَدْوَة"
+        },
+        {
+          "ru": "экза́мен",
+          "en": "exam",
+          "tr": "ekzámen",
+          "pos": "noun (m.)",
+          "example": "Я сдал экза́мен. — I passed the exam.",
+          "ar": "اِمْتِحَان"
+        },
+        {
+          "ru": "студе́нт",
+          "en": "student",
+          "tr": "studént",
+          "pos": "noun (m.)",
+          "example": "Студе́нт за́дал вопро́с. — The student asked a question.",
+          "ar": "طَالِب"
+        },
+        {
+          "ru": "профе́ссор",
+          "en": "professor",
+          "tr": "professór",
+          "pos": "noun (m.)",
+          "example": "Профе́ссор чита́ет курс. — The professor teaches a course.",
+          "ar": "أُسْتَاذ"
+        },
+        {
+          "ru": "аспира́нт",
+          "en": "PhD student, postgraduate",
+          "tr": "aspiránt",
+          "pos": "noun (m.)",
+          "example": "Она́ — аспира́нт второ́го го́да. — She is a second-year PhD student.",
+          "ar": "طَالِب دِرَاسَات عُلْيَا"
+        },
+        {
+          "ru": "сте́пень",
+          "en": "degree (academic)",
+          "tr": "stépen'",
+          "pos": "noun (f.)",
+          "example": "Он получи́л сте́пень кандида́та нау́к. — He earned a candidate of sciences degree.",
+          "ar": "دَرَجَة عِلْمِيَّة"
+        },
+        {
+          "ru": "журна́л",
+          "en": "journal",
+          "tr": "zhurnál",
+          "pos": "noun (m.)",
+          "example": "Рецензи́руемый журна́л. — A peer-reviewed journal.",
+          "ar": "مَجَلَّة"
+        },
+        {
+          "ru": "конфере́нция",
+          "en": "conference",
+          "tr": "konferéntsiya",
+          "pos": "noun (f.)",
+          "example": "Докла́д на конфере́нции. — A talk at the conference.",
+          "ar": "مُؤْتَمَر"
+        },
+        {
+          "ru": "докла́д",
+          "en": "report, talk, presentation",
+          "tr": "doklád",
+          "pos": "noun (m.)",
+          "example": "Он прочита́л докла́д. — He delivered a talk.",
+          "ar": "تَقْرِير"
+        },
+        {
+          "ru": "ме́тод",
+          "en": "method",
+          "tr": "métod",
+          "pos": "noun (m.)",
+          "example": "Но́вый ме́тод ана́лиза. — A new method of analysis.",
+          "ar": "مَنْهَج"
+        },
+        {
+          "ru": "да́нные",
+          "en": "data",
+          "tr": "dánnye",
+          "pos": "noun (pl.)",
+          "example": "Мы собра́ли да́нные. — We collected the data.",
+          "ar": "بَيَانَات"
+        },
+        {
+          "ru": "результа́т",
+          "en": "result",
+          "tr": "rezul'tát",
+          "pos": "noun (m.)",
+          "example": "Результа́ты неоднозна́чны. — The results are ambiguous.",
+          "ar": "نَتِيجَة"
+        },
+        {
+          "ru": "вы́вод",
+          "en": "conclusion",
+          "tr": "vývod",
+          "pos": "noun (m.)",
+          "example": "Гла́вный вы́вод рабо́ты. — The main conclusion of the work.",
+          "ar": "اِسْتِنْتَاج"
+        },
+        {
+          "ru": "защи́та",
+          "en": "defence (of a thesis)",
+          "tr": "zashchíta",
+          "pos": "noun (f.)",
+          "example": "Защи́та состои́тся в ма́е. — The defence will take place in May.",
+          "ar": "مُنَاقَشَة"
+        },
+        {
+          "ru": "грант",
+          "en": "grant",
+          "tr": "grant",
+          "pos": "noun (m.)",
+          "example": "Они́ вы́играли грант. — They won a grant.",
+          "ar": "مِنْحَة"
+        }
       ]
     },
     {
@@ -134,29 +820,190 @@
       "title": "Academic Connectors",
       "description": "Linking and discourse words for scholarly argument.",
       "cards": [
-        { "ru": "сле́довательно", "en": "consequently, therefore", "tr": "slédovatel'no", "pos": "adv./conj.", "example": "Да́нных нет, сле́довательно, вы́вод преждевре́мен. — There is no data, therefore the conclusion is premature." },
-        { "ru": "таки́м о́бразом", "en": "thus, in this way", "tr": "takím óbrazom", "pos": "phrase", "example": "Таки́м о́бразом, гипо́теза подтверди́лась. — Thus the hypothesis was confirmed." },
-        { "ru": "одна́ко", "en": "however", "tr": "odnáko", "pos": "conj.", "example": "Одна́ко есть исключе́ния. — However, there are exceptions." },
-        { "ru": "в ча́стности", "en": "in particular", "tr": "v chástnosti", "pos": "phrase", "example": "В ча́стности, рассмо́трим пе́рвый слу́чай. — In particular, let us consider the first case." },
-        { "ru": "по сравне́нию с", "en": "compared with", "tr": "po sravnéniyu s", "pos": "phrase", "example": "По сравне́нию с про́шлым го́дом. — Compared with last year." },
-        { "ru": "наприме́р", "en": "for example", "tr": "naprimér", "pos": "adv.", "example": "Наприме́р, в фи́зике. — For example, in physics." },
-        { "ru": "кро́ме того́", "en": "moreover, besides", "tr": "króme tovó", "pos": "phrase", "example": "Кро́ме того́, не́обходимо учесть... — Moreover, one must take into account..." },
-        { "ru": "тем не ме́нее", "en": "nevertheless", "tr": "tem ne ménee", "pos": "phrase", "example": "Тем не ме́нее, вопро́с откры́т. — Nevertheless, the question remains open." },
-        { "ru": "во-пе́рвых", "en": "firstly", "tr": "vo-pérvykh", "pos": "adv.", "example": "Во-пе́рвых, рассмо́трим тео́рию. — Firstly, let us consider the theory." },
-        { "ru": "во-вторы́х", "en": "secondly", "tr": "vo-vtorýkh", "pos": "adv.", "example": "Во-вторы́х, ну́жен экспериме́нт. — Secondly, an experiment is needed." },
-        { "ru": "напро́тив", "en": "on the contrary", "tr": "naprótiv", "pos": "adv.", "example": "Напро́тив, да́нные противоре́чат э́тому. — On the contrary, the data contradict this." },
-        { "ru": "в результа́те", "en": "as a result", "tr": "v rezul'táte", "pos": "phrase", "example": "В результа́те мы получи́ли но́вую моде́ль. — As a result we obtained a new model." },
-        { "ru": "в отли́чие от", "en": "unlike, in contrast to", "tr": "v otlíchie ot", "pos": "phrase", "example": "В отли́чие от пре́жних рабо́т. — Unlike previous works." },
-        { "ru": "несмотря́ на", "en": "despite, in spite of", "tr": "nesmotryá na", "pos": "phrase", "example": "Несмотря́ на тру́дности. — Despite the difficulties." },
-        { "ru": "поэ́тому", "en": "therefore, that's why", "tr": "poétomu", "pos": "adv./conj.", "example": "Поэ́тому мы измени́ли подхо́д. — Therefore we changed the approach." },
-        { "ru": "и́менно", "en": "precisely, namely", "tr": "ímenno", "pos": "particle", "example": "И́менно э́то нас интересу́ет. — This is precisely what interests us." },
-        { "ru": "то есть", "en": "that is, i.e.", "tr": "to yest'", "pos": "phrase", "example": "То есть результа́т зави́сит от усло́вий. — That is, the result depends on the conditions." },
-        { "ru": "с друго́й стороны́", "en": "on the other hand", "tr": "s drugóy storoný", "pos": "phrase", "example": "С друго́й стороны́, есть ри́ски. — On the other hand, there are risks." },
-        { "ru": "в то вре́мя как", "en": "whereas, while", "tr": "v to vrémya kak", "pos": "phrase", "example": "В то вре́мя как пе́рвая моде́ль про́ще. — Whereas the first model is simpler." },
-        { "ru": "в свою́ о́чередь", "en": "in turn", "tr": "v svoyú óchered'", "pos": "phrase", "example": "Э́то, в свою́ о́чередь, влия́ет на резу́льтат. — This, in turn, affects the result." },
-        { "ru": "благодаря́", "en": "thanks to, owing to", "tr": "blagodaryá", "pos": "prep.", "example": "Благодаря́ э́тому ме́тоду. — Thanks to this method." },
-        { "ru": "посто́льку, поско́льку", "en": "insofar as, since", "tr": "postól'ku, poskól'ku", "pos": "conj.", "example": "Поско́льку усло́вия измени́лись. — Since the conditions have changed." },
-        { "ru": "в заключе́ние", "en": "in conclusion", "tr": "v zaklyuchénie", "pos": "phrase", "example": "В заключе́ние отме́тим гла́вное. — In conclusion, let us note the main point." }
+        {
+          "ru": "сле́довательно",
+          "en": "consequently, therefore",
+          "tr": "slédovatel'no",
+          "pos": "adv./conj.",
+          "example": "Да́нных нет, сле́довательно, вы́вод преждевре́мен. — There is no data, therefore the conclusion is premature.",
+          "ar": "وَبِالتَّالِي"
+        },
+        {
+          "ru": "таки́м о́бразом",
+          "en": "thus, in this way",
+          "tr": "takím óbrazom",
+          "pos": "phrase",
+          "example": "Таки́м о́бразом, гипо́теза подтверди́лась. — Thus the hypothesis was confirmed.",
+          "ar": "وَهَكَذَا"
+        },
+        {
+          "ru": "одна́ко",
+          "en": "however",
+          "tr": "odnáko",
+          "pos": "conj.",
+          "example": "Одна́ко есть исключе́ния. — However, there are exceptions.",
+          "ar": "غَيْرَ أَنَّ"
+        },
+        {
+          "ru": "в ча́стности",
+          "en": "in particular",
+          "tr": "v chástnosti",
+          "pos": "phrase",
+          "example": "В ча́стности, рассмо́трим пе́рвый слу́чай. — In particular, let us consider the first case.",
+          "ar": "وَخَاصَّةً"
+        },
+        {
+          "ru": "по сравне́нию с",
+          "en": "compared with",
+          "tr": "po sravnéniyu s",
+          "pos": "phrase",
+          "example": "По сравне́нию с про́шлым го́дом. — Compared with last year.",
+          "ar": "مُقَارَنَةً بِـ"
+        },
+        {
+          "ru": "наприме́р",
+          "en": "for example",
+          "tr": "naprimér",
+          "pos": "adv.",
+          "example": "Наприме́р, в фи́зике. — For example, in physics.",
+          "ar": "عَلَى سَبِيلِ الْمِثَالِ"
+        },
+        {
+          "ru": "кро́ме того́",
+          "en": "moreover, besides",
+          "tr": "króme tovó",
+          "pos": "phrase",
+          "example": "Кро́ме того́, не́обходимо учесть... — Moreover, one must take into account...",
+          "ar": "عِلَاوَةً عَلَى ذَلِكَ"
+        },
+        {
+          "ru": "тем не ме́нее",
+          "en": "nevertheless",
+          "tr": "tem ne ménee",
+          "pos": "phrase",
+          "example": "Тем не ме́нее, вопро́с откры́т. — Nevertheless, the question remains open.",
+          "ar": "وَمَعَ ذَلِكَ"
+        },
+        {
+          "ru": "во-пе́рвых",
+          "en": "firstly",
+          "tr": "vo-pérvykh",
+          "pos": "adv.",
+          "example": "Во-пе́рвых, рассмо́трим тео́рию. — Firstly, let us consider the theory.",
+          "ar": "أَوَّلًا"
+        },
+        {
+          "ru": "во-вторы́х",
+          "en": "secondly",
+          "tr": "vo-vtorýkh",
+          "pos": "adv.",
+          "example": "Во-вторы́х, ну́жен экспериме́нт. — Secondly, an experiment is needed.",
+          "ar": "ثَانِيًا"
+        },
+        {
+          "ru": "напро́тив",
+          "en": "on the contrary",
+          "tr": "naprótiv",
+          "pos": "adv.",
+          "example": "Напро́тив, да́нные противоре́чат э́тому. — On the contrary, the data contradict this.",
+          "ar": "عَلَى الْعَكْسِ"
+        },
+        {
+          "ru": "в результа́те",
+          "en": "as a result",
+          "tr": "v rezul'táte",
+          "pos": "phrase",
+          "example": "В результа́те мы получи́ли но́вую моде́ль. — As a result we obtained a new model.",
+          "ar": "نَتِيجَةً لِذَلِكَ"
+        },
+        {
+          "ru": "в отли́чие от",
+          "en": "unlike, in contrast to",
+          "tr": "v otlíchie ot",
+          "pos": "phrase",
+          "example": "В отли́чие от пре́жних рабо́т. — Unlike previous works.",
+          "ar": "عَلَى خِلَافِ"
+        },
+        {
+          "ru": "несмотря́ на",
+          "en": "despite, in spite of",
+          "tr": "nesmotryá na",
+          "pos": "phrase",
+          "example": "Несмотря́ на тру́дности. — Despite the difficulties.",
+          "ar": "عَلَى الرَّغْمِ مِنْ"
+        },
+        {
+          "ru": "поэ́тому",
+          "en": "therefore, that's why",
+          "tr": "poétomu",
+          "pos": "adv./conj.",
+          "example": "Поэ́тому мы измени́ли подхо́д. — Therefore we changed the approach.",
+          "ar": "لِذَلِكَ"
+        },
+        {
+          "ru": "и́менно",
+          "en": "precisely, namely",
+          "tr": "ímenno",
+          "pos": "particle",
+          "example": "И́менно э́то нас интересу́ет. — This is precisely what interests us.",
+          "ar": "تَحْدِيدًا"
+        },
+        {
+          "ru": "то есть",
+          "en": "that is, i.e.",
+          "tr": "to yest'",
+          "pos": "phrase",
+          "example": "То есть результа́т зави́сит от усло́вий. — That is, the result depends on the conditions.",
+          "ar": "أَيْ"
+        },
+        {
+          "ru": "с друго́й стороны́",
+          "en": "on the other hand",
+          "tr": "s drugóy storoný",
+          "pos": "phrase",
+          "example": "С друго́й стороны́, есть ри́ски. — On the other hand, there are risks.",
+          "ar": "مِنْ نَاحِيَةٍ أُخْرَى"
+        },
+        {
+          "ru": "в то вре́мя как",
+          "en": "whereas, while",
+          "tr": "v to vrémya kak",
+          "pos": "phrase",
+          "example": "В то вре́мя как пе́рвая моде́ль про́ще. — Whereas the first model is simpler.",
+          "ar": "فِي حِينِ"
+        },
+        {
+          "ru": "в свою́ о́чередь",
+          "en": "in turn",
+          "tr": "v svoyú óchered'",
+          "pos": "phrase",
+          "example": "Э́то, в свою́ о́чередь, влия́ет на резу́льтат. — This, in turn, affects the result.",
+          "ar": "بِدَوْرِهِ"
+        },
+        {
+          "ru": "благодаря́",
+          "en": "thanks to, owing to",
+          "tr": "blagodaryá",
+          "pos": "prep.",
+          "example": "Благодаря́ э́тому ме́тоду. — Thanks to this method.",
+          "ar": "بِفَضْلِ"
+        },
+        {
+          "ru": "посто́льку, поско́льку",
+          "en": "insofar as, since",
+          "tr": "postól'ku, poskól'ku",
+          "pos": "conj.",
+          "example": "Поско́льку усло́вия измени́лись. — Since the conditions have changed.",
+          "ar": "بِمَا أَنَّ"
+        },
+        {
+          "ru": "в заключе́ние",
+          "en": "in conclusion",
+          "tr": "v zaklyuchénie",
+          "pos": "phrase",
+          "example": "В заключе́ние отме́тим гла́вное. — In conclusion, let us note the main point.",
+          "ar": "فِي الْخِتَامِ"
+        }
       ]
     },
     {
@@ -164,30 +1011,198 @@
       "title": "Abstract & Analytical Concepts",
       "description": "Abstract nouns essential for scholarly reasoning and analysis.",
       "cards": [
-        { "ru": "поня́тие", "en": "concept, notion", "tr": "ponyátie", "pos": "noun (n.)", "example": "Ключево́е поня́тие тео́рии. — A key concept of the theory." },
-        { "ru": "причи́на", "en": "cause, reason", "tr": "prichína", "pos": "noun (f.)", "example": "Причи́на явле́ния неизве́стна. — The cause of the phenomenon is unknown." },
-        { "ru": "сле́дствие", "en": "consequence, effect", "tr": "slédstvie", "pos": "noun (n.)", "example": "Э́то логи́ческое сле́дствие. — This is a logical consequence." },
-        { "ru": "гипо́теза", "en": "hypothesis", "tr": "gipóteza", "pos": "noun (f.)", "example": "Гипо́теза тре́бует прове́рки. — The hypothesis requires testing." },
-        { "ru": "доказа́тельство", "en": "proof, evidence", "tr": "dokazátel'stvo", "pos": "noun (n.)", "example": "Доказа́тельство теоре́мы. — The proof of the theorem." },
-        { "ru": "значе́ние", "en": "meaning, significance, value", "tr": "znachénie", "pos": "noun (n.)", "example": "Значе́ние э́того откры́тия велико́. — The significance of this discovery is great." },
-        { "ru": "тео́рия", "en": "theory", "tr": "teóriya", "pos": "noun (f.)", "example": "Тео́рия объясня́ет фа́кты. — The theory explains the facts." },
-        { "ru": "поло́жение", "en": "proposition, position, situation", "tr": "polozhénie", "pos": "noun (n.)", "example": "Основно́е поло́жение рабо́ты. — The main proposition of the work." },
-        { "ru": "противоре́чие", "en": "contradiction", "tr": "protivoréchie", "pos": "noun (n.)", "example": "В э́том есть противоре́чие. — There is a contradiction in this." },
-        { "ru": "усло́вие", "en": "condition", "tr": "uslóvie", "pos": "noun (n.)", "example": "При э́том усло́вии. — Under this condition." },
-        { "ru": "свя́зь", "en": "connection, relation", "tr": "svyaz'", "pos": "noun (f.)", "example": "Свя́зь ме́жду перемен­ными. — The relation between the variables." },
-        { "ru": "зависимость", "en": "dependence", "tr": "zavísimost'", "pos": "noun (f.)", "example": "Зави́симость от температу́ры. — Dependence on temperature." },
-        { "ru": "сво́йство", "en": "property, attribute", "tr": "svóystvo", "pos": "noun (n.)", "example": "Ва́жное сво́йство систе́мы. — An important property of the system." },
-        { "ru": "приро́да", "en": "nature (essence)", "tr": "priróda", "pos": "noun (f.)", "example": "Приро́да явле́ния. — The nature of the phenomenon." },
-        { "ru": "су́щность", "en": "essence", "tr": "súshchnost'", "pos": "noun (f.)", "example": "Су́щность пробле́мы. — The essence of the problem." },
-        { "ru": "проти́вополо́жность", "en": "opposite, opposition", "tr": "protivopolózhnost'", "pos": "noun (f.)", "example": "По́лная противополо́жность. — The complete opposite." },
-        { "ru": "зако́н", "en": "law (scientific)", "tr": "zakón", "pos": "noun (m.)", "example": "Зако́н сохране́ния эне́ргии. — The law of conservation of energy." },
-        { "ru": "при́нцип", "en": "principle", "tr": "príntsip", "pos": "noun (m.)", "example": "Фундамента́льный при́нцип. — A fundamental principle." },
-        { "ru": "разли́чие", "en": "difference, distinction", "tr": "razlíchie", "pos": "noun (n.)", "example": "Разли́чие ме́жду тео́рией и пра́ктикой. — The distinction between theory and practice." },
-        { "ru": "соотноше́ние", "en": "ratio, correlation, relation", "tr": "sootnoshénie", "pos": "noun (n.)", "example": "Соотноше́ние ве́личин. — The ratio of the quantities." },
-        { "ru": "зна́ние", "en": "knowledge", "tr": "znánie", "pos": "noun (n.)", "example": "Нау́чное зна́ние накопля́ется. — Scientific knowledge accumulates." },
-        { "ru": "и́стина", "en": "truth", "tr": "ístina", "pos": "noun (f.)", "example": "По́иск и́стины. — The search for truth." },
-        { "ru": "це́ль", "en": "goal, aim", "tr": "tsel'", "pos": "noun (f.)", "example": "Це́ль иссле́дования. — The aim of the research." },
-        { "ru": "зада́ча", "en": "task, problem", "tr": "zadácha", "pos": "noun (f.)", "example": "Реши́ть сло́жную зада́чу. — To solve a difficult problem." }
+        {
+          "ru": "поня́тие",
+          "en": "concept, notion",
+          "tr": "ponyátie",
+          "pos": "noun (n.)",
+          "example": "Ключево́е поня́тие тео́рии. — A key concept of the theory.",
+          "ar": "مَفْهُوم"
+        },
+        {
+          "ru": "причи́на",
+          "en": "cause, reason",
+          "tr": "prichína",
+          "pos": "noun (f.)",
+          "example": "Причи́на явле́ния неизве́стна. — The cause of the phenomenon is unknown.",
+          "ar": "سَبَب"
+        },
+        {
+          "ru": "сле́дствие",
+          "en": "consequence, effect",
+          "tr": "slédstvie",
+          "pos": "noun (n.)",
+          "example": "Э́то логи́ческое сле́дствие. — This is a logical consequence.",
+          "ar": "نَتِيجَة"
+        },
+        {
+          "ru": "гипо́теза",
+          "en": "hypothesis",
+          "tr": "gipóteza",
+          "pos": "noun (f.)",
+          "example": "Гипо́теза тре́бует прове́рки. — The hypothesis requires testing.",
+          "ar": "فَرَضِيَّة"
+        },
+        {
+          "ru": "доказа́тельство",
+          "en": "proof, evidence",
+          "tr": "dokazátel'stvo",
+          "pos": "noun (n.)",
+          "example": "Доказа́тельство теоре́мы. — The proof of the theorem.",
+          "ar": "بُرْهَان"
+        },
+        {
+          "ru": "значе́ние",
+          "en": "meaning, significance, value",
+          "tr": "znachénie",
+          "pos": "noun (n.)",
+          "example": "Значе́ние э́того откры́тия велико́. — The significance of this discovery is great.",
+          "ar": "أَهَمِّيَّة"
+        },
+        {
+          "ru": "тео́рия",
+          "en": "theory",
+          "tr": "teóriya",
+          "pos": "noun (f.)",
+          "example": "Тео́рия объясня́ет фа́кты. — The theory explains the facts.",
+          "ar": "نَظَرِيَّة"
+        },
+        {
+          "ru": "поло́жение",
+          "en": "proposition, position, situation",
+          "tr": "polozhénie",
+          "pos": "noun (n.)",
+          "example": "Основно́е поло́жение рабо́ты. — The main proposition of the work.",
+          "ar": "طَرْح"
+        },
+        {
+          "ru": "противоре́чие",
+          "en": "contradiction",
+          "tr": "protivoréchie",
+          "pos": "noun (n.)",
+          "example": "В э́том есть противоре́чие. — There is a contradiction in this.",
+          "ar": "تَنَاقُض"
+        },
+        {
+          "ru": "усло́вие",
+          "en": "condition",
+          "tr": "uslóvie",
+          "pos": "noun (n.)",
+          "example": "При э́том усло́вии. — Under this condition.",
+          "ar": "شَرْط"
+        },
+        {
+          "ru": "свя́зь",
+          "en": "connection, relation",
+          "tr": "svyaz'",
+          "pos": "noun (f.)",
+          "example": "Свя́зь ме́жду перемен­ными. — The relation between the variables.",
+          "ar": "عَلَاقَة"
+        },
+        {
+          "ru": "зависимость",
+          "en": "dependence",
+          "tr": "zavísimost'",
+          "pos": "noun (f.)",
+          "example": "Зави́симость от температу́ры. — Dependence on temperature.",
+          "ar": "اِعْتِمَاد"
+        },
+        {
+          "ru": "сво́йство",
+          "en": "property, attribute",
+          "tr": "svóystvo",
+          "pos": "noun (n.)",
+          "example": "Ва́жное сво́йство систе́мы. — An important property of the system.",
+          "ar": "خَاصِّيَّة"
+        },
+        {
+          "ru": "приро́да",
+          "en": "nature (essence)",
+          "tr": "priróda",
+          "pos": "noun (f.)",
+          "example": "Приро́да явле́ния. — The nature of the phenomenon.",
+          "ar": "طَبِيعَة"
+        },
+        {
+          "ru": "су́щность",
+          "en": "essence",
+          "tr": "súshchnost'",
+          "pos": "noun (f.)",
+          "example": "Су́щность пробле́мы. — The essence of the problem.",
+          "ar": "جَوْهَر"
+        },
+        {
+          "ru": "проти́вополо́жность",
+          "en": "opposite, opposition",
+          "tr": "protivopolózhnost'",
+          "pos": "noun (f.)",
+          "example": "По́лная противополо́жность. — The complete opposite.",
+          "ar": "نَقِيض"
+        },
+        {
+          "ru": "зако́н",
+          "en": "law (scientific)",
+          "tr": "zakón",
+          "pos": "noun (m.)",
+          "example": "Зако́н сохране́ния эне́ргии. — The law of conservation of energy.",
+          "ar": "قَانُون"
+        },
+        {
+          "ru": "при́нцип",
+          "en": "principle",
+          "tr": "príntsip",
+          "pos": "noun (m.)",
+          "example": "Фундамента́льный при́нцип. — A fundamental principle.",
+          "ar": "مَبْدَأ"
+        },
+        {
+          "ru": "разли́чие",
+          "en": "difference, distinction",
+          "tr": "razlíchie",
+          "pos": "noun (n.)",
+          "example": "Разли́чие ме́жду тео́рией и пра́ктикой. — The distinction between theory and practice.",
+          "ar": "اِخْتِلَاف"
+        },
+        {
+          "ru": "соотноше́ние",
+          "en": "ratio, correlation, relation",
+          "tr": "sootnoshénie",
+          "pos": "noun (n.)",
+          "example": "Соотноше́ние ве́личин. — The ratio of the quantities.",
+          "ar": "نِسْبَة"
+        },
+        {
+          "ru": "зна́ние",
+          "en": "knowledge",
+          "tr": "znánie",
+          "pos": "noun (n.)",
+          "example": "Нау́чное зна́ние накопля́ется. — Scientific knowledge accumulates.",
+          "ar": "مَعْرِفَة"
+        },
+        {
+          "ru": "и́стина",
+          "en": "truth",
+          "tr": "ístina",
+          "pos": "noun (f.)",
+          "example": "По́иск и́стины. — The search for truth.",
+          "ar": "حَقِيقَة"
+        },
+        {
+          "ru": "це́ль",
+          "en": "goal, aim",
+          "tr": "tsel'",
+          "pos": "noun (f.)",
+          "example": "Це́ль иссле́дования. — The aim of the research.",
+          "ar": "هَدَف"
+        },
+        {
+          "ru": "зада́ча",
+          "en": "task, problem",
+          "tr": "zadácha",
+          "pos": "noun (f.)",
+          "example": "Реши́ть сло́жную зада́чу. — To solve a difficult problem.",
+          "ar": "مَسْأَلَة"
+        }
       ]
     },
     {
@@ -195,30 +1210,198 @@
       "title": "Time & Numbers",
       "description": "Time, days, months, numbers, and frequency adverbs.",
       "cards": [
-        { "ru": "вре́мя", "en": "time", "tr": "vrémya", "pos": "noun (n.)", "example": "У меня́ нет вре́мени. — I have no time." },
-        { "ru": "час", "en": "hour, o'clock", "tr": "chas", "pos": "noun (m.)", "example": "Уже́ три часа́. — It is already three o'clock." },
-        { "ru": "день", "en": "day", "tr": "den'", "pos": "noun (m.)", "example": "Хоро́шего дня! — Have a good day!" },
-        { "ru": "неде́ля", "en": "week", "tr": "nedélya", "pos": "noun (f.)", "example": "На про́шлой неде́ле. — Last week." },
-        { "ru": "ме́сяц", "en": "month", "tr": "mésyats", "pos": "noun (m.)", "example": "Че́рез ме́сяц. — In a month." },
-        { "ru": "год", "en": "year", "tr": "god", "pos": "noun (m.)", "example": "В про́шлом году́. — Last year." },
-        { "ru": "понеде́льник", "en": "Monday", "tr": "ponedél'nik", "pos": "noun (m.)", "example": "Встре́ча в понеде́льник. — A meeting on Monday." },
-        { "ru": "пя́тница", "en": "Friday", "tr": "pyátnitsa", "pos": "noun (f.)", "example": "В пя́тницу я свобо́ден. — I am free on Friday." },
-        { "ru": "янва́рь", "en": "January", "tr": "yanvár'", "pos": "noun (m.)", "example": "В январе́ хо́лодно. — It is cold in January." },
-        { "ru": "сентя́брь", "en": "September", "tr": "sentyábr'", "pos": "noun (m.)", "example": "Сентя́брь — нача́ло уче́бы. — September is the start of studies." },
-        { "ru": "оди́н", "en": "one", "tr": "odín", "pos": "num.", "example": "Оди́н моме́нт. — One moment." },
-        { "ru": "два", "en": "two", "tr": "dva", "pos": "num.", "example": "Два часа́ дня. — Two in the afternoon." },
-        { "ru": "три", "en": "three", "tr": "tri", "pos": "num.", "example": "Три кни́ги. — Three books." },
-        { "ru": "пять", "en": "five", "tr": "pyat'", "pos": "num.", "example": "Пять мину́т. — Five minutes." },
-        { "ru": "де́сять", "en": "ten", "tr": "désyat'", "pos": "num.", "example": "Де́сять лет. — Ten years." },
-        { "ru": "сто", "en": "hundred", "tr": "sto", "pos": "num.", "example": "Сто проце́нтов. — A hundred percent." },
-        { "ru": "ты́сяча", "en": "thousand", "tr": "týsyacha", "pos": "noun/num. (f.)", "example": "Ты́сяча рубле́й. — A thousand rubles." },
-        { "ru": "пе́рвый", "en": "first", "tr": "pérvyy", "pos": "ordinal num.", "example": "Пе́рвый эта́ж. — The first floor." },
-        { "ru": "всегда́", "en": "always", "tr": "vsegdá", "pos": "adv.", "example": "Он всегда́ опа́здывает. — He is always late." },
-        { "ru": "ча́сто", "en": "often", "tr": "chásto", "pos": "adv.", "example": "Мы ча́сто встреча́емся. — We meet often." },
-        { "ru": "иногда́", "en": "sometimes", "tr": "inogdá", "pos": "adv.", "example": "Иногда́ быва́ет тру́дно. — Sometimes it is difficult." },
-        { "ru": "ре́дко", "en": "rarely, seldom", "tr": "rédko", "pos": "adv.", "example": "Он ре́дко чита́ет. — He rarely reads." },
-        { "ru": "никогда́", "en": "never", "tr": "nikogdá", "pos": "adv.", "example": "Я никогда́ там не́ был. — I have never been there." },
-        { "ru": "сего́дня", "en": "today", "tr": "sevódnya", "pos": "adv.", "example": "Сего́дня хоро́шая пого́да. — The weather is good today." }
+        {
+          "ru": "вре́мя",
+          "en": "time",
+          "tr": "vrémya",
+          "pos": "noun (n.)",
+          "example": "У меня́ нет вре́мени. — I have no time.",
+          "ar": "وَقْت"
+        },
+        {
+          "ru": "час",
+          "en": "hour, o'clock",
+          "tr": "chas",
+          "pos": "noun (m.)",
+          "example": "Уже́ три часа́. — It is already three o'clock.",
+          "ar": "سَاعَة"
+        },
+        {
+          "ru": "день",
+          "en": "day",
+          "tr": "den'",
+          "pos": "noun (m.)",
+          "example": "Хоро́шего дня! — Have a good day!",
+          "ar": "يَوْم"
+        },
+        {
+          "ru": "неде́ля",
+          "en": "week",
+          "tr": "nedélya",
+          "pos": "noun (f.)",
+          "example": "На про́шлой неде́ле. — Last week.",
+          "ar": "أُسْبُوع"
+        },
+        {
+          "ru": "ме́сяц",
+          "en": "month",
+          "tr": "mésyats",
+          "pos": "noun (m.)",
+          "example": "Че́рез ме́сяц. — In a month.",
+          "ar": "شَهْر"
+        },
+        {
+          "ru": "год",
+          "en": "year",
+          "tr": "god",
+          "pos": "noun (m.)",
+          "example": "В про́шлом году́. — Last year.",
+          "ar": "سَنَة"
+        },
+        {
+          "ru": "понеде́льник",
+          "en": "Monday",
+          "tr": "ponedél'nik",
+          "pos": "noun (m.)",
+          "example": "Встре́ча в понеде́льник. — A meeting on Monday.",
+          "ar": "الِاثْنَيْن"
+        },
+        {
+          "ru": "пя́тница",
+          "en": "Friday",
+          "tr": "pyátnitsa",
+          "pos": "noun (f.)",
+          "example": "В пя́тницу я свобо́ден. — I am free on Friday.",
+          "ar": "الْجُمُعَة"
+        },
+        {
+          "ru": "янва́рь",
+          "en": "January",
+          "tr": "yanvár'",
+          "pos": "noun (m.)",
+          "example": "В январе́ хо́лодно. — It is cold in January.",
+          "ar": "يَنَايِر"
+        },
+        {
+          "ru": "сентя́брь",
+          "en": "September",
+          "tr": "sentyábr'",
+          "pos": "noun (m.)",
+          "example": "Сентя́брь — нача́ло уче́бы. — September is the start of studies.",
+          "ar": "سِبْتَمْبِر"
+        },
+        {
+          "ru": "оди́н",
+          "en": "one",
+          "tr": "odín",
+          "pos": "num.",
+          "example": "Оди́н моме́нт. — One moment.",
+          "ar": "وَاحِد"
+        },
+        {
+          "ru": "два",
+          "en": "two",
+          "tr": "dva",
+          "pos": "num.",
+          "example": "Два часа́ дня. — Two in the afternoon.",
+          "ar": "اِثْنَان"
+        },
+        {
+          "ru": "три",
+          "en": "three",
+          "tr": "tri",
+          "pos": "num.",
+          "example": "Три кни́ги. — Three books.",
+          "ar": "ثَلَاثَة"
+        },
+        {
+          "ru": "пять",
+          "en": "five",
+          "tr": "pyat'",
+          "pos": "num.",
+          "example": "Пять мину́т. — Five minutes.",
+          "ar": "خَمْسَة"
+        },
+        {
+          "ru": "де́сять",
+          "en": "ten",
+          "tr": "désyat'",
+          "pos": "num.",
+          "example": "Де́сять лет. — Ten years.",
+          "ar": "عَشَرَة"
+        },
+        {
+          "ru": "сто",
+          "en": "hundred",
+          "tr": "sto",
+          "pos": "num.",
+          "example": "Сто проце́нтов. — A hundred percent.",
+          "ar": "مِائَة"
+        },
+        {
+          "ru": "ты́сяча",
+          "en": "thousand",
+          "tr": "týsyacha",
+          "pos": "noun/num. (f.)",
+          "example": "Ты́сяча рубле́й. — A thousand rubles.",
+          "ar": "أَلْف"
+        },
+        {
+          "ru": "пе́рвый",
+          "en": "first",
+          "tr": "pérvyy",
+          "pos": "ordinal num.",
+          "example": "Пе́рвый эта́ж. — The first floor.",
+          "ar": "أَوَّل"
+        },
+        {
+          "ru": "всегда́",
+          "en": "always",
+          "tr": "vsegdá",
+          "pos": "adv.",
+          "example": "Он всегда́ опа́здывает. — He is always late.",
+          "ar": "دَائِمًا"
+        },
+        {
+          "ru": "ча́сто",
+          "en": "often",
+          "tr": "chásto",
+          "pos": "adv.",
+          "example": "Мы ча́сто встреча́емся. — We meet often.",
+          "ar": "غَالِبًا"
+        },
+        {
+          "ru": "иногда́",
+          "en": "sometimes",
+          "tr": "inogdá",
+          "pos": "adv.",
+          "example": "Иногда́ быва́ет тру́дно. — Sometimes it is difficult.",
+          "ar": "أَحْيَانًا"
+        },
+        {
+          "ru": "ре́дко",
+          "en": "rarely, seldom",
+          "tr": "rédko",
+          "pos": "adv.",
+          "example": "Он ре́дко чита́ет. — He rarely reads.",
+          "ar": "نَادِرًا"
+        },
+        {
+          "ru": "никогда́",
+          "en": "never",
+          "tr": "nikogdá",
+          "pos": "adv.",
+          "example": "Я никогда́ там не́ был. — I have never been there.",
+          "ar": "أَبَدًا"
+        },
+        {
+          "ru": "сего́дня",
+          "en": "today",
+          "tr": "sevódnya",
+          "pos": "adv.",
+          "example": "Сего́дня хоро́шая пого́да. — The weather is good today.",
+          "ar": "الْيَوْم"
+        }
       ]
     },
     {
@@ -226,29 +1409,190 @@
       "title": "Describing Things",
       "description": "Common adjectives with antonym pairs and adverbs of degree.",
       "cards": [
-        { "ru": "большо́й", "en": "big, large", "tr": "bol'shóy", "pos": "adj.", "example": "Большо́й го́род. — A big city." },
-        { "ru": "ма́ленький", "en": "small, little", "tr": "málen'kiy", "pos": "adj.", "example": "Ма́ленький дом. — A small house." },
-        { "ru": "хоро́ший", "en": "good", "tr": "khoróshiy", "pos": "adj.", "example": "Хоро́ший результа́т. — A good result." },
-        { "ru": "плохо́й", "en": "bad", "tr": "plokhóy", "pos": "adj.", "example": "Плохо́й знак. — A bad sign." },
-        { "ru": "но́вый", "en": "new", "tr": "nóvyy", "pos": "adj.", "example": "Но́вая тео́рия. — A new theory." },
-        { "ru": "ста́рый", "en": "old", "tr": "stáryy", "pos": "adj.", "example": "Ста́рый ме́тод. — An old method." },
-        { "ru": "ва́жный", "en": "important", "tr": "vázhnyy", "pos": "adj.", "example": "Ва́жный вопро́с. — An important question." },
-        { "ru": "просто́й", "en": "simple, easy", "tr": "prostóy", "pos": "adj.", "example": "Просто́е реше́ние. — A simple solution." },
-        { "ru": "сло́жный", "en": "complex, difficult", "tr": "slózhnyy", "pos": "adj.", "example": "Сло́жная зада́ча. — A complex problem." },
-        { "ru": "вы́сокий", "en": "high, tall", "tr": "výsokiy", "pos": "adj.", "example": "Высо́кая то́чность. — High precision." },
-        { "ru": "ни́зкий", "en": "low", "tr": "nízkiy", "pos": "adj.", "example": "Ни́зкая температу́ра. — Low temperature." },
-        { "ru": "пра́вильный", "en": "correct, right", "tr": "právil'nyy", "pos": "adj.", "example": "Пра́вильный отве́т. — The correct answer." },
-        { "ru": "то́чный", "en": "exact, precise", "tr": "tóchnyy", "pos": "adj.", "example": "То́чные изме́рения. — Precise measurements." },
-        { "ru": "я́сный", "en": "clear", "tr": "yásnyy", "pos": "adj.", "example": "Я́сное объясне́ние. — A clear explanation." },
-        { "ru": "возмо́жный", "en": "possible", "tr": "vozmózhnyy", "pos": "adj.", "example": "Возмо́жный вариа́нт. — A possible option." },
-        { "ru": "необходи́мый", "en": "necessary", "tr": "neobkhodímyy", "pos": "adj.", "example": "Необходи́мое усло́вие. — A necessary condition." },
-        { "ru": "о́чень", "en": "very", "tr": "óchen'", "pos": "adv. (degree)", "example": "О́чень интере́сно. — Very interesting." },
-        { "ru": "сли́шком", "en": "too (excessively)", "tr": "slíshkom", "pos": "adv. (degree)", "example": "Сли́шком сло́жно. — Too complicated." },
-        { "ru": "дово́льно", "en": "rather, fairly", "tr": "dovól'no", "pos": "adv. (degree)", "example": "Дово́льно ча́сто. — Fairly often." },
-        { "ru": "почти́", "en": "almost, nearly", "tr": "pochtí", "pos": "adv. (degree)", "example": "Почти́ гото́во. — Almost ready." },
-        { "ru": "соверше́нно", "en": "completely, utterly", "tr": "sovershénno", "pos": "adv. (degree)", "example": "Соверше́нно ве́рно. — Absolutely correct." },
-        { "ru": "доста́точно", "en": "enough, sufficiently", "tr": "dostátochno", "pos": "adv. (degree)", "example": "Доста́точно да́нных. — Sufficient data." },
-        { "ru": "осо́бенно", "en": "especially", "tr": "osóbenno", "pos": "adv. (degree)", "example": "Осо́бенно ва́жно. — Especially important." }
+        {
+          "ru": "большо́й",
+          "en": "big, large",
+          "tr": "bol'shóy",
+          "pos": "adj.",
+          "example": "Большо́й го́род. — A big city.",
+          "ar": "كَبِير"
+        },
+        {
+          "ru": "ма́ленький",
+          "en": "small, little",
+          "tr": "málen'kiy",
+          "pos": "adj.",
+          "example": "Ма́ленький дом. — A small house.",
+          "ar": "صَغِير"
+        },
+        {
+          "ru": "хоро́ший",
+          "en": "good",
+          "tr": "khoróshiy",
+          "pos": "adj.",
+          "example": "Хоро́ший результа́т. — A good result.",
+          "ar": "جَيِّد"
+        },
+        {
+          "ru": "плохо́й",
+          "en": "bad",
+          "tr": "plokhóy",
+          "pos": "adj.",
+          "example": "Плохо́й знак. — A bad sign.",
+          "ar": "سَيِّئ"
+        },
+        {
+          "ru": "но́вый",
+          "en": "new",
+          "tr": "nóvyy",
+          "pos": "adj.",
+          "example": "Но́вая тео́рия. — A new theory.",
+          "ar": "جَدِيد"
+        },
+        {
+          "ru": "ста́рый",
+          "en": "old",
+          "tr": "stáryy",
+          "pos": "adj.",
+          "example": "Ста́рый ме́тод. — An old method.",
+          "ar": "قَدِيم"
+        },
+        {
+          "ru": "ва́жный",
+          "en": "important",
+          "tr": "vázhnyy",
+          "pos": "adj.",
+          "example": "Ва́жный вопро́с. — An important question.",
+          "ar": "مُهِمّ"
+        },
+        {
+          "ru": "просто́й",
+          "en": "simple, easy",
+          "tr": "prostóy",
+          "pos": "adj.",
+          "example": "Просто́е реше́ние. — A simple solution.",
+          "ar": "بَسِيط"
+        },
+        {
+          "ru": "сло́жный",
+          "en": "complex, difficult",
+          "tr": "slózhnyy",
+          "pos": "adj.",
+          "example": "Сло́жная зада́ча. — A complex problem.",
+          "ar": "مُعَقَّد"
+        },
+        {
+          "ru": "вы́сокий",
+          "en": "high, tall",
+          "tr": "výsokiy",
+          "pos": "adj.",
+          "example": "Высо́кая то́чность. — High precision.",
+          "ar": "عَالٍ"
+        },
+        {
+          "ru": "ни́зкий",
+          "en": "low",
+          "tr": "nízkiy",
+          "pos": "adj.",
+          "example": "Ни́зкая температу́ра. — Low temperature.",
+          "ar": "مُنْخَفِض"
+        },
+        {
+          "ru": "пра́вильный",
+          "en": "correct, right",
+          "tr": "právil'nyy",
+          "pos": "adj.",
+          "example": "Пра́вильный отве́т. — The correct answer.",
+          "ar": "صَحِيح"
+        },
+        {
+          "ru": "то́чный",
+          "en": "exact, precise",
+          "tr": "tóchnyy",
+          "pos": "adj.",
+          "example": "То́чные изме́рения. — Precise measurements.",
+          "ar": "دَقِيق"
+        },
+        {
+          "ru": "я́сный",
+          "en": "clear",
+          "tr": "yásnyy",
+          "pos": "adj.",
+          "example": "Я́сное объясне́ние. — A clear explanation.",
+          "ar": "وَاضِح"
+        },
+        {
+          "ru": "возмо́жный",
+          "en": "possible",
+          "tr": "vozmózhnyy",
+          "pos": "adj.",
+          "example": "Возмо́жный вариа́нт. — A possible option.",
+          "ar": "مُمْكِن"
+        },
+        {
+          "ru": "необходи́мый",
+          "en": "necessary",
+          "tr": "neobkhodímyy",
+          "pos": "adj.",
+          "example": "Необходи́мое усло́вие. — A necessary condition.",
+          "ar": "ضَرُورِيّ"
+        },
+        {
+          "ru": "о́чень",
+          "en": "very",
+          "tr": "óchen'",
+          "pos": "adv. (degree)",
+          "example": "О́чень интере́сно. — Very interesting.",
+          "ar": "جِدًّا"
+        },
+        {
+          "ru": "сли́шком",
+          "en": "too (excessively)",
+          "tr": "slíshkom",
+          "pos": "adv. (degree)",
+          "example": "Сли́шком сло́жно. — Too complicated.",
+          "ar": "أَكْثَرَ مِنَ اللَّازِمِ"
+        },
+        {
+          "ru": "дово́льно",
+          "en": "rather, fairly",
+          "tr": "dovól'no",
+          "pos": "adv. (degree)",
+          "example": "Дово́льно ча́сто. — Fairly often.",
+          "ar": "إِلَى حَدٍّ مَا"
+        },
+        {
+          "ru": "почти́",
+          "en": "almost, nearly",
+          "tr": "pochtí",
+          "pos": "adv. (degree)",
+          "example": "Почти́ гото́во. — Almost ready.",
+          "ar": "تَقْرِيبًا"
+        },
+        {
+          "ru": "соверше́нно",
+          "en": "completely, utterly",
+          "tr": "sovershénno",
+          "pos": "adv. (degree)",
+          "example": "Соверше́нно ве́рно. — Absolutely correct.",
+          "ar": "تَمَامًا"
+        },
+        {
+          "ru": "доста́точно",
+          "en": "enough, sufficiently",
+          "tr": "dostátochno",
+          "pos": "adv. (degree)",
+          "example": "Доста́точно да́нных. — Sufficient data.",
+          "ar": "بِمَا يَكْفِي"
+        },
+        {
+          "ru": "осо́бенно",
+          "en": "especially",
+          "tr": "osóbenno",
+          "pos": "adv. (degree)",
+          "example": "Осо́бенно ва́жно. — Especially important.",
+          "ar": "خَاصَّةً"
+        }
       ]
     },
     {
@@ -256,30 +1600,651 @@
       "title": "Academic Fields & Science",
       "description": "Names of academic disciplines and core scientific vocabulary.",
       "cards": [
-        { "ru": "матема́тика", "en": "mathematics", "tr": "matemátika", "pos": "noun (f.)", "example": "Матема́тика — язы́к нау́ки. — Mathematics is the language of science." },
-        { "ru": "фи́зика", "en": "physics", "tr": "fízika", "pos": "noun (f.)", "example": "Ква́нтовая фи́зика. — Quantum physics." },
-        { "ru": "хи́мия", "en": "chemistry", "tr": "khímiya", "pos": "noun (f.)", "example": "Органи́ческая хи́мия. — Organic chemistry." },
-        { "ru": "биоло́гия", "en": "biology", "tr": "biológiya", "pos": "noun (f.)", "example": "Молекуля́рная биоло́гия. — Molecular biology." },
-        { "ru": "лингви́стика", "en": "linguistics", "tr": "lingvístika", "pos": "noun (f.)", "example": "Компьюте́рная лингви́стика. — Computational linguistics." },
-        { "ru": "эконо́мика", "en": "economics", "tr": "ekonómika", "pos": "noun (f.)", "example": "Он изуча́ет эконо́мику. — He studies economics." },
-        { "ru": "пра́во", "en": "law (as a field)", "tr": "právo", "pos": "noun (n.)", "example": "Междунаро́дное пра́во. — International law." },
-        { "ru": "филосо́фия", "en": "philosophy", "tr": "filosófiya", "pos": "noun (f.)", "example": "Филосо́фия нау́ки. — The philosophy of science." },
-        { "ru": "исто́рия", "en": "history", "tr": "istóriya", "pos": "noun (f.)", "example": "Исто́рия дре́внего ми́ра. — The history of the ancient world." },
-        { "ru": "психоло́гия", "en": "psychology", "tr": "psikhológiya", "pos": "noun (f.)", "example": "Когнити́вная психоло́гия. — Cognitive psychology." },
-        { "ru": "социоло́гия", "en": "sociology", "tr": "sotsiológiya", "pos": "noun (f.)", "example": "Социоло́гия го́рода. — Urban sociology." },
-        { "ru": "информа́тика", "en": "computer science, informatics", "tr": "informátika", "pos": "noun (f.)", "example": "Кафедра информа́тики. — The computer science department." },
-        { "ru": "медици́на", "en": "medicine", "tr": "meditsína", "pos": "noun (f.)", "example": "Совреме́нная медици́на. — Modern medicine." },
-        { "ru": "геоло́гия", "en": "geology", "tr": "geológiya", "pos": "noun (f.)", "example": "Геоло́гия пла́неты. — The geology of the planet." },
-        { "ru": "астроно́мия", "en": "astronomy", "tr": "astronómiya", "pos": "noun (f.)", "example": "Наблюда́тельная астроно́мия. — Observational astronomy." },
-        { "ru": "о́пыт (экспериме́нт)", "en": "experiment", "tr": "ópyt (eksperimént)", "pos": "noun (m.)", "example": "Поста́вить экспериме́нт. — To set up an experiment." },
-        { "ru": "наблюде́ние", "en": "observation", "tr": "nablyudénie", "pos": "noun (n.)", "example": "Прямо́е наблюде́ние. — Direct observation." },
-        { "ru": "ана́лиз", "en": "analysis", "tr": "análiz", "pos": "noun (m.)", "example": "Статисти́ческий ана́лиз. — Statistical analysis." },
-        { "ru": "форму́ла", "en": "formula", "tr": "fórmula", "pos": "noun (f.)", "example": "Вы́вести форму́лу. — To derive a formula." },
-        { "ru": "уравне́ние", "en": "equation", "tr": "uravnénie", "pos": "noun (n.)", "example": "Реши́ть уравне́ние. — To solve an equation." },
-        { "ru": "величина́", "en": "quantity, magnitude", "tr": "velichiná", "pos": "noun (f.)", "example": "Физи́ческая величина́. — A physical quantity." },
-        { "ru": "моде́ль", "en": "model", "tr": "modél'", "pos": "noun (f.)", "example": "Математи́ческая моде́ль. — A mathematical model." },
-        { "ru": "систе́ма", "en": "system", "tr": "sistéma", "pos": "noun (f.)", "example": "Сло́жная систе́ма. — A complex system." },
-        { "ru": "веще́ство", "en": "substance, matter", "tr": "veshchestvó", "pos": "noun (n.)", "example": "Хими́ческое веще́ство. — A chemical substance." }
+        {
+          "ru": "матема́тика",
+          "en": "mathematics",
+          "tr": "matemátika",
+          "pos": "noun (f.)",
+          "example": "Матема́тика — язы́к нау́ки. — Mathematics is the language of science.",
+          "ar": "رِيَاضِيَّات"
+        },
+        {
+          "ru": "фи́зика",
+          "en": "physics",
+          "tr": "fízika",
+          "pos": "noun (f.)",
+          "example": "Ква́нтовая фи́зика. — Quantum physics.",
+          "ar": "فِيزْيَاء"
+        },
+        {
+          "ru": "хи́мия",
+          "en": "chemistry",
+          "tr": "khímiya",
+          "pos": "noun (f.)",
+          "example": "Органи́ческая хи́мия. — Organic chemistry.",
+          "ar": "كِيمْيَاء"
+        },
+        {
+          "ru": "биоло́гия",
+          "en": "biology",
+          "tr": "biológiya",
+          "pos": "noun (f.)",
+          "example": "Молекуля́рная биоло́гия. — Molecular biology.",
+          "ar": "أَحْيَاء"
+        },
+        {
+          "ru": "лингви́стика",
+          "en": "linguistics",
+          "tr": "lingvístika",
+          "pos": "noun (f.)",
+          "example": "Компьюте́рная лингви́стика. — Computational linguistics.",
+          "ar": "لِسَانِيَّات"
+        },
+        {
+          "ru": "эконо́мика",
+          "en": "economics",
+          "tr": "ekonómika",
+          "pos": "noun (f.)",
+          "example": "Он изуча́ет эконо́мику. — He studies economics.",
+          "ar": "اِقْتِصَاد"
+        },
+        {
+          "ru": "пра́во",
+          "en": "law (as a field)",
+          "tr": "právo",
+          "pos": "noun (n.)",
+          "example": "Междунаро́дное пра́во. — International law.",
+          "ar": "قَانُون"
+        },
+        {
+          "ru": "филосо́фия",
+          "en": "philosophy",
+          "tr": "filosófiya",
+          "pos": "noun (f.)",
+          "example": "Филосо́фия нау́ки. — The philosophy of science.",
+          "ar": "فَلْسَفَة"
+        },
+        {
+          "ru": "исто́рия",
+          "en": "history",
+          "tr": "istóriya",
+          "pos": "noun (f.)",
+          "example": "Исто́рия дре́внего ми́ра. — The history of the ancient world.",
+          "ar": "تَارِيخ"
+        },
+        {
+          "ru": "психоло́гия",
+          "en": "psychology",
+          "tr": "psikhológiya",
+          "pos": "noun (f.)",
+          "example": "Когнити́вная психоло́гия. — Cognitive psychology.",
+          "ar": "عِلْم النَّفْس"
+        },
+        {
+          "ru": "социоло́гия",
+          "en": "sociology",
+          "tr": "sotsiológiya",
+          "pos": "noun (f.)",
+          "example": "Социоло́гия го́рода. — Urban sociology.",
+          "ar": "عِلْم الِاجْتِمَاع"
+        },
+        {
+          "ru": "информа́тика",
+          "en": "computer science, informatics",
+          "tr": "informátika",
+          "pos": "noun (f.)",
+          "example": "Кафедра информа́тики. — The computer science department.",
+          "ar": "عِلْم الْحَاسُوب"
+        },
+        {
+          "ru": "медици́на",
+          "en": "medicine",
+          "tr": "meditsína",
+          "pos": "noun (f.)",
+          "example": "Совреме́нная медици́на. — Modern medicine.",
+          "ar": "طِبّ"
+        },
+        {
+          "ru": "геоло́гия",
+          "en": "geology",
+          "tr": "geológiya",
+          "pos": "noun (f.)",
+          "example": "Геоло́гия пла́неты. — The geology of the planet.",
+          "ar": "جِيُولُوجْيَا"
+        },
+        {
+          "ru": "астроно́мия",
+          "en": "astronomy",
+          "tr": "astronómiya",
+          "pos": "noun (f.)",
+          "example": "Наблюда́тельная астроно́мия. — Observational astronomy.",
+          "ar": "عِلْم الْفَلَك"
+        },
+        {
+          "ru": "о́пыт (экспериме́нт)",
+          "en": "experiment",
+          "tr": "ópyt (eksperimént)",
+          "pos": "noun (m.)",
+          "example": "Поста́вить экспериме́нт. — To set up an experiment.",
+          "ar": "تَجْرِبَة"
+        },
+        {
+          "ru": "наблюде́ние",
+          "en": "observation",
+          "tr": "nablyudénie",
+          "pos": "noun (n.)",
+          "example": "Прямо́е наблюде́ние. — Direct observation.",
+          "ar": "مُلَاحَظَة"
+        },
+        {
+          "ru": "ана́лиз",
+          "en": "analysis",
+          "tr": "análiz",
+          "pos": "noun (m.)",
+          "example": "Статисти́ческий ана́лиз. — Statistical analysis.",
+          "ar": "تَحْلِيل"
+        },
+        {
+          "ru": "форму́ла",
+          "en": "formula",
+          "tr": "fórmula",
+          "pos": "noun (f.)",
+          "example": "Вы́вести форму́лу. — To derive a formula.",
+          "ar": "صِيغَة"
+        },
+        {
+          "ru": "уравне́ние",
+          "en": "equation",
+          "tr": "uravnénie",
+          "pos": "noun (n.)",
+          "example": "Реши́ть уравне́ние. — To solve an equation.",
+          "ar": "مُعَادَلَة"
+        },
+        {
+          "ru": "величина́",
+          "en": "quantity, magnitude",
+          "tr": "velichiná",
+          "pos": "noun (f.)",
+          "example": "Физи́ческая величина́. — A physical quantity.",
+          "ar": "مِقْدَار"
+        },
+        {
+          "ru": "моде́ль",
+          "en": "model",
+          "tr": "modél'",
+          "pos": "noun (f.)",
+          "example": "Математи́ческая моде́ль. — A mathematical model.",
+          "ar": "نَمُوذَج"
+        },
+        {
+          "ru": "систе́ма",
+          "en": "system",
+          "tr": "sistéma",
+          "pos": "noun (f.)",
+          "example": "Сло́жная систе́ма. — A complex system.",
+          "ar": "نِظَام"
+        },
+        {
+          "ru": "веще́ство",
+          "en": "substance, matter",
+          "tr": "veshchestvó",
+          "pos": "noun (n.)",
+          "example": "Хими́ческое веще́ство. — A chemical substance.",
+          "ar": "مَادَّة"
+        }
+      ]
+    },
+    {
+      "id": "travel-transport",
+      "title": "Travel & Transport",
+      "description": "Getting around: trips, tickets and vehicles.",
+      "cards": [
+        {
+          "ru": "пое́здка",
+          "en": "trip, journey",
+          "tr": "poyézdka",
+          "pos": "noun (f.)",
+          "example": "Деловая пое́здка. — A business trip.",
+          "ar": "رِحْلَة"
+        },
+        {
+          "ru": "биле́т",
+          "en": "ticket",
+          "tr": "bilét",
+          "pos": "noun (m.)",
+          "example": "Биле́т на по́езд. — A train ticket.",
+          "ar": "تَذْكِرَة"
+        },
+        {
+          "ru": "по́езд",
+          "en": "train",
+          "tr": "póyezd",
+          "pos": "noun (m.)",
+          "example": "По́езд опа́здывает. — The train is late.",
+          "ar": "قِطَار"
+        },
+        {
+          "ru": "самолёт",
+          "en": "airplane",
+          "tr": "samolyót",
+          "pos": "noun (m.)",
+          "example": "Самолёт взлета́ет. — The plane is taking off.",
+          "ar": "طَائِرَة"
+        },
+        {
+          "ru": "вокза́л",
+          "en": "railway station",
+          "tr": "vokzál",
+          "pos": "noun (m.)",
+          "example": "Встре́тимся на вокза́ле. — Let's meet at the station.",
+          "ar": "مَحَطَّة قِطَار"
+        },
+        {
+          "ru": "аэропо́рт",
+          "en": "airport",
+          "tr": "aeropórt",
+          "pos": "noun (m.)",
+          "example": "Я в аэропорту́. — I'm at the airport.",
+          "ar": "مَطَار"
+        },
+        {
+          "ru": "авто́бус",
+          "en": "bus",
+          "tr": "avtóbus",
+          "pos": "noun (m.)",
+          "example": "Жду авто́бус. — I'm waiting for the bus.",
+          "ar": "حَافِلَة"
+        },
+        {
+          "ru": "метро́",
+          "en": "metro, subway",
+          "tr": "metró",
+          "pos": "noun (n.)",
+          "example": "Е́дем на метро́. — Let's take the metro.",
+          "ar": "مِتْرُو الأنفاق"
+        },
+        {
+          "ru": "такси́",
+          "en": "taxi",
+          "tr": "taksí",
+          "pos": "noun (n.)",
+          "example": "Вы́звать такси́. — To call a taxi.",
+          "ar": "سَيَّارَة أُجْرَة"
+        },
+        {
+          "ru": "маши́на",
+          "en": "car",
+          "tr": "mashína",
+          "pos": "noun (f.)",
+          "example": "Моя́ маши́на. — My car.",
+          "ar": "سَيَّارَة"
+        },
+        {
+          "ru": "доро́га",
+          "en": "road, way",
+          "tr": "doróga",
+          "pos": "noun (f.)",
+          "example": "До́лгая доро́га. — A long road.",
+          "ar": "طَرِيق"
+        },
+        {
+          "ru": "путеше́ствие",
+          "en": "travel, voyage",
+          "tr": "puteshéstviye",
+          "pos": "noun (n.)",
+          "example": "Люблю́ путеше́ствия. — I love travelling.",
+          "ar": "سَفَر"
+        },
+        {
+          "ru": "чемода́н",
+          "en": "suitcase",
+          "tr": "chemodán",
+          "pos": "noun (m.)",
+          "example": "Тяжёлый чемода́н. — A heavy suitcase.",
+          "ar": "حَقِيبَة سَفَر"
+        },
+        {
+          "ru": "па́спорт",
+          "en": "passport",
+          "tr": "pásport",
+          "pos": "noun (m.)",
+          "example": "Покажи́те па́спорт. — Show your passport.",
+          "ar": "جَوَاز سَفَر"
+        },
+        {
+          "ru": "ви́за",
+          "en": "visa",
+          "tr": "víza",
+          "pos": "noun (f.)",
+          "example": "Студе́нческая ви́за. — A student visa.",
+          "ar": "تَأْشِيرَة"
+        },
+        {
+          "ru": "грани́ца",
+          "en": "border",
+          "tr": "granítsa",
+          "pos": "noun (f.)",
+          "example": "Перее́хать грани́цу. — To cross the border.",
+          "ar": "حُدُود"
+        },
+        {
+          "ru": "гости́ница",
+          "en": "hotel",
+          "tr": "gostínitsa",
+          "pos": "noun (f.)",
+          "example": "Но́мер в гости́нице. — A hotel room.",
+          "ar": "فُنْدُق"
+        },
+        {
+          "ru": "ка́рта",
+          "en": "map; card",
+          "tr": "kárta",
+          "pos": "noun (f.)",
+          "example": "Ка́рта го́рода. — A city map.",
+          "ar": "خَرِيطَة؛ بِطَاقَة"
+        }
+      ]
+    },
+    {
+      "id": "food-dining",
+      "title": "Food & Dining",
+      "description": "Eating out and ordering meals.",
+      "cards": [
+        {
+          "ru": "еда́",
+          "en": "food",
+          "tr": "yedá",
+          "pos": "noun (f.)",
+          "example": "Вку́сная еда́. — Tasty food.",
+          "ar": "طَعَام"
+        },
+        {
+          "ru": "рестора́н",
+          "en": "restaurant",
+          "tr": "restorán",
+          "pos": "noun (m.)",
+          "example": "У́жин в рестора́не. — Dinner at a restaurant.",
+          "ar": "مَطْعَم"
+        },
+        {
+          "ru": "кафе́",
+          "en": "café",
+          "tr": "kafé",
+          "pos": "noun (n.)",
+          "example": "Встре́тимся в кафе́. — Let's meet at the café.",
+          "ar": "مَقْهَى"
+        },
+        {
+          "ru": "меню́",
+          "en": "menu",
+          "tr": "menyú",
+          "pos": "noun (n.)",
+          "example": "Да́йте меню́. — Give me the menu.",
+          "ar": "قَائِمَة طَعَام"
+        },
+        {
+          "ru": "за́втрак",
+          "en": "breakfast",
+          "tr": "závtrak",
+          "pos": "noun (m.)",
+          "example": "За́втрак в во́семь. — Breakfast at eight.",
+          "ar": "فَطُور"
+        },
+        {
+          "ru": "обе́д",
+          "en": "lunch",
+          "tr": "obéd",
+          "pos": "noun (m.)",
+          "example": "Пора́ на обе́д. — Time for lunch.",
+          "ar": "غَدَاء"
+        },
+        {
+          "ru": "у́жин",
+          "en": "dinner, supper",
+          "tr": "úzhin",
+          "pos": "noun (m.)",
+          "example": "Семе́йный у́жин. — A family dinner.",
+          "ar": "عَشَاء"
+        },
+        {
+          "ru": "хлеб",
+          "en": "bread",
+          "tr": "khleb",
+          "pos": "noun (m.)",
+          "example": "Све́жий хлеб. — Fresh bread.",
+          "ar": "خُبْز"
+        },
+        {
+          "ru": "вода́",
+          "en": "water",
+          "tr": "vodá",
+          "pos": "noun (f.)",
+          "example": "Стака́н воды́. — A glass of water.",
+          "ar": "مَاء"
+        },
+        {
+          "ru": "чай",
+          "en": "tea",
+          "tr": "chay",
+          "pos": "noun (m.)",
+          "example": "Чай с лимо́ном. — Tea with lemon.",
+          "ar": "شَاي"
+        },
+        {
+          "ru": "ко́фе",
+          "en": "coffee",
+          "tr": "kófe",
+          "pos": "noun (m.)",
+          "example": "Ча́шка ко́фе. — A cup of coffee.",
+          "ar": "قَهْوَة"
+        },
+        {
+          "ru": "мя́со",
+          "en": "meat",
+          "tr": "myáso",
+          "pos": "noun (n.)",
+          "example": "Жа́реное мя́со. — Fried meat.",
+          "ar": "لَحْم"
+        },
+        {
+          "ru": "ры́ба",
+          "en": "fish",
+          "tr": "rýba",
+          "pos": "noun (f.)",
+          "example": "Све́жая ры́ба. — Fresh fish.",
+          "ar": "سَمَك"
+        },
+        {
+          "ru": "о́вощи",
+          "en": "vegetables",
+          "tr": "óvoshchi",
+          "pos": "noun (pl.)",
+          "example": "Све́жие о́вощи. — Fresh vegetables.",
+          "ar": "خُضَار"
+        },
+        {
+          "ru": "фру́кты",
+          "en": "fruit",
+          "tr": "frúkty",
+          "pos": "noun (pl.)",
+          "example": "Сла́дкие фру́кты. — Sweet fruit.",
+          "ar": "فَوَاكِه"
+        },
+        {
+          "ru": "счёт",
+          "en": "bill, check",
+          "tr": "shchyot",
+          "pos": "noun (m.)",
+          "example": "Счёт, пожа́луйста. — The bill, please.",
+          "ar": "فَاتُورَة"
+        },
+        {
+          "ru": "официа́нт",
+          "en": "waiter",
+          "tr": "ofitsiánt",
+          "pos": "noun (m.)",
+          "example": "Позови́те официа́нта. — Call the waiter.",
+          "ar": "نَادِل"
+        },
+        {
+          "ru": "вку́сный",
+          "en": "tasty, delicious",
+          "tr": "vkúsnyy",
+          "pos": "adj.",
+          "example": "О́чень вку́сно! — Very tasty!",
+          "ar": "لَذِيذ"
+        }
+      ]
+    },
+    {
+      "id": "university-life",
+      "title": "University Life",
+      "description": "Everyday campus and study vocabulary.",
+      "cards": [
+        {
+          "ru": "студе́нт",
+          "en": "student",
+          "tr": "studént",
+          "pos": "noun (m.)",
+          "example": "Он студе́нт. — He is a student.",
+          "ar": "طَالِب"
+        },
+        {
+          "ru": "преподава́тель",
+          "en": "instructor, lecturer",
+          "tr": "prepodavátel'",
+          "pos": "noun (m.)",
+          "example": "Стро́гий преподава́тель. — A strict lecturer.",
+          "ar": "مُحَاضِر، أُسْتَاذ"
+        },
+        {
+          "ru": "ле́кция",
+          "en": "lecture",
+          "tr": "léktsiya",
+          "pos": "noun (f.)",
+          "example": "Интере́сная ле́кция. — An interesting lecture.",
+          "ar": "مُحَاضَرَة"
+        },
+        {
+          "ru": "экза́мен",
+          "en": "exam",
+          "tr": "ekzámen",
+          "pos": "noun (m.)",
+          "example": "Сдать экза́мен. — To pass an exam.",
+          "ar": "اِمْتِحَان"
+        },
+        {
+          "ru": "оце́нка",
+          "en": "grade, mark",
+          "tr": "otsénka",
+          "pos": "noun (f.)",
+          "example": "Высо́кая оце́нка. — A high grade.",
+          "ar": "دَرَجَة، عَلَامَة"
+        },
+        {
+          "ru": "расписа́ние",
+          "en": "schedule, timetable",
+          "tr": "raspisániye",
+          "pos": "noun (n.)",
+          "example": "Расписа́ние заня́тий. — The class timetable.",
+          "ar": "جَدْوَل"
+        },
+        {
+          "ru": "аудито́рия",
+          "en": "lecture hall, classroom",
+          "tr": "auditóriya",
+          "pos": "noun (f.)",
+          "example": "Больша́я аудито́рия. — A large lecture hall.",
+          "ar": "قَاعَة دِرَاسِيَّة"
+        },
+        {
+          "ru": "библиоте́ка",
+          "en": "library",
+          "tr": "bibliotéka",
+          "pos": "noun (f.)",
+          "example": "Рабо́тать в библиоте́ке. — To work in the library.",
+          "ar": "مَكْتَبَة"
+        },
+        {
+          "ru": "общежи́тие",
+          "en": "dormitory",
+          "tr": "obshchezhítiye",
+          "pos": "noun (n.)",
+          "example": "Жить в общежи́тии. — To live in a dorm.",
+          "ar": "سَكَن جَامِعِيّ"
+        },
+        {
+          "ru": "стипе́ндия",
+          "en": "scholarship, stipend",
+          "tr": "stipéndiya",
+          "pos": "noun (f.)",
+          "example": "Получа́ть стипе́ндию. — To receive a stipend.",
+          "ar": "مِنْحَة دِرَاسِيَّة"
+        },
+        {
+          "ru": "факульте́т",
+          "en": "faculty, department",
+          "tr": "fakul'tét",
+          "pos": "noun (m.)",
+          "example": "Истори́ческий факульте́т. — The history faculty.",
+          "ar": "كُلِّيَّة"
+        },
+        {
+          "ru": "зачёт",
+          "en": "pass/fail credit",
+          "tr": "zachyót",
+          "pos": "noun (m.)",
+          "example": "Получи́ть зачёт. — To get a credit.",
+          "ar": "تَقْدِير (نَجَاح/رُسُوب)"
+        },
+        {
+          "ru": "семе́стр",
+          "en": "semester",
+          "tr": "seméstr",
+          "pos": "noun (m.)",
+          "example": "Весе́нний семе́стр. — The spring semester.",
+          "ar": "فَصْل دِرَاسِيّ"
+        },
+        {
+          "ru": "курс",
+          "en": "course; year of study",
+          "tr": "kurs",
+          "pos": "noun (m.)",
+          "example": "Тре́тий курс. — Third year.",
+          "ar": "مُقَرَّر؛ سَنَة دِرَاسِيَّة"
+        },
+        {
+          "ru": "конспе́кт",
+          "en": "lecture notes",
+          "tr": "konspékt",
+          "pos": "noun (m.)",
+          "example": "Писа́ть конспе́кт. — To take notes.",
+          "ar": "مُلَخَّص مُحَاضَرَة"
+        },
+        {
+          "ru": "переры́в",
+          "en": "break",
+          "tr": "pererýv",
+          "pos": "noun (m.)",
+          "example": "Переры́в на ко́фе. — A coffee break.",
+          "ar": "اِسْتِرَاحَة"
+        },
+        {
+          "ru": "декана́т",
+          "en": "dean's office",
+          "tr": "dekanát",
+          "pos": "noun (m.)",
+          "example": "Зайти́ в декана́т. — To drop by the dean's office.",
+          "ar": "عِمَادَة الكُلِّيَّة"
+        },
+        {
+          "ru": "дипло́м",
+          "en": "diploma, degree",
+          "tr": "diplóm",
+          "pos": "noun (m.)",
+          "example": "Получи́ть дипло́м. — To get a diploma.",
+          "ar": "شَهَادَة"
+        }
       ]
     }
   ]

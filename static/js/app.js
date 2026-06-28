@@ -569,6 +569,173 @@ async function viewPractice() {
   newRound();
 }
 
+/* ---------------- verb trainer ---------------- */
+const normRu = (s) =>
+  String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ё/g, "е").trim();
+
+async function viewVerbs() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🔁 Verb trainer"),
+    el("p", {}, "Browse conjugation tables for common verbs, or drill yourself on the present tense.")));
+  const data = await loadContent("verbs");
+  const verbs = data.verbs || [];
+  const stage = el("div", {});
+  view.append(stage);
+
+  const pills = el("div", { class: "quiz-mode-pills" });
+  const browseBtn = el("button", { class: "deck-pill active" }, "📖 Browse");
+  const drillBtn = el("button", { class: "deck-pill" }, "✏️ Drill");
+  pills.append(browseBtn, drillBtn);
+  stage.append(pills);
+  const host = el("div", {});
+  stage.append(host);
+
+  browseBtn.addEventListener("click", () => { browseBtn.classList.add("active"); drillBtn.classList.remove("active"); renderBrowse(); });
+  drillBtn.addEventListener("click", () => { drillBtn.classList.add("active"); browseBtn.classList.remove("active"); renderDrill(); });
+
+  function tenseTable(v) {
+    const forms = v.present || v.future || {};
+    const label = v.present ? "Present" : "Future";
+    const rows = Object.entries(forms).map(([k, val]) => [k, `<span class="rucell">${val}</span>`]);
+    return { label, rows };
+  }
+
+  function renderBrowse() {
+    host.innerHTML = "";
+    verbs.forEach((v) => {
+      const card = el("section", { class: "unit" });
+      const h = el("div", { class: "unit-head" },
+        el("div", {},
+          el("h2", {}, ru(v.inf)),
+          el("p", { class: "summary gloss-en" }, `${v.en}${v.pair && v.pair !== "—" ? "  ·  pf. " + v.pair : ""}`),
+          v.ar ? el("p", { class: "summary summary-ar gloss-ar", dir: "rtl" }, v.ar) : null));
+      card.append(h);
+      const t = tenseTable(v);
+      card.append(blockTable(t.label, ["Pronoun", t.label], t.rows));
+      if (v.past) card.append(blockTable("Past", ["Gender / number", "Form"],
+        Object.entries(v.past).map(([k, val]) => [k, `<span class="rucell">${val}</span>`])));
+      if (v.imperative) card.append(blockTable("Imperative", ["", "Form"],
+        Object.entries(v.imperative).map(([k, val]) => [k, `<span class="rucell">${val}</span>`])));
+      host.append(card);
+    });
+    // make Russian cells clickable for audio
+    host.querySelectorAll(".rucell").forEach((c) => { c.classList.add("ru"); c.dataset.say = c.textContent; });
+  }
+
+  function blockTable(cap, headers, rows) {
+    return renderBlock({ type: "table", caption: cap, headers, rows });
+  }
+
+  function renderDrill() {
+    const state = { score: 0, asked: 0, total: 12, cur: null };
+    function next() {
+      host.innerHTML = "";
+      if (state.asked >= state.total) {
+        host.append(el("div", { class: "quiz-card" },
+          el("h2", { style: "font-family:'PT Serif',serif" }, "Drill complete"),
+          el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${state.asked}`),
+          el("button", { class: "btn primary big", onclick: renderDrill }, "Again")));
+        return;
+      }
+      const v = verbs[Math.floor(Math.random() * verbs.length)];
+      const forms = v.present || v.future || {};
+      const keys = Object.keys(forms);
+      const key = keys[Math.floor(Math.random() * keys.length)];
+      state.cur = { v, key, answer: forms[key] };
+
+      const card = el("div", { class: "quiz-card" });
+      card.append(el("div", { class: "quiz-bar" },
+        el("span", {}, `${state.asked + 1} / ${state.total}`), el("span", {}, `Score: ${state.score}`)));
+      card.append(el("div", { class: "quiz-q" }, `Conjugate — ${v.present ? "present" : "future"} tense`));
+      card.append(el("div", { class: "quiz-prompt" }, el("span", { class: "ru", "data-say": v.inf }, v.inf), el("span", { style: "color:var(--muted)" }, `  →  ${key} …`)));
+      const input = el("input", { class: "text-input", type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: "false", placeholder: "type the form…" });
+      const feedback = el("div", { class: "drill-feedback" });
+      const submit = el("button", { class: "btn primary", style: "margin-top:12px" }, "Check");
+      const check = () => {
+        if (submit.dataset.done) { next(); return; }
+        const ok = normRu(input.value) === normRu(state.cur.answer);
+        if (ok) state.score++;
+        feedback.innerHTML = ok
+          ? `<span class="ok">✓ Correct</span>`
+          : `<span class="bad">✗ ${state.cur.answer}</span>`;
+        speak(state.cur.answer);
+        input.disabled = true;
+        state.asked++;
+        submit.textContent = "Next →";
+        submit.dataset.done = "1";
+      };
+      submit.addEventListener("click", check);
+      input.addEventListener("keydown", (e) => { if (e.key === "Enter") check(); });
+      card.append(input, submit, feedback);
+      host.append(card);
+      input.focus();
+    }
+    next();
+  }
+
+  renderBrowse();
+}
+
+/* ---------------- listening / dictation ---------------- */
+async function viewDictation() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "✍️ Listening dictation"),
+    el("p", {}, "Listen to a Russian word and type what you hear (stress marks optional). Trains your Cyrillic spelling and ear.")));
+  const cards = await masterCards();
+  if (!cards.length) { view.append(el("div", { class: "fc-empty" }, "No words available.")); return; }
+
+  const stage = el("div", { class: "quiz-stage" });
+  view.append(stage);
+  const host = el("div", {});
+  stage.append(host);
+  const state = { score: 0, asked: 0, total: 12, cur: null };
+
+  function next() {
+    host.innerHTML = "";
+    if (state.asked >= state.total) {
+      host.append(el("div", { class: "quiz-card" },
+        el("h2", { style: "font-family:'PT Serif',serif" }, "Round complete"),
+        el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${state.asked}`),
+        el("button", { class: "btn primary big", onclick: () => { state.score = 0; state.asked = 0; next(); } }, "Again")));
+      return;
+    }
+    state.cur = cards[Math.floor(Math.random() * cards.length)];
+    speak(state.cur.front);
+
+    const card = el("div", { class: "quiz-card" });
+    card.append(el("div", { class: "quiz-bar" },
+      el("span", {}, `${state.asked + 1} / ${state.total}`), el("span", {}, `Score: ${state.score}`)));
+    const playBtn = el("button", { class: "btn", style: "background:var(--panel-2);color:var(--text);margin-bottom:14px" }, "🔊 Play again");
+    playBtn.addEventListener("click", () => speak(state.cur.front));
+    card.append(playBtn);
+    const input = el("input", { class: "text-input", type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: "false", placeholder: "type what you hear…", dir: "ltr" });
+    const feedback = el("div", { class: "drill-feedback" });
+    const submit = el("button", { class: "btn primary", style: "margin-top:12px" }, "Check");
+    const check = () => {
+      if (submit.dataset.done) { next(); return; }
+      const ok = normRu(input.value) === normRu(state.cur.front);
+      if (ok) state.score++;
+      feedback.innerHTML = ok
+        ? `<span class="ok">✓ ${state.cur.front}</span>`
+        : `<span class="bad">✗ correct: ${state.cur.front}</span>`;
+      feedback.append(el("div", { class: "gloss-en", style: "color:var(--muted);font-size:14px;margin-top:4px" }, state.cur.back));
+      if (state.cur.ar) feedback.append(el("div", { class: "gloss-ar", dir: "rtl", style: "color:var(--accent-2);margin-top:2px" }, state.cur.ar));
+      input.disabled = true;
+      state.asked++;
+      submit.textContent = "Next →";
+      submit.dataset.done = "1";
+    };
+    submit.addEventListener("click", check);
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") check(); });
+    card.append(input, submit, feedback);
+    host.append(card);
+    input.focus();
+  }
+  next();
+}
+
 /* ---------------- nav + router ---------------- */
 function renderNav() {
   const nav = $("#nav");
@@ -589,6 +756,8 @@ function renderNav() {
   nav.append(el("div", { class: "nav-sep" }, "Practice"));
   add("#/flashcards", "🃏", "Flashcards", App.dueBadge || null);
   add("#/practice", "🎯", "Quiz");
+  add("#/verbs", "🔁", "Verb trainer");
+  add("#/dictation", "✍️", "Dictation");
 }
 
 async function router() {
@@ -600,6 +769,8 @@ async function router() {
     else if (hash.startsWith("#/section/")) await viewSection(hash.split("/")[2]);
     else if (hash === "#/flashcards") await viewFlashcards();
     else if (hash === "#/practice") await viewPractice();
+    else if (hash === "#/verbs") await viewVerbs();
+    else if (hash === "#/dictation") await viewDictation();
     else await viewDashboard();
     App.dueBadge = (await srsStats()).due || null;
   } catch (e) {
