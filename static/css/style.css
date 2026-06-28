@@ -487,6 +487,16 @@ body[data-gloss="ar"] .gloss-en { display: none; }
 .wod-ex { color: var(--muted); font-size: 13.5px; margin-top: 6px; line-height: 1.5; }
 .wod-panel .star-btn { position: absolute; top: 12px; right: 12px; }
 
+/* ---------- Listening ---------- */
+.listen-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.listen-btn { min-width: 160px; }
+.listen-transcript { margin-top: 16px; padding: 14px 16px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; position: relative; }
+.listen-transcript .lt-ru { font-family: "PT Serif", serif; font-size: 20px; font-weight: 700; }
+.listen-transcript .lt-tr { color: var(--accent); font-style: italic; font-size: 13px; }
+.listen-transcript .lt-en { font-size: 15px; margin-top: 3px; }
+.listen-transcript .lt-ar { color: var(--accent-2); font-size: 15px; margin-top: 2px; }
+.listen-transcript .star-btn { position: absolute; top: 10px; right: 12px; }
+
 /* ---------- Analytics / progress dashboard ---------- */
 .rec-card { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit;
   background: linear-gradient(120deg, rgba(79,140,255,.16), rgba(54,201,138,.12));

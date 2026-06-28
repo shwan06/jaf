@@ -270,15 +270,30 @@ if (window.speechSynthesis) {
   pickVoice();
   speechSynthesis.onvoiceschanged = pickVoice;
 }
-function speak(text) {
+function speak(text, rate) {
   if (!window.speechSynthesis) return;
   const clean = String(text).replace(/[—–-].*$/u, "").trim() || String(text);
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(clean);
   u.lang = "ru-RU";
-  u.rate = 0.92;
+  u.rate = rate || 0.92;
   if (App.voice) u.voice = App.voice;
   speechSynthesis.speak(u);
+}
+
+// Play a clip: a real recording if the item provides audioUrl, otherwise the
+// device's Russian text-to-speech. `slow` halves the pace for careful listening.
+let _audioEl = null;
+function playClip(item, slow) {
+  if (item && item.audioUrl) {
+    try { speechSynthesis.cancel(); } catch {}
+    if (!_audioEl) _audioEl = new Audio();
+    _audioEl.src = item.audioUrl;
+    _audioEl.playbackRate = slow ? 0.7 : 1;
+    _audioEl.play().catch(() => speak(item.ru, slow ? 0.6 : 0.92));
+  } else if (item) {
+    speak(item.ru, slow ? 0.6 : 0.92);
+  }
 }
 document.addEventListener("click", (e) => {
   const ru = e.target.closest(".ru");
@@ -608,6 +623,97 @@ async function countAllUnits() {
     n += (data.units || []).length;
   }
   return n;
+}
+
+/* ---------------- listening comprehension ---------------- */
+async function viewListening() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🎧 Listening"),
+    el("p", {}, "Press Listen, choose what you heard, then reveal the transcript. Audio uses your device's Russian voice now — and real recordings automatically if they're added. Tip: use 🐢 Slower for tricky sentences.")));
+  const data = await loadContent("listening");
+  const lessons = data.lessons || [];
+  const stage = el("div", { class: "quiz-stage", style: "max-width:640px" });
+  view.append(stage);
+  const pills = el("div", { class: "deck-pills" });
+  const host = el("div", {});
+  stage.append(pills, host);
+
+  function renderPicker() {
+    pills.innerHTML = ""; host.innerHTML = "";
+    lessons.forEach((l) => {
+      const p = el("button", { class: "deck-pill" }, l.title, el("span", { class: "cnt" }, String((l.items || []).length)));
+      p.addEventListener("click", () => startLesson(l));
+      pills.append(p);
+    });
+    host.append(el("p", { class: "search-hint" }, "Pick a lesson above. Each plays " + lessons.reduce((a, l) => a + (l.items || []).length, 0) + " short sentences across " + lessons.length + " lessons."));
+  }
+
+  function startLesson(lesson) {
+    const items = lesson.items || [];
+    const pool = items.map((it) => it.en);
+    const state = { i: 0, score: 0 };
+
+    function render() {
+      pills.innerHTML = ""; host.innerHTML = "";
+      const back = el("button", { class: "deck-pill" }, "← Lessons");
+      back.addEventListener("click", renderPicker);
+      pills.append(back);
+
+      if (state.i >= items.length) {
+        host.append(el("div", { class: "quiz-card", style: "text-align:center" },
+          el("h2", { style: "font-family:'PT Serif',serif" }, lesson.title + " — done"),
+          el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${items.length}`),
+          el("button", { class: "btn primary big", style: "margin-top:8px", onclick: () => startLesson(lesson) }, "Listen again"),
+          el("button", { class: "deck-pill", style: "margin-top:12px", onclick: renderPicker }, "Other lessons")));
+        return;
+      }
+      const it = items[state.i];
+      const card = el("div", { class: "quiz-card" });
+      card.append(el("div", { class: "quiz-bar" },
+        el("span", {}, `${lesson.title} · ${state.i + 1}/${items.length}`), el("span", {}, `Score: ${state.score}`)));
+
+      const listen = el("button", { class: "btn primary big listen-btn" }, "🎧 Listen");
+      listen.addEventListener("click", () => playClip(it));
+      const slow = el("button", { class: "btn", style: "background:var(--panel-2);color:var(--text)" }, "🐢 Slower");
+      slow.addEventListener("click", () => playClip(it, true));
+      card.append(el("div", { class: "listen-row" }, listen, slow));
+      card.append(el("div", { class: "quiz-q", style: "margin-top:16px" }, "What did you hear?"));
+
+      const distractors = shuffle(pool.filter((e) => e !== it.en)).slice(0, 3);
+      const options = shuffle([it.en, ...distractors]);
+      const opts = el("div", { class: "quiz-options" });
+      options.forEach((o) => {
+        const btn = el("button", { class: "quiz-opt" }, o);
+        btn.addEventListener("click", () => {
+          if (opts.dataset.done) return;
+          opts.dataset.done = "1";
+          const correct = o === it.en;
+          btn.classList.add(correct ? "correct" : "wrong");
+          [...opts.children].forEach((c) => { if (c.textContent === it.en) c.classList.add("correct"); });
+          if (correct) { state.score++; Gamify.award(4, "Listening"); }
+          // reveal transcript
+          const tr = el("div", { class: "listen-transcript" },
+            el("div", { class: "lt-ru ru", "data-say": it.ru }, it.ru),
+            it.tr ? el("div", { class: "lt-tr" }, it.tr) : null,
+            el("div", { class: "lt-en gloss-en" }, it.en),
+            it.ar ? el("div", { class: "lt-ar gloss-ar", dir: "rtl" }, it.ar) : null,
+            starBtn({ id: "ls:" + it.id, ru: it.ru, en: it.en, ar: it.ar || "", tr: it.tr || "", type: "phrase", src: "Listening" }));
+          card.append(tr);
+          card.append(el("button", { class: "btn primary", style: "margin-top:14px", onclick: () => { state.i++; render(); } },
+            state.i + 1 >= items.length ? "See results" : "Next →"));
+        });
+        opts.append(btn);
+      });
+      card.append(opts);
+      host.append(card);
+      // auto-play the clip when the question appears
+      setTimeout(() => playClip(it), 250);
+    }
+    render();
+  }
+
+  renderPicker();
 }
 
 /* ---------------- analytics / progress dashboard ---------------- */
@@ -2046,6 +2152,7 @@ function renderNav() {
   add("#/practice", "🎯", "Quiz");
   add("#/cases", "🧩", "Cases trainer");
   add("#/verbs", "🔁", "Verb trainer");
+  add("#/listening", "🎧", "Listening");
   add("#/dictation", "✍️", "Dictation");
   add("#/pronounce", "🎤", "Pronunciation");
   add("#/exam", "🎓", "Exams A1–C2");
@@ -2054,7 +2161,7 @@ function renderNav() {
 
 // Human-readable label for a route hash (used by the dashboard "Continue" button).
 function routeLabel(hash) {
-  const map = { "#/path": "Learning Path", "#/stats": "Progress", "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
+  const map = { "#/path": "Learning Path", "#/stats": "Progress", "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/listening": "Listening", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
   if (map[hash]) return map[hash];
   if (hash.startsWith("#/section/")) {
     const id = hash.split("/")[2];
@@ -2077,6 +2184,7 @@ async function router() {
     else if (hash === "#/practice") await viewPractice();
     else if (hash === "#/cases") await viewCases();
     else if (hash === "#/verbs") await viewVerbs();
+    else if (hash === "#/listening") await viewListening();
     else if (hash === "#/dictation") await viewDictation();
     else if (hash === "#/pronounce") await viewPronounce();
     else if (hash === "#/exam") await viewExam();

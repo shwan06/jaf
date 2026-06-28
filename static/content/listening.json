@@ -1,0 +1,58 @@
+{
+  "title": "Listening — Аудирование",
+  "description": "Train your ear with whole Russian sentences. Press Listen, choose what you heard, then reveal the transcript. Audio uses your device's Russian voice now, and will automatically use real recordings if they're added later.",
+  "lessons": [
+    {
+      "id": "a1-greetings",
+      "title": "A1 — Greetings",
+      "level": "A1",
+      "items": [
+        { "id": "g1", "ru": "Здравствуйте!", "tr": "Zdravstvuyte!", "en": "Hello! (formal)", "ar": "مرحباً! (رسمي)" },
+        { "id": "g2", "ru": "Как вас зовут?", "tr": "Kak vas zovut?", "en": "What is your name?", "ar": "ما اسمك؟" },
+        { "id": "g3", "ru": "Меня зовут Анна.", "tr": "Menya zovut Anna.", "en": "My name is Anna.", "ar": "اسمي آنّا." },
+        { "id": "g4", "ru": "Очень приятно!", "tr": "Ochen' priyatno!", "en": "Nice to meet you!", "ar": "تشرّفت بلقائك!" },
+        { "id": "g5", "ru": "Откуда вы?", "tr": "Otkuda vy?", "en": "Where are you from?", "ar": "من أين أنت؟" },
+        { "id": "g6", "ru": "До свидания!", "tr": "Do svidaniya!", "en": "Goodbye!", "ar": "إلى اللقاء!" }
+      ]
+    },
+    {
+      "id": "a1-essentials",
+      "title": "A1 — Survival phrases",
+      "level": "A1",
+      "items": [
+        { "id": "e1", "ru": "Я не понимаю.", "tr": "Ya ne ponimayu.", "en": "I don't understand.", "ar": "لا أفهم." },
+        { "id": "e2", "ru": "Говорите медленнее, пожалуйста.", "tr": "Govorite medlenneye, pozhaluysta.", "en": "Please speak more slowly.", "ar": "تكلّم ببطء من فضلك." },
+        { "id": "e3", "ru": "Сколько это стоит?", "tr": "Skol'ko eto stoit?", "en": "How much does this cost?", "ar": "كم يكلّف هذا؟" },
+        { "id": "e4", "ru": "Где находится туалет?", "tr": "Gde nakhoditsya tualet?", "en": "Where is the toilet?", "ar": "أين يقع الحمّام؟" },
+        { "id": "e5", "ru": "Спасибо большое!", "tr": "Spasibo bol'shoye!", "en": "Thank you very much!", "ar": "شكراً جزيلاً!" },
+        { "id": "e6", "ru": "Помогите, пожалуйста.", "tr": "Pomogite, pozhaluysta.", "en": "Help, please.", "ar": "ساعدني من فضلك." }
+      ]
+    },
+    {
+      "id": "a2-daily",
+      "title": "A2 — Daily life",
+      "level": "A2",
+      "items": [
+        { "id": "d1", "ru": "Я живу и учусь в Москве.", "tr": "Ya zhivu i uchus' v Moskve.", "en": "I live and study in Moscow.", "ar": "أعيش وأدرس في موسكو." },
+        { "id": "d2", "ru": "Утром я пью кофе.", "tr": "Utrom ya p'yu kofe.", "en": "In the morning I drink coffee.", "ar": "في الصباح أشرب القهوة." },
+        { "id": "d3", "ru": "Сегодня прекрасная погода.", "tr": "Segodnya prekrasnaya pogoda.", "en": "Today the weather is wonderful.", "ar": "الطقس رائع اليوم." },
+        { "id": "d4", "ru": "Я люблю читать русские книги.", "tr": "Ya lyublyu chitat' russkiye knigi.", "en": "I love reading Russian books.", "ar": "أحبّ قراءة الكتب الروسية." },
+        { "id": "d5", "ru": "Вечером я смотрю фильмы.", "tr": "Vecherom ya smotryu fil'my.", "en": "In the evening I watch films.", "ar": "في المساء أشاهد الأفلام." },
+        { "id": "d6", "ru": "Завтра у меня экзамен.", "tr": "Zavtra u menya ekzamen.", "en": "Tomorrow I have an exam.", "ar": "غداً عندي امتحان." }
+      ]
+    },
+    {
+      "id": "a2-cafe",
+      "title": "A2 — At the café",
+      "level": "A2",
+      "items": [
+        { "id": "c1", "ru": "Дайте, пожалуйста, меню.", "tr": "Dayte, pozhaluysta, menyu.", "en": "Please give me the menu.", "ar": "أعطني القائمة من فضلك." },
+        { "id": "c2", "ru": "Я хочу чашку чая.", "tr": "Ya khochu chashku chaya.", "en": "I want a cup of tea.", "ar": "أريد فنجان شاي." },
+        { "id": "c3", "ru": "У вас есть хлеб?", "tr": "U vas yest' khleb?", "en": "Do you have bread?", "ar": "هل لديكم خبز؟" },
+        { "id": "c4", "ru": "Это очень вкусно.", "tr": "Eto ochen' vkusno.", "en": "This is very tasty.", "ar": "هذا لذيذ جداً." },
+        { "id": "c5", "ru": "Счёт, пожалуйста.", "tr": "Schyot, pozhaluysta.", "en": "The bill, please.", "ar": "الحساب من فضلك." },
+        { "id": "c6", "ru": "Можно расплатиться картой?", "tr": "Mozhno rasplatit'sya kartoy?", "en": "Can I pay by card?", "ar": "هل يمكن الدفع بالبطاقة؟" }
+      ]
+    }
+  ]
+}
