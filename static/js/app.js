@@ -1882,6 +1882,18 @@ const PROVIDERS = {
     endpoint: "https://generativelanguage.googleapis.com",
     fallbackModels: ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash"],
   },
+  groq: {
+    kind: "openai",
+    label: "Groq — very fast, free tier (Llama / Qwen / GPT-OSS)",
+    keyName: "ru_groq_key",
+    keyPlaceholder: "gsk_… (console.groq.com/keys)",
+    signup: "console.groq.com/keys",
+    note: "Extremely fast inference with a generous free tier; OpenAI-compatible. Get a key at console.groq.com/keys. If you see a network/CORS error, switch to Google Gemini or OpenRouter, which work directly in the browser.",
+    endpoint: "https://api.groq.com/openai/v1/chat/completions",
+    modelsEndpoint: "https://api.groq.com/openai/v1/models",
+    fallbackModels: ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "qwen/qwen3-32b", "deepseek-r1-distill-llama-70b", "openai/gpt-oss-120b"],
+    authHeaders: (key) => ({ authorization: "Bearer " + key }),
+  },
   deepseek: {
     kind: "openai",
     label: "DeepSeek (direct)",
@@ -1935,7 +1947,7 @@ async function viewTutor() {
   const view = $("#view");
   view.innerHTML = "";
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🤖 AI Tutor"),
-    el("p", {}, "Chat with an AI Russian tutor — choose Google Gemini (works in the browser), OpenRouter (DeepSeek/Qwen), direct DeepSeek/Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
+    el("p", {}, "Chat with an AI Russian tutor — choose Google Gemini (works in the browser), Groq (fast & free), OpenRouter (DeepSeek/Qwen), direct DeepSeek/Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
   const stage = el("div", { class: "quiz-stage", style: "max-width:680px" });
   view.append(stage);
 
@@ -2083,6 +2095,16 @@ async function viewTutor() {
           const data = await r.json();
           const ids = (data.data || []).map((m) => m.id).filter((id) => /^(deepseek|qwen)\//.test(id));
           ids.sort((a, b) => (b.includes(":free") - a.includes(":free")) || a.localeCompare(b));
+          if (ids.length) setOptions(ids);
+        }
+      } catch { /* keep fallback list */ }
+    } else if (P.modelsEndpoint) {
+      // Authenticated live model list (Groq) — survives frequent model turnover.
+      try {
+        const r = await fetch(P.modelsEndpoint, { headers: P.authHeaders(provKey(provider)) });
+        if (r.ok) {
+          const data = await r.json();
+          const ids = (data.data || []).map((m) => m.id).filter((id) => !/whisper|tts|guard|embed|prompt/i.test(id)).sort();
           if (ids.length) setOptions(ids);
         }
       } catch { /* keep fallback list */ }
