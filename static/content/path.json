@@ -1,0 +1,80 @@
+{
+  "title": "Learning Path — Путь",
+  "description": "A guided journey from the alphabet to academic Russian. Finish each step to unlock the next — just like Duolingo. Your progress comes from your real work across the app.",
+  "units": [
+    {
+      "id": "u1", "title": "Unit 1 — Foundations", "subtitle": "The Cyrillic alphabet & first sounds", "color": "#4f8cff",
+      "nodes": [
+        { "id": "n1", "kind": "lesson", "section": "alphabet", "unit": "cyrillic-overview", "label": "The alphabet" },
+        { "id": "n2", "kind": "lesson", "section": "alphabet", "unit": "vowel-pairs", "label": "Vowel pairs" },
+        { "id": "n3", "kind": "flashcards", "deck": "core-survival", "label": "Survival words" },
+        { "id": "n4", "kind": "lesson", "section": "alphabet", "unit": "stress-reduction", "label": "Stress & reduction" },
+        { "id": "n5", "kind": "checkpoint", "label": "Checkpoint" }
+      ]
+    },
+    {
+      "id": "u2", "title": "Unit 2 — First words", "subtitle": "Greetings, nouns & the nominative", "color": "#36c98a",
+      "nodes": [
+        { "id": "n6", "kind": "lesson", "section": "alphabet", "unit": "consonant-rules", "label": "Consonant rules" },
+        { "id": "n7", "kind": "lesson", "section": "conversations", "unit": "greetings-introductions", "label": "Greetings" },
+        { "id": "n8", "kind": "flashcards", "deck": "everyday-verbs", "label": "Everyday verbs" },
+        { "id": "n9", "kind": "lesson", "section": "grammar", "unit": "nouns-gender-declension-classes", "label": "Noun gender" },
+        { "id": "n10", "kind": "cases", "case": "nominative", "label": "Nominative drill" },
+        { "id": "n11", "kind": "checkpoint", "label": "Checkpoint" }
+      ]
+    },
+    {
+      "id": "u3", "title": "Unit 3 — Cases I", "subtitle": "Accusative & genitive in context", "color": "#f5a623",
+      "nodes": [
+        { "id": "n12", "kind": "lesson", "section": "grammar", "unit": "case-system-overview", "label": "Case system" },
+        { "id": "n13", "kind": "lesson", "section": "grammar", "unit": "nominative-accusative", "label": "Accusative" },
+        { "id": "n14", "kind": "cases", "case": "accusative", "label": "Accusative drill" },
+        { "id": "n15", "kind": "lesson", "section": "grammar", "unit": "genitive", "label": "Genitive" },
+        { "id": "n16", "kind": "cases", "case": "genitive", "label": "Genitive drill" },
+        { "id": "n17", "kind": "flashcards", "deck": "people-society", "label": "People & society" },
+        { "id": "n18", "kind": "exam", "level": "A1", "label": "A1 exam" },
+        { "id": "n19", "kind": "checkpoint", "label": "Checkpoint" }
+      ]
+    },
+    {
+      "id": "u4", "title": "Unit 4 — Cases II", "subtitle": "Dative, instrumental & prepositional", "color": "#a855f7",
+      "nodes": [
+        { "id": "n20", "kind": "lesson", "section": "grammar", "unit": "dative", "label": "Dative" },
+        { "id": "n21", "kind": "cases", "case": "dative", "label": "Dative drill" },
+        { "id": "n22", "kind": "lesson", "section": "grammar", "unit": "instrumental", "label": "Instrumental" },
+        { "id": "n23", "kind": "cases", "case": "instrumental", "label": "Instrumental drill" },
+        { "id": "n24", "kind": "lesson", "section": "grammar", "unit": "prepositional", "label": "Prepositional" },
+        { "id": "n25", "kind": "cases", "case": "prepositional", "label": "Prepositional drill" },
+        { "id": "n26", "kind": "flashcards", "deck": "time-numbers", "label": "Time & numbers" },
+        { "id": "n27", "kind": "lesson", "section": "conversations", "unit": "small-talk", "label": "Small talk" },
+        { "id": "n28", "kind": "exam", "level": "A2", "label": "A2 exam" },
+        { "id": "n29", "kind": "checkpoint", "label": "Checkpoint" }
+      ]
+    },
+    {
+      "id": "u5", "title": "Unit 5 — Verbs & speech", "subtitle": "Aspect, tenses & describing things", "color": "#ff5a6e",
+      "nodes": [
+        { "id": "n30", "kind": "lesson", "section": "grammar", "unit": "verb-basics-aspect-conjugation", "label": "Verb aspect" },
+        { "id": "n31", "kind": "lesson", "section": "grammar", "unit": "past-future-tenses", "label": "Past & future" },
+        { "id": "n32", "kind": "flashcards", "deck": "describing-things", "label": "Describing things" },
+        { "id": "n33", "kind": "lesson", "section": "grammar", "unit": "adjectives", "label": "Adjectives" },
+        { "id": "n34", "kind": "lesson", "section": "conversations", "unit": "at-the-university", "label": "At the university" },
+        { "id": "n35", "kind": "exam", "level": "B1", "label": "B1 exam" },
+        { "id": "n36", "kind": "checkpoint", "label": "Checkpoint" }
+      ]
+    },
+    {
+      "id": "u6", "title": "Unit 6 — Academic Russian", "subtitle": "Scholarly style toward C1", "color": "#14b8a6",
+      "nodes": [
+        { "id": "n37", "kind": "lesson", "section": "grammar", "unit": "participles-gerunds-syntax", "label": "Participles" },
+        { "id": "n38", "kind": "lesson", "section": "academic", "unit": "register-and-style", "label": "Academic style" },
+        { "id": "n39", "kind": "flashcards", "deck": "university-research", "label": "Research words" },
+        { "id": "n40", "kind": "lesson", "section": "academic", "unit": "structuring-a-paper", "label": "Structuring a paper" },
+        { "id": "n41", "kind": "lesson", "section": "conversations", "unit": "meeting-supervisor", "label": "Meeting a supervisor" },
+        { "id": "n42", "kind": "exam", "level": "B2", "label": "B2 exam" },
+        { "id": "n43", "kind": "exam", "level": "C1", "label": "C1 exam" },
+        { "id": "n44", "kind": "checkpoint", "label": "Master!" }
+      ]
+    }
+  ]
+}

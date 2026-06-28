@@ -396,7 +396,7 @@ function renderUnit(unit, sectionId) {
 }
 
 /* ---------------- views ---------------- */
-async function viewSection(section) {
+async function viewSection(section, focusUnit) {
   const data = await loadContent(section);
   const view = $("#view");
   view.innerHTML = "";
@@ -411,6 +411,17 @@ async function viewSection(section) {
     return;
   }
   units.forEach((u) => view.append(renderUnit(u, section)));
+  // Deep-link from the Learning Path: scroll to and highlight a specific unit.
+  if (focusUnit) {
+    const target = document.getElementById("u-" + focusUnit);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.classList.add("unit-focus");
+        setTimeout(() => target.classList.remove("unit-focus"), 2200);
+      }, 60);
+    }
+  }
 }
 
 async function viewDashboard() {
@@ -422,8 +433,22 @@ async function viewDashboard() {
       el("p", {}, "Your path to academic-level Russian — from the alphabet to scholarly writing. Pick up where you left off, or review your flashcards below."))
   );
 
+  // Learning-path banner — Duolingo-style next-step CTA.
+  try {
+    const ps = await pathState();
+    const next = ps.currentIdx >= 0 ? ps.flat[ps.currentIdx] : null;
+    const pct = ps.totalSteps ? Math.round((ps.doneCount / ps.totalSteps) * 100) : 0;
+    view.append(el("a", { class: "path-banner", href: "#/path" },
+      el("div", { class: "pb-left" },
+        el("div", { class: "pb-ico" }, "🗺️"),
+        el("div", {},
+          el("div", { class: "pb-title" }, next ? "Continue your path" : (pct >= 100 ? "Path complete! 🎉" : "Start your path")),
+          el("div", { class: "pb-sub" }, next ? `Next: ${next.unit.title.split("—").pop().trim()} · ${next.n.label}` : `${ps.doneCount}/${ps.totalSteps} steps done`))),
+      el("div", { class: "pb-ring", style: `--p:${pct}` }, el("span", {}, pct + "%"))));
+  } catch { /* path optional */ }
+
   const last = localStorage.getItem("ru_last_route");
-  if (last && last !== "#/") {
+  if (last && last !== "#/" && last !== "#/path") {
     view.append(el("a", { class: "resume-btn", href: last }, "▶ Continue where you left off — " + routeLabel(last)));
   }
 
@@ -1110,6 +1135,98 @@ async function viewExam() {
   }
 }
 
+/* ---------------- learning path (Duolingo-style) ---------------- */
+const NODE_ICON = { lesson: "📖", flashcards: "🃏", cases: "🧩", exam: "🎓", checkpoint: "🏆" };
+const NODE_ROUTE = {
+  lesson: (n) => `#/section/${n.section}/${n.unit}`,
+  flashcards: () => "#/flashcards",
+  cases: () => "#/cases",
+  exam: () => "#/exam",
+  checkpoint: () => null,
+};
+
+// Shared path computation: gating + done-state from real progress signals.
+async function pathState() {
+  const data = await loadContent("path");
+  const completed = (Store.loadProg().completed) || {};
+  const exam = (() => { try { return JSON.parse(localStorage.getItem("ru_exam")) || {}; } catch { return {}; } })();
+  const deckStats = {};
+  (await srsDecks()).forEach((d) => (deckStats[d.deck] = d));
+  const isDone = (n) => {
+    switch (n.kind) {
+      case "lesson": return !!completed[`${n.section}:${n.unit}`];
+      case "flashcards": { const d = deckStats[n.deck]; return d && d.total ? d.started / d.total >= 0.6 : false; }
+      case "cases": return (Cases.mastery(n.case) || 0) >= 60;
+      case "exam": return (exam[n.level] || 0) >= 60;
+      default: return false;
+    }
+  };
+  const flat = [];
+  data.units.forEach((u) => u.nodes.forEach((n) => flat.push({ n, unit: u })));
+  let runningAllDone = true;
+  flat.forEach((row) => {
+    row.done = row.n.kind === "checkpoint" ? runningAllDone : isDone(row.n);
+    if (!row.done) runningAllDone = false;
+  });
+  flat.forEach((row, i) => { row.unlocked = i === 0 || flat[i - 1].done || row.done; });
+  const currentIdx = flat.findIndex((r) => r.unlocked && !r.done);
+  const doneCount = flat.filter((r) => r.n.kind !== "checkpoint" && r.done).length;
+  const totalSteps = flat.filter((r) => r.n.kind !== "checkpoint").length;
+  return { units: data.units, flat, currentIdx, doneCount, totalSteps };
+}
+
+async function viewPath() {
+  const view = $("#view");
+  view.innerHTML = "";
+  const { units, flat, currentIdx, doneCount, totalSteps } = await pathState();
+
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🗺️ Learning Path"),
+    el("p", {}, "Follow the path from the alphabet to academic Russian. Finish each step to light up the next. Progress reflects your real work across the app.")));
+
+  // overall progress bar
+  const pct = totalSteps ? Math.round((doneCount / totalSteps) * 100) : 0;
+  view.append(el("div", { class: "path-progress" },
+    el("div", { class: "pp-bar" }, el("i", { style: `width:${pct}%` })),
+    el("div", { class: "pp-label" }, `${doneCount} / ${totalSteps} steps · ${pct}%`)));
+
+  const wrap = el("div", { class: "path-wrap" });
+  let gi = -1; // global node index across units
+  units.forEach((u) => {
+    const unitDone = u.nodes.every((nn) => flat[flat.findIndex((f) => f.n === nn)].done);
+    const banner = el("div", { class: "path-unit-banner" + (unitDone ? " done" : ""), style: `--uc:${u.color}` },
+      el("div", { class: "pub-title" }, u.title),
+      el("div", { class: "pub-sub" }, u.subtitle));
+    wrap.append(banner);
+    const track = el("div", { class: "path-track" });
+    u.nodes.forEach((n, idxInUnit) => {
+      gi++;
+      const row = flat[gi];
+      const isCurrent = gi === currentIdx;
+      const state = row.done ? "done" : row.unlocked ? (isCurrent ? "current" : "open") : "locked";
+      // zigzag offset for the winding-path look
+      const off = [0, 1, 2, 1, -1, -2, -1][idxInUnit % 7];
+      const node = el("button", {
+        class: `path-node ${state} kind-${n.kind}`,
+        style: `--uc:${u.color}; --off:${off}`,
+        title: n.label + (state === "locked" ? " (locked)" : ""),
+      },
+        el("span", { class: "pn-ico" }, row.done ? (n.kind === "checkpoint" ? "🏆" : "✓") : state === "locked" ? "🔒" : NODE_ICON[n.kind]),
+        isCurrent ? el("span", { class: "pn-start" }, "START") : null);
+      const label = el("div", { class: "pn-label" }, n.label);
+      const cell = el("div", { class: "path-cell", style: `--off:${off}` }, node, label);
+      node.addEventListener("click", () => {
+        if (state === "locked") { showToast("🔒 Locked", "Finish the step before it first"); return; }
+        const r = NODE_ROUTE[n.kind] && NODE_ROUTE[n.kind](n);
+        if (r) location.hash = r;
+        else showToast("🏆 Checkpoint", row.done ? "Unit complete — great work!" : "Finish this unit's steps to claim it");
+      });
+      track.append(cell);
+    });
+    wrap.append(track);
+  });
+  view.append(wrap);
+}
+
 /* ---------------- cases trainer ---------------- */
 const Cases = {
   KEY: "ru_cases_v1",
@@ -1609,6 +1726,7 @@ function renderNav() {
   };
 
   add("#/", "🏠", "Dashboard");
+  add("#/path", "🗺️", "Learning Path");
   add("#/search", "🔍", "Search");
   add("#/favorites", "⭐", "Favorites");
   nav.append(el("div", { class: "nav-sep" }, "Learn"));
@@ -1626,7 +1744,7 @@ function renderNav() {
 
 // Human-readable label for a route hash (used by the dashboard "Continue" button).
 function routeLabel(hash) {
-  const map = { "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
+  const map = { "#/path": "Learning Path", "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
   if (map[hash]) return map[hash];
   if (hash.startsWith("#/section/")) {
     const id = hash.split("/")[2];
@@ -1642,7 +1760,8 @@ async function router() {
   view.innerHTML = '<div class="loading">Loading…</div>';
   try {
     if (hash === "#/" || hash === "") await viewDashboard();
-    else if (hash.startsWith("#/section/")) await viewSection(hash.split("/")[2]);
+    else if (hash === "#/path") await viewPath();
+    else if (hash.startsWith("#/section/")) await viewSection(hash.split("/")[2], hash.split("/")[3]);
     else if (hash === "#/flashcards") await viewFlashcards();
     else if (hash === "#/practice") await viewPractice();
     else if (hash === "#/cases") await viewCases();
