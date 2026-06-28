@@ -214,8 +214,8 @@ const Gamify = {
   KEY: "ru_gamify_v1",
   DAILY_GOAL: 40,
   load() {
-    const def = { xp: 0, streak: 0, longest: 0, lastDay: "", todayDay: "", todayXp: 0, badges: [] };
-    try { return Object.assign(def, JSON.parse(localStorage.getItem(this.KEY)) || {}); } catch { return def; }
+    const def = { xp: 0, streak: 0, longest: 0, lastDay: "", todayDay: "", todayXp: 0, badges: [], history: {} };
+    try { const s = Object.assign(def, JSON.parse(localStorage.getItem(this.KEY)) || {}); s.history = s.history || {}; return s; } catch { return def; }
   },
   save(s) { localStorage.setItem(this.KEY, JSON.stringify(s)); },
   level(xp) {
@@ -237,6 +237,11 @@ const Gamify = {
     }
     s.xp += amount; s.todayXp += amount;
     s.longest = Math.max(s.longest || 0, s.streak);
+    // Per-day XP log for the analytics calendar/trend; keep ~140 days.
+    s.history = s.history || {};
+    s.history[today] = (s.history[today] || 0) + amount;
+    const cutoff = addDaysStr(-140);
+    Object.keys(s.history).forEach((d) => { if (d < cutoff) delete s.history[d]; });
     const prog = Store.loadProg();
     const earned = BADGES.filter((b) => !s.badges.includes(b.id) && b.test(s, prog));
     earned.forEach((b) => s.badges.push(b.id));
@@ -603,6 +608,181 @@ async function countAllUnits() {
     n += (data.units || []).length;
   }
   return n;
+}
+
+/* ---------------- analytics / progress dashboard ---------------- */
+const CASE_NAMES = { nominative: "Nominative", genitive: "Genitive", dative: "Dative", accusative: "Accusative", instrumental: "Instrumental", prepositional: "Prepositional" };
+
+// Mutually-exclusive flashcard memory buckets + due-today count.
+async function analyticsSrs() {
+  const cards = await masterCards();
+  const srs = Store.loadSrs();
+  const today = todayStr();
+  let fresh = 0, learning = 0, mature = 0, due = 0;
+  cards.forEach((c) => {
+    const st = cardState(srs, c.id);
+    const reps = st.reps || 0, interval = st.interval || 0;
+    if (reps === 0) fresh++;
+    else if (interval >= 21) mature++;
+    else learning++;
+    if (reps > 0 && st.due <= today) due++;
+  });
+  return { total: cards.length, fresh, learning, mature, due };
+}
+
+function buildCalendar(history, weeks) {
+  const today = todayStr();
+  const td = new Date(today + "T00:00:00");
+  const dow = (td.getDay() + 6) % 7; // 0 = Monday
+  const startMon = new Date(td);
+  startMon.setDate(td.getDate() - dow - (weeks - 1) * 7);
+  const cols = [];
+  for (let w = 0; w < weeks; w++) {
+    const col = [];
+    for (let d = 0; d < 7; d++) {
+      const cur = new Date(startMon);
+      cur.setDate(startMon.getDate() + w * 7 + d);
+      const ds = new Date(cur.getTime() - cur.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+      col.push(ds > today ? null : { date: ds, xp: history[ds] || 0 });
+    }
+    cols.push(col);
+  }
+  return cols;
+}
+const xpTier = (xp) => (!xp ? 0 : xp < 10 ? 1 : xp < 30 ? 2 : xp < 60 ? 3 : 4);
+
+function exportProgress() {
+  const dump = {};
+  Object.keys(localStorage).filter((k) => k.startsWith("ru_")).forEach((k) => {
+    try { dump[k] = JSON.parse(localStorage.getItem(k)); } catch { dump[k] = localStorage.getItem(k); }
+  });
+  const blob = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), app: "Русский от А до Я", data: dump }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = el("a", { href: url, download: "russian-progress.json" });
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast("📥 Exported", "russian-progress.json");
+}
+
+async function viewStats() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "📊 Progress & Analytics"),
+    el("p", {}, "Your learning at a glance — all computed on this device from your own activity. Nothing leaves your phone.")));
+
+  const g = Gamify.stats();
+  const prog = Store.loadProg();
+  const lessonsDone = Object.keys(prog.completed || {}).length;
+  const activeDays = Object.keys(g.history || {}).filter((d) => g.history[d] > 0).length;
+  const srs = await analyticsSrs();
+  const favs = Favs.load().length;
+  const cstore = Cases.load();
+  const exam = (() => { try { return JSON.parse(localStorage.getItem("ru_exam")) || {}; } catch { return {}; } })();
+  const ps = await pathState().catch(() => null);
+
+  // ---- recommended next step ----
+  let rec;
+  if (srs.due > 0) rec = { icon: "🃏", title: `Review ${srs.due} card${srs.due > 1 ? "s" : ""} due today`, sub: "Spaced repetition keeps them in long-term memory", href: "#/flashcards" };
+  if (!rec) {
+    const weak = Object.keys(CASE_NAMES).map((id) => ({ id, m: Cases.mastery(id) })).filter((x) => x.m === null || x.m < 60).sort((a, b) => (a.m ?? -1) - (b.m ?? -1))[0];
+    if (weak) rec = { icon: "🧩", title: `Practise the ${CASE_NAMES[weak.id]} case`, sub: weak.m === null ? "You haven't started this case yet" : `Currently ${weak.m}% mastery — aim for 60%+`, href: "#/cases" };
+  }
+  if (!rec && ps && ps.currentIdx >= 0) { const n = ps.flat[ps.currentIdx]; rec = { icon: "🗺️", title: `Continue the path: ${n.n.label}`, sub: n.unit.title.split("—").pop().trim(), href: "#/path" }; }
+  if (!rec) { const lvl = ["A1","A2","B1","B2","C1","C2"].find((l) => (exam[l] || 0) < 80); rec = lvl ? { icon: "🎓", title: `Take the ${lvl} exam`, sub: exam[lvl] ? `Best so far ${exam[lvl]}% — beat it!` : "Test yourself at this level", href: "#/exam" } : { icon: "🎉", title: "You're flying — keep the streak alive!", sub: "Everything's on track", href: "#/path" }; }
+  view.append(el("a", { class: "rec-card", href: rec.href },
+    el("div", { class: "rec-ico" }, rec.icon),
+    el("div", { class: "rec-body" }, el("div", { class: "rec-k" }, "Recommended next step"), el("div", { class: "rec-t" }, rec.title), el("div", { class: "rec-s" }, rec.sub)),
+    el("div", { class: "rec-go" }, "Go →")));
+
+  // ---- headline stats ----
+  view.append(el("div", { class: "stat-grid" },
+    statBox("Lv " + g.level, "Level · " + g.xp + " XP", "accent"),
+    statBox(activeDays, "Active days", "green"),
+    statBox(g.streak, "Current streak", ""),
+    statBox(Math.max(g.longest || 0, g.streak), "Best streak", ""),
+    statBox(lessonsDone, "Lessons done", "accent"),
+    statBox(srs.mature, "Words mastered", "green"),
+    statBox(prog.reviews || 0, "Total reviews", ""),
+    statBox(favs, "Favorites", "red")));
+
+  // ---- XP last 14 days ----
+  const hist = g.history || {};
+  const days14 = []; for (let i = 13; i >= 0; i--) { const ds = addDaysStr(-i); days14.push({ ds, xp: hist[ds] || 0 }); }
+  const maxXp = Math.max(1, ...days14.map((d) => d.xp));
+  const bars = el("div", { class: "xp-bars" });
+  days14.forEach((d) => {
+    const h = Math.round((d.xp / maxXp) * 100);
+    bars.append(el("div", { class: "xp-col", title: `${d.ds}: ${d.xp} XP` },
+      el("div", { class: "xp-bar-wrap" }, el("i", { class: d.xp ? "" : "empty", style: `height:${Math.max(d.xp ? 6 : 2, h)}%` })),
+      el("span", { class: "xp-day" }, d.ds.slice(8))));
+  });
+  view.append(el("section", { class: "unit" }, el("h2", {}, "XP — last 14 days"), bars));
+
+  // ---- study calendar heatmap ----
+  const cal = buildCalendar(hist, 13);
+  const heat = el("div", { class: "heatmap" });
+  cal.forEach((col) => {
+    const c = el("div", { class: "heat-col" });
+    col.forEach((cell) => c.append(el("div", { class: "heat-cell t" + (cell ? xpTier(cell.xp) : 0) + (cell ? "" : " blank"), title: cell ? `${cell.date}: ${cell.xp} XP` : "" })));
+    heat.append(c);
+  });
+  view.append(el("section", { class: "unit" },
+    el("h2", {}, "Study calendar"),
+    el("p", { class: "summary gloss-en", style: "margin-bottom:10px" }, "Each square is a day in the last 13 weeks; greener = more XP earned."),
+    heat,
+    el("div", { class: "heat-legend" }, "less ", el("span", { class: "heat-cell t0" }), el("span", { class: "heat-cell t1" }), el("span", { class: "heat-cell t2" }), el("span", { class: "heat-cell t3" }), el("span", { class: "heat-cell t4" }), " more")));
+
+  // ---- cases accuracy (weakest first) ----
+  const caseRows = Object.keys(CASE_NAMES).map((id) => {
+    const m = cstore[id]; const total = m ? m.total : 0; const acc = total ? Math.round((m.correct / total) * 100) : null;
+    return { id, name: CASE_NAMES[id], total, acc };
+  }).sort((a, b) => (a.acc ?? -1) - (b.acc ?? -1));
+  const casePanel = el("section", { class: "unit" }, el("h2", {}, "Case accuracy (weakest first)"));
+  caseRows.forEach((r) => {
+    const pct = r.acc ?? 0;
+    casePanel.append(el("div", { class: "acc-row" },
+      el("div", { class: "acc-name" }, r.name),
+      el("div", { class: "acc-bar" }, el("i", { class: r.acc === null ? "none" : pct < 60 ? "low" : pct < 80 ? "mid" : "high", style: `width:${r.acc === null ? 0 : pct}%` })),
+      el("div", { class: "acc-val" }, r.acc === null ? "—" : pct + "%"),
+      el("div", { class: "acc-n" }, r.total ? r.total + " tries" : "not started")));
+  });
+  casePanel.append(el("a", { class: "resume-btn", href: "#/cases", style: "margin-top:8px" }, "🧩 Train cases"));
+  view.append(casePanel);
+
+  // ---- flashcard memory breakdown ----
+  const segs = [["New", srs.fresh, "seg-new"], ["Learning", srs.learning, "seg-learn"], ["Mature", srs.mature, "seg-mature"]];
+  const tot = Math.max(1, srs.total);
+  const segbar = el("div", { class: "seg-bar" });
+  segs.forEach(([lbl, n, cls]) => { if (n) segbar.append(el("div", { class: "seg " + cls, style: `flex:${n}`, title: `${lbl}: ${n}` })); });
+  view.append(el("section", { class: "unit" },
+    el("h2", {}, "Flashcard memory — " + srs.total + " words"),
+    segbar,
+    el("div", { class: "seg-legend" },
+      el("span", {}, el("i", { class: "dot seg-new" }), ` New ${srs.fresh}`),
+      el("span", {}, el("i", { class: "dot seg-learn" }), ` Learning ${srs.learning}`),
+      el("span", {}, el("i", { class: "dot seg-mature" }), ` Mature ${srs.mature}`),
+      el("span", {}, `🔔 ${srs.due} due now`))));
+
+  // ---- exam scores ----
+  const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  const examPanel = el("section", { class: "unit" }, el("h2", {}, "CEFR exam best scores"));
+  levels.forEach((l) => {
+    const best = exam[l] || 0;
+    examPanel.append(el("div", { class: "acc-row" },
+      el("div", { class: "acc-name" }, l),
+      el("div", { class: "acc-bar" }, el("i", { class: best === 0 ? "none" : best < 60 ? "low" : best < 80 ? "mid" : "high", style: `width:${best}%` })),
+      el("div", { class: "acc-val" }, best ? best + "%" : "—")));
+  });
+  examPanel.append(el("a", { class: "resume-btn", href: "#/exam", style: "margin-top:8px" }, "🎓 Take an exam"));
+  view.append(examPanel);
+
+  // ---- export ----
+  const exp = el("button", { class: "ghost-btn", style: "width:auto;padding:11px 18px" }, "📥 Export my progress (JSON)");
+  exp.addEventListener("click", exportProgress);
+  view.append(el("section", { class: "unit" },
+    el("h2", {}, "Your data"),
+    el("p", { class: "summary gloss-en", style: "margin-bottom:12px" }, "Everything here lives only in this browser. Export a backup you can keep or move to another device."),
+    exp));
 }
 
 /* ---------------- flashcards ---------------- */
@@ -1856,6 +2036,7 @@ function renderNav() {
 
   add("#/", "🏠", "Dashboard");
   add("#/path", "🗺️", "Learning Path");
+  add("#/stats", "📊", "Progress");
   add("#/search", "🔍", "Search");
   add("#/favorites", "⭐", "Favorites");
   nav.append(el("div", { class: "nav-sep" }, "Learn"));
@@ -1873,7 +2054,7 @@ function renderNav() {
 
 // Human-readable label for a route hash (used by the dashboard "Continue" button).
 function routeLabel(hash) {
-  const map = { "#/path": "Learning Path", "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
+  const map = { "#/path": "Learning Path", "#/stats": "Progress", "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/cases": "Cases trainer", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
   if (map[hash]) return map[hash];
   if (hash.startsWith("#/section/")) {
     const id = hash.split("/")[2];
@@ -1890,6 +2071,7 @@ async function router() {
   try {
     if (hash === "#/" || hash === "") await viewDashboard();
     else if (hash === "#/path") await viewPath();
+    else if (hash === "#/stats") await viewStats();
     else if (hash.startsWith("#/section/")) await viewSection(hash.split("/")[2], hash.split("/")[3]);
     else if (hash === "#/flashcards") await viewFlashcards();
     else if (hash === "#/practice") await viewPractice();
