@@ -982,16 +982,21 @@ async function viewTutor() {
       input.value = "";
       bubble("user", el("div", {}, text));
       history.push({ role: "user", content: text });
-      const thinking = bubble("bot", el("div", { class: "muted" }, "…"));
+      const botContent = el("div", { class: "muted" }, "…");
+      bubble("bot", botContent);
       send.disabled = true;
+      const paint = (t) => { botContent.className = ""; botContent.innerHTML = ""; botContent.append(renderTutorReply(t)); log.scrollTop = log.scrollHeight; };
       try {
-        const reply = await callTutor(modelSel.value, history);
+        const reply = await callTutor(modelSel.value, history, paint);
         history.push({ role: "assistant", content: reply });
-        thinking.innerHTML = "";
-        thinking.append(renderTutorReply(reply));
+        paint(reply);
+        // auto-speak the Russian line of the reply
+        const ruLine = reply.split("\n").find((l) => /[Ѐ-ӿ]/.test(l) && !/^\s*(EN:|AR:|Поправка)/i.test(l));
+        if (ruLine) speak(ruLine);
       } catch (e) {
-        thinking.innerHTML = "";
-        thinking.append(el("div", { class: "bad" }, "Error: " + e.message + (String(e.message).includes("401") ? " — check your API key." : "")));
+        botContent.className = "";
+        botContent.innerHTML = "";
+        botContent.append(el("div", { class: "bad" }, "Error: " + e.message + (String(e.message).includes("401") ? " — check your API key." : "")));
       } finally {
         send.disabled = false;
         log.scrollTop = log.scrollHeight;
@@ -1013,7 +1018,7 @@ async function viewTutor() {
     return wrap;
   }
 
-  async function callTutor(model, messages) {
+  async function callTutor(model, messages, onToken) {
     const system =
       "You are a warm, encouraging Russian language tutor for a learner whose native language is Arabic and who also knows English. " +
       "Keep the conversation going in SIMPLE Russian suited to the learner's level. Reply in this format every time:\n" +
@@ -1027,15 +1032,39 @@ async function viewTutor() {
         "anthropic-version": "2023-06-01",
         "anthropic-dangerous-direct-browser-access": "true",
       },
-      body: JSON.stringify({ model, max_tokens: 1024, system, messages }),
+      body: JSON.stringify({ model, max_tokens: 1024, system, messages, stream: true }),
     });
-    if (!res.ok) {
+    if (!res.ok || !res.body) {
       let msg = res.status + " " + res.statusText;
       try { const j = await res.json(); if (j.error?.message) msg = res.status + " " + j.error.message; } catch {}
       throw new Error(msg);
     }
-    const data = await res.json();
-    return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n").trim() || "(no reply)";
+    // Parse the Anthropic SSE stream, accumulating text deltas.
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = "", full = "";
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      let nl;
+      while ((nl = buf.indexOf("\n")) >= 0) {
+        const line = buf.slice(0, nl).trim();
+        buf = buf.slice(nl + 1);
+        if (!line.startsWith("data:")) continue;
+        const data = line.slice(5).trim();
+        if (!data || data === "[DONE]") continue;
+        let ev;
+        try { ev = JSON.parse(data); } catch { continue; }
+        if (ev.type === "content_block_delta" && ev.delta && ev.delta.type === "text_delta") {
+          full += ev.delta.text;
+          if (onToken) onToken(full);
+        } else if (ev.type === "error") {
+          throw new Error((ev.error && ev.error.message) || "stream error");
+        }
+      }
+    }
+    return full.trim() || "(no reply)";
   }
 }
 
