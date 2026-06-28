@@ -910,36 +910,71 @@ async function viewExam() {
 }
 
 /* ---------------- AI conversation tutor ---------------- */
-const TUTOR_MODELS = [
-  { id: "claude-haiku-4-5", label: "Haiku — cheapest, fast" },
-  { id: "claude-sonnet-4-6", label: "Sonnet — balanced" },
-  { id: "claude-opus-4-8", label: "Opus — most capable" },
-];
-function tutorKey() { return localStorage.getItem("ru_anthropic_key") || ""; }
+const TUTOR_SYSTEM =
+  "You are a warm, encouraging Russian language tutor for a learner whose native language is Arabic and who also knows English. " +
+  "Keep the conversation going in SIMPLE Russian suited to the learner's level. Reply in this format every time:\n" +
+  "1) Your reply in Russian (short, natural).\n2) A line starting 'EN:' with an English translation.\n3) A line starting 'AR:' with an Arabic translation.\n" +
+  "If the learner made a mistake, gently correct it on a line starting 'Поправка:' (with the fix in Russian + a short English note). Always end with a simple question to keep the chat going.";
+
+const PROVIDERS = {
+  openrouter: {
+    label: "OpenRouter — DeepSeek / Qwen / more",
+    keyName: "ru_openrouter_key",
+    keyPlaceholder: "sk-or-…",
+    signup: "openrouter.ai/keys",
+    note: "One key unlocks DeepSeek, Qwen and many other models — several are free. It is stored only in this browser and sent directly to OpenRouter.",
+    fallbackModels: ["deepseek/deepseek-r1:free", "deepseek/deepseek-chat", "qwen/qwen-2.5-72b-instruct"],
+  },
+  anthropic: {
+    label: "Claude (Anthropic)",
+    keyName: "ru_anthropic_key",
+    keyPlaceholder: "sk-ant-…",
+    signup: "console.anthropic.com",
+    note: "High quality but paid per message. It is stored only in this browser and sent directly to Anthropic.",
+    fallbackModels: ["claude-haiku-4-5", "claude-sonnet-4-6", "claude-opus-4-8"],
+  },
+};
+const provKey = (p) => localStorage.getItem(PROVIDERS[p].keyName) || "";
+function curProvider() { return PROVIDERS[localStorage.getItem("ru_tutor_provider")] ? localStorage.getItem("ru_tutor_provider") : "openrouter"; }
 
 async function viewTutor() {
   const view = $("#view");
   view.innerHTML = "";
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🤖 AI Tutor"),
-    el("p", {}, "Chat with an AI Russian tutor that replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own Anthropic API key — messages go to Anthropic and the key stays only on this device.")));
+    el("p", {}, "Chat with an AI Russian tutor — choose DeepSeek, Qwen or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
   const stage = el("div", { class: "quiz-stage", style: "max-width:680px" });
   view.append(stage);
 
-  if (!tutorKey()) { renderKeyForm(); return; }
-  renderChat();
+  let provider = curProvider();
+  render();
+
+  function render() {
+    provider = curProvider();
+    if (provKey(provider)) renderChat(); else renderKeyForm();
+  }
+
+  function providerPicker(onChange) {
+    const sel = el("select", { class: "dropdown" });
+    Object.entries(PROVIDERS).forEach(([id, p]) => sel.append(el("option", { value: id }, p.label)));
+    sel.value = provider;
+    sel.addEventListener("change", () => { localStorage.setItem("ru_tutor_provider", sel.value); onChange(sel.value); });
+    return sel;
+  }
 
   function renderKeyForm() {
     stage.innerHTML = "";
+    const P = PROVIDERS[provider];
     const card = el("div", { class: "quiz-card" });
-    card.append(el("h2", { style: "font-family:'PT Serif',serif;margin-top:0" }, "Connect your Anthropic key"));
-    card.append(el("p", { class: "prose" }, "Get a key at console.anthropic.com (you pay Anthropic per use — typically a fraction of a cent per message on Haiku). It is stored only in this browser and sent directly to Anthropic."));
-    const input = el("input", { class: "text-input", type: "password", placeholder: "sk-ant-…", style: "font-family:monospace;font-size:15px" });
+    card.append(el("div", { class: "toolbar" }, el("span", { style: "color:var(--muted)" }, "Provider:"), providerPicker(() => render())));
+    card.append(el("h2", { style: "font-family:'PT Serif',serif;margin-top:6px" }, "Connect your " + P.label.split("—")[0].trim() + " key"));
+    card.append(el("p", { class: "prose" }, "Get a free key at " + P.signup + ". " + P.note));
+    const input = el("input", { class: "text-input", type: "password", placeholder: P.keyPlaceholder, style: "font-family:monospace;font-size:15px" });
     const save = el("button", { class: "btn primary", style: "margin-top:12px" }, "Save key & start");
     save.addEventListener("click", () => {
       const v = input.value.trim();
       if (!v) return;
-      localStorage.setItem("ru_anthropic_key", v);
-      renderChat();
+      localStorage.setItem(P.keyName, v);
+      render();
     });
     input.addEventListener("keydown", (e) => { if (e.key === "Enter") save.click(); });
     card.append(input, save);
@@ -951,12 +986,10 @@ async function viewTutor() {
     const history = []; // {role, content}
     const toolbar = el("div", { class: "toolbar" });
     const modelSel = el("select", { class: "dropdown" });
-    TUTOR_MODELS.forEach((m) => modelSel.append(el("option", { value: m.id }, m.label)));
-    modelSel.value = localStorage.getItem("ru_tutor_model") || "claude-haiku-4-5";
-    modelSel.addEventListener("change", () => localStorage.setItem("ru_tutor_model", modelSel.value));
+    populateModels(modelSel);
     const forget = el("button", { class: "ghost-btn", style: "width:auto;padding:9px 12px" }, "Change key");
-    forget.addEventListener("click", () => { localStorage.removeItem("ru_anthropic_key"); renderKeyForm(); });
-    toolbar.append(modelSel, forget);
+    forget.addEventListener("click", () => { localStorage.removeItem(PROVIDERS[provider].keyName); renderKeyForm(); });
+    toolbar.append(providerPicker(() => render()), modelSel, forget);
     stage.append(toolbar);
 
     const log = el("div", { class: "chat-log" });
@@ -987,7 +1020,7 @@ async function viewTutor() {
       send.disabled = true;
       const paint = (t) => { botContent.className = ""; botContent.innerHTML = ""; botContent.append(renderTutorReply(t)); log.scrollTop = log.scrollHeight; };
       try {
-        const reply = await callTutor(modelSel.value, history, paint);
+        const reply = await callTutor(provider, modelSel.value, history, paint);
         history.push({ role: "assistant", content: reply });
         paint(reply);
         // auto-speak the Russian line of the reply
@@ -1018,28 +1051,41 @@ async function viewTutor() {
     return wrap;
   }
 
-  async function callTutor(model, messages, onToken) {
-    const system =
-      "You are a warm, encouraging Russian language tutor for a learner whose native language is Arabic and who also knows English. " +
-      "Keep the conversation going in SIMPLE Russian suited to the learner's level. Reply in this format every time:\n" +
-      "1) Your reply in Russian (short, natural).\n2) A line starting 'EN:' with an English translation.\n3) A line starting 'AR:' with an Arabic translation.\n" +
-      "If the learner made a mistake, gently correct it on a line starting 'Поправка:' (with the fix in Russian + a short English note). Always end with a simple question to keep the chat going.";
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "x-api-key": tutorKey(),
-        "anthropic-version": "2023-06-01",
-        "anthropic-dangerous-direct-browser-access": "true",
-      },
-      body: JSON.stringify({ model, max_tokens: 1024, system, messages, stream: true }),
-    });
+  async function populateModels(sel) {
+    const P = PROVIDERS[provider];
+    const saved = localStorage.getItem("ru_tutor_model_" + provider);
+    const setOptions = (ids) => {
+      sel.innerHTML = "";
+      ids.forEach((id) => sel.append(el("option", { value: id }, id.includes(":free") ? id + "  (free)" : id)));
+      if (saved && ids.includes(saved)) sel.value = saved;
+    };
+    sel.addEventListener("change", () => localStorage.setItem("ru_tutor_model_" + provider, sel.value));
+    setOptions(P.fallbackModels);
+    if (provider === "openrouter") {
+      // Pull the live model list so DeepSeek/Qwen ids stay current; free models first.
+      try {
+        const r = await fetch("https://openrouter.ai/api/v1/models");
+        if (r.ok) {
+          const data = await r.json();
+          const ids = (data.data || []).map((m) => m.id).filter((id) => /^(deepseek|qwen)\//.test(id));
+          ids.sort((a, b) => (b.includes(":free") - a.includes(":free")) || a.localeCompare(b));
+          if (ids.length) setOptions(ids);
+        }
+      } catch { /* keep fallback list */ }
+    }
+  }
+
+  function callTutor(prov, model, messages, onToken) {
+    return prov === "anthropic" ? callAnthropic(model, messages, onToken) : callOpenRouter(model, messages, onToken);
+  }
+
+  // Shared SSE reader: `pick(ev)` returns the text delta for this provider, or null.
+  async function streamChat(res, pick, onToken) {
     if (!res.ok || !res.body) {
       let msg = res.status + " " + res.statusText;
       try { const j = await res.json(); if (j.error?.message) msg = res.status + " " + j.error.message; } catch {}
       throw new Error(msg);
     }
-    // Parse the Anthropic SSE stream, accumulating text deltas.
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
     let buf = "", full = "";
@@ -1056,15 +1102,43 @@ async function viewTutor() {
         if (!data || data === "[DONE]") continue;
         let ev;
         try { ev = JSON.parse(data); } catch { continue; }
-        if (ev.type === "content_block_delta" && ev.delta && ev.delta.type === "text_delta") {
-          full += ev.delta.text;
-          if (onToken) onToken(full);
-        } else if (ev.type === "error") {
-          throw new Error((ev.error && ev.error.message) || "stream error");
-        }
+        if (ev.error) throw new Error(ev.error.message || "stream error");
+        const delta = pick(ev);
+        if (delta) { full += delta; if (onToken) onToken(full); }
       }
     }
     return full.trim() || "(no reply)";
+  }
+
+  function callAnthropic(model, messages, onToken) {
+    return fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": provKey("anthropic"),
+        "anthropic-version": "2023-06-01",
+        "anthropic-dangerous-direct-browser-access": "true",
+      },
+      body: JSON.stringify({ model, max_tokens: 1024, system: TUTOR_SYSTEM, messages, stream: true }),
+    }).then((res) => streamChat(res,
+      (ev) => (ev.type === "content_block_delta" && ev.delta && ev.delta.type === "text_delta") ? ev.delta.text : null, onToken));
+  }
+
+  function callOpenRouter(model, messages, onToken) {
+    return fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "authorization": "Bearer " + provKey("openrouter"),
+        "HTTP-Referer": location.origin,
+        "X-Title": "Russian A to Z",
+      },
+      body: JSON.stringify({
+        model, stream: true, max_tokens: 1024,
+        messages: [{ role: "system", content: TUTOR_SYSTEM }, ...messages],
+      }),
+    }).then((res) => streamChat(res,
+      (ev) => (ev.choices && ev.choices[0] && ev.choices[0].delta) ? ev.choices[0].delta.content : null, onToken));
   }
 }
 
