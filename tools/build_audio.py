@@ -22,7 +22,10 @@ Recommended workflow (matches the brief)
   # 1. Get the manifest (no credentials needed) — hand the 'human' rows to actors
   python3 tools/build_audio.py --manifest-only
 
-  # 2. Bulk-generate the AI rows (vocabulary, examples, listening) with your key
+  # 2a. FREE, no API key — generate all Russian audio with gTTS (pip install gTTS)
+  python3 tools/build_audio.py --provider gtts
+
+  # 2b. ...or use a premium voice with your own key:
   GOOGLE_TTS_KEY=xxxx python3 tools/build_audio.py --provider google
   #   or: AZURE_TTS_KEY=xxx AZURE_TTS_REGION=eastus python3 tools/build_audio.py --provider azure
   #   or: ELEVEN_API_KEY=xxx python3 tools/build_audio.py --provider elevenlabs --voice <voice_id>
@@ -138,6 +141,8 @@ def reindex():
     os.makedirs(AUDIO_DIR, exist_ok=True)
     idx = {}
     for p in glob.glob(os.path.join(AUDIO_DIR, "*.mp3")):
+        if os.path.getsize(p) == 0:
+            continue  # ignore empty/aborted files
         h = os.path.splitext(os.path.basename(p))[0]
         idx[h] = "audio/%s.mp3" % h
     with open(os.path.join(AUDIO_DIR, "index.json"), "w", encoding="utf-8") as f:
@@ -183,9 +188,16 @@ def tts_eleven(text, voice, key):
     return r.content
 
 
+def tts_gtts(text, out_path):
+    """Free Google Translate TTS — no API key. pip install gTTS. Saves directly."""
+    from gtts import gTTS
+    gTTS(text=text, lang="ru", slow=False).save(out_path)
+
+
 def main():
     ap = argparse.ArgumentParser(description="Recording manifest + audio generator")
-    ap.add_argument("--provider", choices=["google", "azure", "elevenlabs"], help="TTS backend for AI rows")
+    ap.add_argument("--provider", choices=["gtts", "google", "azure", "elevenlabs"],
+                    help="TTS backend for AI rows ('gtts' = free, no key)")
     ap.add_argument("--voice", help="voice name/id (provider-specific)")
     ap.add_argument("--include-dialogues", action="store_true", help="also synthesize 'human' dialogue rows with the AI voice")
     ap.add_argument("--manifest-only", action="store_true", help="only write the CSV manifest, no synthesis")
@@ -207,40 +219,53 @@ def main():
         return
     if args.manifest_only or not args.provider:
         if not args.provider:
-            print("\n(no --provider given — wrote manifest only. Add --provider google|azure|elevenlabs to synthesize.)")
+            print("\n(no --provider given — wrote manifest only. Add --provider gtts (free) | google | azure | elevenlabs to synthesize.)")
         n = reindex()
         print("Index refreshed (%d files present)." % n)
         return
 
-    key = os.environ.get({"google": "GOOGLE_TTS_KEY", "azure": "AZURE_TTS_KEY", "elevenlabs": "ELEVEN_API_KEY"}[args.provider])
-    if not key:
-        sys.exit("Missing API key env var for provider '%s'." % args.provider)
+    KEYENV = {"google": "GOOGLE_TTS_KEY", "azure": "AZURE_TTS_KEY", "elevenlabs": "ELEVEN_API_KEY"}
+    key = os.environ.get(KEYENV.get(args.provider, ""), "")
+    if args.provider in KEYENV and not key:
+        sys.exit("Missing API key env var (%s) for provider '%s'." % (KEYENV[args.provider], args.provider))
     region = os.environ.get("AZURE_TTS_REGION", "eastus")
 
     os.makedirs(AUDIO_DIR, exist_ok=True)
     targets = [r for r in rows if r["source"] == "ai" or args.include_dialogues]
-    made = skipped = failed = 0
+    made = skipped = failed = processed = 0
     for r in targets:
-        if args.limit and made >= args.limit:
+        if args.limit and processed >= args.limit:
             break
         out = os.path.join(AUDIO_DIR, r["hash"] + ".mp3")
-        if os.path.exists(out):
+        if os.path.exists(out) and os.path.getsize(out) > 0:
             skipped += 1
             continue
+        processed += 1
+        # Write to a temp file and rename only on success, so a failed/aborted run
+        # never leaves a 0-byte .mp3 behind (which would later be served as silence).
+        tmp = out + ".part"
         try:
-            if args.provider == "google":
-                data = tts_google(r["ru"], args.voice, key)
-            elif args.provider == "azure":
-                data = tts_azure(r["ru"], args.voice, key, region)
+            if args.provider == "gtts":
+                tts_gtts(r["ru"], tmp)  # writes the file directly, no key
             else:
-                data = tts_eleven(r["ru"], args.voice, key)
-            with open(out, "wb") as f:
-                f.write(data)
+                if args.provider == "google":
+                    data = tts_google(r["ru"], args.voice, key)
+                elif args.provider == "azure":
+                    data = tts_azure(r["ru"], args.voice, key, region)
+                else:
+                    data = tts_eleven(r["ru"], args.voice, key)
+                with open(tmp, "wb") as f:
+                    f.write(data)
+            if os.path.getsize(tmp) == 0:
+                raise RuntimeError("empty audio returned")
+            os.replace(tmp, out)
             made += 1
             if made % 25 == 0:
                 print("  ...%d generated" % made)
         except Exception as e:
             failed += 1
+            if os.path.exists(tmp):
+                os.remove(tmp)
             print("  FAILED %s (%s): %s" % (r["hash"], r["ru"][:30], e))
     n = reindex()
     print("Done: %d generated, %d already existed, %d failed. index.json now lists %d files." % (made, skipped, failed, n))

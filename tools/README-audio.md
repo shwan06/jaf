@@ -39,11 +39,14 @@ Columns: `id, category, source, file, ru, gloss`.
 
 ## 1) Bulk-generate the AI rows
 
-Pick any provider and run with your own key. Files land in `static/audio/` and
-`index.json` is rebuilt automatically.
+Files land in `static/audio/<id>.mp3` and `index.json` is rebuilt automatically.
 
 ```bash
-# Google Cloud TTS (REST API key)
+# FREE — no API key, no signup (Google Translate TTS). Solid quality, fastest start:
+pip install gTTS
+python3 tools/build_audio.py --provider gtts
+
+# Google Cloud TTS (REST API key) — premium neural voices
 GOOGLE_TTS_KEY=xxxx python3 tools/build_audio.py --provider google --voice ru-RU-Wavenet-D
 
 # Azure AI Speech
