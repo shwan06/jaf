@@ -1894,6 +1894,30 @@ const PROVIDERS = {
     fallbackModels: ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "qwen/qwen3-32b", "deepseek-r1-distill-llama-70b", "openai/gpt-oss-120b"],
     authHeaders: (key) => ({ authorization: "Bearer " + key }),
   },
+  cerebras: {
+    kind: "openai",
+    label: "Cerebras — very fast, free (Llama / Qwen / GPT-OSS)",
+    keyName: "ru_cerebras_key",
+    keyPlaceholder: "csk-… (cloud.cerebras.ai)",
+    signup: "cloud.cerebras.ai (email/GitHub login — no phone)",
+    note: "Blazing-fast free inference, OpenAI-compatible, sign up with email or GitHub (no phone). Get a key at cloud.cerebras.ai. If you see a network/CORS error, use Google Gemini or OpenRouter.",
+    endpoint: "https://api.cerebras.ai/v1/chat/completions",
+    modelsEndpoint: "https://api.cerebras.ai/v1/models",
+    fallbackModels: ["llama-3.3-70b", "qwen-3-32b", "gpt-oss-120b", "llama3.1-8b"],
+    authHeaders: (key) => ({ authorization: "Bearer " + key }),
+  },
+  mistral: {
+    kind: "openai",
+    label: "Mistral (La Plateforme) — free tier, multilingual",
+    keyName: "ru_mistral_key",
+    keyPlaceholder: "… (console.mistral.ai)",
+    signup: "console.mistral.ai",
+    note: "Good multilingual models incl. Russian, with a free tier. Note: the free key needs phone verification, which may be restricted in some regions. If you see a network/CORS error, use Google Gemini or OpenRouter.",
+    endpoint: "https://api.mistral.ai/v1/chat/completions",
+    modelsEndpoint: "https://api.mistral.ai/v1/models",
+    fallbackModels: ["mistral-small-latest", "mistral-large-latest", "open-mistral-nemo"],
+    authHeaders: (key) => ({ authorization: "Bearer " + key }),
+  },
   deepseek: {
     kind: "openai",
     label: "DeepSeek (direct)",
@@ -1947,7 +1971,7 @@ async function viewTutor() {
   const view = $("#view");
   view.innerHTML = "";
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🤖 AI Tutor"),
-    el("p", {}, "Chat with an AI Russian tutor — choose Google Gemini (works in the browser), Groq (fast & free), OpenRouter (DeepSeek/Qwen), direct DeepSeek/Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
+    el("p", {}, "Chat with an AI Russian tutor — choose Google Gemini (works in the browser), Groq / Cerebras (fast & free), OpenRouter, Mistral, DeepSeek/Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
   const stage = el("div", { class: "quiz-stage", style: "max-width:680px" });
   view.append(stage);
 
@@ -2104,7 +2128,7 @@ async function viewTutor() {
         const r = await fetch(P.modelsEndpoint, { headers: P.authHeaders(provKey(provider)) });
         if (r.ok) {
           const data = await r.json();
-          const ids = (data.data || []).map((m) => m.id).filter((id) => !/whisper|tts|guard|embed|prompt/i.test(id)).sort();
+          const ids = (data.data || []).map((m) => m.id).filter((id) => !/whisper|tts|guard|embed|prompt|moderation|ocr/i.test(id)).sort();
           if (ids.length) setOptions(ids);
         }
       } catch { /* keep fallback list */ }
