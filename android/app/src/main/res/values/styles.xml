@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen, no action bar; follows system light/dark. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#0f1320</item>
+        <item name="android:windowBackground">#0f1320</item>
+    </style>
+</resources>
