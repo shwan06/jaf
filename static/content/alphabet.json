@@ -1,0 +1,138 @@
+{
+  "id": "alphabet",
+  "title": "Алфавит и фонетика — Alphabet & Phonetics",
+  "description": "The 33 letters of the Cyrillic alphabet, the sounds of Russian, stress, vowel reduction and consonant assimilation. Click any Russian text to hear it.",
+  "units": [
+    {
+      "id": "cyrillic-overview",
+      "title": "1. The Cyrillic alphabet",
+      "summary": "Russian uses 33 Cyrillic letters: 10 vowels, 21 consonants, and 2 signs that carry no sound of their own.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Russian is written in the <strong>Cyrillic</strong> script. Several letters look like Latin ones but sound different — these \"false friends\" (В, Е, Н, Р, С, У, Х) are the first hurdle. Master the alphabet first: everything else (grammar tables, dictionaries, stress marks) assumes you can read fluently."
+        },
+        {
+          "type": "letters",
+          "items": [
+            {"letter": "А а", "name": "а", "ipa": "/a/", "sound": "a in 'father'", "example": "мама — mum"},
+            {"letter": "Б б", "name": "бэ", "ipa": "/b/", "sound": "b in 'bat'", "example": "брат — brother"},
+            {"letter": "В в", "name": "вэ", "ipa": "/v/", "sound": "v in 'van'", "example": "вода — water"},
+            {"letter": "Г г", "name": "гэ", "ipa": "/ɡ/", "sound": "g in 'go'", "example": "город — city"},
+            {"letter": "Д д", "name": "дэ", "ipa": "/d/", "sound": "d in 'dog'", "example": "дом — house"},
+            {"letter": "Е е", "name": "е", "ipa": "/je/", "sound": "ye in 'yes'", "example": "ехать — to go"},
+            {"letter": "Ё ё", "name": "ё", "ipa": "/jo/", "sound": "yo in 'yonder' (always stressed)", "example": "ёж — hedgehog"},
+            {"letter": "Ж ж", "name": "жэ", "ipa": "/ʐ/", "sound": "s in 'measure' (hard)", "example": "жизнь — life"},
+            {"letter": "З з", "name": "зэ", "ipa": "/z/", "sound": "z in 'zoo'", "example": "зима — winter"},
+            {"letter": "И и", "name": "и", "ipa": "/i/", "sound": "ee in 'see'", "example": "мир — world/peace"},
+            {"letter": "Й й", "name": "и краткое", "ipa": "/j/", "sound": "y in 'boy'", "example": "май — May"},
+            {"letter": "К к", "name": "ка", "ipa": "/k/", "sound": "k in 'kit'", "example": "книга — book"},
+            {"letter": "Л л", "name": "эль", "ipa": "/l/", "sound": "l in 'lamp'", "example": "лес — forest"},
+            {"letter": "М м", "name": "эм", "ipa": "/m/", "sound": "m in 'man'", "example": "море — sea"},
+            {"letter": "Н н", "name": "эн", "ipa": "/n/", "sound": "n in 'net'", "example": "нос — nose"},
+            {"letter": "О о", "name": "о", "ipa": "/o/", "sound": "o in 'more' (when stressed)", "example": "окно — window"},
+            {"letter": "П п", "name": "пэ", "ipa": "/p/", "sound": "p in 'pen'", "example": "парк — park"},
+            {"letter": "Р р", "name": "эр", "ipa": "/r/", "sound": "rolled/trilled r", "example": "рука — hand/arm"},
+            {"letter": "С с", "name": "эс", "ipa": "/s/", "sound": "s in 'sun'", "example": "стол — table"},
+            {"letter": "Т т", "name": "тэ", "ipa": "/t/", "sound": "t in 'top'", "example": "там — there"},
+            {"letter": "У у", "name": "у", "ipa": "/u/", "sound": "oo in 'boot'", "example": "утро — morning"},
+            {"letter": "Ф ф", "name": "эф", "ipa": "/f/", "sound": "f in 'fan'", "example": "фильм — film"},
+            {"letter": "Х х", "name": "ха", "ipa": "/x/", "sound": "ch in Scottish 'loch'", "example": "хлеб — bread"},
+            {"letter": "Ц ц", "name": "цэ", "ipa": "/ts/", "sound": "ts in 'cats'", "example": "цена — price"},
+            {"letter": "Ч ч", "name": "че", "ipa": "/tɕ/", "sound": "ch in 'cheese' (soft)", "example": "час — hour"},
+            {"letter": "Ш ш", "name": "ша", "ipa": "/ʂ/", "sound": "sh in 'shop' (hard)", "example": "шапка — hat"},
+            {"letter": "Щ щ", "name": "ща", "ipa": "/ɕː/", "sound": "soft, long 'shch'", "example": "щи — cabbage soup"},
+            {"letter": "Ъ ъ", "name": "твёрдый знак", "ipa": "—", "sound": "hard sign (no sound; separates)", "example": "объект — object"},
+            {"letter": "Ы ы", "name": "ы", "ipa": "/ɨ/", "sound": "between 'i' and 'u', tongue back", "example": "сын — son"},
+            {"letter": "Ь ь", "name": "мягкий знак", "ipa": "—", "sound": "soft sign (softens previous consonant)", "example": "день — day"},
+            {"letter": "Э э", "name": "э", "ipa": "/e/", "sound": "e in 'met'", "example": "это — this"},
+            {"letter": "Ю ю", "name": "ю", "ipa": "/ju/", "sound": "u in 'use'", "example": "юг — south"},
+            {"letter": "Я я", "name": "я", "ipa": "/ja/", "sound": "ya in 'yard'", "example": "яблоко — apple"}
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Letters <strong>Ъ</strong> and <strong>Ь</strong> are never pronounced on their own. <strong>Ы</strong> never starts a native word. <strong>Ё</strong> is usually printed as Е but is <em>always</em> stressed when it appears."
+        }
+      ]
+    },
+    {
+      "id": "vowel-pairs",
+      "title": "2. Hard vs. soft vowels",
+      "summary": "Russian vowels come in pairs that signal whether the preceding consonant is hard or soft — the backbone of Russian pronunciation and spelling.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Each of Russia's vowel sounds has two letters: one marks a preceding <strong>hard</strong> consonant, the other a <strong>soft</strong> (palatalised) one. At the start of a word or after a vowel, the soft-series letters add a /j/ (\"y\") glide."
+        },
+        {
+          "type": "table",
+          "caption": "The five vowel pairs",
+          "headers": ["Hard", "Soft", "Sound after consonant", "Initial / after vowel"],
+          "rows": [
+            ["А", "Я", "/a/", "/ja/ (ya)"],
+            ["О", "Ё", "/o/", "/jo/ (yo)"],
+            ["У", "Ю", "/u/", "/ju/ (yu)"],
+            ["Э", "Е", "/e/", "/je/ (ye)"],
+            ["Ы", "И", "/i/", "/i/ (softens)"]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "мать", "tr": "mat'", "en": "mother — hard М"},
+            {"ru": "мять", "tr": "myat'", "en": "to crumple — soft М (note Я)"},
+            {"ru": "лук", "tr": "luk", "en": "onion — hard Л"},
+            {"ru": "люк", "tr": "lyuk", "en": "hatch — soft Л (note Ю)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stress-reduction",
+      "title": "3. Stress & vowel reduction",
+      "summary": "Russian stress is free and mobile, and unstressed vowels reduce. This single rule explains most of the gap between spelling and speech.",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "Every Russian word has exactly one <strong>stressed</strong> syllable, pronounced longer and clearer. Stress is <em>free</em> (it can fall anywhere) and <em>mobile</em> (it can move between forms of the same word: <strong>рука́</strong> → <strong>ру́ки</strong>). Dictionaries mark it with an acute accent; ordinary text does not."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Unstressed <strong>О</strong> is pronounced like /a/: молоко́ sounds like 'malako'.",
+            "Unstressed <strong>Е</strong> and <strong>Я</strong> reduce toward /i/: язы́к sounds like 'yizyk'.",
+            "Getting stress wrong is the #1 marker of a foreign accent — learn each word's stress with the word itself."
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"ru": "молоко́", "tr": "məlakó", "en": "milk — first two О's reduce"},
+            {"ru": "хорошо́", "tr": "xərašó", "en": "good/well — only the last О is full"},
+            {"ru": "за́мок / замо́к", "tr": "zámak / zamók", "en": "castle vs. lock — stress changes meaning"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consonant-rules",
+      "title": "4. Consonant assimilation & devoicing",
+      "summary": "Voiced consonants devoice at the end of words and assimilate to their neighbours.",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "<strong>Final devoicing:</strong> voiced consonants become voiceless at the end of a word — хле<strong>б</strong> sounds like 'khlep', горо<strong>д</strong> like 'gorot'.",
+            "<strong>Regressive assimilation:</strong> a consonant takes the voicing of the one after it — во<strong>дк</strong>а sounds like 'votka', <strong>сд</strong>елать like 'zdelat'.",
+            "<strong>Spelling stays constant</strong> even though the sound changes — this is why reading aloud needs the rules above."
+          ]
+        },
+        {
+          "type": "note",
+          "html": "Voiced/voiceless pairs: Б/П, В/Ф, Г/К, Д/Т, Ж/Ш, З/С. Always voiceless: Х, Ц, Ч, Щ. Always voiced (sonorant): Л, М, Н, Р, Й."
+        }
+      ]
+    }
+  ]
+}
