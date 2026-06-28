@@ -1016,30 +1016,49 @@ const TUTOR_SYSTEM =
 
 const PROVIDERS = {
   openrouter: {
+    kind: "openai",
     label: "OpenRouter — DeepSeek / Qwen / more",
     keyName: "ru_openrouter_key",
     keyPlaceholder: "sk-or-…",
     signup: "openrouter.ai/keys",
-    note: "One key unlocks DeepSeek, Qwen and many other models — several are free. It is stored only in this browser and sent directly to OpenRouter.",
+    note: "One key unlocks DeepSeek, Qwen and many other models — several are free. Stored only in this browser, sent directly to OpenRouter.",
+    endpoint: "https://openrouter.ai/api/v1/chat/completions",
+    dynamic: true,
     fallbackModels: ["deepseek/deepseek-r1:free", "deepseek/deepseek-chat", "qwen/qwen-2.5-72b-instruct"],
+    authHeaders: (key) => ({ authorization: "Bearer " + key, "HTTP-Referer": location.origin, "X-Title": "Russian A to Z" }),
+  },
+  yandex: {
+    kind: "openai",
+    label: "YandexGPT (Yandex Cloud)",
+    keyName: "ru_yandex_key",
+    keyPlaceholder: "Yandex Cloud API key (AQVN…)",
+    signup: "yandex.cloud → AI Studio → API key",
+    note: "Excellent at Russian. Needs a Yandex Cloud API key AND a folder ID (both from your Yandex Cloud console). Note: Yandex's API may block direct browser calls — if you see a network/CORS error on the live site, tell me and I'll set up a small free proxy. Yandex Cloud signup can be restricted in some regions.",
+    endpoint: "https://llm.api.cloud.yandex.net/v1/chat/completions",
+    needsFolder: true,
+    fallbackModels: ["yandexgpt-lite", "yandexgpt", "yandexgpt-32k"],
+    modelOf: (id) => `gpt://${localStorage.getItem("ru_yandex_folder") || ""}/${id}/latest`,
+    authHeaders: (key) => ({ authorization: "Bearer " + key, "x-folder-id": localStorage.getItem("ru_yandex_folder") || "" }),
   },
   anthropic: {
+    kind: "anthropic",
     label: "Claude (Anthropic)",
     keyName: "ru_anthropic_key",
     keyPlaceholder: "sk-ant-…",
     signup: "console.anthropic.com",
-    note: "High quality but paid per message. It is stored only in this browser and sent directly to Anthropic.",
+    note: "High quality but paid per message. Stored only in this browser, sent directly to Anthropic.",
     fallbackModels: ["claude-haiku-4-5", "claude-sonnet-4-6", "claude-opus-4-8"],
   },
 };
 const provKey = (p) => localStorage.getItem(PROVIDERS[p].keyName) || "";
+const provReady = (p) => !!provKey(p) && (!PROVIDERS[p].needsFolder || !!localStorage.getItem("ru_yandex_folder"));
 function curProvider() { return PROVIDERS[localStorage.getItem("ru_tutor_provider")] ? localStorage.getItem("ru_tutor_provider") : "openrouter"; }
 
 async function viewTutor() {
   const view = $("#view");
   view.innerHTML = "";
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🤖 AI Tutor"),
-    el("p", {}, "Chat with an AI Russian tutor — choose DeepSeek, Qwen or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
+    el("p", {}, "Chat with an AI Russian tutor — choose DeepSeek, Qwen, YandexGPT or Claude. It replies in simple Russian, gently corrects you, and adds English + Arabic. Uses your own API key, stored only on this device.")));
   const stage = el("div", { class: "quiz-stage", style: "max-width:680px" });
   view.append(stage);
 
@@ -1048,7 +1067,7 @@ async function viewTutor() {
 
   function render() {
     provider = curProvider();
-    if (provKey(provider)) renderChat(); else renderKeyForm();
+    if (provReady(provider)) renderChat(); else renderKeyForm();
   }
 
   function providerPicker(onChange) {
@@ -1065,17 +1084,28 @@ async function viewTutor() {
     const card = el("div", { class: "quiz-card" });
     card.append(el("div", { class: "toolbar" }, el("span", { style: "color:var(--muted)" }, "Provider:"), providerPicker(() => render())));
     card.append(el("h2", { style: "font-family:'PT Serif',serif;margin-top:6px" }, "Connect your " + P.label.split("—")[0].trim() + " key"));
-    card.append(el("p", { class: "prose" }, "Get a free key at " + P.signup + ". " + P.note));
+    card.append(el("p", { class: "prose" }, "Get a key at " + P.signup + ". " + P.note));
     const input = el("input", { class: "text-input", type: "password", placeholder: P.keyPlaceholder, style: "font-family:monospace;font-size:15px" });
+    card.append(input);
+    let folderInput = null;
+    if (P.needsFolder) {
+      folderInput = el("input", { class: "text-input", placeholder: "Folder ID (b1g…)", style: "font-family:monospace;font-size:15px;margin-top:8px", value: localStorage.getItem("ru_yandex_folder") || "" });
+      card.append(folderInput);
+    }
     const save = el("button", { class: "btn primary", style: "margin-top:12px" }, "Save key & start");
     save.addEventListener("click", () => {
       const v = input.value.trim();
       if (!v) return;
+      if (P.needsFolder) {
+        const f = (folderInput.value || "").trim();
+        if (!f) { folderInput.focus(); return; }
+        localStorage.setItem("ru_yandex_folder", f);
+      }
       localStorage.setItem(P.keyName, v);
       render();
     });
     input.addEventListener("keydown", (e) => { if (e.key === "Enter") save.click(); });
-    card.append(input, save);
+    card.append(save);
     stage.append(card);
   }
 
@@ -1159,7 +1189,7 @@ async function viewTutor() {
     };
     sel.addEventListener("change", () => localStorage.setItem("ru_tutor_model_" + provider, sel.value));
     setOptions(P.fallbackModels);
-    if (provider === "openrouter") {
+    if (P.dynamic) {
       // Pull the live model list so DeepSeek/Qwen ids stay current; free models first.
       try {
         const r = await fetch("https://openrouter.ai/api/v1/models");
@@ -1174,7 +1204,7 @@ async function viewTutor() {
   }
 
   function callTutor(prov, model, messages, onToken) {
-    return prov === "anthropic" ? callAnthropic(model, messages, onToken) : callOpenRouter(model, messages, onToken);
+    return PROVIDERS[prov].kind === "anthropic" ? callAnthropic(model, messages, onToken) : callOpenAI(prov, model, messages, onToken);
   }
 
   // Shared SSE reader: `pick(ev)` returns the text delta for this provider, or null.
@@ -1222,17 +1252,15 @@ async function viewTutor() {
       (ev) => (ev.type === "content_block_delta" && ev.delta && ev.delta.type === "text_delta") ? ev.delta.text : null, onToken));
   }
 
-  function callOpenRouter(model, messages, onToken) {
-    return fetch("https://openrouter.ai/api/v1/chat/completions", {
+  // OpenAI-compatible providers (OpenRouter, Yandex). Yandex maps the model id to a gpt:// URI.
+  function callOpenAI(prov, model, messages, onToken) {
+    const P = PROVIDERS[prov];
+    const sentModel = P.modelOf ? P.modelOf(model) : model;
+    return fetch(P.endpoint, {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "authorization": "Bearer " + provKey("openrouter"),
-        "HTTP-Referer": location.origin,
-        "X-Title": "Russian A to Z",
-      },
+      headers: Object.assign({ "content-type": "application/json" }, P.authHeaders(provKey(prov))),
       body: JSON.stringify({
-        model, stream: true, max_tokens: 1024,
+        model: sentModel, stream: true, max_tokens: 1024,
         messages: [{ role: "system", content: TUTOR_SYSTEM }, ...messages],
       }),
     }).then((res) => streamChat(res,
