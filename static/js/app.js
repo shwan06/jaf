@@ -157,6 +157,67 @@ function srsReview(cardId, quality) {
   Store.saveProg(prog);
 }
 
+/* ---------------- gamification: XP, levels, streak, badges ---------------- */
+const daysBetween = (a, b) =>
+  Math.round((Date.parse(b + "T00:00:00") - Date.parse(a + "T00:00:00")) / 86400000);
+
+const BADGES = [
+  { id: "first_lesson", icon: "🌱", title: "First steps", desc: "Complete your first lesson", test: (g, p) => Object.keys(p.completed || {}).length >= 1 },
+  { id: "ten_lessons", icon: "📚", title: "Bookworm", desc: "Complete 10 lessons", test: (g, p) => Object.keys(p.completed || {}).length >= 10 },
+  { id: "reviews_50", icon: "🧠", title: "Memory athlete", desc: "Review 50 flashcards", test: (g, p) => (p.reviews || 0) >= 50 },
+  { id: "streak_3", icon: "🔥", title: "On a roll", desc: "3-day streak", test: (g) => g.streak >= 3 },
+  { id: "streak_7", icon: "⚡", title: "Unstoppable", desc: "7-day streak", test: (g) => g.streak >= 7 },
+  { id: "xp_500", icon: "💎", title: "Dedicated", desc: "Earn 500 XP", test: (g) => g.xp >= 500 },
+  { id: "level_5", icon: "🚀", title: "Rising star", desc: "Reach level 5", test: (g) => Gamify.level(g.xp).level >= 5 },
+  { id: "exam_ace", icon: "🏆", title: "Exam ace", desc: "Score 80%+ on any exam", test: () => { try { return Object.values(JSON.parse(localStorage.getItem("ru_exam")) || {}).some((v) => v >= 80); } catch { return false; } } },
+];
+
+const Gamify = {
+  KEY: "ru_gamify_v1",
+  DAILY_GOAL: 40,
+  load() {
+    const def = { xp: 0, streak: 0, longest: 0, lastDay: "", todayDay: "", todayXp: 0, badges: [] };
+    try { return Object.assign(def, JSON.parse(localStorage.getItem(this.KEY)) || {}); } catch { return def; }
+  },
+  save(s) { localStorage.setItem(this.KEY, JSON.stringify(s)); },
+  level(xp) {
+    let lvl = 1, need = 50, acc = 0;
+    while (xp >= acc + need) { acc += need; lvl++; need = Math.round(need * 1.25); }
+    return { level: lvl, into: xp - acc, need };
+  },
+  stats() {
+    const s = this.load();
+    return { ...s, ...this.level(s.xp), goal: this.DAILY_GOAL };
+  },
+  award(amount, reason) {
+    const s = this.load();
+    const today = todayStr();
+    if (s.todayDay !== today) {
+      const prev = s.lastDay;
+      s.streak = prev ? (daysBetween(prev, today) === 1 ? s.streak + 1 : 1) : 1;
+      s.lastDay = today; s.todayDay = today; s.todayXp = 0;
+    }
+    s.xp += amount; s.todayXp += amount;
+    s.longest = Math.max(s.longest || 0, s.streak);
+    const prog = Store.loadProg();
+    const earned = BADGES.filter((b) => !s.badges.includes(b.id) && b.test(s, prog));
+    earned.forEach((b) => s.badges.push(b.id));
+    this.save(s);
+    showToast(`+${amount} XP`, reason);
+    earned.forEach((b) => setTimeout(() => showToast(b.icon + " " + b.title, "Badge unlocked!"), 250));
+    return s;
+  },
+};
+
+let _toastHost = null;
+function showToast(title, sub) {
+  if (!_toastHost) { _toastHost = el("div", { class: "toast-host" }); document.body.append(_toastHost); }
+  const t = el("div", { class: "toast" }, el("strong", {}, title), sub ? el("span", {}, sub) : null);
+  _toastHost.append(t);
+  setTimeout(() => t.classList.add("show"), 10);
+  setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.remove(), 300); }, 2200);
+}
+
 /* ---------------- speech ---------------- */
 function pickVoice() {
   const voices = window.speechSynthesis ? speechSynthesis.getVoices() : [];
@@ -284,6 +345,7 @@ function renderUnit(unit, sectionId) {
     if (nowDone) p.completed[itemKey] = sectionId;
     else delete p.completed[itemKey];
     Store.saveProg(p);
+    if (nowDone) Gamify.award(10, "Lesson completed");
     toggle.classList.toggle("done", nowDone);
     toggle.textContent = nowDone ? "✓ Completed" : "Mark complete";
     renderNav();
@@ -326,6 +388,9 @@ async function viewDashboard() {
   const prog = Store.loadProg();
   const totalUnits = await countAllUnits();
   const doneUnits = Object.keys(prog.completed || {}).length;
+
+  view.append(renderGamePanel());
+
   view.append(
     el("div", { class: "stat-grid" },
       statBox(doneUnits + "/" + totalUnits, "Lessons completed", "accent"),
@@ -367,6 +432,37 @@ async function viewDashboard() {
 
 const statBox = (num, lbl, cls) =>
   el("div", { class: "stat " + (cls || "") }, el("div", { class: "s-num" }, String(num)), el("div", { class: "s-lbl" }, lbl));
+
+function renderGamePanel() {
+  const g = Gamify.stats();
+  const pct = Math.min(100, Math.round((g.into / g.need) * 100));
+  const goalPct = Math.min(100, Math.round((g.todayXp / g.goal) * 100));
+  const panel = el("div", { class: "game-panel" });
+
+  panel.append(
+    el("div", { class: "game-main" },
+      el("div", { class: "game-level" }, el("span", { class: "lvl-badge" }, "Lv " + g.level), el("span", { class: "lvl-xp" }, g.xp + " XP")),
+      el("div", { class: "game-bar" }, el("i", { style: `width:${pct}%` })),
+      el("div", { class: "game-sub" }, `${g.into} / ${g.need} XP to level ${g.level + 1}`))
+  );
+  panel.append(
+    el("div", { class: "game-side" },
+      el("div", { class: "game-streak" }, el("span", { class: "fire" }, "🔥"), el("strong", {}, String(g.streak)), el("span", { class: "muted" }, g.streak === 1 ? "day streak" : "day streak")),
+      el("div", { class: "game-goal" + (goalPct >= 100 ? " done" : "") },
+        el("div", { class: "goal-ring", style: `--p:${goalPct}` }, el("span", {}, goalPct >= 100 ? "✓" : g.todayXp)),
+        el("span", { class: "muted" }, goalPct >= 100 ? "Daily goal done!" : `${g.todayXp}/${g.goal} today`)))
+  );
+
+  const earned = new Set(g.badges);
+  const badges = el("div", { class: "badges" });
+  BADGES.forEach((b) => {
+    const has = earned.has(b.id);
+    badges.append(el("div", { class: "badge-chip" + (has ? " earned" : ""), title: b.desc + (has ? "" : " (locked)") },
+      el("span", { class: "b-ico" }, has ? b.icon : "🔒"), el("span", { class: "b-title" }, b.title)));
+  });
+
+  return el("div", {}, panel, badges);
+}
 
 async function countAllUnits() {
   let n = 0;
@@ -464,6 +560,7 @@ async function viewFlashcards() {
     const b = el("button", { class: "btn " + cls }, label);
     b.addEventListener("click", () => {
       srsReview(card.id, quality);
+      Gamify.award(quality >= 4 ? 3 : 1, "Flashcard reviewed");
       state.idx++;
       renderCard();
     });
@@ -555,7 +652,7 @@ async function viewPractice() {
         const correct = o === answer;
         btn.classList.add(correct ? "correct" : "wrong");
         if (!correct) [...opts.children][options.indexOf(answer)].classList.add("correct");
-        else state.score++;
+        else { state.score++; Gamify.award(2, "Quiz answer"); }
         state.asked++;
         if (state.mode === "en2ru") speak(answer.ru);
         setTimeout(nextQuestion, correct ? 750 : 1500);
@@ -655,7 +752,7 @@ async function viewVerbs() {
       const check = () => {
         if (submit.dataset.done) { next(); return; }
         const ok = normRu(input.value) === normRu(state.cur.answer);
-        if (ok) state.score++;
+        if (ok) { state.score++; Gamify.award(2, "Verb drill"); }
         feedback.innerHTML = ok
           ? `<span class="ok">✓ Correct</span>`
           : `<span class="bad">✗ ${state.cur.answer}</span>`;
@@ -716,7 +813,7 @@ async function viewDictation() {
     const check = () => {
       if (submit.dataset.done) { next(); return; }
       const ok = normRu(input.value) === normRu(state.cur.front);
-      if (ok) state.score++;
+      if (ok) { state.score++; Gamify.award(3, "Dictation"); }
       feedback.innerHTML = ok
         ? `<span class="ok">✓ ${state.cur.front}</span>`
         : `<span class="bad">✗ correct: ${state.cur.front}</span>`;
@@ -796,7 +893,7 @@ async function viewPronounce() {
       rec.onresult = (e) => {
         const heard = Array.from(e.results[0]).map((r) => r.transcript);
         const ok = heard.some((h) => normRu(h) === normRu(state.cur.front));
-        if (ok) state.score++;
+        if (ok) { state.score++; Gamify.award(3, "Pronunciation"); }
         fb.innerHTML = ok
           ? `<span class="ok">✓ Heard “${heard[0]}”</span>`
           : `<span class="bad">✗ Heard “${heard[0] || "—"}” — target: ${state.cur.front}</span>`;
@@ -874,6 +971,7 @@ async function viewExam() {
         const pct = Math.round((state.score / qs.length) * 100);
         best[lv.id] = Math.max(best[lv.id] || 0, pct);
         localStorage.setItem("ru_exam", JSON.stringify(best));
+        Gamify.award(10 + Math.round(pct / 5), `Exam ${lv.id} (${pct}%)`);
         const verdict = pct >= 80 ? "Excellent — you've got this level. 🎉" : pct >= 60 ? "Good — a bit more practice will solidify it." : "Keep practising this level's vocabulary and grammar.";
         host.append(el("div", { class: "quiz-card" },
           el("h2", { style: "font-family:'PT Serif',serif" }, `${lv.title}`),
