@@ -2048,9 +2048,41 @@ async function viewTutor() {
     const log = el("div", { class: "chat-log" });
     stage.append(log);
     const composer = el("div", { class: "composer" });
-    const input = el("input", { class: "text-input", placeholder: "Type in Russian or English…", dir: "auto" });
+    const input = el("input", { class: "text-input", placeholder: "Type or 🎤 speak — Russian or English…", dir: "auto" });
     const send = el("button", { class: "btn primary" }, "Send");
-    composer.append(input, send);
+
+    // Voice input: dictate into the box. RU/EN toggle picks the recognition language.
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const micLang = () => localStorage.getItem("ru_tutor_mic_lang") || "ru-RU";
+    const langBtn = el("button", { class: "btn mic-lang", title: "Speech language (Russian / English)" }, micLang() === "ru-RU" ? "RU" : "EN");
+    langBtn.addEventListener("click", () => {
+      const next = micLang() === "ru-RU" ? "en-US" : "ru-RU";
+      localStorage.setItem("ru_tutor_mic_lang", next);
+      langBtn.textContent = next === "ru-RU" ? "RU" : "EN";
+    });
+    const mic = el("button", { class: "btn mic-btn", title: "Speak" }, "🎤");
+    let rec = null, listening = false;
+    if (!SR) { mic.disabled = true; mic.title = "Voice input needs Chrome / Android Chrome"; mic.style.opacity = ".5"; }
+    mic.addEventListener("click", () => {
+      if (!SR) return;
+      if (listening && rec) { rec.stop(); return; }
+      rec = new SR();
+      rec.lang = micLang();
+      rec.interimResults = true;
+      rec.maxAlternatives = 1;
+      const base = input.value.trim() ? input.value.trim() + " " : "";
+      rec.onresult = (e) => {
+        let txt = "";
+        for (let i = 0; i < e.results.length; i++) txt += e.results[i][0].transcript;
+        input.value = base + txt;
+      };
+      const stop = () => { listening = false; mic.classList.remove("rec"); mic.textContent = "🎤"; input.focus(); };
+      rec.onerror = stop;
+      rec.onend = stop;
+      try { rec.start(); listening = true; mic.classList.add("rec"); mic.textContent = "⏹"; } catch { stop(); }
+    });
+
+    composer.append(input, langBtn, mic, send);
     stage.append(composer);
 
     function bubble(role, node) {
