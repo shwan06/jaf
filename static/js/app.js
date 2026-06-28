@@ -65,6 +65,37 @@ const Store = {
   saveProg(p) { localStorage.setItem(this.PROG, JSON.stringify(p)); },
 };
 
+/* ---------------- favorites / bookmarks ---------------- */
+const Favs = {
+  KEY: "ru_favorites_v1",
+  load() { try { return JSON.parse(localStorage.getItem(this.KEY)) || []; } catch { return []; } },
+  save(a) { localStorage.setItem(this.KEY, JSON.stringify(a)); },
+  has(id) { return this.load().some((x) => x.id === id); },
+  toggle(item) {
+    const a = this.load();
+    const i = a.findIndex((x) => x.id === item.id);
+    if (i >= 0) { a.splice(i, 1); this.save(a); return false; }
+    a.push(item); this.save(a); return true;
+  },
+  remove(id) { this.save(this.load().filter((x) => x.id !== id)); },
+};
+
+// A star toggle bound to a favoritable item ({id, ru, en, ar, tr, type, src}).
+function starBtn(item) {
+  const on0 = Favs.has(item.id);
+  const b = el("button", { class: "star-btn" + (on0 ? " on" : ""), title: "Save to favorites", "aria-label": "Save to favorites" }, on0 ? "★" : "☆");
+  b.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const on = Favs.toggle(item);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "★" : "☆";
+    showToast(on ? "★ Saved" : "☆ Removed", item.ru);
+  });
+  return b;
+}
+
+const hashStr = (s) => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; };
+
 // SM-2 spaced repetition (mirrors the original backend implementation)
 function sm2(state, quality) {
   let { ease = 2.5, interval = 0, reps = 0 } = state || {};
@@ -384,12 +415,31 @@ async function viewDashboard() {
       el("p", {}, "Your path to academic-level Russian — from the alphabet to scholarly writing. Pick up where you left off, or review your flashcards below."))
   );
 
+  const last = localStorage.getItem("ru_last_route");
+  if (last && last !== "#/") {
+    view.append(el("a", { class: "resume-btn", href: last }, "▶ Continue where you left off — " + routeLabel(last)));
+  }
+
   const c = await srsStats();
   const prog = Store.loadProg();
   const totalUnits = await countAllUnits();
   const doneUnits = Object.keys(prog.completed || {}).length;
 
   view.append(renderGamePanel());
+
+  // Word of the day — deterministic pick so it's stable across reloads on the same day.
+  const wodCards = await masterCards().catch(() => []);
+  if (wodCards.length) {
+    const w = wodCards[hashStr(todayStr()) % wodCards.length];
+    view.append(el("div", { class: "wod-panel" },
+      el("div", { class: "wod-head" }, "📅 Word of the day"),
+      el("div", { class: "wod-ru ru", "data-say": w.front }, w.front),
+      w.tr ? el("div", { class: "wod-tr" }, w.tr) : null,
+      el("div", { class: "wod-en gloss-en" }, w.back),
+      w.ar ? el("div", { class: "wod-ar gloss-ar", dir: "rtl" }, w.ar) : null,
+      w.example ? el("div", { class: "wod-ex" }, w.example) : null,
+      starBtn({ id: "v:" + w.deck + ":" + w.front, ru: w.front, en: w.back, ar: w.ar, tr: w.tr, type: "word", src: "Word of the day" })));
+  }
 
   view.append(
     el("div", { class: "stat-grid" },
@@ -535,6 +585,7 @@ async function viewFlashcards() {
     if (card.ar) back.append(el("div", { class: "fc-ar gloss-ar", dir: "rtl" }, card.ar));
     if (card.tr) back.append(el("div", { class: "fc-tr" }, card.tr));
     if (card.example) back.append(el("div", { class: "fc-ex" }, card.example));
+    back.append(el("div", { class: "fc-fav" }, starBtn({ id: card.id, ru: card.front, en: card.back, ar: card.ar, tr: card.tr, type: "word", src: prettyDeck(card.deck) })));
     fc.append(back);
     host.append(fc);
 
@@ -764,7 +815,7 @@ async function viewVerbs() {
       };
       submit.addEventListener("click", check);
       input.addEventListener("keydown", (e) => { if (e.key === "Enter") check(); });
-      card.append(input, submit, feedback);
+      card.append(input, submit, feedback, attachKeyboard(input));
       host.append(card);
       input.focus();
     }
@@ -772,6 +823,48 @@ async function viewVerbs() {
   }
 
   renderBrowse();
+}
+
+/* ---------------- on-screen Cyrillic keyboard ---------------- */
+const CYR_ROWS = ["й ц у к е н г ш щ з х ъ", "ф ы в а п р о л д ж э", "я ч с м и т ь б ю ё"];
+function attachKeyboard(input) {
+  const wrap = el("div", { class: "cyr-kb", style: "display:none" });
+  const edit = (fn) => {
+    if (input.disabled) return;
+    const s = input.selectionStart ?? input.value.length;
+    const e = input.selectionEnd ?? input.value.length;
+    fn(s, e);
+    input.focus();
+  };
+  const insert = (ch) => edit((s, e) => {
+    input.value = input.value.slice(0, s) + ch + input.value.slice(e);
+    const pos = s + ch.length; input.setSelectionRange(pos, pos);
+  });
+  CYR_ROWS.forEach((row) => {
+    const r = el("div", { class: "cyr-row" });
+    row.split(" ").forEach((ch) => {
+      const k = el("button", { class: "cyr-key", type: "button" }, ch);
+      k.addEventListener("click", (ev) => { ev.preventDefault(); insert(ch); });
+      r.append(k);
+    });
+    wrap.append(r);
+  });
+  const space = el("button", { class: "cyr-key wide", type: "button" }, "␣ пробел");
+  space.addEventListener("click", (ev) => { ev.preventDefault(); insert(" "); });
+  const back = el("button", { class: "cyr-key", type: "button" }, "⌫");
+  back.addEventListener("click", (ev) => { ev.preventDefault(); edit((s, e) => {
+    if (s === e && s > 0) { input.value = input.value.slice(0, s - 1) + input.value.slice(e); input.setSelectionRange(s - 1, s - 1); }
+    else { input.value = input.value.slice(0, s) + input.value.slice(e); input.setSelectionRange(s, s); }
+  }); });
+  wrap.append(el("div", { class: "cyr-row" }, space, back));
+
+  const toggle = el("button", { class: "kb-toggle", type: "button" }, "⌨️ Cyrillic keyboard");
+  toggle.addEventListener("click", () => {
+    const show = wrap.style.display === "none";
+    wrap.style.display = show ? "flex" : "none";
+    toggle.classList.toggle("on", show);
+  });
+  return el("div", { class: "kb-wrap" }, toggle, wrap);
 }
 
 /* ---------------- listening / dictation ---------------- */
@@ -826,7 +919,7 @@ async function viewDictation() {
     };
     submit.addEventListener("click", check);
     input.addEventListener("keydown", (e) => { if (e.key === "Enter") check(); });
-    card.append(input, submit, feedback);
+    card.append(input, submit, feedback, attachKeyboard(input));
     host.append(card);
     input.focus();
   }
@@ -1005,6 +1098,95 @@ async function viewExam() {
     }
     render();
   }
+}
+
+/* ---------------- search / dictionary ---------------- */
+async function buildSearchIndex() {
+  const out = [];
+  const seen = new Set();
+  const push = (it) => { const k = it.type + ":" + it.ru; if (it.ru && !seen.has(k)) { seen.add(k); out.push(it); } };
+  const vocab = await loadContent("vocabulary").catch(() => ({}));
+  (vocab.decks || []).forEach((d) => (d.cards || []).forEach((c) =>
+    push({ id: "v:" + d.id + ":" + c.ru, ru: c.ru, en: c.en || "", tr: c.tr || "", ar: c.ar || "", type: "word", src: prettyDeck(d.id) })));
+  const vb = await loadContent("verbs").catch(() => ({}));
+  (vb.verbs || []).forEach((v) =>
+    push({ id: "vb:" + v.inf, ru: v.inf, en: v.en || "", ar: v.ar || "", type: "verb", src: "Verb" }));
+  for (const sec of ["grammar", "academic", "conversations", "alphabet"]) {
+    const data = await loadContent(sec).catch(() => ({}));
+    (data.units || []).forEach((u) => (u.blocks || []).forEach((b) => {
+      if (b.type === "examples") (b.items || []).forEach((it) =>
+        push({ id: "ex:" + it.ru, ru: it.ru, en: it.en || "", ar: it.ar || "", tr: it.tr || "", type: "phrase", src: (u.title || sec).split("—")[0].trim() }));
+      if (b.type === "dialogue") (b.lines || []).forEach((l) =>
+        push({ id: "dl:" + l.ru, ru: l.ru, en: l.en || "", ar: l.ar || "", tr: l.tr || "", type: "phrase", src: (u.title || sec).split("—")[0].trim() }));
+    }));
+  }
+  return out;
+}
+
+function resultRow(it, onRemove) {
+  const row = el("div", { class: "search-row" });
+  row.append(onRemove
+    ? (() => { const b = el("button", { class: "star-btn on", title: "Remove" }, "★"); b.addEventListener("click", onRemove); return b; })()
+    : starBtn(it));
+  row.append(el("div", { class: "sr-body" },
+    el("div", { class: "sr-ru ru", "data-say": it.ru }, it.ru),
+    it.tr ? el("div", { class: "sr-tr" }, it.tr) : null,
+    it.en ? el("div", { class: "sr-en gloss-en" }, it.en) : null,
+    it.ar ? el("div", { class: "sr-ar gloss-ar", dir: "rtl" }, it.ar) : null));
+  row.append(el("span", { class: "sr-tag" }, it.src || it.type || "saved"));
+  return row;
+}
+
+async function viewSearch() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "🔍 Search & dictionary"),
+    el("p", {}, "Look up any word or phrase across vocabulary, verbs, grammar examples and dialogues. Type Russian or English; tap ☆ to save.")));
+  const stage = el("div", { class: "quiz-stage", style: "max-width:720px" });
+  view.append(stage);
+  const input = el("input", { class: "text-input", placeholder: "Search… дом · house · читать", dir: "auto", autocomplete: "off", style: "font-family:inherit;font-size:17px" });
+  stage.append(input);
+  const results = el("div", { class: "search-results" });
+  stage.append(results);
+
+  const index = await buildSearchIndex();
+  const render = (q) => {
+    results.innerHTML = "";
+    const nq = normRu(q), lq = q.toLowerCase().trim();
+    if (!nq && !lq) { results.append(el("div", { class: "search-hint" }, `${index.length} entries indexed. Start typing to search.`)); return; }
+    const matches = index.filter((it) =>
+      (nq && normRu(it.ru).includes(nq)) ||
+      (lq && ((it.en || "").toLowerCase().includes(lq) || (it.tr || "").toLowerCase().includes(lq)))
+    ).slice(0, 80);
+    if (!matches.length) { results.append(el("div", { class: "fc-empty" }, "No matches. Try a different spelling.")); return; }
+    matches.forEach((it) => results.append(resultRow(it)));
+  };
+  let t;
+  input.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => render(input.value), 110); });
+  render("");
+  input.focus();
+}
+
+function viewFavorites() {
+  const view = $("#view");
+  view.innerHTML = "";
+  view.append(el("div", { class: "page-head" }, el("h1", {}, "⭐ Favorites"),
+    el("p", {}, "Your saved words and phrases. Tap the Russian to hear it; tap ★ to remove.")));
+  const stage = el("div", { class: "quiz-stage", style: "max-width:720px" });
+  view.append(stage);
+  const list = el("div", { class: "search-results" });
+  stage.append(list);
+  const render = () => {
+    list.innerHTML = "";
+    const favs = Favs.load();
+    if (!favs.length) {
+      list.append(el("div", { class: "fc-empty" }, el("div", { class: "big-emoji" }, "⭐"),
+        el("p", {}, "No favorites yet. Tap the ☆ on any word in Search, the Word of the day, or when you reveal a flashcard.")));
+      return;
+    }
+    favs.slice().reverse().forEach((it) => list.append(resultRow(it, () => { Favs.remove(it.id); render(); })));
+  };
+  render();
 }
 
 /* ---------------- AI conversation tutor ---------------- */
@@ -1283,6 +1465,8 @@ function renderNav() {
   };
 
   add("#/", "🏠", "Dashboard");
+  add("#/search", "🔍", "Search");
+  add("#/favorites", "⭐", "Favorites");
   nav.append(el("div", { class: "nav-sep" }, "Learn"));
   App.sections.forEach((s) => add("#/section/" + s.id, icons[s.id] || "📘", s.title.split("—")[1]?.trim() || s.title));
   nav.append(el("div", { class: "nav-sep" }, "Practice"));
@@ -1293,6 +1477,18 @@ function renderNav() {
   add("#/pronounce", "🎤", "Pronunciation");
   add("#/exam", "🎓", "Exams A1–C2");
   add("#/tutor", "🤖", "AI Tutor");
+}
+
+// Human-readable label for a route hash (used by the dashboard "Continue" button).
+function routeLabel(hash) {
+  const map = { "#/flashcards": "Flashcards", "#/practice": "Quiz", "#/verbs": "Verb trainer", "#/dictation": "Dictation", "#/pronounce": "Pronunciation", "#/exam": "Exams A1–C2", "#/tutor": "AI Tutor", "#/search": "Search", "#/favorites": "Favorites" };
+  if (map[hash]) return map[hash];
+  if (hash.startsWith("#/section/")) {
+    const id = hash.split("/")[2];
+    const s = App.sections.find((x) => x.id === id);
+    return s ? (s.title.split("—").pop().trim() || s.title) : id;
+  }
+  return "where you were";
 }
 
 async function router() {
@@ -1309,7 +1505,10 @@ async function router() {
     else if (hash === "#/pronounce") await viewPronounce();
     else if (hash === "#/exam") await viewExam();
     else if (hash === "#/tutor") await viewTutor();
+    else if (hash === "#/search") await viewSearch();
+    else if (hash === "#/favorites") viewFavorites();
     else await viewDashboard();
+    if (hash && hash !== "#/") localStorage.setItem("ru_last_route", hash);
     App.dueBadge = (await srsStats()).due || null;
   } catch (e) {
     view.innerHTML = `<div class="fc-empty"><div class="big-emoji">⚠️</div><p>Could not load this page.<br><code>${e.message}</code></p></div>`;
@@ -1349,6 +1548,20 @@ function initPrefs() {
     })
   );
 }
+// Mobile off-canvas nav drawer (hamburger). No-op on desktop where the sidebar is static.
+function setupNavDrawer() {
+  const app = $("#app");
+  const toggle = $("#nav-toggle");
+  const backdrop = $("#backdrop");
+  const nav = $("#nav");
+  if (!toggle || !app) return;
+  const set = (open) => { app.classList.toggle("nav-open", open); toggle.setAttribute("aria-expanded", open ? "true" : "false"); };
+  toggle.addEventListener("click", () => set(!app.classList.contains("nav-open")));
+  if (backdrop) backdrop.addEventListener("click", () => set(false));
+  if (nav) nav.addEventListener("click", (e) => { if (e.target.closest("a")) set(false); });
+  window.addEventListener("hashchange", () => set(false));
+}
+
 function registerSW() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () =>
@@ -1360,6 +1573,7 @@ function registerSW() {
 /* ---------------- boot ---------------- */
 async function boot() {
   initPrefs();
+  setupNavDrawer();
   registerSW();
   $("#audio-test").addEventListener("click", () => speak("Здравствуйте! Добро пожаловать."));
   // Build the section list (id + title + description) from the content files.
