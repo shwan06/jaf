@@ -487,6 +487,19 @@ body[data-gloss="ar"] .gloss-en { display: none; }
 .wod-ex { color: var(--muted); font-size: 13.5px; margin-top: 6px; line-height: 1.5; }
 .wod-panel .star-btn { position: absolute; top: 12px; right: 12px; }
 
+/* ---------- Vocabulary browser ---------- */
+.vocab-list { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.vocab-row { display: flex; align-items: flex-start; gap: 10px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+.vocab-row .vr-body { flex: 1; min-width: 0; }
+.vr-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.vr-ru { font-size: 18px; font-weight: 700; }
+.vr-pos { font-size: 11px; color: var(--muted); background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 1px 8px; }
+.vr-tr { color: var(--accent); font-size: 13px; font-style: italic; }
+.vr-en { font-size: 14.5px; margin-top: 1px; }
+.vr-ar { color: var(--accent-2); font-size: 15px; margin-top: 1px; }
+.vr-ex { color: var(--muted); font-size: 13px; margin-top: 5px; line-height: 1.5; }
+.vocab-row .star-btn { margin-top: 1px; }
+
 /* ---------- Learning Path (Duolingo-style) ---------- */
 .path-progress { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 .path-progress .pp-bar { flex: 1; height: 12px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }

@@ -396,6 +396,43 @@ function renderUnit(unit, sectionId) {
 }
 
 /* ---------------- views ---------------- */
+// Browsable vocabulary: render each deck as a card of words (ru click-to-speak,
+// glosses, example, favorite star) with quick-jump chips and a practice link.
+function renderDeckBrowser(view, decks) {
+  const jump = el("div", { class: "deck-pills", style: "justify-content:flex-start" });
+  decks.forEach((d) => {
+    const a = el("a", { class: "deck-pill", href: "#u-" + d.id }, prettyDeck(d.id), el("span", { class: "cnt" }, String((d.cards || []).length)));
+    jump.append(a);
+  });
+  view.append(jump);
+  view.append(el("div", { class: "toolbar", style: "margin-top:-4px" },
+    el("a", { class: "resume-btn", href: "#/flashcards", style: "margin:0" }, "🃏 Practice these with flashcards")));
+
+  decks.forEach((d) => {
+    const card = el("section", { class: "unit", id: "u-" + d.id });
+    card.append(el("div", { class: "unit-head" }, el("div", {},
+      el("h2", {}, prettyDeck(d.title || d.id)),
+      d.description ? el("p", { class: "summary gloss-en" }, d.description) : null)));
+    const list = el("div", { class: "vocab-list" });
+    (d.cards || []).forEach((c) => {
+      const row = el("div", { class: "vocab-row" });
+      row.append(starBtn({ id: "v:" + d.id + ":" + c.ru, ru: c.ru, en: c.en || "", ar: c.ar || "", tr: c.tr || "", type: "word", src: prettyDeck(d.id) }));
+      const body = el("div", { class: "vr-body" },
+        el("div", { class: "vr-head" },
+          el("span", { class: "vr-ru ru", "data-say": c.ru }, c.ru),
+          c.pos ? el("span", { class: "vr-pos" }, c.pos) : null),
+        c.tr ? el("span", { class: "vr-tr" }, c.tr) : null,
+        c.en ? el("div", { class: "vr-en gloss-en" }, c.en) : null,
+        c.ar ? el("div", { class: "vr-ar gloss-ar", dir: "rtl" }, c.ar) : null,
+        c.example ? el("div", { class: "vr-ex" }, c.example) : null);
+      row.append(body);
+      list.append(row);
+    });
+    card.append(list);
+    view.append(card);
+  });
+}
+
 async function viewSection(section, focusUnit) {
   const data = await loadContent(section);
   const view = $("#view");
@@ -406,6 +443,16 @@ async function viewSection(section, focusUnit) {
       el("p", {}, data.description || ""))
   );
   const units = data.units || [];
+  // Vocabulary is stored as decks of cards (not lesson units) — render it as a
+  // browsable word list so the section isn't empty.
+  if (!units.length && (data.decks || []).length) {
+    renderDeckBrowser(view, data.decks);
+    if (focusUnit) {
+      const t = document.getElementById("u-" + focusUnit);
+      if (t) setTimeout(() => { t.scrollIntoView({ behavior: "smooth", block: "start" }); t.classList.add("unit-focus"); setTimeout(() => t.classList.remove("unit-focus"), 2200); }, 60);
+    }
+    return;
+  }
   if (!units.length) {
     view.append(el("div", { class: "fc-empty" }, "No content yet for this section."));
     return;
