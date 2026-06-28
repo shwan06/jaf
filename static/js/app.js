@@ -1169,25 +1169,41 @@ async function pathState() {
     if (!row.done) runningAllDone = false;
   });
   flat.forEach((row, i) => { row.unlocked = i === 0 || flat[i - 1].done || row.done; });
+  // Crown level 0–5 (Duolingo-style): graded mastery you raise by practising again.
+  const crownOf = (n) => {
+    switch (n.kind) {
+      case "cases": return Math.min(5, Math.floor((Cases.mastery(n.case) || 0) / 20));
+      case "exam": return Math.min(5, Math.floor((exam[n.level] || 0) / 20));
+      case "flashcards": { const d = deckStats[n.deck]; return d && d.total ? Math.min(5, Math.floor((d.started / d.total) * 5)) : 0; }
+      case "lesson": return row_done_lesson(n) ? 1 : 0;
+      default: return 0;
+    }
+  };
+  function row_done_lesson(n) { return !!completed[`${n.section}:${n.unit}`]; }
+  const crownCap = (k) => (k === "cases" || k === "exam" || k === "flashcards") ? 5 : 1;
+  flat.forEach((row) => { row.crown = row.n.kind === "checkpoint" ? (row.done ? 1 : 0) : crownOf(row.n); });
   const currentIdx = flat.findIndex((r) => r.unlocked && !r.done);
   const doneCount = flat.filter((r) => r.n.kind !== "checkpoint" && r.done).length;
   const totalSteps = flat.filter((r) => r.n.kind !== "checkpoint").length;
-  return { units: data.units, flat, currentIdx, doneCount, totalSteps };
+  const totalCrowns = flat.reduce((a, r) => a + (r.crown || 0), 0);
+  const maxCrowns = flat.reduce((a, r) => a + crownCap(r.n.kind), 0);
+  return { units: data.units, flat, currentIdx, doneCount, totalSteps, totalCrowns, maxCrowns };
 }
 
 async function viewPath() {
   const view = $("#view");
   view.innerHTML = "";
-  const { units, flat, currentIdx, doneCount, totalSteps } = await pathState();
+  const { units, flat, currentIdx, doneCount, totalSteps, totalCrowns, maxCrowns } = await pathState();
 
   view.append(el("div", { class: "page-head" }, el("h1", {}, "🗺️ Learning Path"),
-    el("p", {}, "Follow the path from the alphabet to academic Russian. Finish each step to light up the next. Progress reflects your real work across the app.")));
+    el("p", {}, "Follow the path from the alphabet to academic Russian. Finish each step to light up the next, then practise again to earn up to 👑×5 crowns per skill. Progress reflects your real work across the app.")));
 
-  // overall progress bar
+  // overall progress bar + crown total
   const pct = totalSteps ? Math.round((doneCount / totalSteps) * 100) : 0;
   view.append(el("div", { class: "path-progress" },
     el("div", { class: "pp-bar" }, el("i", { style: `width:${pct}%` })),
-    el("div", { class: "pp-label" }, `${doneCount} / ${totalSteps} steps · ${pct}%`)));
+    el("div", { class: "pp-label" }, `${doneCount} / ${totalSteps} steps · ${pct}%`),
+    el("div", { class: "pp-crowns" }, "👑 " + totalCrowns + " / " + maxCrowns)));
 
   const wrap = el("div", { class: "path-wrap" });
   let gi = -1; // global node index across units
@@ -1203,14 +1219,17 @@ async function viewPath() {
       const row = flat[gi];
       const isCurrent = gi === currentIdx;
       const state = row.done ? "done" : row.unlocked ? (isCurrent ? "current" : "open") : "locked";
+      const gradable = n.kind === "cases" || n.kind === "exam" || n.kind === "flashcards";
+      const gilded = gradable && row.crown >= 5;
       // zigzag offset for the winding-path look
       const off = [0, 1, 2, 1, -1, -2, -1][idxInUnit % 7];
       const node = el("button", {
-        class: `path-node ${state} kind-${n.kind}`,
+        class: `path-node ${state} kind-${n.kind}` + (gilded ? " gilded" : ""),
         style: `--uc:${u.color}; --off:${off}`,
-        title: n.label + (state === "locked" ? " (locked)" : ""),
+        title: n.label + (state === "locked" ? " (locked)" : gradable ? ` — crown ${row.crown}/5 (practise to level up)` : ""),
       },
         el("span", { class: "pn-ico" }, row.done ? (n.kind === "checkpoint" ? "🏆" : "✓") : state === "locked" ? "🔒" : NODE_ICON[n.kind]),
+        (gradable && row.crown > 0) ? el("span", { class: "pn-crown" }, "👑" + row.crown) : null,
         isCurrent ? el("span", { class: "pn-start" }, "START") : null);
       const label = el("div", { class: "pn-label" }, n.label);
       const cell = el("div", { class: "path-cell", style: `--off:${off}` }, node, label);
