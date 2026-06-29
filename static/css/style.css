@@ -343,9 +343,28 @@ select.dropdown {
 .fc-ar { color: var(--accent-2); font-size: 20px; direction: rtl; }
 .unit .summary-ar { color: var(--muted); font-size: 14px; margin: -8px 0 14px; }
 
-/* gloss visibility: toggled on <body data-gloss="en|ar|both"> */
-body[data-gloss="en"] .gloss-ar { display: none; }
-body[data-gloss="ar"] .gloss-en { display: none; }
+/* ---------- Central Kurdish (Sorani) gloss ---------- */
+.ex-ku, .d-ku, .fc-ku, .vr-ku, .sr-ku, .lt-ku, .wod-ku, .summary-ku {
+  direction: rtl; text-align: right;
+  font-family: "Noto Naskh Arabic", "Segoe UI", "Tahoma", serif;
+  color: #2bb673;
+}
+.example .ex-ku { grid-column: 1 / -1; font-size: 15px; }
+.d-line .d-ku { font-size: 14px; }
+.fc-ku { font-size: 19px; }
+.vr-ku { font-size: 15px; margin-top: 1px; }
+.sr-ku { font-size: 14px; }
+.lt-ku { font-size: 15px; }
+.wod-ku { font-size: 15px; }
+[data-theme="light"] .ex-ku, [data-theme="light"] .d-ku, [data-theme="light"] .fc-ku,
+[data-theme="light"] .vr-ku, [data-theme="light"] .sr-ku, [data-theme="light"] .lt-ku,
+[data-theme="light"] .wod-ku, [data-theme="light"] .summary-ku { color: #15936a; }
+
+/* gloss visibility: toggled on <body data-gloss="en|ar|ku|all"> (legacy: both = EN+AR) */
+body[data-gloss="en"] .gloss-ar, body[data-gloss="en"] .gloss-ku { display: none; }
+body[data-gloss="ar"] .gloss-en, body[data-gloss="ar"] .gloss-ku { display: none; }
+body[data-gloss="ku"] .gloss-en, body[data-gloss="ku"] .gloss-ar { display: none; }
+body[data-gloss="both"] .gloss-ku { display: none; }
 
 /* ---------- Light theme ---------- */
 [data-theme="light"] {

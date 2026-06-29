@@ -109,25 +109,29 @@
               "ru": "Это новый студент.",
               "tr": "Eto novyy student.",
               "en": "This is a new student. (masc., consonant ending)",
-              "ar": "هذا طالب جديد."
+              "ar": "هذا طالب جديد.",
+              "ku": "ئەمە خوێندکارێکی نوێیە."
             },
             {
               "ru": "Здесь интересная книга.",
               "tr": "Zdes' interesnaya kniga.",
               "en": "Here is an interesting book. (fem., -а ending)",
-              "ar": "هنا كتاب مُشوّق."
+              "ar": "هنا كتاب مُشوّق.",
+              "ku": "لێرە کتێبێکی سەرنجڕاکێشە."
             },
             {
               "ru": "Открой большое окно.",
               "tr": "Otkroy bol'shoye okno.",
               "en": "Open the big window. (neut., -о ending)",
-              "ar": "افتح النافذة الكبيرة."
+              "ar": "افتح النافذة الكبيرة.",
+              "ku": "پەنجەرە گەورەکە بکەرەوە."
             },
             {
               "ru": "Какая длинная ночь!",
               "tr": "Kakaya dlinnaya noch'!",
               "en": "What a long night! (fem., 3rd declension)",
-              "ar": "يا لها من ليلة طويلة!"
+              "ar": "يا لها من ليلة طويلة!",
+              "ku": "چ شەوێکی درێژ!"
             }
           ]
         }
@@ -202,25 +206,29 @@
               "ru": "Студент читает книгу в библиотеке.",
               "tr": "Student chitayet knigu v biblioteke.",
               "en": "The student (nom.) reads a book (acc.) in the library (prep.).",
-              "ar": "الطالب يقرأ كتابًا في المكتبة."
+              "ar": "الطالب يقرأ كتابًا في المكتبة.",
+              "ku": "خوێندکارەکە لە کتێبخانەدا کتێبێک دەخوێنێتەوە."
             },
             {
               "ru": "Я дал книгу другу.",
               "tr": "Ya dal knigu drugu.",
               "en": "I gave the book (acc.) to a friend (dat.).",
-              "ar": "أعطيتُ الكتاب لصديق."
+              "ar": "أعطيتُ الكتاب لصديق.",
+              "ku": "کتێبەکەم بە هاوڕێیەکم دا."
             },
             {
               "ru": "Он пишет ручкой.",
               "tr": "On pishet ruchkoy.",
               "en": "He writes with a pen (instr.).",
-              "ar": "هو يكتب بقلم."
+              "ar": "هو يكتب بقلم.",
+              "ku": "ئەو بە پێنووس دەنووسێت."
             },
             {
               "ru": "Это дом моего брата.",
               "tr": "Eto dom moyego brata.",
               "en": "This is my brother's (gen.) house.",
-              "ar": "هذا بيت أخي."
+              "ar": "هذا بيت أخي.",
+              "ku": "ئەمە ماڵی براکەمە."
             }
           ]
         }
@@ -314,25 +322,29 @@
               "ru": "Брат любит сестру.",
               "tr": "Brat lyubit sestru.",
               "en": "The brother (nom.) loves his sister (acc. fem.).",
-              "ar": "الأخ يحبّ أخته."
+              "ar": "الأخ يحبّ أخته.",
+              "ku": "براکە خوشکەکەی خۆشدەوێت."
             },
             {
               "ru": "Я знаю этого профессора.",
               "tr": "Ya znayu etogo professora.",
               "en": "I know this professor. (animate masc. acc. = gen.)",
-              "ar": "أعرف هذا الأستاذ."
+              "ar": "أعرف هذا الأستاذ.",
+              "ku": "من ئەم پڕۆفیسۆرە دەناسم."
             },
             {
               "ru": "Я купил новый компьютер.",
               "tr": "Ya kupil novyy komp'yuter.",
               "en": "I bought a new computer. (inanimate masc. acc. = nom.)",
-              "ar": "اشتريتُ حاسوبًا جديدًا."
+              "ar": "اشتريتُ حاسوبًا جديدًا.",
+              "ku": "کۆمپیوتەرێکی نوێم کڕی."
             },
             {
               "ru": "Мы пригласили друзей.",
               "tr": "My priglasili druzey.",
               "en": "We invited friends. (animate plural acc. = gen.)",
-              "ar": "دعونا الأصدقاء."
+              "ar": "دعونا الأصدقاء.",
+              "ku": "هاوڕێیانمان بانگهێشت کرد."
             }
           ]
         }
@@ -529,31 +541,36 @@
               "ru": "У меня нет брата.",
               "tr": "U menya net brata.",
               "en": "I don't have a brother. (gen. of absence)",
-              "ar": "ليس لديّ أخ."
+              "ar": "ليس لديّ أخ.",
+              "ku": "من برام نییە."
             },
             {
               "ru": "Это дом моих родителей.",
               "tr": "Eto dom moikh roditeley.",
               "en": "This is my parents' house. (gen. pl. possession)",
-              "ar": "هذا بيت والديّ."
+              "ar": "هذا بيت والديّ.",
+              "ku": "ئەمە ماڵی دایک و باوکمە."
             },
             {
               "ru": "Он купил пять билетов.",
               "tr": "On kupil pyat' biletov.",
               "en": "He bought five tickets. (5+ → gen. pl.)",
-              "ar": "اشترى خمس تذاكر."
+              "ar": "اشترى خمس تذاكر.",
+              "ku": "ئەو پێنج بلیتی کڕی."
             },
             {
               "ru": "Я выпил чашку чая.",
               "tr": "Ya vypil chashku chaya.",
               "en": "I drank a cup of tea. (partitive gen.)",
-              "ar": "شربتُ فنجان شاي."
+              "ar": "شربتُ فنجان شاي.",
+              "ku": "فنجانێک چام خواردەوە."
             },
             {
               "ru": "В классе три студента.",
               "tr": "V klasse tri studenta.",
               "en": "There are three students in the class. (2-4 → gen. sg.)",
-              "ar": "في الصف ثلاثة طلاب."
+              "ar": "في الصف ثلاثة طلاب.",
+              "ku": "لە پۆلەکەدا سێ خوێندکار هەن."
             }
           ]
         }
@@ -627,31 +644,36 @@
               "ru": "Мне нравится эта музыка.",
               "tr": "Mne nravitsya eta muzyka.",
               "en": "I like this music.",
-              "ar": "تعجبني هذه الموسيقى."
+              "ar": "تعجبني هذه الموسيقى.",
+              "ku": "ئەم مۆسیقایەم پێ خۆشە."
             },
             {
               "ru": "Сколько тебе лет?",
               "tr": "Skol'ko tebe let?",
               "en": "How old are you? (lit. how many years to you?)",
-              "ar": "كم عمرك؟"
+              "ar": "كم عمرك؟",
+              "ku": "تەمەنت چەندە؟"
             },
             {
               "ru": "Профессор объяснил студентам правило.",
               "tr": "Professor ob'yasnil studentam pravilo.",
               "en": "The professor explained the rule to the students.",
-              "ar": "شرح الأستاذ القاعدة للطلاب."
+              "ar": "شرح الأستاذ القاعدة للطلاب.",
+              "ku": "پڕۆفیسۆرەکە ڕێسایەکەی بۆ خوێندکاران ڕوون کردەوە."
             },
             {
               "ru": "Мы идём к бабушке.",
               "tr": "My idyom k babushke.",
               "en": "We are going to grandmother's. (к + dat.)",
-              "ar": "نحن ذاهبون إلى الجدّة."
+              "ar": "نحن ذاهبون إلى الجدّة.",
+              "ku": "ئێمە دەچینە لای داپیرە."
             },
             {
               "ru": "Ему было скучно.",
               "tr": "Yemu bylo skuchno.",
               "en": "He was bored. (dative experiencer)",
-              "ar": "كان يشعر بالملل."
+              "ar": "كان يشعر بالملل.",
+              "ku": "ئەو بێزار ببوو."
             }
           ]
         }
@@ -728,31 +750,36 @@
               "ru": "Я пишу карандашом.",
               "tr": "Ya pishu karandashom.",
               "en": "I write with a pencil. (means)",
-              "ar": "أكتب بقلم رصاص."
+              "ar": "أكتب بقلم رصاص.",
+              "ku": "من بە قەڵەمی ڕەساس دەنووسم."
             },
             {
               "ru": "Мы пьём кофе с молоком.",
               "tr": "My p'yom kofe s molokom.",
               "en": "We drink coffee with milk. (accompaniment)",
-              "ar": "نشرب القهوة بالحليب."
+              "ar": "نشرب القهوة بالحليب.",
+              "ku": "ئێمە قاوە بە شیر دەخۆینەوە."
             },
             {
               "ru": "Он хочет стать врачом.",
               "tr": "On khochet stat' vrachom.",
               "en": "He wants to become a doctor. (predicate)",
-              "ar": "يريد أن يصبح طبيبًا."
+              "ar": "يريد أن يصبح طبيبًا.",
+              "ku": "ئەو دەیەوێت ببێتە پزیشک."
             },
             {
               "ru": "Кошка спит под столом.",
               "tr": "Koshka spit pod stolom.",
               "en": "The cat is sleeping under the table. (под + instr.)",
-              "ar": "القطة نائمة تحت الطاولة."
+              "ar": "القطة نائمة تحت الطاولة.",
+              "ku": "پشیلەکە لەژێر مێزەکە نوستووە."
             },
             {
               "ru": "Я занимаюсь спортом.",
               "tr": "Ya zanimayus' sportom.",
               "en": "I do sports. (verb-governed instr.)",
-              "ar": "أمارس الرياضة."
+              "ar": "أمارس الرياضة.",
+              "ku": "من وەرزش دەکەم."
             }
           ]
         }
@@ -829,31 +856,36 @@
               "ru": "Книга лежит на столе.",
               "tr": "Kniga lezhit na stole.",
               "en": "The book is lying on the table.",
-              "ar": "الكتاب موضوع على الطاولة."
+              "ar": "الكتاب موضوع على الطاولة.",
+              "ku": "کتێبەکە لەسەر مێزەکەیە."
             },
             {
               "ru": "Мы живём в большом городе.",
               "tr": "My zhivyom v bol'shom gorode.",
               "en": "We live in a big city.",
-              "ar": "نحن نعيش في مدينة كبيرة."
+              "ar": "نحن نعيش في مدينة كبيرة.",
+              "ku": "ئێمە لە شارێکی گەورەدا دەژین."
             },
             {
               "ru": "Они говорят о политике.",
               "tr": "Oni govoryat o politike.",
               "en": "They are talking about politics.",
-              "ar": "هم يتحدثون عن السياسة."
+              "ar": "هم يتحدثون عن السياسة.",
+              "ku": "ئەوان لەسەر سیاسەت قسە دەکەن."
             },
             {
               "ru": "Дети играют в саду.",
               "tr": "Deti igrayut v sadu.",
               "en": "The children are playing in the garden. (locative-2)",
-              "ar": "الأطفال يلعبون في الحديقة."
+              "ar": "الأطفال يلعبون في الحديقة.",
+              "ku": "منداڵەکان لە باخچەکەدا یاری دەکەن."
             },
             {
               "ru": "Я мечтаю о море.",
               "tr": "Ya mechtayu o more.",
               "en": "I dream about the sea.",
-              "ar": "أحلم بالبحر."
+              "ar": "أحلم بالبحر.",
+              "ku": "من خەونم بە دەریاوە دەبینم."
             }
           ]
         }
@@ -1090,19 +1122,22 @@
               "ru": "У наших друзей новая машина.",
               "tr": "U nashikh druzey novaya mashina.",
               "en": "Our friends have a new car. (irregular gen. pl.)",
-              "ar": "أصدقاؤنا لديهم سيارة جديدة."
+              "ar": "أصدقاؤنا لديهم سيارة جديدة.",
+              "ku": "هاوڕێیانمان ئۆتۆمبێلێکی نوێیان هەیە."
             },
             {
               "ru": "В городах много домов.",
               "tr": "V gorodakh mnogo domov.",
               "en": "There are many houses in the cities.",
-              "ar": "في المدن بيوت كثيرة."
+              "ar": "في المدن بيوت كثيرة.",
+              "ku": "لە شارەکاندا خانووی زۆر هەیە."
             },
             {
               "ru": "Я разговаривал с матерью.",
               "tr": "Ya razgovarival s mater'yu.",
               "en": "I was talking with my mother. (instr. sg., insert -er-)",
-              "ar": "كنتُ أتحدث مع أمي."
+              "ar": "كنتُ أتحدث مع أمي.",
+              "ku": "من لەگەڵ دایکمدا قسەم دەکرد."
             }
           ]
         }
@@ -1292,25 +1327,29 @@
               "ru": "Я читаю интересную книгу.",
               "tr": "Ya chitayu interesnuyu knigu.",
               "en": "I am reading an interesting book. (fem. acc.)",
-              "ar": "أقرأ كتابًا مُشوّقًا."
+              "ar": "أقرأ كتابًا مُشوّقًا.",
+              "ku": "من کتێبێکی سەرنجڕاکێش دەخوێنمەوە."
             },
             {
               "ru": "Мы говорили о новых студентах.",
               "tr": "My govorili o novykh studentakh.",
               "en": "We talked about the new students. (prep. pl.)",
-              "ar": "تحدثنا عن الطلاب الجدد."
+              "ar": "تحدثنا عن الطلاب الجدد.",
+              "ku": "ئێمە لەسەر خوێندکارە نوێیەکان قسەمان کرد."
             },
             {
               "ru": "Этот город очень красив.",
               "tr": "Etot gorod ochen' krasiv.",
               "en": "This city is very beautiful. (short form, predicate)",
-              "ar": "هذه المدينة جميلة جدًا."
+              "ar": "هذه المدينة جميلة جدًا.",
+              "ku": "ئەم شارە زۆر جوانە."
             },
             {
               "ru": "Я должен идти.",
               "tr": "Ya dolzhen idti.",
               "en": "I must go. (short form должен)",
-              "ar": "عليّ أن أذهب."
+              "ar": "عليّ أن أذهب.",
+              "ku": "دەبێت بڕۆم."
             }
           ]
         }
@@ -1402,25 +1441,29 @@
               "ru": "Эта задача труднее предыдущей.",
               "tr": "Eta zadacha trudneye predydushchey.",
               "en": "This problem is harder than the previous one. (gen. comparison)",
-              "ar": "هذه المسألة أصعب من السابقة."
+              "ar": "هذه المسألة أصعب من السابقة.",
+              "ku": "ئەم مەسەلەیە لە مەسەلەی پێشوو قورستترە."
             },
             {
               "ru": "Он говорит по-русски лучше, чем я.",
               "tr": "On govorit po-russki luchshe, chem ya.",
               "en": "He speaks Russian better than I do. (чем + nom.)",
-              "ar": "هو يتحدث الروسية أفضل مني."
+              "ar": "هو يتحدث الروسية أفضل مني.",
+              "ku": "ئەو لە من باشتر بە ڕووسی قسە دەکات."
             },
             {
               "ru": "Это самый красивый город в мире.",
               "tr": "Eto samyy krasivyy gorod v mire.",
               "en": "This is the most beautiful city in the world.",
-              "ar": "هذه أجمل مدينة في العالم."
+              "ar": "هذه أجمل مدينة في العالم.",
+              "ku": "ئەمە جوانترین شاری جیهانە."
             },
             {
               "ru": "Больше всего я люблю читать.",
               "tr": "Bol'she vsego ya lyublyu chitat'.",
               "en": "Most of all I love to read.",
-              "ar": "أكثر ما أحبّه هو القراءة."
+              "ar": "أكثر ما أحبّه هو القراءة.",
+              "ku": "لە هەموو شتێک زیاتر، خوێندنەوەم خۆشدەوێت."
             }
           ]
         }
@@ -1721,31 +1764,36 @@
               "ru": "У меня есть вопрос.",
               "tr": "U menya yest' vopros.",
               "en": "I have a question. (lit. by me there is)",
-              "ar": "لديّ سؤال."
+              "ar": "لديّ سؤال.",
+              "ku": "من پرسیارێکم هەیە."
             },
             {
               "ru": "Я думаю о тебе.",
               "tr": "Ya dumayu o tebe.",
               "en": "I am thinking about you.",
-              "ar": "أفكّر فيك."
+              "ar": "أفكّر فيك.",
+              "ku": "من بیر لە تۆ دەکەمەوە."
             },
             {
               "ru": "Она взяла свою книгу.",
               "tr": "Ona vzyala svoyu knigu.",
               "en": "She took her (own) book.",
-              "ar": "أخذت كتابها (الخاص بها)."
+              "ar": "أخذت كتابها (الخاص بها).",
+              "ku": "ئەو کتێبە تایبەتی خۆی بردەوە."
             },
             {
               "ru": "Чья это машина?",
               "tr": "Ch'ya eto mashina?",
               "en": "Whose car is this?",
-              "ar": "لمن هذه السيارة؟"
+              "ar": "لمن هذه السيارة؟",
+              "ku": "ئەمە ئۆتۆمبێلی کێیە؟"
             },
             {
               "ru": "С кем ты говорил?",
               "tr": "S kem ty govoril?",
               "en": "With whom were you talking?",
-              "ar": "مع مَن كنتَ تتحدث؟"
+              "ar": "مع مَن كنتَ تتحدث؟",
+              "ku": "لەگەڵ کێدا قسەت دەکرد؟"
             }
           ]
         }
@@ -1948,25 +1996,29 @@
               "ru": "У меня две сестры и один брат.",
               "tr": "U menya dve sestry i odin brat.",
               "en": "I have two sisters and one brother.",
-              "ar": "لديّ أختان وأخ واحد."
+              "ar": "لديّ أختان وأخ واحد.",
+              "ku": "من دوو خوشک و یەک برام هەیە."
             },
             {
               "ru": "В группе двадцать пять студентов.",
               "tr": "V gruppe dvadtsat' pyat' studentov.",
               "en": "There are twenty-five students in the group. (gen. pl.)",
-              "ar": "في المجموعة خمسة وعشرون طالبًا."
+              "ar": "في المجموعة خمسة وعشرون طالبًا.",
+              "ku": "لە گرووپەکەدا بیست و پێنج خوێندکار هەن."
             },
             {
               "ru": "Сегодня третье мая.",
               "tr": "Segodnya tret'ye maya.",
               "en": "Today is the third of May. (ordinal + gen. of month)",
-              "ar": "اليوم هو الثالث من مايو."
+              "ar": "اليوم هو الثالث من مايو.",
+              "ku": "ئەمڕۆ سێی ئایارە."
             },
             {
               "ru": "Он пришёл с двумя друзьями.",
               "tr": "On prishyol s dvumya druz'yami.",
               "en": "He came with two friends. (number declined, instr.)",
-              "ar": "جاء مع صديقَين."
+              "ar": "جاء مع صديقَين.",
+              "ku": "ئەو لەگەڵ دوو هاوڕێدا هات."
             }
           ]
         }
@@ -2156,25 +2208,29 @@
               "ru": "Я читаю эту книгу уже неделю.",
               "tr": "Ya chitayu etu knigu uzhe nedelyu.",
               "en": "I've been reading this book for a week. (imperf., process)",
-              "ar": "أقرأ هذا الكتاب منذ أسبوع."
+              "ar": "أقرأ هذا الكتاب منذ أسبوع.",
+              "ku": "من ماوەی هەفتەیەکە ئەم کتێبە دەخوێنمەوە."
             },
             {
               "ru": "Я прочитал эту книгу за один день.",
               "tr": "Ya prochital etu knigu za odin den'.",
               "en": "I read this book in one day. (perf., result)",
-              "ar": "قرأتُ هذا الكتاب في يوم واحد."
+              "ar": "قرأتُ هذا الكتاب في يوم واحد.",
+              "ku": "من ئەم کتێبەم لە یەک ڕۆژدا خوێندەوە."
             },
             {
               "ru": "Он говорит по-русски и по-английски.",
               "tr": "On govorit po-russki i po-angliyski.",
               "en": "He speaks Russian and English.",
-              "ar": "هو يتحدث الروسية والإنجليزية."
+              "ar": "هو يتحدث الروسية والإنجليزية.",
+              "ku": "ئەو بە ڕووسی و ئینگلیزی قسە دەکات."
             },
             {
               "ru": "Раньше здесь был парк.",
               "tr": "Ran'she zdes' byl park.",
               "en": "There used to be a park here. (past of быть)",
-              "ar": "كان هنا حديقة فيما مضى."
+              "ar": "كان هنا حديقة فيما مضى.",
+              "ku": "پێشتر لێرە باخچەیەک هەبوو."
             }
           ]
         }
@@ -2337,25 +2393,29 @@
               "ru": "Вчера она читала весь вечер.",
               "tr": "Vchera ona chitala ves' vecher.",
               "en": "Yesterday she read all evening. (imperf. past, fem.)",
-              "ar": "بالأمس قرأت طوال المساء."
+              "ar": "بالأمس قرأت طوال المساء.",
+              "ku": "دوێنێ ئەو بە درێژایی ئێوارە خوێندیەوە."
             },
             {
               "ru": "Завтра я буду работать.",
               "tr": "Zavtra ya budu rabotat'.",
               "en": "Tomorrow I will be working. (compound future)",
-              "ar": "غدًا سأعمل."
+              "ar": "غدًا سأعمل.",
+              "ku": "سبەینێ من کار دەکەم."
             },
             {
               "ru": "Я напишу письмо и отправлю его.",
               "tr": "Ya napishu pis'mo i otpravlyu yego.",
               "en": "I will write the letter and send it. (perf. future, sequence)",
-              "ar": "سأكتب الرسالة وأرسلها."
+              "ar": "سأكتب الرسالة وأرسلها.",
+              "ku": "نامەکە دەنووسم و دەینێرم."
             },
             {
               "ru": "Они уже ушли.",
               "tr": "Oni uzhe ushli.",
               "en": "They have already left. (perf. past, suppletive шли)",
-              "ar": "لقد غادروا بالفعل."
+              "ar": "لقد غادروا بالفعل.",
+              "ku": "ئەوان پێشتر ڕۆیشتوون."
             }
           ]
         }
@@ -2428,13 +2488,15 @@
               "ru": "Если бы у меня было время, я бы поехал в Москву.",
               "tr": "Yesli by u menya bylo vremya, ya by poyekhal v Moskvu.",
               "en": "If I had time, I would go to Moscow. (бы + past)",
-              "ar": "لو كان لديّ وقت، لذهبتُ إلى موسكو."
+              "ar": "لو كان لديّ وقت، لذهبتُ إلى موسكو.",
+              "ku": "ئەگەر کاتم هەبووایە، دەچوومە مۆسکۆ."
             },
             {
               "ru": "Я хотел бы спросить.",
               "tr": "Ya khotel by sprosit'.",
               "en": "I would like to ask. (polite softening)",
-              "ar": "أودّ أن أسأل."
+              "ar": "أودّ أن أسأل.",
+              "ku": "دەمەوێت پرسیار بکەم."
             }
           ]
         },
@@ -2608,25 +2670,29 @@
               "ru": "Сейчас я иду в университет.",
               "tr": "Seychas ya idu v universitet.",
               "en": "I'm walking to the university right now. (unidirectional)",
-              "ar": "أنا الآن ذاهب إلى الجامعة."
+              "ar": "أنا الآن ذاهب إلى الجامعة.",
+              "ku": "ئێستا دەچمە زانکۆ."
             },
             {
               "ru": "Я хожу в университет каждый день.",
               "tr": "Ya khozhu v universitet kazhdyy den'.",
               "en": "I go to the university every day. (multidirectional, habit)",
-              "ar": "أذهب إلى الجامعة كل يوم."
+              "ar": "أذهب إلى الجامعة كل يوم.",
+              "ku": "من هەموو ڕۆژێک دەچمە زانکۆ."
             },
             {
               "ru": "Поезд приходит в восемь часов.",
               "tr": "Poyezd prikhodit v vosem' chasov.",
               "en": "The train arrives at eight o'clock. (prefixed imperf.)",
-              "ar": "القطار يصل في الساعة الثامنة."
+              "ar": "القطار يصل في الساعة الثامنة.",
+              "ku": "شەمەندەفەرەکە لە کاتژمێر هەشتدا دەگات."
             },
             {
               "ru": "Закройте, пожалуйста, дверь.",
               "tr": "Zakroyte, pozhaluysta, dver'.",
               "en": "Please close the door. (perf. imperative)",
-              "ar": "أغلقوا الباب من فضلكم."
+              "ar": "أغلقوا الباب من فضلكم.",
+              "ku": "تکایە دەرگاکە دابخەن."
             }
           ]
         }
@@ -2738,31 +2804,36 @@
               "ru": "Студент, читающий книгу, мой брат.",
               "tr": "Student, chitayushchiy knigu, moy brat.",
               "en": "The student reading the book is my brother. (present active participle)",
-              "ar": "الطالب الذي يقرأ الكتاب هو أخي."
+              "ar": "الطالب الذي يقرأ الكتاب هو أخي.",
+              "ku": "ئەو خوێندکارەی کتێبەکە دەخوێنێتەوە، براکەمە."
             },
             {
               "ru": "Прочитав письмо, она заплакала.",
               "tr": "Prochitav pis'mo, ona zaplakala.",
               "en": "Having read the letter, she burst into tears. (perfective verbal adverb)",
-              "ar": "بعد أن قرأت الرسالة، بكت."
+              "ar": "بعد أن قرأت الرسالة، بكت.",
+              "ku": "دوای ئەوەی نامەکەی خوێندەوە، گریا."
             },
             {
               "ru": "Я никогда там не был.",
               "tr": "Ya nikogda tam ne byl.",
               "en": "I have never been there. (obligatory double negation)",
-              "ar": "لم أكن هناك قط."
+              "ar": "لم أكن هناك قط.",
+              "ku": "من هەرگیز لەوێ نەبووم."
             },
             {
               "ru": "У нас нет времени.",
               "tr": "U nas net vremeni.",
               "en": "We don't have time. (нет + genitive)",
-              "ar": "ليس لدينا وقت."
+              "ar": "ليس لدينا وقت.",
+              "ku": "ئێمە کاتمان نییە."
             },
             {
               "ru": "Вы говорите по-русски?",
               "tr": "Vy govorite po-russki?",
               "en": "Do you speak Russian? (yes/no question by intonation)",
-              "ar": "هل تتحدثون الروسية؟"
+              "ar": "هل تتحدثون الروسية؟",
+              "ku": "ئێوە بە ڕووسی قسە دەکەن؟"
             }
           ]
         }

@@ -129,6 +129,7 @@ async function masterCards() {
         pos: c.pos || "",
         example: c.example || "",
         audio: c.audio || "",
+        ku: c.ku || "",
       });
     });
   });
@@ -376,6 +377,7 @@ function renderBlock(b) {
         if (it.tr) row.append(el("div", { class: "ex-tr" }, it.tr));
         if (it.en) row.append(el("div", { class: "ex-en gloss-en" }, it.en));
         if (it.ar) row.append(el("div", { class: "ex-ar gloss-ar", dir: "rtl" }, it.ar));
+        if (it.ku) row.append(el("div", { class: "ex-ku gloss-ku", dir: "rtl" }, it.ku));
         wrap.append(row);
       });
       return wrap;
@@ -390,6 +392,7 @@ function renderBlock(b) {
         if (l.tr) line.append(el("div", { class: "d-tr" }, l.tr));
         if (l.en) line.append(el("div", { class: "d-en gloss-en" }, l.en));
         if (l.ar) line.append(el("div", { class: "d-ar gloss-ar", dir: "rtl" }, l.ar));
+        if (l.ku) line.append(el("div", { class: "d-ku gloss-ku", dir: "rtl" }, l.ku));
         wrap.append(line);
       });
       return wrap;
@@ -479,6 +482,7 @@ function renderDeckBrowser(view, decks) {
         c.tr ? el("span", { class: "vr-tr" }, c.tr) : null,
         c.en ? el("div", { class: "vr-en gloss-en" }, c.en) : null,
         c.ar ? el("div", { class: "vr-ar gloss-ar", dir: "rtl" }, c.ar) : null,
+        c.ku ? el("div", { class: "vr-ku gloss-ku", dir: "rtl" }, c.ku) : null,
         c.example ? el("div", { class: "vr-ex" }, c.example) : null);
       row.append(body);
       list.append(row);
@@ -571,8 +575,9 @@ async function viewDashboard() {
       w.tr ? el("div", { class: "wod-tr" }, w.tr) : null,
       el("div", { class: "wod-en gloss-en" }, w.back),
       w.ar ? el("div", { class: "wod-ar gloss-ar", dir: "rtl" }, w.ar) : null,
+      w.ku ? el("div", { class: "wod-ku gloss-ku", dir: "rtl" }, w.ku) : null,
       w.example ? el("div", { class: "wod-ex" }, w.example) : null,
-      starBtn({ id: "v:" + w.deck + ":" + w.front, ru: w.front, en: w.back, ar: w.ar, tr: w.tr, type: "word", src: "Word of the day" })));
+      starBtn({ id: "v:" + w.deck + ":" + w.front, ru: w.front, en: w.back, ar: w.ar, ku: w.ku, tr: w.tr, type: "word", src: "Word of the day" })));
   }
 
   view.append(
@@ -744,7 +749,8 @@ async function viewListening(startId) {
             it.tr ? el("div", { class: "lt-tr" }, it.tr) : null,
             el("div", { class: "lt-en gloss-en" }, it.en),
             it.ar ? el("div", { class: "lt-ar gloss-ar", dir: "rtl" }, it.ar) : null,
-            starBtn({ id: "ls:" + it.id, ru: it.ru, en: it.en, ar: it.ar || "", tr: it.tr || "", type: "phrase", src: "Listening" }));
+            it.ku ? el("div", { class: "lt-ku gloss-ku", dir: "rtl" }, it.ku) : null,
+            starBtn({ id: "ls:" + it.id, ru: it.ru, en: it.en, ar: it.ar || "", ku: it.ku || "", tr: it.tr || "", type: "phrase", src: "Listening" }));
           card.append(tr);
           card.append(el("button", { class: "btn primary", style: "margin-top:14px", onclick: () => { state.i++; render(); } },
             state.i + 1 >= items.length ? "See results" : "Next →"));
@@ -998,9 +1004,10 @@ async function viewFlashcards() {
     back.append(el("div", { class: "fc-divider" }));
     back.append(el("div", { class: "fc-back gloss-en" }, card.back));
     if (card.ar) back.append(el("div", { class: "fc-ar gloss-ar", dir: "rtl" }, card.ar));
+    if (card.ku) back.append(el("div", { class: "fc-ku gloss-ku", dir: "rtl" }, card.ku));
     if (card.tr) back.append(el("div", { class: "fc-tr" }, card.tr));
     if (card.example) back.append(el("div", { class: "fc-ex" }, card.example));
-    back.append(el("div", { class: "fc-fav" }, starBtn({ id: card.id, ru: card.front, en: card.back, ar: card.ar, tr: card.tr, type: "word", src: prettyDeck(card.deck) })));
+    back.append(el("div", { class: "fc-fav" }, starBtn({ id: card.id, ru: card.front, en: card.back, ar: card.ar, ku: card.ku, tr: card.tr, type: "word", src: prettyDeck(card.deck) })));
     fc.append(back);
     host.append(fc);
 
@@ -1770,17 +1777,17 @@ async function buildSearchIndex() {
   const push = (it) => { const k = it.type + ":" + it.ru; if (it.ru && !seen.has(k)) { seen.add(k); out.push(it); } };
   const vocab = await loadContent("vocabulary").catch(() => ({}));
   (vocab.decks || []).forEach((d) => (d.cards || []).forEach((c) =>
-    push({ id: "v:" + d.id + ":" + c.ru, ru: c.ru, en: c.en || "", tr: c.tr || "", ar: c.ar || "", type: "word", src: prettyDeck(d.id) })));
+    push({ id: "v:" + d.id + ":" + c.ru, ru: c.ru, en: c.en || "", tr: c.tr || "", ar: c.ar || "", ku: c.ku || "", type: "word", src: prettyDeck(d.id) })));
   const vb = await loadContent("verbs").catch(() => ({}));
   (vb.verbs || []).forEach((v) =>
-    push({ id: "vb:" + v.inf, ru: v.inf, en: v.en || "", ar: v.ar || "", type: "verb", src: "Verb" }));
+    push({ id: "vb:" + v.inf, ru: v.inf, en: v.en || "", ar: v.ar || "", ku: v.ku || "", type: "verb", src: "Verb" }));
   for (const sec of ["grammar", "academic", "conversations", "alphabet"]) {
     const data = await loadContent(sec).catch(() => ({}));
     (data.units || []).forEach((u) => (u.blocks || []).forEach((b) => {
       if (b.type === "examples") (b.items || []).forEach((it) =>
-        push({ id: "ex:" + it.ru, ru: it.ru, en: it.en || "", ar: it.ar || "", tr: it.tr || "", type: "phrase", src: (u.title || sec).split("—")[0].trim() }));
+        push({ id: "ex:" + it.ru, ru: it.ru, en: it.en || "", ar: it.ar || "", ku: it.ku || "", tr: it.tr || "", type: "phrase", src: (u.title || sec).split("—")[0].trim() }));
       if (b.type === "dialogue") (b.lines || []).forEach((l) =>
-        push({ id: "dl:" + l.ru, ru: l.ru, en: l.en || "", ar: l.ar || "", tr: l.tr || "", type: "phrase", src: (u.title || sec).split("—")[0].trim() }));
+        push({ id: "dl:" + l.ru, ru: l.ru, en: l.en || "", ar: l.ar || "", ku: l.ku || "", tr: l.tr || "", type: "phrase", src: (u.title || sec).split("—")[0].trim() }));
     }));
   }
   return out;
@@ -1795,7 +1802,8 @@ function resultRow(it, onRemove) {
     el("div", { class: "sr-ru ru", "data-say": it.ru }, it.ru),
     it.tr ? el("div", { class: "sr-tr" }, it.tr) : null,
     it.en ? el("div", { class: "sr-en gloss-en" }, it.en) : null,
-    it.ar ? el("div", { class: "sr-ar gloss-ar", dir: "rtl" }, it.ar) : null));
+    it.ar ? el("div", { class: "sr-ar gloss-ar", dir: "rtl" }, it.ar) : null,
+    it.ku ? el("div", { class: "sr-ku gloss-ku", dir: "rtl" }, it.ku) : null));
   row.append(el("span", { class: "sr-tag" }, it.src || it.type || "saved"));
   return row;
 }
@@ -2357,7 +2365,8 @@ function applyGloss(gloss) {
 function initPrefs() {
   const theme = localStorage.getItem("ru_theme") || "dark";
   applyTheme(theme);
-  const gloss = localStorage.getItem("ru_gloss") || "both";
+  let gloss = localStorage.getItem("ru_gloss") || "all";
+  if (gloss === "both") gloss = "all"; // legacy value → show all three
   applyGloss(gloss);
 
   const tBtn = $("#theme-toggle");

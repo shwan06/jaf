@@ -26,15 +26,47 @@
         {
           "type": "table",
           "caption": "Разговорный vs академический регистр — colloquial reformulated as academic",
-          "headers": ["Разговорный (colloquial)", "Академический (academic)", "English gloss"],
+          "headers": [
+            "Разговорный (colloquial)",
+            "Академический (academic)",
+            "English gloss"
+          ],
           "rows": [
-            ["Мы взяли и посмотрели, что получится.", "Был проведён анализ полученных результатов.", "An analysis of the obtained results was carried out."],
-            ["Из-за этого всё поменялось.", "Это обусловило существенные изменения.", "This brought about substantial changes."],
-            ["Тут видно, что цифры растут.", "Наблюдается устойчивый рост показателей.", "A steady growth of the indicators is observed."],
-            ["Я думаю, что это правда.", "Представляется обоснованным считать данное утверждение справедливым.", "It appears justified to regard this claim as valid."],
-            ["Мы это сделали по-другому.", "Был применён иной методологический подход.", "A different methodological approach was applied."],
-            ["Короче, вот к чему мы пришли.", "Таким образом, можно сделать следующий вывод.", "Thus, the following conclusion can be drawn."],
-            ["Это очень важная штука.", "Данный фактор имеет принципиальное значение.", "This factor is of fundamental importance."]
+            [
+              "Мы взяли и посмотрели, что получится.",
+              "Был проведён анализ полученных результатов.",
+              "An analysis of the obtained results was carried out."
+            ],
+            [
+              "Из-за этого всё поменялось.",
+              "Это обусловило существенные изменения.",
+              "This brought about substantial changes."
+            ],
+            [
+              "Тут видно, что цифры растут.",
+              "Наблюдается устойчивый рост показателей.",
+              "A steady growth of the indicators is observed."
+            ],
+            [
+              "Я думаю, что это правда.",
+              "Представляется обоснованным считать данное утверждение справедливым.",
+              "It appears justified to regard this claim as valid."
+            ],
+            [
+              "Мы это сделали по-другому.",
+              "Был применён иной методологический подход.",
+              "A different methodological approach was applied."
+            ],
+            [
+              "Короче, вот к чему мы пришли.",
+              "Таким образом, можно сделать следующий вывод.",
+              "Thus, the following conclusion can be drawn."
+            ],
+            [
+              "Это очень важная штука.",
+              "Данный фактор имеет принципиальное значение.",
+              "This factor is of fundamental importance."
+            ]
           ]
         },
         {
@@ -44,9 +76,27 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "В настоящей работе рассматривается проблема классификации текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma klassifikácii tékstov.", "en": "The present work examines the problem of text classification.", "ar": "تتناول هذه الدراسة مشكلة تصنيف النصوص."},
-            {"ru": "Нами было установлено, что данная зависимость носит нелинейный характер.", "tr": "Námi býlo ustanóvleno, čto dánnaja zavísimostʹ nósit nelinéjnyj charákter.", "en": "We established that the dependence in question is nonlinear in nature.", "ar": "لقد تبيّن لنا أنّ هذه العلاقة ذات طابع غير خطّي."},
-            {"ru": "Полученные данные свидетельствуют о наличии корреляции между переменными.", "tr": "Polúčennye dánnye svidételʹstvujut o nalíčii korreljácii méždu pereménnymi.", "en": "The data obtained attest to the presence of a correlation between the variables.", "ar": "تشهد البيانات المُحصَّل عليها بوجود ارتباط بين المتغيّرات."}
+            {
+              "ru": "В настоящей работе рассматривается проблема классификации текстов.",
+              "tr": "V nastojáščej rabóte rassmátrivaetsja probléma klassifikácii tékstov.",
+              "en": "The present work examines the problem of text classification.",
+              "ar": "تتناول هذه الدراسة مشكلة تصنيف النصوص.",
+              "ku": "لەم توێژینەوەیەدا کێشەی پۆلێنکردنی دەقەکان دەخرێتە بەرباس."
+            },
+            {
+              "ru": "Нами было установлено, что данная зависимость носит нелинейный характер.",
+              "tr": "Námi býlo ustanóvleno, čto dánnaja zavísimostʹ nósit nelinéjnyj charákter.",
+              "en": "We established that the dependence in question is nonlinear in nature.",
+              "ar": "لقد تبيّن لنا أنّ هذه العلاقة ذات طابع غير خطّي.",
+              "ku": "بۆمان دەرکەوت کە ئەم پەیوەندییە سروشتێکی نا-هێڵی هەیە."
+            },
+            {
+              "ru": "Полученные данные свидетельствуют о наличии корреляции между переменными.",
+              "tr": "Polúčennye dánnye svidételʹstvujut o nalíčii korreljácii méždu pereménnymi.",
+              "en": "The data obtained attest to the presence of a correlation between the variables.",
+              "ar": "تشهد البيانات المُحصَّل عليها بوجود ارتباط بين المتغيّرات.",
+              "ku": "ئەو داتایانەی دەستکەوتوون بەڵگەن لەسەر بوونی پەیوەندی لەنێوان گۆڕاوەکاندا."
+            }
           ]
         }
       ]
@@ -64,16 +114,52 @@
         {
           "type": "table",
           "caption": "Безличные и пассивные конструкции — agentless constructions",
-          "headers": ["Конструкция", "Translit", "Function / English"],
+          "headers": [
+            "Конструкция",
+            "Translit",
+            "Function / English"
+          ],
           "rows": [
-            ["рассматривается / исследуется", "rassmátrivaetsja / isslédujetsja", "is examined / is investigated (reflexive passive, present)"],
-            ["было показано, что…", "býlo pokázano, čto", "it was shown that… (short passive participle)"],
-            ["было установлено / получено", "býlo ustanóvleno / polúčeno", "it was established / obtained"],
-            ["можно считать / можно полагать", "móžno sčitátʹ / móžno polagátʹ", "one may regard / one may assume (impersonal modal)"],
-            ["следует отметить, что…", "slédujet otmétitʹ, čto", "it should be noted that…"],
-            ["необходимо подчеркнуть", "neobchodímo podčerknútʹ", "it is necessary to emphasise"],
-            ["представляется целесообразным", "predstavljáetsja celesoobráznym", "it appears expedient / advisable"],
-            ["принято считать", "prínjato sčitátʹ", "it is commonly held / customary to consider"]
+            [
+              "рассматривается / исследуется",
+              "rassmátrivaetsja / isslédujetsja",
+              "is examined / is investigated (reflexive passive, present)"
+            ],
+            [
+              "было показано, что…",
+              "býlo pokázano, čto",
+              "it was shown that… (short passive participle)"
+            ],
+            [
+              "было установлено / получено",
+              "býlo ustanóvleno / polúčeno",
+              "it was established / obtained"
+            ],
+            [
+              "можно считать / можно полагать",
+              "móžno sčitátʹ / móžno polagátʹ",
+              "one may regard / one may assume (impersonal modal)"
+            ],
+            [
+              "следует отметить, что…",
+              "slédujet otmétitʹ, čto",
+              "it should be noted that…"
+            ],
+            [
+              "необходимо подчеркнуть",
+              "neobchodímo podčerknútʹ",
+              "it is necessary to emphasise"
+            ],
+            [
+              "представляется целесообразным",
+              "predstavljáetsja celesoobráznym",
+              "it appears expedient / advisable"
+            ],
+            [
+              "принято считать",
+              "prínjato sčitátʹ",
+              "it is commonly held / customary to consider"
+            ]
           ]
         },
         {
@@ -83,14 +169,42 @@
         {
           "type": "table",
           "caption": "Причастия и деепричастия — participles and verbal adverbs",
-          "headers": ["Форма", "Пример", "English"],
+          "headers": [
+            "Форма",
+            "Пример",
+            "English"
+          ],
           "rows": [
-            ["действ. наст. (active present participle)", "явления, влияющие на результат", "phenomena influencing the result"],
-            ["действ. прош. (active past participle)", "учёные, предложившие модель", "the scholars who proposed the model"],
-            ["страд. наст. (passive present participle)", "рассматриваемые параметры", "the parameters under consideration"],
-            ["страд. прош. (passive past participle)", "полученные данные", "the data obtained"],
-            ["дееприч. несов. (imperfective verbal adverb)", "анализируя результаты, авторы отмечают…", "analysing the results, the authors note…"],
-            ["дееприч. сов. (perfective verbal adverb)", "проведя эксперимент, мы установили…", "having conducted the experiment, we established…"]
+            [
+              "действ. наст. (active present participle)",
+              "явления, влияющие на результат",
+              "phenomena influencing the result"
+            ],
+            [
+              "действ. прош. (active past participle)",
+              "учёные, предложившие модель",
+              "the scholars who proposed the model"
+            ],
+            [
+              "страд. наст. (passive present participle)",
+              "рассматриваемые параметры",
+              "the parameters under consideration"
+            ],
+            [
+              "страд. прош. (passive past participle)",
+              "полученные данные",
+              "the data obtained"
+            ],
+            [
+              "дееприч. несов. (imperfective verbal adverb)",
+              "анализируя результаты, авторы отмечают…",
+              "analysing the results, the authors note…"
+            ],
+            [
+              "дееприч. сов. (perfective verbal adverb)",
+              "проведя эксперимент, мы установили…",
+              "having conducted the experiment, we established…"
+            ]
           ]
         },
         {
@@ -104,9 +218,27 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "оценка эффективности методов обработки данных", "tr": "océnka effektívnosti métodov obrabótki dánnych", "en": "assessment of the effectiveness of data-processing methods", "ar": "تقييم فعّالية طرائق معالجة البيانات"},
-            {"ru": "проблема определения границ применимости теории", "tr": "probléma opredelénija graníc primenímosti teórii", "en": "the problem of determining the limits of applicability of the theory", "ar": "مشكلة تحديد حدود قابلية تطبيق النظرية"},
-            {"ru": "в результате анализа динамики показателей роста", "tr": "v rezulʹtáte análiza dinámiki pokazátelej rósta", "en": "as a result of analysing the dynamics of the growth indicators", "ar": "نتيجةً لتحليل ديناميكية مؤشّرات النموّ"}
+            {
+              "ru": "оценка эффективности методов обработки данных",
+              "tr": "océnka effektívnosti métodov obrabótki dánnych",
+              "en": "assessment of the effectiveness of data-processing methods",
+              "ar": "تقييم فعّالية طرائق معالجة البيانات",
+              "ku": "هەڵسەنگاندنی کاریگەری شێوازەکانی پرۆسێسکردنی داتا"
+            },
+            {
+              "ru": "проблема определения границ применимости теории",
+              "tr": "probléma opredelénija graníc primenímosti teórii",
+              "en": "the problem of determining the limits of applicability of the theory",
+              "ar": "مشكلة تحديد حدود قابلية تطبيق النظرية",
+              "ku": "کێشەی دیاریکردنی سنووری جێبەجێبوونی تیۆرییەکە"
+            },
+            {
+              "ru": "в результате анализа динамики показателей роста",
+              "tr": "v rezulʹtáte análiza dinámiki pokazátelej rósta",
+              "en": "as a result of analysing the dynamics of the growth indicators",
+              "ar": "نتيجةً لتحليل ديناميكية مؤشّرات النموّ",
+              "ku": "لە ئەنجامی شیکردنەوەی دینامیکی پێوەرەکانی گەشە"
+            }
           ]
         }
       ]
@@ -124,20 +256,72 @@
         {
           "type": "table",
           "caption": "Связки по функциям — discourse connectors grouped by function",
-          "headers": ["Функция", "Связки (translit)", "English"],
+          "headers": [
+            "Функция",
+            "Связки (translit)",
+            "English"
+          ],
           "rows": [
-            ["Добавление (addition)", "кроме того (króme togó); более того (bóleje togó); также (tákže); наряду с этим (narjadú s étim); вместе с тем (vméste s tem)", "moreover; furthermore; also; along with this; at the same time"],
-            ["Противопоставление (contrast)", "однако (odnáko); тем не менее (tem ne ménee); напротив (naprótiv); в отличие от (v otlíčie ot); с другой стороны (s drugój storoný)", "however; nevertheless; on the contrary; unlike; on the other hand"],
-            ["Причина (cause)", "поскольку (poskólʹku); так как (tak kak); в силу того что (v sílu togó čto); ввиду (vvidú); по причине (po pričíne)", "since; because; by virtue of the fact that; in view of; owing to"],
-            ["Следствие (effect / consequence)", "следовательно (slédovatelʹno); поэтому (poétomu); вследствие этого (vslédstvie étogo); в результате (v rezulʹtáte); тем самым (tem sámym)", "consequently; therefore; as a result of this; as a result; thereby"],
-            ["Условие (condition)", "при условии, что (pri uslóvii, čto); в случае если (v slúčae ésli); если… то (ésli… to)", "provided that; in the event that; if… then"],
-            ["Цель (purpose)", "с целью (s célʹju); для того чтобы (dlja togó čtóby); во избежание (vo izbežánie)", "with the aim of; in order to; in order to avoid"],
-            ["Пояснение / уточнение (clarification)", "то есть (to estʹ); иными словами (inými slovámi); а именно (a ímenno); другими словами (drugími slovámi)", "that is; in other words; namely; to put it differently"],
-            ["Иллюстрация (exemplification)", "например (naprimér); в частности (v částnosti); так (tak); к примеру (k priméru)", "for example; in particular; thus (e.g.); for instance"],
-            ["Связь / переход (linking, reference)", "в связи с этим (v svjazí s étim); что касается (čto kasáetsja); как известно (kak izvéstno); как отмечалось выше (kak otmečálosʹ výše)", "in this connection; as regards; as is well known; as was noted above"],
-            ["Порядок (sequencing)", "во-первых… во-вторых (vo-pérvych… vo-vtorých); прежде всего (préžde vsegó); затем (zatém); наконец (nakonéc)", "firstly… secondly; first of all; then; finally"],
-            ["Обобщение / вывод (generalisation, conclusion)", "таким образом (takím óbrazom); итак (iták); в заключение (v zaključénie); подводя итог (podvodjá itóg); следует заключить (slédujet zaključítʹ)", "thus; so / hence; in conclusion; summing up; one should conclude"],
-            ["Степень уверенности (epistemic stance)", "очевидно (očevídno); по-видимому (po-vídimomu); вероятно (verojátno); несомненно (nesomnénno)", "evidently; apparently; probably; undoubtedly"]
+            [
+              "Добавление (addition)",
+              "кроме того (króme togó); более того (bóleje togó); также (tákže); наряду с этим (narjadú s étim); вместе с тем (vméste s tem)",
+              "moreover; furthermore; also; along with this; at the same time"
+            ],
+            [
+              "Противопоставление (contrast)",
+              "однако (odnáko); тем не менее (tem ne ménee); напротив (naprótiv); в отличие от (v otlíčie ot); с другой стороны (s drugój storoný)",
+              "however; nevertheless; on the contrary; unlike; on the other hand"
+            ],
+            [
+              "Причина (cause)",
+              "поскольку (poskólʹku); так как (tak kak); в силу того что (v sílu togó čto); ввиду (vvidú); по причине (po pričíne)",
+              "since; because; by virtue of the fact that; in view of; owing to"
+            ],
+            [
+              "Следствие (effect / consequence)",
+              "следовательно (slédovatelʹno); поэтому (poétomu); вследствие этого (vslédstvie étogo); в результате (v rezulʹtáte); тем самым (tem sámym)",
+              "consequently; therefore; as a result of this; as a result; thereby"
+            ],
+            [
+              "Условие (condition)",
+              "при условии, что (pri uslóvii, čto); в случае если (v slúčae ésli); если… то (ésli… to)",
+              "provided that; in the event that; if… then"
+            ],
+            [
+              "Цель (purpose)",
+              "с целью (s célʹju); для того чтобы (dlja togó čtóby); во избежание (vo izbežánie)",
+              "with the aim of; in order to; in order to avoid"
+            ],
+            [
+              "Пояснение / уточнение (clarification)",
+              "то есть (to estʹ); иными словами (inými slovámi); а именно (a ímenno); другими словами (drugími slovámi)",
+              "that is; in other words; namely; to put it differently"
+            ],
+            [
+              "Иллюстрация (exemplification)",
+              "например (naprimér); в частности (v částnosti); так (tak); к примеру (k priméru)",
+              "for example; in particular; thus (e.g.); for instance"
+            ],
+            [
+              "Связь / переход (linking, reference)",
+              "в связи с этим (v svjazí s étim); что касается (čto kasáetsja); как известно (kak izvéstno); как отмечалось выше (kak otmečálosʹ výše)",
+              "in this connection; as regards; as is well known; as was noted above"
+            ],
+            [
+              "Порядок (sequencing)",
+              "во-первых… во-вторых (vo-pérvych… vo-vtorých); прежде всего (préžde vsegó); затем (zatém); наконец (nakonéc)",
+              "firstly… secondly; first of all; then; finally"
+            ],
+            [
+              "Обобщение / вывод (generalisation, conclusion)",
+              "таким образом (takím óbrazom); итак (iták); в заключение (v zaključénie); подводя итог (podvodjá itóg); следует заключить (slédujet zaključítʹ)",
+              "thus; so / hence; in conclusion; summing up; one should conclude"
+            ],
+            [
+              "Степень уверенности (epistemic stance)",
+              "очевидно (očevídno); по-видимому (po-vídimomu); вероятно (verojátno); несомненно (nesomnénno)",
+              "evidently; apparently; probably; undoubtedly"
+            ]
           ]
         },
         {
@@ -147,9 +331,27 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Эксперимент не дал ожидаемого результата; тем не менее полученные данные представляют интерес.", "tr": "Eksperimént ne dal ožidáemogo rezulʹtáta; tem ne ménee polúčennye dánnye predstavljájut interés.", "en": "The experiment did not yield the expected result; nevertheless, the data obtained are of interest.", "ar": "لم تُسفر التجربة عن النتيجة المتوقَّعة؛ ومع ذلك فإنّ البيانات المُحصَّل عليها ذات أهمّية."},
-            {"ru": "Таким образом, можно сделать вывод о том, что гипотеза подтверждается.", "tr": "Takím óbrazom, móžno sdélatʹ vývod o tom, čto gipóteza podtverždáetsja.", "en": "Thus, one may conclude that the hypothesis is confirmed.", "ar": "وهكذا، يمكن الخلوص إلى أنّ الفرضية تتأكّد."},
-            {"ru": "В связи с этим возникает вопрос о применимости модели в иных условиях.", "tr": "V svjazí s étim voznikáet voprós o primenímosti modéli v iných uslóvijach.", "en": "In this connection, the question arises of the model's applicability under other conditions.", "ar": "وفي هذا الصدد يُطرح السؤال عن قابلية تطبيق النموذج في ظروف أخرى."}
+            {
+              "ru": "Эксперимент не дал ожидаемого результата; тем не менее полученные данные представляют интерес.",
+              "tr": "Eksperimént ne dal ožidáemogo rezulʹtáta; tem ne ménee polúčennye dánnye predstavljájut interés.",
+              "en": "The experiment did not yield the expected result; nevertheless, the data obtained are of interest.",
+              "ar": "لم تُسفر التجربة عن النتيجة المتوقَّعة؛ ومع ذلك فإنّ البيانات المُحصَّل عليها ذات أهمّية.",
+              "ku": "ئەزموونەکە ئەنجامی چاوەڕوانکراوی نەدا؛ لەگەڵ ئەوەشدا ئەو داتایانەی دەستکەوتوون گرنگن."
+            },
+            {
+              "ru": "Таким образом, можно сделать вывод о том, что гипотеза подтверждается.",
+              "tr": "Takím óbrazom, móžno sdélatʹ vývod o tom, čto gipóteza podtverždáetsja.",
+              "en": "Thus, one may conclude that the hypothesis is confirmed.",
+              "ar": "وهكذا، يمكن الخلوص إلى أنّ الفرضية تتأكّد.",
+              "ku": "بەمجۆرە، دەکرێت ئەو ئەنجامە بدرێت کە گریمانەکە پشتڕاست دەبێتەوە."
+            },
+            {
+              "ru": "В связи с этим возникает вопрос о применимости модели в иных условиях.",
+              "tr": "V svjazí s étim voznikáet voprós o primenímosti modéli v iných uslóvijach.",
+              "en": "In this connection, the question arises of the model's applicability under other conditions.",
+              "ar": "وفي هذا الصدد يُطرح السؤال عن قابلية تطبيق النموذج في ظروف أخرى.",
+              "ku": "لەم پەیوەندییەدا پرسیار لەسەر جێبەجێبوونی مۆدێلەکە لە بارودۆخی تردا دروست دەبێت."
+            }
           ]
         }
       ]
@@ -167,16 +369,52 @@
         {
           "type": "table",
           "caption": "Канонические разделы — canonical sections",
-          "headers": ["Раздел (translit)", "English", "Содержание"],
+          "headers": [
+            "Раздел (translit)",
+            "English",
+            "Содержание"
+          ],
           "rows": [
-            ["Аннотация (annotácija)", "abstract", "concise summary of aim, method and findings; keywords (ключевые слова) follow"],
-            ["Введение (vvedénie)", "introduction", "background, актуальность (relevance), gap, research question"],
-            ["Цель и задачи (celʹ i zadáči)", "aim and objectives", "the goal of the study and the steps to reach it"],
-            ["Материалы и методы (materiály i métody)", "materials and methods", "data, sample, instruments, procedure"],
-            ["Результаты (rezulʹtáty)", "results", "findings reported neutrally, with tables and figures"],
-            ["Обсуждение (obsuždénie)", "discussion", "interpretation, comparison with prior work, limitations"],
-            ["Заключение / Выводы (zaključénie / vývody)", "conclusion / conclusions", "summary of contribution and outlook"],
-            ["Список литературы (spísok literatúry)", "references / bibliography", "cited sources, typically in ГОСТ format"]
+            [
+              "Аннотация (annotácija)",
+              "abstract",
+              "concise summary of aim, method and findings; keywords (ключевые слова) follow"
+            ],
+            [
+              "Введение (vvedénie)",
+              "introduction",
+              "background, актуальность (relevance), gap, research question"
+            ],
+            [
+              "Цель и задачи (celʹ i zadáči)",
+              "aim and objectives",
+              "the goal of the study and the steps to reach it"
+            ],
+            [
+              "Материалы и методы (materiály i métody)",
+              "materials and methods",
+              "data, sample, instruments, procedure"
+            ],
+            [
+              "Результаты (rezulʹtáty)",
+              "results",
+              "findings reported neutrally, with tables and figures"
+            ],
+            [
+              "Обсуждение (obsuždénie)",
+              "discussion",
+              "interpretation, comparison with prior work, limitations"
+            ],
+            [
+              "Заключение / Выводы (zaključénie / vývody)",
+              "conclusion / conclusions",
+              "summary of contribution and outlook"
+            ],
+            [
+              "Список литературы (spísok literatúry)",
+              "references / bibliography",
+              "cited sources, typically in ГОСТ format"
+            ]
           ]
         },
         {
@@ -186,26 +424,88 @@
         {
           "type": "table",
           "caption": "Банк клише — opening phrases by section",
-          "headers": ["Раздел", "Клише (translit)", "English"],
+          "headers": [
+            "Раздел",
+            "Клише (translit)",
+            "English"
+          ],
           "rows": [
-            ["Введение", "Актуальность темы обусловлена… (Aktuálʹnostʹ témy obuslóvlena…)", "The relevance of the topic is determined by…"],
-            ["Введение", "В последние годы возрос интерес к… (V poslédnie gódy vozrós interés k…)", "In recent years interest in… has grown"],
-            ["Цель", "Цель настоящей работы заключается в… (Celʹ nastojáščej rabóty zaključáetsja v…)", "The aim of the present work consists in…"],
-            ["Задачи", "Для достижения поставленной цели были решены следующие задачи… (Dlja dostiženija postávlennoj céli…)", "To attain the stated aim, the following objectives were addressed…"],
-            ["Методы", "В качестве материала исследования использовались… (V káčestve materiála isslédovanija ispólʹzovalisʹ…)", "The following served as the material of the study…"],
-            ["Методы", "Анализ проводился с помощью метода… (Análiz provodílsja s pómoščʹju métoda…)", "The analysis was conducted by means of the method of…"],
-            ["Результаты", "Полученные результаты представлены в таблице… (Polúčennye rezulʹtáty predstávleny v tablíce…)", "The results obtained are presented in Table…"],
-            ["Обсуждение", "Полученные данные согласуются с результатами… (…soglasújutsja s rezulʹtátami…)", "The data obtained are consistent with the findings of…"],
-            ["Обсуждение", "Следует, однако, отметить ряд ограничений… (Slédujet, odnáko, otmétitʹ rjad ograničénij…)", "It should, however, be noted that there are a number of limitations…"],
-            ["Заключение", "На основании проведённого исследования можно сделать вывод о том, что… (Na osnovánii provedjónnogo isslédovanija…)", "On the basis of the conducted study one may conclude that…"]
+            [
+              "Введение",
+              "Актуальность темы обусловлена… (Aktuálʹnostʹ témy obuslóvlena…)",
+              "The relevance of the topic is determined by…"
+            ],
+            [
+              "Введение",
+              "В последние годы возрос интерес к… (V poslédnie gódy vozrós interés k…)",
+              "In recent years interest in… has grown"
+            ],
+            [
+              "Цель",
+              "Цель настоящей работы заключается в… (Celʹ nastojáščej rabóty zaključáetsja v…)",
+              "The aim of the present work consists in…"
+            ],
+            [
+              "Задачи",
+              "Для достижения поставленной цели были решены следующие задачи… (Dlja dostiženija postávlennoj céli…)",
+              "To attain the stated aim, the following objectives were addressed…"
+            ],
+            [
+              "Методы",
+              "В качестве материала исследования использовались… (V káčestve materiála isslédovanija ispólʹzovalisʹ…)",
+              "The following served as the material of the study…"
+            ],
+            [
+              "Методы",
+              "Анализ проводился с помощью метода… (Análiz provodílsja s pómoščʹju métoda…)",
+              "The analysis was conducted by means of the method of…"
+            ],
+            [
+              "Результаты",
+              "Полученные результаты представлены в таблице… (Polúčennye rezulʹtáty predstávleny v tablíce…)",
+              "The results obtained are presented in Table…"
+            ],
+            [
+              "Обсуждение",
+              "Полученные данные согласуются с результатами… (…soglasújutsja s rezulʹtátami…)",
+              "The data obtained are consistent with the findings of…"
+            ],
+            [
+              "Обсуждение",
+              "Следует, однако, отметить ряд ограничений… (Slédujet, odnáko, otmétitʹ rjad ograničénij…)",
+              "It should, however, be noted that there are a number of limitations…"
+            ],
+            [
+              "Заключение",
+              "На основании проведённого исследования можно сделать вывод о том, что… (Na osnovánii provedjónnogo isslédovanija…)",
+              "On the basis of the conducted study one may conclude that…"
+            ]
           ]
         },
         {
           "type": "examples",
           "items": [
-            {"ru": "Настоящая статья посвящена изучению влияния температуры на скорость реакции.", "tr": "Nastojáščaja statʹjá posvjaščená izučéniju vlijánija temperatúry na skórostʹ reákcii.", "en": "The present article is devoted to studying the effect of temperature on the reaction rate.", "ar": "تُكرَّس هذه المقالة لدراسة تأثير درجة الحرارة في سرعة التفاعل."},
-            {"ru": "Цель работы — выявить закономерности распределения данных в выборке.", "tr": "Celʹ rabóty — výjavitʹ zakonomérnosti raspredelénija dánnych v výborke.", "en": "The aim of the work is to reveal regularities in the distribution of the data in the sample.", "ar": "يتمثّل هدف هذا البحث في الكشف عن انتظامات توزيع البيانات في العيّنة."},
-            {"ru": "В заключение подведём основные итоги проведённого исследования.", "tr": "V zaključénie podvedjóm osnovnýe itógi provedjónnogo isslédovanija.", "en": "In conclusion, let us sum up the principal results of the conducted study.", "ar": "وفي الختام، نُجمل النتائج الرئيسية للدراسة المُنجَزة."}
+            {
+              "ru": "Настоящая статья посвящена изучению влияния температуры на скорость реакции.",
+              "tr": "Nastojáščaja statʹjá posvjaščená izučéniju vlijánija temperatúry na skórostʹ reákcii.",
+              "en": "The present article is devoted to studying the effect of temperature on the reaction rate.",
+              "ar": "تُكرَّس هذه المقالة لدراسة تأثير درجة الحرارة في سرعة التفاعل.",
+              "ku": "ئەم وتارە تەرخان کراوە بۆ لێکۆڵینەوە لە کاریگەری پلەی گەرما لەسەر خێرایی کارلێکەکە."
+            },
+            {
+              "ru": "Цель работы — выявить закономерности распределения данных в выборке.",
+              "tr": "Celʹ rabóty — výjavitʹ zakonomérnosti raspredelénija dánnych v výborke.",
+              "en": "The aim of the work is to reveal regularities in the distribution of the data in the sample.",
+              "ar": "يتمثّل هدف هذا البحث في الكشف عن انتظامات توزيع البيانات في العيّنة.",
+              "ku": "ئامانجی توێژینەوەکە ئەوەیە کە یاسامەندییەکانی دابەشبوونی داتا لە نموونەکەدا بدۆزرێتەوە."
+            },
+            {
+              "ru": "В заключение подведём основные итоги проведённого исследования.",
+              "tr": "V zaključénie podvedjóm osnovnýe itógi provedjónnogo isslédovanija.",
+              "en": "In conclusion, let us sum up the principal results of the conducted study.",
+              "ar": "وفي الختام، نُجمل النتائج الرئيسية للدراسة المُنجَزة.",
+              "ku": "لە کۆتاییدا، ئەنجامە سەرەکییەکانی توێژینەوەی ئەنجامدراو کورت دەکەینەوە."
+            }
           ]
         }
       ]
@@ -223,16 +523,52 @@
         {
           "type": "table",
           "caption": "Конструкции атрибуции — attribution frames",
-          "headers": ["Конструкция", "Падеж / form", "English"],
+          "headers": [
+            "Конструкция",
+            "Падеж / form",
+            "English"
+          ],
           "rows": [
-            ["по мнению автора / Иванова", "+ genitive", "in the opinion of the author / of Ivanov"],
-            ["согласно данным / теории", "+ dative", "according to the data / the theory"],
-            ["как отмечает автор", "+ nominative subject", "as the author notes"],
-            ["как подчёркивает исследователь", "+ nominative subject", "as the researcher emphasises"],
-            ["по словам автора", "+ genitive", "in the author's words / according to the author"],
-            ["в соответствии с (концепцией)", "+ instrumental", "in accordance with (the conception)"],
-            ["вслед за (Лотманом)", "+ instrumental", "following (Lotman)"],
-            ["ссылаться на работу", "ссылаться на + accusative", "to refer to / cite a work"]
+            [
+              "по мнению автора / Иванова",
+              "+ genitive",
+              "in the opinion of the author / of Ivanov"
+            ],
+            [
+              "согласно данным / теории",
+              "+ dative",
+              "according to the data / the theory"
+            ],
+            [
+              "как отмечает автор",
+              "+ nominative subject",
+              "as the author notes"
+            ],
+            [
+              "как подчёркивает исследователь",
+              "+ nominative subject",
+              "as the researcher emphasises"
+            ],
+            [
+              "по словам автора",
+              "+ genitive",
+              "in the author's words / according to the author"
+            ],
+            [
+              "в соответствии с (концепцией)",
+              "+ instrumental",
+              "in accordance with (the conception)"
+            ],
+            [
+              "вслед за (Лотманом)",
+              "+ instrumental",
+              "following (Lotman)"
+            ],
+            [
+              "ссылаться на работу",
+              "ссылаться на + accusative",
+              "to refer to / cite a work"
+            ]
           ]
         },
         {
@@ -256,9 +592,27 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "По мнению ряда авторов, данная гипотеза нуждается в дополнительной проверке.", "tr": "Po mnéniju rjáda ávtorov, dánnaja gipóteza nuždáetsja v dopolnítelʹnoj provérke.", "en": "In the opinion of a number of authors, this hypothesis requires additional verification.", "ar": "في رأي عددٍ من الباحثين، تحتاج هذه الفرضية إلى تحقّق إضافي."},
-            {"ru": "Согласно классификации, предложенной автором, выделяются три типа.", "tr": "Soglásno klassifikácii, predložénnoj ávtorom, vydeljájutsja tri típa.", "en": "According to the classification proposed by the author, three types are distinguished.", "ar": "وفقًا للتصنيف الذي اقترحه المؤلِّف، يُميَّز بين ثلاثة أنماط."},
-            {"ru": "Как отмечает исследователь, данный эффект ранее не описывался [5, с. 12].", "tr": "Kak otmečáet isslédovatelʹ, dánnyj effékt ránee ne opísyvalsja.", "en": "As the researcher notes, this effect had not previously been described [5, p. 12].", "ar": "كما يشير الباحث، فإنّ هذا الأثر لم يُوصَف من قبلُ [5، ص 12]."}
+            {
+              "ru": "По мнению ряда авторов, данная гипотеза нуждается в дополнительной проверке.",
+              "tr": "Po mnéniju rjáda ávtorov, dánnaja gipóteza nuždáetsja v dopolnítelʹnoj provérke.",
+              "en": "In the opinion of a number of authors, this hypothesis requires additional verification.",
+              "ar": "في رأي عددٍ من الباحثين، تحتاج هذه الفرضية إلى تحقّق إضافي.",
+              "ku": "بەپێی بۆچوونی ژمارەیەک لە نووسەران، ئەم گریمانەیە پێویستی بە پشتڕاستکردنەوەی زیاتر هەیە."
+            },
+            {
+              "ru": "Согласно классификации, предложенной автором, выделяются три типа.",
+              "tr": "Soglásno klassifikácii, predložénnoj ávtorom, vydeljájutsja tri típa.",
+              "en": "According to the classification proposed by the author, three types are distinguished.",
+              "ar": "وفقًا للتصنيف الذي اقترحه المؤلِّف، يُميَّز بين ثلاثة أنماط.",
+              "ku": "بەپێی ئەو پۆلێنکردنەی نووسەرەکە پێشنیاری کردووە، سێ جۆر جیا دەکرێنەوە."
+            },
+            {
+              "ru": "Как отмечает исследователь, данный эффект ранее не описывался [5, с. 12].",
+              "tr": "Kak otmečáet isslédovatelʹ, dánnyj effékt ránee ne opísyvalsja.",
+              "en": "As the researcher notes, this effect had not previously been described [5, p. 12].",
+              "ar": "كما يشير الباحث، فإنّ هذا الأثر لم يُوصَف من قبلُ [5، ص 12].",
+              "ku": "وەک توێژەرەکە ئاماژەی پێ دەکات، ئەم کاریگەرییە پێشتر باسی لێ نەکرابوو [٥، ل ١٢]."
+            }
           ]
         }
       ]
@@ -276,14 +630,42 @@
         {
           "type": "table",
           "caption": "Формулировки целей и задач — formulating aims and objectives",
-          "headers": ["Клише", "Translit", "English"],
+          "headers": [
+            "Клише",
+            "Translit",
+            "English"
+          ],
           "rows": [
-            ["Цель работы — выявить / определить / разработать…", "Celʹ rabóty — výjavitʹ / opredelítʹ / razrabótatʹ", "The aim of the work is to reveal / determine / develop…"],
-            ["В задачи исследования входит…", "V zadáči isslédovanija vchódit", "The objectives of the study include…"],
-            ["Объектом исследования является…", "Obʹéktom isslédovanija javljáetsja", "The object of the study is…"],
-            ["Предметом исследования выступает…", "Predmétom isslédovanija vystupáet", "The subject of the study is…"],
-            ["Материалом послужили…", "Materiálom poslužíli", "The material was provided by…"],
-            ["Научная новизна состоит в том, что…", "Naúčnaja novizná sostoít v tom, čto", "The scholarly novelty consists in the fact that…"]
+            [
+              "Цель работы — выявить / определить / разработать…",
+              "Celʹ rabóty — výjavitʹ / opredelítʹ / razrabótatʹ",
+              "The aim of the work is to reveal / determine / develop…"
+            ],
+            [
+              "В задачи исследования входит…",
+              "V zadáči isslédovanija vchódit",
+              "The objectives of the study include…"
+            ],
+            [
+              "Объектом исследования является…",
+              "Obʹéktom isslédovanija javljáetsja",
+              "The object of the study is…"
+            ],
+            [
+              "Предметом исследования выступает…",
+              "Predmétom isslédovanija vystupáet",
+              "The subject of the study is…"
+            ],
+            [
+              "Материалом послужили…",
+              "Materiálom poslužíli",
+              "The material was provided by…"
+            ],
+            [
+              "Научная новизна состоит в том, что…",
+              "Naúčnaja novizná sostoít v tom, čto",
+              "The scholarly novelty consists in the fact that…"
+            ]
           ]
         },
         {
@@ -306,9 +688,27 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "Под устойчивостью системы в данной работе понимается её способность сохранять равновесие.", "tr": "Pod ustójčivostʹju sistémy v dánnoj rabóte ponimáetsja eё sposóbnostʹ sochranjátʹ ravnovésie.", "en": "By the stability of the system, in this work, we understand its capacity to maintain equilibrium.", "ar": "يُقصد باستقرار النظام في هذا البحث قدرتُه على الحفاظ على التوازن."},
-            {"ru": "Выдвигается гипотеза, согласно которой переменные связаны нелинейно.", "tr": "Vydvigáetsja gipóteza, soglásno kotóroj pereménnye svjázany nelinéjno.", "en": "A hypothesis is advanced according to which the variables are related nonlinearly.", "ar": "تُطرح فرضيةٌ مفادها أنّ المتغيّرات مترابطة ترابطًا غير خطّي."},
-            {"ru": "Термин «дискурс» определяется как речь, погружённая в социальный контекст.", "tr": "Términ «diskúrs» opredeljáetsja kak rečʹ, pogružёnnaja v sociálʹnyj kontékst.", "en": "The term \"discourse\" is defined as speech immersed in a social context.", "ar": "يُعرَّف مصطلح «الخطاب» بأنّه كلامٌ منغمسٌ في سياق اجتماعي."}
+            {
+              "ru": "Под устойчивостью системы в данной работе понимается её способность сохранять равновесие.",
+              "tr": "Pod ustójčivostʹju sistémy v dánnoj rabóte ponimáetsja eё sposóbnostʹ sochranjátʹ ravnovésie.",
+              "en": "By the stability of the system, in this work, we understand its capacity to maintain equilibrium.",
+              "ar": "يُقصد باستقرار النظام في هذا البحث قدرتُه على الحفاظ على التوازن.",
+              "ku": "لەم توێژینەوەیەدا، بە جێگیری سیستەمەکە توانای پاراستنی هاوسەنگی مەبەستە."
+            },
+            {
+              "ru": "Выдвигается гипотеза, согласно которой переменные связаны нелинейно.",
+              "tr": "Vydvigáetsja gipóteza, soglásno kotóroj pereménnye svjázany nelinéjno.",
+              "en": "A hypothesis is advanced according to which the variables are related nonlinearly.",
+              "ar": "تُطرح فرضيةٌ مفادها أنّ المتغيّرات مترابطة ترابطًا غير خطّي.",
+              "ku": "گریمانەیەک پێشکەش دەکرێت کە بەپێی ئەو گۆڕاوەکان بە شێوەیەکی نا-هێڵی پەیوەستن."
+            },
+            {
+              "ru": "Термин «дискурс» определяется как речь, погружённая в социальный контекст.",
+              "tr": "Términ «diskúrs» opredeljáetsja kak rečʹ, pogružёnnaja v sociálʹnyj kontékst.",
+              "en": "The term \"discourse\" is defined as speech immersed in a social context.",
+              "ar": "يُعرَّف مصطلح «الخطاب» بأنّه كلامٌ منغمسٌ في سياق اجتماعي.",
+              "ku": "زاراوەی «گوتار» وەک قسەیەک پێناسە دەکرێت کە لە چوارچێوەی کۆمەڵایەتیدا نقووم بووە."
+            }
           ]
         }
       ]
@@ -326,27 +726,83 @@
         {
           "type": "table",
           "caption": "Ссылки на таблицы и рисунки — pointing to tables and figures",
-          "headers": ["Клише", "Translit", "English"],
+          "headers": [
+            "Клише",
+            "Translit",
+            "English"
+          ],
           "rows": [
-            ["как видно из таблицы 1", "kak vídno iz tablícy odín", "as can be seen from Table 1"],
-            ["на рисунке 2 представлено / изображено…", "na risúnke dva predstávleno / izobražéno", "Figure 2 presents / depicts…"],
-            ["данные приведены в таблице", "dánnye privedený v tablíce", "the data are given in the table"],
-            ["результаты отражены на графике", "rezulʹtáty otražený na gráfike", "the results are reflected in the chart"],
-            ["в таблице сведены показатели", "v tablíce svedený pokazáteli", "the indicators are collated in the table"]
+            [
+              "как видно из таблицы 1",
+              "kak vídno iz tablícy odín",
+              "as can be seen from Table 1"
+            ],
+            [
+              "на рисунке 2 представлено / изображено…",
+              "na risúnke dva predstávleno / izobražéno",
+              "Figure 2 presents / depicts…"
+            ],
+            [
+              "данные приведены в таблице",
+              "dánnye privedený v tablíce",
+              "the data are given in the table"
+            ],
+            [
+              "результаты отражены на графике",
+              "rezulʹtáty otražený na gráfike",
+              "the results are reflected in the chart"
+            ],
+            [
+              "в таблице сведены показатели",
+              "v tablíce svedený pokazáteli",
+              "the indicators are collated in the table"
+            ]
           ]
         },
         {
           "type": "table",
           "caption": "Описание динамики — describing trends",
-          "headers": ["Выражение", "Translit", "English"],
+          "headers": [
+            "Выражение",
+            "Translit",
+            "English"
+          ],
           "rows": [
-            ["наблюдается рост / снижение", "nabljudáetsja rost / sniženie", "growth / decline is observed"],
-            ["показатель возрос в N раз", "pokazátelʹ vozrós v N raz", "the indicator increased N-fold"],
-            ["значение уменьшилось на N процентов", "značénie umenʹšílosʹ na N procéntov", "the value decreased by N percent"],
-            ["в N раз больше / меньше, чем…", "v N raz bólʹše / ménʹše, čem", "N times greater / smaller than…"],
-            ["прослеживается тенденция к…", "prosléživaetsja tendéncija k", "a tendency towards… is discernible"],
-            ["показатели остаются стабильными", "pokazáteli ostajútsja stabílʹnymi", "the indicators remain stable"],
-            ["достигает максимума / минимума", "dostigáet maksímuma / mínimuma", "reaches a maximum / minimum"]
+            [
+              "наблюдается рост / снижение",
+              "nabljudáetsja rost / sniženie",
+              "growth / decline is observed"
+            ],
+            [
+              "показатель возрос в N раз",
+              "pokazátelʹ vozrós v N raz",
+              "the indicator increased N-fold"
+            ],
+            [
+              "значение уменьшилось на N процентов",
+              "značénie umenʹšílosʹ na N procéntov",
+              "the value decreased by N percent"
+            ],
+            [
+              "в N раз больше / меньше, чем…",
+              "v N raz bólʹše / ménʹše, čem",
+              "N times greater / smaller than…"
+            ],
+            [
+              "прослеживается тенденция к…",
+              "prosléživaetsja tendéncija k",
+              "a tendency towards… is discernible"
+            ],
+            [
+              "показатели остаются стабильными",
+              "pokazáteli ostajútsja stabílʹnymi",
+              "the indicators remain stable"
+            ],
+            [
+              "достигает максимума / минимума",
+              "dostigáet maksímuma / mínimuma",
+              "reaches a maximum / minimum"
+            ]
           ]
         },
         {
@@ -356,20 +812,58 @@
         {
           "type": "table",
           "caption": "Шкала уверенности — the certainty cline",
-          "headers": ["Сила (strength)", "Маркер (translit)", "English"],
+          "headers": [
+            "Сила (strength)",
+            "Маркер (translit)",
+            "English"
+          ],
           "rows": [
-            ["высокая (high)", "несомненно; безусловно; очевидно (nesomnénno; bezuslóvno; očevídno)", "undoubtedly; certainly; evidently"],
-            ["средняя (mid)", "по всей видимости; вероятно; скорее всего (po vsej vídimosti; verojátno; skoréje vsegó)", "in all likelihood; probably; most likely"],
-            ["осторожная (cautious)", "по-видимому; представляется, что…; можно предположить (po-vídimomu; predstavljáetsja, čto; móžno predpoložítʹ)", "apparently; it appears that…; one may suppose"],
-            ["ограничивающая (limiting)", "в ряде случаев; при определённых условиях; как правило (v rjáde slúčaev; pri opredelёnnych uslóvijach; kak právilo)", "in a number of cases; under certain conditions; as a rule"]
+            [
+              "высокая (high)",
+              "несомненно; безусловно; очевидно (nesomnénno; bezuslóvno; očevídno)",
+              "undoubtedly; certainly; evidently"
+            ],
+            [
+              "средняя (mid)",
+              "по всей видимости; вероятно; скорее всего (po vsej vídimosti; verojátno; skoréje vsegó)",
+              "in all likelihood; probably; most likely"
+            ],
+            [
+              "осторожная (cautious)",
+              "по-видимому; представляется, что…; можно предположить (po-vídimomu; predstavljáetsja, čto; móžno predpoložítʹ)",
+              "apparently; it appears that…; one may suppose"
+            ],
+            [
+              "ограничивающая (limiting)",
+              "в ряде случаев; при определённых условиях; как правило (v rjáde slúčaev; pri opredelёnnych uslóvijach; kak právilo)",
+              "in a number of cases; under certain conditions; as a rule"
+            ]
           ]
         },
         {
           "type": "examples",
           "items": [
-            {"ru": "Как видно из таблицы 3, значение показателя возросло почти в два раза.", "tr": "Kak vídno iz tablícy tri, značénie pokazátelja vozrosló počtí v dva ráza.", "en": "As can be seen from Table 3, the value of the indicator nearly doubled.", "ar": "كما يتّضح من الجدول 3، تضاعفت قيمة المؤشّر تقريبًا."},
-            {"ru": "По-видимому, наблюдаемый эффект обусловлен изменением температуры.", "tr": "Po-vídimomu, nabljudáemyj effékt obuslóvlen izmenénием temperatúry.", "en": "Apparently, the observed effect is caused by the change in temperature.", "ar": "يبدو أنّ الأثر المُلاحَظ ناجمٌ عن تغيّر درجة الحرارة."},
-            {"ru": "Представляется обоснованным предположить наличие обратной зависимости.", "tr": "Predstavljáetsja obosnóvannym predpoložítʹ nalíčie obrátnoj zavísimosti.", "en": "It appears justified to suppose the presence of an inverse relationship.", "ar": "يبدو من المُبرَّر افتراض وجود علاقة عكسية."}
+            {
+              "ru": "Как видно из таблицы 3, значение показателя возросло почти в два раза.",
+              "tr": "Kak vídno iz tablícy tri, značénie pokazátelja vozrosló počtí v dva ráza.",
+              "en": "As can be seen from Table 3, the value of the indicator nearly doubled.",
+              "ar": "كما يتّضح من الجدول 3، تضاعفت قيمة المؤشّر تقريبًا.",
+              "ku": "وەک لە خشتەی ٣دا دیارە، بەهای پێوەرەکە نزیکەی دوو بەرامبەر زیادی کرد."
+            },
+            {
+              "ru": "По-видимому, наблюдаемый эффект обусловлен изменением температуры.",
+              "tr": "Po-vídimomu, nabljudáemyj effékt obuslóvlen izmenénием temperatúry.",
+              "en": "Apparently, the observed effect is caused by the change in temperature.",
+              "ar": "يبدو أنّ الأثر المُلاحَظ ناجمٌ عن تغيّر درجة الحرارة.",
+              "ku": "وا دیارە کاریگەرییە چاودێریکراوەکە بەهۆی گۆڕانی پلەی گەرماوەیە."
+            },
+            {
+              "ru": "Представляется обоснованным предположить наличие обратной зависимости.",
+              "tr": "Predstavljáetsja obosnóvannym predpoložítʹ nalíčie obrátnoj zavísimosti.",
+              "en": "It appears justified to suppose the presence of an inverse relationship.",
+              "ar": "يبدو من المُبرَّر افتراض وجود علاقة عكسية.",
+              "ku": "بەجێگا دیارە کە گریمانەی بوونی پەیوەندییەکی پێچەوانە بکرێت."
+            }
           ]
         }
       ]
@@ -397,20 +891,72 @@
         {
           "type": "table",
           "caption": "Частые сокращения — common academic abbreviations",
-          "headers": ["Сокращение", "Расшифровка", "English"],
+          "headers": [
+            "Сокращение",
+            "Расшифровка",
+            "English"
+          ],
           "rows": [
-            ["и т.д.", "и так далее", "and so on / etc."],
-            ["и т.п.", "и тому подобное", "and the like"],
-            ["и др.", "и другие", "et al. / and others"],
-            ["т.е.", "то есть", "i.e. / that is"],
-            ["т.н.", "так называемый", "so-called"],
-            ["см.", "смотри / смотрите", "see"],
-            ["ср.", "сравни", "cf. / compare"],
-            ["рис.", "рисунок", "fig. / figure"],
-            ["табл.", "таблица", "tab. / table"],
-            ["с. / стр.", "страница", "p. / page"],
-            ["ср.-в.", "средневековый (context-dependent)", "medieval (varies by field)"],
-            ["напр.", "например", "e.g. / for example"]
+            [
+              "и т.д.",
+              "и так далее",
+              "and so on / etc."
+            ],
+            [
+              "и т.п.",
+              "и тому подобное",
+              "and the like"
+            ],
+            [
+              "и др.",
+              "и другие",
+              "et al. / and others"
+            ],
+            [
+              "т.е.",
+              "то есть",
+              "i.e. / that is"
+            ],
+            [
+              "т.н.",
+              "так называемый",
+              "so-called"
+            ],
+            [
+              "см.",
+              "смотри / смотрите",
+              "see"
+            ],
+            [
+              "ср.",
+              "сравни",
+              "cf. / compare"
+            ],
+            [
+              "рис.",
+              "рисунок",
+              "fig. / figure"
+            ],
+            [
+              "табл.",
+              "таблица",
+              "tab. / table"
+            ],
+            [
+              "с. / стр.",
+              "страница",
+              "p. / page"
+            ],
+            [
+              "ср.-в.",
+              "средневековый (context-dependent)",
+              "medieval (varies by field)"
+            ],
+            [
+              "напр.",
+              "например",
+              "e.g. / for example"
+            ]
           ]
         },
         {
@@ -424,11 +970,41 @@
         {
           "type": "examples",
           "items": [
-            {"ru": "В настоящей работе рассматривается проблема автоматической классификации научных текстов.", "tr": "V nastojáščej rabóte rassmátrivaetsja probléma avtomatíčeskoj klassifikácii naúčnych tékstov.", "en": "The present work addresses the problem of the automatic classification of scholarly texts. [Core: проблема (subject) + рассматривается (reflexive passive). Genitive chain: classification ← of texts.]", "ar": "تتناول هذه الدراسة مشكلة التصنيف الآلي للنصوص العلمية."},
-            {"ru": "Несмотря на значительное число существующих подходов, данный вопрос остаётся недостаточно изученным.", "tr": "Nesmotrjá na značítelʹnoe čisló suščestvújuščich podchódov, dánnyj voprós ostaёtsja nedostátočno izúčennym.", "en": "Despite the considerable number of existing approaches, this question remains insufficiently studied. [Concessive opener несмотря на + accusative; predicate остаётся + instrumental.]", "ar": "على الرغم من العدد الكبير من المقاربات القائمة، يظلّ هذا السؤال غير مدروسٍ بالقدر الكافي."},
-            {"ru": "Нами был предложен метод, основанный на анализе частотных характеристик лексики.", "tr": "Námi byl predložén métod, osnóvannyj na análize častótnych characterístik léksiki.", "en": "We proposed a method based on the analysis of the frequency characteristics of the vocabulary. [Passive with agent in instrumental (нами); participle clause основанный на… modifies метод.]", "ar": "لقد اقترحنا طريقةً تقوم على تحليل الخصائص التواترية للمفردات."},
-            {"ru": "Полученные результаты, представленные в таблице 1, свидетельствуют о его эффективности.", "tr": "Polúčennye rezulʹtáty, predstávlennye v tablíce odín, svidételʹstvujut o egó effektívnosti.", "en": "The results obtained, presented in Table 1, attest to its effectiveness. [Two stacked participles modify результаты; predicate свидетельствуют о + prepositional.]", "ar": "تشهد النتائج المُحصَّل عليها، المعروضة في الجدول 1، بفعّاليتها."},
-            {"ru": "Таким образом, можно заключить, что предложенный подход обладает определённой практической значимостью.", "tr": "Takím óbrazom, móžno zaključítʹ, čto predložénnyj podchód obladáet opredelёnnoj praktíčeskoj značímostʹju.", "en": "Thus, one may conclude that the proposed approach possesses a certain practical significance. [Conclusion connector таким образом; impersonal modal можно + infinitive; обладать governs the instrumental.]", "ar": "وهكذا، يمكن الخلوص إلى أنّ المقاربة المقترحة تتمتّع بأهمّية عملية معيّنة."}
+            {
+              "ru": "В настоящей работе рассматривается проблема автоматической классификации научных текстов.",
+              "tr": "V nastojáščej rabóte rassmátrivaetsja probléma avtomatíčeskoj klassifikácii naúčnych tékstov.",
+              "en": "The present work addresses the problem of the automatic classification of scholarly texts. [Core: проблема (subject) + рассматривается (reflexive passive). Genitive chain: classification ← of texts.]",
+              "ar": "تتناول هذه الدراسة مشكلة التصنيف الآلي للنصوص العلمية.",
+              "ku": "لەم توێژینەوەیەدا کێشەی پۆلێنکردنی خۆکاری دەقە زانستییەکان دەخرێتە بەرباس."
+            },
+            {
+              "ru": "Несмотря на значительное число существующих подходов, данный вопрос остаётся недостаточно изученным.",
+              "tr": "Nesmotrjá na značítelʹnoe čisló suščestvújuščich podchódov, dánnyj voprós ostaёtsja nedostátočno izúčennym.",
+              "en": "Despite the considerable number of existing approaches, this question remains insufficiently studied. [Concessive opener несмотря на + accusative; predicate остаётся + instrumental.]",
+              "ar": "على الرغم من العدد الكبير من المقاربات القائمة، يظلّ هذا السؤال غير مدروسٍ بالقدر الكافي.",
+              "ku": "سەرەڕای ژمارەی بەرچاوی مامەڵەکردنە بوونیدارەکان، ئەم پرسیارە بە تەواوی لێکۆڵینەوەی لەسەر نەکراوە دەمێنێتەوە."
+            },
+            {
+              "ru": "Нами был предложен метод, основанный на анализе частотных характеристик лексики.",
+              "tr": "Námi byl predložén métod, osnóvannyj na análize častótnych characterístik léksiki.",
+              "en": "We proposed a method based on the analysis of the frequency characteristics of the vocabulary. [Passive with agent in instrumental (нами); participle clause основанный на… modifies метод.]",
+              "ar": "لقد اقترحنا طريقةً تقوم على تحليل الخصائص التواترية للمفردات.",
+              "ku": "لەلایەن ئێمەوە شێوازێک پێشنیار کرا کە لەسەر شیکردنەوەی تایبەتمەندییە تواتری(دووبارەبوونەوە)ییەکانی ووشەسازی بنیات نراوە."
+            },
+            {
+              "ru": "Полученные результаты, представленные в таблице 1, свидетельствуют о его эффективности.",
+              "tr": "Polúčennye rezulʹtáty, predstávlennye v tablíce odín, svidételʹstvujut o egó effektívnosti.",
+              "en": "The results obtained, presented in Table 1, attest to its effectiveness. [Two stacked participles modify результаты; predicate свидетельствуют о + prepositional.]",
+              "ar": "تشهد النتائج المُحصَّل عليها، المعروضة في الجدول 1، بفعّاليتها.",
+              "ku": "ئەو ئەنجامانەی دەستکەوتوون، کە لە خشتەی ١دا پێشکەش کراون، بەڵگەن لەسەر کاریگەری ئەو."
+            },
+            {
+              "ru": "Таким образом, можно заключить, что предложенный подход обладает определённой практической значимостью.",
+              "tr": "Takím óbrazom, móžno zaključítʹ, čto predložénnyj podchód obladáet opredelёnnoj praktíčeskoj značímostʹju.",
+              "en": "Thus, one may conclude that the proposed approach possesses a certain practical significance. [Conclusion connector таким образом; impersonal modal можно + infinitive; обладать governs the instrumental.]",
+              "ar": "وهكذا، يمكن الخلوص إلى أنّ المقاربة المقترحة تتمتّع بأهمّية عملية معيّنة.",
+              "ku": "بەمجۆرە، دەکرێت ئەو ئەنجامە بدرێت کە مامەڵەکردنی پێشنیارکراو خاوەنی گرنگییەکی پراکتیکی دیاریکراوە."
+            }
           ]
         }
       ]

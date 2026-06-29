@@ -12,42 +12,48 @@
           "ru": "Здравствуйте!",
           "tr": "Zdravstvuyte!",
           "en": "Hello! (formal)",
-          "ar": "مرحباً! (رسمي)"
+          "ar": "مرحباً! (رسمي)",
+          "ku": "سڵاو! (فەرمی)"
         },
         {
           "id": "g2",
           "ru": "Как вас зовут?",
           "tr": "Kak vas zovut?",
           "en": "What is your name?",
-          "ar": "ما اسمك؟"
+          "ar": "ما اسمك؟",
+          "ku": "ناوت چییە؟"
         },
         {
           "id": "g3",
           "ru": "Меня зовут Анна.",
           "tr": "Menya zovut Anna.",
           "en": "My name is Anna.",
-          "ar": "اسمي آنّا."
+          "ar": "اسمي آنّا.",
+          "ku": "ناوم ئاننایە."
         },
         {
           "id": "g4",
           "ru": "Очень приятно!",
           "tr": "Ochen' priyatno!",
           "en": "Nice to meet you!",
-          "ar": "تشرّفت بلقائك!"
+          "ar": "تشرّفت بلقائك!",
+          "ku": "زۆر خۆشحاڵم بە ناسینت!"
         },
         {
           "id": "g5",
           "ru": "Откуда вы?",
           "tr": "Otkuda vy?",
           "en": "Where are you from?",
-          "ar": "من أين أنت؟"
+          "ar": "من أين أنت؟",
+          "ku": "خەڵکی کوێیت؟"
         },
         {
           "id": "g6",
           "ru": "До свидания!",
           "tr": "Do svidaniya!",
           "en": "Goodbye!",
-          "ar": "إلى اللقاء!"
+          "ar": "إلى اللقاء!",
+          "ku": "خواحافیز!"
         }
       ]
     },
@@ -61,42 +67,48 @@
           "ru": "Я не понимаю.",
           "tr": "Ya ne ponimayu.",
           "en": "I don't understand.",
-          "ar": "لا أفهم."
+          "ar": "لا أفهم.",
+          "ku": "تێناگەم."
         },
         {
           "id": "e2",
           "ru": "Говорите медленнее, пожалуйста.",
           "tr": "Govorite medlenneye, pozhaluysta.",
           "en": "Please speak more slowly.",
-          "ar": "تكلّم ببطء من فضلك."
+          "ar": "تكلّم ببطء من فضلك.",
+          "ku": "تکایە هێواشتر قسە بکە."
         },
         {
           "id": "e3",
           "ru": "Сколько это стоит?",
           "tr": "Skol'ko eto stoit?",
           "en": "How much does this cost?",
-          "ar": "كم يكلّف هذا؟"
+          "ar": "كم يكلّف هذا؟",
+          "ku": "ئەمە بەهای چەندە؟"
         },
         {
           "id": "e4",
           "ru": "Где находится туалет?",
           "tr": "Gde nakhoditsya tualet?",
           "en": "Where is the toilet?",
-          "ar": "أين يقع الحمّام؟"
+          "ar": "أين يقع الحمّام؟",
+          "ku": "تەوالێت لە کوێیە؟"
         },
         {
           "id": "e5",
           "ru": "Спасибо большое!",
           "tr": "Spasibo bol'shoye!",
           "en": "Thank you very much!",
-          "ar": "شكراً جزيلاً!"
+          "ar": "شكراً جزيلاً!",
+          "ku": "زۆر سوپاس!"
         },
         {
           "id": "e6",
           "ru": "Помогите, пожалуйста.",
           "tr": "Pomogite, pozhaluysta.",
           "en": "Help, please.",
-          "ar": "ساعدني من فضلك."
+          "ar": "ساعدني من فضلك.",
+          "ku": "تکایە یارمەتیم بدە."
         }
       ]
     },
@@ -110,42 +122,48 @@
           "ru": "Я живу и учусь в Москве.",
           "tr": "Ya zhivu i uchus' v Moskve.",
           "en": "I live and study in Moscow.",
-          "ar": "أعيش وأدرس في موسكو."
+          "ar": "أعيش وأدرس في موسكو.",
+          "ku": "لە مۆسکۆ دەژیم و دەخوێنم."
         },
         {
           "id": "d2",
           "ru": "Утром я пью кофе.",
           "tr": "Utrom ya p'yu kofe.",
           "en": "In the morning I drink coffee.",
-          "ar": "في الصباح أشرب القهوة."
+          "ar": "في الصباح أشرب القهوة.",
+          "ku": "بەیانیان قاوە دەخۆمەوە."
         },
         {
           "id": "d3",
           "ru": "Сегодня прекрасная погода.",
           "tr": "Segodnya prekrasnaya pogoda.",
           "en": "Today the weather is wonderful.",
-          "ar": "الطقس رائع اليوم."
+          "ar": "الطقس رائع اليوم.",
+          "ku": "ئەمڕۆ کەشوهەوا زۆر خۆشە."
         },
         {
           "id": "d4",
           "ru": "Я люблю читать русские книги.",
           "tr": "Ya lyublyu chitat' russkiye knigi.",
           "en": "I love reading Russian books.",
-          "ar": "أحبّ قراءة الكتب الروسية."
+          "ar": "أحبّ قراءة الكتب الروسية.",
+          "ku": "حەز لە خوێندنەوەی کتێبی ڕووسی دەکەم."
         },
         {
           "id": "d5",
           "ru": "Вечером я смотрю фильмы.",
           "tr": "Vecherom ya smotryu fil'my.",
           "en": "In the evening I watch films.",
-          "ar": "في المساء أشاهد الأفلام."
+          "ar": "في المساء أشاهد الأفلام.",
+          "ku": "ئێوارەیان فیلم سەیر دەکەم."
         },
         {
           "id": "d6",
           "ru": "Завтра у меня экзамен.",
           "tr": "Zavtra u menya ekzamen.",
           "en": "Tomorrow I have an exam.",
-          "ar": "غداً عندي امتحان."
+          "ar": "غداً عندي امتحان.",
+          "ku": "سبەینێ تاقیکردنەوەم هەیە."
         }
       ]
     },
@@ -159,42 +177,48 @@
           "ru": "Дайте, пожалуйста, меню.",
           "tr": "Dayte, pozhaluysta, menyu.",
           "en": "Please give me the menu.",
-          "ar": "أعطني القائمة من فضلك."
+          "ar": "أعطني القائمة من فضلك.",
+          "ku": "تکایە مێنیوەکەم بدەرێ."
         },
         {
           "id": "c2",
           "ru": "Я хочу чашку чая.",
           "tr": "Ya khochu chashku chaya.",
           "en": "I want a cup of tea.",
-          "ar": "أريد فنجان شاي."
+          "ar": "أريد فنجان شاي.",
+          "ku": "فنجانێک چام دەوێت."
         },
         {
           "id": "c3",
           "ru": "У вас есть хлеб?",
           "tr": "U vas yest' khleb?",
           "en": "Do you have bread?",
-          "ar": "هل لديكم خبز؟"
+          "ar": "هل لديكم خبز؟",
+          "ku": "نانتان هەیە؟"
         },
         {
           "id": "c4",
           "ru": "Это очень вкусно.",
           "tr": "Eto ochen' vkusno.",
           "en": "This is very tasty.",
-          "ar": "هذا لذيذ جداً."
+          "ar": "هذا لذيذ جداً.",
+          "ku": "ئەمە زۆر خۆشە."
         },
         {
           "id": "c5",
           "ru": "Счёт, пожалуйста.",
           "tr": "Schyot, pozhaluysta.",
           "en": "The bill, please.",
-          "ar": "الحساب من فضلك."
+          "ar": "الحساب من فضلك.",
+          "ku": "تکایە حیسابەکە."
         },
         {
           "id": "c6",
           "ru": "Можно расплатиться картой?",
           "tr": "Mozhno rasplatit'sya kartoy?",
           "en": "Can I pay by card?",
-          "ar": "هل يمكن الدفع بالبطاقة؟"
+          "ar": "هل يمكن الدفع بالبطاقة؟",
+          "ku": "دەکرێت بە کارت پارە بدەم؟"
         }
       ]
     },
@@ -208,42 +232,48 @@
           "ru": "Извините, как мне дойти до метро?",
           "tr": "Izvinite, kak mne doyti do metro?",
           "en": "Excuse me, how do I get to the metro?",
-          "ar": "عذرًا، كيف أصل إلى محطة المترو؟"
+          "ar": "عذرًا، كيف أصل إلى محطة المترو؟",
+          "ku": "ببورە، چۆن دەگەمە مەترۆ؟"
         },
         {
           "id": "directions2",
           "ru": "Идите прямо, потом поверните налево.",
           "tr": "Idite pryamo, potom povernite nalevo.",
           "en": "Go straight, then turn left.",
-          "ar": "سِر إلى الأمام مباشرة، ثم انعطف يسارًا."
+          "ar": "سِر إلى الأمام مباشرة، ثم انعطف يسارًا.",
+          "ku": "ڕاست بڕۆ، پاشان بەلای چەپدا بسووڕێوە."
         },
         {
           "id": "directions3",
           "ru": "На какой остановке мне выходить, чтобы попасть в центр?",
           "tr": "Na kakoy ostanovke mne vykhodit, chtoby popast v tsentr?",
           "en": "Which stop should I get off at to reach the city centre?",
-          "ar": "في أيِّ محطة يجب أن أنزل لكي أصل إلى وسط المدينة؟"
+          "ar": "في أيِّ محطة يجب أن أنزل لكي أصل إلى وسط المدينة؟",
+          "ku": "لە کام وێستگە دابەزم بۆ ئەوەی بگەمە ناوەندی شار؟"
         },
         {
           "id": "directions4",
           "ru": "Этот автобус идёт до вокзала?",
           "tr": "Etot avtobus idyot do vokzala?",
           "en": "Does this bus go to the train station?",
-          "ar": "هل تذهب هذه الحافلة إلى محطة القطار؟"
+          "ar": "هل تذهب هذه الحافلة إلى محطة القطار؟",
+          "ku": "ئەم پاسە بۆ وێستگەی شەمەندەفەر دەچێت؟"
         },
         {
           "id": "directions5",
           "ru": "Поверните направо у светофора, и аптека будет справа.",
           "tr": "Povernite napravo u svetofora, i apteka budet sprava.",
           "en": "Turn right at the traffic light, and the pharmacy will be on the right.",
-          "ar": "انعطف يمينًا عند إشارة المرور، وستكون الصيدلية على يمينك."
+          "ar": "انعطف يمينًا عند إشارة المرور، وستكون الصيدلية على يمينك.",
+          "ku": "لەلای ترافیکەکە بەلای ڕاستدا بسووڕێوە، دەرمانخانەکە لەلای ڕاستتەوە دەبێت."
         },
         {
           "id": "directions6",
           "ru": "Можно вызвать такси до аэропорта? Сколько это будет стоить?",
           "tr": "Mozhno vyzvat taksi do aeroporta? Skolko eto budet stoit?",
           "en": "Can I order a taxi to the airport? How much will it cost?",
-          "ar": "هل يمكنني طلب سيارة أجرة إلى المطار؟ كم سيكلّف ذلك؟"
+          "ar": "هل يمكنني طلب سيارة أجرة إلى المطار؟ كم سيكلّف ذلك؟",
+          "ku": "دەکرێت تاکسییەک بۆ فڕۆکەخانە بانگ بکەم؟ بەهای چەند دەبێت؟"
         }
       ]
     },
@@ -257,42 +287,48 @@
           "ru": "Извините, можно примерить эту рубашку?",
           "tr": "Izvinite, mozhno primerit' etu rubashku?",
           "en": "Excuse me, can I try on this shirt?",
-          "ar": "عفواً، هل يمكنني تجربة هذا القميص؟"
+          "ar": "عفواً، هل يمكنني تجربة هذا القميص؟",
+          "ku": "ببورە، دەکرێت ئەم کراسە تاقی بکەمەوە؟"
         },
         {
           "id": "shopping2",
           "ru": "У вас есть размер побольше?",
           "tr": "U vas yest' razmer pobol'she?",
           "en": "Do you have a bigger size?",
-          "ar": "هل لديكم مقاس أكبر؟"
+          "ar": "هل لديكم مقاس أكبر؟",
+          "ku": "قەبارەی گەورەترتان هەیە؟"
         },
         {
           "id": "shopping3",
           "ru": "Сколько стоят эти чёрные джинсы?",
           "tr": "Skol'ko stoyat eti chyornye dzhinsy?",
           "en": "How much do these black jeans cost?",
-          "ar": "كم يبلغ ثمن هذا الجينز الأسود؟"
+          "ar": "كم يبلغ ثمن هذا الجينز الأسود؟",
+          "ku": "ئەم جینزە ڕەشە بەهای چەندە؟"
         },
         {
           "id": "shopping4",
           "ru": "Этот свитер мне мал, а красный цвет мне очень нравится.",
           "tr": "Etot sviter mne mal, a krasnyy tsvet mne ochen' nravitsya.",
           "en": "This sweater is too small for me, but I really like the red colour.",
-          "ar": "هذه الكنزة صغيرة عليّ، لكن اللون الأحمر يعجبني كثيراً."
+          "ar": "هذه الكنزة صغيرة عليّ، لكن اللون الأحمر يعجبني كثيراً.",
+          "ku": "ئەم بلووزە بۆ من بچووکە، بەڵام ڕەنگە سوورەکەی زۆرم بەدڵە."
         },
         {
           "id": "shopping5",
           "ru": "Дайте, пожалуйста, килограмм яблок и два литра молока.",
           "tr": "Dayte, pozhaluysta, kilogramm yablok i dva litra moloka.",
           "en": "Please give me a kilogram of apples and two litres of milk.",
-          "ar": "من فضلك، أعطني كيلوغراماً من التفاح ولترين من الحليب."
+          "ar": "من فضلك، أعطني كيلوغراماً من التفاح ولترين من الحليب.",
+          "ku": "تکایە کیلۆیەک سێو و دوو لیتر شیرم بدەرێ."
         },
         {
           "id": "shopping6",
           "ru": "Можно заплатить картой или только наличными?",
           "tr": "Mozhno zaplatit' kartoy ili tol'ko nalichnymi?",
           "en": "Can I pay by card, or only with cash?",
-          "ar": "هل يمكنني الدفع بالبطاقة أم بالنقد فقط؟"
+          "ar": "هل يمكنني الدفع بالبطاقة أم بالنقد فقط؟",
+          "ku": "دەکرێت بە کارت پارە بدەم یان تەنها بە کاش؟"
         }
       ]
     },
@@ -306,42 +342,48 @@
           "ru": "Я плохо себя чувствую сегодня.",
           "tr": "Ya plokho sebya chuvstvuyu segodnya.",
           "en": "I feel unwell today.",
-          "ar": "أشعر بتوعّك اليوم."
+          "ar": "أشعر بتوعّك اليوم.",
+          "ku": "ئەمڕۆ هەستێکی باشم نییە."
         },
         {
           "id": "health2",
           "ru": "У меня болит голова и высокая температура.",
           "tr": "U menya bolit golova i vysokaya temperatura.",
           "en": "I have a headache and a high fever.",
-          "ar": "أعاني من صداع وارتفاع في درجة الحرارة."
+          "ar": "أعاني من صداع وارتفاع في درجة الحرارة.",
+          "ku": "سەرئێشە و تای بەرزم هەیە."
         },
         {
           "id": "health3",
           "ru": "Мне нужно лекарство от кашля.",
           "tr": "Mne nuzhno lekarstvo ot kashlya.",
           "en": "I need medicine for a cough.",
-          "ar": "أحتاج إلى دواء للسعال."
+          "ar": "أحتاج إلى دواء للسعال.",
+          "ku": "پێویستم بە دەرمانی کۆکە هەیە."
         },
         {
           "id": "health4",
           "ru": "Доктор, у меня уже три дня болит горло.",
           "tr": "Doktor, u menya uzhe tri dnya bolit gorlo.",
           "en": "Doctor, I have had a sore throat for three days already.",
-          "ar": "يا دكتور، أعاني من ألم في الحلق منذ ثلاثة أيام."
+          "ar": "يا دكتور، أعاني من ألم في الحلق منذ ثلاثة أيام.",
+          "ku": "دکتۆر، سێ ڕۆژە گەروویەکم دەئێشێت."
         },
         {
           "id": "health5",
           "ru": "Эти таблетки нужно принимать два раза в день.",
           "tr": "Eti tabletki nuzhno prinimat dva raza v den.",
           "en": "You need to take these tablets twice a day.",
-          "ar": "يجب تناول هذه الأقراص مرّتين في اليوم."
+          "ar": "يجب تناول هذه الأقراص مرّتين في اليوم.",
+          "ku": "پێویستە ئەم حەبانە ڕۆژی دوو جار بخۆیت."
         },
         {
           "id": "health6",
           "ru": "Где здесь ближайшая аптека?",
           "tr": "Gde zdes blizhayshaya apteka?",
           "en": "Where is the nearest pharmacy around here?",
-          "ar": "أين أقرب صيدلية من هنا؟"
+          "ar": "أين أقرب صيدلية من هنا؟",
+          "ku": "نزیکترین دەرمانخانە لێرە لە کوێیە؟"
         }
       ]
     },
@@ -355,42 +397,48 @@
           "ru": "Завтра у нас лекция по истории, но я ещё не записался на экзамен.",
           "tr": "Zavtra u nas lektsiya po istorii, no ya yeshchyo ne zapisalsya na ekzamen.",
           "en": "Tomorrow we have a history lecture, but I still haven't signed up for the exam.",
-          "ar": "غدًا لدينا محاضرة في التاريخ، لكنني لم أسجّل بعد للامتحان."
+          "ar": "غدًا لدينا محاضرة في التاريخ، لكنني لم أسجّل بعد للامتحان.",
+          "ku": "سبەینێ وانەی مێژوومان هەیە، بەڵام من هێشتا ناوم بۆ تاقیکردنەوەکە تۆمار نەکردووە."
         },
         {
           "id": "university2",
           "ru": "В библиотеке можно взять учебники на дом, если у тебя есть студенческий билет.",
           "tr": "V biblioteke mozhno vzyat uchebniki na dom, yesli u tebya yest studencheskiy bilet.",
           "en": "In the library you can borrow textbooks to take home if you have a student ID.",
-          "ar": "في المكتبة يمكنك استعارة الكتب الدراسية إلى البيت إذا كان لديك بطاقة طالب."
+          "ar": "في المكتبة يمكنك استعارة الكتب الدراسية إلى البيت إذا كان لديك بطاقة طالب.",
+          "ku": "لە کتێبخانە دەتوانیت کتێبی خوێندن ببەیتە ماڵەوە، ئەگەر کارتی خوێندکاریت هەبێت."
         },
         {
           "id": "university3",
           "ru": "Скажите, пожалуйста, где находится деканат? Мне нужно подать заявление.",
           "tr": "Skazhite, pozhaluysta, gde nakhoditsya dekanat? Mne nuzhno podat zayavlenie.",
           "en": "Could you tell me where the dean's office is? I need to submit an application.",
-          "ar": "من فضلك، أين يقع مكتب العمادة؟ أحتاج إلى تقديم طلب."
+          "ar": "من فضلك، أين يقع مكتب العمادة؟ أحتاج إلى تقديم طلب.",
+          "ku": "تکایە، نووسینگەی ڕاگری (دیکانات) لە کوێیە؟ پێویستە داواکارییەک پێشکەش بکەم."
         },
         {
           "id": "university4",
           "ru": "Я пропустил пару семинаров, поэтому хочу попросить у преподавателя конспект.",
           "tr": "Ya propustil paru seminarov, poetomu khochu poprosit u prepodavatelya konspekt.",
           "en": "I missed a couple of seminars, so I want to ask the lecturer for the notes.",
-          "ar": "لقد فاتتني بضع حلقات دراسية، لذلك أريد أن أطلب من الأستاذ ملخّص الدروس."
+          "ar": "لقد فاتتني بضع حلقات دراسية، لذلك أريد أن أطلب من الأستاذ ملخّص الدروس.",
+          "ku": "چەند سیمینارێکم لەدەست چووە، بۆیە دەمەوێت لە مامۆستاکە کۆنسپێکت داوا بکەم."
         },
         {
           "id": "university5",
           "ru": "Экзамен по математике перенесли на следующую неделю, ты не знал?",
           "tr": "Ekzamen po matematike perenesli na sleduyushchuyu nedelyu, ty ne znal?",
           "en": "The math exam has been moved to next week, didn't you know?",
-          "ar": "تم تأجيل امتحان الرياضيات إلى الأسبوع القادم، ألم تكن تعلم؟"
+          "ar": "تم تأجيل امتحان الرياضيات إلى الأسبوع القادم، ألم تكن تعلم؟",
+          "ku": "تاقیکردنەوەی بیرکاری بۆ هەفتەی داهاتوو دواخرا، تۆ نەتدەزانی؟"
         },
         {
           "id": "university6",
           "ru": "Давай встретимся после занятий в столовой и вместе подготовимся к зачёту.",
           "tr": "Davay vstretimsya posle zanyatiy v stolovoy i vmeste podgotovimsya k zachyotu.",
           "en": "Let's meet after classes in the cafeteria and prepare for the test together.",
-          "ar": "لنلتقِ بعد الحصص في المقصف ونستعد معًا للاختبار."
+          "ar": "لنلتقِ بعد الحصص في المقصف ونستعد معًا للاختبار.",
+          "ku": "با دوای وانەکان لە چێشتخانە یەکتر ببینین و پێکەوە بۆ تاقیکردنەوەکە ئامادە بین."
         }
       ]
     },
@@ -404,42 +452,48 @@
           "ru": "По-моему, это не самая удачная идея, но я могу ошибаться.",
           "tr": "Po-moyemu, eto ne samaya udachnaya ideya, no ya mogu oshibatsya.",
           "en": "In my opinion, this isn't the best idea, but I could be wrong.",
-          "ar": "في رأيي، هذه ليست أفضل فكرة، لكن قد أكون مخطئاً."
+          "ar": "في رأيي، هذه ليست أفضل فكرة، لكن قد أكون مخطئاً.",
+          "ku": "بەلای منەوە، ئەمە باشترین بیرۆکە نییە، بەڵام لەوانەیە هەڵە بکەم."
         },
         {
           "id": "opinions2",
           "ru": "Я полностью с тобой согласен, давай так и сделаем.",
           "tr": "Ya polnostyu s toboy soglasen, davay tak i sdelayem.",
           "en": "I completely agree with you, let's do it that way.",
-          "ar": "أنا أتفق معك تماماً، دعنا نفعل ذلك بهذه الطريقة."
+          "ar": "أنا أتفق معك تماماً، دعنا نفعل ذلك بهذه الطريقة.",
+          "ku": "بە تەواوی لەگەڵت هاوڕام، با بەو شێوەیە بیکەین."
         },
         {
           "id": "opinions3",
           "ru": "Извини, но я не совсем согласна, мне кажется, есть вариант получше.",
           "tr": "Izvini, no ya ne sovsem soglasna, mne kazhetsya, est variant poluchshe.",
           "en": "Sorry, but I don't quite agree; I think there's a better option.",
-          "ar": "آسفة، لكنني لا أوافق تماماً، أعتقد أن هناك خياراً أفضل."
+          "ar": "آسفة، لكنني لا أوافق تماماً، أعتقد أن هناك خياراً أفضل.",
+          "ku": "ببورە، بەڵام بە تەواوی هاوڕا نیم، پێم وایە هەڵبژاردنێکی باشتر هەیە."
         },
         {
           "id": "opinions4",
           "ru": "Этим летом я планирую наконец-то выучить программирование.",
           "tr": "Etim letom ya planiruyu nakonets-to vyuchit programmirovaniye.",
           "en": "This summer I'm planning to finally learn programming.",
-          "ar": "هذا الصيف أخطط أن أتعلم البرمجة أخيراً."
+          "ar": "هذا الصيف أخطط أن أتعلم البرمجة أخيراً.",
+          "ku": "ئەم هاوینە پلانم هەیە لە کۆتاییدا پرۆگرامسازی فێر ببم."
         },
         {
           "id": "opinions5",
           "ru": "Если всё получится, мы собираемся переехать в другой город.",
           "tr": "Yesli vsyo poluchitsya, my sobirayemsya pereyekhat v drugoy gorod.",
           "en": "If everything works out, we're going to move to another city.",
-          "ar": "إذا سار كل شيء على ما يرام، فإننا ننوي الانتقال إلى مدينة أخرى."
+          "ar": "إذا سار كل شيء على ما يرام، فإننا ننوي الانتقال إلى مدينة أخرى.",
+          "ku": "ئەگەر هەموو شتێک سەرکەوتوو بێت، نیازمان هەیە بچینە شارێکی تر."
         },
         {
           "id": "opinions6",
           "ru": "Честно говоря, я ещё не решил, чем хочу заниматься в будущем.",
           "tr": "Chestno govorya, ya yeshchyo ne reshil, chem khochu zanimatsya v budushchem.",
           "en": "Honestly, I haven't decided yet what I want to do in the future.",
-          "ar": "بصراحة، لم أقرر بعد ماذا أريد أن أفعل في المستقبل."
+          "ar": "بصراحة، لم أقرر بعد ماذا أريد أن أفعل في المستقبل.",
+          "ku": "ڕاستییەکەی، هێشتا بڕیارم نەداوە لە داهاتوودا حەز دەکەم چی بکەم."
         }
       ]
     },
@@ -453,42 +507,48 @@
           "ru": "На следующей неделе я встречаюсь с научным руководителем, чтобы обсудить план диссертации.",
           "tr": "Na sleduyushchey nedele ya vstrechayus' s nauchnym rukovoditelem, chtoby obsudit' plan dissertatsii.",
           "en": "Next week I'm meeting with my supervisor to discuss my dissertation plan.",
-          "ar": "الأسبوع القادم سألتقي بالمشرف العلمي لمناقشة خطة الأطروحة."
+          "ar": "الأسبوع القادم سألتقي بالمشرف العلمي لمناقشة خطة الأطروحة.",
+          "ku": "هەفتەی داهاتوو لەگەڵ سەرپەرشتیاری زانستیم دەبینم بۆ باسکردنی پلانی نامەکە."
         },
         {
           "id": "research2",
           "ru": "Мне нужно закончить статью до конца месяца, потому что приближается крайний срок.",
           "tr": "Mne nuzhno zakonchit' stat'yu do kontsa mesyatsa, potomu chto priblizhayetsya krayniy srok.",
           "en": "I need to finish the article by the end of the month because the deadline is approaching.",
-          "ar": "عليّ أن أنهي المقال قبل نهاية الشهر لأن الموعد النهائي يقترب."
+          "ar": "عليّ أن أنهي المقال قبل نهاية الشهر لأن الموعد النهائي يقترب.",
+          "ku": "پێویستە وتارەکە پێش کۆتایی مانگ تەواو بکەم، چونکە کۆتا کات نزیک دەبێتەوە."
         },
         {
           "id": "research3",
           "ru": "В прошлом году я выступал на международной конференции и познакомился с интересными учёными.",
           "tr": "V proshlom godu ya vystupal na mezhdunarodnoy konferentsii i poznakomilsya s interesnymi uchyonymi.",
           "en": "Last year I gave a talk at an international conference and met some interesting scholars.",
-          "ar": "في العام الماضي ألقيت محاضرة في مؤتمر دولي وتعرّفت على باحثين مثيرين للاهتمام."
+          "ar": "في العام الماضي ألقيت محاضرة في مؤتمر دولي وتعرّفت على باحثين مثيرين للاهتمام.",
+          "ku": "ساڵی پار لە کۆنفرانسێکی نێودەوڵەتیدا وتارم پێشکەش کرد و چەند زانایەکی سەرنجڕاکێشم ناسی."
         },
         {
           "id": "research4",
           "ru": "Сейчас я собираю данные для эксперимента и каждый день читаю много научных работ.",
           "tr": "Seychas ya sobirayu dannye dlya eksperimenta i kazhdyy den' chitayu mnogo nauchnykh rabot.",
           "en": "Right now I'm collecting data for an experiment and reading a lot of research papers every day.",
-          "ar": "أنا الآن أجمع البيانات للتجربة وأقرأ يوميًا الكثير من الأبحاث العلمية."
+          "ar": "أنا الآن أجمع البيانات للتجربة وأقرأ يوميًا الكثير من الأبحاث العلمية.",
+          "ku": "ئێستا داتا بۆ تاقیکردنەوەیەک کۆدەکەمەوە و ڕۆژانە زۆر توێژینەوەی زانستی دەخوێنمەوە."
         },
         {
           "id": "research5",
           "ru": "Научный руководитель посоветовал мне переписать введение и добавить больше источников.",
           "tr": "Nauchnyy rukovoditel' posovetoval mne perepisat' vvedeniye i dobavit' bol'she istochnikov.",
           "en": "My supervisor advised me to rewrite the introduction and add more sources.",
-          "ar": "نصحني المشرف العلمي بإعادة كتابة المقدمة وإضافة المزيد من المصادر."
+          "ar": "نصحني المشرف العلمي بإعادة كتابة المقدمة وإضافة المزيد من المصادر.",
+          "ku": "سەرپەرشتیاری زانستیم ئامۆژگاری کردم پێشەکییەکە بنووسمەوە و سەرچاوەی زیاتر زیاد بکەم."
         },
         {
           "id": "research6",
           "ru": "После защиты диссертации я хочу немного отдохнуть, а потом подать заявку на грант.",
           "tr": "Posle zashchity dissertatsii ya khochu nemnogo otdokhnut', a potom podat' zayavku na grant.",
           "en": "After defending my dissertation I want to rest a little and then apply for a grant.",
-          "ar": "بعد مناقشة الأطروحة أريد أن أرتاح قليلًا ثم أتقدّم بطلب للحصول على منحة."
+          "ar": "بعد مناقشة الأطروحة أريد أن أرتاح قليلًا ثم أتقدّم بطلب للحصول على منحة.",
+          "ku": "دوای بەرگریکردن لە نامەکە دەمەوێت کەمێک پشوو بدەم و پاشان داوای گرانت بکەم."
         }
       ]
     }

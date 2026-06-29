@@ -14,7 +14,8 @@
           "tr": "ya",
           "pos": "pron.",
           "example": "Я зна́ю э́то. — I know this.",
-          "ar": "أَنَا"
+          "ar": "أَنَا",
+          "ku": "من"
         },
         {
           "ru": "ты",
@@ -22,7 +23,8 @@
           "tr": "ty",
           "pos": "pron.",
           "example": "Ты гото́в? — Are you ready?",
-          "ar": "أَنْتَ"
+          "ar": "أَنْتَ",
+          "ku": "تۆ"
         },
         {
           "ru": "вы",
@@ -30,7 +32,8 @@
           "tr": "vy",
           "pos": "pron.",
           "example": "Вы говори́те по-ру́сски? — Do you speak Russian?",
-          "ar": "أَنْتُمْ"
+          "ar": "أَنْتُمْ",
+          "ku": "ئێوە"
         },
         {
           "ru": "он",
@@ -38,7 +41,8 @@
           "tr": "on",
           "pos": "pron.",
           "example": "Он здесь. — He is here.",
-          "ar": "هُوَ"
+          "ar": "هُوَ",
+          "ku": "ئەو"
         },
         {
           "ru": "она́",
@@ -46,7 +50,8 @@
           "tr": "oná",
           "pos": "pron.",
           "example": "Она́ рабо́тает. — She is working.",
-          "ar": "هِيَ"
+          "ar": "هِيَ",
+          "ku": "ئەو"
         },
         {
           "ru": "мы",
@@ -54,7 +59,8 @@
           "tr": "my",
           "pos": "pron.",
           "example": "Мы друзья́. — We are friends.",
-          "ar": "نَحْنُ"
+          "ar": "نَحْنُ",
+          "ku": "ئێمە"
         },
         {
           "ru": "они́",
@@ -62,7 +68,8 @@
           "tr": "oní",
           "pos": "pron.",
           "example": "Они́ ушли́. — They have left.",
-          "ar": "هُمْ"
+          "ar": "هُمْ",
+          "ku": "ئەوان"
         },
         {
           "ru": "да",
@@ -70,7 +77,8 @@
           "tr": "da",
           "pos": "particle",
           "example": "Да, коне́чно. — Yes, of course.",
-          "ar": "نَعَمْ"
+          "ar": "نَعَمْ",
+          "ku": "بەڵێ"
         },
         {
           "ru": "нет",
@@ -78,7 +86,8 @@
           "tr": "net",
           "pos": "particle",
           "example": "Нет, спаси́бо. — No, thank you.",
-          "ar": "لَا"
+          "ar": "لَا",
+          "ku": "نەخێر"
         },
         {
           "ru": "не",
@@ -86,7 +95,8 @@
           "tr": "ne",
           "pos": "particle",
           "example": "Я не зна́ю. — I don't know.",
-          "ar": "لَيْسَ"
+          "ar": "لَيْسَ",
+          "ku": "نا"
         },
         {
           "ru": "здра́вствуйте",
@@ -94,7 +104,8 @@
           "tr": "zdrávstvuyte",
           "pos": "interj.",
           "example": "Здра́вствуйте, как дела́? — Hello, how are you?",
-          "ar": "مَرْحَبًا"
+          "ar": "مَرْحَبًا",
+          "ku": "سڵاو"
         },
         {
           "ru": "приве́т",
@@ -102,7 +113,8 @@
           "tr": "privét",
           "pos": "interj.",
           "example": "Приве́т, как ты? — Hi, how are you?",
-          "ar": "أَهْلًا"
+          "ar": "أَهْلًا",
+          "ku": "سڵاو"
         },
         {
           "ru": "спаси́бо",
@@ -110,7 +122,8 @@
           "tr": "spasíbo",
           "pos": "interj.",
           "example": "Спаси́бо большо́е. — Thank you very much.",
-          "ar": "شُكْرًا"
+          "ar": "شُكْرًا",
+          "ku": "سوپاس"
         },
         {
           "ru": "пожа́луйста",
@@ -118,7 +131,8 @@
           "tr": "pozhálusta",
           "pos": "interj.",
           "example": "Да́йте, пожа́луйста, воды́. — Some water, please.",
-          "ar": "مِنْ فَضْلِكَ"
+          "ar": "مِنْ فَضْلِكَ",
+          "ku": "تکایە"
         },
         {
           "ru": "извини́те",
@@ -126,7 +140,8 @@
           "tr": "izviníte",
           "pos": "interj.",
           "example": "Извини́те за опозда́ние. — Sorry for being late.",
-          "ar": "عَفْوًا"
+          "ar": "عَفْوًا",
+          "ku": "ببورە"
         },
         {
           "ru": "и",
@@ -134,7 +149,8 @@
           "tr": "i",
           "pos": "conj.",
           "example": "Я и ты. — You and I.",
-          "ar": "وَ"
+          "ar": "وَ",
+          "ku": "و"
         },
         {
           "ru": "но",
@@ -142,7 +158,8 @@
           "tr": "no",
           "pos": "conj.",
           "example": "Хочу́, но не могу́. — I want to, but I can't.",
-          "ar": "لَكِنْ"
+          "ar": "لَكِنْ",
+          "ku": "بەڵام"
         },
         {
           "ru": "что",
@@ -150,7 +167,8 @@
           "tr": "chto",
           "pos": "pron./conj.",
           "example": "Что э́то? — What is this?",
-          "ar": "مَاذَا"
+          "ar": "مَاذَا",
+          "ku": "چی"
         },
         {
           "ru": "кто",
@@ -158,7 +176,8 @@
           "tr": "kto",
           "pos": "pron.",
           "example": "Кто там? — Who is there?",
-          "ar": "مَنْ"
+          "ar": "مَنْ",
+          "ku": "کێ"
         },
         {
           "ru": "где",
@@ -166,7 +185,8 @@
           "tr": "gde",
           "pos": "adv.",
           "example": "Где вы живёте? — Where do you live?",
-          "ar": "أَيْنَ"
+          "ar": "أَيْنَ",
+          "ku": "لەکوێ"
         },
         {
           "ru": "когда́",
@@ -174,7 +194,8 @@
           "tr": "kogdá",
           "pos": "adv.",
           "example": "Когда́ начнём? — When shall we start?",
-          "ar": "مَتَى"
+          "ar": "مَتَى",
+          "ku": "کەی"
         },
         {
           "ru": "э́тот",
@@ -182,7 +203,8 @@
           "tr": "état",
           "pos": "pron. (m.)",
           "example": "Э́тот дом мой. — This house is mine.",
-          "ar": "هَذَا"
+          "ar": "هَذَا",
+          "ku": "ئەم"
         },
         {
           "ru": "челове́к",
@@ -190,7 +212,8 @@
           "tr": "chelovék",
           "pos": "noun (m.)",
           "example": "Он хоро́ший челове́к. — He is a good person.",
-          "ar": "إِنْسَان"
+          "ar": "إِنْسَان",
+          "ku": "مرۆڤ"
         },
         {
           "ru": "вода́",
@@ -198,7 +221,8 @@
           "tr": "vodá",
           "pos": "noun (f.)",
           "example": "Я пью во́ду. — I am drinking water.",
-          "ar": "مَاء"
+          "ar": "مَاء",
+          "ku": "ئاو"
         },
         {
           "ru": "дом",
@@ -206,7 +230,8 @@
           "tr": "dom",
           "pos": "noun (m.)",
           "example": "Я иду́ домо́й. — I am going home.",
-          "ar": "بَيْت"
+          "ar": "بَيْت",
+          "ku": "ماڵ"
         },
         {
           "ru": "быть",
@@ -214,7 +239,8 @@
           "tr": "byt'",
           "pos": "verb (impf.)",
           "example": "Я хочу́ быть здесь. — I want to be here.",
-          "ar": "يَكُونُ"
+          "ar": "يَكُونُ",
+          "ku": "بوون"
         },
         {
           "ru": "знать",
@@ -222,7 +248,8 @@
           "tr": "znat'",
           "pos": "verb (impf.)",
           "example": "Я не зна́ю его́. — I don't know him.",
-          "ar": "يَعْرِفُ"
+          "ar": "يَعْرِفُ",
+          "ku": "زانین"
         }
       ]
     },
@@ -237,7 +264,8 @@
           "tr": "délat' / sdélat'",
           "pos": "verb (impf./pf.)",
           "example": "Что ты де́лаешь? — What are you doing?",
-          "ar": "يَفْعَلُ"
+          "ar": "يَفْعَلُ",
+          "ku": "کردن"
         },
         {
           "ru": "говори́ть / сказа́ть",
@@ -245,7 +273,8 @@
           "tr": "govorít' / skazát'",
           "pos": "verb (impf./pf.)",
           "example": "Скажи́те, пожа́луйста. — Please tell me.",
-          "ar": "يَتَكَلَّمُ / يَقُولُ"
+          "ar": "يَتَكَلَّمُ / يَقُولُ",
+          "ku": "قسەکردن / گوتن"
         },
         {
           "ru": "ви́деть / уви́деть",
@@ -253,7 +282,8 @@
           "tr": "vídet' / uvídet'",
           "pos": "verb (impf./pf.)",
           "example": "Я ви́жу свет. — I see a light.",
-          "ar": "يَرَى"
+          "ar": "يَرَى",
+          "ku": "بینین"
         },
         {
           "ru": "знать / узна́ть",
@@ -261,7 +291,8 @@
           "tr": "znat' / uznát'",
           "pos": "verb (impf./pf.)",
           "example": "Я узна́л но́вость. — I found out the news.",
-          "ar": "يَعْرِفُ / يَكْتَشِفُ"
+          "ar": "يَعْرِفُ / يَكْتَشِفُ",
+          "ku": "زانین / زانینەوە"
         },
         {
           "ru": "ду́мать / поду́мать",
@@ -269,7 +300,8 @@
           "tr": "dúmat' / podúmat'",
           "pos": "verb (impf./pf.)",
           "example": "Я ду́маю о тебе́. — I am thinking about you.",
-          "ar": "يُفَكِّرُ"
+          "ar": "يُفَكِّرُ",
+          "ku": "بیرکردنەوە"
         },
         {
           "ru": "хоте́ть / захоте́ть",
@@ -277,7 +309,8 @@
           "tr": "khotét' / zakhotét'",
           "pos": "verb (impf./pf.)",
           "example": "Я хочу́ есть. — I want to eat.",
-          "ar": "يُرِيدُ"
+          "ar": "يُرِيدُ",
+          "ku": "ویستن"
         },
         {
           "ru": "мочь / смочь",
@@ -285,7 +318,8 @@
           "tr": "moch' / smoch'",
           "pos": "verb (impf./pf.)",
           "example": "Я не могу́ прийти́. — I can't come.",
-          "ar": "يَسْتَطِيعُ"
+          "ar": "يَسْتَطِيعُ",
+          "ku": "توانین"
         },
         {
           "ru": "идти́ / пойти́",
@@ -293,7 +327,8 @@
           "tr": "idtí / poytí",
           "pos": "verb (impf./pf.)",
           "example": "Пойдём в кино́. — Let's go to the cinema.",
-          "ar": "يَذْهَبُ"
+          "ar": "يَذْهَبُ",
+          "ku": "ڕۆیشتن"
         },
         {
           "ru": "дава́ть / дать",
@@ -301,7 +336,8 @@
           "tr": "davát' / dat'",
           "pos": "verb (impf./pf.)",
           "example": "Дай мне ру́ку. — Give me your hand.",
-          "ar": "يُعْطِي"
+          "ar": "يُعْطِي",
+          "ku": "دان"
         },
         {
           "ru": "брать / взять",
@@ -309,7 +345,8 @@
           "tr": "brat' / vzyat'",
           "pos": "verb (impf./pf.)",
           "example": "Возьми́ кни́гу. — Take the book.",
-          "ar": "يَأْخُذُ"
+          "ar": "يَأْخُذُ",
+          "ku": "وەرگرتن"
         },
         {
           "ru": "де́латься / стать",
@@ -317,7 +354,8 @@
           "tr": "délat'sya / stat'",
           "pos": "verb (impf./pf.)",
           "example": "Ста́ло хо́лодно. — It became cold.",
-          "ar": "يُصْبِحُ"
+          "ar": "يُصْبِحُ",
+          "ku": "بوون بە"
         },
         {
           "ru": "рабо́тать / порабо́тать",
@@ -325,7 +363,8 @@
           "tr": "rabótat' / porabótat'",
           "pos": "verb (impf./pf.)",
           "example": "Я рабо́таю до́ма. — I work from home.",
-          "ar": "يَعْمَلُ"
+          "ar": "يَعْمَلُ",
+          "ku": "کارکردن"
         },
         {
           "ru": "писа́ть / написа́ть",
@@ -333,7 +372,8 @@
           "tr": "pisát' / napisát'",
           "pos": "verb (impf./pf.)",
           "example": "Я написа́л письмо́. — I wrote a letter.",
-          "ar": "يَكْتُبُ"
+          "ar": "يَكْتُبُ",
+          "ku": "نووسین"
         },
         {
           "ru": "чита́ть / прочита́ть",
@@ -341,7 +381,8 @@
           "tr": "chitát' / prochitát'",
           "pos": "verb (impf./pf.)",
           "example": "Я чита́ю кни́гу. — I am reading a book.",
-          "ar": "يَقْرَأُ"
+          "ar": "يَقْرَأُ",
+          "ku": "خوێندنەوە"
         },
         {
           "ru": "понима́ть / поня́ть",
@@ -349,7 +390,8 @@
           "tr": "ponimát' / ponyát'",
           "pos": "verb (impf./pf.)",
           "example": "Я не понима́ю. — I don't understand.",
-          "ar": "يَفْهَمُ"
+          "ar": "يَفْهَمُ",
+          "ku": "تێگەیشتن"
         },
         {
           "ru": "спра́шивать / спроси́ть",
@@ -357,7 +399,8 @@
           "tr": "spráshivat' / sprosít'",
           "pos": "verb (impf./pf.)",
           "example": "Мо́жно спроси́ть? — May I ask?",
-          "ar": "يَسْأَلُ"
+          "ar": "يَسْأَلُ",
+          "ku": "پرسین"
         },
         {
           "ru": "отвеча́ть / отве́тить",
@@ -365,7 +408,8 @@
           "tr": "otvechát' / otvétit'",
           "pos": "verb (impf./pf.)",
           "example": "Отве́ть на вопро́с. — Answer the question.",
-          "ar": "يُجِيبُ"
+          "ar": "يُجِيبُ",
+          "ku": "وەڵامدانەوە"
         },
         {
           "ru": "получа́ть / получи́ть",
@@ -373,7 +417,8 @@
           "tr": "poluchát' / poluchít'",
           "pos": "verb (impf./pf.)",
           "example": "Я получи́л письмо́. — I got the letter.",
-          "ar": "يَتَلَقَّى"
+          "ar": "يَتَلَقَّى",
+          "ku": "وەرگرتن"
         },
         {
           "ru": "находи́ть / найти́",
@@ -381,7 +426,8 @@
           "tr": "nakhodít' / naytí",
           "pos": "verb (impf./pf.)",
           "example": "Я нашёл ключи́. — I found the keys.",
-          "ar": "يَجِدُ"
+          "ar": "يَجِدُ",
+          "ku": "دۆزینەوە"
         },
         {
           "ru": "начина́ть / нача́ть",
@@ -389,7 +435,8 @@
           "tr": "nachinát' / nachát'",
           "pos": "verb (impf./pf.)",
           "example": "Начнём рабо́ту. — Let's start work.",
-          "ar": "يَبْدَأُ"
+          "ar": "يَبْدَأُ",
+          "ku": "دەستپێکردن"
         },
         {
           "ru": "конча́ть / ко́нчить",
@@ -397,7 +444,8 @@
           "tr": "konchát' / kónchit'",
           "pos": "verb (impf./pf.)",
           "example": "Я ко́нчил рабо́ту. — I finished the work.",
-          "ar": "يُنْهِي"
+          "ar": "يُنْهِي",
+          "ku": "تەواوکردن"
         },
         {
           "ru": "понима́ться / разобра́ться",
@@ -405,7 +453,8 @@
           "tr": "ponimát'sya / razobrát'sya",
           "pos": "verb (impf./pf.)",
           "example": "Дава́й разберёмся. — Let's figure it out.",
-          "ar": "يَسْتَوْضِحُ"
+          "ar": "يَسْتَوْضِحُ",
+          "ku": "لێکدانەوە"
         },
         {
           "ru": "пока́зывать / показа́ть",
@@ -413,7 +462,8 @@
           "tr": "pokázyvat' / pokazát'",
           "pos": "verb (impf./pf.)",
           "example": "Покажи́ мне. — Show me.",
-          "ar": "يُظْهِرُ"
+          "ar": "يُظْهِرُ",
+          "ku": "پیشاندان"
         }
       ]
     },
@@ -428,7 +478,8 @@
           "tr": "sem'yá",
           "pos": "noun (f.)",
           "example": "У меня́ больша́я семья́. — I have a big family.",
-          "ar": "عَائِلَة"
+          "ar": "عَائِلَة",
+          "ku": "خێزان"
         },
         {
           "ru": "мать",
@@ -436,7 +487,8 @@
           "tr": "mat'",
           "pos": "noun (f.)",
           "example": "Моя́ мать — врач. — My mother is a doctor.",
-          "ar": "أُمّ"
+          "ar": "أُمّ",
+          "ku": "دایک"
         },
         {
           "ru": "оте́ц",
@@ -444,7 +496,8 @@
           "tr": "otéts",
           "pos": "noun (m.)",
           "example": "Оте́ц до́ма. — Father is at home.",
-          "ar": "أَب"
+          "ar": "أَب",
+          "ku": "باوک"
         },
         {
           "ru": "сын",
@@ -452,7 +505,8 @@
           "tr": "syn",
           "pos": "noun (m.)",
           "example": "Их сын у́чится. — Their son is studying.",
-          "ar": "اِبْن"
+          "ar": "اِبْن",
+          "ku": "کوڕ"
         },
         {
           "ru": "дочь",
@@ -460,7 +514,8 @@
           "tr": "doch'",
           "pos": "noun (f.)",
           "example": "Дочь игра́ет. — The daughter is playing.",
-          "ar": "اِبْنَة"
+          "ar": "اِبْنَة",
+          "ku": "کچ"
         },
         {
           "ru": "брат",
@@ -468,7 +523,8 @@
           "tr": "brat",
           "pos": "noun (m.)",
           "example": "Мой брат ста́рше. — My brother is older.",
-          "ar": "أَخ"
+          "ar": "أَخ",
+          "ku": "برا"
         },
         {
           "ru": "сестра́",
@@ -476,7 +532,8 @@
           "tr": "sestrá",
           "pos": "noun (f.)",
           "example": "У меня́ есть сестра́. — I have a sister.",
-          "ar": "أُخْت"
+          "ar": "أُخْت",
+          "ku": "خوشک"
         },
         {
           "ru": "жена́",
@@ -484,7 +541,8 @@
           "tr": "zhená",
           "pos": "noun (f.)",
           "example": "Его́ жена́ — учёный. — His wife is a scientist.",
-          "ar": "زَوْجَة"
+          "ar": "زَوْجَة",
+          "ku": "ژن (هاوسەر)"
         },
         {
           "ru": "муж",
@@ -492,7 +550,8 @@
           "tr": "muzh",
           "pos": "noun (m.)",
           "example": "Её муж рабо́тает. — Her husband works.",
-          "ar": "زَوْج"
+          "ar": "زَوْج",
+          "ku": "مێرد (هاوسەر)"
         },
         {
           "ru": "ребёнок",
@@ -500,7 +559,8 @@
           "tr": "rebyónok",
           "pos": "noun (m.)",
           "example": "Ребёнок спит. — The child is sleeping.",
-          "ar": "طِفْل"
+          "ar": "طِفْل",
+          "ku": "منداڵ"
         },
         {
           "ru": "друг",
@@ -508,7 +568,8 @@
           "tr": "drug",
           "pos": "noun (m.)",
           "example": "Он мой ста́рый друг. — He is my old friend.",
-          "ar": "صَدِيق"
+          "ar": "صَدِيق",
+          "ku": "هاوڕێ"
         },
         {
           "ru": "сосе́д",
@@ -516,7 +577,8 @@
           "tr": "soséd",
           "pos": "noun (m.)",
           "example": "Сосе́д о́чень шу́мный. — The neighbour is very noisy.",
-          "ar": "جَار"
+          "ar": "جَار",
+          "ku": "دراوسێ"
         },
         {
           "ru": "врач",
@@ -524,7 +586,8 @@
           "tr": "vrach",
           "pos": "noun (m.)",
           "example": "Врач осмотре́л больно́го. — The doctor examined the patient.",
-          "ar": "طَبِيب"
+          "ar": "طَبِيب",
+          "ku": "پزیشک"
         },
         {
           "ru": "учи́тель",
@@ -532,7 +595,8 @@
           "tr": "uchítel'",
           "pos": "noun (m.)",
           "example": "Учи́тель объясня́ет уро́к. — The teacher explains the lesson.",
-          "ar": "مُعَلِّم"
+          "ar": "مُعَلِّم",
+          "ku": "مامۆستا"
         },
         {
           "ru": "инжене́р",
@@ -540,7 +604,8 @@
           "tr": "inzhenér",
           "pos": "noun (m.)",
           "example": "Она́ рабо́тает инжене́ром. — She works as an engineer.",
-          "ar": "مُهَنْدِس"
+          "ar": "مُهَنْدِس",
+          "ku": "ئەندازیار"
         },
         {
           "ru": "юри́ст",
@@ -548,7 +613,8 @@
           "tr": "yuríst",
           "pos": "noun (m.)",
           "example": "Юри́ст соста́вил догово́р. — The lawyer drew up the contract.",
-          "ar": "مُحَامٍ"
+          "ar": "مُحَامٍ",
+          "ku": "پارێزەر"
         },
         {
           "ru": "учёный",
@@ -556,7 +622,8 @@
           "tr": "uchyónyy",
           "pos": "noun (m.)",
           "example": "Учёный сде́лал откры́тие. — The scientist made a discovery.",
-          "ar": "عَالِم"
+          "ar": "عَالِم",
+          "ku": "زانا"
         },
         {
           "ru": "о́бщество",
@@ -564,7 +631,8 @@
           "tr": "óbshchestvo",
           "pos": "noun (n.)",
           "example": "Совреме́нное о́бщество меня́ется. — Modern society is changing.",
-          "ar": "مُجْتَمَع"
+          "ar": "مُجْتَمَع",
+          "ku": "کۆمەڵگا"
         },
         {
           "ru": "наро́д",
@@ -572,7 +640,8 @@
           "tr": "naród",
           "pos": "noun (m.)",
           "example": "Наро́д тре́бует переме́н. — The people demand change.",
-          "ar": "شَعْب"
+          "ar": "شَعْب",
+          "ku": "گەل"
         },
         {
           "ru": "власть",
@@ -580,7 +649,8 @@
           "tr": "vlast'",
           "pos": "noun (f.)",
           "example": "Власть принадлежи́т наро́ду. — Power belongs to the people.",
-          "ar": "سُلْطَة"
+          "ar": "سُلْطَة",
+          "ku": "دەسەڵات"
         },
         {
           "ru": "прави́тельство",
@@ -588,7 +658,8 @@
           "tr": "pravítel'stvo",
           "pos": "noun (n.)",
           "example": "Прави́тельство при́няло зако́н. — The government passed the law.",
-          "ar": "حُكُومَة"
+          "ar": "حُكُومَة",
+          "ku": "حکومەت"
         },
         {
           "ru": "гражданин",
@@ -596,7 +667,8 @@
           "tr": "grazhdanín",
           "pos": "noun (m.)",
           "example": "Ка́ждый граждани́н име́ет права́. — Every citizen has rights.",
-          "ar": "مُوَاطِن"
+          "ar": "مُوَاطِن",
+          "ku": "هاوڵاتی"
         },
         {
           "ru": "колле́га",
@@ -604,7 +676,8 @@
           "tr": "kolléga",
           "pos": "noun (m./f.)",
           "example": "Мой колле́га уе́хал. — My colleague has left.",
-          "ar": "زَمِيل"
+          "ar": "زَمِيل",
+          "ku": "هاوکار"
         },
         {
           "ru": "о́пыт",
@@ -612,7 +685,8 @@
           "tr": "ópyt",
           "pos": "noun (m.)",
           "example": "У неё большо́й о́пыт. — She has a lot of experience.",
-          "ar": "خِبْرَة"
+          "ar": "خِبْرَة",
+          "ku": "ئەزموون"
         }
       ]
     },
@@ -627,7 +701,8 @@
           "tr": "universitét",
           "pos": "noun (m.)",
           "example": "Он у́чится в университе́те. — He studies at the university.",
-          "ar": "جَامِعَة"
+          "ar": "جَامِعَة",
+          "ku": "زانکۆ"
         },
         {
           "ru": "ка́федра",
@@ -635,7 +710,8 @@
           "tr": "káfedra",
           "pos": "noun (f.)",
           "example": "Я рабо́таю на ка́федре фи́зики. — I work in the physics department.",
-          "ar": "قِسْم"
+          "ar": "قِسْم",
+          "ku": "بەش"
         },
         {
           "ru": "факульте́т",
@@ -643,7 +719,8 @@
           "tr": "fakul'tét",
           "pos": "noun (m.)",
           "example": "Истори́ческий факульте́т. — The faculty of history.",
-          "ar": "كُلِّيَّة"
+          "ar": "كُلِّيَّة",
+          "ku": "کۆلێژ"
         },
         {
           "ru": "диссерта́ция",
@@ -651,7 +728,8 @@
           "tr": "dissertátsiya",
           "pos": "noun (f.)",
           "example": "Он защити́л диссерта́цию. — He defended his dissertation.",
-          "ar": "أُطْرُوحَة"
+          "ar": "أُطْرُوحَة",
+          "ku": "نامەی دکتۆرا/ماستەر"
         },
         {
           "ru": "нау́чный руководи́тель",
@@ -659,7 +737,8 @@
           "tr": "naúchnyy rukovodítel'",
           "pos": "noun phrase (m.)",
           "example": "Мой нау́чный руководи́тель помога́ет мне. — My supervisor helps me.",
-          "ar": "مُشْرِف عِلْمِيّ"
+          "ar": "مُشْرِف عِلْمِيّ",
+          "ku": "سەرپەرشتیاری زانستی"
         },
         {
           "ru": "статья́",
@@ -667,7 +746,8 @@
           "tr": "stat'yá",
           "pos": "noun (f.)",
           "example": "Статья́ вы́шла в журна́ле. — The article appeared in the journal.",
-          "ar": "مَقَالَة"
+          "ar": "مَقَالَة",
+          "ku": "وتار"
         },
         {
           "ru": "иссле́дование",
@@ -675,7 +755,8 @@
           "tr": "isslédovanie",
           "pos": "noun (n.)",
           "example": "Иссле́дование заняло́ два го́да. — The study took two years.",
-          "ar": "بَحْث"
+          "ar": "بَحْث",
+          "ku": "توێژینەوە"
         },
         {
           "ru": "нау́ка",
@@ -683,7 +764,8 @@
           "tr": "naúka",
           "pos": "noun (f.)",
           "example": "Он посвяти́л жизнь нау́ке. — He devoted his life to science.",
-          "ar": "عِلْم"
+          "ar": "عِلْم",
+          "ku": "زانست"
         },
         {
           "ru": "ле́кция",
@@ -691,7 +773,8 @@
           "tr": "léktsiya",
           "pos": "noun (f.)",
           "example": "Ле́кция начина́ется в де́сять. — The lecture begins at ten.",
-          "ar": "مُحَاضَرَة"
+          "ar": "مُحَاضَرَة",
+          "ku": "وانە"
         },
         {
           "ru": "семина́р",
@@ -699,7 +782,8 @@
           "tr": "seminár",
           "pos": "noun (m.)",
           "example": "На семина́ре была́ диску́ссия. — There was a discussion at the seminar.",
-          "ar": "نَدْوَة"
+          "ar": "نَدْوَة",
+          "ku": "سیمینار"
         },
         {
           "ru": "экза́мен",
@@ -707,7 +791,8 @@
           "tr": "ekzámen",
           "pos": "noun (m.)",
           "example": "Я сдал экза́мен. — I passed the exam.",
-          "ar": "اِمْتِحَان"
+          "ar": "اِمْتِحَان",
+          "ku": "تاقیکردنەوە"
         },
         {
           "ru": "студе́нт",
@@ -715,7 +800,8 @@
           "tr": "studént",
           "pos": "noun (m.)",
           "example": "Студе́нт за́дал вопро́с. — The student asked a question.",
-          "ar": "طَالِب"
+          "ar": "طَالِب",
+          "ku": "خوێندکار"
         },
         {
           "ru": "профе́ссор",
@@ -723,7 +809,8 @@
           "tr": "professór",
           "pos": "noun (m.)",
           "example": "Профе́ссор чита́ет курс. — The professor teaches a course.",
-          "ar": "أُسْتَاذ"
+          "ar": "أُسْتَاذ",
+          "ku": "پرۆفیسۆر"
         },
         {
           "ru": "аспира́нт",
@@ -731,7 +818,8 @@
           "tr": "aspiránt",
           "pos": "noun (m.)",
           "example": "Она́ — аспира́нт второ́го го́да. — She is a second-year PhD student.",
-          "ar": "طَالِب دِرَاسَات عُلْيَا"
+          "ar": "طَالِب دِرَاسَات عُلْيَا",
+          "ku": "خوێندکاری دکتۆرا"
         },
         {
           "ru": "сте́пень",
@@ -739,7 +827,8 @@
           "tr": "stépen'",
           "pos": "noun (f.)",
           "example": "Он получи́л сте́пень кандида́та нау́к. — He earned a candidate of sciences degree.",
-          "ar": "دَرَجَة عِلْمِيَّة"
+          "ar": "دَرَجَة عِلْمِيَّة",
+          "ku": "پلەی زانستی"
         },
         {
           "ru": "журна́л",
@@ -747,7 +836,8 @@
           "tr": "zhurnál",
           "pos": "noun (m.)",
           "example": "Рецензи́руемый журна́л. — A peer-reviewed journal.",
-          "ar": "مَجَلَّة"
+          "ar": "مَجَلَّة",
+          "ku": "گۆڤار"
         },
         {
           "ru": "конфере́нция",
@@ -755,7 +845,8 @@
           "tr": "konferéntsiya",
           "pos": "noun (f.)",
           "example": "Докла́д на конфере́нции. — A talk at the conference.",
-          "ar": "مُؤْتَمَر"
+          "ar": "مُؤْتَمَر",
+          "ku": "کۆنفرانس"
         },
         {
           "ru": "докла́д",
@@ -763,7 +854,8 @@
           "tr": "doklád",
           "pos": "noun (m.)",
           "example": "Он прочита́л докла́д. — He delivered a talk.",
-          "ar": "تَقْرِير"
+          "ar": "تَقْرِير",
+          "ku": "پێشکەشکردن"
         },
         {
           "ru": "ме́тод",
@@ -771,7 +863,8 @@
           "tr": "métod",
           "pos": "noun (m.)",
           "example": "Но́вый ме́тод ана́лиза. — A new method of analysis.",
-          "ar": "مَنْهَج"
+          "ar": "مَنْهَج",
+          "ku": "ڕێگا (میتۆد)"
         },
         {
           "ru": "да́нные",
@@ -779,7 +872,8 @@
           "tr": "dánnye",
           "pos": "noun (pl.)",
           "example": "Мы собра́ли да́нные. — We collected the data.",
-          "ar": "بَيَانَات"
+          "ar": "بَيَانَات",
+          "ku": "داتا"
         },
         {
           "ru": "результа́т",
@@ -787,7 +881,8 @@
           "tr": "rezul'tát",
           "pos": "noun (m.)",
           "example": "Результа́ты неоднозна́чны. — The results are ambiguous.",
-          "ar": "نَتِيجَة"
+          "ar": "نَتِيجَة",
+          "ku": "ئەنجام"
         },
         {
           "ru": "вы́вод",
@@ -795,7 +890,8 @@
           "tr": "vývod",
           "pos": "noun (m.)",
           "example": "Гла́вный вы́вод рабо́ты. — The main conclusion of the work.",
-          "ar": "اِسْتِنْتَاج"
+          "ar": "اِسْتِنْتَاج",
+          "ku": "دەرئەنجام"
         },
         {
           "ru": "защи́та",
@@ -803,7 +899,8 @@
           "tr": "zashchíta",
           "pos": "noun (f.)",
           "example": "Защи́та состои́тся в ма́е. — The defence will take place in May.",
-          "ar": "مُنَاقَشَة"
+          "ar": "مُنَاقَشَة",
+          "ku": "بەرگری"
         },
         {
           "ru": "грант",
@@ -811,7 +908,8 @@
           "tr": "grant",
           "pos": "noun (m.)",
           "example": "Они́ вы́играли грант. — They won a grant.",
-          "ar": "مِنْحَة"
+          "ar": "مِنْحَة",
+          "ku": "گرانت (یارمەتی دارایی)"
         }
       ]
     },
@@ -826,7 +924,8 @@
           "tr": "slédovatel'no",
           "pos": "adv./conj.",
           "example": "Да́нных нет, сле́довательно, вы́вод преждевре́мен. — There is no data, therefore the conclusion is premature.",
-          "ar": "وَبِالتَّالِي"
+          "ar": "وَبِالتَّالِي",
+          "ku": "کەواتە"
         },
         {
           "ru": "таки́м о́бразом",
@@ -834,7 +933,8 @@
           "tr": "takím óbrazom",
           "pos": "phrase",
           "example": "Таки́м о́бразом, гипо́теза подтверди́лась. — Thus the hypothesis was confirmed.",
-          "ar": "وَهَكَذَا"
+          "ar": "وَهَكَذَا",
+          "ku": "بەم شێوەیە"
         },
         {
           "ru": "одна́ко",
@@ -842,7 +942,8 @@
           "tr": "odnáko",
           "pos": "conj.",
           "example": "Одна́ко есть исключе́ния. — However, there are exceptions.",
-          "ar": "غَيْرَ أَنَّ"
+          "ar": "غَيْرَ أَنَّ",
+          "ku": "بەڵام"
         },
         {
           "ru": "в ча́стности",
@@ -850,7 +951,8 @@
           "tr": "v chástnosti",
           "pos": "phrase",
           "example": "В ча́стности, рассмо́трим пе́рвый слу́чай. — In particular, let us consider the first case.",
-          "ar": "وَخَاصَّةً"
+          "ar": "وَخَاصَّةً",
+          "ku": "بەتایبەتی"
         },
         {
           "ru": "по сравне́нию с",
@@ -858,7 +960,8 @@
           "tr": "po sravnéniyu s",
           "pos": "phrase",
           "example": "По сравне́нию с про́шлым го́дом. — Compared with last year.",
-          "ar": "مُقَارَنَةً بِـ"
+          "ar": "مُقَارَنَةً بِـ",
+          "ku": "بەراورد بە"
         },
         {
           "ru": "наприме́р",
@@ -866,7 +969,8 @@
           "tr": "naprimér",
           "pos": "adv.",
           "example": "Наприме́р, в фи́зике. — For example, in physics.",
-          "ar": "عَلَى سَبِيلِ الْمِثَالِ"
+          "ar": "عَلَى سَبِيلِ الْمِثَالِ",
+          "ku": "بۆ نموونە"
         },
         {
           "ru": "кро́ме того́",
@@ -874,7 +978,8 @@
           "tr": "króme tovó",
           "pos": "phrase",
           "example": "Кро́ме того́, не́обходимо учесть... — Moreover, one must take into account...",
-          "ar": "عِلَاوَةً عَلَى ذَلِكَ"
+          "ar": "عِلَاوَةً عَلَى ذَلِكَ",
+          "ku": "سەرەڕای ئەوە"
         },
         {
           "ru": "тем не ме́нее",
@@ -882,7 +987,8 @@
           "tr": "tem ne ménee",
           "pos": "phrase",
           "example": "Тем не ме́нее, вопро́с откры́т. — Nevertheless, the question remains open.",
-          "ar": "وَمَعَ ذَلِكَ"
+          "ar": "وَمَعَ ذَلِكَ",
+          "ku": "لەگەڵ ئەوەشدا"
         },
         {
           "ru": "во-пе́рвых",
@@ -890,7 +996,8 @@
           "tr": "vo-pérvykh",
           "pos": "adv.",
           "example": "Во-пе́рвых, рассмо́трим тео́рию. — Firstly, let us consider the theory.",
-          "ar": "أَوَّلًا"
+          "ar": "أَوَّلًا",
+          "ku": "یەکەم"
         },
         {
           "ru": "во-вторы́х",
@@ -898,7 +1005,8 @@
           "tr": "vo-vtorýkh",
           "pos": "adv.",
           "example": "Во-вторы́х, ну́жен экспериме́нт. — Secondly, an experiment is needed.",
-          "ar": "ثَانِيًا"
+          "ar": "ثَانِيًا",
+          "ku": "دووەم"
         },
         {
           "ru": "напро́тив",
@@ -906,7 +1014,8 @@
           "tr": "naprótiv",
           "pos": "adv.",
           "example": "Напро́тив, да́нные противоре́чат э́тому. — On the contrary, the data contradict this.",
-          "ar": "عَلَى الْعَكْسِ"
+          "ar": "عَلَى الْعَكْسِ",
+          "ku": "بەپێچەوانەوە"
         },
         {
           "ru": "в результа́те",
@@ -914,7 +1023,8 @@
           "tr": "v rezul'táte",
           "pos": "phrase",
           "example": "В результа́те мы получи́ли но́вую моде́ль. — As a result we obtained a new model.",
-          "ar": "نَتِيجَةً لِذَلِكَ"
+          "ar": "نَتِيجَةً لِذَلِكَ",
+          "ku": "لە ئەنجامدا"
         },
         {
           "ru": "в отли́чие от",
@@ -922,7 +1032,8 @@
           "tr": "v otlíchie ot",
           "pos": "phrase",
           "example": "В отли́чие от пре́жних рабо́т. — Unlike previous works.",
-          "ar": "عَلَى خِلَافِ"
+          "ar": "عَلَى خِلَافِ",
+          "ku": "بەپێچەوانەی"
         },
         {
           "ru": "несмотря́ на",
@@ -930,7 +1041,8 @@
           "tr": "nesmotryá na",
           "pos": "phrase",
           "example": "Несмотря́ на тру́дности. — Despite the difficulties.",
-          "ar": "عَلَى الرَّغْمِ مِنْ"
+          "ar": "عَلَى الرَّغْمِ مِنْ",
+          "ku": "سەرەڕای"
         },
         {
           "ru": "поэ́тому",
@@ -938,7 +1050,8 @@
           "tr": "poétomu",
           "pos": "adv./conj.",
           "example": "Поэ́тому мы измени́ли подхо́д. — Therefore we changed the approach.",
-          "ar": "لِذَلِكَ"
+          "ar": "لِذَلِكَ",
+          "ku": "بۆیە"
         },
         {
           "ru": "и́менно",
@@ -946,7 +1059,8 @@
           "tr": "ímenno",
           "pos": "particle",
           "example": "И́менно э́то нас интересу́ет. — This is precisely what interests us.",
-          "ar": "تَحْدِيدًا"
+          "ar": "تَحْدِيدًا",
+          "ku": "بەدیاریکراوی"
         },
         {
           "ru": "то есть",
@@ -954,7 +1068,8 @@
           "tr": "to yest'",
           "pos": "phrase",
           "example": "То есть результа́т зави́сит от усло́вий. — That is, the result depends on the conditions.",
-          "ar": "أَيْ"
+          "ar": "أَيْ",
+          "ku": "واتە"
         },
         {
           "ru": "с друго́й стороны́",
@@ -962,7 +1077,8 @@
           "tr": "s drugóy storoný",
           "pos": "phrase",
           "example": "С друго́й стороны́, есть ри́ски. — On the other hand, there are risks.",
-          "ar": "مِنْ نَاحِيَةٍ أُخْرَى"
+          "ar": "مِنْ نَاحِيَةٍ أُخْرَى",
+          "ku": "لەلایەکی ترەوە"
         },
         {
           "ru": "в то вре́мя как",
@@ -970,7 +1086,8 @@
           "tr": "v to vrémya kak",
           "pos": "phrase",
           "example": "В то вре́мя как пе́рвая моде́ль про́ще. — Whereas the first model is simpler.",
-          "ar": "فِي حِينِ"
+          "ar": "فِي حِينِ",
+          "ku": "لە کاتێکدا"
         },
         {
           "ru": "в свою́ о́чередь",
@@ -978,7 +1095,8 @@
           "tr": "v svoyú óchered'",
           "pos": "phrase",
           "example": "Э́то, в свою́ о́чередь, влия́ет на резу́льтат. — This, in turn, affects the result.",
-          "ar": "بِدَوْرِهِ"
+          "ar": "بِدَوْرِهِ",
+          "ku": "لە جێی خۆیدا"
         },
         {
           "ru": "благодаря́",
@@ -986,7 +1104,8 @@
           "tr": "blagodaryá",
           "pos": "prep.",
           "example": "Благодаря́ э́тому ме́тоду. — Thanks to this method.",
-          "ar": "بِفَضْلِ"
+          "ar": "بِفَضْلِ",
+          "ku": "بەهۆی"
         },
         {
           "ru": "посто́льку, поско́льку",
@@ -994,7 +1113,8 @@
           "tr": "postól'ku, poskól'ku",
           "pos": "conj.",
           "example": "Поско́льку усло́вия измени́лись. — Since the conditions have changed.",
-          "ar": "بِمَا أَنَّ"
+          "ar": "بِمَا أَنَّ",
+          "ku": "لەبەر ئەوەی"
         },
         {
           "ru": "в заключе́ние",
@@ -1002,7 +1122,8 @@
           "tr": "v zaklyuchénie",
           "pos": "phrase",
           "example": "В заключе́ние отме́тим гла́вное. — In conclusion, let us note the main point.",
-          "ar": "فِي الْخِتَامِ"
+          "ar": "فِي الْخِتَامِ",
+          "ku": "لە کۆتاییدا"
         }
       ]
     },
@@ -1017,7 +1138,8 @@
           "tr": "ponyátie",
           "pos": "noun (n.)",
           "example": "Ключево́е поня́тие тео́рии. — A key concept of the theory.",
-          "ar": "مَفْهُوم"
+          "ar": "مَفْهُوم",
+          "ku": "چەمک"
         },
         {
           "ru": "причи́на",
@@ -1025,7 +1147,8 @@
           "tr": "prichína",
           "pos": "noun (f.)",
           "example": "Причи́на явле́ния неизве́стна. — The cause of the phenomenon is unknown.",
-          "ar": "سَبَب"
+          "ar": "سَبَب",
+          "ku": "هۆکار"
         },
         {
           "ru": "сле́дствие",
@@ -1033,7 +1156,8 @@
           "tr": "slédstvie",
           "pos": "noun (n.)",
           "example": "Э́то логи́ческое сле́дствие. — This is a logical consequence.",
-          "ar": "نَتِيجَة"
+          "ar": "نَتِيجَة",
+          "ku": "دەرئەنجام"
         },
         {
           "ru": "гипо́теза",
@@ -1041,7 +1165,8 @@
           "tr": "gipóteza",
           "pos": "noun (f.)",
           "example": "Гипо́теза тре́бует прове́рки. — The hypothesis requires testing.",
-          "ar": "فَرَضِيَّة"
+          "ar": "فَرَضِيَّة",
+          "ku": "گریمانە"
         },
         {
           "ru": "доказа́тельство",
@@ -1049,7 +1174,8 @@
           "tr": "dokazátel'stvo",
           "pos": "noun (n.)",
           "example": "Доказа́тельство теоре́мы. — The proof of the theorem.",
-          "ar": "بُرْهَان"
+          "ar": "بُرْهَان",
+          "ku": "بەڵگە"
         },
         {
           "ru": "значе́ние",
@@ -1057,7 +1183,8 @@
           "tr": "znachénie",
           "pos": "noun (n.)",
           "example": "Значе́ние э́того откры́тия велико́. — The significance of this discovery is great.",
-          "ar": "أَهَمِّيَّة"
+          "ar": "أَهَمِّيَّة",
+          "ku": "واتا/گرنگی"
         },
         {
           "ru": "тео́рия",
@@ -1065,7 +1192,8 @@
           "tr": "teóriya",
           "pos": "noun (f.)",
           "example": "Тео́рия объясня́ет фа́кты. — The theory explains the facts.",
-          "ar": "نَظَرِيَّة"
+          "ar": "نَظَرِيَّة",
+          "ku": "تیۆری"
         },
         {
           "ru": "поло́жение",
@@ -1073,7 +1201,8 @@
           "tr": "polozhénie",
           "pos": "noun (n.)",
           "example": "Основно́е поло́жение рабо́ты. — The main proposition of the work.",
-          "ar": "طَرْح"
+          "ar": "طَرْح",
+          "ku": "بارودۆخ/گریمانە"
         },
         {
           "ru": "противоре́чие",
@@ -1081,7 +1210,8 @@
           "tr": "protivoréchie",
           "pos": "noun (n.)",
           "example": "В э́том есть противоре́чие. — There is a contradiction in this.",
-          "ar": "تَنَاقُض"
+          "ar": "تَنَاقُض",
+          "ku": "دژایەتی"
         },
         {
           "ru": "усло́вие",
@@ -1089,7 +1219,8 @@
           "tr": "uslóvie",
           "pos": "noun (n.)",
           "example": "При э́том усло́вии. — Under this condition.",
-          "ar": "شَرْط"
+          "ar": "شَرْط",
+          "ku": "مەرج"
         },
         {
           "ru": "свя́зь",
@@ -1097,7 +1228,8 @@
           "tr": "svyaz'",
           "pos": "noun (f.)",
           "example": "Свя́зь ме́жду перемен­ными. — The relation between the variables.",
-          "ar": "عَلَاقَة"
+          "ar": "عَلَاقَة",
+          "ku": "پەیوەندی"
         },
         {
           "ru": "зависимость",
@@ -1105,7 +1237,8 @@
           "tr": "zavísimost'",
           "pos": "noun (f.)",
           "example": "Зави́симость от температу́ры. — Dependence on temperature.",
-          "ar": "اِعْتِمَاد"
+          "ar": "اِعْتِمَاد",
+          "ku": "پشتبەستن/بەندبوون"
         },
         {
           "ru": "сво́йство",
@@ -1113,7 +1246,8 @@
           "tr": "svóystvo",
           "pos": "noun (n.)",
           "example": "Ва́жное сво́йство систе́мы. — An important property of the system.",
-          "ar": "خَاصِّيَّة"
+          "ar": "خَاصِّيَّة",
+          "ku": "تایبەتمەندی"
         },
         {
           "ru": "приро́да",
@@ -1121,7 +1255,8 @@
           "tr": "priróda",
           "pos": "noun (f.)",
           "example": "Приро́да явле́ния. — The nature of the phenomenon.",
-          "ar": "طَبِيعَة"
+          "ar": "طَبِيعَة",
+          "ku": "سروشت"
         },
         {
           "ru": "су́щность",
@@ -1129,7 +1264,8 @@
           "tr": "súshchnost'",
           "pos": "noun (f.)",
           "example": "Су́щность пробле́мы. — The essence of the problem.",
-          "ar": "جَوْهَر"
+          "ar": "جَوْهَر",
+          "ku": "ناوەرۆک/جەوهەر"
         },
         {
           "ru": "проти́вополо́жность",
@@ -1137,7 +1273,8 @@
           "tr": "protivopolózhnost'",
           "pos": "noun (f.)",
           "example": "По́лная противополо́жность. — The complete opposite.",
-          "ar": "نَقِيض"
+          "ar": "نَقِيض",
+          "ku": "پێچەوانە"
         },
         {
           "ru": "зако́н",
@@ -1145,7 +1282,8 @@
           "tr": "zakón",
           "pos": "noun (m.)",
           "example": "Зако́н сохране́ния эне́ргии. — The law of conservation of energy.",
-          "ar": "قَانُون"
+          "ar": "قَانُون",
+          "ku": "یاسا"
         },
         {
           "ru": "при́нцип",
@@ -1153,7 +1291,8 @@
           "tr": "príntsip",
           "pos": "noun (m.)",
           "example": "Фундамента́льный при́нцип. — A fundamental principle.",
-          "ar": "مَبْدَأ"
+          "ar": "مَبْدَأ",
+          "ku": "بنەما"
         },
         {
           "ru": "разли́чие",
@@ -1161,7 +1300,8 @@
           "tr": "razlíchie",
           "pos": "noun (n.)",
           "example": "Разли́чие ме́жду тео́рией и пра́ктикой. — The distinction between theory and practice.",
-          "ar": "اِخْتِلَاف"
+          "ar": "اِخْتِلَاف",
+          "ku": "جیاوازی"
         },
         {
           "ru": "соотноше́ние",
@@ -1169,7 +1309,8 @@
           "tr": "sootnoshénie",
           "pos": "noun (n.)",
           "example": "Соотноше́ние ве́личин. — The ratio of the quantities.",
-          "ar": "نِسْبَة"
+          "ar": "نِسْبَة",
+          "ku": "ڕێژە/پەیوەندی"
         },
         {
           "ru": "зна́ние",
@@ -1177,7 +1318,8 @@
           "tr": "znánie",
           "pos": "noun (n.)",
           "example": "Нау́чное зна́ние накопля́ется. — Scientific knowledge accumulates.",
-          "ar": "مَعْرِفَة"
+          "ar": "مَعْرِفَة",
+          "ku": "زانیاری/زانست"
         },
         {
           "ru": "и́стина",
@@ -1185,7 +1327,8 @@
           "tr": "ístina",
           "pos": "noun (f.)",
           "example": "По́иск и́стины. — The search for truth.",
-          "ar": "حَقِيقَة"
+          "ar": "حَقِيقَة",
+          "ku": "ڕاستی"
         },
         {
           "ru": "це́ль",
@@ -1193,7 +1336,8 @@
           "tr": "tsel'",
           "pos": "noun (f.)",
           "example": "Це́ль иссле́дования. — The aim of the research.",
-          "ar": "هَدَف"
+          "ar": "هَدَف",
+          "ku": "ئامانج"
         },
         {
           "ru": "зада́ча",
@@ -1201,7 +1345,8 @@
           "tr": "zadácha",
           "pos": "noun (f.)",
           "example": "Реши́ть сло́жную зада́чу. — To solve a difficult problem.",
-          "ar": "مَسْأَلَة"
+          "ar": "مَسْأَلَة",
+          "ku": "ئەرک/کێشە"
         }
       ]
     },
@@ -1216,7 +1361,8 @@
           "tr": "vrémya",
           "pos": "noun (n.)",
           "example": "У меня́ нет вре́мени. — I have no time.",
-          "ar": "وَقْت"
+          "ar": "وَقْت",
+          "ku": "کات"
         },
         {
           "ru": "час",
@@ -1224,7 +1370,8 @@
           "tr": "chas",
           "pos": "noun (m.)",
           "example": "Уже́ три часа́. — It is already three o'clock.",
-          "ar": "سَاعَة"
+          "ar": "سَاعَة",
+          "ku": "کاتژمێر"
         },
         {
           "ru": "день",
@@ -1232,7 +1379,8 @@
           "tr": "den'",
           "pos": "noun (m.)",
           "example": "Хоро́шего дня! — Have a good day!",
-          "ar": "يَوْم"
+          "ar": "يَوْم",
+          "ku": "ڕۆژ"
         },
         {
           "ru": "неде́ля",
@@ -1240,7 +1388,8 @@
           "tr": "nedélya",
           "pos": "noun (f.)",
           "example": "На про́шлой неде́ле. — Last week.",
-          "ar": "أُسْبُوع"
+          "ar": "أُسْبُوع",
+          "ku": "هەفتە"
         },
         {
           "ru": "ме́сяц",
@@ -1248,7 +1397,8 @@
           "tr": "mésyats",
           "pos": "noun (m.)",
           "example": "Че́рез ме́сяц. — In a month.",
-          "ar": "شَهْر"
+          "ar": "شَهْر",
+          "ku": "مانگ"
         },
         {
           "ru": "год",
@@ -1256,7 +1406,8 @@
           "tr": "god",
           "pos": "noun (m.)",
           "example": "В про́шлом году́. — Last year.",
-          "ar": "سَنَة"
+          "ar": "سَنَة",
+          "ku": "ساڵ"
         },
         {
           "ru": "понеде́льник",
@@ -1264,7 +1415,8 @@
           "tr": "ponedél'nik",
           "pos": "noun (m.)",
           "example": "Встре́ча в понеде́льник. — A meeting on Monday.",
-          "ar": "الِاثْنَيْن"
+          "ar": "الِاثْنَيْن",
+          "ku": "دووشەممە"
         },
         {
           "ru": "пя́тница",
@@ -1272,7 +1424,8 @@
           "tr": "pyátnitsa",
           "pos": "noun (f.)",
           "example": "В пя́тницу я свобо́ден. — I am free on Friday.",
-          "ar": "الْجُمُعَة"
+          "ar": "الْجُمُعَة",
+          "ku": "هەینی"
         },
         {
           "ru": "янва́рь",
@@ -1280,7 +1433,8 @@
           "tr": "yanvár'",
           "pos": "noun (m.)",
           "example": "В январе́ хо́лодно. — It is cold in January.",
-          "ar": "يَنَايِر"
+          "ar": "يَنَايِر",
+          "ku": "کانوونی دووەم (ژانویە)"
         },
         {
           "ru": "сентя́брь",
@@ -1288,7 +1442,8 @@
           "tr": "sentyábr'",
           "pos": "noun (m.)",
           "example": "Сентя́брь — нача́ло уче́бы. — September is the start of studies.",
-          "ar": "سِبْتَمْبِر"
+          "ar": "سِبْتَمْبِر",
+          "ku": "ئەیلوول (سێپتەمبەر)"
         },
         {
           "ru": "оди́н",
@@ -1296,7 +1451,8 @@
           "tr": "odín",
           "pos": "num.",
           "example": "Оди́н моме́нт. — One moment.",
-          "ar": "وَاحِد"
+          "ar": "وَاحِد",
+          "ku": "یەک"
         },
         {
           "ru": "два",
@@ -1304,7 +1460,8 @@
           "tr": "dva",
           "pos": "num.",
           "example": "Два часа́ дня. — Two in the afternoon.",
-          "ar": "اِثْنَان"
+          "ar": "اِثْنَان",
+          "ku": "دوو"
         },
         {
           "ru": "три",
@@ -1312,7 +1469,8 @@
           "tr": "tri",
           "pos": "num.",
           "example": "Три кни́ги. — Three books.",
-          "ar": "ثَلَاثَة"
+          "ar": "ثَلَاثَة",
+          "ku": "سێ"
         },
         {
           "ru": "пять",
@@ -1320,7 +1478,8 @@
           "tr": "pyat'",
           "pos": "num.",
           "example": "Пять мину́т. — Five minutes.",
-          "ar": "خَمْسَة"
+          "ar": "خَمْسَة",
+          "ku": "پێنج"
         },
         {
           "ru": "де́сять",
@@ -1328,7 +1487,8 @@
           "tr": "désyat'",
           "pos": "num.",
           "example": "Де́сять лет. — Ten years.",
-          "ar": "عَشَرَة"
+          "ar": "عَشَرَة",
+          "ku": "دە"
         },
         {
           "ru": "сто",
@@ -1336,7 +1496,8 @@
           "tr": "sto",
           "pos": "num.",
           "example": "Сто проце́нтов. — A hundred percent.",
-          "ar": "مِائَة"
+          "ar": "مِائَة",
+          "ku": "سەد"
         },
         {
           "ru": "ты́сяча",
@@ -1344,7 +1505,8 @@
           "tr": "týsyacha",
           "pos": "noun/num. (f.)",
           "example": "Ты́сяча рубле́й. — A thousand rubles.",
-          "ar": "أَلْف"
+          "ar": "أَلْف",
+          "ku": "هەزار"
         },
         {
           "ru": "пе́рвый",
@@ -1352,7 +1514,8 @@
           "tr": "pérvyy",
           "pos": "ordinal num.",
           "example": "Пе́рвый эта́ж. — The first floor.",
-          "ar": "أَوَّل"
+          "ar": "أَوَّل",
+          "ku": "یەکەم"
         },
         {
           "ru": "всегда́",
@@ -1360,7 +1523,8 @@
           "tr": "vsegdá",
           "pos": "adv.",
           "example": "Он всегда́ опа́здывает. — He is always late.",
-          "ar": "دَائِمًا"
+          "ar": "دَائِمًا",
+          "ku": "هەمیشە"
         },
         {
           "ru": "ча́сто",
@@ -1368,7 +1532,8 @@
           "tr": "chásto",
           "pos": "adv.",
           "example": "Мы ча́сто встреча́емся. — We meet often.",
-          "ar": "غَالِبًا"
+          "ar": "غَالِبًا",
+          "ku": "زۆرجار"
         },
         {
           "ru": "иногда́",
@@ -1376,7 +1541,8 @@
           "tr": "inogdá",
           "pos": "adv.",
           "example": "Иногда́ быва́ет тру́дно. — Sometimes it is difficult.",
-          "ar": "أَحْيَانًا"
+          "ar": "أَحْيَانًا",
+          "ku": "هەندێجار"
         },
         {
           "ru": "ре́дко",
@@ -1384,7 +1550,8 @@
           "tr": "rédko",
           "pos": "adv.",
           "example": "Он ре́дко чита́ет. — He rarely reads.",
-          "ar": "نَادِرًا"
+          "ar": "نَادِرًا",
+          "ku": "بەدەگمەن"
         },
         {
           "ru": "никогда́",
@@ -1392,7 +1559,8 @@
           "tr": "nikogdá",
           "pos": "adv.",
           "example": "Я никогда́ там не́ был. — I have never been there.",
-          "ar": "أَبَدًا"
+          "ar": "أَبَدًا",
+          "ku": "هەرگیز"
         },
         {
           "ru": "сего́дня",
@@ -1400,7 +1568,8 @@
           "tr": "sevódnya",
           "pos": "adv.",
           "example": "Сего́дня хоро́шая пого́да. — The weather is good today.",
-          "ar": "الْيَوْم"
+          "ar": "الْيَوْم",
+          "ku": "ئەمڕۆ"
         }
       ]
     },
@@ -1415,7 +1584,8 @@
           "tr": "bol'shóy",
           "pos": "adj.",
           "example": "Большо́й го́род. — A big city.",
-          "ar": "كَبِير"
+          "ar": "كَبِير",
+          "ku": "گەورە"
         },
         {
           "ru": "ма́ленький",
@@ -1423,7 +1593,8 @@
           "tr": "málen'kiy",
           "pos": "adj.",
           "example": "Ма́ленький дом. — A small house.",
-          "ar": "صَغِير"
+          "ar": "صَغِير",
+          "ku": "بچووک"
         },
         {
           "ru": "хоро́ший",
@@ -1431,7 +1602,8 @@
           "tr": "khoróshiy",
           "pos": "adj.",
           "example": "Хоро́ший результа́т. — A good result.",
-          "ar": "جَيِّد"
+          "ar": "جَيِّد",
+          "ku": "باش"
         },
         {
           "ru": "плохо́й",
@@ -1439,7 +1611,8 @@
           "tr": "plokhóy",
           "pos": "adj.",
           "example": "Плохо́й знак. — A bad sign.",
-          "ar": "سَيِّئ"
+          "ar": "سَيِّئ",
+          "ku": "خراپ"
         },
         {
           "ru": "но́вый",
@@ -1447,7 +1620,8 @@
           "tr": "nóvyy",
           "pos": "adj.",
           "example": "Но́вая тео́рия. — A new theory.",
-          "ar": "جَدِيد"
+          "ar": "جَدِيد",
+          "ku": "نوێ"
         },
         {
           "ru": "ста́рый",
@@ -1455,7 +1629,8 @@
           "tr": "stáryy",
           "pos": "adj.",
           "example": "Ста́рый ме́тод. — An old method.",
-          "ar": "قَدِيم"
+          "ar": "قَدِيم",
+          "ku": "کۆن"
         },
         {
           "ru": "ва́жный",
@@ -1463,7 +1638,8 @@
           "tr": "vázhnyy",
           "pos": "adj.",
           "example": "Ва́жный вопро́с. — An important question.",
-          "ar": "مُهِمّ"
+          "ar": "مُهِمّ",
+          "ku": "گرنگ"
         },
         {
           "ru": "просто́й",
@@ -1471,7 +1647,8 @@
           "tr": "prostóy",
           "pos": "adj.",
           "example": "Просто́е реше́ние. — A simple solution.",
-          "ar": "بَسِيط"
+          "ar": "بَسِيط",
+          "ku": "ساکار/ئاسان"
         },
         {
           "ru": "сло́жный",
@@ -1479,7 +1656,8 @@
           "tr": "slózhnyy",
           "pos": "adj.",
           "example": "Сло́жная зада́ча. — A complex problem.",
-          "ar": "مُعَقَّد"
+          "ar": "مُعَقَّد",
+          "ku": "ئاڵۆز"
         },
         {
           "ru": "вы́сокий",
@@ -1487,7 +1665,8 @@
           "tr": "výsokiy",
           "pos": "adj.",
           "example": "Высо́кая то́чность. — High precision.",
-          "ar": "عَالٍ"
+          "ar": "عَالٍ",
+          "ku": "بەرز"
         },
         {
           "ru": "ни́зкий",
@@ -1495,7 +1674,8 @@
           "tr": "nízkiy",
           "pos": "adj.",
           "example": "Ни́зкая температу́ра. — Low temperature.",
-          "ar": "مُنْخَفِض"
+          "ar": "مُنْخَفِض",
+          "ku": "نزم"
         },
         {
           "ru": "пра́вильный",
@@ -1503,7 +1683,8 @@
           "tr": "právil'nyy",
           "pos": "adj.",
           "example": "Пра́вильный отве́т. — The correct answer.",
-          "ar": "صَحِيح"
+          "ar": "صَحِيح",
+          "ku": "دروست"
         },
         {
           "ru": "то́чный",
@@ -1511,7 +1692,8 @@
           "tr": "tóchnyy",
           "pos": "adj.",
           "example": "То́чные изме́рения. — Precise measurements.",
-          "ar": "دَقِيق"
+          "ar": "دَقِيق",
+          "ku": "وردوورمان"
         },
         {
           "ru": "я́сный",
@@ -1519,7 +1701,8 @@
           "tr": "yásnyy",
           "pos": "adj.",
           "example": "Я́сное объясне́ние. — A clear explanation.",
-          "ar": "وَاضِح"
+          "ar": "وَاضِح",
+          "ku": "ڕوون"
         },
         {
           "ru": "возмо́жный",
@@ -1527,7 +1710,8 @@
           "tr": "vozmózhnyy",
           "pos": "adj.",
           "example": "Возмо́жный вариа́нт. — A possible option.",
-          "ar": "مُمْكِن"
+          "ar": "مُمْكِن",
+          "ku": "گونجاو/مومکین"
         },
         {
           "ru": "необходи́мый",
@@ -1535,7 +1719,8 @@
           "tr": "neobkhodímyy",
           "pos": "adj.",
           "example": "Необходи́мое усло́вие. — A necessary condition.",
-          "ar": "ضَرُورِيّ"
+          "ar": "ضَرُورِيّ",
+          "ku": "پێویست"
         },
         {
           "ru": "о́чень",
@@ -1543,7 +1728,8 @@
           "tr": "óchen'",
           "pos": "adv. (degree)",
           "example": "О́чень интере́сно. — Very interesting.",
-          "ar": "جِدًّا"
+          "ar": "جِدًّا",
+          "ku": "زۆر"
         },
         {
           "ru": "сли́шком",
@@ -1551,7 +1737,8 @@
           "tr": "slíshkom",
           "pos": "adv. (degree)",
           "example": "Сли́шком сло́жно. — Too complicated.",
-          "ar": "أَكْثَرَ مِنَ اللَّازِمِ"
+          "ar": "أَكْثَرَ مِنَ اللَّازِمِ",
+          "ku": "زۆر زۆر/زیادەڕەوانە"
         },
         {
           "ru": "дово́льно",
@@ -1559,7 +1746,8 @@
           "tr": "dovól'no",
           "pos": "adv. (degree)",
           "example": "Дово́льно ча́сто. — Fairly often.",
-          "ar": "إِلَى حَدٍّ مَا"
+          "ar": "إِلَى حَدٍّ مَا",
+          "ku": "تا ڕادەیەک"
         },
         {
           "ru": "почти́",
@@ -1567,7 +1755,8 @@
           "tr": "pochtí",
           "pos": "adv. (degree)",
           "example": "Почти́ гото́во. — Almost ready.",
-          "ar": "تَقْرِيبًا"
+          "ar": "تَقْرِيبًا",
+          "ku": "نزیکەی/خەریک بوو"
         },
         {
           "ru": "соверше́нно",
@@ -1575,7 +1764,8 @@
           "tr": "sovershénno",
           "pos": "adv. (degree)",
           "example": "Соверше́нно ве́рно. — Absolutely correct.",
-          "ar": "تَمَامًا"
+          "ar": "تَمَامًا",
+          "ku": "بەتەواوی"
         },
         {
           "ru": "доста́точно",
@@ -1583,7 +1773,8 @@
           "tr": "dostátochno",
           "pos": "adv. (degree)",
           "example": "Доста́точно да́нных. — Sufficient data.",
-          "ar": "بِمَا يَكْفِي"
+          "ar": "بِمَا يَكْفِي",
+          "ku": "بەشێوەی پێویست/بەس"
         },
         {
           "ru": "осо́бенно",
@@ -1591,7 +1782,8 @@
           "tr": "osóbenno",
           "pos": "adv. (degree)",
           "example": "Осо́бенно ва́жно. — Especially important.",
-          "ar": "خَاصَّةً"
+          "ar": "خَاصَّةً",
+          "ku": "بەتایبەتی"
         }
       ]
     },
@@ -1606,7 +1798,8 @@
           "tr": "matemátika",
           "pos": "noun (f.)",
           "example": "Матема́тика — язы́к нау́ки. — Mathematics is the language of science.",
-          "ar": "رِيَاضِيَّات"
+          "ar": "رِيَاضِيَّات",
+          "ku": "بیرکاری"
         },
         {
           "ru": "фи́зика",
@@ -1614,7 +1807,8 @@
           "tr": "fízika",
           "pos": "noun (f.)",
           "example": "Ква́нтовая фи́зика. — Quantum physics.",
-          "ar": "فِيزْيَاء"
+          "ar": "فِيزْيَاء",
+          "ku": "فیزیا"
         },
         {
           "ru": "хи́мия",
@@ -1622,7 +1816,8 @@
           "tr": "khímiya",
           "pos": "noun (f.)",
           "example": "Органи́ческая хи́мия. — Organic chemistry.",
-          "ar": "كِيمْيَاء"
+          "ar": "كِيمْيَاء",
+          "ku": "کیمیا"
         },
         {
           "ru": "биоло́гия",
@@ -1630,7 +1825,8 @@
           "tr": "biológiya",
           "pos": "noun (f.)",
           "example": "Молекуля́рная биоло́гия. — Molecular biology.",
-          "ar": "أَحْيَاء"
+          "ar": "أَحْيَاء",
+          "ku": "زیندەزانی"
         },
         {
           "ru": "лингви́стика",
@@ -1638,7 +1834,8 @@
           "tr": "lingvístika",
           "pos": "noun (f.)",
           "example": "Компьюте́рная лингви́стика. — Computational linguistics.",
-          "ar": "لِسَانِيَّات"
+          "ar": "لِسَانِيَّات",
+          "ku": "زمانەوانی"
         },
         {
           "ru": "эконо́мика",
@@ -1646,7 +1843,8 @@
           "tr": "ekonómika",
           "pos": "noun (f.)",
           "example": "Он изуча́ет эконо́мику. — He studies economics.",
-          "ar": "اِقْتِصَاد"
+          "ar": "اِقْتِصَاد",
+          "ku": "ئابووری"
         },
         {
           "ru": "пра́во",
@@ -1654,7 +1852,8 @@
           "tr": "právo",
           "pos": "noun (n.)",
           "example": "Междунаро́дное пра́во. — International law.",
-          "ar": "قَانُون"
+          "ar": "قَانُون",
+          "ku": "یاسا"
         },
         {
           "ru": "филосо́фия",
@@ -1662,7 +1861,8 @@
           "tr": "filosófiya",
           "pos": "noun (f.)",
           "example": "Филосо́фия нау́ки. — The philosophy of science.",
-          "ar": "فَلْسَفَة"
+          "ar": "فَلْسَفَة",
+          "ku": "فەلسەفە"
         },
         {
           "ru": "исто́рия",
@@ -1670,7 +1870,8 @@
           "tr": "istóriya",
           "pos": "noun (f.)",
           "example": "Исто́рия дре́внего ми́ра. — The history of the ancient world.",
-          "ar": "تَارِيخ"
+          "ar": "تَارِيخ",
+          "ku": "مێژوو"
         },
         {
           "ru": "психоло́гия",
@@ -1678,7 +1879,8 @@
           "tr": "psikhológiya",
           "pos": "noun (f.)",
           "example": "Когнити́вная психоло́гия. — Cognitive psychology.",
-          "ar": "عِلْم النَّفْس"
+          "ar": "عِلْم النَّفْس",
+          "ku": "دەروونناسی"
         },
         {
           "ru": "социоло́гия",
@@ -1686,7 +1888,8 @@
           "tr": "sotsiológiya",
           "pos": "noun (f.)",
           "example": "Социоло́гия го́рода. — Urban sociology.",
-          "ar": "عِلْم الِاجْتِمَاع"
+          "ar": "عِلْم الِاجْتِمَاع",
+          "ku": "کۆمەڵناسی"
         },
         {
           "ru": "информа́тика",
@@ -1694,7 +1897,8 @@
           "tr": "informátika",
           "pos": "noun (f.)",
           "example": "Кафедра информа́тики. — The computer science department.",
-          "ar": "عِلْم الْحَاسُوب"
+          "ar": "عِلْم الْحَاسُوب",
+          "ku": "زانستی کۆمپیوتەر"
         },
         {
           "ru": "медици́на",
@@ -1702,7 +1906,8 @@
           "tr": "meditsína",
           "pos": "noun (f.)",
           "example": "Совреме́нная медици́на. — Modern medicine.",
-          "ar": "طِبّ"
+          "ar": "طِبّ",
+          "ku": "پزیشکی"
         },
         {
           "ru": "геоло́гия",
@@ -1710,7 +1915,8 @@
           "tr": "geológiya",
           "pos": "noun (f.)",
           "example": "Геоло́гия пла́неты. — The geology of the planet.",
-          "ar": "جِيُولُوجْيَا"
+          "ar": "جِيُولُوجْيَا",
+          "ku": "زەویناسی"
         },
         {
           "ru": "астроно́мия",
@@ -1718,7 +1924,8 @@
           "tr": "astronómiya",
           "pos": "noun (f.)",
           "example": "Наблюда́тельная астроно́мия. — Observational astronomy.",
-          "ar": "عِلْم الْفَلَك"
+          "ar": "عِلْم الْفَلَك",
+          "ku": "ئەستێرەناسی"
         },
         {
           "ru": "о́пыт (экспериме́нт)",
@@ -1726,7 +1933,8 @@
           "tr": "ópyt (eksperimént)",
           "pos": "noun (m.)",
           "example": "Поста́вить экспериме́нт. — To set up an experiment.",
-          "ar": "تَجْرِبَة"
+          "ar": "تَجْرِبَة",
+          "ku": "تاقیکردنەوە"
         },
         {
           "ru": "наблюде́ние",
@@ -1734,7 +1942,8 @@
           "tr": "nablyudénie",
           "pos": "noun (n.)",
           "example": "Прямо́е наблюде́ние. — Direct observation.",
-          "ar": "مُلَاحَظَة"
+          "ar": "مُلَاحَظَة",
+          "ku": "چاودێری/تێبینی"
         },
         {
           "ru": "ана́лиз",
@@ -1742,7 +1951,8 @@
           "tr": "análiz",
           "pos": "noun (m.)",
           "example": "Статисти́ческий ана́лиз. — Statistical analysis.",
-          "ar": "تَحْلِيل"
+          "ar": "تَحْلِيل",
+          "ku": "شیکردنەوە"
         },
         {
           "ru": "форму́ла",
@@ -1750,7 +1960,8 @@
           "tr": "fórmula",
           "pos": "noun (f.)",
           "example": "Вы́вести форму́лу. — To derive a formula.",
-          "ar": "صِيغَة"
+          "ar": "صِيغَة",
+          "ku": "فۆرموول"
         },
         {
           "ru": "уравне́ние",
@@ -1758,7 +1969,8 @@
           "tr": "uravnénie",
           "pos": "noun (n.)",
           "example": "Реши́ть уравне́ние. — To solve an equation.",
-          "ar": "مُعَادَلَة"
+          "ar": "مُعَادَلَة",
+          "ku": "هاوکێشە"
         },
         {
           "ru": "величина́",
@@ -1766,7 +1978,8 @@
           "tr": "velichiná",
           "pos": "noun (f.)",
           "example": "Физи́ческая величина́. — A physical quantity.",
-          "ar": "مِقْدَار"
+          "ar": "مِقْدَار",
+          "ku": "بڕ/گەورەیی"
         },
         {
           "ru": "моде́ль",
@@ -1774,7 +1987,8 @@
           "tr": "modél'",
           "pos": "noun (f.)",
           "example": "Математи́ческая моде́ль. — A mathematical model.",
-          "ar": "نَمُوذَج"
+          "ar": "نَمُوذَج",
+          "ku": "مۆدێل"
         },
         {
           "ru": "систе́ма",
@@ -1782,7 +1996,8 @@
           "tr": "sistéma",
           "pos": "noun (f.)",
           "example": "Сло́жная систе́ма. — A complex system.",
-          "ar": "نِظَام"
+          "ar": "نِظَام",
+          "ku": "سیستەم"
         },
         {
           "ru": "веще́ство",
@@ -1790,7 +2005,8 @@
           "tr": "veshchestvó",
           "pos": "noun (n.)",
           "example": "Хими́ческое веще́ство. — A chemical substance.",
-          "ar": "مَادَّة"
+          "ar": "مَادَّة",
+          "ku": "ماددە"
         }
       ]
     },
@@ -1805,7 +2021,8 @@
           "tr": "poyézdka",
           "pos": "noun (f.)",
           "example": "Деловая пое́здка. — A business trip.",
-          "ar": "رِحْلَة"
+          "ar": "رِحْلَة",
+          "ku": "گەشت"
         },
         {
           "ru": "биле́т",
@@ -1813,7 +2030,8 @@
           "tr": "bilét",
           "pos": "noun (m.)",
           "example": "Биле́т на по́езд. — A train ticket.",
-          "ar": "تَذْكِرَة"
+          "ar": "تَذْكِرَة",
+          "ku": "بلیت"
         },
         {
           "ru": "по́езд",
@@ -1821,7 +2039,8 @@
           "tr": "póyezd",
           "pos": "noun (m.)",
           "example": "По́езд опа́здывает. — The train is late.",
-          "ar": "قِطَار"
+          "ar": "قِطَار",
+          "ku": "شەمەندەفەر"
         },
         {
           "ru": "самолёт",
@@ -1829,7 +2048,8 @@
           "tr": "samolyót",
           "pos": "noun (m.)",
           "example": "Самолёт взлета́ет. — The plane is taking off.",
-          "ar": "طَائِرَة"
+          "ar": "طَائِرَة",
+          "ku": "فڕۆکە"
         },
         {
           "ru": "вокза́л",
@@ -1837,7 +2057,8 @@
           "tr": "vokzál",
           "pos": "noun (m.)",
           "example": "Встре́тимся на вокза́ле. — Let's meet at the station.",
-          "ar": "مَحَطَّة قِطَار"
+          "ar": "مَحَطَّة قِطَار",
+          "ku": "وێستگەی شەمەندەفەر"
         },
         {
           "ru": "аэропо́рт",
@@ -1845,7 +2066,8 @@
           "tr": "aeropórt",
           "pos": "noun (m.)",
           "example": "Я в аэропорту́. — I'm at the airport.",
-          "ar": "مَطَار"
+          "ar": "مَطَار",
+          "ku": "فڕۆکەخانە"
         },
         {
           "ru": "авто́бус",
@@ -1853,7 +2075,8 @@
           "tr": "avtóbus",
           "pos": "noun (m.)",
           "example": "Жду авто́бус. — I'm waiting for the bus.",
-          "ar": "حَافِلَة"
+          "ar": "حَافِلَة",
+          "ku": "پاس"
         },
         {
           "ru": "метро́",
@@ -1861,7 +2084,8 @@
           "tr": "metró",
           "pos": "noun (n.)",
           "example": "Е́дем на метро́. — Let's take the metro.",
-          "ar": "مِتْرُو الأنفاق"
+          "ar": "مِتْرُو الأنفاق",
+          "ku": "مێترۆ"
         },
         {
           "ru": "такси́",
@@ -1869,7 +2093,8 @@
           "tr": "taksí",
           "pos": "noun (n.)",
           "example": "Вы́звать такси́. — To call a taxi.",
-          "ar": "سَيَّارَة أُجْرَة"
+          "ar": "سَيَّارَة أُجْرَة",
+          "ku": "تاکسی"
         },
         {
           "ru": "маши́на",
@@ -1877,7 +2102,8 @@
           "tr": "mashína",
           "pos": "noun (f.)",
           "example": "Моя́ маши́на. — My car.",
-          "ar": "سَيَّارَة"
+          "ar": "سَيَّارَة",
+          "ku": "ئۆتۆمبێل"
         },
         {
           "ru": "доро́га",
@@ -1885,7 +2111,8 @@
           "tr": "doróga",
           "pos": "noun (f.)",
           "example": "До́лгая доро́га. — A long road.",
-          "ar": "طَرِيق"
+          "ar": "طَرِيق",
+          "ku": "ڕێگا"
         },
         {
           "ru": "путеше́ствие",
@@ -1893,7 +2120,8 @@
           "tr": "puteshéstviye",
           "pos": "noun (n.)",
           "example": "Люблю́ путеше́ствия. — I love travelling.",
-          "ar": "سَفَر"
+          "ar": "سَفَر",
+          "ku": "گەشت/سەفەر"
         },
         {
           "ru": "чемода́н",
@@ -1901,7 +2129,8 @@
           "tr": "chemodán",
           "pos": "noun (m.)",
           "example": "Тяжёлый чемода́н. — A heavy suitcase.",
-          "ar": "حَقِيبَة سَفَر"
+          "ar": "حَقِيبَة سَفَر",
+          "ku": "جانتا"
         },
         {
           "ru": "па́спорт",
@@ -1909,7 +2138,8 @@
           "tr": "pásport",
           "pos": "noun (m.)",
           "example": "Покажи́те па́спорт. — Show your passport.",
-          "ar": "جَوَاز سَفَر"
+          "ar": "جَوَاز سَفَر",
+          "ku": "پاسپۆرت"
         },
         {
           "ru": "ви́за",
@@ -1917,7 +2147,8 @@
           "tr": "víza",
           "pos": "noun (f.)",
           "example": "Студе́нческая ви́за. — A student visa.",
-          "ar": "تَأْشِيرَة"
+          "ar": "تَأْشِيرَة",
+          "ku": "ڤیزا"
         },
         {
           "ru": "грани́ца",
@@ -1925,7 +2156,8 @@
           "tr": "granítsa",
           "pos": "noun (f.)",
           "example": "Перее́хать грани́цу. — To cross the border.",
-          "ar": "حُدُود"
+          "ar": "حُدُود",
+          "ku": "سنوور"
         },
         {
           "ru": "гости́ница",
@@ -1933,7 +2165,8 @@
           "tr": "gostínitsa",
           "pos": "noun (f.)",
           "example": "Но́мер в гости́нице. — A hotel room.",
-          "ar": "فُنْدُق"
+          "ar": "فُنْدُق",
+          "ku": "هۆتێل"
         },
         {
           "ru": "ка́рта",
@@ -1941,7 +2174,8 @@
           "tr": "kárta",
           "pos": "noun (f.)",
           "example": "Ка́рта го́рода. — A city map.",
-          "ar": "خَرِيطَة؛ بِطَاقَة"
+          "ar": "خَرِيطَة؛ بِطَاقَة",
+          "ku": "نەخشە/کارت"
         }
       ]
     },
@@ -1956,7 +2190,8 @@
           "tr": "yedá",
           "pos": "noun (f.)",
           "example": "Вку́сная еда́. — Tasty food.",
-          "ar": "طَعَام"
+          "ar": "طَعَام",
+          "ku": "خواردن"
         },
         {
           "ru": "рестора́н",
@@ -1964,7 +2199,8 @@
           "tr": "restorán",
           "pos": "noun (m.)",
           "example": "У́жин в рестора́не. — Dinner at a restaurant.",
-          "ar": "مَطْعَم"
+          "ar": "مَطْعَم",
+          "ku": "چێشتخانە"
         },
         {
           "ru": "кафе́",
@@ -1972,7 +2208,8 @@
           "tr": "kafé",
           "pos": "noun (n.)",
           "example": "Встре́тимся в кафе́. — Let's meet at the café.",
-          "ar": "مَقْهَى"
+          "ar": "مَقْهَى",
+          "ku": "قاوەخانە"
         },
         {
           "ru": "меню́",
@@ -1980,7 +2217,8 @@
           "tr": "menyú",
           "pos": "noun (n.)",
           "example": "Да́йте меню́. — Give me the menu.",
-          "ar": "قَائِمَة طَعَام"
+          "ar": "قَائِمَة طَعَام",
+          "ku": "مێنیو/لیستی خواردن"
         },
         {
           "ru": "за́втрак",
@@ -1988,7 +2226,8 @@
           "tr": "závtrak",
           "pos": "noun (m.)",
           "example": "За́втрак в во́семь. — Breakfast at eight.",
-          "ar": "فَطُور"
+          "ar": "فَطُور",
+          "ku": "نانی بەیانی"
         },
         {
           "ru": "обе́д",
@@ -1996,7 +2235,8 @@
           "tr": "obéd",
           "pos": "noun (m.)",
           "example": "Пора́ на обе́д. — Time for lunch.",
-          "ar": "غَدَاء"
+          "ar": "غَدَاء",
+          "ku": "نانی نیوەڕۆ"
         },
         {
           "ru": "у́жин",
@@ -2004,7 +2244,8 @@
           "tr": "úzhin",
           "pos": "noun (m.)",
           "example": "Семе́йный у́жин. — A family dinner.",
-          "ar": "عَشَاء"
+          "ar": "عَشَاء",
+          "ku": "نانی ئێوارە"
         },
         {
           "ru": "хлеб",
@@ -2012,7 +2253,8 @@
           "tr": "khleb",
           "pos": "noun (m.)",
           "example": "Све́жий хлеб. — Fresh bread.",
-          "ar": "خُبْز"
+          "ar": "خُبْز",
+          "ku": "نان"
         },
         {
           "ru": "вода́",
@@ -2020,7 +2262,8 @@
           "tr": "vodá",
           "pos": "noun (f.)",
           "example": "Стака́н воды́. — A glass of water.",
-          "ar": "مَاء"
+          "ar": "مَاء",
+          "ku": "ئاو"
         },
         {
           "ru": "чай",
@@ -2028,7 +2271,8 @@
           "tr": "chay",
           "pos": "noun (m.)",
           "example": "Чай с лимо́ном. — Tea with lemon.",
-          "ar": "شَاي"
+          "ar": "شَاي",
+          "ku": "چا"
         },
         {
           "ru": "ко́фе",
@@ -2036,7 +2280,8 @@
           "tr": "kófe",
           "pos": "noun (m.)",
           "example": "Ча́шка ко́фе. — A cup of coffee.",
-          "ar": "قَهْوَة"
+          "ar": "قَهْوَة",
+          "ku": "قاوە"
         },
         {
           "ru": "мя́со",
@@ -2044,7 +2289,8 @@
           "tr": "myáso",
           "pos": "noun (n.)",
           "example": "Жа́реное мя́со. — Fried meat.",
-          "ar": "لَحْم"
+          "ar": "لَحْم",
+          "ku": "گۆشت"
         },
         {
           "ru": "ры́ба",
@@ -2052,7 +2298,8 @@
           "tr": "rýba",
           "pos": "noun (f.)",
           "example": "Све́жая ры́ба. — Fresh fish.",
-          "ar": "سَمَك"
+          "ar": "سَمَك",
+          "ku": "ماسی"
         },
         {
           "ru": "о́вощи",
@@ -2060,7 +2307,8 @@
           "tr": "óvoshchi",
           "pos": "noun (pl.)",
           "example": "Све́жие о́вощи. — Fresh vegetables.",
-          "ar": "خُضَار"
+          "ar": "خُضَار",
+          "ku": "سەوزە"
         },
         {
           "ru": "фру́кты",
@@ -2068,7 +2316,8 @@
           "tr": "frúkty",
           "pos": "noun (pl.)",
           "example": "Сла́дкие фру́кты. — Sweet fruit.",
-          "ar": "فَوَاكِه"
+          "ar": "فَوَاكِه",
+          "ku": "میوە"
         },
         {
           "ru": "счёт",
@@ -2076,7 +2325,8 @@
           "tr": "shchyot",
           "pos": "noun (m.)",
           "example": "Счёт, пожа́луйста. — The bill, please.",
-          "ar": "فَاتُورَة"
+          "ar": "فَاتُورَة",
+          "ku": "پسووڵە/حساب"
         },
         {
           "ru": "официа́нт",
@@ -2084,7 +2334,8 @@
           "tr": "ofitsiánt",
           "pos": "noun (m.)",
           "example": "Позови́те официа́нта. — Call the waiter.",
-          "ar": "نَادِل"
+          "ar": "نَادِل",
+          "ku": "گارسۆن"
         },
         {
           "ru": "вку́сный",
@@ -2092,7 +2343,8 @@
           "tr": "vkúsnyy",
           "pos": "adj.",
           "example": "О́чень вку́сно! — Very tasty!",
-          "ar": "لَذِيذ"
+          "ar": "لَذِيذ",
+          "ku": "خۆش/بەتام"
         }
       ]
     },
@@ -2107,7 +2359,8 @@
           "tr": "studént",
           "pos": "noun (m.)",
           "example": "Он студе́нт. — He is a student.",
-          "ar": "طَالِب"
+          "ar": "طَالِب",
+          "ku": "خوێندکار"
         },
         {
           "ru": "преподава́тель",
@@ -2115,7 +2368,8 @@
           "tr": "prepodavátel'",
           "pos": "noun (m.)",
           "example": "Стро́гий преподава́тель. — A strict lecturer.",
-          "ar": "مُحَاضِر، أُسْتَاذ"
+          "ar": "مُحَاضِر، أُسْتَاذ",
+          "ku": "مامۆستا"
         },
         {
           "ru": "ле́кция",
@@ -2123,7 +2377,8 @@
           "tr": "léktsiya",
           "pos": "noun (f.)",
           "example": "Интере́сная ле́кция. — An interesting lecture.",
-          "ar": "مُحَاضَرَة"
+          "ar": "مُحَاضَرَة",
+          "ku": "وانە"
         },
         {
           "ru": "экза́мен",
@@ -2131,7 +2386,8 @@
           "tr": "ekzámen",
           "pos": "noun (m.)",
           "example": "Сдать экза́мен. — To pass an exam.",
-          "ar": "اِمْتِحَان"
+          "ar": "اِمْتِحَان",
+          "ku": "تاقیکردنەوە"
         },
         {
           "ru": "оце́нка",
@@ -2139,7 +2395,8 @@
           "tr": "otsénka",
           "pos": "noun (f.)",
           "example": "Высо́кая оце́нка. — A high grade.",
-          "ar": "دَرَجَة، عَلَامَة"
+          "ar": "دَرَجَة، عَلَامَة",
+          "ku": "نمرە"
         },
         {
           "ru": "расписа́ние",
@@ -2147,7 +2404,8 @@
           "tr": "raspisániye",
           "pos": "noun (n.)",
           "example": "Расписа́ние заня́тий. — The class timetable.",
-          "ar": "جَدْوَل"
+          "ar": "جَدْوَل",
+          "ku": "خشتە"
         },
         {
           "ru": "аудито́рия",
@@ -2155,7 +2413,8 @@
           "tr": "auditóriya",
           "pos": "noun (f.)",
           "example": "Больша́я аудито́рия. — A large lecture hall.",
-          "ar": "قَاعَة دِرَاسِيَّة"
+          "ar": "قَاعَة دِرَاسِيَّة",
+          "ku": "هۆڵی وانە"
         },
         {
           "ru": "библиоте́ка",
@@ -2163,7 +2422,8 @@
           "tr": "bibliotéka",
           "pos": "noun (f.)",
           "example": "Рабо́тать в библиоте́ке. — To work in the library.",
-          "ar": "مَكْتَبَة"
+          "ar": "مَكْتَبَة",
+          "ku": "کتێبخانە"
         },
         {
           "ru": "общежи́тие",
@@ -2171,7 +2431,8 @@
           "tr": "obshchezhítiye",
           "pos": "noun (n.)",
           "example": "Жить в общежи́тии. — To live in a dorm.",
-          "ar": "سَكَن جَامِعِيّ"
+          "ar": "سَكَن جَامِعِيّ",
+          "ku": "یانەی خوێندکاران"
         },
         {
           "ru": "стипе́ндия",
@@ -2179,7 +2440,8 @@
           "tr": "stipéndiya",
           "pos": "noun (f.)",
           "example": "Получа́ть стипе́ндию. — To receive a stipend.",
-          "ar": "مِنْحَة دِرَاسِيَّة"
+          "ar": "مِنْحَة دِرَاسِيَّة",
+          "ku": "خەرجی خوێندن"
         },
         {
           "ru": "факульте́т",
@@ -2187,7 +2449,8 @@
           "tr": "fakul'tét",
           "pos": "noun (m.)",
           "example": "Истори́ческий факульте́т. — The history faculty.",
-          "ar": "كُلِّيَّة"
+          "ar": "كُلِّيَّة",
+          "ku": "کۆلێژ"
         },
         {
           "ru": "зачёт",
@@ -2195,7 +2458,8 @@
           "tr": "zachyót",
           "pos": "noun (m.)",
           "example": "Получи́ть зачёт. — To get a credit.",
-          "ar": "تَقْدِير (نَجَاح/رُسُوب)"
+          "ar": "تَقْدِير (نَجَاح/رُسُوب)",
+          "ku": "دەرچوون (بێ نمرە)"
         },
         {
           "ru": "семе́стр",
@@ -2203,7 +2467,8 @@
           "tr": "seméstr",
           "pos": "noun (m.)",
           "example": "Весе́нний семе́стр. — The spring semester.",
-          "ar": "فَصْل دِرَاسِيّ"
+          "ar": "فَصْل دِرَاسِيّ",
+          "ku": "وەرز/خول"
         },
         {
           "ru": "курс",
@@ -2211,7 +2476,8 @@
           "tr": "kurs",
           "pos": "noun (m.)",
           "example": "Тре́тий курс. — Third year.",
-          "ar": "مُقَرَّر؛ سَنَة دِرَاسِيَّة"
+          "ar": "مُقَرَّر؛ سَنَة دِرَاسِيَّة",
+          "ku": "کۆرس/قۆناغ"
         },
         {
           "ru": "конспе́кт",
@@ -2219,7 +2485,8 @@
           "tr": "konspékt",
           "pos": "noun (m.)",
           "example": "Писа́ть конспе́кт. — To take notes.",
-          "ar": "مُلَخَّص مُحَاضَرَة"
+          "ar": "مُلَخَّص مُحَاضَرَة",
+          "ku": "تێبینی وانە"
         },
         {
           "ru": "переры́в",
@@ -2227,7 +2494,8 @@
           "tr": "pererýv",
           "pos": "noun (m.)",
           "example": "Переры́в на ко́фе. — A coffee break.",
-          "ar": "اِسْتِرَاحَة"
+          "ar": "اِسْتِرَاحَة",
+          "ku": "پشوو"
         },
         {
           "ru": "декана́т",
@@ -2235,7 +2503,8 @@
           "tr": "dekanát",
           "pos": "noun (m.)",
           "example": "Зайти́ в декана́т. — To drop by the dean's office.",
-          "ar": "عِمَادَة الكُلِّيَّة"
+          "ar": "عِمَادَة الكُلِّيَّة",
+          "ku": "نووسینگەی ڕاگر"
         },
         {
           "ru": "дипло́м",
@@ -2243,7 +2512,8 @@
           "tr": "diplóm",
           "pos": "noun (m.)",
           "example": "Получи́ть дипло́м. — To get a diploma.",
-          "ar": "شَهَادَة"
+          "ar": "شَهَادَة",
+          "ku": "بڕوانامە"
         }
       ]
     }
