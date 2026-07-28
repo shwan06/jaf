@@ -343,6 +343,14 @@ select.dropdown {
 .fc-ar { color: var(--accent-2); font-size: 20px; direction: rtl; }
 .unit .summary-ar { color: var(--muted); font-size: 14px; margin: -8px 0 14px; }
 
+/* ---------- Picture illustrations (emoji / optional real image) ---------- */
+.fc-emoji { font-size: 64px; line-height: 1; margin-bottom: 4px; }
+.fc-img { max-width: 170px; max-height: 150px; object-fit: contain; margin: 0 auto 8px; border-radius: 12px; }
+.vocab-row .vr-emoji { font-size: 30px; flex: none; width: 40px; text-align: center; align-self: center; }
+.vocab-row .vr-img { width: 46px; height: 46px; object-fit: cover; border-radius: 8px; flex: none; align-self: center; }
+.wod-emoji { font-size: 46px; line-height: 1; margin-bottom: 2px; }
+.wod-img { max-width: 130px; max-height: 110px; object-fit: contain; border-radius: 10px; margin-bottom: 4px; }
+
 /* ---------- Central Kurdish (Sorani) gloss ---------- */
 .ex-ku, .d-ku, .fc-ku, .vr-ku, .sr-ku, .lt-ku, .wod-ku, .summary-ku {
   direction: rtl; text-align: right;

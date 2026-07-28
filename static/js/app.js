@@ -130,6 +130,8 @@ async function masterCards() {
         example: c.example || "",
         audio: c.audio || "",
         ku: c.ku || "",
+        emoji: c.emoji || "",
+        img: c.img || "",
       });
     });
   });
@@ -474,7 +476,9 @@ function renderDeckBrowser(view, decks) {
     const list = el("div", { class: "vocab-list" });
     (d.cards || []).forEach((c) => {
       const row = el("div", { class: "vocab-row" });
-      row.append(starBtn({ id: "v:" + d.id + ":" + c.ru, ru: c.ru, en: c.en || "", ar: c.ar || "", tr: c.tr || "", type: "word", src: prettyDeck(d.id) }));
+      row.append(starBtn({ id: "v:" + d.id + ":" + c.ru, ru: c.ru, en: c.en || "", ar: c.ar || "", ku: c.ku || "", tr: c.tr || "", type: "word", src: prettyDeck(d.id) }));
+      if (c.img) row.append(el("img", { class: "vr-img", src: c.img, alt: c.en || "", loading: "lazy" }));
+      else if (c.emoji) row.append(el("div", { class: "vr-emoji" }, c.emoji));
       const body = el("div", { class: "vr-body" },
         el("div", { class: "vr-head" },
           el("span", { class: "vr-ru ru", "data-say": c.ru, ...(c.audio ? { "data-audio": c.audio } : {}) }, c.ru),
@@ -571,6 +575,7 @@ async function viewDashboard() {
     const w = wodCards[hashStr(todayStr()) % wodCards.length];
     view.append(el("div", { class: "wod-panel" },
       el("div", { class: "wod-head" }, "📅 Word of the day"),
+      w.img ? el("img", { class: "wod-img", src: w.img, alt: w.back, loading: "lazy" }) : (w.emoji ? el("div", { class: "wod-emoji" }, w.emoji) : null),
       el("div", { class: "wod-ru ru", "data-say": w.front }, w.front),
       w.tr ? el("div", { class: "wod-tr" }, w.tr) : null,
       el("div", { class: "wod-en gloss-en" }, w.back),
@@ -997,6 +1002,8 @@ async function viewFlashcards() {
     host.append(el("div", { class: "fc-meta" }, `${state.idx + 1} / ${state.queue.length} · ${prettyDeck(card.deck)}`));
 
     const fc = el("div", { class: "flashcard" });
+    if (card.img) fc.append(el("img", { class: "fc-img", src: card.img, alt: card.back, loading: "lazy" }));
+    else if (card.emoji) fc.append(el("div", { class: "fc-emoji" }, card.emoji));
     fc.append(el("div", { class: "fc-front ru", "data-say": card.front, ...(card.audio ? { "data-audio": card.audio } : {}) }, card.front));
     if (card.pos) fc.append(el("div", { class: "fc-pos" }, card.pos));
 
@@ -1391,6 +1398,7 @@ async function viewPronounce() {
     state.cur = cards[Math.floor(Math.random() * cards.length)];
     const card = el("div", { class: "quiz-card", style: "text-align:center" });
     card.append(el("div", { class: "quiz-bar" }, el("span", {}, `${state.asked + 1} / ${state.total}`), el("span", {}, `Score: ${state.score}`)));
+    if (state.cur.emoji) card.append(el("div", { class: "fc-emoji" }, state.cur.emoji));
     card.append(el("div", { class: "fc-front ru", style: "font-size:40px", "data-say": state.cur.front }, state.cur.front));
     if (state.cur.tr) card.append(el("div", { class: "fc-tr", style: "margin-bottom:6px" }, state.cur.tr));
     card.append(el("div", { class: "gloss-en", style: "color:var(--muted)" }, state.cur.back));
