@@ -20,7 +20,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate content JSON (parses, no duplicate cards, path.json references resolve)
+        run: node tools/validate_content.js
+      - name: Check audioHash() (app.js) matches audio_hash() (build_audio.py)
+        run: node tests/audio_hash_parity.test.js
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     environment:
       name: github-pages

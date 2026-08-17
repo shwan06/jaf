@@ -10,7 +10,11 @@ not yet recorded.
 
 * Every spoken Russian string has a stable id: `audioHash(ru)` — a 64-bit hash
   computed identically in `static/js/app.js` (`audioHash`) and
-  `tools/build_audio.py` (`audio_hash`).
+  `tools/build_audio.py` (`audio_hash`). **These two must stay byte-for-byte
+  identical.** If you ever change one without the other, every existing
+  recording silently stops matching (falls back to TTS, no error, nothing
+  breaks loudly) — run `node tests/audio_hash_parity.test.js` after touching
+  either implementation to check they still agree.
 * Recordings live at `static/audio/<id>.mp3` (same-origin, so the service worker
   caches them for offline use on first play).
 * `static/audio/index.json` maps `{ "<id>": "audio/<id>.mp3" }` for the files that

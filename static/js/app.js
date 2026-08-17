@@ -816,8 +816,14 @@ function buildCalendar(history, weeks) {
 const xpTier = (xp) => (!xp ? 0 : xp < 10 ? 1 : xp < 30 ? 2 : xp < 60 ? 3 : 4);
 
 function exportProgress() {
+  // Never bundle AI-provider credentials into a progress backup: every provider's
+  // keyName lives under a "ru_"-prefixed key too, so it must be excluded explicitly.
+  const credentialKeys = new Set([
+    ...Object.values(PROVIDERS).map((p) => p.keyName),
+    "ru_yandex_folder",
+  ]);
   const dump = {};
-  Object.keys(localStorage).filter((k) => k.startsWith("ru_")).forEach((k) => {
+  Object.keys(localStorage).filter((k) => k.startsWith("ru_") && !credentialKeys.has(k)).forEach((k) => {
     try { dump[k] = JSON.parse(localStorage.getItem(k)); } catch { dump[k] = localStorage.getItem(k); }
   });
   const blob = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), app: "Русский от А до Я", data: dump }, null, 2)], { type: "application/json" });
@@ -1875,6 +1881,25 @@ const TUTOR_SYSTEM =
   "1) Your reply in Russian (short, natural).\n2) A line starting 'EN:' with an English translation.\n3) A line starting 'AR:' with an Arabic translation.\n" +
   "If the learner made a mistake, gently correct it on a line starting 'Поправка:' (with the fix in Russian + a short English note). Always end with a simple question to keep the chat going.";
 
+// One entry per AI Tutor provider. Fields: kind ("openai" | "gemini" |
+// "anthropic" — picks which of callOpenAI/callGemini/callAnthropic below
+// sends the request), label, keyName (the localStorage key the user's API
+// key is stored under — must stay ru_-prefixed but is explicitly excluded
+// from exportProgress(), see the credentialKeys note there), keyPlaceholder,
+// signup (where to get a key), note (shown in the UI), endpoint (only
+// needed if it isn't the callXXX function's default), needsFolder (Yandex
+// only — also requires "ru_yandex_folder" in localStorage), fallbackModels
+// (used if modelsEndpoint isn't set or the live model list fetch fails),
+// modelsEndpoint (optional: fetch a live model list instead of the
+// fallback), modelOf (optional: transform a model id before sending, e.g.
+// Yandex's gpt://folder/model/latest form), authHeaders(key) (builds the
+// auth header(s) for that provider).
+//
+// To add a new OpenAI-compatible provider: add an entry with kind:"openai"
+// and the right endpoint/authHeaders — callOpenAI() already handles it. To
+// add a genuinely different API shape: add a new "kind", write a callXXX()
+// function next to callOpenAI/callGemini/callAnthropic below, and add a
+// branch for it in callTutor().
 const PROVIDERS = {
   openrouter: {
     kind: "openai",
