@@ -821,6 +821,7 @@ function exportProgress() {
   const credentialKeys = new Set([
     ...Object.values(PROVIDERS).map((p) => p.keyName),
     "ru_yandex_folder",
+    GPTZERO.keyName,
   ]);
   const dump = {};
   Object.keys(localStorage).filter((k) => k.startsWith("ru_") && !credentialKeys.has(k)).forEach((k) => {
@@ -2020,6 +2021,36 @@ const provKey = (p) => localStorage.getItem(PROVIDERS[p].keyName) || "";
 const provReady = (p) => !!provKey(p) && (!PROVIDERS[p].needsFolder || !!localStorage.getItem("ru_yandex_folder"));
 function curProvider() { return PROVIDERS[localStorage.getItem("ru_tutor_provider")] ? localStorage.getItem("ru_tutor_provider") : "openrouter"; }
 
+// Optional GPTZero check on AI Tutor replies (gptzero.me/developers) — same
+// bring-your-own-key pattern as the PROVIDERS above. Off by default: it
+// sends the tutor's reply text to a third-party API, so it needs an
+// explicit opt-in and its own key, which — like the tutor provider keys —
+// must be excluded from exportProgress() (see the credentialKeys note there).
+const GPTZERO = {
+  keyName: "ru_gptzero_key",
+  keyPlaceholder: "GPTZero API key",
+  signup: "gptzero.me/developers",
+  note: "Every AI Tutor reply is, by construction, AI-generated — this just calls GPTZero to show the confidence score for that alongside the reply. The reply text is sent to GPTZero's API using your own key. Stored only in this browser.",
+};
+const gptzeroKey = () => localStorage.getItem(GPTZERO.keyName) || "";
+const gptzeroEnabled = () => localStorage.getItem("ru_gptzero_enabled") === "1" && !!gptzeroKey();
+
+async function checkGptzero(text) {
+  const key = gptzeroKey();
+  if (!key) throw new Error("No GPTZero API key");
+  const r = await fetch("https://api.gptzero.me/v2/predict/text", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-api-key": key },
+    body: JSON.stringify({ document: text }),
+  });
+  if (!r.ok) throw new Error(`GPTZero request failed (${r.status})`);
+  const data = await r.json();
+  const doc = data.documents && data.documents[0];
+  const prob = doc && (doc.class_probabilities?.ai ?? doc.completely_generated_prob);
+  if (typeof prob !== "number") throw new Error("GPTZero: unexpected response");
+  return prob;
+}
+
 async function viewTutor() {
   const view = $("#view");
   view.innerHTML = "";
@@ -2083,7 +2114,17 @@ async function viewTutor() {
     populateModels(modelSel);
     const forget = el("button", { class: "ghost-btn", style: "width:auto;padding:9px 12px" }, "Change key");
     forget.addEventListener("click", () => { localStorage.removeItem(PROVIDERS[provider].keyName); renderKeyForm(); });
-    toolbar.append(providerPicker(() => render()), modelSel, forget);
+    const gzLabel = () => "🔍 GPTZero: " + (gptzeroEnabled() ? "On" : "Off");
+    const gzSync = () => { gzToggle.textContent = gzLabel(); gzToggle.classList.toggle("on", gptzeroEnabled()); };
+    const gzToggle = el("button", { class: "ghost-btn", style: "width:auto;padding:9px 12px", title: "Flag AI Tutor replies with a GPTZero AI-detection score — needs your own GPTZero API key" }, gzLabel());
+    gzToggle.addEventListener("click", () => {
+      if (gptzeroEnabled()) { localStorage.setItem("ru_gptzero_enabled", "0"); gzSync(); return; }
+      if (!gptzeroKey()) { stage.insertBefore(renderGptzeroCard(gzSync), log); return; }
+      localStorage.setItem("ru_gptzero_enabled", "1");
+      gzSync();
+    });
+    gzSync();
+    toolbar.append(providerPicker(() => render()), modelSel, forget, gzToggle);
     stage.append(toolbar);
 
     const log = el("div", { class: "chat-log" });
@@ -2152,6 +2193,15 @@ async function viewTutor() {
         // auto-speak the Russian line of the reply
         const ruLine = reply.split("\n").find((l) => /[Ѐ-ӿ]/.test(l) && !/^\s*(EN:|AR:|Поправка)/i.test(l));
         if (ruLine) speak(ruLine);
+        if (gptzeroEnabled()) {
+          const badge = el("div", { class: "muted", style: "font-size:12px;margin-top:6px" }, "🔍 GPTZero: checking…");
+          botContent.append(badge);
+          checkGptzero(reply).then((prob) => {
+            badge.textContent = `🔍 GPTZero: ${Math.round(prob * 100)}% likely AI-generated`;
+          }).catch((e) => {
+            badge.textContent = "🔍 GPTZero check failed: " + String((e && e.message) || e);
+          });
+        }
       } catch (e) {
         botContent.className = "";
         botContent.innerHTML = "";
@@ -2173,6 +2223,25 @@ async function viewTutor() {
     send.addEventListener("click", submit);
     input.addEventListener("keydown", (e) => { if (e.key === "Enter") submit(); });
     input.focus();
+  }
+
+  function renderGptzeroCard(onDone) {
+    const card = el("div", { class: "quiz-card", style: "margin-bottom:12px" });
+    card.append(el("h3", { style: "margin-top:0" }, "Connect your GPTZero key"));
+    card.append(el("p", { class: "prose" }, "Get a key at " + GPTZERO.signup + ". " + GPTZERO.note));
+    const input = el("input", { class: "text-input", type: "password", placeholder: GPTZERO.keyPlaceholder, style: "font-family:monospace;font-size:15px" });
+    const save = el("button", { class: "btn primary", style: "margin-top:8px" }, "Save & enable");
+    save.addEventListener("click", () => {
+      const v = input.value.trim();
+      if (!v) return;
+      localStorage.setItem(GPTZERO.keyName, v);
+      localStorage.setItem("ru_gptzero_enabled", "1");
+      card.remove();
+      onDone();
+    });
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") save.click(); });
+    card.append(input, save);
+    return card;
   }
 
   function renderTutorReply(text) {
