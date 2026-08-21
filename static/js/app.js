@@ -1725,6 +1725,9 @@ async function viewCases() {
       grid.append(el("div", { class: "case-stat" },
         el("div", { class: "cs-name" }, m.name),
         el("div", { class: "cs-q" }, m.q),
+        m.use ? el("div", { class: "cs-use gloss-en" }, m.use) : null,
+        m.useAr ? el("div", { class: "cs-use cs-ar gloss-ar", dir: "rtl" }, m.useAr) : null,
+        m.useKu ? el("div", { class: "cs-use cs-ku gloss-ku", dir: "rtl" }, m.useKu) : null,
         el("div", { class: "cs-bar" }, el("i", { style: `width:${mas || 0}%` })),
         el("div", { class: "cs-pct" }, mas == null ? "not started" : mas + "% mastery")));
     });
@@ -1759,6 +1762,8 @@ async function viewCases() {
         el("span", {}, `${label} · ${state.i + 1}/${queue.length}`), el("span", {}, `Score: ${state.score}`)));
       card.append(el("div", { class: "case-target" }, "Target: ", el("strong", {}, `${meta.name || d.case}`), meta.q ? el("span", { class: "muted" }, "  (" + meta.q + ")") : null));
       card.append(el("div", { class: "case-en gloss-en" }, d.en));
+      if (d.ar) card.append(el("div", { class: "case-ar gloss-ar", dir: "rtl" }, d.ar));
+      if (d.ku) card.append(el("div", { class: "case-ku gloss-ku", dir: "rtl" }, d.ku));
       // sentence with the blank, plus the base lemma to decline
       const sent = el("div", { class: "case-sentence ru", "data-say": d.prompt.replace("___", d.answer) });
       sent.append(document.createTextNode(d.prompt.replace("___", "  _____  ")));
@@ -1780,7 +1785,13 @@ async function viewCases() {
           playClip({ ru: d.prompt.replace("___", d.answer), audioUrl: d.audio });
           card.append(el("div", { class: "note", style: "margin-top:14px" },
             el("div", {}, (correct ? "✓ " : "✗ ") + d.answer + " — " + (d.context || "")),
-            el("div", { class: "muted", style: "margin-top:4px" }, d.explain)));
+            el("div", { class: "muted gloss-en", style: "margin-top:4px" }, d.explain),
+            d.explainAr ? el("div", { class: "muted case-ar gloss-ar", style: "margin-top:4px", dir: "rtl" }, d.explainAr) : null,
+            d.explainKu ? el("div", { class: "muted case-ku gloss-ku", style: "margin-top:4px", dir: "rtl" }, d.explainKu) : null,
+            el("div", { style: "margin-top:8px" }, starBtn({
+              id: "cs:" + d.id, ru: d.prompt.replace("___", d.answer), en: d.en,
+              ar: d.ar || "", ku: d.ku || "", type: "phrase", src: "Cases: " + (meta.name || d.case),
+            }))));
           card.append(el("button", { class: "btn primary", style: "margin-top:14px", onclick: () => { state.i++; render(); } },
             state.i + 1 >= queue.length ? "See results" : "Next →"));
         });
