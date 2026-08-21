@@ -716,11 +716,22 @@ async function viewListening(startId) {
       if (state.i >= items.length) {
         const pct = Math.round((state.score / items.length) * 100);
         Listen.record(lesson.id, pct);
-        host.append(el("div", { class: "quiz-card", style: "text-align:center" },
+        const card = el("div", { class: "quiz-card", style: "text-align:center" },
           el("h2", { style: "font-family:'PT Serif',serif" }, lesson.title + " — done"),
           el("p", { style: "font-size:32px;margin:12px 0" }, `${state.score} / ${items.length}  (${pct}%)`),
           el("button", { class: "btn primary big", style: "margin-top:8px", onclick: () => startLesson(lesson) }, "Listen again"),
-          el("button", { class: "deck-pill", style: "margin-top:12px", onclick: renderPicker }, "Other lessons")));
+          el("button", { class: "deck-pill", style: "margin-top:12px", onclick: renderPicker }, "Other lessons"));
+        if (lesson.video) {
+          card.append(el("a", {
+            class: "video-link", href: `https://www.youtube.com/watch?v=${lesson.video.youtubeId}`,
+            target: "_blank", rel: "noopener noreferrer",
+          },
+            el("span", { class: "video-link-icon" }, "🎥"),
+            el("span", {},
+              el("strong", {}, "Hear real Russians say this"),
+              el("span", { class: "video-link-sub" }, lesson.video.title))));
+        }
+        host.append(card);
         renderNav();
         return;
       }

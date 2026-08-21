@@ -295,6 +295,18 @@ table.grid tr:nth-child(even) td { background: rgba(255,255,255,.015); }
 .fc-empty { text-align: center; color: var(--muted); padding: 50px 20px; }
 .fc-empty .big-emoji { font-size: 46px; }
 
+/* ---------- Video link (real native-speaker clips) ---------- */
+.video-link {
+  display: flex; align-items: center; gap: 12px; text-align: left;
+  margin-top: 18px; padding: 12px 14px; border-radius: 12px;
+  background: var(--panel-2); border: 1px solid var(--border);
+  text-decoration: none; color: var(--text);
+}
+.video-link:hover { border-color: var(--accent); }
+.video-link-icon { font-size: 24px; flex-shrink: 0; }
+.video-link strong { display: block; font-size: 14px; }
+.video-link-sub { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
 /* ---------- Quiz ---------- */
 .quiz-stage { max-width: 600px; margin: 0 auto; }
 .quiz-card { background: var(--panel); border: 1px solid var(--border); border-radius: 18px; padding: 30px; box-shadow: var(--shadow); }

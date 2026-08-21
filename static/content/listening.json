@@ -55,7 +55,12 @@
           "ar": "إلى اللقاء!",
           "ku": "خواحافیز!"
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "Zei0gNQa6mE",
+        "title": "Russian phrases for beginners: Greetings & Goodbyes",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "a1-essentials",
@@ -110,7 +115,12 @@
           "ar": "ساعدني من فضلك.",
           "ku": "تکایە یارمەتیم بدە."
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "QhhI0dyqbpE",
+        "title": "Your first 25 phrases for absolute beginners",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "a2-daily",
@@ -165,7 +175,12 @@
           "ar": "غداً عندي امتحان.",
           "ku": "سبەینێ تاقیکردنەوەم هەیە."
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "v_itaS61qR0",
+        "title": "Russian for Beginners: Morning Routine Vocabulary (A1)",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "a2-cafe",
@@ -220,7 +235,12 @@
           "ar": "هل يمكن الدفع بالبطاقة؟",
           "ku": "دەکرێت بە کارت پارە بدەم؟"
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "w4oalfsapC0",
+        "title": "How to order coffee and desserts in Russian (real cafe)",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "a2-directions",
@@ -275,7 +295,12 @@
           "ar": "هل يمكنني طلب سيارة أجرة إلى المطار؟ كم سيكلّف ذلك؟",
           "ku": "دەکرێت تاکسییەک بۆ فڕۆکەخانە بانگ بکەم؟ بەهای چەند دەبێت؟"
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "YsXi4Yi_58A",
+        "title": "Asking for directions — Russian Beginner's Kit",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "a2-shopping",
@@ -330,7 +355,12 @@
           "ar": "هل يمكنني الدفع بالبطاقة أم بالنقد فقط؟",
           "ku": "دەکرێت بە کارت پارە بدەم یان تەنها بە کاش؟"
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "ok09KmmxVWQ",
+        "title": "10 grocery shopping phrases in slow Russian",
+        "channel": "Easy Russian"
+      }
     },
     {
       "id": "a2-health",
@@ -385,7 +415,12 @@
           "ar": "أين أقرب صيدلية من هنا؟",
           "ku": "نزیکترین دەرمانخانە لێرە لە کوێیە؟"
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "Qs_QZiJQ9ZU",
+        "title": "At the doctor's: medical terms and phrases",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "b1-university",
@@ -440,7 +475,12 @@
           "ar": "لنلتقِ بعد الحصص في المقصف ونستعد معًا للاختبار.",
           "ku": "با دوای وانەکان لە چێشتخانە یەکتر ببینین و پێکەوە بۆ تاقیکردنەوەکە ئامادە بین."
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "vZhRY-YaND8",
+        "title": "Russian student life: a day at a Russian university",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "b1-opinions",
@@ -495,7 +535,12 @@
           "ar": "بصراحة، لم أقرر بعد ماذا أريد أن أفعل في المستقبل.",
           "ku": "ڕاستییەکەی، هێشتا بڕیارم نەداوە لە داهاتوودا حەز دەکەم چی بکەم."
         }
-      ]
+      ],
+      "video": {
+        "youtubeId": "flq1dk1WSEE",
+        "title": "I asked Russians about their future (street interviews)",
+        "channel": "YouTube"
+      }
     },
     {
       "id": "b1-research",
