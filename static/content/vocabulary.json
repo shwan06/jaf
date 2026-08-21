@@ -236,7 +236,8 @@
           "example": "Он хоро́ший челове́к. — He is a good person.",
           "ar": "إِنْسَان",
           "ku": "مرۆڤ",
-          "emoji": "🧑"
+          "emoji": "🧑",
+          "img": "img/vocab/chelovek.jpg"
         },
         {
           "ru": "вода́",
@@ -246,7 +247,8 @@
           "example": "Я пью во́ду. — I am drinking water.",
           "ar": "مَاء",
           "ku": "ئاو",
-          "emoji": "💧"
+          "emoji": "💧",
+          "img": "img/vocab/voda.jpg"
         },
         {
           "ru": "дом",
@@ -256,7 +258,8 @@
           "example": "Я иду́ домо́й. — I am going home.",
           "ar": "بَيْت",
           "ku": "ماڵ",
-          "emoji": "🏠"
+          "emoji": "🏠",
+          "img": "img/vocab/dom.jpg"
         },
         {
           "ru": "быть",
@@ -530,7 +533,8 @@
           "example": "У меня́ больша́я семья́. — I have a big family.",
           "ar": "عَائِلَة",
           "ku": "خێزان",
-          "emoji": "👨‍👩‍👧"
+          "emoji": "👨‍👩‍👧",
+          "img": "img/vocab/semya.jpg"
         },
         {
           "ru": "мать",
@@ -630,7 +634,8 @@
           "example": "Он мой ста́рый друг. — He is my old friend.",
           "ar": "صَدِيق",
           "ku": "هاوڕێ",
-          "emoji": "🤝"
+          "emoji": "🤝",
+          "img": "img/vocab/drug.jpg"
         },
         {
           "ru": "сосе́д",
@@ -650,7 +655,8 @@
           "example": "Врач осмотре́л больно́го. — The doctor examined the patient.",
           "ar": "طَبِيب",
           "ku": "پزیشک",
-          "emoji": "🧑‍⚕️"
+          "emoji": "🧑‍⚕️",
+          "img": "img/vocab/vrach.jpg"
         },
         {
           "ru": "учи́тель",
@@ -660,7 +666,8 @@
           "example": "Учи́тель объясня́ет уро́к. — The teacher explains the lesson.",
           "ar": "مُعَلِّم",
           "ku": "مامۆستا",
-          "emoji": "🧑‍🏫"
+          "emoji": "🧑‍🏫",
+          "img": "img/vocab/uchitel.jpg"
         },
         {
           "ru": "инжене́р",
@@ -887,7 +894,8 @@
           "example": "Студе́нт за́дал вопро́с. — The student asked a question.",
           "ar": "طَالِب",
           "ku": "خوێندکار",
-          "emoji": "🧑‍🎓"
+          "emoji": "🧑‍🎓",
+          "img": "img/vocab/student.jpg"
         },
         {
           "ru": "профе́ссор",
@@ -2259,7 +2267,8 @@
           "example": "По́езд опа́здывает. — The train is late.",
           "ar": "قِطَار",
           "ku": "شەمەندەفەر",
-          "emoji": "🚆"
+          "emoji": "🚆",
+          "img": "img/vocab/poezd.jpg"
         },
         {
           "ru": "самолёт",
@@ -2269,7 +2278,8 @@
           "example": "Самолёт взлета́ет. — The plane is taking off.",
           "ar": "طَائِرَة",
           "ku": "فڕۆکە",
-          "emoji": "✈️"
+          "emoji": "✈️",
+          "img": "img/vocab/samolet.jpg"
         },
         {
           "ru": "вокза́л",
@@ -2279,7 +2289,8 @@
           "example": "Встре́тимся на вокза́ле. — Let's meet at the station.",
           "ar": "مَحَطَّة قِطَار",
           "ku": "وێستگەی شەمەندەفەر",
-          "emoji": "🚉"
+          "emoji": "🚉",
+          "img": "img/vocab/vokzal.jpg"
         },
         {
           "ru": "аэропо́рт",
@@ -2299,7 +2310,8 @@
           "example": "Жду авто́бус. — I'm waiting for the bus.",
           "ar": "حَافِلَة",
           "ku": "پاس",
-          "emoji": "🚌"
+          "emoji": "🚌",
+          "img": "img/vocab/avtobus.jpg"
         },
         {
           "ru": "метро́",
@@ -2319,7 +2331,8 @@
           "example": "Вы́звать такси́. — To call a taxi.",
           "ar": "سَيَّارَة أُجْرَة",
           "ku": "تاکسی",
-          "emoji": "🚕"
+          "emoji": "🚕",
+          "img": "img/vocab/taksi.jpg"
         },
         {
           "ru": "маши́на",
@@ -2329,7 +2342,8 @@
           "example": "Моя́ маши́на. — My car.",
           "ar": "سَيَّارَة",
           "ku": "ئۆتۆمبێل",
-          "emoji": "🚗"
+          "emoji": "🚗",
+          "img": "img/vocab/mashina.jpg"
         },
         {
           "ru": "доро́га",
@@ -2359,7 +2373,8 @@
           "example": "Тяжёлый чемода́н. — A heavy suitcase.",
           "ar": "حَقِيبَة سَفَر",
           "ku": "جانتا",
-          "emoji": "🧳"
+          "emoji": "🧳",
+          "img": "img/vocab/chemodan.jpg"
         },
         {
           "ru": "па́спорт",
@@ -2436,7 +2451,8 @@
           "example": "У́жин в рестора́не. — Dinner at a restaurant.",
           "ar": "مَطْعَم",
           "ku": "چێشتخانە",
-          "emoji": "🍽️"
+          "emoji": "🍽️",
+          "img": "img/vocab/restoran.jpg"
         },
         {
           "ru": "кафе́",
@@ -2496,7 +2512,8 @@
           "example": "Све́жий хлеб. — Fresh bread.",
           "ar": "خُبْز",
           "ku": "نان",
-          "emoji": "🍞"
+          "emoji": "🍞",
+          "img": "img/vocab/khleb.jpg"
         },
         {
           "ru": "вода́",
@@ -2506,7 +2523,8 @@
           "example": "Стака́н воды́. — A glass of water.",
           "ar": "مَاء",
           "ku": "ئاو",
-          "emoji": "💧"
+          "emoji": "💧",
+          "img": "img/vocab/voda.jpg"
         },
         {
           "ru": "чай",
@@ -2516,7 +2534,8 @@
           "example": "Чай с лимо́ном. — Tea with lemon.",
           "ar": "شَاي",
           "ku": "چا",
-          "emoji": "🍵"
+          "emoji": "🍵",
+          "img": "img/vocab/chai.jpg"
         },
         {
           "ru": "ко́фе",
@@ -2526,7 +2545,8 @@
           "example": "Ча́шка ко́фе. — A cup of coffee.",
           "ar": "قَهْوَة",
           "ku": "قاوە",
-          "emoji": "☕"
+          "emoji": "☕",
+          "img": "img/vocab/kofe.jpg"
         },
         {
           "ru": "мя́со",
@@ -2613,7 +2633,8 @@
           "example": "Он студе́нт. — He is a student.",
           "ar": "طَالِب",
           "ku": "خوێندکار",
-          "emoji": "🧑‍🎓"
+          "emoji": "🧑‍🎓",
+          "img": "img/vocab/student.jpg"
         },
         {
           "ru": "преподава́тель",
@@ -2683,7 +2704,8 @@
           "example": "Рабо́тать в библиоте́ке. — To work in the library.",
           "ar": "مَكْتَبَة",
           "ku": "کتێبخانە",
-          "emoji": "📚"
+          "emoji": "📚",
+          "img": "img/vocab/biblioteka.jpg"
         },
         {
           "ru": "общежи́тие",
