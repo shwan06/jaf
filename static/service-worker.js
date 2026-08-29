@@ -1,11 +1,12 @@
 /* Service worker — offline cache for Русский от А до Я.
    Strategy: stale-while-revalidate for same-origin GETs.
    Bump CACHE when shipping new assets to force a refresh. */
-const CACHE = "ru-az-v26";
+const CACHE = "ru-az-v27";
 const ASSETS = [
   "./",
   "index.html",
   "css/style.css",
+  "js/android-bridge.js",
   "js/app.js",
   "manifest.webmanifest",
   "audio/index.json",

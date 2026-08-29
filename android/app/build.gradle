@@ -3,22 +3,50 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+// Release signing is read from android/keystore.properties, which is NOT in git
+// (see android/README.md for how to create it). Without that file the release
+// build stays unsigned so CI and local debug builds still work.
+def keystorePropsFile = rootProject.file('keystore.properties')
+def keystoreProps = new Properties()
+if (keystorePropsFile.exists()) {
+    keystoreProps.load(new FileInputStream(keystorePropsFile))
+}
+
 android {
     namespace 'com.shwan.russian'
-    compileSdk 34
+    // Google Play requires new submissions to target Android 16 (API 36) from
+    // 31 August 2026 onwards.
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.shwan.russian"
         minSdk 24
-        targetSdk 34
+        targetSdk 36
         versionCode 1
         versionName "1.0"
     }
 
+    signingConfigs {
+        release {
+            if (keystoreProps.containsKey('storeFile')) {
+                storeFile rootProject.file(keystoreProps['storeFile'])
+                storePassword keystoreProps['storePassword']
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+            }
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            // R8 shrinking keeps the DEX small, which is what Google Play's
+            // February 2027 code-optimization threshold measures.
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (keystoreProps.containsKey('storeFile')) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 
@@ -30,6 +58,24 @@ android {
         jvmTarget = '17'
     }
 }
+
+/*
+ * The web app is the single source of truth in ../static. Copy it into the
+ * APK's assets before every build so the shipped app and the website can never
+ * drift apart. `static/audio` is included when present (real recordings), and
+ * the service worker comes along harmlessly — assets already load locally.
+ */
+def webAppSrc = rootProject.file('../static')
+def webAppDest = layout.buildDirectory.dir('generated/webapp/www')
+
+tasks.register('syncWebApp', Sync) {
+    description = 'Copies the static/ web app into the APK assets.'
+    from webAppSrc
+    into webAppDest
+}
+
+android.sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/webapp'))
+tasks.named('preBuild').configure { dependsOn('syncWebApp') }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'

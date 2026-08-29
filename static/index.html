@@ -52,6 +52,9 @@
     </main>
   </div>
 
+  <!-- Polyfills the Web Speech API onto the native bridge inside the Android
+       WebView (no-op in a normal browser). Must load before app.js. -->
+  <script src="js/android-bridge.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

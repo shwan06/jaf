@@ -5,3 +5,8 @@ local.properties
 .idea/
 captures/
 .cxx/
+
+# Release signing — never commit these. See README.md ("Signing for Google Play").
+keystore.properties
+*.jks
+*.keystore
