@@ -19,6 +19,11 @@
 html, body {
   margin: 0;
   height: 100%;
+  /* Wide declension tables scroll inside their own .table-wrap box, but their
+     width still leaked into the root's scrollWidth and let the whole page drag
+     sideways on narrow phones. `clip` stops that without creating a scroll
+     container, so the sticky top bar keeps working. */
+  overflow-x: clip;
   background: var(--bg);
   color: var(--text);
   font-family: "Inter", system-ui, -apple-system, sans-serif;
@@ -102,7 +107,12 @@ html, body {
 .hint { font-size: 12px; color: var(--muted); margin: 10px 4px 0; }
 
 /* ---------- Main view ---------- */
-.view { padding: 34px 40px 80px; max-width: 980px; }
+/* Grid items default to min-width:auto, so they refuse to shrink below their
+   content's min-content width — which forced the whole page to ~401px and made
+   it scroll sideways on 320/360/390px phones. min-width:0 lets the column
+   actually track the viewport. */
+#app > * { min-width: 0; }
+.view { padding: 34px 40px 80px; max-width: 980px; min-width: 0; }
 .loading { color: var(--muted); padding: 40px; }
 
 .page-head { margin-bottom: 26px; }
@@ -158,7 +168,9 @@ ul.block-list { margin: 12px 0; padding-left: 20px; line-height: 1.7; font-size:
 ul.block-list li { margin-bottom: 5px; }
 
 /* Tables */
-.table-wrap { overflow-x: auto; margin: 16px 0; }
+/* max-width caps the wrapper so a wide declension table scrolls inside its own
+   box instead of widening the page. */
+.table-wrap { overflow-x: auto; margin: 16px 0; max-width: 100%; }
 .table-cap { font-size: 13px; color: var(--muted); margin-bottom: 6px; font-style: italic; }
 table.grid { border-collapse: collapse; width: 100%; font-size: 14px; }
 table.grid th, table.grid td { border: 1px solid var(--border); padding: 8px 11px; text-align: left; }
@@ -328,6 +340,9 @@ table.grid tr:nth-child(even) td { background: rgba(255,255,255,.015); }
 select.dropdown {
   background: var(--panel); color: var(--text); border: 1px solid var(--border);
   border-radius: 10px; padding: 9px 12px; font-size: 14px;
+  /* A <select> sizes itself to its widest option; the AI-provider names are
+     long enough to push the whole page sideways on a phone without this. */
+  width: 100%; max-width: 100%;
 }
 
 /* ---------- Toggles (theme + gloss language) ---------- */
@@ -669,7 +684,10 @@ body[data-gloss="both"] .gloss-ku { display: none; }
 }
 .path-banner:hover { border-color: var(--accent); }
 .path-banner .pb-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.path-banner .pb-ico { font-size: 28px; }
+/* The text column must be allowed to shrink, or .pb-sub can never ellipsize and
+   its "Next: …" line runs under the progress ring on a phone. */
+.path-banner .pb-left > div { min-width: 0; }
+.path-banner .pb-ico { font-size: 28px; flex: none; }
 .path-banner .pb-title { font-weight: 700; font-size: 15.5px; }
 .path-banner .pb-sub { color: var(--muted); font-size: 13px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .path-banner .pb-ring { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
