@@ -27,7 +27,11 @@ on:
       - ".github/workflows/android.yml"
 
 permissions:
-  contents: read
+  # contents: write is needed to publish the APK as a Release asset, which —
+  # unlike an Actions artifact — downloads directly, needs no GitHub login, and
+  # isn't wrapped in a .zip. Actions artifacts can't be downloaded from the
+  # GitHub mobile app at all.
+  contents: write
 
 jobs:
   build:
@@ -97,3 +101,32 @@ jobs:
           name: russian-az-release-aab
           path: android/app/build/outputs/bundle/release/*.aab
           if-no-files-found: error
+
+      # Publish the APK to a rolling "android-latest" release so it can be
+      # installed straight from a phone: one tap, no login, no unzipping.
+      # The tag is reused every build, so the download URL never changes:
+      #   https://github.com/shwan06/jaf/releases/download/android-latest/russian-az.apk
+      - name: Publish APK as a downloadable release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk russian-az.apk
+          NOTES="Test build of Русский от А до Я, from commit ${GITHUB_SHA::7}.
+
+          Tap **russian-az.apk** below to install. You will need to allow
+          \"Install unknown apps\" for your browser the first time.
+
+          The whole course is bundled inside the app, so it works with no
+          internet — worth testing in airplane mode.
+
+          This is a debug build for testing, not the Play Store release."
+          if gh release view android-latest --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload android-latest russian-az.apk \
+              --repo "$GITHUB_REPOSITORY" --clobber
+            gh release edit android-latest --repo "$GITHUB_REPOSITORY" --notes "$NOTES"
+          else
+            gh release create android-latest russian-az.apk \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "Latest Android test build" \
+              --notes "$NOTES"
+          fi
