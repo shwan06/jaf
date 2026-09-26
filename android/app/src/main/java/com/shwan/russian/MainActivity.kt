@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.webkit.PermissionRequest
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
@@ -59,9 +60,8 @@ class MainActivity : AppCompatActivity() {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT,
             )
-            // The padded inset strips show the WebView's own background, so
-            // paint it the app's colour rather than the default white.
-            setBackgroundColor(0xFF0F1320.toInt())
+            // Paint the app's colour so nothing flashes white before the page draws.
+            setBackgroundColor(APP_BACKGROUND)
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true              // localStorage — study progress
             settings.databaseEnabled = true
@@ -120,14 +120,23 @@ class MainActivity : AppCompatActivity() {
         bridge.init()
         webView.addJavascriptInterface(bridge, "RussianNative")
 
-        setContentView(webView)
-
         // Apps targeting Android 15 (API 35) and above are always drawn
-        // edge-to-edge and `android:statusBarColor` in the theme is ignored,
-        // so without this the page renders *underneath* the status bar and the
-        // sticky header collides with the clock and battery icons. Inset the
-        // WebView by the system bars instead.
-        ViewCompat.setOnApplyWindowInsetsListener(webView) { view, windowInsets ->
+        // edge-to-edge and `android:statusBarColor` in the theme is ignored, so
+        // the page has to be kept out from under the status and navigation bars
+        // by hand.
+        //
+        // The insets go on a container rather than on the WebView itself:
+        // WebView doesn't reliably apply its own padding to `position: fixed`
+        // content, so padding the WebView moved the sticky header down but left
+        // the fixed sidebar drawer underneath the clock. Shrinking the WebView's
+        // real bounds fixes fixed, sticky and 100vh content alike.
+        val root = FrameLayout(this).apply {
+            setBackgroundColor(APP_BACKGROUND)
+            addView(webView)
+        }
+        setContentView(root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(root) { view, windowInsets ->
             val bars = windowInsets.getInsets(
                 WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
             )
@@ -173,6 +182,8 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val ASSET_HOST = "appassets.androidplatform.net"
+        /** Matches the web app's --bg, so the status/navigation bar strips blend in. */
+        private const val APP_BACKGROUND = 0xFF0F1320.toInt()
         private const val START_URL = "https://$ASSET_HOST/assets/www/index.html"
 
         fun hasMicPermission(context: Context): Boolean =

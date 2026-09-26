@@ -1381,7 +1381,7 @@ function micErrorText(err) {
     case "network":
       return "Speech recognition needs an internet connection (Android sends the audio to Google to transcribe). Turn on Wi-Fi or mobile data — or download the Russian offline speech model, and it will work without one.";
     case "language-unavailable":
-      return "Russian speech recognition isn't downloaded for offline use on this device. Open voice-input settings, find Russian (Русский) under the offline or downloaded languages, and download it — then the mic works with no internet.";
+      return "Russian speech recognition isn't downloaded for offline use on this device. Connect to the internet and download it below (or in voice-input settings, under offline languages) — then the mic works with no internet.";
     case "not-allowed":
     case "service-not-allowed":
       return "Microphone permission is off. Allow it in Android Settings → Apps → Русский от А до Я → Permissions.";
@@ -1392,6 +1392,34 @@ function micErrorText(err) {
     default:
       return `Mic error (${err}). Try again.`;
   }
+}
+
+// Buttons for getting the offline Russian model onto an Android device: a
+// one-tap download where Android supports it (13+), and a jump to voice-input
+// settings, where the model otherwise sits several levels deep. Both hooks come
+// from android-bridge.js, so on the web this returns null.
+function offlineSpeechHelp() {
+  const canDownload = window.canDownloadOfflineSpeech && window.canDownloadOfflineSpeech();
+  if (!canDownload && !window.openVoiceInputSettings) return null;
+  const box = el("div", { style: "display:flex;flex-direction:column;gap:8px;margin-top:12px" });
+  const note = el("div", { class: "gloss-en", style: "color:var(--muted);font-size:14px" });
+  if (canDownload) {
+    const dl = el("button", { class: "btn primary" }, "⬇️ Download Russian for offline use");
+    dl.addEventListener("click", () => {
+      window.downloadOfflineSpeech("ru-RU");
+      dl.disabled = true;
+      dl.textContent = "⏳ Download requested";
+      note.textContent = "Keep the internet on for a minute — Android downloads the Russian model in the background (it may ask you to confirm). After that the mic works offline.";
+    });
+    box.append(dl);
+  }
+  if (window.openVoiceInputSettings) {
+    const open = el("button", { class: "btn", style: "background:var(--panel-2);color:var(--text)" }, "⚙️ Voice input settings");
+    open.addEventListener("click", () => window.openVoiceInputSettings());
+    box.append(open);
+  }
+  box.append(note);
+  return box;
 }
 
 function getRecognizer() {
@@ -1466,12 +1494,9 @@ async function viewPronounce() {
       };
       rec.onerror = (ev) => {
         fb.innerHTML = `<span class="bad">${micErrorText(ev.error)}</span>`;
-        // The offline model lives several levels deep in Android's settings,
-        // so offer to jump straight there instead of describing the path.
-        if ((ev.error === "language-unavailable" || ev.error === "network") && window.openVoiceInputSettings) {
-          const open = el("button", { class: "btn", style: "margin-top:10px" }, "⚙️ Open voice input settings");
-          open.addEventListener("click", () => window.openVoiceInputSettings());
-          fb.append(open);
+        if (ev.error === "language-unavailable" || ev.error === "network") {
+          const help = offlineSpeechHelp();
+          if (help) fb.append(help);
         }
         mic.textContent = "🎤 Tap & speak";
         mic.disabled = false;

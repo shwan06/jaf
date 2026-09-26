@@ -1,6 +1,7 @@
 package com.shwan.russian
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -110,7 +111,14 @@ class SpeechBridge(
         }
         destroyRecognizer()
 
-        val rec = SpeechRecognizer.createSpeechRecognizer(context)
+        // For the offline retry, go straight to the on-device recogniser where
+        // Android has one (API 31+); EXTRA_PREFER_OFFLINE on the default
+        // recogniser is only a hint that some engines ignore.
+        val rec = if (preferOffline && onDeviceRecognitionAvailable()) {
+            SpeechRecognizer.createOnDeviceSpeechRecognizer(context)
+        } else {
+            SpeechRecognizer.createSpeechRecognizer(context)
+        }
         recognizer = rec
         listening = true
 
@@ -149,7 +157,12 @@ class SpeechBridge(
                 if (networkFailure && !preferOffline) {
                     listening = false
                     destroyRecognizer()
-                    main.post { doStartRecognition(lang, interim, preferOffline = true) }
+                    // Give the destroyed recogniser a moment to release the
+                    // service, or the retry can fail with ERROR_CLIENT / busy.
+                    main.postDelayed(
+                        { doStartRecognition(lang, interim, preferOffline = true) },
+                        RETRY_DELAY_MS,
+                    )
                     return
                 }
                 emitError(mapError(error))
@@ -251,6 +264,51 @@ class SpeechBridge(
         }
     }
 
+    /* ---------------- offline model ---------------- */
+
+    private fun onDeviceRecognitionAvailable(): Boolean =
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+            SpeechRecognizer.isOnDeviceRecognitionAvailable(context)
+
+    /** Whether [downloadOfflineModel] can do anything on this device (Android 13+). */
+    @JavascriptInterface
+    fun canDownloadOfflineModel(): Boolean =
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && onDeviceRecognitionAvailable()
+
+    /**
+     * Asks Android to download the on-device recognition model for [lang], so
+     * the mic keeps working with no connection. Needs internet at the time;
+     * Android may show its own confirmation or progress notification, and the
+     * download continues in the background.
+     */
+    @JavascriptInterface
+    fun downloadOfflineModel(lang: String) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
+        main.post {
+            if (!onDeviceRecognitionAvailable()) return@post
+            val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                putExtra(
+                    RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                    RecognizerIntent.LANGUAGE_MODEL_FREE_FORM,
+                )
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE, lang)
+            }
+            var rec: SpeechRecognizer? = null
+            try {
+                rec = SpeechRecognizer.createOnDeviceSpeechRecognizer(context)
+                rec.triggerModelDownload(intent)
+            } catch (e: Exception) {
+                // No on-device service after all — the page offers Settings too.
+            }
+            // Destroying too soon can cancel the request before it reaches the
+            // service, so hold on to the recogniser briefly.
+            val toDestroy = rec
+            main.postDelayed({
+                try { toDestroy?.destroy() } catch (e: Exception) { /* already gone */ }
+            }, MODEL_REQUEST_GRACE_MS)
+        }
+    }
+
     /* ---------------- JS callbacks ---------------- */
 
     private fun emitResult(alternatives: List<String>, isFinal: Boolean) {
@@ -272,5 +330,10 @@ class SpeechBridge(
 
     private fun evalJs(script: String) {
         main.post { webView.evaluateJavascript(script, null) }
+    }
+
+    private companion object {
+        const val RETRY_DELAY_MS = 300L
+        const val MODEL_REQUEST_GRACE_MS = 5_000L
     }
 }

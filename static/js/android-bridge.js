@@ -146,6 +146,15 @@
     try { N.openVoiceInputSettings(); return true; } catch (e) { return false; }
   };
 
+  // One-tap download of the on-device Russian model (Android 13+), so the mic
+  // works offline without a trip through Settings.
+  window.canDownloadOfflineSpeech = function () {
+    try { return !!N.canDownloadOfflineModel(); } catch (e) { return false; }
+  };
+  window.downloadOfflineSpeech = function (lang) {
+    try { N.downloadOfflineModel(String(lang || "ru-RU")); return true; } catch (e) { return false; }
+  };
+
   // Callback surface invoked from Kotlin via evaluateJavascript().
   window.__russianNativeSpeech = {
     onResult: function (json, isFinal) {
