@@ -139,6 +139,13 @@
   window.SpeechRecognition = AndroidSpeechRecognition;
   window.webkitSpeechRecognition = AndroidSpeechRecognition;
 
+  // Lets the page offer a button straight to Android's voice-input settings,
+  // where the offline Russian model is downloaded. Absent on the web, so
+  // callers must feature-detect it.
+  window.openVoiceInputSettings = function () {
+    try { N.openVoiceInputSettings(); return true; } catch (e) { return false; }
+  };
+
   // Callback surface invoked from Kotlin via evaluateJavascript().
   window.__russianNativeSpeech = {
     onResult: function (json, isFinal) {

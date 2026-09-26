@@ -199,15 +199,56 @@ class SpeechBridge(
         recognizer = null
     }
 
-    /** Maps SpeechRecognizer error codes onto Web Speech API error strings. */
+    /**
+     * Maps SpeechRecognizer error codes onto Web Speech API error strings.
+     *
+     * The language codes matter most here: when the device is offline and the
+     * Russian offline model has not been downloaded, the offline retry fails
+     * with ERROR_LANGUAGE_UNAVAILABLE. Folding that into a generic "aborted"
+     * hides the one thing the user can actually act on, so it gets its own
+     * (non-standard) string that the page turns into real instructions.
+     *
+     * Unknown codes keep their number so an unexpected failure is diagnosable
+     * from a screenshot rather than anonymous.
+     */
     private fun mapError(code: Int): String = when (code) {
         SpeechRecognizer.ERROR_AUDIO -> "audio-capture"
         SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "not-allowed"
         SpeechRecognizer.ERROR_NETWORK, SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "network"
+        SpeechRecognizer.ERROR_SERVER, SpeechRecognizer.ERROR_SERVER_DISCONNECTED -> "network"
+        SpeechRecognizer.ERROR_TOO_MANY_REQUESTS -> "network"
         SpeechRecognizer.ERROR_NO_MATCH -> "no-speech"
         SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "no-speech"
+        SpeechRecognizer.ERROR_LANGUAGE_UNAVAILABLE,
+        SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED,
+        SpeechRecognizer.ERROR_CANNOT_CHECK_SUPPORT -> "language-unavailable"
         SpeechRecognizer.ERROR_CLIENT -> "aborted"
-        else -> "aborted"
+        else -> "unknown-$code"
+    }
+
+    /**
+     * Opens Android's voice-input settings, where the offline Russian model is
+     * downloaded. Buried several levels deep in Settings, so the error message
+     * offers a button rather than a list of directions to follow by hand.
+     */
+    @JavascriptInterface
+    fun openVoiceInputSettings() {
+        main.post {
+            val targets = listOf(
+                Intent("android.settings.VOICE_INPUT_SETTINGS"),
+                Intent(android.provider.Settings.ACTION_INPUT_METHOD_SETTINGS),
+                Intent(android.provider.Settings.ACTION_SETTINGS),
+            )
+            for (intent in targets) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                try {
+                    context.startActivity(intent)
+                    return@post
+                } catch (e: Exception) {
+                    // try the next, broader target
+                }
+            }
+        }
     }
 
     /* ---------------- JS callbacks ---------------- */

@@ -1379,7 +1379,9 @@ async function viewDictation() {
 function micErrorText(err) {
   switch (err) {
     case "network":
-      return "Speech recognition needs an internet connection (Android sends the audio to Google to transcribe). Turn on Wi-Fi or mobile data — or install the Russian offline speech pack in Android Settings → System → Languages & input → Voice input, and it will work offline too.";
+      return "Speech recognition needs an internet connection (Android sends the audio to Google to transcribe). Turn on Wi-Fi or mobile data — or download the Russian offline speech model, and it will work without one.";
+    case "language-unavailable":
+      return "Russian speech recognition isn't downloaded for offline use on this device. Open voice-input settings, find Russian (Русский) under the offline or downloaded languages, and download it — then the mic works with no internet.";
     case "not-allowed":
     case "service-not-allowed":
       return "Microphone permission is off. Allow it in Android Settings → Apps → Русский от А до Я → Permissions.";
@@ -1464,6 +1466,13 @@ async function viewPronounce() {
       };
       rec.onerror = (ev) => {
         fb.innerHTML = `<span class="bad">${micErrorText(ev.error)}</span>`;
+        // The offline model lives several levels deep in Android's settings,
+        // so offer to jump straight there instead of describing the path.
+        if ((ev.error === "language-unavailable" || ev.error === "network") && window.openVoiceInputSettings) {
+          const open = el("button", { class: "btn", style: "margin-top:10px" }, "⚙️ Open voice input settings");
+          open.addEventListener("click", () => window.openVoiceInputSettings());
+          fb.append(open);
+        }
         mic.textContent = "🎤 Tap & speak";
         mic.disabled = false;
       };
