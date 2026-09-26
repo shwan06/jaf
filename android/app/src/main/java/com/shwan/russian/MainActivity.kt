@@ -19,6 +19,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.webkit.WebViewAssetLoader
 
 /**
@@ -57,6 +59,9 @@ class MainActivity : AppCompatActivity() {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT,
             )
+            // The padded inset strips show the WebView's own background, so
+            // paint it the app's colour rather than the default white.
+            setBackgroundColor(0xFF0F1320.toInt())
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true              // localStorage — study progress
             settings.databaseEnabled = true
@@ -116,6 +121,19 @@ class MainActivity : AppCompatActivity() {
         webView.addJavascriptInterface(bridge, "RussianNative")
 
         setContentView(webView)
+
+        // Apps targeting Android 15 (API 35) and above are always drawn
+        // edge-to-edge and `android:statusBarColor` in the theme is ignored,
+        // so without this the page renders *underneath* the status bar and the
+        // sticky header collides with the clock and battery icons. Inset the
+        // WebView by the system bars instead.
+        ViewCompat.setOnApplyWindowInsetsListener(webView) { view, windowInsets ->
+            val bars = windowInsets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            )
+            view.setPadding(bars.left, bars.top, bars.right, bars.bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         if (savedInstanceState != null) {
             webView.restoreState(savedInstanceState)

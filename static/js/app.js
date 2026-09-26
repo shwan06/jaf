@@ -1373,6 +1373,25 @@ async function viewDictation() {
 }
 
 /* ---------------- pronunciation (speech recognition) ---------------- */
+// Speech recognition on Android is normally cloud-backed, so "network" is the
+// error you get offline — telling the user to check their mic permission then
+// sends them hunting for the wrong thing.
+function micErrorText(err) {
+  switch (err) {
+    case "network":
+      return "Speech recognition needs an internet connection (Android sends the audio to Google to transcribe). Turn on Wi-Fi or mobile data — or install the Russian offline speech pack in Android Settings → System → Languages & input → Voice input, and it will work offline too.";
+    case "not-allowed":
+    case "service-not-allowed":
+      return "Microphone permission is off. Allow it in Android Settings → Apps → Русский от А до Я → Permissions.";
+    case "no-speech":
+      return "Didn't catch anything — tap and speak a little louder, closer to the mic.";
+    case "audio-capture":
+      return "Couldn't reach the microphone. Close any other app that might be using it and try again.";
+    default:
+      return `Mic error (${err}). Try again.`;
+  }
+}
+
 function getRecognizer() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SR) return null;
@@ -1444,7 +1463,7 @@ async function viewPronounce() {
         mic.onclick = next;
       };
       rec.onerror = (ev) => {
-        fb.innerHTML = `<span class="bad">Mic error (${ev.error}). Check microphone permission and try again.</span>`;
+        fb.innerHTML = `<span class="bad">${micErrorText(ev.error)}</span>`;
         mic.textContent = "🎤 Tap & speak";
         mic.disabled = false;
       };
@@ -2140,7 +2159,8 @@ async function viewTutor() {
         input.value = base + txt;
       };
       const stop = () => { listening = false; mic.classList.remove("rec"); mic.textContent = "🎤"; input.focus(); };
-      rec.onerror = stop;
+      // Surface the reason instead of the mic just silently switching off.
+      rec.onerror = (ev) => { showToast("🎤 Voice input", micErrorText(ev.error)); stop(); };
       rec.onend = stop;
       try { rec.start(); listening = true; mic.classList.add("rec"); mic.textContent = "⏹"; } catch { stop(); }
     });

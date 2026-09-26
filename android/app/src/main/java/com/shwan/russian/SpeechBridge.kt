@@ -95,10 +95,10 @@ class SpeechBridge(
 
     @JavascriptInterface
     fun startRecognition(lang: String, interim: Boolean) {
-        main.post { doStartRecognition(lang, interim) }
+        main.post { doStartRecognition(lang, interim, preferOffline = false) }
     }
 
-    private fun doStartRecognition(lang: String, interim: Boolean) {
+    private fun doStartRecognition(lang: String, interim: Boolean, preferOffline: Boolean) {
         if (!SpeechRecognizer.isRecognitionAvailable(context)) {
             emitError("service-not-allowed")
             return
@@ -139,6 +139,19 @@ class SpeechBridge(
             }
 
             override fun onError(error: Int) {
+                // Android's default recogniser is cloud-backed, so it fails
+                // with ERROR_NETWORK when the device is offline — which is
+                // exactly how this app is meant to be usable. Retry once
+                // preferring the on-device model, which works without a
+                // connection if the user has the language pack installed.
+                val networkFailure = error == SpeechRecognizer.ERROR_NETWORK ||
+                    error == SpeechRecognizer.ERROR_NETWORK_TIMEOUT
+                if (networkFailure && !preferOffline) {
+                    listening = false
+                    destroyRecognizer()
+                    main.post { doStartRecognition(lang, interim, preferOffline = true) }
+                    return
+                }
                 emitError(mapError(error))
                 finish()
             }
@@ -158,6 +171,9 @@ class SpeechBridge(
             putExtra(RecognizerIntent.EXTRA_LANGUAGE, lang)
             putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
             putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, interim)
+            if (preferOffline) {
+                putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
+            }
         }
         try {
             rec.startListening(intent)
