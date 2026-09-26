@@ -10,3 +10,9 @@ captures/
 keystore.properties
 *.jks
 *.keystore
+
+# ...except the fixed DEBUG keystore, which is committed deliberately so every
+# test build shares one signature and updates install over each other. Its
+# password is the public, standard "android" — it is not a credential, and it
+# can never sign a Play release.
+!app/debug.keystore
